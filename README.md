@@ -1,1 +1,3 @@
-# ultimate_neovim_configuration
+# ultimate neovim configuration
+
+Be keen on tossing to become stronger.
