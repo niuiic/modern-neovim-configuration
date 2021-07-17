@@ -1,0 +1,128 @@
+# nomal always
+snippet alw
+	always @(${0:condition}) begin
+	end
+
+# module
+snippet mod
+	module ${0:module_name}
+	endmodule
+
+# begin end
+snippet begin
+	begin
+		${0}
+	end
+
+# if
+snippet if
+	if (${0:condition}) begin
+	end
+
+# else if
+snippet el
+	else if (${0:condition}) begin
+	end
+
+# else
+snippet else
+	else begin
+		${0}
+	end
+
+# forever
+snippet forever
+	forever begin
+		${0}
+	end
+
+# repeat
+snippet repeat
+	repeat (${0:repeat_times}) begin
+	end
+
+# while
+snippet while
+	while (${0:condition}) begin
+	end
+
+# for
+snippet for
+	for (${0:condition}]) begin
+	end
+
+# initial
+snippet initial
+	initial begin
+		${0}
+	end
+
+# function display
+snippet display
+	\$display (${0});
+
+# rtoi
+snippet rtoi
+	\$rtoi (${0:real_value})
+
+# itor
+snippet itor
+	\$itor (${0:int_value})
+
+# for testbench
+snippet test
+	initial begin
+		\$dumpfile(wave.vcd);
+		\$dumpvars(0, ${0:test_module_name});
+	end
+
+# for each
+snippet foreach
+	foreach (${0:array[i]}) begin
+	end
+
+# bits
+snippet bits
+	\$bits(${0:value});
+
+# moniter
+snippet monitor
+	\$monitor (${0});
+
+# finish
+snippet finish
+	\$finish;
+
+# size
+snippet size
+	\$size(${0});
+
+# do while
+snippet dowhile
+	do begin
+
+	end while (${0:condition})
+
+# unique case
+snippet caseu
+	unique case (${1:condition})
+		${0:value} : ${2:statement};
+	endcase
+
+# priority case
+snippet casep
+	priority case (${1:condition})
+		${0:value} : ${2:statement};
+	endcase
+
+# task
+snippet task
+	task [${0:taskName}];
+
+	endtask
+
+# function
+snippet function
+	function ${1:returnType} ${0:functionName} (${2:parameters});
+
+	endfunction

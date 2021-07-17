@@ -1,10 +1,10 @@
-coc-clangd
 coc-cmake
 coc-css
+coc-ecdict
 coc-eslint
 coc-explorer
 coc-floaterm
-coc-go
+coc-go Current
 coc-highlight
 coc-html
 coc-jedi
@@ -14,14 +14,15 @@ coc-pairs
 coc-prettier
 coc-python
 coc-rust-analyzer
-coc-sh
 coc-snippets
 coc-sql
 coc-tasks
 coc-toml
 coc-translator
-coc-tsserver 
+coc-tsserver
+coc-vetur
 coc-vimlsp
 coc-xml
 coc-yaml
+coc-yank
 coc-zi

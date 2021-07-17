@@ -1,11 +1,11 @@
 {
   "coc.source.file.ignoreHidden": false,
+  "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", ".root"],
   "yank.enableCompletion": false,
   "suggest.enablePreview": true,
   "suggest.noselect": false,
-  "clangd.path": "/usr/lib/llvm/11/bin/clangd",
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.enableVimDevicons": true,
+  "explorer.icon.source": "vim-devicons",
   "explorer.file.showHiddenFiles": true,
   "explorer.keyMappings.global": {
     "i": false,
@@ -88,18 +88,66 @@
     ">>": "gitUnstage"
   },
   "jedi.workspace.extraPaths": ["facial_recognition"],
-  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
-  "eslint.packageManager": "yarn",
-  "eslint.nodePath": ".yarn/sdks",
-  "rust-analyzer.diagnostics.disabled": ["unresolved-macro-call"],
-  // "rust-analyzer.checkOnSave.target": "thumbv7m-none-eabi",
+  "rust-analyzer.diagnostics.disabled": [
+    "unresolved-macro-call",
+    "incorrect-ident-case",
+    "missing-unsafe"
+  ],
+
+  // "rust-analyzer.checkOnSave.target": "thumbv7em-none-eabihf",
   // "rust-analyzer.checkOnSave.allTargets": false,
-  // "rust-analyzer.cargo.loadOutDirsFromCheck": true,
-  // "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.procMacro.enable": true,
+
   "rust-analyzer.lruCapacity": 1000,
   "rust-analyzer.updates.channel": "nightly",
-  "rust-analyzer.hoverActions.linksInHover": true,
   "go.goplsOptions": {
     "completeUnimported": true
-  }
+  },
+  "markdownlint.onOpen": false,
+  "markdownlint.onChange": false,
+  "markdownlint.onSave": false,
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
+    "svlangserver": {
+      "module": "/home/niuiic/Applicants/Npm/npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
+      "filetypes": ["systemverilog"],
+      "settings": {
+        "systemverilog.includeIndexing": [
+          "sources*/**/*.{sv,svh}",
+          "*.{sv,svh}"
+        ],
+        "systemverilog.excludeIndexing": ["sim*/**/*.sv*"],
+        "systemverilog.defines": [],
+        "systemverilog.launchConfiguration": "/usr/bin/verilator -sv -Wall --lint-only",
+        "systemverilog.formatCommand": "/home/niuiic/Applicants/Verible/verible/bin/verible-verilog-format"
+      }
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [
+        ".root",
+        ".ccls",
+        "compile_commands.json",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    }
+  },
+  "vetur.useWorkspaceDependencies": true,
+  "tsserver.log": "verbose",
+  "eslint.packageManager": "yarn",
+  "eslint.nodePath": ".yarn/sdks",
+  "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets"
 }
