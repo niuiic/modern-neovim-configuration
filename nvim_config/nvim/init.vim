@@ -142,9 +142,18 @@ let g:neoformat_swift_swiftformat = {
 
 let g:neoformat_enabled_swift = ['swiftformat']
 
+let g:neoformat_asm_asmfmt = {
+            \ 'exe': 'asmfmt',
+            \ 'args': ['-w'],
+            \ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_asm = ['asmfmt']
+
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
 autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
 autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
+autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
 
 " coc-translator
 " popup
@@ -569,6 +578,8 @@ let g:dashboard_custom_shortcut={
 
 " filetypes
 au BufRead,BufNewFile *.v set filetype=verilog
+au BufRead,BufNewFile *.asm set filetype=asm
+au BufRead,BufNewFile *.s set filetype=asm
 
 " vimspector
 set packpath=/home/niuiic/.local/share/nvim

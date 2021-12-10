@@ -147,6 +147,10 @@
     "kotlin": {
       "command": "~/Applicants/Kotlin/lsp/bin/kotlin-language-server",
       "filetypes": ["kotlin"]
+    },
+    "lsp-asm": {
+      "command": "lsp-asm",
+      "filetypes": ["asm", "s", "S"]
     }
   },
   "sourcekit.commandPath": "/home/niuiic/Applicants/Swift/swift/usr/bin/sourcekit-lsp",
