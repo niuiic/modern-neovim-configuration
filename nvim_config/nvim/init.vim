@@ -67,6 +67,21 @@ set shiftwidth=4
 set expandtab
 let g:python3_host_prog="/usr/bin/python"
 
+" vim workspace
+function! FindProjectRoot(lookFor)
+    let pathMaker='%:p'
+    while(len(expand(pathMaker))>1)
+        let pathMaker=pathMaker.':h'
+        let fileToCheck=expand(pathMaker).'/'.a:lookFor
+        if filereadable(fileToCheck)||isdirectory(fileToCheck)
+            return expand(pathMaker)
+        endif
+    endwhile
+    return 0
+endfunction
+
+au VimEnter * :call FindProjectRoot(".root")
+
 " to fix the bug of ccls
 " au FileType c inoremap <Right> ->
 " add more
@@ -129,14 +144,14 @@ let g:neoformat_shell_shfmt = {
 let g:neoformat_enabled_shell = ['shfmt']
 
 let g:neoformat_kotlin_ktlint = {
-            \ 'exe': '/home/niuiic/Applicants/Kotlin/ktlint',
+            \ 'exe': '/home/niuiic/Applications/Kotlin/ktlint',
             \ 'args': ['-F'],
             \ 'replace': 1,
             \ }
 let g:neoformat_enabled_kotlin = ['ktlint']
 
 let g:neoformat_swift_swiftformat = {
-            \ 'exe': '/home/niuiic/Applicants/Swift/swift-format/.build/release/swift-format',
+            \ 'exe': '/home/niuiic/Applications/Swift/swift-format/.build/release/swift-format',
             \ 'replace': 1,
             \ }
 
@@ -937,3 +952,7 @@ nnoremap <f2> :echo ("hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">")<cr>
 nnoremap <f3> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 nnoremap <f4> :exec 'syn list '.synIDattr(synID(line('.'), col('.'), 0), 'name')<cr>
+
+" coc-spell-checker
+vmap <A-s> <Plug>(coc-codeaction-selected)<CR>
+nmap <A-s> <Plug>(coc-codeaction-selected)<CR>

@@ -115,7 +115,7 @@
       "ignoredRootPaths": ["~"]
     },
     "svlangserver": {
-      "module": "/home/niuiic/Applicants/Npm/npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
+      "module": "/home/niuiic/Applications/Npm/npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
       "filetypes": ["systemverilog"],
       "settings": {
         "systemverilog.includeIndexing": [
@@ -125,7 +125,7 @@
         "systemverilog.excludeIndexing": ["sim*/**/*.sv*"],
         "systemverilog.defines": [],
         "systemverilog.launchConfiguration": "/usr/bin/verilator -sv -Wall --lint-only",
-        "systemverilog.formatCommand": "/home/niuiic/Applicants/Verible/verible/bin/verible-verilog-format"
+        "systemverilog.formatCommand": "/home/niuiic/Applications/Verible/verible/bin/verible-verilog-format"
       }
     },
     "ccls": {
@@ -145,7 +145,7 @@
       }
     },
     "kotlin": {
-      "command": "~/Applicants/Kotlin/lsp/bin/kotlin-language-server",
+      "command": "~/Applications/Kotlin/lsp/bin/kotlin-language-server",
       "filetypes": ["kotlin"]
     },
     "lsp-asm": {
@@ -153,10 +153,17 @@
       "filetypes": ["asm", "s", "S"]
     }
   },
-  "sourcekit.commandPath": "/home/niuiic/Applicants/Swift/swift/usr/bin/sourcekit-lsp",
+  "sourcekit.commandPath": "/home/niuiic/Applications/Swift/swift/usr/bin/sourcekit-lsp",
   "vetur.useWorkspaceDependencies": true,
   "tsserver.log": "verbose",
   "eslint.packageManager": "yarn",
   "eslint.nodePath": ".yarn/sdks",
-  "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets"
+  "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets",
+  "translator.proxy": "socks://127.0.0.1:10024",
+  "translator.toLang": "zh_CN",
+  "cSpell.enabledLanguageIds": ["markdown"],
+  "cSpell.userWords": [
+    "Tauri",
+    "typeof"
+  ]
 }
