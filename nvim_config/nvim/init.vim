@@ -52,6 +52,9 @@ Plug 'sbdchd/neoformat'
 Plug 'luochen1990/rainbow'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'arzg/vim-swift'
+Plug 'andymass/vim-matchup'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 set nocompatible
@@ -119,10 +122,11 @@ let g:which_key_map2['\A'] = 'which_key_ignore'
 " theme
 colorscheme space-vim-dark
 set termguicolors
+highlight LineNr guifg=#00ffff
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
-hi Comment guifg=#5C6370 ctermfg=59
+hi Comment guifg=#00ffff ctermfg=NONE
 let g:space_vim_dark_background = 236
 
 " set save
@@ -956,3 +960,15 @@ nnoremap <f4> :exec 'syn list '.synIDattr(synID(line('.'), col('.'), 0), 'name')
 " coc-spell-checker
 vmap <A-s> <Plug>(coc-codeaction-selected)<CR>
 nmap <A-s> <Plug>(coc-codeaction-selected)<CR>
+
+" vim-matchup
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+matchup = {
+enable = true,  -- mandatory, false will disable the whole extension
+disable = {},  -- optional, list of language that will be disabled
+disable_virtual_text = true,
+include_match_words = {},
+},
+}
+EOF
