@@ -51,6 +51,10 @@ Plug 'dhruvasagar/vim-zoom'
 Plug 'sbdchd/neoformat'
 Plug 'luochen1990/rainbow'
 Plug 'leafOfTree/vim-vue-plugin'
+Plug 'arzg/vim-swift'
+Plug 'andymass/vim-matchup'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 set nocompatible
@@ -66,12 +70,27 @@ set shiftwidth=4
 set expandtab
 let g:python3_host_prog="/usr/bin/python"
 
+" vim workspace
+function! FindProjectRoot(lookFor)
+    let pathMaker='%:p'
+    while(len(expand(pathMaker))>1)
+        let pathMaker=pathMaker.':h'
+        let fileToCheck=expand(pathMaker).'/'.a:lookFor
+        if filereadable(fileToCheck)||isdirectory(fileToCheck)
+            return expand(pathMaker)
+        endif
+    endwhile
+    return 0
+endfunction
+
+au VimEnter * :call FindProjectRoot(".root")
+
 " to fix the bug of ccls
-au FileType c inoremap <Right> ->
+" au FileType c inoremap <Right> ->
 " add more
-au FileType go inoremap <Left> <-
-au FileType go inoremap <Right> ->
-au FileType rust inoremap <Right> =>
+" au FileType go inoremap <Left> <-
+" au FileType go inoremap <Right> ->
+" au FileType rust inoremap <Right> =>
 
 " set relativenumber
 set encoding=UTF-8
@@ -103,10 +122,11 @@ let g:which_key_map2['\A'] = 'which_key_ignore'
 " theme
 colorscheme space-vim-dark
 set termguicolors
+highlight LineNr guifg=#00ffff
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
-hi Comment guifg=#5C6370 ctermfg=59
+hi Comment guifg=#00ffff ctermfg=NONE
 let g:space_vim_dark_background = 236
 
 " set save
@@ -125,11 +145,34 @@ let g:neoformat_shell_shfmt = {
             \ 'replace': 1,
             \ 'stdin': 1,
             \ }
-
 let g:neoformat_enabled_shell = ['shfmt']
 
+let g:neoformat_kotlin_ktlint = {
+            \ 'exe': '/home/niuiic/Applications/Kotlin/ktlint',
+            \ 'args': ['-F'],
+            \ 'replace': 1,
+            \ }
+let g:neoformat_enabled_kotlin = ['ktlint']
+
+let g:neoformat_swift_swiftformat = {
+            \ 'exe': '/home/niuiic/Applications/Swift/swift-format/.build/release/swift-format',
+            \ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_swift = ['swiftformat']
+
+let g:neoformat_asm_asmfmt = {
+            \ 'exe': 'asmfmt',
+            \ 'args': ['-w'],
+            \ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_asm = ['asmfmt']
+
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
-" autocmd FileType systemverilog nnoremap <AC-l> :Neoformat<CR>
+autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
+autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
+autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
 
 " coc-translator
 " popup
@@ -526,7 +569,14 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*4, 0, 8)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*4, 0, 8)<CR>
 
 " dashboard-nvim
-let g:dashboard_default_header = 'cres'
+let g:dashboard_custom_header = [
+            \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+            \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+            \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+            \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+            \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+            \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+            \]
 let g:indentLine_fileTypeExclude = ['dashboard']
 nnoremap <silent><nowait> <space>sl :<C-u>SessionLoad<CR>
 nnoremap <silent><nowait> <space>ss :<C-u>SessionSave<CR>
@@ -547,6 +597,8 @@ let g:dashboard_custom_shortcut={
 
 " filetypes
 au BufRead,BufNewFile *.v set filetype=verilog
+au BufRead,BufNewFile *.asm set filetype=asm
+au BufRead,BufNewFile *.s set filetype=asm
 
 " vimspector
 set packpath=/home/niuiic/.local/share/nvim
@@ -564,7 +616,7 @@ nmap <silent><nowait><space>do <Plug>VimspectorStepOut
 nmap <silent><nowait><space>du <Plug>VimspectorUpFrame
 nmap <silent><nowait><space>dd <Plug>VimspectorDownFrame
 nmap <silent><nowait><space>dt <Plug>VimspectorRunToCursor
-nmap <silent><nowait><space>dq <Plug>VimspectorReset
+nmap <silent><nowait><space>dq :<C-u>VimspectorReset<CR>
 nmap <A-t> <Plug>VimspectorRunToCursor
 nmap <A-o> <Plug>VimspectorStepOut
 nmap <silent><nowait><space>di <Plug>VimspectorStepInto
@@ -778,34 +830,38 @@ let g:which_key_map1.h = {
 
 " asynctasks.vim
 
-nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-run<CR>
-nnoremap <silent><nowait> <space>sB :<C-u>:AsyncTask project-build<CR>
-nnoremap <silent><nowait> <space>sb :<C-u>:AsyncTask file-build<CR>
-nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask file-run<CR>
-nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-debug<CR>
-nnoremap <silent><nowait> <space>sd :<C-u>:AsyncTask file-debug<CR>
-nnoremap <silent><nowait> <space>st :<C-u>:AsyncTaskList<CR>
+nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
+nnoremap <silent><nowait> <space>sb :<C-u>:AsyncTask project-build<CR>
+nnoremap <silent><nowait> <space>st :<C-u>:AsyncTask project-test<CR>
+nnoremap <silent><nowait> <space>sd :<C-u>:AsyncTask project-debug<CR>
+nnoremap <silent><nowait> <space>sB :<C-u>:AsyncTask project-concrete-build<CR>
+nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-concrete-run<CR>
+nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
+nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
+nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
 nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
 nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
 let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg','.yarn','.gitignore']
 let g:asynctasks_term_pos = 'bottom'
-let g:asynctasks_term_rows = 25    " 设置纵向切割高度
-let g:asynctasks_term_cols = 80    " 设置横向切割宽度
+let g:asynctasks_term_rows = 25 
+let g:asynctasks_term_cols = 80
 let g:asynctasks_term_focus=0
 let g:asynctasks_confirm = 0
 
 let g:which_key_map1.s = {
             \ 'name' : '+asynctasks',
-            \ 'R' : 'run project',
-            \ 'B' : 'build project',
-            \ 'b' : 'build file',
-            \ 'r' : 'run file',
-            \ 'd' : 'debug file',
-            \ 'D' : 'debug project',
+            \ 'R' : 'run project (concrete)',
+            \ 'B' : 'build project (concrete)',
+            \ 'T' : 'test project (concrete)',
+            \ 'b' : 'build project',
+            \ 't' : 'test project',
+            \ 'r' : 'run project',
+            \ 'd' : 'debug project',
+            \ 'D' : 'debug project (concrete)',
+            \ 'c' : 'clean project',
             \ 'e' : 'edit config',
             \ 'E' : 'edit global config',
-            \ 't' : 'show task list',
             \}
 
 let g:asynctasks_config_name = '.task.ini'
@@ -900,3 +956,19 @@ nnoremap <f2> :echo ("hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> 
             \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">")<cr>
 nnoremap <f3> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
 nnoremap <f4> :exec 'syn list '.synIDattr(synID(line('.'), col('.'), 0), 'name')<cr>
+
+" coc-spell-checker
+vmap <A-s> <Plug>(coc-codeaction-selected)<CR>
+nmap <A-s> <Plug>(coc-codeaction-selected)<CR>
+
+" vim-matchup
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+matchup = {
+enable = true,  -- mandatory, false will disable the whole extension
+disable = {},  -- optional, list of language that will be disabled
+disable_virtual_text = true,
+include_match_words = {},
+},
+}
+EOF

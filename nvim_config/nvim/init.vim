@@ -18,7 +18,6 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'lambdalisue/suda.vim'
 Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'puremourning/vimspector'
-Plug 'ap/vim-buftabline'
 Plug 'hardcoreplayers/spaceline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-codelf'
@@ -55,6 +54,7 @@ Plug 'arzg/vim-swift'
 Plug 'andymass/vim-matchup'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'bagrat/vim-buffet'
 call plug#end()
 
 set nocompatible
@@ -69,6 +69,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 let g:python3_host_prog="/usr/bin/python"
+set termguicolors
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -204,7 +205,7 @@ autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
 " vim-clap & leaderf
 let g:clap_theme = 'material_design_dark'
 nnoremap <silent><nowait> <space>op  :<C-u>Clap<CR>
-nnoremap <silent><nowait> <space>ob  :<C-u>Clap buffers<CR>
+nnoremap <silent><nowait> <space>ob  :<C-u>Leaderf buffer<CR>
 nnoremap <silent><nowait> <space>oc  :<C-u>Clap command<CR>
 nnoremap <silent><nowait> <space>oh  :<C-u>Clap history<CR>
 nnoremap <silent><nowait> <space>of  :<C-u>Clap files ++finder=rg --ignore --hidden --files<CR>
@@ -557,10 +558,23 @@ let g:spaceline_seperate_style= 'arrow-fade'
 let g:spaceline_colorscheme = 'space'
 let g:spaceline_custom_vim_status= {"n": "N","V":"V","v":"v","\<C-v>": "~V","i":"I","R":"R","s":"S","t":"T","c":"C","!":"SE"}
 
-" vim-buftabline
+" vim-buffet
 noremap <C-k> :bn<CR>
 noremap <C-j> :bp<CR>
-noremap <C-t> :tabnew split<CR>
+let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+let g:buffet_show_index = 1
+let g:buffet_modified_icon = '*'
+let g:buffet_new_buffer_name = '+'
+let g:buffet_hidden_buffers = ['terminal', 'quickfix']
+function! g:BuffetSetCustomColors()
+    hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00ffff
+    hi! BuffetModBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#ff33cc
+    hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
+    hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
+endfunction
 
 " vim-smooth-scroll
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
