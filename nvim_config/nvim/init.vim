@@ -18,7 +18,9 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'lambdalisue/suda.vim'
 Plug 'hardcoreplayers/dashboard-nvim'
 Plug 'puremourning/vimspector'
-Plug 'hardcoreplayers/spaceline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'enricobacis/vim-airline-clock'
 Plug 'ryanoasis/vim-devicons'
 Plug 'voldikss/vim-codelf'
 Plug 'RRethy/vim-illuminate'
@@ -553,10 +555,9 @@ let g:which_key_map1.f = {
             \ 'S' : 'search variable names on the brower',
             \ }
 
-" vim-spaceline
-let g:spaceline_seperate_style= 'arrow-fade'
-let g:spaceline_colorscheme = 'space'
-let g:spaceline_custom_vim_status= {"n": "N","V":"V","v":"v","\<C-v>": "~V","i":"I","R":"R","s":"S","t":"T","c":"C","!":"SE"}
+" vim-airline
+let g:airline_theme = 'luna'
+let g:airline#extensions#clock#format = '%H:%M:%S'
 
 " vim-buffet
 noremap <C-k> :bn<CR>
