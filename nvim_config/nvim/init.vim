@@ -50,13 +50,14 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'sbdchd/neoformat'
-Plug 'luochen1990/rainbow'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'arzg/vim-swift'
 Plug 'andymass/vim-matchup'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'bagrat/vim-buffet'
+Plug 'luochen1990/rainbow'
+
 call plug#end()
 
 set nocompatible
@@ -172,10 +173,19 @@ let g:neoformat_asm_asmfmt = {
 
 let g:neoformat_enabled_asm = ['asmfmt']
 
+let g:neoformat_lua_luafmt = {
+            \ 'exe': '/home/niuiic/Applications/Lua/LuaFormatter/lua-format',
+            \ 'args': ['-i'],
+            \ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_lua = ['luafmt']
+
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
 autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
 autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
 autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
+autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
 
 " coc-translator
 " popup
@@ -519,6 +529,9 @@ let g:which_key_map2.c = {
             \ 'z' : 'do default action for previous item',
             \ 'p' : 'resume latest coc list',
             \ }
+" Highlight of coc.nvim
+hi! CocWarningLine guifg=#C27A36
+hi! CocErrorLine guifg=#E5080D
 
 " nerdcommenter
 
@@ -769,8 +782,8 @@ let g:which_key_map2.t ={
 nmap <silent><nowait> <leader>so :syn enable<CR>
 nmap <silent><nowait> <leader>sf :syn off<CR>
 " to fix the bug of coc.nvim when go to definition
-au VimEnter * :syn off<CR>
-au VimEnter * :syn enable<CR>
+" au VimEnter * :syn off<CR>
+" au VimEnter * :syn enable<CR>
 
 " quickfix
 au VimEnter * :set makeprg=make
@@ -859,7 +872,7 @@ nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
 let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg','.yarn','.gitignore']
 let g:asynctasks_term_pos = 'bottom'
-let g:asynctasks_term_rows = 25 
+let g:asynctasks_term_rows = 10
 let g:asynctasks_term_cols = 80
 let g:asynctasks_term_focus=0
 let g:asynctasks_confirm = 0
@@ -947,36 +960,12 @@ autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.org
 " vim-zoom
 map <c-w>o <c-w>m
 
-" rainbow
-let g:rainbow_active = 1
-
-let g:rainbow_conf = {
-            \	'ctermfgs': ['DarkBlue', 'DarkGreen', 'DarkCyan', 'DarkRed','DarkMagenta','Brown','DarkYellow','LightGray','LightGrey','Gray','Grey','DarkGray','DarkGrey','Blue','Green','Cyan','Red','Magenta','Yellow','White'],
-            \	'operators': '_,\|+\|-\|*\|\/\|==\|!=_',
-            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-            \	'separately': {
-            \		'*': {},
-            \		'markdown': {
-            \			'parentheses_options': 'containedin=markdownCode contained',
-            \		},
-            \ 		'vue' : {
-            \			'parentheses': ['start=/{/ end=/}/ fold contains= containedin=@javaScript', 'start=/(/ end=/)/ fold contains=@javaScript containedin=@javaScript', 'start=/\v\<((script|style|area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold', 'start=/(/ end=/)/ fold'],
-            \		},
-            \	}
-            \}
-
-nnoremap <f1> :echo synIDattr(synID(line('.'), col('.'), 0), 'name')<cr>
-nnoremap <f2> :echo ("hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">")<cr>
-nnoremap <f3> :echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')<cr>
-nnoremap <f4> :exec 'syn list '.synIDattr(synID(line('.'), col('.'), 0), 'name')<cr>
-
 " coc-spell-checker
 vmap <A-s> <Plug>(coc-codeaction-selected)<CR>
 nmap <A-s> <Plug>(coc-codeaction-selected)<CR>
 
-" vim-matchup
+" vim-matchup & nvim-ts-rainbow
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
 matchup = {
@@ -987,3 +976,28 @@ include_match_words = {},
 },
 }
 EOF
+
+" rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+            \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \	'operators': '_,_',
+            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \	'separately': {
+            \		'*': {},
+            \		'tex': {
+            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+            \		},
+            \		'lisp': {
+            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+            \		},
+            \		'vim': {
+            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+            \		},
+            \		'html': {
+            \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+            \		},
+            \		'css': 0,
+            \	}
+            \}

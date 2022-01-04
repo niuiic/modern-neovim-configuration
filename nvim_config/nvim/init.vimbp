@@ -173,10 +173,19 @@ let g:neoformat_asm_asmfmt = {
 
 let g:neoformat_enabled_asm = ['asmfmt']
 
+let g:neoformat_lua_luafmt = {
+            \ 'exe': '/home/niuiic/Applications/Lua/LuaFormatter/lua-format',
+            \ 'args': ['-i'],
+            \ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_lua = ['luafmt']
+
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
 autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
 autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
 autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
+autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
 
 " coc-translator
 " popup
