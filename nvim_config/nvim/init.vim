@@ -1,68 +1,9 @@
 " cSpell:disable
-call plug#begin('/home/niuiic/.local/share/nvim/pack/plugin/opt')
-function! BuildComposer(info)
-    if a:info.status != 'unchanged' || a:info.force
-        if has('nvim')
-            !cargo build --release --locked
-        else
-            !cargo build --release --locked --no-default-features --features json-rpc
-        endif
-    endif
-endfunction
-Plug 'will133/vim-dirdiff'
-Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-surround'
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-Plug 'simnalamburt/vim-mundo'
-Plug 'lambdalisue/suda.vim'
-Plug 'hardcoreplayers/dashboard-nvim'
-Plug 'puremourning/vimspector'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'enricobacis/vim-airline-clock'
-Plug 'ryanoasis/vim-devicons'
-Plug 'voldikss/vim-codelf'
-Plug 'RRethy/vim-illuminate'
-Plug 'kshenoy/vim-signature'
-Plug 'tpope/vim-repeat'
-Plug 'sheerun/vim-polyglot'
-Plug 'liuchengxu/vim-which-key'
-Plug 'terryma/vim-smooth-scroll'
-Plug 'liuchengxu/vista.vim'
-Plug 'vhda/verilog_systemverilog.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Yggdroot/indentLine'
-Plug 'honza/vim-snippets'
-Plug 'lilydjwg/fcitx.vim'
-Plug 'xolox/vim-misc'
-Plug 'cespare/vim-toml', {
-            \ 'for' : ['toml'] }
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-Plug 'preservim/nerdcommenter'
-Plug 'rbtnn/vim-vimscript_indentexpr'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'liuchengxu/space-vim-dark'
-Plug 'dhruvasagar/vim-zoom'
-Plug 'sbdchd/neoformat'
-Plug 'leafOfTree/vim-vue-plugin'
-Plug 'arzg/vim-swift'
-Plug 'andymass/vim-matchup'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'bagrat/vim-buffet'
-Plug 'luochen1990/rainbow'
-
-call plug#end()
-
-set nocompatible
+"
+lua require('plugins')
 
 " basic settings
+set nocompatible
 au BufNewFile,BufRead *.sv set filetype=systemverilog
 au BufNewFile,BufRead *.h set filetype=c
 au BufNewFile,BufRead *.hpp set filetype=cpp
@@ -101,7 +42,6 @@ set encoding=UTF-8
 set number
 set ts=4
 set sw=4
-set guifont=agaveNerdFont:h13
 
 " vim-which-key
 let g:which_key_map1 =  {}
@@ -119,9 +59,509 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
             \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 
 " ignore
-
 let g:which_key_map2['\'] = 'which_key_ignore'
 let g:which_key_map2['\A'] = 'which_key_ignore'
+
+" vim-airline
+let g:airline_theme = 'luna'
+let g:airline_section_b = '%{fugitive#head()}'
+let g:airline_section_z = airline#section#create(['%p%%', 'linenr', 'maxlinenr', ' '])
+let g:airline_symbols.maxlinenr = ''
+let g:airline#extensions#clock#format = '%H:%M:%S'
+
+" vim-floaterm
+nnoremap <silent> <C-z> :FloatermToggle <CR>
+tnoremap <silent> <C-z> <C-\><C-n> :FloatermToggle <CR>
+let g:floaterm_width =0.7
+let g:floaterm_height=0.7
+
+" rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+            \	'guifgs': ['#0099ff', '#00ff00', '#ff4dc3', '#ffff00', '#ff9933'],
+            \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+            \	'operators': '_,_',
+            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+            \	'separately': {
+            \		'*': {},
+            \		'tex': {
+            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+            \		},
+            \		'lisp': {
+            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+            \		},
+            \		'vim': {
+            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+            \		},
+            \		'html': {
+            \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+            \		},
+            \		'css': 0,
+            \	}
+            \}
+
+" set save
+nmap <C-s> :w!<CR>
+nmap <A-s> :wa!<CR>
+
+" exit
+nnoremap <C-x> :bd<CR>
+nnoremap <C-q> :q<CR>
+nnoremap <A-q> :q!<CR>
+nnoremap <C-n> :only<CR>
+nnoremap <C-e> :e<CR>
+
+" markdown-composer
+let g:markdown_composer_external_renderer='pandoc -f markdown -t html'
+let g:markdown_composer_autostart = 0
+
+nmap <silent><nowait><leader>ms :<C-u>ComposerStart<CR>
+nmap <silent><nowait><leader>mu :<C-u>ComposerUpdate<CR>
+nmap <silent><nowait><leader>mo :<C-u>ComposerOpen<CR>
+nmap <silent><nowait><leader>mj :<C-u>ComposerJob<CR>
+
+let g:which_key_map2.m = {
+            \ 'name' : '+markdown_preview',
+            \ 's' : 'start',
+            \ 'u' : 'update',
+            \ 'o' : 'open another tab',
+            \ 'j' : 'echoes the channel that the plugin is listening on'
+            \}
+
+" vim-mundo
+set undofile
+set undodir=/home/niuiic/.vim_undo
+nnoremap <silent><nowait> <space>uo  :<C-u>MundoToggle<CR>
+nnoremap <silent><nowait> <space>uc :<C-u>!command rm -rf /home/niuiic/.vim_undo/*<CR>
+
+let g:which_key_map1.u = {
+            \ 'name' : '+undotree',
+            \ 'o' : 'open undotree',
+            \ 'c' : 'clean history',
+            \}
+
+let g:mundo_mappings = {
+            \ '<CR>': 'preview',
+            \ 'o': 'preview',
+            \ 'j': 'move_older',
+            \ 'k': 'move_newer',
+            \ '<down>': 'move_older',
+            \ '<up>': 'move_newer',
+            \ 'J': 'move_older_write',
+            \ 'K': 'move_newer_write',
+            \ 'gg': 'move_top',
+            \ 'G': 'move_bottom',
+            \ 'P': 'play_to',
+            \ 'd': 'diff',
+            \ 'i': 'toggle_inline',
+            \ '/': 'search',
+            \ 'n': 'next_match',
+            \ 'N': 'previous_match',
+            \ 'p': 'diff_current_buffer',
+            \ 'r': 'diff',
+            \ '?': 'toggle_help',
+            \ 'q': 'quit',
+            \ '<2-LeftMouse>': 'mouse_click' }
+
+" coc-todolist
+nmap <silent><nowait> <leader>tc :CocCommand todolist.create<CR>
+nmap <silent><nowait> <leader>tu :CocCommand todolist.update<CR>
+nmap <silent><nowait> <leader>td :CocCommand todolist.download<CR>
+nmap <silent><nowait> <leader>te :CocCommand todolist.export<CR>
+nmap <silent><nowait> <leader>tn :CocCommand todolist.closeNotice<CR>
+nmap <silent><nowait> <leader>ta :CocCommand todolist.clear<CR>
+nmap <silent><nowait> <leader>tb :CocCommand todolist.browserOpenGist<CR>
+nmap <silent><nowait> <leader>tl :CocList todolist<CR>
+
+let g:which_key_map2.t ={
+            \ 'name' : '+todolist',
+            \ 'c' : 'create',
+            \ 'u' : 'update',
+            \ 'd' : 'download',
+            \ 'e' : 'export',
+            \ 'n' : 'close notice',
+            \ 'a' : 'clear',
+            \ 'b' : 'open in browser',
+            \ 'l' : 'open in coc list'
+            \}
+
+" syn off and enable
+nmap <silent><nowait> <leader>so :syn enable<CR>
+nmap <silent><nowait> <leader>sf :syn off<CR>
+" to fix the bug of coc.nvim when go to definition
+" au VimEnter * :syn off<CR>
+" au VimEnter * :syn enable<CR>
+
+" quickfix
+au VimEnter * :set makeprg=make
+nnoremap <silent><nowait> <space>qs :<C-u>set makeprg=
+nnoremap <silent><nowait> <space>qo :<C-u>cope25<CR>
+nnoremap <silent><nowait> <space>qm :<C-u>make<CR>
+nnoremap <silent><nowait> <space>qc :<C-u>cclose<CR>
+nnoremap <silent><nowait> <space>qw :<C-u>write! build.log<CR>
+nnoremap <silent><nowait> <space>qe :<C-u>set modifiable<CR>
+
+nmap <A-j> :cnext<CR>
+nmap <A-k> :cprev<CR>
+nmap <A-g> :cfirst<CR>
+nmap <A-G> :clast<CR>
+
+let g:which_key_map1.q = {
+            \ 'name' : '+quickfix',
+            \ 's' : 'set compile cmd',
+            \ 'o' : 'open quickfix window',
+            \ 'm' : 'make',
+            \ 'c' : 'close quickfix window',
+            \ 'e' : 'set quickfix list modifiable',
+            \ 'w' : 'write quickfix list to a file'
+            \}
+
+" fold
+set nofoldenable
+syntax on
+
+" suda.vim
+let g:suda_smart_edit = 1
+
+" coc-yank
+nnoremap <silent> <space>p  :<C-u>CocList -A --normal yank<cr>
+let g:which_key_map1.p= 'clipboard history'
+
+" coc-prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+autocmd FileType markdown nnoremap <buffer> <AC-l> :Prettier<CR>
+
+" dashboard-nvim
+let g:dashboard_custom_header = [
+            \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+            \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+            \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+            \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+            \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+            \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+            \]
+let g:indentLine_fileTypeExclude = ['dashboard']
+nnoremap <silent><nowait> <space>sl :<C-u>SessionLoad<CR>
+nnoremap <silent><nowait> <space>ss :<C-u>SessionSave<CR>
+nnoremap <silent><nowait> <space>kf :<C-u>DashboardNewFile<CR>
+let g:which_key_map1.sl = 'load session'
+let g:which_key_map1.ss = 'save session'
+let g:which_key_map1.kf = 'create new file'
+let g:dashboard_default_executive ='clap'
+let g:dashboard_custom_shortcut={
+            \ 'last_session'       : 'SPC s l',
+            \ 'find_history'       : 'SPC o h',
+            \ 'find_file'          : 'SPC o f',
+            \ 'new_file'           : 'SPC k f',
+            \ 'change_colorscheme' : 'SPC o s',
+            \ 'find_word'          : 'SPC o g',
+            \ 'book_marks'         : 'SPC o m',
+            \ }
+
+" filetypes
+au BufRead,BufNewFile *.v set filetype=verilog
+au BufRead,BufNewFile *.asm set filetype=asm
+au BufRead,BufNewFile *.s set filetype=asm
+
+" vim-codelf
+nnoremap <silent><nowait> <space>fs :<C-u>:Codelf<space>
+nnoremap <silent><nowait> <space>fS :<C-u>CodelfOpenBrowser <space>
+let g:codelf_enable_popup_menu = 'false'
+let g:codelf_proxy_url="http://127.0.0.1:10025"
+
+let g:which_key_map1.f = {
+            \ 'name' : '+codelf',
+            \ 's' : 'search variable names',
+            \ 'S' : 'search variable names on the brower',
+            \ }
+
+" vim-illuminate
+let g:Illuminate_delay = 100
+augroup illuminate_augroup
+    autocmd!
+    autocmd VimEnter * hi illuminatedCurWord cterm=italic gui=italic
+augroup END
+augroup illuminate_augroup
+    autocmd!
+    autocmd VimEnter * hi link illuminatedWord CursorLine
+augroup END
+
+" vim-smooth-scroll
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*4, 0, 8)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*4, 0, 8)<CR>
+
+" coc-explorer
+nnoremap <leader>p :CocCommand explorer --quit-on-open<CR>
+let which_key_map2.p ='file tree'
+
+" vista.vim
+function! NearestMethodOrFunction() abort
+    return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'ctags'
+let g:vista_executive_for = {
+            \ 'cpp' : 'coc',
+            \ 'rust' : 'coc'
+            \ }
+let g:vista_ctags_cmd = {
+            \ 'haskell': 'hasktags -x -o - -c',
+            \ }
+let g:vista_fzf_preview = ['right:50%']
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+            \   "function": "\uf794",
+            \   "variable": "\uf71b",
+            \  }
+nnoremap <silent><nowait> <space>m :<C-u>Vista!!<cr>
+let g:which_key_map1.m = 'show file tags'
+
+" verilog_systemverilog
+set foldmethod=syntax
+nnoremap <Leader>ii :VerilogFollowInstance<CR>
+nnoremap <Leader>ip :VerilogFollowPort<CR>
+
+let g:which_key_map2.i = {
+            \ 'name' : '+verilog',
+            \ 'i' : 'follow a module instance to its module declaration',
+            \ 'p' : 'navigate to the module declaration and immediately searching for that port',
+            \ }
+
+" vim-easymotion
+map  f <Plug>(easymotion-bd-f)
+nmap f <Plug>(easymotion-overwin-f)
+
+" Move to line
+map <silent><nowait> <space>l  <Plug>(easymotion-bd-jk)
+nmap <silent><nowait> <space>l  <Plug>(easymotion-bd-jk)
+
+" Move to word
+map  F  <Plug>(easymotion-bd-w)
+nmap F  <Plug>(easymotion-overwin-w)
+
+" To replace /
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
+let g:which_key_map1.l = 'move to line'
+let g:which_key_map1.w = 'move to word'
+
+
+" cancel hide
+autocmd FileType json,markdown let g:indentLine_conceallevel=0
+autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine_conceallevel=2
+
+" fcitx.vim
+inoremap <C-c> <esc>
+let g:ttimeoutlen=100
+
+" coc-pairs
+autocmd FileType tex,markdown let b:coc_pairs = [["$", "$"]]
+autocmd FileType rust let b:coc_pairs_disabled = ["'"]
+autocmd FileType c let b:coc_pairs_disabled = ["<", ">"]
+autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
+
+" vim-clap & leaderf
+let g:clap_theme = 'material_design_dark'
+nnoremap <silent><nowait> <space>op  :<C-u>Clap<CR>
+nnoremap <silent><nowait> <space>ob  :<C-u>Leaderf buffer<CR>
+nnoremap <silent><nowait> <space>oc  :<C-u>Clap command<CR>
+nnoremap <silent><nowait> <space>oh  :<C-u>Clap history<CR>
+nnoremap <silent><nowait> <space>of  :<C-u>Clap files ++finder=rg --ignore --hidden --files<CR>
+nnoremap <silent><nowait> <space>oq  :<C-u>Leaderf quickfix<CR>
+nnoremap <silent><nowait> <space>oj  :<C-u>Clap jumps<CR>
+nnoremap <silent><nowait> <space>om  :<C-u>Clap marks<CR>
+nnoremap <silent><nowait> <space>ow  :<C-u>Clap windows<CR>
+nnoremap <silent><nowait> <space>ot  :<C-u>Clap tags<CR>
+nnoremap <silent><nowait> <space>oT  :<C-u>Clap proj_tags<CR>
+nnoremap <silent><nowait> <space>os  :<C-u>Clap colors<CR>
+nnoremap <silent><nowait> <space>og :<C-u>Leaderf rg<CR>
+nnoremap <silent><nowait> <space>ol :<C-u>Clap lines<CR>
+nnoremap <silent><nowait> <space>oy :<C-u>Clap yanks<CR>
+nnoremap <silent><nowait> <space>ok :<C-u>Leaderf --nowrap task<CR>
+
+let g:which_key_map1.o = {
+            \ 'name' : '+clap',
+            \ 'p' : 'clap',
+            \ 'b' : 'buffers',
+            \ 'c' : 'command',
+            \ 'h' : 'file history',
+            \ 'f' : 'search file',
+            \ 'q' : 'quickfix list',
+            \ 'j' : 'jumps',
+            \ 'm' : 'marks',
+            \ 'w' : 'windows',
+            \ 'T' : 'tags in project',
+            \ 't' : 'tags in current file',
+            \ 's' : 'colors',
+            \ 'g' : 'find word',
+            \ 'l' : 'line',
+            \ 'y' : 'yanks',
+            \ 'k' : 'tasks',
+            \ }
+
+" nerdcommenter
+
+let g:NERDSpaceDelims=1
+map <C-a> <Leader>c<space>
+" let g:NERDCustomDelimiters = { 'c': { 'left': '/*', 'right': '*/' } }
+let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
+
+" vim-fugitive
+
+nnoremap <silent><nowait> <space>ag :<C-u>G<space>
+nnoremap <silent><nowait> <space>ac :<C-u>G commit -m<space>
+nnoremap <silent><nowait> <space>al :<C-u>G log<CR>
+nnoremap <silent><nowait> <space>ab :<C-u>G blame<CR>
+nnoremap <silent><nowait> <space>as :<C-u>Gstatus<CR>
+nnoremap <silent><nowait> <space>ar :<C-u>Gread<CR>
+nnoremap <silent><nowait> <space>aw :<C-u>Gwrite<CR>
+nnoremap <silent><nowait> <space>ap :<C-u>Ggrep<space>
+nnoremap <silent><nowait> <space>av :<C-u>GMove<space>
+nnoremap <silent><nowait> <space>ae :<C-u>GDelete<CR>
+
+let g:which_key_map1.a = {
+            \ 'name' : '+git',
+            \ 'g' : 'git command',
+            \ 'c' : 'git commit',
+            \ 'l' : 'git log',
+            \ 'b' : 'git blame',
+            \ 's' : 'git status',
+            \ 'r' : 'git checkout current file',
+            \ 'w' : 'git add current file',
+            \ 'p' : 'git grep',
+            \ 'v' : 'git move',
+            \ 'e' : 'git delete current file'
+            \}
+
+" vim-gitgutter
+nnoremap <silent><nowait> <space>hq :<C-u>GitGutterQuickFix<CR>
+nnoremap <silent><nowait> <space>hs :<C-u>GitGutterStageHunk<CR>
+nnoremap <silent><nowait> <space>hu :<C-u>GitGutterUndoHunk<CR>
+nnoremap <silent><nowait> <space>hp :<C-u>GitGutterPreviewHunk<CR>
+nnoremap <silent><nowait> <space>hf :<C-u>GitGutterFold<CR>
+
+let g:which_key_map1.h = {
+            \ 'name' : '+git_diff',
+            \ 'q' : 'open diff in quickfix window',
+            \ 's' : 'stage the diff',
+            \ 'u' : 'undo the diff',
+            \ 'p' : 'preview the diff',
+            \ 'f' : 'fold unchanged lines',
+            \}
+
+" asynctasks.vim
+
+nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
+nnoremap <silent><nowait> <space>sb :<C-u>:AsyncTask project-build<CR>
+nnoremap <silent><nowait> <space>st :<C-u>:AsyncTask project-test<CR>
+nnoremap <silent><nowait> <space>sd :<C-u>:AsyncTask project-debug<CR>
+nnoremap <silent><nowait> <space>sB :<C-u>:AsyncTask project-concrete-build<CR>
+nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-concrete-run<CR>
+nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
+nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
+nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
+nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
+nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
+nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
+let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg','.yarn','.gitignore']
+let g:asynctasks_term_pos = 'bottom'
+let g:asynctasks_term_rows = 10
+let g:asynctasks_term_cols = 80
+let g:asynctasks_term_focus=0
+let g:asynctasks_confirm = 0
+
+let g:which_key_map1.s = {
+            \ 'name' : '+asynctasks',
+            \ 'R' : 'run project (concrete)',
+            \ 'B' : 'build project (concrete)',
+            \ 'T' : 'test project (concrete)',
+            \ 'b' : 'build project',
+            \ 't' : 'test project',
+            \ 'r' : 'run project',
+            \ 'd' : 'debug project',
+            \ 'D' : 'debug project (concrete)',
+            \ 'c' : 'clean project',
+            \ 'e' : 'edit config',
+            \ 'E' : 'edit global config',
+            \}
+
+let g:asynctasks_config_name = '.task.ini'
+let g:asyncrun_open = 25
+
+function! s:lf_task_source(...)
+    let rows = asynctasks#source(&columns * 48 / 100)
+    let source = []
+    for row in rows
+        let name = row[0]
+        let source += [name . '  ' . row[1] . '  : ' . row[2]]
+    endfor
+    return source
+endfunction
+
+
+function! s:lf_task_accept(line, arg)
+    let pos = stridx(a:line, '<')
+    if pos < 0
+        return
+    endif
+    let name = strpart(a:line, 0, pos)
+    let name = substitute(name, '^\s*\(.\{-}\)\s*$', '\1', '')
+    if name != ''
+        exec "AsyncTask " . name
+    endif
+endfunction
+
+function! s:lf_task_digest(line, mode)
+    let pos = stridx(a:line, '<')
+    if pos < 0
+        return [a:line, 0]
+    endif
+    let name = strpart(a:line, 0, pos)
+    return [name, 0]
+endfunction
+
+function! s:lf_win_init(...)
+    setlocal nonumber
+    setlocal nowrap
+endfunction
+
+
+let g:Lf_Extensions = get(g:, 'Lf_Extensions', {})
+let g:Lf_Extensions.task = {
+            \ 'source': string(function('s:lf_task_source'))[10:-3],
+            \ 'accept': string(function('s:lf_task_accept'))[10:-3],
+            \ 'get_digest': string(function('s:lf_task_digest'))[10:-3],
+            \ 'highlights_def': {
+            \     'Lf_hl_funcScope': '^\S\+',
+            \     'Lf_hl_funcDirname': '^\S\+\s*\zs<.*>\ze\s*:',
+            \ },
+            \ 'help' : 'navigate available tasks from asynctasks.vim',
+            \ }
+
+" highlight some keywords
+
+au BufEnter * :match Todo /FIXME\|TODO\|NOTE\|KEY\|IDEA\|CHANGED\|IDEA/
+
+" modify file encoding
+nmap <silent><nowait> <leader>e :set fenc=utf8<CR>
+set fencs=utf-8,gbk,big5,cp936,gb18030,gb2312,utf-16
+let g:which_key_map2.e = "modify file encoding"
+
+" coc-go
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " theme
 colorscheme space-vim-dark
@@ -133,9 +573,12 @@ hi SignColumn ctermbg=NONE guibg=NONE
 hi Comment guifg=#00ffff ctermfg=NONE
 let g:space_vim_dark_background = 236
 
-" set save
-nmap <C-s> :w!<CR>
-nmap <A-s> :wa!<CR>
+" vim-zoom
+map <c-w>o <c-w>m
+
+" coc-spell-checker
+vmap <C-p> <Plug>(coc-codeaction-selected)<CR>
+nmap <C-p> <Plug>(coc-codeaction-selected)<CR>
 
 " format
 autocmd FileType * nnoremap <AC-l> :Format<CR>
@@ -205,140 +648,85 @@ let g:which_key_map1.t = {
             \ 'r' : 'replace',
             \ }
 
-" fcitx.vim
-inoremap <C-c> <esc>
+" vim-matchup
+lua require('plugins/VimMatchUp')
 
-" coc-pairs
-autocmd FileType tex,markdown let b:coc_pairs = [["$", "$"]]
-autocmd FileType rust let b:coc_pairs_disabled = ["'"]
-autocmd FileType c let b:coc_pairs_disabled = ["<", ">"]
-autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
-
-" vim-clap & leaderf
-let g:clap_theme = 'material_design_dark'
-nnoremap <silent><nowait> <space>op  :<C-u>Clap<CR>
-nnoremap <silent><nowait> <space>ob  :<C-u>Leaderf buffer<CR>
-nnoremap <silent><nowait> <space>oc  :<C-u>Clap command<CR>
-nnoremap <silent><nowait> <space>oh  :<C-u>Clap history<CR>
-nnoremap <silent><nowait> <space>of  :<C-u>Clap files ++finder=rg --ignore --hidden --files<CR>
-nnoremap <silent><nowait> <space>oq  :<C-u>Leaderf quickfix<CR>
-nnoremap <silent><nowait> <space>oj  :<C-u>Clap jumps<CR>
-nnoremap <silent><nowait> <space>om  :<C-u>Clap marks<CR>
-nnoremap <silent><nowait> <space>ow  :<C-u>Clap windows<CR>
-nnoremap <silent><nowait> <space>ot  :<C-u>Clap tags<CR>
-nnoremap <silent><nowait> <space>oT  :<C-u>Clap proj_tags<CR>
-nnoremap <silent><nowait> <space>os  :<C-u>Clap colors<CR>
-nnoremap <silent><nowait> <space>og :<C-u>Leaderf rg<CR>
-nnoremap <silent><nowait> <space>ol :<C-u>Clap lines<CR>
-nnoremap <silent><nowait> <space>oy :<C-u>Clap yanks<CR>
-nnoremap <silent><nowait> <space>ok :<C-u>Leaderf --nowrap task<CR>
-
-let g:which_key_map1.o = {
-            \ 'name' : '+clap',
-            \ 'p' : 'clap',
-            \ 'b' : 'buffers',
-            \ 'c' : 'command',
-            \ 'h' : 'file history',
-            \ 'f' : 'search file',
-            \ 'q' : 'quickfix list',
-            \ 'j' : 'jumps',
-            \ 'm' : 'marks',
-            \ 'w' : 'windows',
-            \ 'T' : 'tags in project',
-            \ 't' : 'tags in current file',
-            \ 's' : 'colors',
-            \ 'g' : 'find word',
-            \ 'l' : 'line',
-            \ 'y' : 'yanks',
-            \ 'k' : 'tasks',
-            \ }
-
-" exit
-nnoremap <C-x> :bd<CR>
-nnoremap <C-q> :q<CR>
-nnoremap <A-q> :q!<CR>
-nnoremap <C-n> :only<CR>
-nnoremap <C-e> :e<CR>
-
-" vim-easymotion
-map  f <Plug>(easymotion-bd-f)
-nmap f <Plug>(easymotion-overwin-f)
-
-" Move to line
-map <silent><nowait> <space>l  <Plug>(easymotion-bd-jk)
-nmap <silent><nowait> <space>l  <Plug>(easymotion-bd-jk)
-
-" Move to word
-map  F  <Plug>(easymotion-bd-w)
-nmap F  <Plug>(easymotion-overwin-w)
-
-" To replace /
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-let g:which_key_map1.l = 'move to line'
-let g:which_key_map1.w = 'move to word'
-
-" vim-floaterm
-nnoremap <silent> <C-z> :FloatermToggle <CR>
-tnoremap <silent> <C-z> <C-\><C-n> :FloatermToggle <CR>
-
-let g:floaterm_width =0.7
-
-let g:floaterm_height=0.7
-
-" cancel hide
-autocmd FileType json,markdown let g:indentLine_conceallevel=0
-autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine_conceallevel=2
-
-" verilog_systemverilog
-set foldmethod=syntax
-nnoremap <Leader>ii :VerilogFollowInstance<CR>
-nnoremap <Leader>ip :VerilogFollowPort<CR>
-
-let g:which_key_map2.i = {
-            \ 'name' : '+verilog',
-            \ 'i' : 'follow a module instance to its module declaration',
-            \ 'p' : 'navigate to the module declaration and immediately searching for that port',
-            \ }
-
-" vista.vim
-function! NearestMethodOrFunction() abort
-    return get(b:, 'vista_nearest_method_or_function', '')
+" vim-buffet
+noremap <C-k> :bn<CR>
+noremap <C-j> :bp<CR>
+let g:buffet_powerline_separators = 1
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+let g:buffet_show_index = 1
+let g:buffet_modified_icon = '*'
+let g:buffet_new_buffer_name = '+'
+let g:buffet_hidden_buffers = ['terminal', 'quickfix']
+function! g:BuffetSetCustomColors()
+    hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00ffff
+    hi! BuffetModBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#ff33cc
+    hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
+    hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
 endfunction
 
-set statusline+=%{NearestMethodOrFunction()}
+" vimspector
+nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
+nmap <A-n> <Plug>VimspectorStepOver
+nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
+nmap <A-b> <Plug>VimspectorToggleBreakpoint
+nmap <silent><nowait><space>ds <Plug>VimspectorContinue
+nmap <silent><nowait><space>dr <Plug>VimspectorRestart
+nmap <silent><nowait><space>dp <Plug>VimspectorPause
+nmap <silent><nowait><space>da <Plug>VimspectorStop
+nmap <silent><nowait><space>df <Plug>VimspectorAddFunctionBreakpoint
+nmap <silent><nowait><space>dc <Plug>VimspectorToggleConditionalBreakpoint
+nmap <silent><nowait><space>do <Plug>VimspectorStepOut
+nmap <silent><nowait><space>du <Plug>VimspectorUpFrame
+nmap <silent><nowait><space>dd <Plug>VimspectorDownFrame
+nmap <silent><nowait><space>dt <Plug>VimspectorRunToCursor
+nmap <silent><nowait><space>dq :<C-u>VimspectorReset<CR>
+nmap <A-t> <Plug>VimspectorRunToCursor
+nmap <A-o> <Plug>VimspectorStepOut
+nmap <silent><nowait><space>di <Plug>VimspectorStepInto
+nmap <A-i> <Plug>VimspectorStepInto
+nmap <silent><nowait><space>dlc <Plug>VimspectorShowOutput Console<CR>
+nmap <silent><nowait><space>dld <Plug>VimspectorShowOutput stderr<CR>
+nmap <silent><nowait><space>dlo <Plug>VimspectorShowOutput Vimspector-out<CR>
+nmap <silent><nowait><space>dle <Plug>VimspectorShowOutput Vimspector-err<CR>
+nmap <silent><nowait><space>dls <Plug>VimspectorShowOutput server<CR>
+nmap <silent><nowait><space>dlt <Plug>VimspectorShowOutput Telemetry<CR>
+nmap <silent><nowait><space>de :<C-u>VimspectorEval<space>
+nmap <silent><nowait><space>dw :<C-u>VimspectorWatch<space>
+nmap <A-w> :<C-u>VimspectorWatch<space>
 
-" By default vista.vim never run if you don't call it explicitly.
-
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'ctags'
-let g:vista_executive_for = {
-            \ 'cpp' : 'coc',
-            \ 'rust' : 'coc'
-            \ }
-let g:vista_ctags_cmd = {
-            \ 'haskell': 'hasktags -x -o - -c',
-            \ }
-let g:vista_fzf_preview = ['right:50%']
-let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-            \   "function": "\uf794",
-            \   "variable": "\uf71b",
-            \  }
-nnoremap <silent><nowait> <space>m :<C-u>Vista!!<cr>
-let g:which_key_map1.m = 'show file tags'
-
-" vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 1)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 1)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*4, 0, 8)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*4, 0, 8)<CR>
+let g:which_key_map1.d = {
+            \ 'name' : '+debug',
+            \ 'e' : 'eval',
+            \ 'w' : 'variable watch',
+            \ 's' : 'start or continue',
+            \ 'a' : 'stop',
+            \ 'r' : 'restart',
+            \ 'p' : 'pause',
+            \ 'b' : 'set breakpoint',
+            \ 'u' : 'move up a frame in the current call stack',
+            \ 'd' : 'move down a frame in the current call stack',
+            \ 'c' : 'set condition breakpoint',
+            \ 'f' : 'add function breakpoint',
+            \ 'n' : 'next',
+            \ 'i' : 'step in',
+            \ 'o' : 'step out',
+            \ 'q' : 'quit',
+            \ 't' : 'run to cursor',
+            \ 'l' :  {
+            \ 'name' : '+switch_output',
+            \ 'c' : 'Console',
+            \ 'd' : 'stderr',
+            \ 'o' : 'Vimspector-out',
+            \ 'e' : 'Vimspector-err',
+            \ 's' : 'server',
+            \ 't' : 'Telemetry',
+            \},
+            \}
 
 " coc.nvim
 let g:coc_snippet_prev=""
@@ -529,475 +917,23 @@ let g:which_key_map2.c = {
             \ 'z' : 'do default action for previous item',
             \ 'p' : 'resume latest coc list',
             \ }
-" Highlight of coc.nvim
-hi! CocWarningLine guifg=#C27A36
-hi! CocErrorLine guifg=#E5080D
 
-" nerdcommenter
+" coc-highlights
+" hi! CocWarningSign guifg=#C27A36
+" hi! CocErrorLine guifg=#E5080D
+hi! CocUnusedHighlight guifg=#ff33cc
 
-let g:NERDSpaceDelims=1
-map <C-a> <Leader>c<space>
-" let g:NERDCustomDelimiters = { 'c': { 'left': '/*', 'right': '*/' } }
-let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
+" diffview.nvim
+lua require('plugins/Diffview')
+nmap <silent><nowait><leader>do :<C-u>DiffviewOpen
+nmap <silent><nowait><leader>dq :<C-u>DiffviewClose<CR>
+nmap <silent><nowait><leader>dr :<C-u>DiffviewRefresh<CR>
+nmap <silent><nowait><leader>dh :<C-u>DiffviewFileHistory
 
-" coc-explorer
-
-nnoremap <leader>p :CocCommand explorer --quit-on-open<CR>
-let which_key_map2.p ='file tree'
-
-" vim-illuminate
-let g:Illuminate_delay = 100
-augroup illuminate_augroup
-    autocmd!
-    autocmd VimEnter * hi illuminatedCurWord cterm=italic gui=italic
-augroup END
-augroup illuminate_augroup
-    autocmd!
-    autocmd VimEnter * hi link illuminatedWord CursorLine
-augroup END
-
-" vim-codelf
-nnoremap <silent><nowait> <space>fs :<C-u>:Codelf<space>
-nnoremap <silent><nowait> <space>fS :<C-u>CodelfOpenBrowser <space>
-let g:codelf_enable_popup_menu = 'false'
-let g:codelf_proxy_url="http://127.0.0.1:10025"
-
-let g:which_key_map1.f = {
-            \ 'name' : '+codelf',
-            \ 's' : 'search variable names',
-            \ 'S' : 'search variable names on the brower',
-            \ }
-
-" vim-airline
-let g:airline_theme = 'luna'
-let g:airline#extensions#clock#format = '%H:%M:%S'
-
-" vim-buffet
-noremap <C-k> :bn<CR>
-noremap <C-j> :bp<CR>
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
-let g:buffet_show_index = 1
-let g:buffet_modified_icon = '*'
-let g:buffet_new_buffer_name = '+'
-let g:buffet_hidden_buffers = ['terminal', 'quickfix']
-function! g:BuffetSetCustomColors()
-    hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00ffff
-    hi! BuffetModBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#ff33cc
-    hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
-    hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
-endfunction
-
-" vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*4, 0, 8)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*4, 0, 8)<CR>
-
-" dashboard-nvim
-let g:dashboard_custom_header = [
-            \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-            \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-            \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-            \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-            \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-            \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-            \]
-let g:indentLine_fileTypeExclude = ['dashboard']
-nnoremap <silent><nowait> <space>sl :<C-u>SessionLoad<CR>
-nnoremap <silent><nowait> <space>ss :<C-u>SessionSave<CR>
-nnoremap <silent><nowait> <space>kf :<C-u>DashboardNewFile<CR>
-let g:which_key_map1.sl = 'load session'
-let g:which_key_map1.ss = 'save session'
-let g:which_key_map1.kf = 'create new file'
-let g:dashboard_default_executive ='clap'
-let g:dashboard_custom_shortcut={
-            \ 'last_session'       : 'SPC s l',
-            \ 'find_history'       : 'SPC o h',
-            \ 'find_file'          : 'SPC o f',
-            \ 'new_file'           : 'SPC k f',
-            \ 'change_colorscheme' : 'SPC o s',
-            \ 'find_word'          : 'SPC o g',
-            \ 'book_marks'         : 'SPC o m',
-            \ }
-
-" filetypes
-au BufRead,BufNewFile *.v set filetype=verilog
-au BufRead,BufNewFile *.asm set filetype=asm
-au BufRead,BufNewFile *.s set filetype=asm
-
-" vimspector
-set packpath=/home/niuiic/.local/share/nvim
-nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
-nmap <A-n> <Plug>VimspectorStepOver
-nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
-nmap <A-b> <Plug>VimspectorToggleBreakpoint
-nmap <silent><nowait><space>ds <Plug>VimspectorContinue
-nmap <silent><nowait><space>dr <Plug>VimspectorRestart
-nmap <silent><nowait><space>dp <Plug>VimspectorPause
-nmap <silent><nowait><space>da <Plug>VimspectorStop
-nmap <silent><nowait><space>df <Plug>VimspectorAddFunctionBreakpoint
-nmap <silent><nowait><space>dc <Plug>VimspectorToggleConditionalBreakpoint
-nmap <silent><nowait><space>do <Plug>VimspectorStepOut
-nmap <silent><nowait><space>du <Plug>VimspectorUpFrame
-nmap <silent><nowait><space>dd <Plug>VimspectorDownFrame
-nmap <silent><nowait><space>dt <Plug>VimspectorRunToCursor
-nmap <silent><nowait><space>dq :<C-u>VimspectorReset<CR>
-nmap <A-t> <Plug>VimspectorRunToCursor
-nmap <A-o> <Plug>VimspectorStepOut
-nmap <silent><nowait><space>di <Plug>VimspectorStepInto
-nmap <A-i> <Plug>VimspectorStepInto
-nmap <silent><nowait><space>dlc <Plug>VimspectorShowOutput Console<CR>
-nmap <silent><nowait><space>dld <Plug>VimspectorShowOutput stderr<CR>
-nmap <silent><nowait><space>dlo <Plug>VimspectorShowOutput Vimspector-out<CR>
-nmap <silent><nowait><space>dle <Plug>VimspectorShowOutput Vimspector-err<CR>
-nmap <silent><nowait><space>dls <Plug>VimspectorShowOutput server<CR>
-nmap <silent><nowait><space>dlt <Plug>VimspectorShowOutput Telemetry<CR>
-nmap <silent><nowait><space>de :<C-u>VimspectorEval<space>
-nmap <silent><nowait><space>dw :<C-u>VimspectorWatch<space>
-nmap <A-w> :<C-u>VimspectorWatch<space>
-
-let g:which_key_map1.d = {
-            \ 'name' : '+debug',
-            \ 'e' : 'eval',
-            \ 'w' : 'variable watch',
-            \ 's' : 'start or continue',
-            \ 'a' : 'stop',
-            \ 'r' : 'restart',
-            \ 'p' : 'pause',
-            \ 'b' : 'set breakpoint',
-            \ 'u' : 'move up a frame in the current call stack',
-            \ 'd' : 'move down a frame in the current call stack',
-            \ 'c' : 'set condition breakpoint',
-            \ 'f' : 'add function breakpoint',
-            \ 'n' : 'next',
-            \ 'i' : 'step in',
-            \ 'o' : 'step out',
-            \ 'q' : 'quit',
-            \ 't' : 'run to cursor',
-            \ 'l' :  {
-            \ 'name' : '+switch_output',
-            \ 'c' : 'Console',
-            \ 'd' : 'stderr',
-            \ 'o' : 'Vimspector-out',
-            \ 'e' : 'Vimspector-err',
-            \ 's' : 'server',
-            \ 't' : 'Telemetry',
-            \},
-            \}
-
-" coc-yank
-nnoremap <silent> <space>p  :<C-u>CocList -A --normal yank<cr>
-
-let g:which_key_map1.p= 'clipboard history'
-
-" markdown-composer
-let g:markdown_composer_external_renderer='pandoc -f markdown -t html'
-let g:markdown_composer_autostart = 0
-
-nmap <silent><nowait><leader>ms :<C-u>ComposerStart<CR>
-nmap <silent><nowait><leader>mu :<C-u>ComposerUpdate<CR>
-nmap <silent><nowait><leader>mo :<C-u>ComposerOpen<CR>
-nmap <silent><nowait><leader>mj :<C-u>ComposerJob<CR>
-
-let g:which_key_map2.m = {
-            \ 'name' : '+markdown_preview',
-            \ 's' : 'start',
-            \ 'u' : 'update',
-            \ 'o' : 'open another tab',
-            \ 'j' : 'echoes the channel that the plugin is listening on'
-            \}
-
-" coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-autocmd FileType markdown nnoremap <buffer> <AC-l> :Prettier<CR>
-
-" suda.vim
-let g:suda_smart_edit = 1
-
-" vim-mundo
-set undofile
-set undodir=/home/niuiic/.vim_undo
-nnoremap <silent><nowait> <space>uo  :<C-u>MundoToggle<CR>
-nnoremap <silent><nowait> <space>uc :<C-u>!command rm -rf /home/niuiic/.vim_undo/*<CR>
-
-let g:which_key_map1.u = {
-            \ 'name' : '+undotree',
-            \ 'o' : 'open undotree',
-            \ 'c' : 'clean history',
-            \}
-
-let g:mundo_mappings = {
-            \ '<CR>': 'preview',
-            \ 'o': 'preview',
-            \ 'j': 'move_older',
-            \ 'k': 'move_newer',
-            \ '<down>': 'move_older',
-            \ '<up>': 'move_newer',
-            \ 'J': 'move_older_write',
-            \ 'K': 'move_newer_write',
-            \ 'gg': 'move_top',
-            \ 'G': 'move_bottom',
-            \ 'P': 'play_to',
-            \ 'd': 'diff',
-            \ 'i': 'toggle_inline',
-            \ '/': 'search',
-            \ 'n': 'next_match',
-            \ 'N': 'previous_match',
-            \ 'p': 'diff_current_buffer',
-            \ 'r': 'diff',
-            \ '?': 'toggle_help',
-            \ 'q': 'quit',
-            \ '<2-LeftMouse>': 'mouse_click' }
-
-" vim-dirdiff
-nmap <silent><nowait> <leader>f :DirDif<space>
-let g:which_key_map2.f = 'vim diff'
-
-" coc-todolist
-nmap <silent><nowait> <leader>tc :CocCommand todolist.create<CR>
-nmap <silent><nowait> <leader>tu :CocCommand todolist.update<CR>
-nmap <silent><nowait> <leader>td :CocCommand todolist.download<CR>
-nmap <silent><nowait> <leader>te :CocCommand todolist.export<CR>
-nmap <silent><nowait> <leader>tn :CocCommand todolist.closeNotice<CR>
-nmap <silent><nowait> <leader>ta :CocCommand todolist.clear<CR>
-nmap <silent><nowait> <leader>tb :CocCommand todolist.browserOpenGist<CR>
-nmap <silent><nowait> <leader>tl :CocList todolist<CR>
-
-let g:which_key_map2.t ={
-            \ 'name' : '+todolist',
-            \ 'c' : 'create',
-            \ 'u' : 'update',
-            \ 'd' : 'download',
-            \ 'e' : 'export',
-            \ 'n' : 'close notice',
-            \ 'a' : 'clear',
-            \ 'b' : 'open in browser',
-            \ 'l' : 'open in coc list'
-            \}
-
-" syn off and enable
-nmap <silent><nowait> <leader>so :syn enable<CR>
-nmap <silent><nowait> <leader>sf :syn off<CR>
-" to fix the bug of coc.nvim when go to definition
-" au VimEnter * :syn off<CR>
-" au VimEnter * :syn enable<CR>
-
-" quickfix
-au VimEnter * :set makeprg=make
-nnoremap <silent><nowait> <space>qs :<C-u>set makeprg=
-nnoremap <silent><nowait> <space>qo :<C-u>cope25<CR>
-nnoremap <silent><nowait> <space>qm :<C-u>make<CR>
-nnoremap <silent><nowait> <space>qc :<C-u>cclose<CR>
-nnoremap <silent><nowait> <space>qw :<C-u>write! build.log<CR>
-nnoremap <silent><nowait> <space>qe :<C-u>set modifiable<CR>
-
-nmap <A-j> :cnext<CR>
-nmap <A-k> :cprev<CR>
-nmap <A-g> :cfirst<CR>
-nmap <A-G> :clast<CR>
-
-let g:which_key_map1.q = {
-            \ 'name' : '+quickfix',
-            \ 's' : 'set compile cmd',
-            \ 'o' : 'open quickfix window',
-            \ 'm' : 'make',
-            \ 'c' : 'close quickfix window',
-            \ 'e' : 'set quickfix list modifiable',
-            \ 'w' : 'write quickfix list to a file'
-            \}
-
-" fold
-set nofoldenable
-syntax on
-
-" vim-fugitive
-
-nnoremap <silent><nowait> <space>ag :<C-u>G<space>
-nnoremap <silent><nowait> <space>ac :<C-u>G commit -m<space>
-nnoremap <silent><nowait> <space>al :<C-u>G log<CR>
-nnoremap <silent><nowait> <space>ab :<C-u>G blame<CR>
-nnoremap <silent><nowait> <space>as :<C-u>Gstatus<CR>
-nnoremap <silent><nowait> <space>ar :<C-u>Gread<CR>
-nnoremap <silent><nowait> <space>aw :<C-u>Gwrite<CR>
-nnoremap <silent><nowait> <space>ap :<C-u>Ggrep<space>
-nnoremap <silent><nowait> <space>av :<C-u>GMove<space>
-nnoremap <silent><nowait> <space>ae :<C-u>GDelete<CR>
-
-let g:which_key_map1.a = {
-            \ 'name' : '+git',
-            \ 'g' : 'git command',
-            \ 'c' : 'git commit',
-            \ 'l' : 'git log',
-            \ 'b' : 'git blame',
-            \ 's' : 'git status',
-            \ 'r' : 'git checkout current file',
-            \ 'w' : 'git add current file',
-            \ 'p' : 'git grep',
-            \ 'v' : 'git move',
-            \ 'e' : 'git delete current file'
-            \}
-
-" vim-gitgutter
-nnoremap <silent><nowait> <space>hq :<C-u>GitGutterQuickFix<CR>
-nnoremap <silent><nowait> <space>hs :<C-u>GitGutterStageHunk<CR>
-nnoremap <silent><nowait> <space>hu :<C-u>GitGutterUndoHunk<CR>
-nnoremap <silent><nowait> <space>hp :<C-u>GitGutterPreviewHunk<CR>
-nnoremap <silent><nowait> <space>hf :<C-u>GitGutterFold<CR>
-
-let g:which_key_map1.h = {
-            \ 'name' : '+git_diff',
-            \ 'q' : 'open diff in quickfix window',
-            \ 's' : 'stage the diff',
-            \ 'u' : 'undo the diff',
-            \ 'p' : 'preview the diff',
-            \ 'f' : 'fold unchanged lines',
-            \}
-
-" asynctasks.vim
-
-nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
-nnoremap <silent><nowait> <space>sb :<C-u>:AsyncTask project-build<CR>
-nnoremap <silent><nowait> <space>st :<C-u>:AsyncTask project-test<CR>
-nnoremap <silent><nowait> <space>sd :<C-u>:AsyncTask project-debug<CR>
-nnoremap <silent><nowait> <space>sB :<C-u>:AsyncTask project-concrete-build<CR>
-nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-concrete-run<CR>
-nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
-nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
-nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
-nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
-nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
-nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
-let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg','.yarn','.gitignore']
-let g:asynctasks_term_pos = 'bottom'
-let g:asynctasks_term_rows = 10
-let g:asynctasks_term_cols = 80
-let g:asynctasks_term_focus=0
-let g:asynctasks_confirm = 0
-
-let g:which_key_map1.s = {
-            \ 'name' : '+asynctasks',
-            \ 'R' : 'run project (concrete)',
-            \ 'B' : 'build project (concrete)',
-            \ 'T' : 'test project (concrete)',
-            \ 'b' : 'build project',
-            \ 't' : 'test project',
-            \ 'r' : 'run project',
-            \ 'd' : 'debug project',
-            \ 'D' : 'debug project (concrete)',
-            \ 'c' : 'clean project',
-            \ 'e' : 'edit config',
-            \ 'E' : 'edit global config',
-            \}
-
-let g:asynctasks_config_name = '.task.ini'
-let g:asyncrun_open = 25
-
-function! s:lf_task_source(...)
-    let rows = asynctasks#source(&columns * 48 / 100)
-    let source = []
-    for row in rows
-        let name = row[0]
-        let source += [name . '  ' . row[1] . '  : ' . row[2]]
-    endfor
-    return source
-endfunction
-
-
-function! s:lf_task_accept(line, arg)
-    let pos = stridx(a:line, '<')
-    if pos < 0
-        return
-    endif
-    let name = strpart(a:line, 0, pos)
-    let name = substitute(name, '^\s*\(.\{-}\)\s*$', '\1', '')
-    if name != ''
-        exec "AsyncTask " . name
-    endif
-endfunction
-
-function! s:lf_task_digest(line, mode)
-    let pos = stridx(a:line, '<')
-    if pos < 0
-        return [a:line, 0]
-    endif
-    let name = strpart(a:line, 0, pos)
-    return [name, 0]
-endfunction
-
-function! s:lf_win_init(...)
-    setlocal nonumber
-    setlocal nowrap
-endfunction
-
-
-let g:Lf_Extensions = get(g:, 'Lf_Extensions', {})
-let g:Lf_Extensions.task = {
-            \ 'source': string(function('s:lf_task_source'))[10:-3],
-            \ 'accept': string(function('s:lf_task_accept'))[10:-3],
-            \ 'get_digest': string(function('s:lf_task_digest'))[10:-3],
-            \ 'highlights_def': {
-            \     'Lf_hl_funcScope': '^\S\+',
-            \     'Lf_hl_funcDirname': '^\S\+\s*\zs<.*>\ze\s*:',
-            \ },
-            \ 'help' : 'navigate available tasks from asynctasks.vim',
-            \ }
-
-" highlight some keywords
-
-au BufEnter * :match Todo /FIXME\|TODO\|NOTE\|KEY\|IDEA\|CHANGED\|IDEA/
-
-" modify file encoding
-nmap <silent><nowait> <leader>e :set fenc=utf8<CR>
-set fencs=utf-8,gbk,big5,cp936,gb18030,gb2312,utf-16
-let g:which_key_map2.e = "modify file encoding"
-
-" coc-go
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
-" vim-zoom
-map <c-w>o <c-w>m
-
-" coc-spell-checker
-vmap <A-s> <Plug>(coc-codeaction-selected)<CR>
-nmap <A-s> <Plug>(coc-codeaction-selected)<CR>
-
-" vim-matchup & nvim-ts-rainbow
-
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-matchup = {
-enable = true,  -- mandatory, false will disable the whole extension
-disable = {},  -- optional, list of language that will be disabled
-disable_virtual_text = true,
-include_match_words = {},
-},
-}
-EOF
-
-" rainbow
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-            \	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-            \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-            \	'operators': '_,_',
-            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-            \	'separately': {
-            \		'*': {},
-            \		'tex': {
-            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-            \		},
-            \		'lisp': {
-            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-            \		},
-            \		'vim': {
-            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-            \		},
-            \		'html': {
-            \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-            \		},
-            \		'css': 0,
-            \	}
+let g:which_key_map2.d = {
+            \ 'name' : '+diffview',
+            \ 'o' : 'diff open (HEAD~2, d4a7b0d..519b30e)',
+            \ 'q' : 'close diff windows',
+            \ 'r' : 'refresh',
+            \ 'h' : 'diff open (git) history (path to file or directory)'
             \}

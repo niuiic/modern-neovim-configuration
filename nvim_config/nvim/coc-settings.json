@@ -163,7 +163,9 @@
   "translator.toLang": "zh_CN",
   "cSpell.enabledLanguageIds": ["markdown"],
   "cSpell.userWords": [
+    "Neovim",
     "Tauri",
+    "Vimscript",
     "typeof"
   ]
 }
