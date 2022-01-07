@@ -4,17 +4,20 @@ coc-ecdict
 coc-eslint
 coc-explorer
 coc-floaterm
-coc-go Current
+coc-go
 coc-highlight
 coc-html
 coc-jedi
 coc-json
+coc-lua
 coc-markdownlint
 coc-pairs
 coc-prettier
 coc-python
 coc-rust-analyzer
 coc-snippets
+coc-sourcekit
+coc-spell-checker
 coc-sql
 coc-tasks
 coc-toml
