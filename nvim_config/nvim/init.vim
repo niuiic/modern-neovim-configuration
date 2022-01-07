@@ -365,7 +365,7 @@ autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine
 
 " fcitx.vim
 inoremap <C-c> <esc>
-let g:ttimeoutlen=100
+let g:ttimeoutlen=10
 
 " coc-pairs
 autocmd FileType tex,markdown let b:coc_pairs = [["$", "$"]]
@@ -904,6 +904,8 @@ nnoremap <silent><nowait> <leader>cj  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <leader>cz  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
+" Restart coc.nvim
+nnoremap <silent><nowait> <leader>cr  :<C-u>CocRestart<CR>
 
 let g:which_key_map2.c = {
             \ 'name' : '+coc',
@@ -916,6 +918,7 @@ let g:which_key_map2.c = {
             \ 'j' : 'do default action for next item',
             \ 'z' : 'do default action for previous item',
             \ 'p' : 'resume latest coc list',
+            \ 'r' : 'restart coc.nvim',
             \ }
 
 " coc-highlights
@@ -937,3 +940,7 @@ let g:which_key_map2.d = {
             \ 'r' : 'refresh',
             \ 'h' : 'diff open (git) history (path to file or directory)'
             \}
+
+" focus on center
+nnoremap j jzz
+nnoremap k kzz
