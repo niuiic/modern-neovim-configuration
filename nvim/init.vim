@@ -1,5 +1,5 @@
 " cSpell:disable
-"
+
 lua require('plugins')
 
 " basic settings
@@ -266,9 +266,9 @@ au BufRead,BufNewFile *.s set filetype=asm
 " vim-codelf
 nnoremap <silent><nowait> <space>fs :<C-u>:Codelf<space>
 nnoremap <silent><nowait> <space>fS :<C-u>CodelfOpenBrowser <space>
-let g:codelf_enable_popup_menu = 'false'
-let g:codelf_proxy_url="http://127.0.0.1:10025"
 
+let g:codelf_enable_popup_menu = 'true'
+let g:codelf_proxy_url='http://127.0.0.1:10025'
 let g:which_key_map1.f = {
             \ 'name' : '+codelf',
             \ 's' : 'search variable names',
@@ -365,7 +365,7 @@ autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine
 
 " fcitx.vim
 inoremap <C-c> <esc>
-let g:ttimeoutlen=10
+" let g:ttimeoutlen=10
 
 " coc-pairs
 autocmd FileType tex,markdown let b:coc_pairs = [["$", "$"]]

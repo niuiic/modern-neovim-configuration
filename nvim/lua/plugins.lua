@@ -27,7 +27,7 @@ return require('packer').startup({
         use 'easymotion/vim-easymotion'
         use 'Yggdroot/indentLine'
         use 'honza/vim-snippets'
-        use 'lilydjwg/fcitx.vim'
+        -- use 'lilydjwg/fcitx.vim'
         use 'xolox/vim-misc'
         use {'cespare/vim-toml', ft = 'toml'}
         use {'liuchengxu/vim-clap', run = ':Clap install-binary'}
