@@ -155,7 +155,6 @@
   },
   "sourcekit.commandPath": "/home/niuiic/Applications/Swift/swift/usr/bin/sourcekit-lsp",
   "vetur.useWorkspaceDependencies": true,
-  "tsserver.log": "verbose",
   "eslint.packageManager": "yarn",
   "eslint.nodePath": ".yarn/sdks",
   "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets",
