@@ -577,8 +577,9 @@ let g:space_vim_dark_background = 236
 map <c-w>o <c-w>m
 
 " coc-spell-checker
-vmap <C-p> <Plug>(coc-codeaction-selected)<CR>
-nmap <C-p> <Plug>(coc-codeaction-selected)<CR>
+vmap <C-p> <Plug>(coc-codeaction-selected)
+xmap <C-p> <Plug>(coc-codeaction-selected)
+nmap <C-p> <Plug>(coc-codeaction-selected)
 
 " format
 autocmd FileType * nnoremap <AC-l> :Format<CR>
@@ -906,6 +907,8 @@ nnoremap <silent><nowait> <leader>cz  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
 " Restart coc.nvim
 nnoremap <silent><nowait> <leader>cr  :<C-u>CocRestart<CR>
+" Restart tsserver
+nnoremap <silent><nowait> <leader>cR  :<C-u>CocCommand tsserver.restart<CR>
 
 let g:which_key_map2.c = {
             \ 'name' : '+coc',
@@ -919,6 +922,7 @@ let g:which_key_map2.c = {
             \ 'z' : 'do default action for previous item',
             \ 'p' : 'resume latest coc list',
             \ 'r' : 'restart coc.nvim',
+            \ 'R' : 'restart tsserver',
             \ }
 
 " coc-highlights
