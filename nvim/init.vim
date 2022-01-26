@@ -956,3 +956,6 @@ let g:which_key_map2.d = {
 " focus on center
 nnoremap j jzz
 nnoremap k kzz
+
+" coc-css
+autocmd FileType scss setl iskeyword+=@-@
