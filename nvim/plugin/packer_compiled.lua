@@ -99,6 +99,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["fcitx.vim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/fcitx.vim",
+    url = "https://github.com/lilydjwg/fcitx.vim"
+  },
   indentLine = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/indentLine",

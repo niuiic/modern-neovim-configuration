@@ -159,6 +159,7 @@
   "translator.proxy": "socks://127.0.0.1:10024",
   "translator.toLang": "zh_CN",
   "translator.engines": ["google", "bing", "youdao", "haici"],
+  "translator.window.maxHeight": 40,
   "cSpell.enabledLanguageIds": ["markdown"],
   "cSpell.userWords": [
     "Neovim",
@@ -170,5 +171,5 @@
     "modifiability",
     "todos",
     "typeof"
-  ],
+  ]
 }

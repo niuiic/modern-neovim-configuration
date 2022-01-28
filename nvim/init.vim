@@ -473,6 +473,7 @@ nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-concrete-run<CR>
 nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
 nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
 nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
+nnoremap <silent><nowait> <space>sf :<C-u>:AsyncTask trans-to-en<CR>
 nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
 nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
@@ -496,6 +497,7 @@ let g:which_key_map1.s = {
             \ 'c' : 'clean project',
             \ 'e' : 'edit config',
             \ 'E' : 'edit global config',
+            \ 'f' : 'translate chinese to english',
             \}
 
 let g:asynctasks_config_name = '.task.ini'
@@ -959,3 +961,6 @@ nnoremap k kzz
 
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
+
+" fcitx.vim
+set ttimeoutlen=10
