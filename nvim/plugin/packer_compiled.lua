@@ -274,6 +274,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-swift",
     url = "https://github.com/arzg/vim-swift"
   },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
+  },
   ["vim-toml"] = {
     loaded = false,
     needs_bufread = true,

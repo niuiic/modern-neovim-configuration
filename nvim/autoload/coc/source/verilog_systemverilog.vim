@@ -1,8 +1,8 @@
 function! coc#source#verilog_systemverilog#init() abort
     return {
-        \'triggerCharacters': [''],
-        \'filetypes' : ['verilog_systemverilog'],
-        \}
+                \'triggerCharacters': [''],
+                \'filetypes' : ['verilog_systemverilog'],
+                \}
 endfunction
 
 function! coc#source#verilog_systemverilog#complete(opt, cb) abort

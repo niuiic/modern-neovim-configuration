@@ -164,16 +164,16 @@ let g:mundo_mappings = {
             \ '<2-LeftMouse>': 'mouse_click' }
 
 " coc-todolist
-nmap <silent><nowait> <leader>tc :CocCommand todolist.create<CR>
-nmap <silent><nowait> <leader>tu :CocCommand todolist.update<CR>
-nmap <silent><nowait> <leader>td :CocCommand todolist.download<CR>
-nmap <silent><nowait> <leader>te :CocCommand todolist.export<CR>
-nmap <silent><nowait> <leader>tn :CocCommand todolist.closeNotice<CR>
-nmap <silent><nowait> <leader>ta :CocCommand todolist.clear<CR>
-nmap <silent><nowait> <leader>tb :CocCommand todolist.browserOpenGist<CR>
-nmap <silent><nowait> <leader>tl :CocList todolist<CR>
+nmap <silent><nowait> <leader>ec :CocCommand todolist.create<CR>
+nmap <silent><nowait> <leader>eu :CocCommand todolist.update<CR>
+nmap <silent><nowait> <leader>ed :CocCommand todolist.download<CR>
+nmap <silent><nowait> <leader>ee :CocCommand todolist.export<CR>
+nmap <silent><nowait> <leader>en :CocCommand todolist.closeNotice<CR>
+nmap <silent><nowait> <leader>ea :CocCommand todolist.clear<CR>
+nmap <silent><nowait> <leader>eb :CocCommand todolist.browserOpenGist<CR>
+nmap <silent><nowait> <leader>el :CocList todolist<CR>
 
-let g:which_key_map2.t ={
+let g:which_key_map2.e ={
             \ 'name' : '+todolist',
             \ 'c' : 'create',
             \ 'u' : 'update',
@@ -964,3 +964,28 @@ autocmd FileType scss setl iskeyword+=@-@
 
 " fcitx.vim
 set ttimeoutlen=10
+
+" vim-test
+nnoremap <silent><nowait> <space>tn :<C-u>:TestNearest<CR>
+nnoremap <silent><nowait> <space>tf :<C-u>:TestFile<CR>
+nnoremap <silent><nowait> <space>ts :<C-u>:TestSuite<CR>
+nnoremap <silent><nowait> <space>tl :<C-u>:TestLast<CR>
+nnoremap <silent><nowait> <space>tg :<C-u>:TestVisit<CR>
+
+let g:which_key_map1.t ={
+            \ 'name' : '+test',
+            \ 'n' : 'run the test nearest to the cursor',
+            \ 'f' : 'run all tests in the current file',
+            \ 's' : 'run the whole test suite',
+            \ 'l' : 'run the last test',
+            \ 'g' : 'go to the last test file'
+            \}
+
+let test#strategy = {
+            \ 'nearest': 'asyncrun',
+            \ 'file':    'asyncrun',
+            \ 'suite':   'asyncrun',
+            \ 'last':   'asyncrun',
+            \}
+
+let g:test#echo_command = 0
