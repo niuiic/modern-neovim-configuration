@@ -170,6 +170,7 @@
     "keyof",
     "middlewares",
     "modifiability",
+    "quickfix",
     "todos",
     "typeof"
   ]

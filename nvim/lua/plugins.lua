@@ -34,7 +34,11 @@ return require('packer').startup({
         use {'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension'}
         use 'preservim/nerdcommenter'
         use 'rbtnn/vim-vimscript_indentexpr'
-        use 'vim-test/vim-test'
+        use {
+            "rcarriga/vim-ultest",
+            requires = {"vim-test/vim-test"},
+            run = ":UpdateRemotePlugins"
+        }
         use 'tpope/vim-fugitive'
         use 'airblade/vim-gitgutter'
         use 'skywind3000/asynctasks.vim'

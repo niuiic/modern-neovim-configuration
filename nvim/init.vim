@@ -965,27 +965,30 @@ autocmd FileType scss setl iskeyword+=@-@
 " fcitx.vim
 set ttimeoutlen=10
 
-" vim-test
-nnoremap <silent><nowait> <space>tn :<C-u>:TestNearest<CR>
-nnoremap <silent><nowait> <space>tf :<C-u>:TestFile<CR>
-nnoremap <silent><nowait> <space>ts :<C-u>:TestSuite<CR>
-nnoremap <silent><nowait> <space>tl :<C-u>:TestLast<CR>
-nnoremap <silent><nowait> <space>tg :<C-u>:TestVisit<CR>
+" vim-ultest
+nnoremap <silent><nowait> <leader>ta :<C-u>:Ultest<CR>
+nmap <silent><nowait> <leader>tf <Plug>(ultest-run-file)
+nnoremap <silent><nowait> <leader>tn :<C-u>:UltestNearest<CR>
+nnoremap <silent><nowait> <leader>tl :<C-u>:UltestLast<CR>
+nnoremap <silent><nowait> <leader>ts :<C-u>:UltestStop<CR>
+nmap <silent><nowait> <leader>to <Plug>(ultest-output-jump)
+nmap <silent><nowait> <leader>tj <Plug>(ultest-summary-jump)
+nmap ;j <Plug>(ultest-next-fail)
+nmap ;k <Plug>(ultest-prev-fail)
 
-let g:which_key_map1.t ={
+let g:which_key_map2.t ={
             \ 'name' : '+test',
+            \ 'a' : 'run all tests',
+            \ 'f' : 'run tests in the current file',
             \ 'n' : 'run the test nearest to the cursor',
-            \ 'f' : 'run all tests in the current file',
-            \ 's' : 'run the whole test suite',
             \ 'l' : 'run the last test',
-            \ 'g' : 'go to the last test file'
+            \ 's' : 'stop all tests in the current file',
+            \ 'o' : 'show output of the nearest test',
+            \ 'j' : 'jump to the summary window',
             \}
 
-let test#strategy = {
-            \ 'nearest': 'asyncrun',
-            \ 'file':    'asyncrun',
-            \ 'suite':   'asyncrun',
-            \ 'last':   'asyncrun',
-            \}
-
-let g:test#echo_command = 0
+let g:ultest_max_threads=8
+let g:ultest_use_pty = 1
+let g:ultest_summary_height=10
+let g:ultest_summary_open="botright split | resize".g:ultest_summary_height
+let g:ultest_output_on_run=v:false

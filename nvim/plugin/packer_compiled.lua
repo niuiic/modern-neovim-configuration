@@ -286,6 +286,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml",
     url = "https://github.com/cespare/vim-toml"
   },
+  ["vim-ultest"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-ultest",
+    url = "https://github.com/rcarriga/vim-ultest"
+  },
   ["vim-vimscript_indentexpr"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-vimscript_indentexpr",
