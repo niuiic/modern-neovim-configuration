@@ -218,7 +218,14 @@ let g:which_key_map1.q = {
 
 " fold
 set nofoldenable
-syntax on
+" syntax on
+" autocmd FileType * setlocal foldmethod=manual
+set foldmethod=manual
+augroup remember_folds
+    autocmd!
+    au BufWinLeave ?* mkview 1
+    au BufWinEnter ?* silent! loadview 1
+augroup END
 
 " suda.vim
 let g:suda_smart_edit = 1
