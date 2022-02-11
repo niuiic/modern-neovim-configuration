@@ -55,6 +55,7 @@ return require('packer').startup({
         use 'luochen1990/rainbow'
         use 'puremourning/vimspector'
         use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
+        use 'gko/vim-coloresque'
     end,
     config = {
         ensure_dependencies = true,

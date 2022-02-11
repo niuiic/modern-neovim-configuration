@@ -163,28 +163,6 @@ let g:mundo_mappings = {
             \ 'q': 'quit',
             \ '<2-LeftMouse>': 'mouse_click' }
 
-" coc-todolist
-nmap <silent><nowait> <leader>tc :CocCommand todolist.create<CR>
-nmap <silent><nowait> <leader>tu :CocCommand todolist.update<CR>
-nmap <silent><nowait> <leader>td :CocCommand todolist.download<CR>
-nmap <silent><nowait> <leader>te :CocCommand todolist.export<CR>
-nmap <silent><nowait> <leader>tn :CocCommand todolist.closeNotice<CR>
-nmap <silent><nowait> <leader>ta :CocCommand todolist.clear<CR>
-nmap <silent><nowait> <leader>tb :CocCommand todolist.browserOpenGist<CR>
-nmap <silent><nowait> <leader>tl :CocList todolist<CR>
-
-let g:which_key_map2.t ={
-            \ 'name' : '+todolist',
-            \ 'c' : 'create',
-            \ 'u' : 'update',
-            \ 'd' : 'download',
-            \ 'e' : 'export',
-            \ 'n' : 'close notice',
-            \ 'a' : 'clear',
-            \ 'b' : 'open in browser',
-            \ 'l' : 'open in coc list'
-            \}
-
 " syn off and enable
 nmap <silent><nowait> <leader>so :syn enable<CR>
 nmap <silent><nowait> <leader>sf :syn off<CR>
@@ -218,7 +196,14 @@ let g:which_key_map1.q = {
 
 " fold
 set nofoldenable
-syntax on
+" syntax on
+" autocmd FileType * setlocal foldmethod=manual
+set foldmethod=manual
+augroup remember_folds
+    autocmd!
+    au BufWinLeave ?* mkview 1
+    au BufWinEnter ?* silent! loadview 1
+augroup END
 
 " suda.vim
 let g:suda_smart_edit = 1
@@ -473,10 +458,12 @@ nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-concrete-run<CR>
 nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
 nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
 nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
+nnoremap <silent><nowait> <space>sf :<C-u>:AsyncTask trans-to-en<CR>
 nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
 nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
-let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg','.yarn','.gitignore']
+nnoremap <silent><nowait> <space>so :<C-u>:AsyncTask todo<CR>
+let g:asyncrun_rootmarks = ['.root']
 let g:asynctasks_term_pos = 'bottom'
 let g:asynctasks_term_rows = 10
 let g:asynctasks_term_cols = 80
@@ -496,6 +483,8 @@ let g:which_key_map1.s = {
             \ 'c' : 'clean project',
             \ 'e' : 'edit config',
             \ 'E' : 'edit global config',
+            \ 'f' : 'translate chinese to english',
+            \ 'o' : 'todo',
             \}
 
 let g:asynctasks_config_name = '.task.ini'
@@ -570,7 +559,7 @@ highlight LineNr guifg=#00ffff
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
-hi Comment guifg=#00ffff ctermfg=NONE
+hi Comment guifg=#54EDD7 ctermfg=NONE
 let g:space_vim_dark_background = 236
 
 " vim-zoom
@@ -625,11 +614,19 @@ let g:neoformat_lua_luafmt = {
 
 let g:neoformat_enabled_lua = ['luafmt']
 
+let g:neoformat_verilog_systemverilog_verible = {
+            \ 'exe': '/home/niuiic/Applications/Verible/verible/bin/verible-verilog-format',
+            \ 'replace': 1,
+            \ }
+
+let g:neoformat_enabled_verilog_systemverilog = ['verible']
+
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
 autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
 autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
 autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
 autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
+autocmd FileType verilog_systemverilog nnoremap <AC-l> :Neoformat verible<CR>
 
 " coc-translator
 " popup
@@ -948,3 +945,37 @@ let g:which_key_map2.d = {
 " focus on center
 nnoremap j jzz
 nnoremap k kzz
+
+" coc-css
+autocmd FileType scss setl iskeyword+=@-@
+
+" fcitx.vim
+set ttimeoutlen=10
+
+" vim-ultest
+nnoremap <silent><nowait> <leader>ta :<C-u>:Ultest<CR>
+nmap <silent><nowait> <leader>tf <Plug>(ultest-run-file)
+nnoremap <silent><nowait> <leader>tn :<C-u>:UltestNearest<CR>
+nnoremap <silent><nowait> <leader>tl :<C-u>:UltestLast<CR>
+nnoremap <silent><nowait> <leader>ts :<C-u>:UltestStop<CR>
+nmap <silent><nowait> <leader>to <Plug>(ultest-output-jump)
+nmap <silent><nowait> <leader>tj <Plug>(ultest-summary-jump)
+nmap ;j <Plug>(ultest-next-fail)
+nmap ;k <Plug>(ultest-prev-fail)
+
+let g:which_key_map2.t ={
+            \ 'name' : '+test',
+            \ 'a' : 'run all tests',
+            \ 'f' : 'run tests in the current file',
+            \ 'n' : 'run the test nearest to the cursor',
+            \ 'l' : 'run the last test',
+            \ 's' : 'stop all tests in the current file',
+            \ 'o' : 'show output of the nearest test',
+            \ 'j' : 'jump to the summary window',
+            \}
+
+let g:ultest_max_threads=8
+let g:ultest_use_pty = 1
+let g:ultest_summary_height=10
+let g:ultest_summary_open="botright split | resize".g:ultest_summary_height
+let g:ultest_output_on_run=v:false

@@ -163,28 +163,6 @@ let g:mundo_mappings = {
             \ 'q': 'quit',
             \ '<2-LeftMouse>': 'mouse_click' }
 
-" coc-todolist
-nmap <silent><nowait> <leader>ec :CocCommand todolist.create<CR>
-nmap <silent><nowait> <leader>eu :CocCommand todolist.update<CR>
-nmap <silent><nowait> <leader>ed :CocCommand todolist.download<CR>
-nmap <silent><nowait> <leader>ee :CocCommand todolist.export<CR>
-nmap <silent><nowait> <leader>en :CocCommand todolist.closeNotice<CR>
-nmap <silent><nowait> <leader>ea :CocCommand todolist.clear<CR>
-nmap <silent><nowait> <leader>eb :CocCommand todolist.browserOpenGist<CR>
-nmap <silent><nowait> <leader>el :CocList todolist<CR>
-
-let g:which_key_map2.e ={
-            \ 'name' : '+todolist',
-            \ 'c' : 'create',
-            \ 'u' : 'update',
-            \ 'd' : 'download',
-            \ 'e' : 'export',
-            \ 'n' : 'close notice',
-            \ 'a' : 'clear',
-            \ 'b' : 'open in browser',
-            \ 'l' : 'open in coc list'
-            \}
-
 " syn off and enable
 nmap <silent><nowait> <leader>so :syn enable<CR>
 nmap <silent><nowait> <leader>sf :syn off<CR>
@@ -484,7 +462,8 @@ nnoremap <silent><nowait> <space>sf :<C-u>:AsyncTask trans-to-en<CR>
 nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
 nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
-let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg','.yarn','.gitignore']
+nnoremap <silent><nowait> <space>so :<C-u>:AsyncTask todo<CR>
+let g:asyncrun_rootmarks = ['.root']
 let g:asynctasks_term_pos = 'bottom'
 let g:asynctasks_term_rows = 10
 let g:asynctasks_term_cols = 80
@@ -505,6 +484,7 @@ let g:which_key_map1.s = {
             \ 'e' : 'edit config',
             \ 'E' : 'edit global config',
             \ 'f' : 'translate chinese to english',
+            \ 'o' : 'todo',
             \}
 
 let g:asynctasks_config_name = '.task.ini'
