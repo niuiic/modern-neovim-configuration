@@ -11,7 +11,6 @@ return require('packer').startup({
         use 'voldikss/vim-floaterm'
         use 'tpope/vim-surround'
         use {'neoclide/coc.nvim', branch = 'release'}
-        use 'euclio/vim-markdown-composer'
         use 'simnalamburt/vim-mundo'
         use 'lambdalisue/suda.vim'
         use 'hardcoreplayers/dashboard-nvim'

@@ -125,7 +125,7 @@
         "systemverilog.excludeIndexing": ["sim*/**/*.sv*"],
         "systemverilog.defines": [],
         "systemverilog.launchConfiguration": "/usr/bin/verilator -sv -Wall --lint-only",
-        "systemverilog.formatCommand": "/home/niuiic/Applications/Verible/verible/bin/verible-verilog-format"
+        "systemverilog.formatCommand": "/usr/bin/verible-verilog-format"
       }
     },
     "ccls": {
@@ -170,6 +170,7 @@
     "keyof",
     "middlewares",
     "modifiability",
+    "monospace",
     "quickfix",
     "todos",
     "typeof"

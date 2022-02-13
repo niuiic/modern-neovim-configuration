@@ -219,11 +219,6 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
   },
-  ["vim-markdown-composer"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-markdown-composer",
-    url = "https://github.com/euclio/vim-markdown-composer"
-  },
   ["vim-matchup"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-matchup",

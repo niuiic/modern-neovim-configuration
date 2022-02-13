@@ -615,7 +615,7 @@ let g:neoformat_lua_luafmt = {
 let g:neoformat_enabled_lua = ['luafmt']
 
 let g:neoformat_verilog_systemverilog_verible = {
-            \ 'exe': '/home/niuiic/Applications/Verible/verible/bin/verible-verilog-format',
+            \ 'exe': '/usr/bin/verible-verilog-format',
             \ 'replace': 1,
             \ }
 
