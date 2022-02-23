@@ -52,4 +52,4 @@ endif
 hi def link     goStruct         Function
 hi def link     goStructDef         Function
 
-hi goMethod guifg=#4dffff
+hi goMethod guifg=#9822ff

@@ -194,17 +194,6 @@ let g:which_key_map1.q = {
             \ 'w' : 'write quickfix list to a file'
             \}
 
-" fold
-set nofoldenable
-" syntax on
-" autocmd FileType * setlocal foldmethod=manual
-set foldmethod=manual
-augroup remember_folds
-    autocmd!
-    au BufWinLeave ?* mkview 1
-    au BufWinEnter ?* silent! loadview 1
-augroup END
-
 " suda.vim
 let g:suda_smart_edit = 1
 
@@ -312,7 +301,6 @@ nnoremap <silent><nowait> <space>m :<C-u>Vista!!<cr>
 let g:which_key_map1.m = 'show file tags'
 
 " verilog_systemverilog
-set foldmethod=syntax
 nnoremap <Leader>ii :VerilogFollowInstance<CR>
 nnoremap <Leader>ip :VerilogFollowPort<CR>
 
@@ -459,6 +447,7 @@ nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
 nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
 nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
 nnoremap <silent><nowait> <space>sf :<C-u>:AsyncTask trans-to-en<CR>
+nnoremap <silent><nowait> <space>ss :<C-u>:AsyncTask sql<CR>
 nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
 nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
@@ -482,6 +471,7 @@ let g:which_key_map1.s = {
             \ 'D' : 'debug project (concrete)',
             \ 'c' : 'clean project',
             \ 'e' : 'edit config',
+            \ 's' : 'run sql command',
             \ 'E' : 'edit global config',
             \ 'f' : 'translate chinese to english',
             \ 'o' : 'todo',
@@ -585,7 +575,7 @@ let g:neoformat_shell_shfmt = {
 let g:neoformat_enabled_shell = ['shfmt']
 
 let g:neoformat_kotlin_ktlint = {
-            \ 'exe': '/home/niuiic/Applications/Kotlin/ktlint',
+            \ 'exe': '/usr/bin/ktlint',
             \ 'args': ['-F'],
             \ 'replace': 1,
             \ }
@@ -627,24 +617,6 @@ autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
 autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
 autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
 autocmd FileType verilog_systemverilog nnoremap <AC-l> :Neoformat verible<CR>
-
-" coc-translator
-" popup
-nmap <silent><nowait> <space>tp  <Plug>(coc-translator-p)
-vmap <silent><nowait> <space>tp  <Plug>(coc-translator-pv)
-" echo
-nmap <silent><nowait> <space>te  <Plug>(coc-translator-e)
-vmap <silent><nowait> <space>te  <Plug>(coc-translator-ev)
-" replace
-nmap <silent><nowait> <space>tr  <Plug>(coc-translator-r)
-vmap <silent><nowait> <space>tr  <Plug>(coc-translator-rv)
-
-let g:which_key_map1.t = {
-            \ 'name' : '+translate',
-            \ 'p' : 'popup',
-            \ 'e' : 'echo',
-            \ 'r' : 'replace',
-            \ }
 
 " vim-matchup
 lua require('plugins/VimMatchUp')
@@ -979,3 +951,76 @@ let g:ultest_use_pty = 1
 let g:ultest_summary_height=10
 let g:ultest_summary_open="botright split | resize".g:ultest_summary_height
 let g:ultest_output_on_run=v:false
+
+" fold
+set nofoldenable
+" syntax on
+" autocmd VimEnter * setlocal foldmethod=manual
+set foldmethod=manual
+augroup remember_folds
+    autocmd!
+    au BufWinLeave ?* mkview 1
+    au BufWinEnter ?* silent! loadview 1
+augroup END
+
+" save content in virtual block
+function! Get_visual_selection()
+    " get the position of left start visual selection
+    let [line_start, column_start] = getpos("'<")[1:2]
+    " get the position of right end visual selection
+    let [line_end, column_end] = getpos("'>")[1:2]
+    " catch them all
+    let lines = getline(line_start, line_end)
+    if len(lines) == 0
+        return ''
+    endif
+    " edge cases and cleanup.
+    let lines[-1] = lines[-1][: column_end - 2]
+    let lines[0] = lines[0][column_start - 1:]
+    return join(lines, "\n")
+endfunction
+
+function Save_visually_selected_text_to_file()
+    let selected_text = Get_visual_selection()
+    call writefile(split(selected_text, "\n"), "tmp")
+endfunction
+
+vnoremap <C-s> :<c-u>call Save_visually_selected_text_to_file()<cr>
+
+" fix the delay to enter normal mode in sql file
+let g:omni_sql_no_default_maps = 1
+
+" vim-translator
+let g:translator_target_lang='zh'
+let g:translator_source_lang='auto'
+let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
+let g:translator_proxy_url = 'socks5://127.0.0.1:10024'
+let g:translator_history_enable=v:false
+let g:translator_window_type='popup'
+
+" coc-translator
+" popup
+nmap <silent><nowait> <space>tp  <Plug>TranslateW
+vmap <silent><nowait> <space>tp  <Plug>TranslateWV
+" echo
+nmap <silent><nowait> <space>te  <Plug>Translate
+vmap <silent><nowait> <space>te  <Plug>TranslateV
+" replace
+nmap <silent><nowait> <space>tr  <Plug>TranslateR
+vmap <silent><nowait> <space>tr  <Plug>TranslateRV
+" clipboard
+nmap <silent><nowait> <space>tc  <Plug>TranslateX
+
+nnoremap <silent><expr> <C-[> translator#window#float#has_scroll() ?
+            \ translator#window#float#scroll(1) : "\<C=[>"
+nnoremap <silent><expr> <C-]> translator#window#float#has_scroll() ?
+            \ translator#window#float#scroll(0) : "\<C-[>"
+
+let g:which_key_map1.t = {
+            \ 'name' : '+translate',
+            \ 'p' : 'popup',
+            \ 'e' : 'echo',
+            \ 'r' : 'replace',
+            \ 'c' : 'clipboard',
+            \ }
+

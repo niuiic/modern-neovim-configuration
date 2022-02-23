@@ -286,6 +286,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml",
     url = "https://github.com/cespare/vim-toml"
   },
+  ["vim-translator"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-translator",
+    url = "https://github.com/voldikss/vim-translator"
+  },
   ["vim-ultest"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-ultest",
