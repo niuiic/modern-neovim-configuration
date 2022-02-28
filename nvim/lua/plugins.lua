@@ -56,6 +56,7 @@ return require('packer').startup({
         use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
         use 'gko/vim-coloresque'
         use 'voldikss/vim-translator'
+        use 'styled-components/vim-styled-components'
     end,
     config = {
         ensure_dependencies = true,

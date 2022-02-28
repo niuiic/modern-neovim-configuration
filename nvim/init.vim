@@ -398,7 +398,7 @@ nnoremap <silent><nowait> <space>ag :<C-u>G<space>
 nnoremap <silent><nowait> <space>ac :<C-u>G commit -m<space>
 nnoremap <silent><nowait> <space>al :<C-u>G log<CR>
 nnoremap <silent><nowait> <space>ab :<C-u>G blame<CR>
-nnoremap <silent><nowait> <space>as :<C-u>Gstatus<CR>
+nnoremap <silent><nowait> <space>as :<C-u>G status<CR>
 nnoremap <silent><nowait> <space>ar :<C-u>Gread<CR>
 nnoremap <silent><nowait> <space>aw :<C-u>Gwrite<CR>
 nnoremap <silent><nowait> <space>ap :<C-u>Ggrep<space>
@@ -420,21 +420,30 @@ let g:which_key_map1.a = {
             \}
 
 " vim-gitgutter
-nnoremap <silent><nowait> <space>hq :<C-u>GitGutterQuickFix<CR>
-nnoremap <silent><nowait> <space>hs :<C-u>GitGutterStageHunk<CR>
-nnoremap <silent><nowait> <space>hu :<C-u>GitGutterUndoHunk<CR>
-nnoremap <silent><nowait> <space>hp :<C-u>GitGutterPreviewHunk<CR>
+command! Gqf GitGutterQuickFix | copen20
+
+nnoremap <silent><nowait> <space>hq :<C-u>Gqf<CR>
+nnoremap <silent><nowait> <space>hs <Plug>(GitGutterStageHunk)
+nnoremap <silent><nowait> <space>hu <Plug>(GitGutterUndoHunk)
+nnoremap <silent><nowait> <space>hp <Plug>(GitGutterPreviewHunk)
 nnoremap <silent><nowait> <space>hf :<C-u>GitGutterFold<CR>
+nnoremap <silent><nowait> <space>hh :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap <silent><nowait> <space>hr :<C-u>GitGutterAll<CR>
 
 let g:which_key_map1.h = {
             \ 'name' : '+git_diff',
             \ 'q' : 'open diff in quickfix window',
-            \ 's' : 'stage the diff',
+            \ 's' : 'commit the diff',
             \ 'u' : 'undo the diff',
             \ 'p' : 'preview the diff',
             \ 'f' : 'fold unchanged lines',
+            \ 'h' : 'toggle line highlight',
+            \ 'r' : 'refresh',
             \}
 
+" jump to next hunk (change): ]c
+" jump to previous hunk (change): [c
+"
 " asynctasks.vim
 
 nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
@@ -729,7 +738,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -951,6 +960,7 @@ let g:ultest_use_pty = 1
 let g:ultest_summary_height=10
 let g:ultest_summary_open="botright split | resize".g:ultest_summary_height
 let g:ultest_output_on_run=v:false
+let test#go#gotest#options = "-v"
 
 " fold
 set nofoldenable
