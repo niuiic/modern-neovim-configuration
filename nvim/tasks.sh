@@ -24,6 +24,15 @@ elif [[ $1 == "trans" ]]; then
         fi
     done
 elif [[ $1 == "todo" ]]; then
+    while [[ ! -f ".root" ]]; do
+        echo $HOME
+        if [[ $(pwd) == $HOME ]]; then
+            echo "Not found project root path."
+            exit
+        else
+            cd ..
+        fi
+    done
     showTodoList
     echo "Do you want to add/update/delete tasks?"
     read operation
