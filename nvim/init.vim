@@ -613,19 +613,11 @@ let g:neoformat_lua_luafmt = {
 
 let g:neoformat_enabled_lua = ['luafmt']
 
-let g:neoformat_verilog_systemverilog_verible = {
-            \ 'exe': '/usr/bin/verible-verilog-format',
-            \ 'replace': 1,
-            \ }
-
-let g:neoformat_enabled_verilog_systemverilog = ['verible']
-
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
 autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
 autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
 autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
 autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
-autocmd FileType verilog_systemverilog nnoremap <AC-l> :Neoformat verible<CR>
 
 " vim-matchup
 lua require('plugins/VimMatchUp')

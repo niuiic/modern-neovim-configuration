@@ -115,8 +115,8 @@
       "ignoredRootPaths": ["~"]
     },
     "svlangserver": {
-      "module": "/home/niuiic/Applications/Npm/npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
-      "filetypes": ["systemverilog"],
+      "module": "/home/niuiic/Applications/Nodejs//npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
+      "filetypes": ["verilog_systemverilog"],
       "settings": {
         "systemverilog.includeIndexing": [
           "sources*/**/*.{sv,svh}",

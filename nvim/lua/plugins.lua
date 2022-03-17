@@ -47,8 +47,8 @@ return require('packer').startup({
         use 'sbdchd/neoformat'
         use 'leafOfTree/vim-vue-plugin'
         use 'arzg/vim-swift'
-        use 'andymass/vim-matchup'
-        use 'nvim-treesitter/nvim-treesitter'
+        use {'andymass/vim-matchup'}
+        -- use {'nvim-treesitter/nvim-treesitter'}
         use 'jeffkreeftmeijer/vim-numbertoggle'
         use 'bagrat/vim-buffet'
         use 'luochen1990/rainbow'
