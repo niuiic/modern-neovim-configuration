@@ -277,16 +277,12 @@ endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
 
-" By default vista.vim never run if you don't call it explicitly.
-
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'ctags'
 let g:vista_executive_for = {
             \ 'cpp' : 'coc',
-            \ 'rust' : 'coc'
+            \ 'rust' : 'coc',
             \ }
 let g:vista_ctags_cmd = {
             \ 'haskell': 'hasktags -x -o - -c',
@@ -297,7 +293,7 @@ let g:vista#renderer#icons = {
             \   "function": "\uf794",
             \   "variable": "\uf71b",
             \  }
-nnoremap <silent><nowait> <space>m :<C-u>Vista!!<cr>
+nnoremap <silent><nowait> <space>m :<C-u>Vista<cr>
 let g:which_key_map1.m = 'show file tags'
 
 " verilog_systemverilog
@@ -348,6 +344,8 @@ autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
 
 " vim-clap & leaderf
 let g:clap_theme = 'material_design_dark'
+let g:clap_layout = { 'relative': 'editor' }
+let g:Lf_UseCache = 0
 nnoremap <silent><nowait> <space>op  :<C-u>Clap<CR>
 nnoremap <silent><nowait> <space>ob  :<C-u>Leaderf buffer<CR>
 nnoremap <silent><nowait> <space>oc  :<C-u>Clap command<CR>
@@ -641,6 +639,8 @@ function! g:BuffetSetCustomColors()
 endfunction
 
 " vimspector
+let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
+
 nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
 nmap <A-n> <Plug>VimspectorStepOver
 nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
@@ -916,8 +916,9 @@ let g:which_key_map2.d = {
             \}
 
 " focus on center
-nnoremap j jzz
-nnoremap k kzz
+" nnoremap j jzz
+" nnoremap k kzz
+nnoremap J zz
 
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
