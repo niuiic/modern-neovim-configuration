@@ -145,8 +145,10 @@ _G.packer_plugins = {
     url = "https://github.com/lambdalisue/suda.vim"
   },
   ["verilog_systemverilog.vim"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/verilog_systemverilog.vim",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim",
     url = "https://github.com/vhda/verilog_systemverilog.vim"
   },
   ["vim-airline"] = {
@@ -259,19 +261,16 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
   },
-  ["vim-styled-components"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-styled-components",
-    url = "https://github.com/styled-components/vim-styled-components"
-  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
   ["vim-swift"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-swift",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift",
     url = "https://github.com/arzg/vim-swift"
   },
   ["vim-test"] = {
@@ -333,13 +332,21 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType swift ++once lua require("packer.load")({'vim-swift'}, { ft = "swift" }, _G.packer_plugins)]]
 vim.cmd [[au FileType toml ++once lua require("packer.load")({'vim-toml'}, { ft = "toml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType systemverilog ++once lua require("packer.load")({'verilog_systemverilog.vim'}, { ft = "systemverilog" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim/ftdetect/verilog_systemverilog.vim]], true)
+vim.cmd [[source /home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim/ftdetect/verilog_systemverilog.vim]]
+time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim/ftdetect/verilog_systemverilog.vim]], false)
 time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml/ftdetect/toml.vim]], true)
 vim.cmd [[source /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml/ftdetect/toml.vim]]
 time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml/ftdetect/toml.vim]], false)
+time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift/ftdetect/swift.vim]], true)
+vim.cmd [[source /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift/ftdetect/swift.vim]]
+time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift/ftdetect/swift.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles(1) end
 

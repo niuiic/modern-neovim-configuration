@@ -22,7 +22,7 @@ return require('packer').startup({
         use 'sheerun/vim-polyglot'
         use 'terryma/vim-smooth-scroll'
         use 'liuchengxu/vista.vim'
-        use 'vhda/verilog_systemverilog.vim'
+        use {'vhda/verilog_systemverilog.vim', ft = 'systemverilog'}
         use 'easymotion/vim-easymotion'
         use 'Yggdroot/indentLine'
         use 'honza/vim-snippets'
@@ -46,7 +46,7 @@ return require('packer').startup({
         use 'dhruvasagar/vim-zoom'
         use 'sbdchd/neoformat'
         use 'leafOfTree/vim-vue-plugin'
-        use 'arzg/vim-swift'
+        use {'arzg/vim-swift', ft = 'swift'}
         use {'andymass/vim-matchup'}
         -- use {'nvim-treesitter/nvim-treesitter'}
         use 'jeffkreeftmeijer/vim-numbertoggle'
@@ -56,7 +56,7 @@ return require('packer').startup({
         use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
         use 'gko/vim-coloresque'
         use 'voldikss/vim-translator'
-        use 'styled-components/vim-styled-components'
+        -- use 'styled-components/vim-styled-components'
     end,
     config = {
         ensure_dependencies = true,
