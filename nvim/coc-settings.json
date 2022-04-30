@@ -155,7 +155,6 @@
   },
   "sourcekit.commandPath": "/home/niuiic/Applications/Swift/swift/usr/bin/sourcekit-lsp",
   "go.goplsPath": "/home/niuiic/Applications/Go/bin/gopls",
-  "vetur.useWorkspaceDependencies": true,
   "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets",
   "cSpell.enabledLanguageIds": ["markdown"],
   "cSpell.userWords": [

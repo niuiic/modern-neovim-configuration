@@ -3,6 +3,8 @@
 lua require('plugins')
 
 " basic settings
+set noswapfile
+set lazyredraw
 set nocompatible
 au BufNewFile,BufRead *.sv set filetype=systemverilog
 au BufNewFile,BufRead *.h set filetype=c
