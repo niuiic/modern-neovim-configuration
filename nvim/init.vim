@@ -17,6 +17,11 @@ set expandtab
 let g:python3_host_prog="/usr/bin/python"
 set termguicolors
 
+" split windows
+nnoremap <silent><nowait> <space>sh :<C-u>sp<CR>
+nnoremap <silent><nowait> <space>sv :<C-u>vsp<CR>
+nnoremap <silent><nowait> <space>sp :<C-u>CocCommand volar.action.splitEditors<CR>
+
 " vim workspace
 function! FindProjectRoot(lookFor)
     let pathMaker='%:p'
