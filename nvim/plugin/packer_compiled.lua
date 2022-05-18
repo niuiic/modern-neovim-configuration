@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/asynctasks.vim",
     url = "https://github.com/skywind3000/asynctasks.vim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/coc.nvim",
@@ -92,7 +97,7 @@ _G.packer_plugins = {
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "https://github.com/hardcoreplayers/dashboard-nvim"
+    url = "https://github.com/glepnir/dashboard-nvim"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -109,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/indentLine",
     url = "https://github.com/Yggdroot/indentLine"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/neoformat",
@@ -118,6 +128,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -129,20 +154,35 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
   rainbow = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/rainbow",
     url = "https://github.com/luochen1990/rainbow"
   },
-  ["space-vim-dark"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/space-vim-dark",
-    url = "https://github.com/liuchengxu/space-vim-dark"
-  },
   ["suda.vim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/suda.vim",
     url = "https://github.com/lambdalisue/suda.vim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["verilog_systemverilog.vim"] = {
     loaded = false,
@@ -150,31 +190,6 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim",
     url = "https://github.com/vhda/verilog_systemverilog.vim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-clock"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-airline-clock",
-    url = "https://github.com/enricobacis/vim-airline-clock"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
-  },
-  ["vim-buffet"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-buffet",
-    url = "https://github.com/bagrat/vim-buffet"
-  },
-  ["vim-clap"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-clap",
-    url = "https://github.com/liuchengxu/vim-clap"
   },
   ["vim-codelf"] = {
     loaded = true,
@@ -261,11 +276,6 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
   },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "https://github.com/tpope/vim-surround"
-  },
   ["vim-swift"] = {
     loaded = false,
     needs_bufread = true,
@@ -305,11 +315,6 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-vue-plugin",
     url = "https://github.com/leafOfTree/vim-vue-plugin"
   },
-  ["vim-which-key"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-which-key",
-    url = "https://github.com/liuchengxu/vim-which-key"
-  },
   ["vim-zoom"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-zoom",
@@ -324,6 +329,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vista.vim",
     url = "https://github.com/liuchengxu/vista.vim"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 

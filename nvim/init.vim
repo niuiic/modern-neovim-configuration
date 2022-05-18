@@ -1,26 +1,19 @@
-" cSpell:disable
-
+" lua
 lua require('plugins')
-
-" basic settings
-set noswapfile
-set lazyredraw
-set nocompatible
-au BufNewFile,BufRead *.sv set filetype=systemverilog
-au BufNewFile,BufRead *.h set filetype=c
-au BufNewFile,BufRead *.hpp set filetype=cpp
-au BufNewFile,BufRead *.cpp set filetype=cpp
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
-let g:python3_host_prog="/usr/bin/python"
-set termguicolors
-
-" split windows
-nnoremap <silent><nowait> <space>sh :<C-u>sp<CR>
-nnoremap <silent><nowait> <space>sv :<C-u>vsp<CR>
-nnoremap <silent><nowait> <space>sp :<C-u>CocCommand volar.action.splitEditors<CR>
+lua require('basic')
+lua require('keybindings')
+lua require('colorscheme')
+lua require('plugins.lualine')
+lua require('plugins.bufferline')
+lua require('plugins.nvim-treesitter')
+lua require('plugins.null-ls')
+lua require('plugins.which-key')
+lua require('plugins.todo-comments')
+lua require('plugins.suda')
+lua require('plugins.vim-translator')
+lua require('plugins.telescope')
+lua require('plugins.dashboard-nvim')
+lua require('plugins.project')
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -37,44 +30,9 @@ endfunction
 
 au VimEnter * :call FindProjectRoot(".root")
 
-" to fix the bug of ccls
-" au FileType c inoremap <Right> ->
-" add more
-" au FileType go inoremap <Left> <-
-" au FileType go inoremap <Right> ->
-" au FileType rust inoremap <Right> =>
-
-" set relativenumber
-set encoding=UTF-8
-set number
-set ts=4
-set sw=4
-
 " vim-which-key
 let g:which_key_map1 =  {}
 let g:which_key_map2 =  {}
-let g:mapleader = "\\"
-let g:maplocalleader = "\<Space>"
-call which_key#register('<Space>', "g:which_key_map1")
-call which_key#register('\', "g:which_key_map2")
-nnoremap <silent> <localleader> :<c-u>WhichKey '<Space>'<CR>
-vnoremap <silent> <localleader> :<c-u>WhichKeyVisual '<Space>'<CR>
-nnoremap <silent> <leader> :<c-u>WhichKey '\'<CR>
-vnoremap <silent> <leader> :<c-u>WhichKeyVisual '\'<CR>
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-            \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
-" ignore
-let g:which_key_map2['\'] = 'which_key_ignore'
-let g:which_key_map2['\A'] = 'which_key_ignore'
-
-" vim-airline
-let g:airline_theme = 'luna'
-let g:airline_section_b = '%{fugitive#head()}'
-let g:airline_section_z = airline#section#create(['%p%%', 'linenr', 'maxlinenr', ' '])
-let g:airline_symbols.maxlinenr = ''
-let g:airline#extensions#clock#format = '%H:%M:%S'
 
 " vim-floaterm
 nnoremap <silent> <C-z> :FloatermToggle <CR>
@@ -105,34 +63,6 @@ let g:rainbow_conf = {
             \		},
             \		'css': 0,
             \	}
-            \}
-
-" set save
-nmap <C-s> :w!<CR>
-nmap <A-s> :wa!<CR>
-
-" exit
-nnoremap <C-x> :bd<CR>
-nnoremap <C-q> :q<CR>
-nnoremap <A-q> :q!<CR>
-nnoremap <C-n> :only<CR>
-nnoremap <C-e> :e<CR>
-
-" markdown-composer
-let g:markdown_composer_external_renderer='pandoc -f markdown -t html'
-let g:markdown_composer_autostart = 0
-
-nmap <silent><nowait><leader>ms :<C-u>ComposerStart<CR>
-nmap <silent><nowait><leader>mu :<C-u>ComposerUpdate<CR>
-nmap <silent><nowait><leader>mo :<C-u>ComposerOpen<CR>
-nmap <silent><nowait><leader>mj :<C-u>ComposerJob<CR>
-
-let g:which_key_map2.m = {
-            \ 'name' : '+markdown_preview',
-            \ 's' : 'start',
-            \ 'u' : 'update',
-            \ 'o' : 'open another tab',
-            \ 'j' : 'echoes the channel that the plugin is listening on'
             \}
 
 " vim-mundo
@@ -170,79 +100,12 @@ let g:mundo_mappings = {
             \ 'q': 'quit',
             \ '<2-LeftMouse>': 'mouse_click' }
 
-" syn off and enable
-nmap <silent><nowait> <leader>so :syn enable<CR>
-nmap <silent><nowait> <leader>sf :syn off<CR>
-" to fix the bug of coc.nvim when go to definition
-" au VimEnter * :syn off<CR>
-" au VimEnter * :syn enable<CR>
-
 " quickfix
 au VimEnter * :set makeprg=make
-nnoremap <silent><nowait> <space>qs :<C-u>set makeprg=
-nnoremap <silent><nowait> <space>qo :<C-u>cope25<CR>
-nnoremap <silent><nowait> <space>qm :<C-u>make<CR>
-nnoremap <silent><nowait> <space>qc :<C-u>cclose<CR>
-nnoremap <silent><nowait> <space>qw :<C-u>write! build.log<CR>
-nnoremap <silent><nowait> <space>qe :<C-u>set modifiable<CR>
-
-nmap <A-j> :cnext<CR>
-nmap <A-k> :cprev<CR>
-nmap <A-g> :cfirst<CR>
-nmap <A-G> :clast<CR>
-
-let g:which_key_map1.q = {
-            \ 'name' : '+quickfix',
-            \ 's' : 'set compile cmd',
-            \ 'o' : 'open quickfix window',
-            \ 'm' : 'make',
-            \ 'c' : 'close quickfix window',
-            \ 'e' : 'set quickfix list modifiable',
-            \ 'w' : 'write quickfix list to a file'
-            \}
-
-" suda.vim
-let g:suda_smart_edit = 1
-
+" let g:suda_smart_edit = 1
 " coc-yank
 nnoremap <silent> <space>p  :<C-u>CocList -A --normal yank<cr>
 let g:which_key_map1.p= 'clipboard history'
-
-" coc-prettier
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-autocmd FileType markdown nnoremap <buffer> <AC-l> :Prettier<CR>
-
-" dashboard-nvim
-let g:dashboard_custom_header = [
-            \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-            \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-            \ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-            \ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-            \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-            \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-            \]
-let g:indentLine_fileTypeExclude = ['dashboard']
-nnoremap <silent><nowait> <space>sl :<C-u>SessionLoad<CR>
-nnoremap <silent><nowait> <space>ss :<C-u>SessionSave<CR>
-nnoremap <silent><nowait> <space>kf :<C-u>DashboardNewFile<CR>
-let g:which_key_map1.sl = 'load session'
-let g:which_key_map1.ss = 'save session'
-let g:which_key_map1.kf = 'create new file'
-let g:dashboard_default_executive ='clap'
-let g:dashboard_custom_shortcut={
-            \ 'last_session'       : 'SPC s l',
-            \ 'find_history'       : 'SPC o h',
-            \ 'find_file'          : 'SPC o f',
-            \ 'new_file'           : 'SPC k f',
-            \ 'change_colorscheme' : 'SPC o s',
-            \ 'find_word'          : 'SPC o g',
-            \ 'book_marks'         : 'SPC o m',
-            \ }
-
-" filetypes
-au BufRead,BufNewFile *.v set filetype=verilog
-au BufRead,BufNewFile *.asm set filetype=asm
-au BufRead,BufNewFile *.s set filetype=asm
 
 " vim-codelf
 nnoremap <silent><nowait> <space>fs :<C-u>:Codelf<space>
@@ -273,16 +136,12 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*4, 0, 8)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*4, 0, 8)<CR>
 
-" coc-explorer
-nnoremap <leader>p :CocCommand explorer --quit-on-open<CR>
-let which_key_map2.p ='file tree'
-
 " vista.vim
 function! NearestMethodOrFunction() abort
     return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
-set statusline+=%{NearestMethodOrFunction()}
+" set statusline+=%{NearestMethodOrFunction()}
 
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -339,10 +198,6 @@ let g:which_key_map1.w = 'move to word'
 autocmd FileType json,markdown let g:indentLine_conceallevel=0
 autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine_conceallevel=2
 
-" fcitx.vim
-inoremap <C-c> <esc>
-" let g:ttimeoutlen=10
-
 " coc-pairs
 autocmd FileType tex,markdown let b:coc_pairs = [["$", "$"]]
 autocmd FileType rust let b:coc_pairs_disabled = ["'"]
@@ -350,45 +205,8 @@ autocmd FileType c let b:coc_pairs_disabled = ["<", ">"]
 autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
 
 " vim-clap & leaderf
-let g:clap_theme = 'material_design_dark'
-let g:clap_layout = { 'relative': 'editor' }
 let g:Lf_UseCache = 0
-nnoremap <silent><nowait> <space>op  :<C-u>Clap<CR>
-nnoremap <silent><nowait> <space>ob  :<C-u>Leaderf buffer<CR>
-nnoremap <silent><nowait> <space>oc  :<C-u>Clap command<CR>
-nnoremap <silent><nowait> <space>oh  :<C-u>Clap history<CR>
-nnoremap <silent><nowait> <space>of  :<C-u>Clap files ++finder=rg --ignore --hidden --files<CR>
-nnoremap <silent><nowait> <space>oq  :<C-u>Leaderf quickfix<CR>
-nnoremap <silent><nowait> <space>oj  :<C-u>Clap jumps<CR>
-nnoremap <silent><nowait> <space>om  :<C-u>Clap marks<CR>
-nnoremap <silent><nowait> <space>ow  :<C-u>Clap windows<CR>
-nnoremap <silent><nowait> <space>ot  :<C-u>Clap tags<CR>
-nnoremap <silent><nowait> <space>oT  :<C-u>Clap proj_tags<CR>
-nnoremap <silent><nowait> <space>os  :<C-u>Clap colors<CR>
-nnoremap <silent><nowait> <space>og :<C-u>Leaderf rg<CR>
-nnoremap <silent><nowait> <space>ol :<C-u>Clap lines<CR>
-nnoremap <silent><nowait> <space>oy :<C-u>Clap yanks<CR>
 nnoremap <silent><nowait> <space>ok :<C-u>Leaderf --nowrap task<CR>
-
-let g:which_key_map1.o = {
-            \ 'name' : '+clap',
-            \ 'p' : 'clap',
-            \ 'b' : 'buffers',
-            \ 'c' : 'command',
-            \ 'h' : 'file history',
-            \ 'f' : 'search file',
-            \ 'q' : 'quickfix list',
-            \ 'j' : 'jumps',
-            \ 'm' : 'marks',
-            \ 'w' : 'windows',
-            \ 'T' : 'tags in project',
-            \ 't' : 'tags in current file',
-            \ 's' : 'colors',
-            \ 'g' : 'find word',
-            \ 'l' : 'line',
-            \ 'y' : 'yanks',
-            \ 'k' : 'tasks',
-            \ }
 
 " nerdcommenter
 
@@ -465,7 +283,6 @@ nnoremap <silent><nowait> <space>ss :<C-u>:AsyncTask sql<CR>
 nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
 nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
 nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
-nnoremap <silent><nowait> <space>so :<C-u>:AsyncTask todo<CR>
 let g:asyncrun_rootmarks = ['.root']
 let g:asynctasks_term_pos = 'bottom'
 let g:asynctasks_term_rows = 10
@@ -488,7 +305,6 @@ let g:which_key_map1.s = {
             \ 's' : 'run sql command',
             \ 'E' : 'edit global config',
             \ 'f' : 'translate chinese to english',
-            \ 'o' : 'todo',
             \}
 
 let g:asynctasks_config_name = '.task.ini'
@@ -544,10 +360,6 @@ let g:Lf_Extensions.task = {
             \ 'help' : 'navigate available tasks from asynctasks.vim',
             \ }
 
-" highlight some keywords
-
-au BufEnter * :match Todo /FIXME\|TODO\|NOTE\|KEY\|IDEA\|CHANGED\|IDEA/
-
 " modify file encoding
 nmap <silent><nowait> <leader>e :set fenc=utf8<CR>
 set fencs=utf-8,gbk,big5,cp936,gb18030,gb2312,utf-16
@@ -557,14 +369,11 @@ let g:which_key_map2.e = "modify file encoding"
 autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " theme
-colorscheme space-vim-dark
-set termguicolors
 highlight LineNr guifg=#00ffff
 hi Normal     ctermbg=NONE guibg=NONE
 hi LineNr     ctermbg=NONE guibg=NONE
 hi SignColumn ctermbg=NONE guibg=NONE
-hi Comment guifg=#54EDD7 ctermfg=NONE
-let g:space_vim_dark_background = 236
+hi Comment guifg=#cce5ff ctermfg=NONE
 
 " vim-zoom
 map <c-w>o <c-w>m
@@ -574,76 +383,8 @@ vmap <C-p> <Plug>(coc-codeaction-selected)
 xmap <C-p> <Plug>(coc-codeaction-selected)
 nmap <C-p> <Plug>(coc-codeaction-selected)
 
-" format
-autocmd FileType * nnoremap <AC-l> :Format<CR>
-" autocmd FileType *\(.sh|.vim|.sv\)\@<! nnoremap <AC-l> :Format<CR>
-autocmd FileType vim,xdc nnoremap <AC-l> gg=G
-
-" neoformat
-let g:neoformat_shell_shfmt = {
-            \ 'exe': 'Shfmt',
-            \ 'args': ['-l', '-w'],
-            \ 'replace': 1,
-            \ 'stdin': 1,
-            \ }
-let g:neoformat_enabled_shell = ['shfmt']
-
-let g:neoformat_kotlin_ktlint = {
-            \ 'exe': '/usr/bin/ktlint',
-            \ 'args': ['-F'],
-            \ 'replace': 1,
-            \ }
-let g:neoformat_enabled_kotlin = ['ktlint']
-
-let g:neoformat_swift_swiftformat = {
-            \ 'exe': '/home/niuiic/Applications/Swift/swift-format/.build/release/swift-format',
-            \ 'replace': 1,
-            \ }
-
-let g:neoformat_enabled_swift = ['swiftformat']
-
-let g:neoformat_asm_asmfmt = {
-            \ 'exe': 'asmfmt',
-            \ 'args': ['-w'],
-            \ 'replace': 1,
-            \ }
-
-let g:neoformat_enabled_asm = ['asmfmt']
-
-let g:neoformat_lua_luafmt = {
-            \ 'exe': '/home/niuiic/Applications/Lua/LuaFormatter/lua-format',
-            \ 'args': ['-i'],
-            \ 'replace': 1,
-            \ }
-
-let g:neoformat_enabled_lua = ['luafmt']
-
-autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
-autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
-autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
-autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
-autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
-
 " vim-matchup
 lua require('plugins/VimMatchUp')
-
-" vim-buffet
-noremap <C-k> :bn<CR>
-noremap <C-j> :bp<CR>
-let g:buffet_powerline_separators = 1
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
-let g:buffet_show_index = 1
-let g:buffet_modified_icon = '*'
-let g:buffet_new_buffer_name = '+'
-let g:buffet_hidden_buffers = ['terminal', 'quickfix']
-function! g:BuffetSetCustomColors()
-    hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#00ffff
-    hi! BuffetModBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#ff33cc
-    hi! BuffetTab cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
-    hi! BuffetBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#04597E
-endfunction
 
 " vimspector
 let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
@@ -857,7 +598,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " jump to the next or previous error
 nmap <silent> ck <Plug>(coc-diagnostic-prev)
@@ -1001,14 +742,6 @@ vnoremap <C-s> :<c-u>call Save_visually_selected_text_to_file()<cr>
 let g:omni_sql_no_default_maps = 1
 
 " vim-translator
-let g:translator_target_lang='zh'
-let g:translator_source_lang='auto'
-let g:translator_default_engines=['google', 'bing', 'haici', 'youdao']
-let g:translator_proxy_url = 'socks5://127.0.0.1:10024'
-let g:translator_history_enable=v:false
-let g:translator_window_type='popup'
-
-" coc-translator
 " popup
 nmap <silent><nowait> <space>tp  <Plug>TranslateW
 vmap <silent><nowait> <space>tp  <Plug>TranslateWV
@@ -1033,4 +766,3 @@ let g:which_key_map1.t = {
             \ 'r' : 'replace',
             \ 'c' : 'clipboard',
             \ }
-

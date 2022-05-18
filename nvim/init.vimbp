@@ -1,8 +1,11 @@
 " cSpell:disable
 
+" plugins
 lua require('plugins')
 
 " basic settings
+set noswapfile
+set lazyredraw
 set nocompatible
 au BufNewFile,BufRead *.sv set filetype=systemverilog
 au BufNewFile,BufRead *.h set filetype=c
@@ -14,6 +17,11 @@ set shiftwidth=4
 set expandtab
 let g:python3_host_prog="/usr/bin/python"
 set termguicolors
+
+" split windows
+nnoremap <silent><nowait> <space>sh :<C-u>sp<CR>
+nnoremap <silent><nowait> <space>sv :<C-u>vsp<CR>
+nnoremap <silent><nowait> <space>sp :<C-u>CocCommand volar.action.splitEditors<CR>
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -64,7 +72,7 @@ let g:which_key_map2['\A'] = 'which_key_ignore'
 
 " vim-airline
 let g:airline_theme = 'luna'
-let g:airline_section_b = '%{fugitive#head()}'
+let g:airline_section_b = '%{FugitiveHead()}'
 let g:airline_section_z = airline#section#create(['%p%%', 'linenr', 'maxlinenr', ' '])
 let g:airline_symbols.maxlinenr = ''
 let g:airline#extensions#clock#format = '%H:%M:%S'
@@ -277,16 +285,12 @@ endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
 
-" By default vista.vim never run if you don't call it explicitly.
-
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'ctags'
 let g:vista_executive_for = {
             \ 'cpp' : 'coc',
-            \ 'rust' : 'coc'
+            \ 'rust' : 'coc',
             \ }
 let g:vista_ctags_cmd = {
             \ 'haskell': 'hasktags -x -o - -c',
@@ -297,7 +301,7 @@ let g:vista#renderer#icons = {
             \   "function": "\uf794",
             \   "variable": "\uf71b",
             \  }
-nnoremap <silent><nowait> <space>m :<C-u>Vista!!<cr>
+nnoremap <silent><nowait> <space>m :<C-u>Vista<cr>
 let g:which_key_map1.m = 'show file tags'
 
 " verilog_systemverilog
@@ -348,6 +352,8 @@ autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
 
 " vim-clap & leaderf
 let g:clap_theme = 'material_design_dark'
+let g:clap_layout = { 'relative': 'editor' }
+let g:Lf_UseCache = 0
 nnoremap <silent><nowait> <space>op  :<C-u>Clap<CR>
 nnoremap <silent><nowait> <space>ob  :<C-u>Leaderf buffer<CR>
 nnoremap <silent><nowait> <space>oc  :<C-u>Clap command<CR>
@@ -398,7 +404,7 @@ nnoremap <silent><nowait> <space>ag :<C-u>G<space>
 nnoremap <silent><nowait> <space>ac :<C-u>G commit -m<space>
 nnoremap <silent><nowait> <space>al :<C-u>G log<CR>
 nnoremap <silent><nowait> <space>ab :<C-u>G blame<CR>
-nnoremap <silent><nowait> <space>as :<C-u>Gstatus<CR>
+nnoremap <silent><nowait> <space>as :<C-u>G status<CR>
 nnoremap <silent><nowait> <space>ar :<C-u>Gread<CR>
 nnoremap <silent><nowait> <space>aw :<C-u>Gwrite<CR>
 nnoremap <silent><nowait> <space>ap :<C-u>Ggrep<space>
@@ -420,21 +426,30 @@ let g:which_key_map1.a = {
             \}
 
 " vim-gitgutter
-nnoremap <silent><nowait> <space>hq :<C-u>GitGutterQuickFix<CR>
-nnoremap <silent><nowait> <space>hs :<C-u>GitGutterStageHunk<CR>
-nnoremap <silent><nowait> <space>hu :<C-u>GitGutterUndoHunk<CR>
-nnoremap <silent><nowait> <space>hp :<C-u>GitGutterPreviewHunk<CR>
+command! Gqf GitGutterQuickFix | copen20
+
+nnoremap <silent><nowait> <space>hq :<C-u>Gqf<CR>
+nnoremap <silent><nowait> <space>hs <Plug>(GitGutterStageHunk)
+nnoremap <silent><nowait> <space>hu <Plug>(GitGutterUndoHunk)
+nnoremap <silent><nowait> <space>hp <Plug>(GitGutterPreviewHunk)
 nnoremap <silent><nowait> <space>hf :<C-u>GitGutterFold<CR>
+nnoremap <silent><nowait> <space>hh :<C-u>GitGutterLineHighlightsToggle<CR>
+nnoremap <silent><nowait> <space>hr :<C-u>GitGutterAll<CR>
 
 let g:which_key_map1.h = {
             \ 'name' : '+git_diff',
             \ 'q' : 'open diff in quickfix window',
-            \ 's' : 'stage the diff',
+            \ 's' : 'commit the diff',
             \ 'u' : 'undo the diff',
             \ 'p' : 'preview the diff',
             \ 'f' : 'fold unchanged lines',
+            \ 'h' : 'toggle line highlight',
+            \ 'r' : 'refresh',
             \}
 
+" jump to next hunk (change): ]c
+" jump to previous hunk (change): [c
+"
 " asynctasks.vim
 
 nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
@@ -604,19 +619,11 @@ let g:neoformat_lua_luafmt = {
 
 let g:neoformat_enabled_lua = ['luafmt']
 
-let g:neoformat_verilog_systemverilog_verible = {
-            \ 'exe': '/usr/bin/verible-verilog-format',
-            \ 'replace': 1,
-            \ }
-
-let g:neoformat_enabled_verilog_systemverilog = ['verible']
-
 autocmd FileType sh nnoremap <AC-l> :Neoformat shfmt<CR>
 autocmd FileType kotlin nnoremap <AC-l> :Neoformat ktlint<CR>
 autocmd FileType swift nnoremap <AC-l> :Neoformat swiftformat<CR>
 autocmd FileType asm nnoremap <AC-l> :Neoformat asmfmt<CR>
 autocmd FileType lua nnoremap <AC-l> :Neoformat luafmt<CR>
-autocmd FileType verilog_systemverilog nnoremap <AC-l> :Neoformat verible<CR>
 
 " vim-matchup
 lua require('plugins/VimMatchUp')
@@ -640,6 +647,8 @@ function! g:BuffetSetCustomColors()
 endfunction
 
 " vimspector
+let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
+
 nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
 nmap <A-n> <Plug>VimspectorStepOver
 nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
@@ -729,7 +738,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -915,8 +924,9 @@ let g:which_key_map2.d = {
             \}
 
 " focus on center
-nnoremap j jzz
-nnoremap k kzz
+" nnoremap j jzz
+" nnoremap k kzz
+nnoremap J zz
 
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
@@ -951,6 +961,7 @@ let g:ultest_use_pty = 1
 let g:ultest_summary_height=10
 let g:ultest_summary_open="botright split | resize".g:ultest_summary_height
 let g:ultest_output_on_run=v:false
+let test#go#gotest#options = "-v"
 
 " fold
 set nofoldenable
