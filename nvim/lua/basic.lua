@@ -64,7 +64,7 @@ vim.o.swapfile = false
 vim.o.updatetime = 300
 
 -- smaller timeoutlen
-vim.o.timeoutlen = 500
+vim.o.timeoutlen = 300
 
 -- split window will appear at bottom and right
 vim.o.splitbelow = true
@@ -95,3 +95,11 @@ setFiletype("*.s", "asm")
 
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"
+
+-- quickfix
+au({ "VimEnter" }, {
+	pattern = { "*" },
+	callback = function()
+		vim.bo.makeprg = "make"
+	end,
+})

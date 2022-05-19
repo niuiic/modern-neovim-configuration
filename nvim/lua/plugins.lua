@@ -6,52 +6,64 @@ end
 
 packer.startup({
 	function(use)
-		-- plugin manager
+		-- plugin manager (basically configured)
 		use("wbthomason/packer.nvim")
 		-- todo comments (not work correctly)
 		use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
-		-- status line
+		-- status line (basically configured)
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = {
 				"kyazdani42/nvim-web-devicons",
-				-- to provide vista_nearest_method_or_function
-				"liuchengxu/vista.vim",
+				-- to provide coc_current_function and coc_status
+				"neoclide/coc.nvim",
 				opt = true,
 			},
 		})
+		-- floaterm terminal (fully configured)
 		use("voldikss/vim-floaterm")
+		-- toggle comments (basically configured)
+		use("numToStr/Comment.nvim")
+		-- code auto completion and ts plugins ecosystem
 		use({ "neoclide/coc.nvim", branch = "release" })
-		use("simnalamburt/vim-mundo")
-		-- use 'tpope/vim-surround'
+		-- undotree
+		use("jiaoshijie/undotree")
+		-- for neovim lsp (not for coc.nvim)
+		use({
+			"folke/trouble.nvim",
+			requires = "kyazdani42/nvim-web-devicons",
+		})
+		-- quickly modify surround char
+		use("ur4ltz/surround.nvim")
 		-- call sudo in neovim (fully configured)
 		use("lambdalisue/suda.vim")
-		-- project manager
+		-- project manager (basically configured)
 		use({ "ahmedkhalf/project.nvim", requires = "nvim-telescope/telescope.nvim" })
-		-- dashboard
+		-- dashboard (fully configured)
 		use("glepnir/dashboard-nvim")
-		use("ryanoasis/vim-devicons")
-		use("voldikss/vim-codelf")
+		-- automatically highlighting other uses of the word under the cursor
 		use("RRethy/vim-illuminate")
-		use("kshenoy/vim-signature")
-		use("tpope/vim-repeat")
-		use("sheerun/vim-polyglot")
-		use("terryma/vim-smooth-scroll")
-		use("liuchengxu/vista.vim")
-		-- support for systemverilog (fully configured)
-		use({ "vhda/verilog_systemverilog.vim", ft = "systemverilog" })
-		use("easymotion/vim-easymotion")
-		use("Yggdroot/indentLine")
+		-- for coc-explorer (fully configured)
+		use("ryanoasis/vim-devicons")
+		-- more smooth scroll (fully configured)
+		use("karb94/neoscroll.nvim")
+		-- expand and repeat expression to multiple lines (fully configured)
+		use("AllenDang/nvim-expand-expr")
+		-- quick motion
+		use({
+			"phaazon/hop.nvim",
+			config = function()
+				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+			end,
+		})
+		-- shortcut suggestions (basically configured)
 		use("folke/which-key.nvim")
 		use("honza/vim-snippets")
+		-- auto complete pairs
+		use("windwp/nvim-autopairs")
 		-- automatically switch input method when input mode changed (fully configured)
 		use("lilydjwg/fcitx.vim")
-		use("xolox/vim-misc")
-		use({ "cespare/vim-toml", ft = "toml" })
-		-- use({ "liuchengxu/vim-clap", run = ":Clap install-binary" })
-		use({ "Yggdroot/LeaderF", run = ":LeaderfInstallCExtension" })
-		use("preservim/nerdcommenter")
-		use("rbtnn/vim-vimscript_indentexpr")
+		-- unit test
 		use({
 			"rcarriga/vim-ultest",
 			requires = { "vim-test/vim-test" },
@@ -59,15 +71,18 @@ packer.startup({
 		})
 		use("tpope/vim-fugitive")
 		use("airblade/vim-gitgutter")
+		-- aysnc tasks
 		use({ "skywind3000/asynctasks.vim", requires = "skywind3000/asyncrun.vim" })
+		-- colorscheme (fully configured)
 		use("folke/tokyonight.nvim")
+		-- zoom
 		use("dhruvasagar/vim-zoom")
-		use("sbdchd/neoformat")
-		use("leafOfTree/vim-vue-plugin")
-		use({ "arzg/vim-swift", ft = "swift" })
-		use({ "andymass/vim-matchup" })
 		-- better syntax highlight
-		use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+		use({
+			"nvim-treesitter/nvim-treesitter",
+			run = ":TSUpdate",
+			requires = { "p00f/nvim-ts-rainbow", "andymass/vim-matchup" },
+		})
 		-- automatically toggle between absolute line number and relative one
 		use("jeffkreeftmeijer/vim-numbertoggle")
 		-- tab line (something wrong with custom filters)
@@ -76,23 +91,24 @@ packer.startup({
 			tag = "v2.*",
 			requires = "kyazdani42/nvim-web-devicons",
 		})
-		use("luochen1990/rainbow")
 		-- debugger
 		use("puremourning/vimspector")
+		-- git diff gui
 		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-		use("gko/vim-coloresque")
+		-- colorizer (basically configured)
+		use("norcalli/nvim-colorizer.lua")
+		-- translate english to chinese (fully configured)
 		use("voldikss/vim-translator")
 		-- just use as a formatter manager now (continue to configure)
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
 			requires = "nvim-lua/plenary.nvim",
 		})
-		-- fuzzy search (cannot search hidden files, quickfix)
+		-- fuzzy search (cannot search quickfix)
 		use({
 			"nvim-telescope/telescope.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
 		})
-		-- use 'styled-components/vim-styled-components'
 	end,
 	config = {
 		ensure_dependencies = true,

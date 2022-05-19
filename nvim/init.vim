@@ -14,6 +14,14 @@ lua require('plugins.vim-translator')
 lua require('plugins.telescope')
 lua require('plugins.dashboard-nvim')
 lua require('plugins.project')
+lua require('plugins.vim-floaterm')
+lua require('plugins.comment')
+lua require('plugins/diffview')
+lua require('plugins/neoscroll')
+lua require('plugins/autopairs')
+lua require('plugins/surround')
+lua require('plugins/trouble')
+lua require('plugins/nvim-colorizer')
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -34,189 +42,11 @@ au VimEnter * :call FindProjectRoot(".root")
 let g:which_key_map1 =  {}
 let g:which_key_map2 =  {}
 
-" vim-floaterm
-nnoremap <silent> <C-z> :FloatermToggle <CR>
-tnoremap <silent> <C-z> <C-\><C-n> :FloatermToggle <CR>
-let g:floaterm_width =0.7
-let g:floaterm_height=0.7
-
-" rainbow
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-            \	'guifgs': ['#0099ff', '#00ff00', '#ff4dc3', '#ffff00', '#ff9933'],
-            \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-            \	'operators': '_,_',
-            \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-            \	'separately': {
-            \		'*': {},
-            \		'tex': {
-            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-            \		},
-            \		'lisp': {
-            \			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-            \		},
-            \		'vim': {
-            \			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-            \		},
-            \		'html': {
-            \			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-            \		},
-            \		'css': 0,
-            \	}
-            \}
-
-" vim-mundo
-set undofile
-set undodir=/home/niuiic/.vim_undo
-nnoremap <silent><nowait> <space>uo  :<C-u>MundoToggle<CR>
-nnoremap <silent><nowait> <space>uc :<C-u>!command rm -rf /home/niuiic/.vim_undo/*<CR>
-
-let g:which_key_map1.u = {
-            \ 'name' : '+undotree',
-            \ 'o' : 'open undotree',
-            \ 'c' : 'clean history',
-            \}
-
-let g:mundo_mappings = {
-            \ '<CR>': 'preview',
-            \ 'o': 'preview',
-            \ 'j': 'move_older',
-            \ 'k': 'move_newer',
-            \ '<down>': 'move_older',
-            \ '<up>': 'move_newer',
-            \ 'J': 'move_older_write',
-            \ 'K': 'move_newer_write',
-            \ 'gg': 'move_top',
-            \ 'G': 'move_bottom',
-            \ 'P': 'play_to',
-            \ 'd': 'diff',
-            \ 'i': 'toggle_inline',
-            \ '/': 'search',
-            \ 'n': 'next_match',
-            \ 'N': 'previous_match',
-            \ 'p': 'diff_current_buffer',
-            \ 'r': 'diff',
-            \ '?': 'toggle_help',
-            \ 'q': 'quit',
-            \ '<2-LeftMouse>': 'mouse_click' }
-
-" quickfix
-au VimEnter * :set makeprg=make
-" let g:suda_smart_edit = 1
-" coc-yank
-nnoremap <silent> <space>p  :<C-u>CocList -A --normal yank<cr>
-let g:which_key_map1.p= 'clipboard history'
-
-" vim-codelf
-nnoremap <silent><nowait> <space>fs :<C-u>:Codelf<space>
-nnoremap <silent><nowait> <space>fS :<C-u>CodelfOpenBrowser <space>
-
-let g:codelf_enable_popup_menu = 'true'
-let g:codelf_proxy_url='http://127.0.0.1:10025'
-let g:which_key_map1.f = {
-            \ 'name' : '+codelf',
-            \ 's' : 'search variable names',
-            \ 'S' : 'search variable names on the brower',
-            \ }
-
-" vim-illuminate
-let g:Illuminate_delay = 100
-augroup illuminate_augroup
-    autocmd!
-    autocmd VimEnter * hi illuminatedCurWord cterm=italic gui=italic
-augroup END
-augroup illuminate_augroup
-    autocmd!
-    autocmd VimEnter * hi link illuminatedWord CursorLine
-augroup END
-
-" vim-smooth-scroll
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*4, 0, 8)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*4, 0, 8)<CR>
-
-" vista.vim
-function! NearestMethodOrFunction() abort
-    return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-" set statusline+=%{NearestMethodOrFunction()}
-
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'ctags'
-let g:vista_executive_for = {
-            \ 'cpp' : 'coc',
-            \ 'rust' : 'coc',
-            \ }
-let g:vista_ctags_cmd = {
-            \ 'haskell': 'hasktags -x -o - -c',
-            \ }
-let g:vista_fzf_preview = ['right:50%']
-let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-            \   "function": "\uf794",
-            \   "variable": "\uf71b",
-            \  }
-nnoremap <silent><nowait> <space>m :<C-u>Vista<cr>
-let g:which_key_map1.m = 'show file tags'
-
-" verilog_systemverilog
-nnoremap <Leader>ii :VerilogFollowInstance<CR>
-nnoremap <Leader>ip :VerilogFollowPort<CR>
-
-let g:which_key_map2.i = {
-            \ 'name' : '+verilog',
-            \ 'i' : 'follow a module instance to its module declaration',
-            \ 'p' : 'navigate to the module declaration and immediately searching for that port',
-            \ }
-
-" vim-easymotion
-map  f <Plug>(easymotion-bd-f)
-nmap f <Plug>(easymotion-overwin-f)
-
-" Move to line
-map <silent><nowait> <space>l  <Plug>(easymotion-bd-jk)
-nmap <silent><nowait> <space>l  <Plug>(easymotion-bd-jk)
-
-" Move to word
-map  F  <Plug>(easymotion-bd-w)
-nmap F  <Plug>(easymotion-overwin-w)
-
-" To replace /
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
-let g:which_key_map1.l = 'move to line'
-let g:which_key_map1.w = 'move to word'
-
-
 " cancel hide
 autocmd FileType json,markdown let g:indentLine_conceallevel=0
 autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine_conceallevel=2
 
-" coc-pairs
-autocmd FileType tex,markdown let b:coc_pairs = [["$", "$"]]
-autocmd FileType rust let b:coc_pairs_disabled = ["'"]
-autocmd FileType c let b:coc_pairs_disabled = ["<", ">"]
-autocmd FileType systemverilog let b:coc_pairs_disabled = ["<", ">", "''"]
-
-" vim-clap & leaderf
-let g:Lf_UseCache = 0
-nnoremap <silent><nowait> <space>ok :<C-u>Leaderf --nowrap task<CR>
-
-" nerdcommenter
-
-let g:NERDSpaceDelims=1
-map <C-a> <Leader>c<space>
-" let g:NERDCustomDelimiters = { 'c': { 'left': '/*', 'right': '*/' } }
-let g:NERDCustomDelimiters = { 'c': { 'left': '//'} }
-
 " vim-fugitive
-
 nnoremap <silent><nowait> <space>ag :<C-u>G<space>
 nnoremap <silent><nowait> <space>ac :<C-u>G commit -m<space>
 nnoremap <silent><nowait> <space>al :<C-u>G log<CR>
@@ -264,11 +94,7 @@ let g:which_key_map1.h = {
             \ 'r' : 'refresh',
             \}
 
-" jump to next hunk (change): ]c
-" jump to previous hunk (change): [c
-"
 " asynctasks.vim
-
 nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
 nnoremap <silent><nowait> <space>sb :<C-u>:AsyncTask project-build<CR>
 nnoremap <silent><nowait> <space>st :<C-u>:AsyncTask project-test<CR>
@@ -382,9 +208,6 @@ map <c-w>o <c-w>m
 vmap <C-p> <Plug>(coc-codeaction-selected)
 xmap <C-p> <Plug>(coc-codeaction-selected)
 nmap <C-p> <Plug>(coc-codeaction-selected)
-
-" vim-matchup
-lua require('plugins/VimMatchUp')
 
 " vimspector
 let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
@@ -648,31 +471,8 @@ let g:which_key_map2.c = {
 " hi! CocErrorLine guifg=#E5080D
 hi! CocUnusedHighlight guifg=#ff33cc
 
-" diffview.nvim
-lua require('plugins/Diffview')
-nmap <silent><nowait><leader>do :<C-u>DiffviewOpen
-nmap <silent><nowait><leader>dq :<C-u>DiffviewClose<CR>
-nmap <silent><nowait><leader>dr :<C-u>DiffviewRefresh<CR>
-nmap <silent><nowait><leader>dh :<C-u>DiffviewFileHistory
-
-let g:which_key_map2.d = {
-            \ 'name' : '+diffview',
-            \ 'o' : 'diff open (HEAD~2, d4a7b0d..519b30e)',
-            \ 'q' : 'close diff windows',
-            \ 'r' : 'refresh',
-            \ 'h' : 'diff open (git) history (path to file or directory)'
-            \}
-
-" focus on center
-" nnoremap j jzz
-" nnoremap k kzz
-nnoremap J zz
-
 " coc-css
 autocmd FileType scss setl iskeyword+=@-@
-
-" fcitx.vim
-set ttimeoutlen=10
 
 " vim-ultest
 nnoremap <silent><nowait> <leader>ta :<C-u>:Ultest<CR>
@@ -742,18 +542,6 @@ vnoremap <C-s> :<c-u>call Save_visually_selected_text_to_file()<cr>
 let g:omni_sql_no_default_maps = 1
 
 " vim-translator
-" popup
-nmap <silent><nowait> <space>tp  <Plug>TranslateW
-vmap <silent><nowait> <space>tp  <Plug>TranslateWV
-" echo
-nmap <silent><nowait> <space>te  <Plug>Translate
-vmap <silent><nowait> <space>te  <Plug>TranslateV
-" replace
-nmap <silent><nowait> <space>tr  <Plug>TranslateR
-vmap <silent><nowait> <space>tr  <Plug>TranslateRV
-" clipboard
-nmap <silent><nowait> <space>tc  <Plug>TranslateX
-
 nnoremap <silent><expr> <C-[> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(1) : "\<C=[>"
 nnoremap <silent><expr> <C-]> translator#window#float#has_scroll() ?

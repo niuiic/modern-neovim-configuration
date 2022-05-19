@@ -108,6 +108,12 @@
   "markdownlint.onChange": false,
   "markdownlint.onSave": false,
   "languageserver": {
+    // "bash": {
+    // "command": "bash-language-server",
+    // "args": ["start"],
+    // "filetypes": ["sh"],
+    // "ignoredRootPaths": ["~"]
+    // },
     "svlangserver": {
       "module": "/home/niuiic/Applications/Nodejs//npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
       "filetypes": ["verilog_systemverilog"],
@@ -164,5 +170,6 @@
     "quickfix",
     "todos",
     "typeof"
-  ]
+  ],
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true
 }

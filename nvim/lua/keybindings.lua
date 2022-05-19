@@ -12,6 +12,9 @@ local register = which_key.register
 -- unmap
 map("n", "<leader>b", "", opt)
 
+-- focus on center
+map("n", "J", "zz", opt)
+
 -- esc
 map("i", "<C-c>", "<esc>", opt)
 
@@ -141,6 +144,7 @@ register({
 			"search buffer",
 		},
 		c = {
+			name = "command",
 			c = {
 				"<cmd>Telescope commands<CR>",
 				"search command",
@@ -151,7 +155,14 @@ register({
 			},
 		},
 		f = {
-			"<cmd>Telescope fd<CR>",
+			function()
+				require("telescope.builtin").find_files({
+					hidden = true,
+					search_dirs = {
+						require("utils").fn.getWorkspacePath(),
+					},
+				})
+			end,
 			"search files in workspace",
 		},
 		q = {
@@ -175,22 +186,22 @@ register({
 			"search marks",
 		},
 		t = {
-			function()
-				vim.fn.systemlist("ctags -R")
-				require("telescope.builtin").current_buffer_tags()
-			end,
-			"search tags in current buffer",
+			"<cmd>Telescope treesitter<CR>",
+			"search tags",
 		},
 		w = {
 			"<cmd>Telescope current_buffer_fuzzy_find<CR>",
 			"search words in current buffer",
+		},
+		k = {
+			"<cmd>TodoTelescope<CR>",
+			"search keywords(TODO, FIXME, etc) in the project",
 		},
 		p = {
 			"<cmd>Telescope projects<CR>",
 			"search projects",
 		},
 		g = {
-			name = "global search",
 			w = {
 				"<cmd>Telescope live_grep<CR>",
 				"search words globally",
@@ -203,6 +214,119 @@ register({
 				"search tags globally",
 			},
 		},
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
+})
+
+-- vim-floaterm
+vim.g.floaterm_keymap_toggle = "<C-z>"
+
+-- coc-yank
+register({
+	p = {
+		"<cmd>CocList -A --normal yank<CR>",
+		"clipboard history",
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
+})
+
+-- hop.nvim
+map("n", "f", ":HopChar1<CR>", opt)
+map("o", "f", ":HopChar1<CR>", opt)
+map("n", "F", ":HopLine<CR>", opt)
+map("o", "F", ":HopLine<CR>", opt)
+register({
+	p = {
+		"<cmd>CocList -A --normal yank<CR>",
+		"clipboard history",
+	},
+}, {
+	prefix = "<localleader>",
+})
+
+-- Comment.nvim
+map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", opt)
+map("n", "<C-a>", "<Plug>(comment_toggle_current_linewise)", opt)
+
+-- diffview.nvim
+map("n", "<leader>do", ":DiffviewOpen ", opt)
+map("n", "<leader>dh", ":DiffviewFileHistory ", opt)
+register({
+	d = {
+		name = "diffview",
+		o = "diff open (HEAD~2, d4a7b0d..519b30e)",
+		q = {
+			"<cmd>DiffviewClose<CR>",
+			"close diff windows",
+		},
+		r = {
+			"<cmd>DiffviewRefresh<CR>",
+			"refresh",
+		},
+		h = "diff open (git) history (path to file or directory)",
+	},
+}, {
+	mode = "n",
+	prefix = "<leader>",
+})
+
+-- vim-translator
+register({
+	t = {
+		name = "translate",
+		p = {
+			"<Plug>TranslateW",
+			"popup",
+		},
+		e = {
+			"<Plug>Translate",
+			"echo",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
+})
+
+register({
+	t = {
+		name = "translate",
+		p = {
+			"<Plug>TranslateWV",
+			"popup",
+		},
+		e = {
+			"<Plug>TranslateV",
+			"echo",
+		},
+	},
+}, {
+	mode = "v",
+	prefix = "<localleader>",
+})
+
+-- undotree
+register({
+	u = {
+		"<cmd>UndotreeToggle<CR>",
+		"undotree",
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
+})
+
+-- nvim-expand-expr
+register({
+	e = {
+		function()
+			require("expand_expr").expand()
+		end,
+		"expand and repeat expression to multiple lines",
 	},
 }, {
 	mode = "n",

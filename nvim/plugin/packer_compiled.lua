@@ -69,10 +69,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  LeaderF = {
+  ["Comment.nvim"] = {
     loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/LeaderF",
-    url = "https://github.com/Yggdroot/LeaderF"
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
   },
   ["asyncrun.vim"] = {
     loaded = true,
@@ -109,35 +109,51 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/fcitx.vim",
     url = "https://github.com/lilydjwg/fcitx.vim"
   },
-  indentLine = {
+  ["hop.nvim"] = {
+    config = { "\27LJ\1\2U\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0" },
     loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/indentLine",
-    url = "https://github.com/Yggdroot/indentLine"
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
-  neoformat = {
+  ["neoscroll.nvim"] = {
     loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
-  },
-  nerdcommenter = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nerdcommenter",
-    url = "https://github.com/preservim/nerdcommenter"
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
     url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
+  ["nvim-expand-expr"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-expand-expr",
+    url = "https://github.com/AllenDang/nvim-expand-expr"
+  },
   ["nvim-treesitter"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -159,15 +175,15 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
-  rainbow = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/rainbow",
-    url = "https://github.com/luochen1990/rainbow"
-  },
   ["suda.vim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/suda.vim",
     url = "https://github.com/lambdalisue/suda.vim"
+  },
+  ["surround.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/surround.nvim",
+    url = "https://github.com/ur4ltz/surround.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -184,32 +200,20 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
-  ["verilog_systemverilog.vim"] = {
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim",
-    url = "https://github.com/vhda/verilog_systemverilog.vim"
-  },
-  ["vim-codelf"] = {
+  ["trouble.nvim"] = {
     loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-codelf",
-    url = "https://github.com/voldikss/vim-codelf"
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
-  ["vim-coloresque"] = {
+  undotree = {
     loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-coloresque",
-    url = "https://github.com/gko/vim-coloresque"
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/jiaoshijie/undotree"
   },
   ["vim-devicons"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
-  },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-easymotion",
-    url = "https://github.com/easymotion/vim-easymotion"
   },
   ["vim-floaterm"] = {
     loaded = true,
@@ -236,64 +240,20 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-matchup",
     url = "https://github.com/andymass/vim-matchup"
   },
-  ["vim-misc"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-misc",
-    url = "https://github.com/xolox/vim-misc"
-  },
-  ["vim-mundo"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-mundo",
-    url = "https://github.com/simnalamburt/vim-mundo"
-  },
   ["vim-numbertoggle"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-numbertoggle",
     url = "https://github.com/jeffkreeftmeijer/vim-numbertoggle"
-  },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-polyglot",
-    url = "https://github.com/sheerun/vim-polyglot"
-  },
-  ["vim-repeat"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-repeat",
-    url = "https://github.com/tpope/vim-repeat"
-  },
-  ["vim-signature"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-signature",
-    url = "https://github.com/kshenoy/vim-signature"
-  },
-  ["vim-smooth-scroll"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-smooth-scroll",
-    url = "https://github.com/terryma/vim-smooth-scroll"
   },
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "https://github.com/honza/vim-snippets"
   },
-  ["vim-swift"] = {
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift",
-    url = "https://github.com/arzg/vim-swift"
-  },
   ["vim-test"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
-  },
-  ["vim-toml"] = {
-    loaded = false,
-    needs_bufread = true,
-    only_cond = false,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml",
-    url = "https://github.com/cespare/vim-toml"
   },
   ["vim-translator"] = {
     loaded = true,
@@ -305,16 +265,6 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-ultest",
     url = "https://github.com/rcarriga/vim-ultest"
   },
-  ["vim-vimscript_indentexpr"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-vimscript_indentexpr",
-    url = "https://github.com/rbtnn/vim-vimscript_indentexpr"
-  },
-  ["vim-vue-plugin"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-vue-plugin",
-    url = "https://github.com/leafOfTree/vim-vue-plugin"
-  },
   ["vim-zoom"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-zoom",
@@ -325,11 +275,6 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector",
     url = "https://github.com/puremourning/vimspector"
   },
-  ["vista.vim"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vista.vim",
-    url = "https://github.com/liuchengxu/vista.vim"
-  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/which-key.nvim",
@@ -338,26 +283,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType swift ++once lua require("packer.load")({'vim-swift'}, { ft = "swift" }, _G.packer_plugins)]]
-vim.cmd [[au FileType toml ++once lua require("packer.load")({'vim-toml'}, { ft = "toml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType systemverilog ++once lua require("packer.load")({'verilog_systemverilog.vim'}, { ft = "systemverilog" }, _G.packer_plugins)]]
-time([[Defining lazy-load filetype autocommands]], false)
-vim.cmd("augroup END")
-vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim/ftdetect/verilog_systemverilog.vim]], true)
-vim.cmd [[source /home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim/ftdetect/verilog_systemverilog.vim]]
-time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/verilog_systemverilog.vim/ftdetect/verilog_systemverilog.vim]], false)
-time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml/ftdetect/toml.vim]], true)
-vim.cmd [[source /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml/ftdetect/toml.vim]]
-time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-toml/ftdetect/toml.vim]], false)
-time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift/ftdetect/swift.vim]], true)
-vim.cmd [[source /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift/ftdetect/swift.vim]]
-time([[Sourcing ftdetect script at: /home/niuiic/.local/share/nvim/site/pack/packer/opt/vim-swift/ftdetect/swift.vim]], false)
-vim.cmd("augroup END")
+-- Config for: hop.nvim
+time([[Config for hop.nvim]], true)
+try_loadstring("\27LJ\1\2U\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\tkeys\28etovxqpdygfblzhckisuran\nsetup\bhop\frequire\0", "config", "hop.nvim")
+time([[Config for hop.nvim]], false)
 if should_profile then save_profiles(1) end
 
 end)

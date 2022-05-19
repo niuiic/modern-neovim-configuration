@@ -17,7 +17,7 @@ lualine.setup({
 	sections = {
 		lualine_a = { "filename" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "b:vista_nearest_method_or_function", "g:coc_status" },
+		lualine_c = { "b:coc_current_function", "g:coc_status" },
 		lualine_x = { "encoding", "filetype", "filesize" },
 		lualine_y = { "progress", "location" },
 		lualine_z = { 'os.date("%I:%M:%S", os.time())' },
