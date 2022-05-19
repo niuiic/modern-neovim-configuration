@@ -43,8 +43,6 @@ packer.startup({
 		use("glepnir/dashboard-nvim")
 		-- automatically highlighting other uses of the word under the cursor
 		use("RRethy/vim-illuminate")
-		-- for coc-explorer (fully configured)
-		use("ryanoasis/vim-devicons")
 		-- more smooth scroll (fully configured)
 		use("karb94/neoscroll.nvim")
 		-- expand and repeat expression to multiple lines (fully configured)
@@ -69,10 +67,21 @@ packer.startup({
 			requires = { "vim-test/vim-test" },
 			run = ":UpdateRemotePlugins",
 		})
+		-- repeat previous cmd
+		use("tpope/vim-repeat")
+		-- git operations
 		use("tpope/vim-fugitive")
+		-- operations about git diff
 		use("airblade/vim-gitgutter")
 		-- aysnc tasks
-		use({ "skywind3000/asynctasks.vim", requires = "skywind3000/asyncrun.vim" })
+		use({
+			"skywind3000/asynctasks.vim",
+			requires = {
+				"skywind3000/asyncrun.vim",
+				-- for searching tasks
+				"neoclide/coc.nvim",
+			},
+		})
 		-- colorscheme (fully configured)
 		use("folke/tokyonight.nvim")
 		-- zoom

@@ -1,5 +1,6 @@
-utils = { fn = {} }
+utils = { fn = {}, var = {} }
 
+-- find project root
 local getPrevLevelPath = function(currentPath)
 	tmp = string.reverse(currentPath)
 	_, i = string.find(tmp, "/")
@@ -19,5 +20,11 @@ utils.fn.getWorkspacePath = function()
 	end
 	return pathBp
 end
+
+-- set keymap
+utils.fn.map = vim.api.nvim_set_keymap
+utils.var.opt = { noremap = true, silent = true }
+local which_key = require("which-key")
+utils.fn.mapRegister = which_key.register
 
 return utils

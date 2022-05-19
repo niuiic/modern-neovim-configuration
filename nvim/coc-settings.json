@@ -5,14 +5,12 @@
   "suggest.enablePreview": true,
   "suggest.noselect": false,
   "explorer.icon.enableNerdfont": true,
-  "explorer.icon.source": "vim-devicons",
+  "explorer.icon.source": "nvim-web-devicons",
   "explorer.file.showHiddenFiles": true,
   "explorer.keyMappings.global": {
     "i": false,
-
     "*": "toggleSelection",
     "<tab>": "actionMenu",
-
     "gk": ["wait", "expandablePrev"],
     "gj": ["wait", "expandableNext"],
     "h": ["wait", "collapse"],
@@ -39,7 +37,6 @@
     "Il": "previewOnHover:toggle:labeling",
     "Ic": "previewOnHover:toggle:content",
     "II": "previewOnHover:disable",
-
     "yp": "copyFilepath",
     "yn": "copyFilename",
     "yy": "copyFile",
@@ -47,41 +44,31 @@
     "p": "pasteFile",
     "df": "delete",
     "dF": "deleteForever",
-
     "a": "addFile",
     "A": "addDirectory",
     "r": "rename",
-
     "zh": "toggleHidden",
     "g<dot>": "toggleHidden",
     "R": "refresh",
-
     "?": "help",
     "q": "quit",
     "<esc>": "esc",
     "X": "systemExecute",
     "gd": "listDrive",
-
     "f": "search",
     "F": "searchRecursive",
-
     "gf": "gotoSource:file",
     "gb": "gotoSource:buffer",
-
     "[[": ["wait", "sourcePrev"],
     "]]": ["wait", "sourceNext"],
-
     "[i": ["wait", "indentPrev"],
     "]i": ["wait", "indentNext"],
-
     "[m": ["wait", "markPrev:modified"],
     "]m": ["wait", "markNext:modified"],
-
     "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],
     "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],
     "[D": ["wait", "markPrev:diagnosticError"],
     "]D": ["wait", "markNext:diagnosticError"],
-
     "[c": ["wait", "markPrev:git"],
     "]c": ["wait", "markNext:git"],
     "<<": "gitStage",
@@ -93,12 +80,10 @@
     "incorrect-ident-case",
     "missing-unsafe"
   ],
-
   // "rust-analyzer.checkOnSave.target": "thumbv7em-none-eabihf",
   // "rust-analyzer.checkOnSave.allTargets": false,
   "rust-analyzer.lens.methodReferences": true,
   "rust-analyzer.procMacro.enable": true,
-
   "rust-analyzer.lruCapacity": 1000,
   "rust-analyzer.updates.channel": "nightly",
   "go.goplsOptions": {
@@ -108,12 +93,6 @@
   "markdownlint.onChange": false,
   "markdownlint.onSave": false,
   "languageserver": {
-    // "bash": {
-    // "command": "bash-language-server",
-    // "args": ["start"],
-    // "filetypes": ["sh"],
-    // "ignoredRootPaths": ["~"]
-    // },
     "svlangserver": {
       "module": "/home/niuiic/Applications/Nodejs//npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
       "filetypes": ["verilog_systemverilog"],
@@ -144,16 +123,11 @@
         }
       }
     },
-    "kotlin": {
-      "command": "~/Applications/Kotlin/lsp/bin/kotlin-language-server",
-      "filetypes": ["kotlin"]
-    },
     "lsp-asm": {
       "command": "lsp-asm",
       "filetypes": ["asm", "s", "S"]
     }
   },
-  "sourcekit.commandPath": "/home/niuiic/Applications/Swift/swift/usr/bin/sourcekit-lsp",
   "go.goplsPath": "/home/niuiic/Applications/Go/bin/gopls",
   "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets",
   "cSpell.enabledLanguageIds": ["markdown"],

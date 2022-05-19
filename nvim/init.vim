@@ -1,27 +1,18 @@
 " lua
 lua require('plugins')
 lua require('basic')
-lua require('keybindings')
-lua require('colorscheme')
-lua require('plugins.lualine')
-lua require('plugins.bufferline')
-lua require('plugins.nvim-treesitter')
-lua require('plugins.null-ls')
-lua require('plugins.which-key')
-lua require('plugins.todo-comments')
-lua require('plugins.suda')
-lua require('plugins.vim-translator')
-lua require('plugins.telescope')
-lua require('plugins.dashboard-nvim')
-lua require('plugins.project')
-lua require('plugins.vim-floaterm')
-lua require('plugins.comment')
-lua require('plugins/diffview')
-lua require('plugins/neoscroll')
-lua require('plugins/autopairs')
-lua require('plugins/surround')
-lua require('plugins/trouble')
-lua require('plugins/nvim-colorizer')
+" require plugins/*
+lua << EOF
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
+    require('plugins.'..file:gsub('%.lua$', ''))
+    end
+EOF
+" require keybindings/*
+lua << EOF
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/keybindings', [[v:val =~ '\.lua$']])) do
+    require('keybindings.'..file:gsub('%.lua$', ''))
+    end
+EOF
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -93,98 +84,6 @@ let g:which_key_map1.h = {
             \ 'h' : 'toggle line highlight',
             \ 'r' : 'refresh',
             \}
-
-" asynctasks.vim
-nnoremap <silent><nowait> <space>sr :<C-u>:AsyncTask project-run<CR>
-nnoremap <silent><nowait> <space>sb :<C-u>:AsyncTask project-build<CR>
-nnoremap <silent><nowait> <space>st :<C-u>:AsyncTask project-test<CR>
-nnoremap <silent><nowait> <space>sd :<C-u>:AsyncTask project-debug<CR>
-nnoremap <silent><nowait> <space>sB :<C-u>:AsyncTask project-concrete-build<CR>
-nnoremap <silent><nowait> <space>sR :<C-u>:AsyncTask project-concrete-run<CR>
-nnoremap <silent><nowait> <space>sT :<C-u>:AsyncTask project-concrete-test<CR>
-nnoremap <silent><nowait> <space>sD :<C-u>:AsyncTask project-concrete-debug<CR>
-nnoremap <silent><nowait> <space>sc :<C-u>:AsyncTask project-clean<CR>
-nnoremap <silent><nowait> <space>sf :<C-u>:AsyncTask trans-to-en<CR>
-nnoremap <silent><nowait> <space>ss :<C-u>:AsyncTask sql<CR>
-nnoremap <silent><nowait> <space>se :<C-u>:AsyncTaskEdit<CR>
-nnoremap <silent><nowait> <space>sE :<C-u>:AsyncTaskEdit!<CR>
-nnoremap <silent><nowait> <space>sg :<C-u>:AsyncTask git<CR>
-let g:asyncrun_rootmarks = ['.root']
-let g:asynctasks_term_pos = 'bottom'
-let g:asynctasks_term_rows = 10
-let g:asynctasks_term_cols = 80
-let g:asynctasks_term_focus=0
-let g:asynctasks_confirm = 0
-
-let g:which_key_map1.s = {
-            \ 'name' : '+asynctasks',
-            \ 'R' : 'run project (concrete)',
-            \ 'B' : 'build project (concrete)',
-            \ 'T' : 'test project (concrete)',
-            \ 'b' : 'build project',
-            \ 't' : 'test project',
-            \ 'r' : 'run project',
-            \ 'd' : 'debug project',
-            \ 'D' : 'debug project (concrete)',
-            \ 'c' : 'clean project',
-            \ 'e' : 'edit config',
-            \ 's' : 'run sql command',
-            \ 'E' : 'edit global config',
-            \ 'f' : 'translate chinese to english',
-            \}
-
-let g:asynctasks_config_name = '.task.ini'
-let g:asyncrun_open = 25
-
-function! s:lf_task_source(...)
-    let rows = asynctasks#source(&columns * 48 / 100)
-    let source = []
-    for row in rows
-        let name = row[0]
-        let source += [name . '  ' . row[1] . '  : ' . row[2]]
-    endfor
-    return source
-endfunction
-
-
-function! s:lf_task_accept(line, arg)
-    let pos = stridx(a:line, '<')
-    if pos < 0
-        return
-    endif
-    let name = strpart(a:line, 0, pos)
-    let name = substitute(name, '^\s*\(.\{-}\)\s*$', '\1', '')
-    if name != ''
-        exec "AsyncTask " . name
-    endif
-endfunction
-
-function! s:lf_task_digest(line, mode)
-    let pos = stridx(a:line, '<')
-    if pos < 0
-        return [a:line, 0]
-    endif
-    let name = strpart(a:line, 0, pos)
-    return [name, 0]
-endfunction
-
-function! s:lf_win_init(...)
-    setlocal nonumber
-    setlocal nowrap
-endfunction
-
-
-let g:Lf_Extensions = get(g:, 'Lf_Extensions', {})
-let g:Lf_Extensions.task = {
-            \ 'source': string(function('s:lf_task_source'))[10:-3],
-            \ 'accept': string(function('s:lf_task_accept'))[10:-3],
-            \ 'get_digest': string(function('s:lf_task_digest'))[10:-3],
-            \ 'highlights_def': {
-            \     'Lf_hl_funcScope': '^\S\+',
-            \     'Lf_hl_funcDirname': '^\S\+\s*\zs<.*>\ze\s*:',
-            \ },
-            \ 'help' : 'navigate available tasks from asynctasks.vim',
-            \ }
 
 " modify file encoding
 nmap <silent><nowait> <leader>e :set fenc=utf8<CR>
@@ -507,7 +406,7 @@ let test#go#gotest#options = "-v"
 set nofoldenable
 " syntax on
 " autocmd VimEnter * setlocal foldmethod=manual
-set foldmethod=manual
+au BufRead set foldmethod=manual " this is covered by unknown configuration
 augroup remember_folds
     autocmd!
     au BufWinLeave ?* mkview 1
@@ -546,11 +445,3 @@ nnoremap <silent><expr> <C-[> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(1) : "\<C=[>"
 nnoremap <silent><expr> <C-]> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(0) : "\<C-[>"
-
-let g:which_key_map1.t = {
-            \ 'name' : '+translate',
-            \ 'p' : 'popup',
-            \ 'e' : 'echo',
-            \ 'r' : 'replace',
-            \ 'c' : 'clipboard',
-            \ }
