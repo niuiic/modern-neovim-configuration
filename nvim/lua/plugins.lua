@@ -94,7 +94,7 @@ packer.startup({
 		})
 		-- automatically toggle between absolute line number and relative one
 		use("jeffkreeftmeijer/vim-numbertoggle")
-		-- tab line (something wrong with custom filters)
+		-- tab line (basically configured)
 		use({
 			"akinsho/bufferline.nvim",
 			tag = "v2.*",
@@ -117,6 +117,20 @@ packer.startup({
 		use({
 			"nvim-telescope/telescope.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
+		})
+		-- file tree
+		use({
+			"kyazdani42/nvim-tree.lua",
+			requires = {
+				"kyazdani42/nvim-web-devicons",
+			},
+			tag = "nightly",
+		})
+		-- lsp manager
+		use({
+			"williamboman/nvim-lsp-installer",
+			"neovim/nvim-lspconfig",
+			ft = "sh",
 		})
 	end,
 	config = {

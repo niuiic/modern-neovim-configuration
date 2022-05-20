@@ -1,16 +1,16 @@
 " lua
 lua require('plugins')
 lua require('basic')
-" require plugins/*
+" require plugin/*
 lua << EOF
-    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
-    require('plugins.'..file:gsub('%.lua$', ''))
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/plugin', [[v:val =~ '\.lua$']])) do
+    require('plugin.'..file:gsub('%.lua$', ''))
     end
 EOF
-" require keybindings/*
+" require keybinding/*
 lua << EOF
-    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/keybindings', [[v:val =~ '\.lua$']])) do
-    require('keybindings.'..file:gsub('%.lua$', ''))
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/keybinding', [[v:val =~ '\.lua$']])) do
+    require('keybinding.'..file:gsub('%.lua$', ''))
     end
 EOF
 
@@ -445,3 +445,4 @@ nnoremap <silent><expr> <C-[> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(1) : "\<C=[>"
 nnoremap <silent><expr> <C-]> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(0) : "\<C-[>"
+
