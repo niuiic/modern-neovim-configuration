@@ -1,4 +1,4 @@
-utils = require("utils")
+local utils = require("utils")
 
 utils.fn.map("n", "<leader>do", ":DiffviewOpen ", utils.var.opt)
 utils.fn.map("n", "<leader>dh", ":DiffviewFileHistory ", utils.var.opt)

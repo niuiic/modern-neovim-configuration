@@ -1,8 +1,4 @@
-local status, lualine = pcall(require, "lualine")
-if not status then
-    vim.notify("not found lualine")
-    return
-end
+local lualine = require("lualine")
 
 local gps = require("nvim-gps")
 

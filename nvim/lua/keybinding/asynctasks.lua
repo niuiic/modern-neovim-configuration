@@ -1,4 +1,4 @@
-utils = require("utils")
+local utils = require("utils")
 
 utils.fn.mapRegister({
     s = {

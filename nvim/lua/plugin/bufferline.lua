@@ -1,10 +1,4 @@
-local status, bufferline = pcall(require, "bufferline")
-if not status then
-    vim.notify("not found bufferline")
-    return
-end
-
-bufferline.setup({
+require("bufferline").setup({
     options = {
         mode = "buffers",
         numbers = "ordinal",

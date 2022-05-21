@@ -39,54 +39,6 @@ au VimEnter * :call FindProjectRoot(".root")
 let g:which_key_map1 =  {}
 let g:which_key_map2 =  {}
 
-" vim-fugitive
-nnoremap <silent><nowait> <space>ag :<C-u>G<space>
-nnoremap <silent><nowait> <space>ac :<C-u>G commit -m<space>
-nnoremap <silent><nowait> <space>al :<C-u>G log<CR>
-nnoremap <silent><nowait> <space>ab :<C-u>G blame<CR>
-nnoremap <silent><nowait> <space>as :<C-u>G status<CR>
-nnoremap <silent><nowait> <space>ar :<C-u>Gread<CR>
-nnoremap <silent><nowait> <space>aw :<C-u>Gwrite<CR>
-nnoremap <silent><nowait> <space>ap :<C-u>Ggrep<space>
-nnoremap <silent><nowait> <space>av :<C-u>GMove<space>
-nnoremap <silent><nowait> <space>ae :<C-u>GDelete<CR>
-
-let g:which_key_map1.a = {
-            \ 'name' : '+git',
-            \ 'g' : 'git command',
-            \ 'c' : 'git commit',
-            \ 'l' : 'git log',
-            \ 'b' : 'git blame',
-            \ 's' : 'git status',
-            \ 'r' : 'git checkout current file',
-            \ 'w' : 'git add current file',
-            \ 'p' : 'git grep',
-            \ 'v' : 'git move',
-            \ 'e' : 'git delete current file'
-            \}
-
-" vim-gitgutter
-command! Gqf GitGutterQuickFix | copen20
-
-nnoremap <silent><nowait> <space>hq :<C-u>Gqf<CR>
-nnoremap <silent><nowait> <space>hs <Plug>(GitGutterStageHunk)
-nnoremap <silent><nowait> <space>hu <Plug>(GitGutterUndoHunk)
-nnoremap <silent><nowait> <space>hp <Plug>(GitGutterPreviewHunk)
-nnoremap <silent><nowait> <space>hf :<C-u>GitGutterFold<CR>
-nnoremap <silent><nowait> <space>hh :<C-u>GitGutterLineHighlightsToggle<CR>
-nnoremap <silent><nowait> <space>hr :<C-u>GitGutterAll<CR>
-
-let g:which_key_map1.h = {
-            \ 'name' : '+git_diff',
-            \ 'q' : 'open diff in quickfix window',
-            \ 's' : 'commit the diff',
-            \ 'u' : 'undo the diff',
-            \ 'p' : 'preview the diff',
-            \ 'f' : 'fold unchanged lines',
-            \ 'h' : 'toggle line highlight',
-            \ 'r' : 'refresh',
-            \}
-
 " modify file encoding
 nmap <silent><nowait> <leader>e :set fenc=utf8<CR>
 set fencs=utf-8,gbk,big5,cp936,gb18030,gb2312,utf-16
@@ -162,35 +114,6 @@ let g:which_key_map1.d = {
             \ 't' : 'Telemetry',
             \},
             \}
-
-" vim-ultest
-nnoremap <silent><nowait> <leader>ta :<C-u>:Ultest<CR>
-nmap <silent><nowait> <leader>tf <Plug>(ultest-run-file)
-nnoremap <silent><nowait> <leader>tn :<C-u>:UltestNearest<CR>
-nnoremap <silent><nowait> <leader>tl :<C-u>:UltestLast<CR>
-nnoremap <silent><nowait> <leader>ts :<C-u>:UltestStop<CR>
-nmap <silent><nowait> <leader>to <Plug>(ultest-output-jump)
-nmap <silent><nowait> <leader>tj <Plug>(ultest-summary-jump)
-nmap ;j <Plug>(ultest-next-fail)
-nmap ;k <Plug>(ultest-prev-fail)
-
-let g:which_key_map2.t ={
-            \ 'name' : '+test',
-            \ 'a' : 'run all tests',
-            \ 'f' : 'run tests in the current file',
-            \ 'n' : 'run the test nearest to the cursor',
-            \ 'l' : 'run the last test',
-            \ 's' : 'stop all tests in the current file',
-            \ 'o' : 'show output of the nearest test',
-            \ 'j' : 'jump to the summary window',
-            \}
-
-let g:ultest_max_threads=8
-let g:ultest_use_pty = 1
-let g:ultest_summary_height=10
-let g:ultest_summary_open="botright split | resize".g:ultest_summary_height
-let g:ultest_output_on_run=v:false
-let test#go#gotest#options = "-v"
 
 " fold
 set nofoldenable

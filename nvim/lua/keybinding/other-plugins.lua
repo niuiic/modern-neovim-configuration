@@ -1,4 +1,4 @@
-utils = require("utils")
+local utils = require("utils")
 
 -- format
 utils.fn.map("n", "<AC-l>", ":lua vim.lsp.buf.format()<CR>", utils.var.opt)

@@ -1,4 +1,4 @@
-utils = require("utils")
+local utils = require("utils")
 
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
@@ -75,3 +75,6 @@ utils.fn.map("n", "<A-j>", ":cnext<CR>", utils.var.opt)
 utils.fn.map("n", "<A-k>", ":cprev<CR>", utils.var.opt)
 utils.fn.map("n", "<A-g>", ":cfirst<CR>", utils.var.opt)
 utils.fn.map("n", "<A-G>", ":clast<CR>", utils.var.opt)
+
+-- copy to systemclip
+utils.fn.map("x", "Y", '"+y<Esc>', utils.var.opt)
