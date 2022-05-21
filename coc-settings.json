@@ -1,0 +1,79 @@
+{
+  "coc.source.file.ignoreHidden": false,
+  "coc.preferences.rootPatterns": [".git", ".hg", ".projections.json", ".root"],
+  "yank.enableCompletion": false,
+  "suggest.enablePreview": true,
+  "suggest.noselect": false,
+  "jedi.workspace.extraPaths": ["facial_recognition"],
+  "rust-analyzer.diagnostics.disabled": [
+    "unresolved-macro-call",
+    "incorrect-ident-case",
+    "missing-unsafe"
+  ],
+  // "rust-analyzer.checkOnSave.target": "thumbv7em-none-eabihf",
+  // "rust-analyzer.checkOnSave.allTargets": false,
+  "rust-analyzer.lens.methodReferences": true,
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.lruCapacity": 1000,
+  "rust-analyzer.updates.channel": "nightly",
+  "go.goplsOptions": {
+    "completeUnimported": true
+  },
+  "markdownlint.onOpen": false,
+  "markdownlint.onChange": false,
+  "markdownlint.onSave": false,
+  "languageserver": {
+    "svlangserver": {
+      "module": "/home/niuiic/Applications/Nodejs//npm_global/lib64/node_modules/@imc-trading/svlangserver/lib/svlangserver.js",
+      "filetypes": ["verilog_systemverilog"],
+      "settings": {
+        "systemverilog.includeIndexing": [
+          "sources*/**/*.{sv,svh}",
+          "*.{sv,svh}"
+        ],
+        "systemverilog.excludeIndexing": ["sim*/**/*.sv*"],
+        "systemverilog.defines": [],
+        "systemverilog.launchConfiguration": "/usr/bin/verilator -sv -Wall --lint-only",
+        "systemverilog.formatCommand": "/usr/bin/verible-verilog-format"
+      }
+    },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+      "rootPatterns": [
+        ".root",
+        ".ccls",
+        "compile_commands.json",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
+    "lsp-asm": {
+      "command": "lsp-asm",
+      "filetypes": ["asm", "s", "S"]
+    }
+  },
+  "go.goplsPath": "/home/niuiic/Applications/Go/bin/gopls",
+  "snippets.userSnippetsDirectory": "/home/niuiic/.config/nvim/snippets",
+  "cSpell.enabledLanguageIds": ["markdown"],
+  "cSpell.userWords": [
+    "Neovim",
+    "Photoshop",
+    "Tauri",
+    "Vimscript",
+    "instanceof",
+    "keyof",
+    "middlewares",
+    "modifiability",
+    "monospace",
+    "quickfix",
+    "todos",
+    "typeof"
+  ],
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true
+}
