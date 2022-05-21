@@ -22,57 +22,53 @@ utils.fn.map("n", "<A-s>", ":wa!<CR>", utils.var.opt)
 
 -- split windows
 utils.fn.mapRegister({
-	s = {
-		name = "split windows",
-		h = {
-			"<cmd>sp<CR>",
-			"split window horizontally",
-		},
-		v = {
-			"<cmd>vsp<CR>",
-			"split window vertically",
-		},
-		p = {
-			"<cmd>CocCommand volar.action.splitEditors<CR>",
-			"split vue file",
-		},
-	},
+    s = {
+        name = "split windows",
+        h = {
+            "<cmd>sp<CR>",
+            "split window horizontally",
+        },
+        v = {
+            "<cmd>vsp<CR>",
+            "split window vertically",
+        },
+    },
 }, {
-	mode = "n",
-	prefix = "<leader>",
+    mode = "n",
+    prefix = "<leader>",
 })
 
 -- quickfix
 utils.fn.mapRegister({
-	q = {
-		name = "quickfix",
-		s = {
-			"set compile cmd",
-		},
-		o = {
-			"<cmd>cope25<CR>",
-			"open quickfix window",
-		},
-		m = {
-			"<cmd>make<CR>",
-			"make",
-		},
-		c = {
-			"<cmd>cclose<CR>",
-			"close quickfix window",
-		},
-		e = {
-			"<cmd>set modifiable<CR>",
-			"set quickfix list modifiable",
-		},
-		w = {
-			"<cmd>write! build.log<CR>",
-			"save quickfix list",
-		},
-	},
+    q = {
+        name = "quickfix",
+        s = {
+            "set compile cmd",
+        },
+        o = {
+            "<cmd>cope25<CR>",
+            "open quickfix window",
+        },
+        m = {
+            "<cmd>make<CR>",
+            "make",
+        },
+        c = {
+            "<cmd>cclose<CR>",
+            "close quickfix window",
+        },
+        e = {
+            "<cmd>set modifiable<CR>",
+            "set quickfix list modifiable",
+        },
+        w = {
+            "<cmd>write! build.log<CR>",
+            "save quickfix list",
+        },
+    },
 }, {
-	mode = "n",
-	prefix = "<localleader>",
+    mode = "n",
+    prefix = "<localleader>",
 })
 utils.fn.map("n", "<localleader>qs", ":set makeprg= ", utils.var.opt)
 utils.fn.map("n", "<A-j>", ":cnext<CR>", utils.var.opt)

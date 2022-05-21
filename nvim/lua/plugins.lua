@@ -1,189 +1,208 @@
 local status, packer = pcall(require, "packer")
 if not status then
-	vim.notify("not found packer")
-	return
+    vim.notify("not found packer")
+    return
 end
 
 packer.startup({
-	function(use)
-		-- plugin manager (basically configured)
-		use("wbthomason/packer.nvim")
-		-- todo comments (not work correctly)
-		use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
-		-- status line (basically configured)
-		use({
-			"nvim-lualine/lualine.nvim",
-			requires = {
-				"kyazdani42/nvim-web-devicons",
-				-- to provide coc_current_function and coc_status
-				"neoclide/coc.nvim",
-				opt = true,
-			},
-		})
-		-- floaterm terminal (fully configured)
-		use("voldikss/vim-floaterm")
-		-- toggle comments (basically configured)
-		use("numToStr/Comment.nvim")
-		-- code auto completion and ts plugins ecosystem
-		use({ "neoclide/coc.nvim", branch = "release" })
-		-- undotree
-		use("jiaoshijie/undotree")
-		-- for neovim lsp (not for coc.nvim)
-		use({
-			"folke/trouble.nvim",
-			requires = "kyazdani42/nvim-web-devicons",
-		})
-		-- quickly modify surround char
-		use("ur4ltz/surround.nvim")
-		-- call sudo in neovim (fully configured)
-		use("lambdalisue/suda.vim")
-		-- project manager (basically configured)
-		use({ "ahmedkhalf/project.nvim", requires = "nvim-telescope/telescope.nvim" })
-		-- dashboard (fully configured)
-		use("glepnir/dashboard-nvim")
-		-- automatically highlighting other uses of the word under the cursor
-		use("RRethy/vim-illuminate")
-		-- more smooth scroll (fully configured)
-		use("karb94/neoscroll.nvim")
-		-- expand and repeat expression to multiple lines (fully configured)
-		use("AllenDang/nvim-expand-expr")
-		-- quick motion
-		use({
-			"phaazon/hop.nvim",
-			config = function()
-				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-			end,
-		})
-		-- shortcut suggestions (basically configured)
-		use("folke/which-key.nvim")
-		use("honza/vim-snippets")
-		-- auto complete pairs
-		use("windwp/nvim-autopairs")
-		-- automatically switch input method when input mode changed (fully configured)
-		use("lilydjwg/fcitx.vim")
-		-- unit test
-		use({
-			"rcarriga/vim-ultest",
-			requires = { "vim-test/vim-test" },
-			run = ":UpdateRemotePlugins",
-		})
-		-- repeat previous cmd
-		use("tpope/vim-repeat")
-		-- git operations
-		use("tpope/vim-fugitive")
-		-- operations about git diff
-		use("airblade/vim-gitgutter")
-		-- aysnc tasks
-		use({
-			"skywind3000/asynctasks.vim",
-			requires = {
-				"skywind3000/asyncrun.vim",
-				-- for searching tasks
-				"neoclide/coc.nvim",
-			},
-		})
-		-- colorscheme (fully configured)
-		use("folke/tokyonight.nvim")
-		-- zoom
-		use("dhruvasagar/vim-zoom")
-		-- better syntax highlight
-		use({
-			"nvim-treesitter/nvim-treesitter",
-			run = ":TSUpdate",
-			requires = { "p00f/nvim-ts-rainbow", "andymass/vim-matchup" },
-		})
-		-- automatically toggle between absolute line number and relative one
-		use("jeffkreeftmeijer/vim-numbertoggle")
-		-- tab line (basically configured)
-		use({
-			"akinsho/bufferline.nvim",
-			tag = "v2.*",
-			requires = "kyazdani42/nvim-web-devicons",
-		})
-		-- debugger
-		use("puremourning/vimspector")
-		-- git diff gui
-		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-		-- colorizer (basically configured)
-		use("norcalli/nvim-colorizer.lua")
-		-- translate english to chinese (fully configured)
-		use("voldikss/vim-translator")
-		-- just use as a formatter manager now (continue to configure)
-		use({
-			"jose-elias-alvarez/null-ls.nvim",
-			requires = "nvim-lua/plenary.nvim",
-		})
-		-- fuzzy search (cannot search quickfix)
-		use({
-			"nvim-telescope/telescope.nvim",
-			requires = { "nvim-lua/plenary.nvim" },
-		})
-		-- file tree
-		use({
-			"kyazdani42/nvim-tree.lua",
-			requires = {
-				"kyazdani42/nvim-web-devicons",
-			},
-			tag = "nightly",
-		})
-		-- lsp manager
-		use({
-			"williamboman/nvim-lsp-installer",
-			"neovim/nvim-lspconfig",
-			ft = "sh",
-		})
-	end,
-	config = {
-		ensure_dependencies = true,
-		plugin_package = "packer",
-		max_jobs = nil,
-		auto_clean = true,
-		compile_on_sync = true,
-		disable_commands = false,
-		opt_default = false,
-		transitive_opt = true,
-		transitive_disable = true,
-		auto_reload_compiled = true,
-		git = {
-			cmd = "git",
-			subcommands = {
-				update = "pull --ff-only --progress --rebase=false",
-				install = "clone --depth %i --no-single-branch --progress",
-				fetch = "fetch --depth 999999 --progress",
-				checkout = "checkout %s --",
-				update_branch = "merge --ff-only @{u}",
-				current_branch = "branch --show-current",
-				diff = "log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD",
-				diff_fmt = "%%h %%s (%%cr)",
-				get_rev = "rev-parse --short HEAD",
-				get_msg = "log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1",
-				submodules = "submodule update --init --recursive --progress",
-			},
-			depth = 1,
-			clone_timeout = 60,
-			default_url_format = "https://github.com/%s",
-		},
-		display = {
-			non_interactive = false,
-			open_fn = nil,
-			open_cmd = "65vnew \\[packer\\]",
-			working_sym = "⟳",
-			error_sym = "✗",
-			done_sym = "✓",
-			removed_sym = "-",
-			moved_sym = "→",
-			header_sym = "━",
-			show_all_info = true,
-			prompt_border = "double",
-			keybindings = {
-				quit = "q",
-				toggle_info = "<CR>",
-				diff = "d",
-				prompt_revert = "r",
-			},
-		},
-		luarocks = { python_cmd = "python" },
-		log = { level = "warn" },
-		profile = { enable = false, threshold = 1 },
-	},
+    function(use)
+        -- plugin manager (basically configured)
+        use("wbthomason/packer.nvim")
+        -- todo comments (not work correctly)
+        use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
+        -- status line (basically configured)
+        use({
+            "nvim-lualine/lualine.nvim",
+            requires = {
+                "kyazdani42/nvim-web-devicons",
+                -- show current function name
+                "SmiteshP/nvim-gps",
+                "nvim-treesitter/nvim-treesitter",
+                opt = true,
+            },
+        })
+        -- floaterm terminal (fully configured)
+        use("voldikss/vim-floaterm")
+        -- toggle comments (basically configured)
+        use("numToStr/Comment.nvim")
+        -- undotree
+        use("jiaoshijie/undotree")
+        -- for neovim lsp
+        use({
+            "folke/trouble.nvim",
+            requires = "kyazdani42/nvim-web-devicons",
+        })
+        -- quickly modify surround char
+        use("ur4ltz/surround.nvim")
+        -- call sudo in neovim (fully configured)
+        use("lambdalisue/suda.vim")
+        -- project manager (basically configured)
+        use({ "ahmedkhalf/project.nvim", requires = "nvim-telescope/telescope.nvim" })
+        -- dashboard (fully configured)
+        use("glepnir/dashboard-nvim")
+        -- automatically highlighting other uses of the word under the cursor
+        use("RRethy/vim-illuminate")
+        -- more smooth scroll (fully configured)
+        use("karb94/neoscroll.nvim")
+        -- expand and repeat expression to multiple lines (fully configured)
+        use("AllenDang/nvim-expand-expr")
+        -- quick motion
+        use({
+            "phaazon/hop.nvim",
+            config = function()
+                require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+            end,
+        })
+        -- shortcut suggestions (basically configured)
+        use("folke/which-key.nvim")
+        use("honza/vim-snippets")
+        -- auto complete pairs
+        use("windwp/nvim-autopairs")
+        -- automatically switch input method when input mode changed (fully configured)
+        use("lilydjwg/fcitx.vim")
+        -- unit test
+        use({
+            "rcarriga/vim-ultest",
+            requires = { "vim-test/vim-test" },
+            run = ":UpdateRemotePlugins",
+        })
+        -- repeat previous cmd
+        use("tpope/vim-repeat")
+        -- git operations
+        use("tpope/vim-fugitive")
+        -- operations about git diff
+        use("airblade/vim-gitgutter")
+        -- aysnc tasks
+        use({
+            "skywind3000/asynctasks.vim",
+            requires = {
+                "skywind3000/asyncrun.vim",
+            },
+        })
+        -- colorscheme (fully configured)
+        use("folke/tokyonight.nvim")
+        -- zoom
+        use("dhruvasagar/vim-zoom")
+        -- always show code context
+        use({ "nvim-treesitter/nvim-treesitter-context", requires = { "nvim-treesitter/nvim-treesitter" } })
+        -- better syntax highlight
+        use({
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate",
+            requires = { "p00f/nvim-ts-rainbow", "andymass/vim-matchup" },
+        })
+        -- automatically toggle between absolute line number and relative one
+        use("jeffkreeftmeijer/vim-numbertoggle")
+        -- indent line
+        use("lukas-reineke/indent-blankline.nvim")
+        -- tab line (basically configured)
+        use({
+            "akinsho/bufferline.nvim",
+            tag = "v2.*",
+            requires = "kyazdani42/nvim-web-devicons",
+        })
+        -- debugger
+        use("puremourning/vimspector")
+        -- git diff gui
+        use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
+        -- colorizer (basically configured)
+        use("norcalli/nvim-colorizer.lua")
+        -- translate english to chinese (fully configured)
+        use("voldikss/vim-translator")
+        -- just use as a formatter manager now (continue to configure)
+        use({
+            "jose-elias-alvarez/null-ls.nvim",
+            requires = "nvim-lua/plenary.nvim",
+        })
+        -- fuzzy search (cannot search quickfix)
+        use({
+            "nvim-telescope/telescope.nvim",
+            requires = { "nvim-lua/plenary.nvim" },
+        })
+        -- file tree
+        use({
+            "kyazdani42/nvim-tree.lua",
+            requires = {
+                "kyazdani42/nvim-web-devicons",
+            },
+            tag = "nightly",
+        })
+        -- lsp manager
+        use({
+            "williamboman/nvim-lsp-installer",
+            "neovim/nvim-lspconfig",
+        })
+        -- for better lsp ui
+        use({ "onsails/lspkind-nvim", "tami5/lspsaga.nvim" })
+        -- code auto complete
+        use({
+            -- engine
+            "hrsh7th/nvim-cmp",
+            -- snippets engine
+            "hrsh7th/vim-vsnip",
+            -- source
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            -- snippets
+            "rafamadriz/friendly-snippets",
+        })
+        -- yank
+        use("gbprod/yanky.nvim")
+    end,
+    config = {
+        ensure_dependencies = true,
+        plugin_package = "packer",
+        max_jobs = nil,
+        auto_clean = true,
+        compile_on_sync = true,
+        disable_commands = false,
+        opt_default = false,
+        transitive_opt = true,
+        transitive_disable = true,
+        auto_reload_compiled = true,
+        git = {
+            cmd = "git",
+            subcommands = {
+                update = "pull --ff-only --progress --rebase=false",
+                install = "clone --depth %i --no-single-branch --progress",
+                fetch = "fetch --depth 999999 --progress",
+                checkout = "checkout %s --",
+                update_branch = "merge --ff-only @{u}",
+                current_branch = "branch --show-current",
+                diff = "log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD",
+                diff_fmt = "%%h %%s (%%cr)",
+                get_rev = "rev-parse --short HEAD",
+                get_msg = "log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1",
+                submodules = "submodule update --init --recursive --progress",
+            },
+            depth = 1,
+            clone_timeout = 60,
+            default_url_format = "https://github.com/%s",
+        },
+        display = {
+            non_interactive = false,
+            open_fn = nil,
+            open_cmd = "65vnew \\[packer\\]",
+            working_sym = "⟳",
+            error_sym = "✗",
+            done_sym = "✓",
+            removed_sym = "-",
+            moved_sym = "→",
+            header_sym = "━",
+            show_all_info = true,
+            prompt_border = "double",
+            keybindings = {
+                quit = "q",
+                toggle_info = "<CR>",
+                diff = "d",
+                prompt_revert = "r",
+            },
+        },
+        luarocks = { python_cmd = "python" },
+        log = { level = "warn" },
+        profile = { enable = false, threshold = 1 },
+    },
 })

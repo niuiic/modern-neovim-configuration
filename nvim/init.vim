@@ -13,6 +13,12 @@ lua << EOF
     require('keybinding.'..file:gsub('%.lua$', ''))
     end
 EOF
+" require lsp/*
+lua << EOF
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/lsp', [[v:val =~ '\.lua$']])) do
+    require('lsp.'..file:gsub('%.lua$', ''))
+    end
+EOF
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -32,10 +38,6 @@ au VimEnter * :call FindProjectRoot(".root")
 " vim-which-key
 let g:which_key_map1 =  {}
 let g:which_key_map2 =  {}
-
-" cancel hide
-autocmd FileType json,markdown let g:indentLine_conceallevel=0
-autocmd FileType javascript,python,c,cpp,java,rust,go,vim,shell let g:indentLine_conceallevel=2
 
 " vim-fugitive
 nnoremap <silent><nowait> <space>ag :<C-u>G<space>
@@ -90,9 +92,6 @@ nmap <silent><nowait> <leader>e :set fenc=utf8<CR>
 set fencs=utf-8,gbk,big5,cp936,gb18030,gb2312,utf-16
 let g:which_key_map2.e = "modify file encoding"
 
-" coc-go
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
-
 " theme
 highlight LineNr guifg=#00ffff
 hi Normal     ctermbg=NONE guibg=NONE
@@ -102,11 +101,6 @@ hi Comment guifg=#cce5ff ctermfg=NONE
 
 " vim-zoom
 map <c-w>o <c-w>m
-
-" coc-spell-checker
-vmap <C-p> <Plug>(coc-codeaction-selected)
-xmap <C-p> <Plug>(coc-codeaction-selected)
-nmap <C-p> <Plug>(coc-codeaction-selected)
 
 " vimspector
 let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
@@ -168,210 +162,6 @@ let g:which_key_map1.d = {
             \ 't' : 'Telemetry',
             \},
             \}
-
-" coc.nvim
-let g:coc_snippet_prev=""
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? coc#_select_confirm() :
-            \ coc#expandableOrJumpable() ?
-            \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-let g:coc_snippet_next = '<tab>'
-
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=100
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" scroll preview window
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-    nnoremap <silent><nowait><expr> <C-]> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-]>"
-    nnoremap <silent><nowait><expr> <C-[> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-[>"
-    inoremap <silent><nowait><expr> <C-]> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-    inoremap <silent><nowait><expr> <C-[> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-    vnoremap <silent><nowait><expr> <C-]> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-]>"
-    vnoremap <silent><nowait><expr> <C-[> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-[>"
-endif
-
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-if has("patch-8.1.1564")
-    Recently vim can merge signcolumn and number column into one
-    set signcolumn=number
-else
-    set signcolumn=yes
-endif
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-else
-    inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-" GoTo code navigation.
-nmap <silent><nowait> <space>gy <Plug>(coc-type-definition)
-nmap <silent><nowait> <space>gi <Plug>(coc-implementation)
-nmap <silent><nowait> <space>gr <Plug>(coc-references)
-nmap <silent><nowait> <space>gd <Plug>(coc-definition)
-
-let g:which_key_map1.g = {
-            \ 'name': '+coc.goto',
-            \ 'y' : 'go to type definition',
-            \ 'i' : 'go to implementation',
-            \ 'r' : 'go to references',
-            \ 'd' : 'go to definition',
-            \ }
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocActionAsync('doHover')
-    endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <silent><nowait> <space>cr <Plug>(coc-rename)
-
-" Formatting selected code.
-nmap <silent><nowait> <space>cm <Plug>(coc-format-selected)
-xmap <silent><nowait> <space>cm <Plug>(coc-format-selected)
-
-let g:which_key_map1.c = {
-            \ 'name' : '+coc',
-            \ 'f' : 'automatically fix errors in current line',
-            \ 'm' : 'format selected code',
-            \ 'r' : 'rename symbol',
-            \ }
-
-augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Apply AutoFix to problem on the current line.
-nmap <silent><nowait> <space>cf <Plug>(coc-fix-current)
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" jump to the next or previous error
-nmap <silent> ck <Plug>(coc-diagnostic-prev)
-nmap <silent> cj <Plug>(coc-diagnostic-next)
-
-" Mappings for CoCList
-" open CocList
-nnoremap <silent><nowait> <leader>ct  :<C-u>CocList<cr>
-" Show all diagnostics.
-nnoremap <silent><nowait> <leader>ca  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <leader>ce  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <leader>cc  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <leader>co  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <leader>cs  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <leader>cj  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <leader>cz  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <leader>cp  :<C-u>CocListResume<CR>
-" Restart coc.nvim
-nnoremap <silent><nowait> <leader>cr  :<C-u>CocRestart<CR>
-" Restart tsserver
-nnoremap <silent><nowait> <leader>cR  :<C-u>CocCommand tsserver.restart<CR>
-
-let g:which_key_map2.c = {
-            \ 'name' : '+coc',
-            \ 't' : 'open coc list',
-            \ 'a' : 'show all diagnostics',
-            \ 'e' : 'manage extensions',
-            \ 'c' : 'show commands',
-            \ 'o' : 'find symbol of current document',
-            \ 's' : 'search workspace symbols',
-            \ 'j' : 'do default action for next item',
-            \ 'z' : 'do default action for previous item',
-            \ 'p' : 'resume latest coc list',
-            \ 'r' : 'restart coc.nvim',
-            \ 'R' : 'restart tsserver',
-            \ }
-
-" coc-highlights
-" hi! CocWarningSign guifg=#C27A36
-" hi! CocErrorLine guifg=#E5080D
-hi! CocUnusedHighlight guifg=#ff33cc
-
-" coc-css
-autocmd FileType scss setl iskeyword+=@-@
 
 " vim-ultest
 nnoremap <silent><nowait> <leader>ta :<C-u>:Ultest<CR>

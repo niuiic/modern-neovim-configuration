@@ -6,52 +6,41 @@ utils.fn.map("n", "<AC-l>", ":lua vim.lsp.buf.format()<CR>", utils.var.opt)
 -- vim-floaterm
 vim.g.floaterm_keymap_toggle = "<C-z>"
 
--- coc-yank
-utils.fn.mapRegister({
-	p = {
-		"<cmd>CocList -A --normal yank<CR>",
-		"clipboard history",
-	},
-}, {
-	mode = "n",
-	prefix = "<localleader>",
-})
-
 -- Comment.nvim
 utils.fn.map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", utils.var.opt)
 utils.fn.map("n", "<C-a>", "<Plug>(comment_toggle_current_linewise)", utils.var.opt)
 
 -- undotree
 utils.fn.mapRegister({
-	u = {
-		"<cmd>UndotreeToggle<CR>",
-		"undotree",
-	},
+    u = {
+        "<cmd>UndotreeToggle<CR>",
+        "undotree",
+    },
 }, {
-	mode = "n",
-	prefix = "<localleader>",
+    mode = "n",
+    prefix = "<localleader>",
 })
 
 -- nvim-expand-expr
 utils.fn.mapRegister({
-	e = {
-		function()
-			require("expand_expr").expand()
-		end,
-		"expand and repeat expression to multiple lines",
-	},
+    e = {
+        function()
+            require("expand_expr").expand()
+        end,
+        "expand and repeat expression to multiple lines",
+    },
 }, {
-	mode = "n",
-	prefix = "<localleader>",
+    mode = "n",
+    prefix = "<localleader>",
 })
 
 -- nvim-tree
 utils.fn.mapRegister({
-	p = {
-		"<cmd>NvimTreeToggle<CR>",
-		"toggle file tree",
-	},
+    p = {
+        "<cmd>NvimTreeToggle<CR>",
+        "toggle file tree",
+    },
 }, {
-	mode = "n",
-	prefix = "<leader>",
+    mode = "n",
+    prefix = "<leader>",
 })
