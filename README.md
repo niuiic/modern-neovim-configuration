@@ -1,3 +1,3 @@
-# ultimate neovim configuration
+# ultimate neovim configuration (not now)
 
-Be keen on tossing to become stronger.
+from vimscript to lua (not complete)
