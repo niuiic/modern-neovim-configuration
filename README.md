@@ -91,3 +91,15 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Async Tasks
 
 ![Async Tasks](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/async-tasks.png)
+
+### Show Git Diff
+
+![Show Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/show-git-diff.png)
+
+### Indentation Guides
+
+![Indentation Guides](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/indentation-guides.png)
+
+### Yank History
+
+![Yank History](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/yank-history.png)

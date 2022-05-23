@@ -96,7 +96,7 @@ packer.startup({
         })
         -- automatically toggle between absolute line number and relative one
         use("jeffkreeftmeijer/vim-numbertoggle")
-        -- indent line
+        -- indentation guides
         use("lukas-reineke/indent-blankline.nvim")
         -- tab line (basically configured)
         use({
