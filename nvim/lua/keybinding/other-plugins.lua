@@ -3,9 +3,6 @@ local utils = require("utils")
 -- format
 utils.fn.map("n", "<AC-l>", ":lua vim.lsp.buf.format()<CR>", utils.var.opt)
 
--- vim-floaterm
-vim.g.floaterm_keymap_toggle = "<C-z>"
-
 -- Comment.nvim
 utils.fn.map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", utils.var.opt)
 utils.fn.map("n", "<C-a>", "<Plug>(comment_toggle_current_linewise)", utils.var.opt)
@@ -44,3 +41,7 @@ utils.fn.mapRegister({
     mode = "n",
     prefix = "<leader>",
 })
+
+-- vim-translator
+utils.fn.map("n", "<C-t>", "<Plug>TranslateW", utils.var.opt)
+utils.fn.map("v", "<C-t>", "<Plug>TranslateWV", utils.var.opt)

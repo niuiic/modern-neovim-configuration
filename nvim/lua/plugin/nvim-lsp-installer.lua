@@ -1,5 +1,5 @@
 require("nvim-lsp-installer").setup({
-    ensure_installed = { "cssls", "volar", "sumneko_lua", "tsserver" },
+    ensure_installed = { "cssls", "volar", "sumneko_lua", "tsserver", "gopls" },
     automatic_installation = true,
     ui = {
         icons = {

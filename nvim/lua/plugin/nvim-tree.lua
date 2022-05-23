@@ -56,6 +56,16 @@ nvim_tree.setup({
         dotfiles = true,
         custom = { "node_modules" },
     },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        icons = {
+            hint = "",
+            info = "",
+            warning = "",
+            error = "",
+        },
+    },
     view = {
         width = 40,
         side = "left",

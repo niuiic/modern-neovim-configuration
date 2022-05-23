@@ -72,6 +72,7 @@ utils.fn.mapRegister({
             "search projects",
         },
         g = {
+            name = "global",
             w = {
                 function()
                     require("telescope.builtin").live_grep(opt)

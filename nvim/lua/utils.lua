@@ -1,4 +1,4 @@
-utils = { fn = {}, var = {} }
+local utils = { fn = {}, var = {} }
 
 -- find project root
 local getPrevLevelPath = function(currentPath)

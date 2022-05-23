@@ -21,16 +21,19 @@ packer.startup({
                 opt = true,
             },
         })
-        -- floaterm terminal (fully configured)
-        use("voldikss/vim-floaterm")
+        -- terminal (basically configured)
+        use({
+            "akinsho/toggleterm.nvim",
+            tag = "v1.*",
+        })
         -- toggle comments (basically configured)
         use("numToStr/Comment.nvim")
         -- undotree
         use("jiaoshijie/undotree")
-        -- for neovim lsp
+        -- a pretty diagnostics, references, telescope results, quickfix and location list (basically configured)
         use({
             "folke/trouble.nvim",
-            requires = "kyazdani42/nvim-web-devicons",
+            requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
         })
         -- quickly modify surround char
         use("ur4ltz/surround.nvim")
@@ -138,15 +141,15 @@ packer.startup({
         use({
             -- engine
             "hrsh7th/nvim-cmp",
-            -- snippets engine
-            "hrsh7th/vim-vsnip",
             -- source
-            "hrsh7th/cmp-vsnip",
+            -- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
             -- snippets
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets",
         })
         -- yank

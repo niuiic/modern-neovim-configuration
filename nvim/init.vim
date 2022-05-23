@@ -19,6 +19,12 @@ lua << EOF
     require('lsp.'..file:gsub('%.lua$', ''))
     end
 EOF
+" require snippet/*
+lua << EOF
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/snippet', [[v:val =~ '\.lua$']])) do
+    require('snippet.'..file:gsub('%.lua$', ''))
+    end
+EOF
 
 " vim workspace
 function! FindProjectRoot(lookFor)
@@ -46,10 +52,10 @@ let g:which_key_map2.e = "modify file encoding"
 
 " theme
 highlight LineNr guifg=#00ffff
-hi Normal     ctermbg=NONE guibg=NONE
-hi LineNr     ctermbg=NONE guibg=NONE
-hi SignColumn ctermbg=NONE guibg=NONE
-hi Comment guifg=#cce5ff ctermfg=NONE
+" hi Normal     ctermbg=NONE guibg=NONE
+" hi LineNr     ctermbg=NONE guibg=NONE
+" hi SignColumn ctermbg=NONE guibg=NONE
+" hi Comment guifg=#cce5ff ctermfg=NONE
 
 " vim-zoom
 map <c-w>o <c-w>m
