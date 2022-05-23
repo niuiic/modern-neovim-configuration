@@ -2,7 +2,7 @@
 
 From vimscript to lua (not complete).
 
-Hope you can find your own plugin and configuration.
+Hope you can find your own plugins and configuration.
 
 ## Environment
 
@@ -14,7 +14,7 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 
 ## Screenshot
 
-Failed to record gif on sway, and some feature cannot be presented. Most of them can be found in section `Other Features`.
+Failed to record gif on sway, and some feature cannot be presented. You can find the complete features in `lua/plugins.lua`.
 
 ### Other Features
 
@@ -36,7 +36,7 @@ Failed to record gif on sway, and some feature cannot be presented. Most of them
 
 ### Fuzzy Finder
 
-Search files in workspace, tags, buffers, history files, marks, projects, quickfix, git status.
+Search files in workspace, tags, buffers, history files, marks, projects, quickfix, git status, etc.
 
 ![Fuzzy Finder](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/fuzzy-finder.png)
 
@@ -84,4 +84,10 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![Translate](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/translate.png)
 
-## Other Features
+### Unit Test
+
+![Unit Test](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/unit-test.png)
+
+### Async Tasks
+
+![Async Tasks](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/async-tasks.png)
