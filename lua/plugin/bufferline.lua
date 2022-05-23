@@ -32,7 +32,10 @@ require("bufferline").setup({
             return s
         end,
         custom_filter = function(buf_number, _)
-            if vim.bo[buf_number].buftype ~= "terminal" and vim.bo[buf_number].buftype ~= "quickfix" then
+            if vim.bo[buf_number].buftype ~= "terminal"
+                and vim.bo[buf_number].buftype ~= "quickfix"
+                and vim.bo[buf_number].filetype ~= "dap-repl"
+            then
                 return true
             else
                 return false

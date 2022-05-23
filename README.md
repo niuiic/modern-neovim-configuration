@@ -101,3 +101,15 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Yank History
 
 ![Yank History](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/yank-history.png)
+
+### Code Action
+
+![Code Action](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/code-action.png)
+
+### Colorful Brackets
+
+![Colorful Brackets](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/colorful-brackets.png)
+
+### Debug
+
+![Debug](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/debug.png)

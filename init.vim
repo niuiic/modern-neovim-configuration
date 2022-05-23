@@ -19,6 +19,12 @@ lua << EOF
     require('lsp.'..file:gsub('%.lua$', ''))
     end
 EOF
+" require dap/*
+lua << EOF
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/dap', [[v:val =~ '\.lua$']])) do
+    require('dap.'..file:gsub('%.lua$', ''))
+    end
+EOF
 " require snippet/*
 lua << EOF
     for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/snippet', [[v:val =~ '\.lua$']])) do
@@ -61,65 +67,65 @@ highlight LineNr guifg=#00ffff
 map <c-w>o <c-w>m
 
 " vimspector
-let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
-
-nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
-nmap <A-n> <Plug>VimspectorStepOver
-nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
-nmap <A-b> <Plug>VimspectorToggleBreakpoint
-nmap <silent><nowait><space>ds <Plug>VimspectorContinue
-nmap <silent><nowait><space>dr <Plug>VimspectorRestart
-nmap <silent><nowait><space>dp <Plug>VimspectorPause
-nmap <silent><nowait><space>da <Plug>VimspectorStop
-nmap <silent><nowait><space>df <Plug>VimspectorAddFunctionBreakpoint
-nmap <silent><nowait><space>dc <Plug>VimspectorToggleConditionalBreakpoint
-nmap <silent><nowait><space>do <Plug>VimspectorStepOut
-nmap <silent><nowait><space>du <Plug>VimspectorUpFrame
-nmap <silent><nowait><space>dd <Plug>VimspectorDownFrame
-nmap <silent><nowait><space>dt <Plug>VimspectorRunToCursor
-nmap <silent><nowait><space>dq :<C-u>VimspectorReset<CR>
-nmap <A-t> <Plug>VimspectorRunToCursor
-nmap <A-o> <Plug>VimspectorStepOut
-nmap <silent><nowait><space>di <Plug>VimspectorStepInto
-nmap <A-i> <Plug>VimspectorStepInto
-nmap <silent><nowait><space>dlc <Plug>VimspectorShowOutput Console<CR>
-nmap <silent><nowait><space>dld <Plug>VimspectorShowOutput stderr<CR>
-nmap <silent><nowait><space>dlo <Plug>VimspectorShowOutput Vimspector-out<CR>
-nmap <silent><nowait><space>dle <Plug>VimspectorShowOutput Vimspector-err<CR>
-nmap <silent><nowait><space>dls <Plug>VimspectorShowOutput server<CR>
-nmap <silent><nowait><space>dlt <Plug>VimspectorShowOutput Telemetry<CR>
-nmap <silent><nowait><space>de :<C-u>VimspectorEval<space>
-nmap <silent><nowait><space>dw :<C-u>VimspectorWatch<space>
-nmap <A-w> :<C-u>VimspectorWatch<space>
-
-let g:which_key_map1.d = {
-            \ 'name' : '+debug',
-            \ 'e' : 'eval',
-            \ 'w' : 'variable watch',
-            \ 's' : 'start or continue',
-            \ 'a' : 'stop',
-            \ 'r' : 'restart',
-            \ 'p' : 'pause',
-            \ 'b' : 'set breakpoint',
-            \ 'u' : 'move up a frame in the current call stack',
-            \ 'd' : 'move down a frame in the current call stack',
-            \ 'c' : 'set condition breakpoint',
-            \ 'f' : 'add function breakpoint',
-            \ 'n' : 'next',
-            \ 'i' : 'step in',
-            \ 'o' : 'step out',
-            \ 'q' : 'quit',
-            \ 't' : 'run to cursor',
-            \ 'l' :  {
-            \ 'name' : '+switch_output',
-            \ 'c' : 'Console',
-            \ 'd' : 'stderr',
-            \ 'o' : 'Vimspector-out',
-            \ 'e' : 'Vimspector-err',
-            \ 's' : 'server',
-            \ 't' : 'Telemetry',
-            \},
-            \}
+" let g:vimspector_base_dir='/home/niuiic/.local/share/nvim/site/pack/packer/start/vimspector'
+"
+" nmap <silent><nowait><space>dn <Plug>VimspectorStepOver
+" nmap <A-n> <Plug>VimspectorStepOver
+" nmap <silent><nowait><space>db <Plug>VimspectorToggleBreakpoint
+" nmap <A-b> <Plug>VimspectorToggleBreakpoint
+" nmap <silent><nowait><space>ds <Plug>VimspectorContinue
+" nmap <silent><nowait><space>dr <Plug>VimspectorRestart
+" nmap <silent><nowait><space>dp <Plug>VimspectorPause
+" nmap <silent><nowait><space>da <Plug>VimspectorStop
+" nmap <silent><nowait><space>df <Plug>VimspectorAddFunctionBreakpoint
+" nmap <silent><nowait><space>dc <Plug>VimspectorToggleConditionalBreakpoint
+" nmap <silent><nowait><space>do <Plug>VimspectorStepOut
+" nmap <silent><nowait><space>du <Plug>VimspectorUpFrame
+" nmap <silent><nowait><space>dd <Plug>VimspectorDownFrame
+" nmap <silent><nowait><space>dt <Plug>VimspectorRunToCursor
+" nmap <silent><nowait><space>dq :<C-u>VimspectorReset<CR>
+" nmap <A-t> <Plug>VimspectorRunToCursor
+" nmap <A-o> <Plug>VimspectorStepOut
+" nmap <silent><nowait><space>di <Plug>VimspectorStepInto
+" nmap <A-i> <Plug>VimspectorStepInto
+" nmap <silent><nowait><space>dlc <Plug>VimspectorShowOutput Console<CR>
+" nmap <silent><nowait><space>dld <Plug>VimspectorShowOutput stderr<CR>
+" nmap <silent><nowait><space>dlo <Plug>VimspectorShowOutput Vimspector-out<CR>
+" nmap <silent><nowait><space>dle <Plug>VimspectorShowOutput Vimspector-err<CR>
+" nmap <silent><nowait><space>dls <Plug>VimspectorShowOutput server<CR>
+" nmap <silent><nowait><space>dlt <Plug>VimspectorShowOutput Telemetry<CR>
+" nmap <silent><nowait><space>de :<C-u>VimspectorEval<space>
+" nmap <silent><nowait><space>dw :<C-u>VimspectorWatch<space>
+" nmap <A-w> :<C-u>VimspectorWatch<space>
+"
+" let g:which_key_map1.d = {
+"             \ 'name' : '+debug',
+"             \ 'e' : 'eval',
+"             \ 'w' : 'variable watch',
+"             \ 's' : 'start or continue',
+"             \ 'a' : 'stop',
+"             \ 'r' : 'restart',
+"             \ 'p' : 'pause',
+"             \ 'b' : 'set breakpoint',
+"             \ 'u' : 'move up a frame in the current call stack',
+"             \ 'd' : 'move down a frame in the current call stack',
+"             \ 'c' : 'set condition breakpoint',
+"             \ 'f' : 'add function breakpoint',
+"             \ 'n' : 'next',
+"             \ 'i' : 'step in',
+"             \ 'o' : 'step out',
+"             \ 'q' : 'quit',
+"             \ 't' : 'run to cursor',
+"             \ 'l' :  {
+"             \ 'name' : '+switch_output',
+"             \ 'c' : 'Console',
+"             \ 'd' : 'stderr',
+"             \ 'o' : 'Vimspector-out',
+"             \ 'e' : 'Vimspector-err',
+"             \ 's' : 'server',
+"             \ 't' : 'Telemetry',
+"             \},
+"             \}
 
 " fold
 set nofoldenable

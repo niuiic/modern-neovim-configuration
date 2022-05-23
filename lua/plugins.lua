@@ -154,6 +154,12 @@ packer.startup({
         })
         -- yank
         use("gbprod/yanky.nvim")
+        -- debug
+        use({
+            "mfussenegger/nvim-dap",
+            "theHamsta/nvim-dap-virtual-text",
+            "rcarriga/nvim-dap-ui",
+        })
     end,
     config = {
         ensure_dependencies = true,
