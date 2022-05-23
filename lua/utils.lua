@@ -2,8 +2,8 @@ local utils = { fn = {}, var = {} }
 
 -- find project root
 local getPrevLevelPath = function(currentPath)
-    tmp = string.reverse(currentPath)
-    _, i = string.find(tmp, "/")
+    local tmp = string.reverse(currentPath)
+    local _, i = string.find(tmp, "/")
     return string.sub(currentPath, 1, string.len(currentPath) - i)
 end
 
