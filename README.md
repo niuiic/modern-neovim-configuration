@@ -14,7 +14,7 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 
 ## Screenshot
 
-Failed to record gif on sway, and some feature cannot be presented. You can find the complete features in `lua/plugins.lua`.
+Failed to record gif on sway, and some feature cannot be presented. You can find more (not the complete) features in `lua/plugins.lua`.
 
 ### Other Features
 
