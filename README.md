@@ -1,3 +1,5 @@
-# ultimate neovim configuration (not now)
+# Ultimate Neovim Configuration
 
-from vimscript to lua (not complete)
+From vimscript to lua (not complete).
+
+## Screenshot
