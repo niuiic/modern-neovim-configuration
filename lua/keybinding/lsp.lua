@@ -1,7 +1,6 @@
 local lspKeymaps = {}
 local utils = require("utils")
 
--- lsp 回调函数快捷键设置
 lspKeymaps.map = function(mapbuf)
     -- rename
     mapbuf("n", "gr", "<cmd>Lspsaga rename<CR>", utils.var.opt)

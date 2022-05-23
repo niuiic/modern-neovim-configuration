@@ -117,3 +117,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Operations for Git Diff
 
 ![Operations for Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/operations-for-git-diff.png)
+
+### View Document
+
+![View Document](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/view-document.png)
