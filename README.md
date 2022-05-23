@@ -16,4 +16,4 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 
 ### Full Screen
 
-![Full Screen]("https://github.com/niuiic/modern-neovim-configuration/img/full-screen.png")
+![Full Screen]("https://github.com/niuiic/modern-neovim-configuration/blob/main/img/full-screen.png")
