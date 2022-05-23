@@ -14,6 +14,10 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 
 ## Screenshot
 
+Failed to record gif on sway, and some feature cannot be presented. Most of them can be found in section `Other Features`.
+
+### Other Features
+
 ### Full Screen
 
 ![Full Screen](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/full-screen.png)
@@ -31,6 +35,8 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 ![Diagnostic](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/diagnostic.png)
 
 ### Fuzzy Finder
+
+Search files in workspace, tags, buffers, history files, marks, projects, quickfix, git status.
 
 ![Fuzzy Finder](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/fuzzy-finder.png)
 
@@ -57,3 +63,25 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 ### Inner Terminal
 
 ![Inner Terminal](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/inner-terminal.png)
+
+### Todo Comments
+
+![Todo Comments](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/todo-comments.png)
+
+### File Tree
+
+![File Tree](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/file-tree.png)
+
+### Undo Tree
+
+![Undo Tree](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/undo-tree.png)
+
+### Starter
+
+![Starter](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/starter.png)
+
+### Translate
+
+![Translate](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/translate.png)
+
+## Other Features
