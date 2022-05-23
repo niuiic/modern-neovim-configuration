@@ -16,8 +16,6 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 
 Failed to record gif on sway, and some feature cannot be presented. You can find more (not the complete) features in `lua/plugins.lua`.
 
-### Other Features
-
 ### Full Screen
 
 ![Full Screen](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/full-screen.png)
