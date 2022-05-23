@@ -90,10 +90,6 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![Async Tasks](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/async-tasks.png)
 
-### Show Git Diff
-
-![Show Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/show-git-diff.png)
-
 ### Indentation Guides
 
 ![Indentation Guides](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/indentation-guides.png)
@@ -113,3 +109,11 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Debug
 
 ![Debug](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/debug.png)
+
+### View Git Diff
+
+![View Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/view-git-diff.png)
+
+### Operations for Git Diff
+
+![Operations for Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/operations-for-git-diff.png)
