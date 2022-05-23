@@ -20,4 +20,8 @@ Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and termi
 
 ### Status Line
 
-![Status Line](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/status-line.png)
+![Status Line](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/statusline.png)
+
+### Buffer Line
+
+![Buffer Line](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/bufferline.png)
