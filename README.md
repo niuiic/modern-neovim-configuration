@@ -18,127 +18,126 @@ Failed to record gif on sway, and some feature cannot be presented. You can find
 
 ### Full Screen
 
-![Full Screen](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/full-screen.png)
+![Full Screen](./img/full-screen.png)
 
 ### Status Line
 
-![Status Line](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/statusline.png)
+![Status Line](./img/statusline.png)
 
 ### Buffer Line
 
-![Buffer Line](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/bufferline.png)
+![Buffer Line](./img/bufferline.png)
 
 ### Diagnostic
 
-![Diagnostic](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/diagnostic.png)
+![Diagnostic](./img/diagnostic.png)
 
 ### Fuzzy Finder
 
 Search files in workspace, tags, buffers, history files, marks, projects, quickfix, git status, etc.
 
-![Fuzzy Finder](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/fuzzy-finder.png)
 ![Fuzzy Finder](./img/fuzzy-finder.png)
 
 ### AutoComplete CMD
 
-![AutoComplete CMD](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/autocomplete-cmd.png)
+![AutoComplete CMD](./img/autocomplete-cmd.png)
 
 ### Rename
 
-![Rename](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/rename.png)
+![Rename](./img/rename.png)
 
 ### Go to Reference
 
-![Go to Reference](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/goto-reference.png)
+![Go to Reference](./img/goto-reference.png)
 
 ### Keymap Suggestion
 
-![Keymap Suggestion](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/keymap-suggestion.png)
+![Keymap Suggestion](./img/keymap-suggestion.png)
 
 ### Code AutoComplete
 
-![Code AutoComplete](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/code-autocomplete.png)
+![Code AutoComplete](./img/code-autocomplete.png)
 
 ### Inner Terminal
 
-![Inner Terminal](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/inner-terminal.png)
+![Inner Terminal](./img/inner-terminal.png)
 
 ### Todo Comments
 
-![Todo Comments](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/todo-comments.png)
+![Todo Comments](./img/todo-comments.png)
 
 ### File Tree
 
-![File Tree](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/file-tree.png)
+![File Tree](./img/file-tree.png)
 
 ### Undo Tree
 
-![Undo Tree](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/undo-tree.png)
+![Undo Tree](./img/undo-tree.png)
 
 ### Starter
 
-![Starter](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/starter.png)
+![Starter](./img/starter.png)
 
 ### Translate
 
-![Translate](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/translate.png)
+![Translate](./img/translate.png)
 
 ### Unit Test
 
-![Unit Test](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/unit-test.png)
+![Unit Test](./img/unit-test.png)
 
 ### Async Tasks
 
-![Async Tasks](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/async-tasks.png)
+![Async Tasks](./img/async-tasks.png)
 
 ### Indentation Guides
 
-![Indentation Guides](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/indentation-guides.png)
+![Indentation Guides](./img/indentation-guides.png)
 
 ### Yank History
 
-![Yank History](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/yank-history.png)
+![Yank History](./img/yank-history.png)
 
 ### Code Action
 
-![Code Action](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/code-action.png)
+![Code Action](./img/code-action.png)
 
 ### Colorful Brackets
 
-![Colorful Brackets](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/colorful-brackets.png)
+![Colorful Brackets](./img/colorful-brackets.png)
 
 ### Debug
 
-![Debug](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/debug.png)
+![Debug](./img/debug.png)
 
 ### View Git Diff
 
-![View Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/view-git-diff.png)
+![View Git Diff](./img/view-git-diff.png)
 
 ### Operations for Git Diff
 
-![Operations for Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/operations-for-git-diff.png)
+![Operations for Git Diff](./img/operations-for-git-diff.png)
 
 ### Document
 
-![Document](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/document.png)
+![Document](./img/document.png)
 
 ### Sql
 
-![Sql](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/sql.png)
+![Sql](./img/sql.png)
 
 ### Quick Motion
 
-![Quick Motion](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/quick-motion.png)
+![Quick Motion](./img/quick-motion.png)
 
 ### Expand Expression
 
-![Expand Expression](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/expand-expression.png)
+![Expand Expression](./img/expand-expression.png)
 
 ### TagBar
 
-![TagBar](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/tagbar.png)
+![TagBar](./img/tagbar.png)
 
 ### Standalone UI for nvim-lsp Progress
 
-![Standalone UI for nvim-lsp Progress](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/nvim-lsp-ui.png)
+![Standalone UI for nvim-lsp Progress](./img/nvim-lsp-ui.png)
