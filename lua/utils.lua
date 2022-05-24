@@ -7,11 +7,12 @@ local getPrevLevelPath = function(currentPath)
     return string.sub(currentPath, 1, string.len(currentPath) - i)
 end
 
-utils.fn.getWorkspacePath = function()
+utils.fn.getWorkspacePath = function(pattern)
+    pattern = pattern or "/.root"
     local path = vim.fn.getcwd(-1, -1)
     local pathBp = path
     while path ~= "" do
-        local file, _ = io.open(path .. "/.root")
+        local file, _ = io.open(path .. pattern)
         if file ~= nil then
             return path
         else

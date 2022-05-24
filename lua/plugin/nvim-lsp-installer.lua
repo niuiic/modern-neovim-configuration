@@ -11,8 +11,9 @@ require("nvim-lsp-installer").setup({
         "html",
         "jsonls",
         "rust_analyzer",
-        "sqlls",
+        "sqls",
         "clangd",
+        "taplo",
     },
     automatic_installation = true,
     ui = {

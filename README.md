@@ -119,3 +119,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Document
 
 ![Document](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/document.png)
+
+### Sql
+
+![Sql](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/sql.png)

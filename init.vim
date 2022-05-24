@@ -48,9 +48,6 @@ highlight LineNr guifg=#00ffff
 " hi SignColumn ctermbg=NONE guibg=NONE
 " hi Comment guifg=#cce5ff ctermfg=NONE
 
-" vim-zoom
-map <c-w>o <c-w>m
-
 " fold
 set nofoldenable
 " syntax on
@@ -63,28 +60,28 @@ augroup remember_folds
 augroup END
 
 " save content in virtual block
-function! Get_visual_selection()
-    " get the position of left start visual selection
-    let [line_start, column_start] = getpos("'<")[1:2]
-    " get the position of right end visual selection
-    let [line_end, column_end] = getpos("'>")[1:2]
-    " catch them all
-    let lines = getline(line_start, line_end)
-    if len(lines) == 0
-        return ''
-    endif
-    " edge cases and cleanup.
-    let lines[-1] = lines[-1][: column_end - 2]
-    let lines[0] = lines[0][column_start - 1:]
-    return join(lines, "\n")
-endfunction
+" function! Get_visual_selection()
+"     " get the position of left start visual selection
+"     let [line_start, column_start] = getpos("'<")[1:2]
+"     " get the position of right end visual selection
+"     let [line_end, column_end] = getpos("'>")[1:2]
+"     " catch them all
+"     let lines = getline(line_start, line_end)
+"     if len(lines) == 0
+"         return ''
+"     endif
+"     " edge cases and cleanup.
+"     let lines[-1] = lines[-1][: column_end - 2]
+"     let lines[0] = lines[0][column_start - 1:]
+"     return join(lines, "\n")
+" endfunction
+"
+" function Save_visually_selected_text_to_file()
+"     let selected_text = Get_visual_selection()
+"     call writefile(split(selected_text, "\n"), "tmp")
+" endfunction
 
-function Save_visually_selected_text_to_file()
-    let selected_text = Get_visual_selection()
-    call writefile(split(selected_text, "\n"), "tmp")
-endfunction
-
-vnoremap <C-s> :<c-u>call Save_visually_selected_text_to_file()<cr>
+" vnoremap <C-s> :<c-u>call Save_visually_selected_text_to_file()<cr>
 
 " fix the delay to enter normal mode in sql file
 let g:omni_sql_no_default_maps = 1

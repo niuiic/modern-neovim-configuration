@@ -160,6 +160,8 @@ packer.startup({
             "theHamsta/nvim-dap-virtual-text",
             "rcarriga/nvim-dap-ui",
         })
+        -- sql
+        use({ "nanotee/sqls.nvim", ft = { "sql" } })
     end,
     config = {
         ensure_dependencies = true,

@@ -52,6 +52,11 @@ null_ls.setup({
                 "lua",
             },
         }),
+        formatting.taplo.with({
+            filetypes = {
+                "toml",
+            },
+        }),
         formatting.prettier.with({
             filetypes = {
                 "javascript",
