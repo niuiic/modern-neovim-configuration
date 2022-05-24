@@ -52,8 +52,8 @@ vim.o.cmdheight = 2
 vim.o.autoread = true
 vim.bo.autoread = true
 
--- no wrap
-vim.wo.wrap = false
+-- auto wrap
+vim.wo.wrap = true
 
 -- no swap file and backup
 vim.o.backup = false
@@ -78,12 +78,12 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- filetype
 local setFiletype = function(pattern, filetype)
-	au({ "BufNewFile", "BufRead" }, {
-		pattern = { pattern },
-		callback = function()
-			vim.bo.filetype = filetype
-		end,
-	})
+    au({ "BufNewFile", "BufRead" }, {
+        pattern = { pattern },
+        callback = function()
+            vim.bo.filetype = filetype
+        end,
+    })
 end
 setFiletype("*.sv", "systemverilog")
 setFiletype("*.h", "c")
@@ -98,10 +98,10 @@ vim.g.python3_host_prog = "/usr/bin/python"
 
 -- quickfix
 au({ "VimEnter" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.bo.makeprg = "make"
-	end,
+    pattern = { "*" },
+    callback = function()
+        vim.bo.makeprg = "make"
+    end,
 })
 
 -- colorscheme
@@ -109,4 +109,4 @@ vim.g.tokyonight_transparent = true
 vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_dark_sidebar = false
 vim.g.tokyonight_dark_float = false
-vim.cmd [[colorscheme tokyonight]]
+vim.cmd([[colorscheme tokyonight]])

@@ -12,6 +12,8 @@ WM: Sway
 
 Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and terminator's performance is enough.)
 
+Neovim(v0.8+): Build from source with LuaJIT only.
+
 ## Screenshot
 
 Failed to record gif on sway, and some feature cannot be presented. You can find more (not the complete) features in `lua/plugins.lua`.
