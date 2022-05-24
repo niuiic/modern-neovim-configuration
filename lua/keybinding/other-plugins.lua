@@ -45,3 +45,14 @@ utils.fn.mapRegister({
 -- vim-translator
 utils.fn.map("n", "<C-t>", "<Plug>TranslateW", utils.var.opt)
 utils.fn.map("v", "<C-t>", "<Plug>TranslateWV", utils.var.opt)
+
+-- vista
+utils.fn.mapRegister({
+    m = {
+        "<cmd>Vista!!<CR>",
+        "toggle tagbar",
+    },
+}, {
+    mode = "n",
+    prefix = "<localleader>",
+})

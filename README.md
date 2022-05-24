@@ -132,3 +132,6 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![Expand Expression](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/expand-expression.png)
 
+### TagBar
+
+![TagBar](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/tagbar.png)
