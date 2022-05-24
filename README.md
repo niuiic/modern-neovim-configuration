@@ -147,3 +147,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Code Context
 
 ![Code Context](./img/code-context.png)
+
+### Fold
+
+![Fold](./img/fold.png)

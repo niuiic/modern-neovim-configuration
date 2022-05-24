@@ -225,6 +225,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-gps",
     url = "https://github.com/SmiteshP/nvim-gps"
   },
+  ["nvim-keymap-amend"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-keymap-amend",
+    url = "https://github.com/anuvyklack/nvim-keymap-amend"
+  },
   ["nvim-lsp-installer"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
@@ -269,6 +274,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["pretty-fold.nvim"] = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/pretty-fold.nvim",
+    url = "https://github.com/anuvyklack/pretty-fold.nvim"
   },
   ["project.nvim"] = {
     loaded = true,

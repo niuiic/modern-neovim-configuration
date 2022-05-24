@@ -78,12 +78,12 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- filetype
 local setFiletype = function(pattern, filetype)
-    au({ "BufNewFile", "BufRead" }, {
-        pattern = { pattern },
-        callback = function()
-            vim.bo.filetype = filetype
-        end,
-    })
+	au({ "BufNewFile", "BufRead" }, {
+		pattern = { pattern },
+		callback = function()
+			vim.bo.filetype = filetype
+		end,
+	})
 end
 setFiletype("*.sv", "systemverilog")
 setFiletype("*.h", "c")
@@ -98,10 +98,10 @@ vim.g.python3_host_prog = "/usr/bin/python"
 
 -- quickfix
 au({ "VimEnter" }, {
-    pattern = { "*" },
-    callback = function()
-        vim.bo.makeprg = "make"
-    end,
+	pattern = { "*" },
+	callback = function()
+		vim.bo.makeprg = "make"
+	end,
 })
 
 -- colorscheme
@@ -110,3 +110,9 @@ vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_dark_sidebar = false
 vim.g.tokyonight_dark_float = false
 vim.cmd([[colorscheme tokyonight]])
+
+-- fix the delay to enter normal mode in sql file
+vim.g.omni_sql_no_default_maps = 1
+
+-- highlight
+vim.highlight.create("LineNr", { guifg = "#00ffff" }, false)
