@@ -143,3 +143,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Standalone UI for nvim-lsp Progress
 
 ![Standalone UI for nvim-lsp Progress](./img/nvim-lsp-ui.png)
+
+### Code Context
+
+![Code Context](./img/code-context.png)
