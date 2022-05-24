@@ -7,11 +7,4 @@ if [[ $1 == "trans" ]]; then
 			break
 		fi
 	done
-elif [[ $1 == "sql" ]]; then
-	if [[ -f "./tmp" ]]; then
-		mysql -h localhost -u $2 -p$3 <./tmp
-		rm ./tmp
-	else
-		echo "no input file."
-	fi
 fi

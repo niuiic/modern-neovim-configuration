@@ -137,3 +137,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### TagBar
 
 ![TagBar](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/tagbar.png)
+
+### Standalone UI for nvim-lsp Progress
+
+![Standalone UI for nvim-lsp Progress](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/nvim-lsp-ui.png)
