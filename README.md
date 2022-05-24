@@ -123,3 +123,12 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Sql
 
 ![Sql](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/sql.png)
+
+### Quick Motion
+
+![Quick Motion](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/quick-motion.png)
+
+### Expand Expression
+
+![Expand Expression](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/expand-expression.png)
+
