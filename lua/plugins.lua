@@ -1,4 +1,4 @@
--- see more awesome plugins on https://github.com/rockerBOO/awesome-neovim
+-- find more awesome plugins on https://github.com/rockerBOO/awesome-neovim
 
 require("packer").startup({
     function(use)
