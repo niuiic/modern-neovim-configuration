@@ -37,6 +37,7 @@ Failed to record gif on sway, and some feature cannot be presented. You can find
 Search files in workspace, tags, buffers, history files, marks, projects, quickfix, git status, etc.
 
 ![Fuzzy Finder](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/fuzzy-finder.png)
+![Fuzzy Finder](./img/fuzzy-finder.png)
 
 ### AutoComplete CMD
 
