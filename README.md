@@ -1,8 +1,6 @@
 # Modern Neovim Configuration
 
-From vimscript to lua (not complete).
-
-Hope you can find your own plugins and configuration.
+From vimscript to lua (not complete, not optimized for performance).
 
 ## Environment
 
@@ -118,6 +116,6 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![Operations for Git Diff](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/operations-for-git-diff.png)
 
-### View Document
+### Document
 
-![View Document](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/view-document.png)
+![Document](https://github.com/niuiic/modern-neovim-configuration/blob/main/img/document.png)

@@ -32,21 +32,6 @@ lua << EOF
     end
 EOF
 
-" vim workspace
-function! FindProjectRoot(lookFor)
-    let pathMaker='%:p'
-    while(len(expand(pathMaker))>1)
-        let pathMaker=pathMaker.':h'
-        let fileToCheck=expand(pathMaker).'/'.a:lookFor
-        if filereadable(fileToCheck)||isdirectory(fileToCheck)
-            return expand(pathMaker)
-        endif
-    endwhile
-    return 0
-endfunction
-
-au VimEnter * :call FindProjectRoot(".root")
-
 " vim-which-key
 let g:which_key_map1 =  {}
 let g:which_key_map2 =  {}
@@ -109,4 +94,3 @@ nnoremap <silent><expr> <C-[> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(1) : "\<C=[>"
 nnoremap <silent><expr> <C-]> translator#window#float#has_scroll() ?
             \ translator#window#float#scroll(0) : "\<C-[>"
-

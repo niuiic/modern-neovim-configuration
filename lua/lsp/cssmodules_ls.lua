@@ -1,8 +1,10 @@
-require("lspconfig").volar.setup({
-    filetypes = { "vue" },
+local utils = require("utils")
+
+require("lspconfig").cssmodules_ls.setup({
     on_attach = function(client, bufnr)
         client.server_capabilities.document_formatting = false
         client.server_capabilities.document_range_formatting = false
-        require("utils").fn.setLspKeyMap(bufnr)
+        utils.fn.setLspKeyMap(bufnr)
     end,
+    root_dir = utils.fn.getWorkspacePath,
 })
