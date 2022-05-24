@@ -1,9 +1,0 @@
-# get_ports
-snippet get_ports
-	[get_ports {${0:point}}]
-# set_property
-snippet setp
-	set_property -dict {PACKAGE_PIN ${1:pin} IOSTANDARD LVCMOS33} [get_ports {${0:ports}}]
-# set clk
-snippet clk
-	create_clock -add -name sys_clk_pin -period 10.00 -waveform {0 5} [get_ports {${0:ports}}]

@@ -31,6 +31,12 @@ lua << EOF
     require('snippet.'..file:gsub('%.lua$', ''))
     end
 EOF
+" require source/*
+lua << EOF
+    for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath('config')..'/lua/source', [[v:val =~ '\.lua$']])) do
+    require('source.'..file:gsub('%.lua$', ''))
+    end
+EOF
 
 " vim-which-key
 let g:which_key_map1 =  {}
