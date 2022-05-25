@@ -159,3 +159,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Session
 
 ![Session](./img/session.png)
+
+### Quickfix
+
+![Quickfix](./img/quickfix.png)
