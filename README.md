@@ -16,7 +16,7 @@ Neovim(v0.8+): Build from source with LuaJIT only.
 
 ## Screenshot
 
-Failed to record gif on sway, and some feature cannot be presented. You can find more (not the complete) features in `lua/plugins.lua`.
+Failed to record gif on sway, and some features cannot be presented. You can find more (not the complete) features in `lua/plugins.lua`.
 
 ### Full Screen
 
@@ -151,3 +151,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Fold
 
 ![Fold](./img/fold.png)
+
+### Colorizer
+
+![Colorizer](./img/colorizer.png)
