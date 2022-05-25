@@ -108,8 +108,8 @@ require("packer").startup({
 		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 		-- colorizer (basically configured)
 		use("norcalli/nvim-colorizer.lua")
-		-- translate english to chinese (fully configured)
-		use("voldikss/vim-translator")
+		-- translate
+		use("uga-rosa/translate.nvim")
 		-- just use as a formatter manager now (continue to configure)
 		use({
 			"jose-elias-alvarez/null-ls.nvim",

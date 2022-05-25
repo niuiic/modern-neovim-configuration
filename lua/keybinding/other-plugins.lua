@@ -42,10 +42,6 @@ utils.fn.mapRegister({
 	prefix = "<leader>",
 })
 
--- vim-translator
-utils.fn.map("n", "<C-t>", "<Plug>TranslateW", utils.var.opt)
-utils.fn.map("v", "<C-t>", "<Plug>TranslateWV", utils.var.opt)
-
 -- vista
 utils.fn.mapRegister({
 	m = {
