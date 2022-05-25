@@ -171,6 +171,8 @@ require("packer").startup({
 				"anuvyklack/nvim-keymap-amend", -- only for preview
 			},
 		})
+		-- session
+		use("rmagatti/auto-session")
 	end,
 	config = {
 		ensure_dependencies = true,

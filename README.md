@@ -155,3 +155,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Colorizer
 
 ![Colorizer](./img/colorizer.png)
+
+### Session
+
+![Session](./img/session.png)

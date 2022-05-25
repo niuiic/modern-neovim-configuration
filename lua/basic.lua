@@ -22,17 +22,12 @@ vim.opt.termguicolors = true
 -- show line number
 vim.wo.number = true
 
--- tab length
-vim.o.tabstop = 4
-vim.bo.tabstop = 4
-vim.o.softtabstop = 4
-vim.o.shiftround = true
-vim.o.shiftwidth = 4
-vim.bo.shiftwidth = 4
+-- tab width
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 
 -- tab => space
-vim.o.expandtab = true
-vim.bo.expandtab = true
+vim.opt.expandtab = true
 
 -- auto indent
 vim.o.autoindent = true

@@ -22,7 +22,7 @@ utils.fn.map("n", "<A-s>", ":wa!<CR>", utils.var.opt)
 
 -- split windows
 utils.fn.mapRegister({
-    s = {
+    w = {
         name = "split windows",
         h = {
             "<cmd>sp<CR>",
