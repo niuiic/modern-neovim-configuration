@@ -1,0 +1,4 @@
+cross-riscv32-none-elf/binutils * ~* -amd64 -~amd64
+cross-riscv32-none-elf/gcc * ~* -amd64 -~amd64
+cross-riscv32-none-elf/newlib * ~* -amd64 -~amd64
+cross-riscv32-none-elf/gdb * ~* -amd64 -~amd64

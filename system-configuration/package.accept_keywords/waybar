@@ -1,0 +1,4 @@
+=gui-apps/waybar-9999 **
+dev-libs/spdlog
+dev-libs/date
+app-misc/brightnessctl

@@ -1,0 +1,4 @@
+cross-x86_64-w64-mingw32/binutils cross-x86_64-w64-mingw32/binutils.conf
+cross-x86_64-w64-mingw32/gcc cross-x86_64-w64-mingw32/gcc.conf
+cross-x86_64-w64-mingw32/mingw64-runtime cross-x86_64-w64-mingw32/mingw64-runtime.conf
+cross-x86_64-w64-mingw32/gdb cross-x86_64-w64-mingw32/gdb.conf

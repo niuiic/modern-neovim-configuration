@@ -1,0 +1,4 @@
+cross-riscv32-none-elf/binutils cross-riscv32-none-elf/binutils.conf
+cross-riscv32-none-elf/gcc cross-riscv32-none-elf/gcc.conf
+cross-riscv32-none-elf/newlib cross-riscv32-none-elf/newlib.conf
+cross-riscv32-none-elf/gdb cross-riscv32-none-elf/gdb.conf

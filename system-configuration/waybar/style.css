@@ -1,0 +1,149 @@
+* {
+  color: #a7a2a9;
+  border: 0;
+  border-radius: 2px;
+  padding: 0 0;
+  font-family: mononoki;
+  font-size: 16px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-bottom: 1px;
+}
+
+window#waybar {
+  background-image: linear-gradient(to right, #ff6600, #0033cc);
+}
+
+#workspaces button {
+  padding: 2px 0px;
+  border-bottom: 2px;
+  color: #eceff4;
+  border-color: #d8dee9;
+  border-style: solid;
+  margin-top: 2px;
+}
+
+#workspaces button.focused {
+  border-color: #81a1c1;
+}
+
+#mode {
+  color: #ebcb8b;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#idle_inhibitor,
+#temperature,
+#custom-keyboard-layout,
+#backlight,
+#network,
+#disk,
+#pulseaudio,
+#mode,
+#window,
+#custom-launcher {
+  padding: 0 3px;
+  border-bottom: 2px;
+  border-style: solid;
+}
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#clock {
+  color: #f7c548;
+}
+
+#backlight {
+  color: #ae76a6;
+}
+
+#battery {
+  color: #ef946c;
+}
+
+#battery.charging {
+  color: #ef946c;
+}
+
+#disk {
+  color: #809112;
+}
+
+@keyframes blink {
+  to {
+    color: #4c566a;
+    background-color: #eceff4;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background: #bf616a;
+  color: #eceff4;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#cpu {
+  color: #1dd3b0;
+}
+
+#memory {
+  color: #eb6534;
+}
+
+#network.disabled {
+  color: #bf616a;
+}
+
+#network {
+  color: #2d82b7;
+}
+
+#network.disconnected {
+  color: #ba1f33;
+}
+
+#pulseaudio {
+  color: #99f7ab;
+}
+
+#pulseaudio.muted {
+  color: #c42021;
+}
+
+#temperature {
+  color: #8fbcbb;
+}
+
+#temperature.critical {
+  color: #bf616a;
+}
+
+#idle_inhibitor {
+  color: #ebcb8b;
+}
+
+#custom-launcher {
+  border-style: hidden;
+  margin-top: 2px;
+}
+
+#window {
+  border-style: hidden;
+  margin-top: 1px;
+}
+#mode {
+  margin-bottom: 3px;
+}
+
+#custom-keyboard-layout {
+  color: #d08770;
+}

@@ -1,0 +1,3 @@
+sys-devel/llvm llvm_targets_AArch64
+sys-devel/llvm llvm_targets_ARM
+sys-devel/llvm llvm_targets_RISCV

@@ -1,0 +1,5 @@
+cross-aarch64-unknown-linux-musl/binutils arm64 ~arm64 -amd64 -~amd64
+cross-aarch64-unknown-linux-musl/gcc arm64 ~arm64 -amd64 -~amd64
+cross-aarch64-unknown-linux-musl/linux-headers arm64 ~arm64 -amd64 -~amd64
+cross-aarch64-unknown-linux-musl/musl arm64 ~arm64 -amd64 -~amd64
+cross-aarch64-unknown-linux-musl/gdb arm64 ~arm64 -amd64 -~amd64

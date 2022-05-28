@@ -10,7 +10,7 @@ OS: Gentoo
 
 WM: Sway
 
-Terminal: Terminator (Unable to use fcitx5 on alacritty under wayland, and terminator's performance is enough.)
+Terminal: Alacritty
 
 Neovim(v0.8+): Build from source with LuaJIT only.
 

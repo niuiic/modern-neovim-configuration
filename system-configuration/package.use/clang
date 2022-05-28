@@ -1,0 +1,3 @@
+sys-devel/clang llvm_targets_AArch64
+sys-devel/clang llvm_targets_ARM
+sys-devel/clang llvm_targets_RISCV

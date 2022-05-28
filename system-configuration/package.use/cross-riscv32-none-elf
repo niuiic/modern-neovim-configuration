@@ -1,0 +1,4 @@
+cross-riscv32-none-elf/binutils multilib
+cross-riscv32-none-elf/gcc cxx -openmp -fortran -hardened -sanitize -vtv -pie nopie -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc -fortran -go -jit -cxx -mpx -openmp -sanitize -vtv multilib
+cross-riscv32-none-elf/newlib -selinux -libraries multilib
+cross-riscv32-none-elf/gdb -selinux multilib

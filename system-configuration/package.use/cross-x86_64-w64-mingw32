@@ -1,0 +1,4 @@
+cross-x86_64-w64-mingw32/binutils -multilib
+cross-x86_64-w64-mingw32/mingw64-runtime -selinux -libraries -multilib
+cross-x86_64-w64-mingw32/gcc -hardened -sanitize -vtv -pie nopie -selinux -boundschecking -d -gcj -gtk -libffi -mudflap -objc -objc++ -objc-gc -sanitize -multilib
+cross-x86_64-w64-mingw32/gdb -selinux -multilib
