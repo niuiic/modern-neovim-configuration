@@ -142,7 +142,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ### Lsp Progress
 
-![Lsp Progress](.img/lsp-progress.png)
+![Lsp Progress](./img/lsp-progress.png)
 
 ### Code Context
 
