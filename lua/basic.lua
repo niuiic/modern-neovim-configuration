@@ -71,23 +71,6 @@ vim.o.wildmenu = true
 -- dont' pass messages to |ins-completin menu|
 vim.o.shortmess = vim.o.shortmess .. "c"
 
--- filetype
-local setFiletype = function(pattern, filetype)
-	au({ "BufNewFile", "BufRead" }, {
-		pattern = { pattern },
-		callback = function()
-			vim.bo.filetype = filetype
-		end,
-	})
-end
-setFiletype("*.sv", "systemverilog")
-setFiletype("*.h", "c")
-setFiletype("*.hpp", "cpp")
-setFiletype("*.cpp", "cpp")
-setFiletype("*.v", "verilog")
-setFiletype("*.asm", "asm")
-setFiletype("*.s", "asm")
-
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"
 

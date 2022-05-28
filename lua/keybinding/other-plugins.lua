@@ -52,3 +52,14 @@ utils.fn.mapRegister({
 	mode = "n",
 	prefix = "<localleader>",
 })
+
+-- vim-startuptime
+utils.fn.mapRegister({
+	a = {
+		"<cmd>StartupTime<CR>",
+		"check startup time",
+	},
+}, {
+	mode = "n",
+	prefix = "<leader>",
+})

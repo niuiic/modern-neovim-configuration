@@ -1,6 +1,7 @@
 -- find more awesome plugins
 -- https://github.com/rockerBOO/awesome-neovim
 -- http://neovimcraft.com
+-- https://github.com/ayamir/nvimdots/wiki/Plugins
 
 require("packer").startup({
 	function(use)
@@ -13,8 +14,11 @@ require("packer").startup({
 			"nvim-lualine/lualine.nvim",
 			requires = {
 				"kyazdani42/nvim-web-devicons",
+				-- show lsp status
+				"arkav/lualine-lsp-progress",
 				-- show current function name
 				"SmiteshP/nvim-gps",
+				-- requirement of nvim-gps
 				"nvim-treesitter/nvim-treesitter",
 				opt = true,
 			},
@@ -24,6 +28,8 @@ require("packer").startup({
 			"akinsho/toggleterm.nvim",
 			tag = "v1.*",
 		})
+		-- startup time
+		use("dstein64/vim-startuptime")
 		-- toggle comments (basically configured)
 		use("numToStr/Comment.nvim")
 		-- undotree
@@ -71,6 +77,10 @@ require("packer").startup({
 		use("tpope/vim-repeat")
 		-- git operations
 		use("tpope/vim-fugitive")
+		-- git signs
+		use("lewis6991/gitsigns.nvim")
+		-- a faster version of filetype.vim
+		use("nathom/filetype.nvim")
 		-- operations about git diff
 		use("airblade/vim-gitgutter")
 		-- aysnc tasks
@@ -145,6 +155,7 @@ require("packer").startup({
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"f3fora/cmp-spell",
 			-- snippets
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
@@ -162,8 +173,6 @@ require("packer").startup({
 		})
 		-- sql
 		use({ "nanotee/sqls.nvim", ft = { "sql" } })
-		-- standalone UI for nvim-lsp progress
-		use("j-hui/fidget.nvim")
 		-- fold
 		use({
 			"anuvyklack/pretty-fold.nvim",

@@ -140,9 +140,9 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![TagBar](./img/tagbar.png)
 
-### Standalone UI for nvim-lsp Progress
+### Lsp Progress
 
-![Standalone UI for nvim-lsp Progress](./img/nvim-lsp-ui.png)
+![Lsp Progress](.img/lsp-progress.png)
 
 ### Code Context
 
@@ -163,3 +163,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Quickfix
 
 ![Quickfix](./img/quickfix.png)
+
+### Startup Time
+
+![Startup Time](./img/startup-time.png)
