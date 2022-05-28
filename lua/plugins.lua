@@ -81,8 +81,6 @@ require("packer").startup({
 		use("lewis6991/gitsigns.nvim")
 		-- a faster version of filetype.vim
 		use("nathom/filetype.nvim")
-		-- operations about git diff
-		use("airblade/vim-gitgutter")
 		-- aysnc tasks
 		use({
 			"skywind3000/asynctasks.vim",
@@ -177,7 +175,8 @@ require("packer").startup({
 		use({
 			"anuvyklack/pretty-fold.nvim",
 			requires = {
-				"anuvyklack/nvim-keymap-amend", -- only for preview
+				-- only for preview
+				"anuvyklack/nvim-keymap-amend",
 			},
 		})
 		-- session

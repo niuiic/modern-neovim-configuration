@@ -116,9 +116,9 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![View Git Diff](./img/view-git-diff.png)
 
-### Operations for Git Diff
+### Git Signs
 
-![Operations for Git Diff](./img/operations-for-git-diff.png)
+![Git Signs](./img/git-signs.png)
 
 ### Document
 

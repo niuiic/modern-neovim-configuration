@@ -362,11 +362,6 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
-  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/vim-illuminate",
