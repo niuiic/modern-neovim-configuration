@@ -1,2 +1,0 @@
-CC=x86_64-pc-linux-gnu-gcc
-CXX=x86_64-pc-linux-gnu-g++

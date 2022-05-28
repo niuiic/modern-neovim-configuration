@@ -1,6 +1,0 @@
-net-misc/networkmanager audit bluetooth connection-sharing modemmanager systemd wifi iptables iwd
-# required by www-client/firefox-84.0.2::gentoo[system-libvpx]
-# required by firefox (argument)
->=media-libs/libvpx-1.9.0 postproc
-# required by sys-auth/polkit-0.120-r1::gentoo[systemd]
->=sys-apps/systemd-249.9 policykit

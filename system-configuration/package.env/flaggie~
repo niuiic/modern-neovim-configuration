@@ -1,8 +1,0 @@
-dev-db/sqlite compiler-gcc
-net-dialup/ppp compiler-gcc
-dev-lang/tcl compiler-gcc
-media-video/ffmpeg compiler-gcc
-app-i18n/libime compiler-gcc
-dev-libs/libgcrypt compiler-gcc
-gui-apps/waybar compiler-gcc
-dev-cpp/folly compiler-gcc

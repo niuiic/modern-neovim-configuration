@@ -1,5 +1,0 @@
-dev-db/sqlite -abi_x86_32
-# required by dev-libs/nss-3.68.1::gentoo
-# required by net-misc/networkmanager-1.32.12-r1::gentoo[nss]
-# required by networkmanager (argument)
->=dev-db/sqlite-3.35.5 abi_x86_32

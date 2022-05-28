@@ -1,8 +1,0 @@
-=app-editors/neovim-9999 **
-dev-ruby/neovim-ruby-client
-dev-libs/tree-sitter
-dev-python/neovim-remote
-dev-ruby/msgpack
-dev-lua/luv
-dev-libs/libvterm
-dev-libs/libuv
