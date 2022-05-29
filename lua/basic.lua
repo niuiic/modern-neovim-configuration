@@ -10,9 +10,6 @@ vim.g.nocompatible = true
 -- avoid unnecessary redrawing
 vim.g.lazyredraw = true
 
--- highlight current line
-vim.wo.cursorline = true
-
 -- show sign column on the left
 vim.wo.signcolumn = "yes"
 
@@ -92,5 +89,8 @@ vim.cmd([[colorscheme tokyonight]])
 -- fix the delay to enter normal mode in sql file
 vim.g.omni_sql_no_default_maps = 1
 
--- highlight
+-- highlight line number
 vim.highlight.create("LineNr", { guifg = "#00ffff" }, false)
+
+-- enable mouse mode
+vim.o.mouse = "a"

@@ -139,10 +139,10 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
-  ["fcitx.vim"] = {
+  ["fcitx.nvim"] = {
     loaded = true,
-    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/fcitx.vim",
-    url = "https://github.com/lilydjwg/fcitx.vim"
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/fcitx.nvim",
+    url = "https://github.com/alohaia/fcitx.nvim"
   },
   ["filetype.nvim"] = {
     loaded = true,
@@ -441,7 +441,7 @@ time([[Defining lazy-load filetype autocommands]], true)
 vim.cmd [[au FileType sql ++once lua require("packer.load")({'sqls.nvim'}, { ft = "sql" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
-if should_profile then save_profiles(1) end
+if should_profile then save_profiles() end
 
 end)
 

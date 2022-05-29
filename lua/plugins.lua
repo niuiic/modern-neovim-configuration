@@ -66,7 +66,7 @@ require("packer").startup({
 		-- auto complete pairs
 		use("windwp/nvim-autopairs")
 		-- automatically switch input method when input mode changed (fully configured)
-		use("lilydjwg/fcitx.vim")
+		use("alohaia/fcitx.nvim")
 		-- unit test
 		use({
 			"rcarriga/vim-ultest",
@@ -182,57 +182,4 @@ require("packer").startup({
 		-- session
 		use("rmagatti/auto-session")
 	end,
-	config = {
-		ensure_dependencies = true,
-		plugin_package = "packer",
-		max_jobs = nil,
-		auto_clean = true,
-		compile_on_sync = true,
-		disable_commands = false,
-		opt_default = false,
-		transitive_opt = true,
-		transitive_disable = true,
-		auto_reload_compiled = true,
-		git = {
-			cmd = "git",
-			subcommands = {
-				update = "pull --ff-only --progress --rebase=false",
-				install = "clone --depth %i --no-single-branch --progress",
-				fetch = "fetch --depth 999999 --progress",
-				checkout = "checkout %s --",
-				update_branch = "merge --ff-only @{u}",
-				current_branch = "branch --show-current",
-				diff = "log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD",
-				diff_fmt = "%%h %%s (%%cr)",
-				get_rev = "rev-parse --short HEAD",
-				get_msg = "log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1",
-				submodules = "submodule update --init --recursive --progress",
-			},
-			depth = 1,
-			clone_timeout = 60,
-			default_url_format = "https://github.com/%s",
-		},
-		display = {
-			non_interactive = false,
-			open_fn = nil,
-			open_cmd = "65vnew \\[packer\\]",
-			working_sym = "⟳",
-			error_sym = "✗",
-			done_sym = "✓",
-			removed_sym = "-",
-			moved_sym = "→",
-			header_sym = "━",
-			show_all_info = true,
-			prompt_border = "double",
-			keybindings = {
-				quit = "q",
-				toggle_info = "<CR>",
-				diff = "d",
-				prompt_revert = "r",
-			},
-		},
-		luarocks = { python_cmd = "python" },
-		log = { level = "warn" },
-		profile = { enable = false, threshold = 1 },
-	},
 })
