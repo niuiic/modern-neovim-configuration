@@ -9,7 +9,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-	}, { { name = "buffer" }, { name = "path" }, { name = "spell" } }),
+	}, { { name = "buffer" }, { name = "path" } }),
 	formatting = require("lsp.ui").formatting,
 })
 
