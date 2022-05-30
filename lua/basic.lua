@@ -65,9 +65,6 @@ vim.o.splitright = true
 -- more powerful auto completion
 vim.o.wildmenu = true
 
--- dont' pass messages to |ins-completin menu|
-vim.o.shortmess = vim.o.shortmess .. "c"
-
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"
 

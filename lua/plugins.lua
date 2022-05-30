@@ -181,5 +181,7 @@ require("packer").startup({
 		})
 		-- session
 		use("rmagatti/auto-session")
+		-- run code snip
+		use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	end,
 })

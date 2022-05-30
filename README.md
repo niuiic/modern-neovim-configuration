@@ -167,3 +167,7 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Startup Time
 
 ![Startup Time](./img/startup-time.png)
+
+### Run Code Snip
+
+![Run Code Snip](./img/run-code-snip.png)

@@ -305,6 +305,11 @@ _G.packer_plugins = {
     path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
+  sniprun = {
+    loaded = true,
+    path = "/home/niuiic/.local/share/nvim/site/pack/packer/start/sniprun",
+    url = "https://github.com/michaelb/sniprun"
+  },
   ["sqls.nvim"] = {
     loaded = false,
     needs_bufread = true,
