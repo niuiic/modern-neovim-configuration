@@ -42,9 +42,6 @@ utils.fn.mapRegister({
 utils.fn.mapRegister({
 	q = {
 		name = "quickfix",
-		s = {
-			"set compile cmd",
-		},
 		o = {
 			"<cmd>cope25<CR>",
 			"open quickfix window",
@@ -59,18 +56,13 @@ utils.fn.mapRegister({
 		},
 		e = {
 			"<cmd>set modifiable<CR>",
-			"set quickfix list modifiable",
-		},
-		w = {
-			"<cmd>write! build.log<CR>",
-			"save quickfix list",
+			"set quickfix modifiable",
 		},
 	},
 }, {
 	mode = "n",
 	prefix = "<localleader>",
 })
-utils.fn.map("n", "<localleader>qs", ":set makeprg= ", utils.var.opt)
 utils.fn.map("n", "<A-j>", ":cnext<CR>", utils.var.opt)
 utils.fn.map("n", "<A-k>", ":cprev<CR>", utils.var.opt)
 utils.fn.map("n", "<A-g>", ":cfirst<CR>", utils.var.opt)
