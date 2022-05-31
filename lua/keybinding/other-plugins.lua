@@ -63,3 +63,14 @@ utils.fn.mapRegister({
 	mode = "n",
 	prefix = "<leader>",
 })
+
+-- lazygit
+utils.fn.mapRegister({
+	g = {
+		"<cmd>LazyGit<CR>",
+		"lazygit",
+	},
+}, {
+	mode = "n",
+	prefix = "<leader>",
+})

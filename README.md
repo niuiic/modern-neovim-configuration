@@ -171,3 +171,6 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ### Run Code Snip
 
 ![Run Code Snip](./img/run-code-snip.png)
+
+### Lazygit
+![Lazygit](./img/laygit.png)

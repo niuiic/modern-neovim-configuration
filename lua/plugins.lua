@@ -28,7 +28,7 @@ require("packer").startup({
 			"akinsho/toggleterm.nvim",
 			tag = "v1.*",
 		})
-		-- startup time
+		-- displays neovim startup time
 		use("dstein64/vim-startuptime")
 		-- toggle comments (basically configured)
 		use("numToStr/Comment.nvim")
@@ -47,8 +47,8 @@ require("packer").startup({
 		use({ "ahmedkhalf/project.nvim", requires = "nvim-telescope/telescope.nvim" })
 		-- dashboard (fully configured)
 		use("glepnir/dashboard-nvim")
-		-- automatically highlighting other uses of the word under the cursor
-		use("RRethy/vim-illuminate")
+		-- highlights cursor words and lines
+		use("yamatsum/nvim-cursorline")
 		-- more smooth scroll (fully configured)
 		use("karb94/neoscroll.nvim")
 		-- expand and repeat expression to multiple lines (fully configured)
@@ -75,8 +75,6 @@ require("packer").startup({
 		})
 		-- repeat previous cmd
 		use("tpope/vim-repeat")
-		-- git operations
-		use("tpope/vim-fugitive")
 		-- git signs
 		use("lewis6991/gitsigns.nvim")
 		-- a faster version of filetype.vim
@@ -182,5 +180,7 @@ require("packer").startup({
 		use("rmagatti/auto-session")
 		-- run code snip
 		use({ "michaelb/sniprun", run = "bash ./install.sh" })
+		-- lazygit
+		use("kdheepak/lazygit.nvim")
 	end,
 })
