@@ -8,9 +8,9 @@ Modern configuration for neovim. From vimscript to lua (not complete, not optimi
 
 OS: Gentoo
 
-WM: Sway
+WM: Sway (use vulkan renderer)
 
-Terminal: Alacritty
+Terminal: Alacritty (a GPU-accelerated terminal emulator)
 
 Neovim(v0.8+): Build from source with LuaJIT only.
 
@@ -173,4 +173,5 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 ![Run Code Snip](./img/run-code-snip.png)
 
 ### Lazygit
+
 ![Lazygit](./img/laygit.png)
