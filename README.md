@@ -12,7 +12,7 @@ WM: Sway (use vulkan renderer)
 
 Terminal: Alacritty (a GPU-accelerated terminal emulator)
 
-Neovim(v0.8+): Build from source with LuaJIT only.
+Neovim: V0.8+ (build from source with LuaJIT only)
 
 ## Screenshot
 
