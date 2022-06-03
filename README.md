@@ -16,7 +16,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 
 ## Screenshot
 
-Look for specific features in `lua/plugins.lua`.
+Look for specific functions in `lua/plugins.lua`.
 
 ### Full Screen
 
