@@ -13,6 +13,7 @@ require("packer").startup({
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = {
+				"folke/tokyonight.nvim",
 				"kyazdani42/nvim-web-devicons",
 				-- show lsp status
 				"arkav/lualine-lsp-progress",

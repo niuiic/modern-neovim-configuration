@@ -81,6 +81,7 @@ vim.g.tokyonight_transparent = true
 vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_dark_sidebar = false
 vim.g.tokyonight_dark_float = false
+vim.g.tokyonight_style = "storm"
 vim.cmd([[colorscheme tokyonight]])
 
 -- fix the delay to enter normal mode in sql file

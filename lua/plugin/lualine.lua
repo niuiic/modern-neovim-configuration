@@ -21,7 +21,7 @@ lualine.setup({
 		},
 		lualine_x = { "encoding", "filetype", "filesize" },
 		lualine_y = { "progress", "location" },
-		lualine_z = { 'os.date("%I:%M:%S", os.time())' },
+		lualine_z = { 'os.date("%H:%M:%S", os.time())' },
 	},
 	inactive_sections = {
 		lualine_a = {},
@@ -33,6 +33,7 @@ lualine.setup({
 	},
 	tabline = {},
 	extensions = {},
+	theme = "tokyonight",
 })
 
 -- Trigger rerender of status line every second for clock

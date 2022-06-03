@@ -20,10 +20,4 @@ vim.cmd([[
         au BufWinLeave ?* mkview 1
         au BufWinEnter ?* silent! loadview 1
     augroup END
-
-    " vim-translator
-    nnoremap <silent><expr> <C-[> translator#window#float#has_scroll() ?
-                \ translator#window#float#scroll(1) : "\<C=[>"
-    nnoremap <silent><expr> <C-]> translator#window#float#has_scroll() ?
-                \ translator#window#float#scroll(0) : "\<C-[>"
 ]])

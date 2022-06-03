@@ -16,7 +16,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 
 ## Screenshot
 
-Failed to record gif on sway, so some features cannot be presented. You can find more (not the complete) features in `lua/plugins.lua`.
+Look for specific features in `lua/plugins.lua`.
 
 ### Full Screen
 
