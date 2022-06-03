@@ -42,10 +42,10 @@ utils.fn.mapRegister({
 	prefix = "<leader>",
 })
 
--- vista
+-- symbols-outline
 utils.fn.mapRegister({
 	m = {
-		"<cmd>Vista!!<CR>",
+		"<cmd>SymbolsOutline<CR>",
 		"toggle tagbar",
 	},
 }, {

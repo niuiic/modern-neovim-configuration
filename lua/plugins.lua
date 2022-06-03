@@ -142,6 +142,8 @@ require("packer").startup({
 		})
 		-- for better lsp ui
 		use({ "onsails/lspkind-nvim", "tami5/lspsaga.nvim" })
+		-- tagbar
+		use("simrat39/symbols-outline.nvim")
 		-- code auto complete
 		use({
 			-- engine
@@ -157,8 +159,6 @@ require("packer").startup({
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		})
-		-- tagbar
-		use("liuchengxu/vista.vim")
 		-- yank
 		use("gbprod/yanky.nvim")
 		-- debug
