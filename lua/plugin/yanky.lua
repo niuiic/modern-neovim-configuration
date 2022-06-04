@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- config
-require("yanky").setup({
+utils.fn.require("yanky").setup({
 	ring = {
 		history_length = 10,
 		storage = "shada",
@@ -25,10 +25,10 @@ require("yanky").setup({
 	},
 })
 
+utils.fn.require("telescope").load_extension("yank_history")
+
 -- keymap
 utils.fn.map("n", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
 utils.fn.map("n", "P", "<Plug>(YankyPutBefore)", utils.var.opt)
 utils.fn.map("x", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
 utils.fn.map("x", "P", "<Plug>(YankyPutBefore)", utils.var.opt)
-
-require("telescope").load_extension("yank_history")

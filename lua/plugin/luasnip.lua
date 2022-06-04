@@ -1,5 +1,6 @@
 local utils = require("utils")
-require("luasnip.config").setup({
+
+utils.fn.require("luasnip.config").setup({
 	history = true,
 	-- Update more often, :h events for more info.
 	update_events = "TextChanged,TextChangedI",
@@ -34,6 +35,7 @@ require("luasnip.config").setup({
 	end,
 })
 
+-- keymap
 utils.fn.map("i", "<C-j>", "<Cmd>lua require('luasnip').expand_or_jump()<CR>", utils.var.opt)
 utils.fn.map("i", "<C-k>", "<Cmd>lua require('luasnip').jump(-1)<CR>", utils.var.opt)
 utils.fn.map("s", "<C-j>", "<Cmd>lua require('luasnip').jump(1)<CR>", utils.var.opt)

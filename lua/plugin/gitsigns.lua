@@ -1,5 +1,8 @@
 local utils = require("utils")
-require("gitsigns").setup({
+
+local gitsigns = utils.fn.require("gitsigns")
+
+gitsigns.setup({
 	signs = {
 		add = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
 		change = { hl = "GitSignsChange", text = "│", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
@@ -43,6 +46,7 @@ require("gitsigns").setup({
 
 local gs = package.loaded.gitsigns
 
+-- keymap
 utils.fn.mapRegister({
 	g = {
 		name = "git signs",
@@ -129,7 +133,7 @@ utils.fn.mapRegister({
 	prefix = "<localleader>",
 })
 
-require("gitsigns").setup({
+gitsigns.setup({
 	on_attach = function(bufnr)
 		local function map(mode, l, r, opts)
 			opts = opts or {}

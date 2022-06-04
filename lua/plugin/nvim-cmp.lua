@@ -1,4 +1,6 @@
-local cmp = require("cmp")
+local utils = require("utils")
+
+local cmp = utils.fn.require("cmp")
 
 cmp.setup({
 	snippet = {
@@ -26,7 +28,7 @@ cmp.setup.cmdline(":", {
 	}),
 })
 
-local lspkind = require("lspkind")
+local lspkind = utils.fn.require("lspkind")
 cmp.setup({
 	formatting = {
 		format = lspkind.cmp_format({

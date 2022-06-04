@@ -1,4 +1,6 @@
-require("surround").setup({
+local utils = require("utils")
+
+utils.fn.require("surround").setup({
 	context_offset = 100,
 	load_autogroups = false,
 	mappings_style = "surround",

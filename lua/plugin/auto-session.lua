@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-require("auto-session").setup({
+utils.fn.require("auto-session").setup({
 	log_level = "info",
 	auto_session_enable_last_session = false,
 	auto_session_root_dir = vim.fn.stdpath("data") .. "/sessions/",
@@ -13,6 +13,7 @@ require("auto-session").setup({
 	bypass_session_save_file_types = nil,
 })
 
+-- keymap
 utils.fn.mapRegister({
 	s = {
 		name = "session",

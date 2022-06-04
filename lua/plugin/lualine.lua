@@ -1,8 +1,8 @@
-local lualine = require("lualine")
+local utils = require("utils")
 
-local gps = require("nvim-gps")
+local gps = utils.fn.require("nvim-gps")
 
-lualine.setup({
+utils.fn.require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",

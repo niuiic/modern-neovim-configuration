@@ -1,10 +1,9 @@
 require("basic")
-require("keybinding/basic")
+require("keymap")
 require("plugins")
 
 --local directories = { "plugin", "keybinding", "lsp", "dap", "snippet", "source" }
-local directories = {}
-
+local directories = { "snippet" }
 for _, value in pairs(directories) do
 	for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/" .. value, [[v:val =~ '\.lua$']])) do
 		require(value .. "." .. file:gsub("%.lua$", ""))

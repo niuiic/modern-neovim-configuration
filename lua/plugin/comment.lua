@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-require("Comment").setup({
+utils.fn.require("Comment").setup({
 	padding = true,
 	sticky = true,
 	ignore = nil,
@@ -13,7 +13,7 @@ require("Comment").setup({
 	post_hook = nil,
 })
 
-local ft = require("Comment.ft")
+local ft = utils.fn.require("Comment.ft")
 ft.lua = "--%s"
 ft({ "go", "rust", "javascript" }, "//%s")
 

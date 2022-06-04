@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-require("telescope").setup({
+utils.fn.require("telescope").setup({
 	defaults = {
 		mappings = {
 			i = {
@@ -21,6 +21,8 @@ local opt = {
 		require("utils").fn.getWorkspacePath(),
 	},
 }
+
+local telescope_builtin = utils.fn.require("telescope.builtin")
 
 utils.fn.mapRegister({
 	o = {
@@ -46,7 +48,7 @@ utils.fn.mapRegister({
 		},
 		f = {
 			function()
-				require("telescope.builtin").find_files(opt)
+				telescope_builtin.find_files(opt)
 			end,
 			"search files in workspace",
 		},
@@ -94,14 +96,14 @@ utils.fn.mapRegister({
 			name = "global",
 			w = {
 				function()
-					require("telescope.builtin").live_grep(opt)
+					telescope_builtin.live_grep(opt)
 				end,
 				"search words globally",
 			},
 			t = {
 				function()
 					vim.fn.systemlist("ctags -R")
-					require("telescope.builtin").tags(opt)
+					telescope_builtin.tags(opt)
 				end,
 				"search tags globally",
 			},

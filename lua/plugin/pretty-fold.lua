@@ -1,4 +1,6 @@
-require("pretty-fold").setup({
+local utils = require("utils")
+
+utils.fn.require("pretty-fold").setup({
 	sections = {
 		left = {
 			"content",
@@ -39,7 +41,7 @@ require("pretty-fold").setup({
 	ft_ignore = { "markdown" },
 })
 
-require("pretty-fold.preview").setup({
+utils.fn.require("pretty-fold.preview").setup({
 	default_keybindings = false, -- Set to false to disable default keybindings
 	-- 'none', "single", "double", "rounded", "solid", 'shadow' or table
 	-- For explanation see: :help nvim_open_win()

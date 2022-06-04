@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-require("translate").setup({
+utils.fn.require("translate").setup({
 	default = {
 		command = "translate_shell",
 		output = "floating",

@@ -1,4 +1,6 @@
-local null_ls = require("null-ls")
+local utils = require("utils")
+
+local null_ls = utils.fn.require("null-ls")
 local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
@@ -77,5 +79,4 @@ null_ls.setup({
 })
 
 -- keymap
-local utils = require("utils")
 utils.fn.map("n", "<AC-l>", ":lua vim.lsp.buf.format()<CR>", utils.var.opt)

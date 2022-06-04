@@ -1,4 +1,6 @@
-require("fcitx")({
+local utils = require("utils")
+
+utils.fn.require("fcitx")({
 	enable = {
 		insert = true,
 		cmdline = false,

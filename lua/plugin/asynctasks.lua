@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 vim.g.asyncrun_rootmarks = { ".root" }
 vim.g.asynctasks_term_pos = "bottom"
 vim.g.asynctasks_term_rows = 10
@@ -7,8 +9,7 @@ vim.g.asynctasks_confirm = 0
 vim.g.asynctasks_config_name = ".task.ini"
 vim.g.asyncrun_open = 25
 
-local utils = require("utils")
-
+-- keymap
 utils.fn.mapRegister({
 	s = {
 		name = "async tasks",

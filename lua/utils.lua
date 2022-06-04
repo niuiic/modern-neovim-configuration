@@ -37,14 +37,24 @@ M.fn.setLspKeyMap = function(bufnr)
 	require("keybinding.lsp").map(buf_set_keymap)
 end
 
--- loadConfig
+-- load config
 M.fn.loadConfig = function(configs)
 	for _, value in pairs(configs) do
 		local status, _ = pcall(require, value)
 		if not status then
-			print("Error: config " .. value .. " not found")
+			print("Error: failed to load config " .. value)
 		end
 	end
+end
+
+-- `require` with error handling
+M.fn.require = function(package_name)
+	local status, package = pcall(require, package_name)
+	if not status then
+		print("Error: package " .. package_name .. " not found")
+		luaExit()
+	end
+	return package
 end
 
 return M
