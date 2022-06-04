@@ -62,4 +62,10 @@ M.var.lspList = {
 	"taplo",
 }
 
+M.var.langList = {
+	"go",
+	"lua",
+	"vue",
+}
+
 return M

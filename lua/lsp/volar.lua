@@ -1,6 +1,6 @@
-local config = {
+local M = {
     filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
     root_dir = require("utils").fn.getRootPath,
 }
 
-return config
+return M

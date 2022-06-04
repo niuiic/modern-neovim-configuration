@@ -44,4 +44,19 @@ utils.fn.require("nvim-treesitter.configs").setup({
 		-- disable = { "c", "ruby" }, -- optional, list of language that will be disabled
 		-- [options]
 	},
+	-- check more textobjects on https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+	textobjects = {
+		select = {
+			enable = true,
+			-- Automatically jump forward to textobj, similar to targets.vim
+			lookahead = true,
+			keymaps = {
+				-- You can use the capture groups defined in textobjects.scm
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+			},
+		},
+	},
 })

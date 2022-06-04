@@ -80,7 +80,6 @@ require("packer").startup({
 				config = utils.fn.loadConfig({ "plugin/nvim-treesitter-context" }),
 			},
 			-- syntax aware text-objects, select, move, swap, and peek support
-			-- TODO: config this plugin
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		})
 		-- sql

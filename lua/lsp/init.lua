@@ -7,13 +7,13 @@ local on_attach = function(client, _)
 	client.server_capabilities.documentFormattingProvider = false -- 0.8 and hopefully later
 end
 -- nvim-cmp support
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = utils.fn.require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.offsetEncoding = "utf-8"
 
 -- load all lsp config
 for _, value in pairs(utils.var.lspList) do
-	local config = require("lsp/" .. value)
+	local config = utils.fn.require("lsp/" .. value)
 	-- add common config
 	if value.on_attach == nil then
 		config.on_attach = on_attach

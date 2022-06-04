@@ -1,9 +1,7 @@
 local M = {}
 
 function M:complete(_, callback)
-	callback({
-		{ label = "package" },
-	})
+	callback({})
 end
 
 return M

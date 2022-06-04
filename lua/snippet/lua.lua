@@ -23,7 +23,7 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
-ls.add_snippets("lua", {
+local M = {
 	s("ureq", {
 		t({ [[utils.fn.require("]] }),
 		i(1),
@@ -32,8 +32,6 @@ ls.add_snippets("lua", {
 	s("utils", {
 		t({ [[local utils = require("utils")]] }),
 	}),
-}, {
-	key = "lua",
-})
+}
 
-require("luasnip.loaders.from_lua").load({ include = { "lua" } })
+return M

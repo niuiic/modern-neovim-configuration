@@ -23,15 +23,13 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
-ls.add_snippets("go", {
-    s("errp", {
-        t({ "if err != nil {", "\t" .. [[fmt.Printf("err: %v\n", err)]], "}" }),
-    }),
-    s("errr", {
-        t({ "if err != nil {", "\t" .. [[return err]], "}" }),
-    }),
-}, {
-    key = "go",
-})
+local M = {
+	s("errp", {
+		t({ "if err != nil {", "\t" .. [[fmt.Printf("err: %v\n", err)]], "}" }),
+	}),
+	s("errr", {
+		t({ "if err != nil {", "\t" .. [[return err]], "}" }),
+	}),
+}
 
-require("luasnip.loaders.from_lua").load({ include = { "go" } })
+return M

@@ -1,3 +1,3 @@
-local config = {}
+local M = {}
 
-return config
+return M

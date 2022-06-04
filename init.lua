@@ -1,14 +1,8 @@
 require("basic")
 require("keymap")
 require("plugins")
-
---local directories = { "plugin", "keybinding", "lsp", "dap", "snippet", "source" }
-local directories = { "snippet" }
-for _, value in pairs(directories) do
-	for _, file in pairs(vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/" .. value, [[v:val =~ '\.lua$']])) do
-		require(value .. "." .. file:gsub("%.lua$", ""))
-	end
-end
+require("source")
+require("snippet")
 
 vim.cmd([[
     " modify file encoding
@@ -22,5 +16,3 @@ vim.cmd([[
         au BufWinEnter ?* silent! loadview 1
     augroup END
 ]])
-
--- require("lsp/clangd")

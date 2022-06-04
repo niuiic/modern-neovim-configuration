@@ -1,7 +1,7 @@
 local utils = require("utils")
 
-local config = {
-    root_dir = utils.fn.getRootPath,
+local M = {
+	root_dir = utils.fn.getRootPath,
 }
 
-return config
+return M

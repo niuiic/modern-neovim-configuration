@@ -23,24 +23,22 @@ local fmta = require("luasnip.extras.fmt").fmta
 local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
-ls.add_snippets("vue", {
-    s("ts", {
-        t({ [[<script lang="ts">]], "\t" }),
-        i(1),
-        t({ "", "</script>" }),
-    }),
-    s("template", {
-        t({ "<template>", "\t" }),
-        i(1),
-        t({ "", "</template>" }),
-    }),
-    s("scss", {
-        t({ [[<style lang="scss" scoped>]], "\t" .. [[@import url("]] }),
-        i(1),
-        t({ [[")]], "</style>" }),
-    }),
-}, {
-    key = "vue",
-})
+local M = {
+	s("ts", {
+		t({ [[<script lang="ts">]], "\t" }),
+		i(1),
+		t({ "", "</script>" }),
+	}),
+	s("template", {
+		t({ "<template>", "\t" }),
+		i(1),
+		t({ "", "</template>" }),
+	}),
+	s("scss", {
+		t({ [[<style lang="scss" scoped>]], "\t" .. [[@import url("]] }),
+		i(1),
+		t({ [[")]], "</style>" }),
+	}),
+}
 
-require("luasnip.loaders.from_lua").load({ include = { "vue" } })
+return M
