@@ -73,3 +73,25 @@ utils.fn.map("x", "Y", '"+y<Esc>', utils.var.opt)
 
 -- unmap
 utils.fn.map("n", "gd", "", utils.var.opt)
+
+-- plugin operation
+utils.fn.whichKeyMap({
+	p = {
+		name = "plugin",
+		u = {
+			"<cmd>PackerSync<CR>",
+			"update plugins",
+		},
+		l = {
+			"<cmd>LspInfo<CR>",
+			"lsp info",
+		},
+		i = {
+			"<cmd>LspInstallInfo<CR>",
+			"lsp install info",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "<leader>",
+})
