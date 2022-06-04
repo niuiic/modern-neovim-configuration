@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 require("translate").setup({
 	default = {
 		command = "translate_shell",
@@ -5,3 +7,6 @@ require("translate").setup({
 		parse_after = "window",
 	},
 })
+
+utils.fn.map("v", "<C-t>", ":Translate ZH-CN -source=EN<CR>", utils.var.opt)
+utils.fn.map("v", "<A-t>", ":Translate EN -source=ZH-CN -output=insert<CR>", utils.var.opt)

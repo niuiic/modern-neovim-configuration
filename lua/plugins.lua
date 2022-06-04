@@ -3,12 +3,107 @@
 -- http://neovimcraft.com
 -- https://github.com/ayamir/nvimdots/wiki/Plugins
 
+local utils = require("utils")
+
 require("packer").startup({
 	function(use)
 		-- plugin manager (basically configured)
 		use("wbthomason/packer.nvim")
-		-- todo comments (not work correctly)
-		use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
+		-- shortcut suggestions (basically configured)
+		use({ "folke/which-key.nvim", config = utils.fn.loadConfig({ "plugin/which-key" }) })
+		-- auto complete pairs
+		use({ "windwp/nvim-autopairs", config = utils.fn.loadConfig({ "plugin/nvim-autopairs" }) })
+		-- automatically switch input method when input mode changed (fully configured)
+		use({ "alohaia/fcitx.nvim", config = utils.fn.loadConfig({ "plugin/fcitx" }) })
+		-- displays neovim startup time
+		use({ "dstein64/vim-startuptime", config = utils.fn.loadConfig({ "plugin/vim-startuptime" }) })
+		-- a faster version of filetype.vim
+		use({ "nathom/filetype.nvim", config = utils.fn.loadConfig({ "plugin/filetype" }) })
+		-- fold
+		use({
+			"anuvyklack/pretty-fold.nvim",
+			requires = {
+				-- only for preview
+				"anuvyklack/nvim-keymap-amend",
+			},
+			config = utils.fn.loadConfig({ "plugin/pretty-fold" }),
+		})
+		-- repeat previous cmd
+		use("tpope/vim-repeat")
+		-- lazygit
+		use({ "kdheepak/lazygit.nvim", config = utils.fn.loadConfig({ "plugin/lazygit" }) })
+		-- terminal (basically configured)
+		use({
+			"akinsho/toggleterm.nvim",
+			tag = "v1.*",
+			config = utils.fn.loadConfig({ "plugin/toggleterm" }),
+		})
+		-- tagbar
+		use({ "simrat39/symbols-outline.nvim", config = utils.fn.loadConfig({ "plugin/symbols-outline" }) })
+		-- toggle comments (basically configured)
+		use({ "numToStr/Comment.nvim", config = utils.fn.loadConfig({ "plugin/comment" }) })
+		-- dashboard (fully configured)
+		use({ "glepnir/dashboard-nvim", config = utils.fn.loadConfig({ "plugin/dashboard-nvim" }) })
+		-- automatically toggle between absolute line number and relative one
+		use("jeffkreeftmeijer/vim-numbertoggle")
+		-- quick motion
+		use({
+			"phaazon/hop.nvim",
+			config = utils.fn.loadConfig({ "plugin/hop" }),
+		})
+		-- session
+		use({ "rmagatti/auto-session", config = utils.fn.loadConfig({ "plugin/auto-session" }) })
+		-- file tree
+		use({
+			"kyazdani42/nvim-tree.lua",
+			requires = {
+				"kyazdani42/nvim-web-devicons",
+			},
+			tag = "nightly",
+			config = utils.fn.loadConfig({ "plugin/nvim-tree" }),
+		})
+		-- better syntax highlight
+		use({
+			{
+				"nvim-treesitter/nvim-treesitter",
+				run = ":TSUpdate",
+				config = utils.fn.loadConfig({ "plugin/nvim-treesitter" }),
+			},
+			-- extensions
+			-- rainbow brackets
+			"p00f/nvim-ts-rainbow",
+			-- better matchup
+			"andymass/vim-matchup",
+			-- always show code context
+			{
+				"nvim-treesitter/nvim-treesitter-context",
+				config = utils.fn.loadConfig({ "plugin/nvim-treesitter-context" }),
+			},
+		})
+		-- sql
+		use({ "nanotee/sqls.nvim", opt = true, ft = "sql", config = utils.fn.loadConfig({ "plugin/sqls" }) })
+		-- code auto complete
+		use({
+			-- engine
+			{
+				"hrsh7th/nvim-cmp",
+				requires = {
+					-- better ui
+					"onsails/lspkind-nvim",
+				},
+				config = utils.fn.loadConfig({ "plugin/nvim-cmp" }),
+			},
+			-- source
+			-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			-- snippets
+			{ "L3MON4D3/LuaSnip", config = utils.fn.loadConfig({ "plugin/luasnip" }) },
+			"saadparwaiz1/cmp_luasnip",
+			"rafamadriz/friendly-snippets",
+		})
 		-- status line (basically configured)
 		use({
 			"nvim-lualine/lualine.nvim",
@@ -18,170 +113,117 @@ require("packer").startup({
 				-- show lsp status
 				"arkav/lualine-lsp-progress",
 				-- show current function name
-				"SmiteshP/nvim-gps",
-				-- requirement of nvim-gps
-				"nvim-treesitter/nvim-treesitter",
-				opt = true,
+				{
+					"SmiteshP/nvim-gps",
+					requires = {
+						"nvim-treesitter/nvim-treesitter",
+						config = utils.fn.loadConfig({ "plugin/nvim-gps" }),
+					},
+				},
 			},
+			config = utils.fn.loadConfig({ "plugin/lualine" }),
 		})
-		-- terminal (basically configured)
-		use({
-			"akinsho/toggleterm.nvim",
-			tag = "v1.*",
-		})
-		-- displays neovim startup time
-		use("dstein64/vim-startuptime")
-		-- toggle comments (basically configured)
-		use("numToStr/Comment.nvim")
 		-- undotree
-		use("jiaoshijie/undotree")
+		use({ "jiaoshijie/undotree", config = utils.fn.loadConfig({ "plugin/undotree" }) })
+		-- run code snip
+		use({ "michaelb/sniprun", run = "bash ./install.sh", config = utils.fn.loadConfig({ "plugin/sniprun" }) })
 		-- a pretty diagnostics, references, telescope results, quickfix and location list (basically configured)
 		use({
 			"folke/trouble.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
+			config = utils.fn.loadConfig({ "plugin/trouble" }),
 		})
 		-- quickly modify surround char
-		use("ur4ltz/surround.nvim")
+		use({ "ur4ltz/surround.nvim", config = utils.fn.loadConfig({ "plugin/surround" }) })
 		-- call sudo in neovim (fully configured)
-		use("lambdalisue/suda.vim")
-		-- project manager (basically configured)
-		use({ "ahmedkhalf/project.nvim", requires = "nvim-telescope/telescope.nvim" })
-		-- dashboard (fully configured)
-		use("glepnir/dashboard-nvim")
-		-- highlights cursor words and lines
-		use("yamatsum/nvim-cursorline")
+		use({ "lambdalisue/suda.vim", config = utils.fn.loadConfig({ "plugin/suda" }) })
+		-- translate
+		use({ "uga-rosa/translate.nvim", config = utils.fn.loadConfig({ "plugin/translate" }) })
 		-- more smooth scroll (fully configured)
-		use("karb94/neoscroll.nvim")
-		-- expand and repeat expression to multiple lines (fully configured)
-		use("AllenDang/nvim-expand-expr")
-		-- quick motion
+		use({ "karb94/neoscroll.nvim", config = utils.fn.loadConfig({ "plugin/neoscroll" }) })
+		-- highlights cursor words and lines
+		use({ "yamatsum/nvim-cursorline", config = utils.fn.loadConfig({ "plugin/nvim-cursorline" }) })
+		-- debug
 		use({
-			"phaazon/hop.nvim",
-			config = function()
-				require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-			end,
+			{ "mfussenegger/nvim-dap", config = utils.fn.loadConfig({ "plugin/nvim-dap" }) },
+			"theHamsta/nvim-dap-virtual-text",
+			"rcarriga/nvim-dap-ui",
 		})
-		-- shortcut suggestions (basically configured)
-		use("folke/which-key.nvim")
-		use("honza/vim-snippets")
-		-- auto complete pairs
-		use("windwp/nvim-autopairs")
-		-- automatically switch input method when input mode changed (fully configured)
-		use("alohaia/fcitx.nvim")
+		-- expand and repeat expression to multiple lines (fully configured)
+		use({ "AllenDang/nvim-expand-expr", config = utils.fn.loadConfig({ "plugin/nvim-expand-expr" }) })
 		-- unit test
 		use({
 			"rcarriga/vim-ultest",
 			requires = { "vim-test/vim-test" },
 			run = ":UpdateRemotePlugins",
+			config = utils.fn.loadConfig({ "plugin/vim-ultest" }),
 		})
-		-- repeat previous cmd
-		use("tpope/vim-repeat")
+		-- colorscheme (fully configured)
+		use("folke/tokyonight.nvim")
 		-- git signs
-		use("lewis6991/gitsigns.nvim")
-		-- a faster version of filetype.vim
-		use("nathom/filetype.nvim")
+		use({ "lewis6991/gitsigns.nvim", config = utils.fn.loadConfig({ "plugin/gitsigns" }) })
+		-- colorizer (basically configured)
+		use({ "norcalli/nvim-colorizer.lua", config = utils.fn.loadConfig({ "plugin/nvim-colorizer" }) })
+		-- indentation guides
+		use({ "lukas-reineke/indent-blankline.nvim", config = utils.fn.loadConfig({ "plugin/indent-blankline" }) })
+		-- tab line (basically configured)
+		use({
+			"akinsho/bufferline.nvim",
+			tag = "v2.*",
+			requires = "kyazdani42/nvim-web-devicons",
+			config = utils.fn.loadConfig({ "plugin/bufferline" }),
+		})
+		-- git diff gui
+		use({
+			"sindrets/diffview.nvim",
+			requires = "nvim-lua/plenary.nvim",
+			config = utils.fn.loadConfig({ "plugin/diffview" }),
+		})
+		-- just use as a formatter manager now (continue to configure)
+		use({
+			"jose-elias-alvarez/null-ls.nvim",
+			requires = "nvim-lua/plenary.nvim",
+			config = utils.fn.loadConfig({ "plugin/null-ls" }),
+		})
+		-- fuzzy search (cannot search quickfix)
+		use({
+			{
+				"nvim-telescope/telescope.nvim",
+				requires = { "nvim-lua/plenary.nvim" },
+				config = utils.fn.loadConfig({ "plugin/telescope" }),
+			},
+			-- extensions
+			-- yank
+			{
+				"gbprod/yanky.nvim",
+				config = utils.fn.loadConfig({ "plugin/yanky" }),
+			},
+			-- todo comments
+			{
+				"folke/todo-comments.nvim",
+				requires = "nvim-lua/plenary.nvim",
+				config = utils.fn.loadConfig({ "plugin/todo-comments" }),
+			},
+			-- project manager (basically configured)
+			{ "ahmedkhalf/project.nvim", config = utils.fn.loadConfig({ "plugin/project" }) },
+		})
 		-- aysnc tasks
 		use({
 			"skywind3000/asynctasks.vim",
 			requires = {
 				"skywind3000/asyncrun.vim",
 			},
-		})
-		-- colorscheme (fully configured)
-		use("folke/tokyonight.nvim")
-		-- zoom
-		use("dhruvasagar/vim-zoom")
-		-- always show code context
-		use({ "nvim-treesitter/nvim-treesitter-context", requires = { "nvim-treesitter/nvim-treesitter" } })
-		-- better syntax highlight
-		use({
-			"nvim-treesitter/nvim-treesitter",
-			run = ":TSUpdate",
-			requires = { "p00f/nvim-ts-rainbow", "andymass/vim-matchup" },
-		})
-		-- automatically toggle between absolute line number and relative one
-		use("jeffkreeftmeijer/vim-numbertoggle")
-		-- indentation guides
-		use("lukas-reineke/indent-blankline.nvim")
-		-- tab line (basically configured)
-		use({
-			"akinsho/bufferline.nvim",
-			tag = "v2.*",
-			requires = "kyazdani42/nvim-web-devicons",
-		})
-		-- debugger
-		use("puremourning/vimspector")
-		-- git diff gui
-		use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
-		-- colorizer (basically configured)
-		use("norcalli/nvim-colorizer.lua")
-		-- translate
-		use("uga-rosa/translate.nvim")
-		-- just use as a formatter manager now (continue to configure)
-		use({
-			"jose-elias-alvarez/null-ls.nvim",
-			requires = "nvim-lua/plenary.nvim",
-		})
-		-- fuzzy search (cannot search quickfix)
-		use({
-			"nvim-telescope/telescope.nvim",
-			requires = { "nvim-lua/plenary.nvim" },
-		})
-		-- file tree
-		use({
-			"kyazdani42/nvim-tree.lua",
-			requires = {
-				"kyazdani42/nvim-web-devicons",
-			},
-			tag = "nightly",
+			config = utils.fn.loadConfig({ "plugin/asynctasks" }),
 		})
 		-- lsp manager
 		use({
-			"williamboman/nvim-lsp-installer",
-			"neovim/nvim-lspconfig",
-		})
-		-- for better lsp ui
-		use({ "onsails/lspkind-nvim", "tami5/lspsaga.nvim" })
-		-- tagbar
-		use("simrat39/symbols-outline.nvim")
-		-- code auto complete
-		use({
-			-- engine
-			"hrsh7th/nvim-cmp",
-			-- source
-			-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			-- snippets
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-			"rafamadriz/friendly-snippets",
-		})
-		-- yank
-		use("gbprod/yanky.nvim")
-		-- debug
-		use({
-			"mfussenegger/nvim-dap",
-			"theHamsta/nvim-dap-virtual-text",
-			"rcarriga/nvim-dap-ui",
-		})
-		-- sql
-		use({ "nanotee/sqls.nvim", ft = { "sql" } })
-		-- fold
-		use({
-			"anuvyklack/pretty-fold.nvim",
+			"ray-x/navigator.lua",
+			config = utils.fn.loadConfig({ "plugin/navigator" }),
 			requires = {
-				-- only for preview
-				"anuvyklack/nvim-keymap-amend",
+				{ "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+				"neovim/nvim-lspconfig",
+				{ "williamboman/nvim-lsp-installer", config = utils.fn.loadConfig({ "plugin/nvim-lsp-installer" }) },
 			},
 		})
-		-- session
-		use("rmagatti/auto-session")
-		-- run code snip
-		use({ "michaelb/sniprun", run = "bash ./install.sh" })
-		-- lazygit
-		use("kdheepak/lazygit.nvim")
 	end,
 })

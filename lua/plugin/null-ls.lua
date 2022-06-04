@@ -75,3 +75,7 @@ null_ls.setup({
 		}),
 	},
 })
+
+-- keymap
+local utils = require("utils")
+utils.fn.map("n", "<AC-l>", ":lua vim.lsp.buf.format()<CR>", utils.var.opt)

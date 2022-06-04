@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 require("trouble").setup({
 	position = "bottom", -- position of the list can be: bottom, top, left, right
 	height = 10, -- height of the trouble list when position is top or bottom
@@ -44,4 +46,29 @@ require("trouble").setup({
 		other = "﫠",
 	},
 	use_diagnostic_signs = false, -- enabling this will use the signs defined in your lsp client
+})
+
+utils.fn.mapRegister({
+	t = {
+		name = "trouble",
+		d = {
+			"<cmd>TroubleToggle workspace_diagnostics<CR>",
+			"open diagnostics",
+		},
+		q = {
+			"<cmd>TroubleToggle quickfix<CR>",
+			"open quickfix",
+		},
+		l = {
+			"<cmd>TroubleToggle loclist<CR>",
+			"open loclist",
+		},
+		f = {
+			"<cmd>TroubleToggle lsp_references<CR>",
+			"open lsp references list",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
 })
