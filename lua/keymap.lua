@@ -21,7 +21,7 @@ utils.fn.map("n", "<A-s>", ":wa!<CR>", utils.var.opt)
 utils.fn.map("i", "<C-c>", "<Esc>", utils.var.opt)
 
 -- split windows
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	w = {
 		name = "split windows",
 		h = {
@@ -39,7 +39,7 @@ utils.fn.mapRegister({
 })
 
 -- quickfix
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	q = {
 		name = "quickfix",
 		o = {
@@ -71,19 +71,5 @@ utils.fn.map("n", "<A-G>", ":clast<CR>", utils.var.opt)
 -- copy to systemclip
 utils.fn.map("x", "Y", '"+y<Esc>', utils.var.opt)
 
--- lsp
--- lspKeymaps.map = function(mapbuf)
-	-- -- rename
-	-- mapbuf("n", "gr", "<cmd>Lspsaga rename<CR>", utils.var.opt)
-	-- -- code action
-	-- mapbuf("n", "ga", "<cmd>Lspsaga code_action<CR>", utils.var.opt)
-	-- mapbuf("x", "ga", ":<c-u>Lspsaga range_code_action<cr>", utils.var.opt)
-	-- -- go xx
-	-- mapbuf("n", "gh", "<cmd>Lspsaga signature_help<CR>", utils.var.opt)
-	-- mapbuf("n", "K", "<cmd>Lspsaga hover_doc<cr>", utils.var.opt)
-	-- mapbuf("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", utils.var.opt)
-	-- mapbuf("n", "gj", "<cmd>Lspsaga diagnostic_jump_next<cr>", utils.var.opt)
-	-- mapbuf("n", "gk", "<cmd>Lspsaga diagnostic_jump_prev<cr>", utils.var.opt)
-	-- -- diagnostic
-	-- mapbuf("n", "gp", "<cmd>Lspsaga show_line_diagnostics<CR>", utils.var.opt)
--- end
+-- unmap
+utils.fn.map("n", "gd", "", utils.var.opt)

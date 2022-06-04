@@ -10,7 +10,7 @@ vim.g.asynctasks_config_name = ".task.ini"
 vim.g.asyncrun_open = 25
 
 -- keymap
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	s = {
 		name = "async tasks",
 		r = {

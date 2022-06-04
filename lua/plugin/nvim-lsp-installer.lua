@@ -1,22 +1,7 @@
 local utils = require("utils")
 
 utils.fn.require("nvim-lsp-installer").setup({
-	ensure_installed = {
-		"cssls",
-		"volar",
-		"sumneko_lua",
-		"tsserver",
-		"gopls",
-		"bashls",
-		"cssmodules_ls",
-		"eslint",
-		"html",
-		"jsonls",
-		"rust_analyzer",
-		"sqls",
-		"clangd",
-		"taplo",
-	},
+	ensure_installed = utils.var.lspList,
 	automatic_installation = true,
 	ui = {
 		icons = {
@@ -41,13 +26,13 @@ utils.fn.require("nvim-lsp-installer").setup({
 			uninstall_server = "X",
 		},
 	},
-	pip = {
-		-- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
-		-- and is not recommended.
-		--
-		-- Example: { "--proxy", "https://proxyserver" }
-		install_args = {},
-	},
+	-- pip = {
+	-- These args will be added to `pip install` calls. Note that setting extra args might impact intended behavior
+	-- and is not recommended.
+	--
+	-- Example: { "--proxy", "https://proxyserver" }
+	-- install_args = {},
+	-- },
 
 	-- Controls to which degree logs are written to the log file. It's useful to set this to vim.log.levels.DEBUG when
 	-- debugging issues with server installations.

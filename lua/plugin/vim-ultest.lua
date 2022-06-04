@@ -8,7 +8,7 @@ vim.g.ultest_output_on_run = false
 -- keymap
 utils.fn.map("n", ";j", "<Plug>(ultest-next-fail)", utils.var.opt)
 utils.fn.map("n", ";k", "<Plug>(ultest-prev-fail)", utils.var.opt)
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	t = {
 		name = "test",
 		a = {

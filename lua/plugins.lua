@@ -79,6 +79,9 @@ require("packer").startup({
 				"nvim-treesitter/nvim-treesitter-context",
 				config = utils.fn.loadConfig({ "plugin/nvim-treesitter-context" }),
 			},
+			-- syntax aware text-objects, select, move, swap, and peek support
+			-- TODO: config this plugin
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		})
 		-- sql
 		use({ "nanotee/sqls.nvim", opt = true, ft = "sql", config = utils.fn.loadConfig({ "plugin/sqls" }) })
@@ -89,7 +92,7 @@ require("packer").startup({
 				"hrsh7th/nvim-cmp",
 				requires = {
 					-- better ui
-					"onsails/lspkind-nvim",
+					{ "onsails/lspkind-nvim", config = utils.fn.loadConfig({ "plugin/lspkind-nvim" }) },
 				},
 				config = utils.fn.loadConfig({ "plugin/nvim-cmp" }),
 			},
@@ -215,14 +218,19 @@ require("packer").startup({
 			},
 			config = utils.fn.loadConfig({ "plugin/asynctasks" }),
 		})
-		-- lsp manager
+		-- lsp
 		use({
-			"ray-x/navigator.lua",
-			config = utils.fn.loadConfig({ "plugin/navigator" }),
-			requires = {
-				{ "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+			{
+				"williamboman/nvim-lsp-installer",
+				config = utils.fn.loadConfig({ "plugin/nvim-lsp-installer" }),
+			},
+			{
 				"neovim/nvim-lspconfig",
-				{ "williamboman/nvim-lsp-installer", config = utils.fn.loadConfig({ "plugin/nvim-lsp-installer" }) },
+				config = utils.fn.loadConfig({ "lsp" }),
+			},
+			{
+				"tami5/lspsaga.nvim",
+				config = utils.fn.loadConfig({ "plugin/lspsaga" }),
 			},
 		})
 	end,

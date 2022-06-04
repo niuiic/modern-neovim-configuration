@@ -47,7 +47,7 @@ gitsigns.setup({
 local gs = package.loaded.gitsigns
 
 -- keymap
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	g = {
 		name = "git signs",
 		s = {
@@ -112,7 +112,7 @@ utils.fn.mapRegister({
 	prefix = "<localleader>",
 })
 
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	g = {
 		name = "git signs",
 		s = {

@@ -57,7 +57,7 @@ utils.fn.require("sniprun").setup({
 
 
 -- keymap
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	r = {
 		name = "run code snip",
 		r = {
@@ -90,7 +90,7 @@ utils.fn.mapRegister({
 	prefix = "<localleader>",
 })
 
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	r = {
 		name = "run code snip",
 		r = {

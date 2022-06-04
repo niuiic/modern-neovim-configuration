@@ -18,13 +18,13 @@ utils.fn.require("telescope").setup({
 local opt = {
 	hidden = true,
 	search_dirs = {
-		require("utils").fn.getWorkspacePath(),
+		require("utils").fn.getRootPath(),
 	},
 }
 
 local telescope_builtin = utils.fn.require("telescope.builtin")
 
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	o = {
 		name = "telescope",
 		l = {

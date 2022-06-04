@@ -58,7 +58,7 @@ utils.fn.require("bufferline").setup({
 -- keymap
 utils.fn.map("n", "<C-k>", ":BufferLineCycleNext<CR>", utils.var.opt)
 utils.fn.map("n", "<C-j>", ":BufferLineCyclePrev<CR>", utils.var.opt)
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	b = {
 		name = "bufferline",
 		p = {

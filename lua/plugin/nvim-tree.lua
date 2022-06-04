@@ -3,7 +3,7 @@ local utils = require("utils")
 local nvim_tree = utils.fn.require("nvim-tree")
 local lib = utils.fn.require("nvim-tree.lib")
 local cd_dot_cb = function(node)
-	nvim_tree.change_dir(require("utils").fn.getWorkspacePath())
+	nvim_tree.change_dir(require("utils").fn.getRootPath())
 	if node.name ~= ".." then
 		lib.set_index_and_redraw(node.absolute_path)
 	end
@@ -89,12 +89,12 @@ nvim_tree.setup({
 })
 
 -- keymap
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	p = {
 		"<cmd>NvimTreeToggle<CR>",
 		"toggle file tree",
 	},
 }, {
 	mode = "n",
-	prefix = "<leader>",
+	prefix = "<localleader>",
 })

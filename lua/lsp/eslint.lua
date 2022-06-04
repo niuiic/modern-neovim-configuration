@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-require("lspconfig").eslint.setup({
+local config = {
     settings = {
         codeAction = {
             disableRuleComment = {
@@ -35,15 +35,12 @@ require("lspconfig").eslint.setup({
         "typescriptreact",
         "vue",
     },
-    on_attach = function(client, bufnr)
-        client.server_capabilities.document_formatting = false -- 0.7 and earlier
-        client.server_capabilities.documentFormattingProvider = false -- 0.8 and hopefully later
-        utils.fn.setLspKeyMap(bufnr)
-    end,
-    root_dir = utils.fn.getWorkspacePath,
+    root_dir = utils.fn.getRootPath,
     handlers = {
         ["eslint/noLibrary"] = function()
             return {}
         end,
     },
-})
+}
+
+return config

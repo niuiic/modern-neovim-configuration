@@ -115,7 +115,7 @@ utils.fn.require("diffview").setup({
 
 -- keymap
 utils.fn.map("n", "<leader>ds", ":DiffviewOpen ", utils.var.opt)
-utils.fn.mapRegister({
+utils.fn.whichKeyMap({
 	d = {
 		name = "diffview",
 		s = { "diff open specifically" },
