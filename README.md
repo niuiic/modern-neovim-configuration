@@ -1,6 +1,6 @@
 # Modern Neovim Configuration
 
-Modern configuration for neovim. From vimscript to lua (not complete, not optimized for performance).
+Modern configuration for neovim. From vimscript to lua (not complete, not highly optimized for startup performance).
 
 > Do not copy the entire configuration directly. You need your own configuration and shortcuts. Find the plugins you are interested in and refer to their configuration.
 
