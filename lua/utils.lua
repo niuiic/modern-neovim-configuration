@@ -60,6 +60,7 @@ M.var.lspList = {
 	"sqls",
 	"clangd",
 	"taplo",
+	"tsserver",
 }
 
 M.var.langList = {

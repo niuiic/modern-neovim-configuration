@@ -1,7 +1,7 @@
 local au = vim.api.nvim_create_autocmd
 
 -- file encoding
-vim.g.encoding = "UTF-8"
+vim.g.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
 
 -- no compatible to vi
@@ -68,14 +68,6 @@ vim.o.wildmenu = true
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"
 
--- quickfix
-au({ "VimEnter" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.bo.makeprg = "make"
-	end,
-})
-
 -- colorscheme
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_transparent_sidebar = true
@@ -92,3 +84,12 @@ vim.highlight.create("LineNr", { guifg = "#00ffff" }, false)
 
 -- enable mouse mode
 vim.o.mouse = "a"
+
+-- auto save and load fold state
+vim.cmd([[
+    augroup remember_folds
+        autocmd!
+        au BufWinLeave ?* mkview 1
+        au BufWinEnter ?* silent! loadview 1
+    augroup END
+]])
