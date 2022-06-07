@@ -1,5 +1,5 @@
 require("basic")
 require("keymap")
 require("plugins")
-require("source")
 require("snippet")
+require("source")

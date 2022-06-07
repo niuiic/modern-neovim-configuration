@@ -2,6 +2,8 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+local utils = require("utils")
+
 local M = {
 	settings = {
 		Lua = {
@@ -21,6 +23,7 @@ local M = {
 			},
 		},
 	},
+	root_dir = utils.fn.rootPattern,
 }
 
 return M

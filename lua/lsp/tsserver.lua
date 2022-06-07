@@ -7,7 +7,7 @@ local M = {
 		"typescriptreact",
 		"typescript.tsx",
 	},
-	root_dir = require("utils").fn.getRootPath,
+	root_dir = require("utils").fn.rootPattern,
 	init_options = {
 		hostInfo = "neovim",
 	},

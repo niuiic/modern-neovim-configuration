@@ -7,7 +7,7 @@ local getPrevLevelPath = function(currentPath)
 	return string.sub(currentPath, 1, string.len(currentPath) - i)
 end
 
-M.fn.getRootPath = function(pattern)
+M.fn.rootPattern = function(pattern)
 	pattern = pattern or "/.root"
 	local path = vim.fn.getcwd(-1, -1)
 	local pathBp = path
@@ -44,6 +44,26 @@ M.fn.require = function(package_name)
 		print("Error: package " .. package_name .. " not found")
 	end
 	return package
+end
+
+-- merge table
+-- if override is true, table2 will override table1 (default to false)
+M.fn.mergeTable = function(table1, table2, override)
+	override = override or false
+	local res = {}
+	for key, value in pairs(table1) do
+		res[key] = value
+	end
+	for key, value in pairs(table2) do
+		if res[key] == nil then
+			res[key] = value
+		else
+			if override == true then
+				res[key] = value
+			end
+		end
+	end
+	return res
 end
 
 M.var.lspList = {

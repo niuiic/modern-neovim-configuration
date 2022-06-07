@@ -1,6 +1,6 @@
 local M = {
 	filetypes = { "vue" },
-	root_dir = require("utils").fn.getRootPath,
+	root_dir = require("utils").fn.rootPattern,
 }
 
 return M
