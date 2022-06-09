@@ -1,5 +1,3 @@
-local au = vim.api.nvim_create_autocmd
-
 -- file encoding
 vim.g.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
