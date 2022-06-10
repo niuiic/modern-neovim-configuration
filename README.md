@@ -1,8 +1,39 @@
 # Modern Neovim Configuration
 
-Modern configuration for neovim. From vimscript to lua (not complete, not highly optimized for startup performance).
+Modern configuration for neovim.
 
-> Do not copy the entire configuration directly. You need your own configuration and shortcuts. Find the plugins you are interested in and refer to their configuration.
+> It's not highly optimized for startup performance.
+
+## QuickStart
+
+1. install packer.nvim
+
+```sh
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+2. `mv init.lua init.luabp`, then create a new `init.lua`.
+
+```lua
+vim.cmd [[packadd packer.nvim]]
+require('packer').startup({
+    function(use)
+        use 'liuchengxu/vim-which-key'
+    end
+})
+```
+
+3. use `:PackerSync` to install `vim-which-key`.
+
+4. `mv init.luabp init.lua`
+
+5. use `:PackerSync` to install remaining plugins.
+
+6. use `:checkhealth` to check if something is missing.
+
+7. Look for specific functions in `lua/plugins.lua`.
+
+> It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
 ## Environment
 
@@ -15,8 +46,6 @@ Terminal: Alacritty (a GPU-accelerated terminal emulator)
 Neovim: V0.8+ (build from source with LuaJIT only)
 
 ## Screenshot
-
-Look for specific functions in `lua/plugins.lua`.
 
 ### Full Screen
 
