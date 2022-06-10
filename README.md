@@ -15,7 +15,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 2. `mv init.lua init.luabp`, then create a new `init.lua`.
 
 ```lua
-vim.cmd [[packadd packer.nvim]]
 require('packer').startup({
     function(use)
         use 'liuchengxu/vim-which-key'
