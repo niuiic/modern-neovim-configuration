@@ -104,9 +104,9 @@ Search files in workspace, tags, buffers, history files, marks, projects, quickf
 
 ![Undo Tree](./img/undo-tree.png)
 
-### Starter
+### Dashboard
 
-![Starter](./img/starter.png)
+![Dashboard](./img/dashboard.png)
 
 ### Translate
 
