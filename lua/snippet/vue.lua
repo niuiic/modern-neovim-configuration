@@ -24,8 +24,8 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
 local M = {
-	s("ts", {
-		t({ [[<script lang="ts">]], "\t" }),
+	s("setup", {
+		t({ [[<script setup lang="ts">]], "\t" }),
 		i(1),
 		t({ "", "</script>" }),
 	}),

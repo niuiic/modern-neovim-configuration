@@ -90,6 +90,10 @@ utils.fn.whichKeyMap({
 			"<cmd>LspInstallInfo<CR>",
 			"lsp install info",
 		},
+		c = {
+			"<cmd>checkhealth<CR>",
+			"checkhealth",
+		},
 	},
 }, {
 	mode = "n",
