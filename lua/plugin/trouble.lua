@@ -55,10 +55,6 @@ utils.fn.whichKeyMap({
 			"<cmd>TroubleToggle workspace_diagnostics<CR>",
 			"open diagnostics",
 		},
-		q = {
-			"<cmd>TroubleToggle quickfix<CR>",
-			"open quickfix",
-		},
 		l = {
 			"<cmd>TroubleToggle loclist<CR>",
 			"open loclist",
