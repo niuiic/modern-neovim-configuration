@@ -88,7 +88,7 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 ### Fuzzy Finder
 
-Search files in workspace, tags, buffers, history files, marks, projects, quickfix, git status, etc.
+Search files, tags, buffers, history files, marks, projects, git status, etc.
 
 ![Fuzzy Finder](./img/fuzzy-finder.png)
 

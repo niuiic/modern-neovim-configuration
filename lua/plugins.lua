@@ -187,7 +187,7 @@ require("packer").startup({
 			requires = "nvim-lua/plenary.nvim",
 			config = utils.fn.loadConfig({ "plugin/null-ls" }),
 		})
-		-- fuzzy search (cannot search quickfix)
+		-- fuzzy search (basically configured)
 		use({
 			{
 				"nvim-telescope/telescope.nvim",

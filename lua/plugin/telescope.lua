@@ -53,10 +53,6 @@ utils.fn.whichKeyMap({
 			end,
 			"search files in workspace",
 		},
-		q = {
-			"<cmd>Telescope quickfix<CR>",
-			"search quickfix",
-		},
 		n = {
 			"<cmd>Telescope help_tags<CR>",
 			"search neovim documents",
