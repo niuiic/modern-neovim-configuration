@@ -2,8 +2,14 @@ local utils = require("utils")
 
 local cmp = utils.fn.require("cmp")
 
+local langList = {
+	"go",
+	"lua",
+	"vue",
+}
+
 -- register custom sources
-for _, value in pairs(utils.var.langList) do
+for _, value in pairs(langList) do
 	local source = utils.fn.require("source/" .. value)
 	cmp.register_source(value, source)
 	cmp.setup.filetype(value, {

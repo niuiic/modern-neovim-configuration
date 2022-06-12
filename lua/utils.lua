@@ -66,26 +66,4 @@ M.fn.mergeTable = function(table1, table2, override)
 	return res
 end
 
-M.var.lspList = {
-	"cssls",
-	"volar",
-	"sumneko_lua",
-	"gopls",
-	"bashls",
-	"cssmodules_ls",
-	"eslint",
-	"html",
-	"jsonls",
-	"rust_analyzer",
-	"sqls",
-	"clangd",
-	"taplo",
-}
-
-M.var.langList = {
-	"go",
-	"lua",
-	"vue",
-}
-
 return M

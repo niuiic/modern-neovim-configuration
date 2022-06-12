@@ -1,7 +1,23 @@
 local utils = require("utils")
 
+local lspList = {
+	"cssls",
+	"volar",
+	"sumneko_lua",
+	"gopls",
+	"bashls",
+	"cssmodules_ls",
+	"eslint",
+	"html",
+	"jsonls",
+	"rust_analyzer",
+	"sqls",
+	"clangd",
+	"taplo",
+}
+
 utils.fn.require("nvim-lsp-installer").setup({
-	ensure_installed = utils.var.lspList,
+	ensure_installed = lspList,
 	automatic_installation = true,
 	ui = {
 		icons = {

@@ -1,5 +1,22 @@
 local utils = require("utils")
 
+local lspList = {
+	"cssls",
+	"volar",
+	"sumneko_lua",
+	"gopls",
+	"bashls",
+	"cssmodules_ls",
+	"eslint",
+	"html",
+	"jsonls",
+	"rust_analyzer",
+	"sqls",
+	"clangd",
+	"taplo",
+	"verible",
+}
+
 -- common lsp config
 local on_attach = function(client, _)
 	-- disable default format feature of lsp
@@ -11,7 +28,7 @@ end
 local capabilities = utils.fn.require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- load all lsp config
-for _, value in pairs(utils.var.lspList) do
+for _, value in pairs(lspList) do
 	local config = utils.fn.require("lsp/" .. value)
 
 	-- set on_attach
