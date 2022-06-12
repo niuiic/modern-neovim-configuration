@@ -4,6 +4,16 @@ Modern configuration for neovim.
 
 > It's not highly optimized for startup performance.
 
+## Personal Environment
+
+OS: Gentoo
+
+WM: Sway (use vulkan renderer)
+
+Terminal: Alacritty (a GPU-accelerated terminal emulator)
+
+Neovim: V0.8+ (build from source with LuaJIT only)
+
 ## QuickStart
 
 1. install packer.nvim
@@ -34,15 +44,23 @@ require('packer').startup({
 
 > It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
-## Environment
+## Keymap
 
-OS: Gentoo
+`vim-which-key` will tell you. You can also check `lua/plugin/*` and `lua/keymap` for details.
 
-WM: Sway (use vulkan renderer)
+## LSP
 
-Terminal: Alacritty (a GPU-accelerated terminal emulator)
+Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other files.
 
-Neovim: V0.8+ (build from source with LuaJIT only)
+Modify the `lspList` in `lua/lsp/init.lua`.
+
+If you want to install lsp by nvim-lsp-installer, then modify `lsplist` in `lua/plugin/nvim-lsp-installer.lua`.
+
+## Custom Snippets and Sources
+
+Create a `filetype.lua` in `lua/snippet` or `lua/source`, edit the file in the same way as other files.
+
+Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 ## Screenshot
 
