@@ -1,5 +1,3 @@
--- see examples on https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua
--- see document on https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md
 local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node

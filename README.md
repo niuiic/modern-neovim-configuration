@@ -56,11 +56,17 @@ Modify the `lspList` in `lua/lsp/init.lua`.
 
 If you want to install lsp by nvim-lsp-installer, then modify `lsplist` in `lua/plugin/nvim-lsp-installer.lua`.
 
+## Formatter
+
+Check formatter setting in `lua/plugin/null-ls.lua`. Look for more formatters on [null-ls buildin formatters](https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting).
+
 ## Custom Snippets and Sources
 
 Create a `filetype.lua` in `lua/snippet` or `lua/source`, edit the file in the same way as other files.
 
 Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
+
+> [Snippet examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua) and [snippet document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md) may help you.
 
 ## Screenshot
 
