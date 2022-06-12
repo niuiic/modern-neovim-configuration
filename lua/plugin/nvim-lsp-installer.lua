@@ -18,7 +18,7 @@ local lspList = {
 
 utils.fn.require("nvim-lsp-installer").setup({
 	ensure_installed = lspList,
-	automatic_installation = true,
+	automatic_installation = false,
 	ui = {
 		icons = {
 			server_installed = "✓",
