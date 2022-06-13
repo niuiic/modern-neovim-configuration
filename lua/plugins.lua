@@ -72,6 +72,8 @@ require("packer").startup({
 			-- extensions
 			-- rainbow brackets
 			"p00f/nvim-ts-rainbow",
+			-- spell checker
+			{ "lewis6991/spellsitter.nvim", config = utils.fn.loadConfig({ "plugin/spellsitter.lua" }) },
 			-- better matchup
 			"andymass/vim-matchup",
 			-- always show code context
