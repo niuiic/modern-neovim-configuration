@@ -213,11 +213,15 @@ require("packer").startup({
 		})
 		-- aysnc tasks
 		use({
-			"skywind3000/asynctasks.vim",
-			requires = {
-				"skywind3000/asyncrun.vim",
+			{
+				"skywind3000/asynctasks.vim",
+				requires = {
+					"skywind3000/asyncrun.vim",
+				},
+				config = utils.fn.loadConfig({ "plugin/asynctasks" }),
 			},
-			config = utils.fn.loadConfig({ "plugin/asynctasks" }),
+			-- search tasks with telescope
+			{ "GustavoKatel/telescope-asynctasks.nvim" },
 		})
 		-- lsp
 		use({
