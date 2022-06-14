@@ -3,9 +3,6 @@ local utils = require("utils")
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
--- focus on center
-utils.fn.map("n", "J", "zz", utils.var.opt)
-
 -- exit and refresh
 utils.fn.map("n", "<C-x>", ":bd<CR>", utils.var.opt)
 utils.fn.map("n", "<C-q>", ":q<CR>", utils.var.opt)
