@@ -54,7 +54,7 @@ Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other file
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
-If you want to install lsp by nvim-lsp-installer, then modify `lsplist` in `lua/plugin/nvim-lsp-installer.lua`.
+If you want to install lsp by nvim-lsp-installer, then modify `lspList` in `lua/plugin/nvim-lsp-installer.lua`.
 
 ## Formatter
 
