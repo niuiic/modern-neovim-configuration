@@ -227,3 +227,7 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 ### Lazygit
 
 ![Lazygit](./img/laygit.png)
+
+### Git Conflict
+
+![Git Conflict](./img/git-conflict.png)
