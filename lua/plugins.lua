@@ -166,6 +166,8 @@ require("packer").startup({
 		use("folke/tokyonight.nvim")
 		-- git signs
 		use({ "lewis6991/gitsigns.nvim", config = utils.fn.loadConfig({ "plugin/gitsigns" }) })
+		-- resolve git conflict
+		use({ "akinsho/git-conflict.nvim", config = utils.fn.loadConfig({ "plugin/git-conflict" }) })
 		-- colorizer (basically configured)
 		use({ "norcalli/nvim-colorizer.lua", config = utils.fn.loadConfig({ "plugin/nvim-colorizer" }) })
 		-- indentation guides
