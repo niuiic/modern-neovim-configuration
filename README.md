@@ -22,25 +22,30 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. `mv init.lua init.luabp`, then create a new `init.lua`.
+2. install `nodejs` and `go`
+
+3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
+
+4. `cd ~/.config/nvim && mv init.lua init.luabp`, then create a new `init.lua`.
 
 ```lua
 require('packer').startup({
     function(use)
+        use("wbthomason/packer.nvim")
         use 'liuchengxu/vim-which-key'
     end
 })
 ```
 
-3. use `:PackerSync` to install `vim-which-key`.
+5. use `:PackerSync` to install `vim-which-key`.
 
-4. `mv init.luabp init.lua`
+6. `mv init.luabp init.lua`
 
-5. use `:PackerSync` to install remaining plugins.
+7. use `:PackerSync` to install remaining plugins.
 
-6. use `:checkhealth` to check if something is missing.
+8. use `:checkhealth` to check if something is missing.
 
-7. Look for specific functions in `lua/plugins.lua`.
+9. Look for specific functions in `lua/plugins.lua`.
 
 > It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
