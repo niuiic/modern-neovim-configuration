@@ -22,7 +22,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. install `nodejs`, `go`, `rust` for lsp installer (optional).
+2. install `nodejs`, `go`, `rust` for nvim-lsp-installer and nvim-treesitter (optional).
 
 3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
