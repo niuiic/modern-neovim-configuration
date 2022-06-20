@@ -22,7 +22,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. install `nodejs`, `go`, `rust` for nvim-lsp-installer and nvim-treesitter (optional).
+2. install `nodejs`, `go`, `rust` for `nvim-lsp-installer` and `nvim-treesitter`.
 
 3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
@@ -32,26 +32,32 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 require('packer').startup({
     function(use)
         use("wbthomason/packer.nvim")
-        use 'liuchengxu/vim-which-key'
+        use("folke/which-key.nvim")
     end
 })
 ```
 
-5. use `:PackerSync` to install `vim-which-key`.
+5. use `:PackerSync` to install `which-key.nvim`.
 
-6. `mv init.luabp init.lua`
+6. modify `init.lua`.
+
+```lua
+require("plugins")
+```
 
 7. use `:PackerSync` to install remaining plugins.
 
-8. use `:checkhealth` to check if something is missing.
+8. `mv init.luabp init.lua`.
 
-9. Look for specific functions in `lua/plugins.lua`.
+9. use `:checkhealth` to check if something is missing.
+
+10. Look for specific functions in `lua/plugins.lua`.
 
 > It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
 ## Keymap
 
-`vim-which-key` will tell you. You can also check `lua/plugin/*` and `lua/keymap` for details.
+`which-key.nvim` will tell you. You can also check `lua/plugin/*` and `lua/keymap` for details.
 
 ## LSP
 
