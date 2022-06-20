@@ -77,7 +77,7 @@ utils.fn.whichKeyMap({
 			"<cmd>Telescope current_buffer_fuzzy_find<CR>",
 			"search words in current buffer",
 		},
-		k = {
+		T = {
 			"<cmd>TodoTelescope<CR>",
 			"search keywords(TODO, FIXME, etc) in the project",
 		},
@@ -105,7 +105,7 @@ utils.fn.whichKeyMap({
 				"search tags globally",
 			},
 		},
-		T = {
+		k = {
 			"<cmd>Telescope asynctasks all<CR>",
 			"search tasks",
 		},
