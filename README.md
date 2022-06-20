@@ -236,3 +236,7 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 ### Git Conflict
 
 ![Git Conflict](./img/git-conflict.png)
+
+## Known Issure
+
+- `Ctrl+o` cannot return to correct position.

@@ -157,10 +157,18 @@ require("packer").startup({
 		use({ "AllenDang/nvim-expand-expr", config = utils.fn.loadConfig({ "plugin/nvim-expand-expr" }) })
 		-- unit test
 		use({
-			"rcarriga/vim-ultest",
-			requires = { "vim-test/vim-test" },
-			run = ":UpdateRemotePlugins",
-			config = utils.fn.loadConfig({ "plugin/vim-ultest" }),
+			"nvim-neotest/neotest",
+			requires = {
+				"nvim-lua/plenary.nvim",
+				"nvim-treesitter/nvim-treesitter",
+				"antoinemadec/FixCursorHold.nvim",
+				-- adapters
+				-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
+				"haydenmeade/neotest-jest",
+				"nvim-neotest/neotest-go",
+				"nvim-neotest/neotest-vim-test",
+			},
+			config = utils.fn.loadConfig({ "plugin/neotest" }),
 		})
 		-- colorscheme (fully configured)
 		use("folke/tokyonight.nvim")
