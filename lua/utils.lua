@@ -8,7 +8,7 @@ local getPrevLevelPath = function(currentPath)
 end
 
 M.fn.rootPattern = function(pattern)
-	pattern = pattern or "/.root"
+	pattern = pattern or "/.git"
 	local path = vim.fn.getcwd(-1, -1)
 	local pathBp = path
 	while path ~= "" do

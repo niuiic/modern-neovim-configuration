@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-vim.g.asyncrun_rootmarks = { ".root" }
+vim.g.asyncrun_rootmarks = { ".git" }
 vim.g.asynctasks_term_pos = "bottom"
 vim.g.asynctasks_term_rows = 10
 vim.g.asynctasks_term_cols = 80
