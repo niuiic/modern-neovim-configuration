@@ -16,6 +16,8 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 
 ## QuickStart
 
+> It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
+
 1. install packer.nvim
 
 ```sh
@@ -52,8 +54,6 @@ require("plugins")
 9. use `:checkhealth` to check if something is missing.
 
 10. Look for specific functions in `lua/plugins.lua`.
-
-> It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
 ## Keymap
 
