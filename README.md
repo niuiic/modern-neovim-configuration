@@ -244,5 +244,3 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 ![Git Conflict](./img/git-conflict.png)
 
 ## Known Issues
-
-- `Ctrl+o` cannot return to correct position.
