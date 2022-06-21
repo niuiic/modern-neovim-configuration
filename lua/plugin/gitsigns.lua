@@ -111,6 +111,11 @@ utils.fn.whichKeyMap({
 			end,
 			"blame line",
 		},
+		-- trouble.nvim is required
+		l = {
+			"<cmd>Gitsigns setqflist<CR>",
+			"list all stage hunks",
+		},
 	},
 }, {
 	mode = "n",
