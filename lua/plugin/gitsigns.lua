@@ -46,10 +46,15 @@ gitsigns.setup({
 
 local gs = package.loaded.gitsigns
 
+utils.fn.map("n", "gc", ":!git commit -m ", utils.var.opt)
+
 -- keymap
 utils.fn.whichKeyMap({
 	g = {
 		name = "git signs",
+		c = {
+			"git commit",
+		},
 		s = {
 			"<cmd>Gitsigns stage_hunk<CR>",
 			"stage hunk",
