@@ -114,7 +114,11 @@ utils.fn.whichKeyMap({
 		-- trouble.nvim is required
 		l = {
 			"<cmd>Gitsigns setqflist<CR>",
-			"list all stage hunks",
+			"list all stage hunks in buffer",
+		},
+		L = {
+			"<cmd>Gitsigns setqflist all<CR>",
+			"list all stage hunks in project",
 		},
 	},
 }, {
