@@ -2,6 +2,7 @@ local utils = require("utils")
 
 utils.fn.require("translate").setup({
 	default = {
+		-- translate-shell is required
 		command = "translate_shell",
 		output = "floating",
 		parse_after = "window",
