@@ -47,13 +47,16 @@ gitsigns.setup({
 local gs = package.loaded.gitsigns
 
 utils.fn.map("n", "gc", ":!git commit -m ", utils.var.opt)
-
 -- keymap
 utils.fn.whichKeyMap({
 	g = {
 		name = "git signs",
 		c = {
 			"git commit",
+		},
+		C = {
+			"<cmd>!git reset --soft HEAD~1<CR>",
+			"git reset last commit",
 		},
 		s = {
 			"<cmd>Gitsigns stage_hunk<CR>",
