@@ -27,7 +27,7 @@ utils.fn.require("trouble").setup({
 		preview = "p", -- preview the diagnostic location
 		close_folds = { "zm" }, -- close all folds
 		open_folds = { "zr" }, -- open all folds
-		toggle_fold = { "f" }, -- toggle fold of current file
+		toggle_fold = { "z" }, -- toggle fold of current file
 		previous = "k", -- preview item
 		next = "j", -- next item
 	},
