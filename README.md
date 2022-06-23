@@ -246,3 +246,4 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 ## Known Issues
 
 - `<C-o>` may not return to correct position.
+- Some completion sources may fail for unknown reasons.
