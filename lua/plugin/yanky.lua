@@ -1,6 +1,7 @@
 local utils = require("utils")
 
--- config
+local mapping = utils.fn.require("yanky.telescope.mapping")
+
 utils.fn.require("yanky").setup({
 	ring = {
 		history_length = 10,
@@ -10,6 +11,17 @@ utils.fn.require("yanky").setup({
 	picker = {
 		select = {
 			action = nil,
+		},
+		telescope = {
+			mappings = {
+				default = mapping.put("p"),
+				n = nil,
+				i = {
+					["<C-a>"] = mapping.put("p"),
+					["<C-i>"] = mapping.put("P"),
+					["<C-x>"] = mapping.delete(),
+				},
+			},
 		},
 	},
 	system_clipboard = {
@@ -32,3 +44,4 @@ utils.fn.map("n", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
 utils.fn.map("n", "P", "<Plug>(YankyPutBefore)", utils.var.opt)
 utils.fn.map("x", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
 utils.fn.map("x", "P", "<Plug>(YankyPutBefore)", utils.var.opt)
+utils.fn.map("n", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
