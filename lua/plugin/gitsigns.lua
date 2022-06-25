@@ -111,6 +111,10 @@ utils.fn.whichKeyMap({
 			end,
 			"blame line",
 		},
+		i = {
+			"<cmd>Gitsigns select_hunk<CR>",
+			"select hunk",
+		},
 		-- trouble.nvim is required
 		l = {
 			"<cmd>Gitsigns setqflist<CR>",
@@ -136,10 +140,6 @@ utils.fn.whichKeyMap({
 		r = {
 			"<cmd>Gitsigns reset_hunk<CR>",
 			"reset hunk",
-		},
-		i = {
-			"<cmd>Gitsigns select_hunk<CR>",
-			"select hunk",
 		},
 	},
 }, {
