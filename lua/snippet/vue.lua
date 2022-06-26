@@ -37,6 +37,16 @@ local M = {
 		i(1),
 		t({ [[")]], "</style>" }),
 	}),
+	s("style-scoped", {
+		t({ "<style scoped>" }),
+		i(1),
+		t({ "", "</style>" }),
+	}),
+	s("style-module", {
+		t({ "<style module>" }),
+		i(1),
+		t({ "", "</style>" }),
+	}),
 }
 
 return M
