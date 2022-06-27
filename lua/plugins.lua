@@ -66,6 +66,8 @@ require("packer").startup({
 		use({
 			{
 				"nvim-treesitter/nvim-treesitter",
+				-- to avoid compile error of markdown parser
+				commit = "d810c386341fbf0d49895a2cdd6a2b63b945b71a",
 				run = ":TSUpdate",
 				config = utils.fn.loadConfig({ "plugin/nvim-treesitter" }),
 			},
@@ -119,10 +121,8 @@ require("packer").startup({
 				-- show current function name
 				{
 					"SmiteshP/nvim-gps",
-					requires = {
-						"nvim-treesitter/nvim-treesitter",
-						config = utils.fn.loadConfig({ "plugin/nvim-gps" }),
-					},
+					-- "nvim-treesitter/nvim-treesitter" is required
+					config = utils.fn.loadConfig({ "plugin/nvim-gps" }),
 				},
 			},
 			config = utils.fn.loadConfig({ "plugin/lualine" }),
@@ -159,8 +159,8 @@ require("packer").startup({
 		use({
 			"nvim-neotest/neotest",
 			requires = {
+				-- "nvim-treesitter/nvim-treesitter" is required
 				"nvim-lua/plenary.nvim",
-				"nvim-treesitter/nvim-treesitter",
 				"antoinemadec/FixCursorHold.nvim",
 				-- adapters
 				-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners

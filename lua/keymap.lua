@@ -91,6 +91,10 @@ utils.fn.whichKeyMap({
 			"<cmd>checkhealth<CR>",
 			"checkhealth",
 		},
+		t = {
+			"<cmd>TSUpdate<CR>",
+			"update language parsers of nvim-treesitter",
+		},
 	},
 }, {
 	mode = "n",
