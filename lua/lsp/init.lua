@@ -43,10 +43,12 @@ for _, value in pairs(lspList) do
 	end
 
 	-- set capabilities
-	if config.modify_capabilities == nil and value ~= "taplo" then
-		config.capabilities = capabilities
-	else
-		config.capabilities = config.modify_capabilities(capabilities)
+	if value ~= "taplo" then
+		if config.modify_capabilities == nil then
+			config.capabilities = capabilities
+		else
+			config.capabilities = config.modify_capabilities(capabilities)
+		end
 	end
 
 	utils.fn.require("lspconfig")[value].setup(config)
