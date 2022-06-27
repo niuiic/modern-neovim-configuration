@@ -66,6 +66,7 @@ require("packer").startup({
 		use({
 			{
 				"nvim-treesitter/nvim-treesitter",
+				-- TODO: delete commit option when bug fixed
 				-- to avoid compile error of markdown parser
 				commit = "d810c386341fbf0d49895a2cdd6a2b63b945b71a",
 				run = ":TSUpdate",

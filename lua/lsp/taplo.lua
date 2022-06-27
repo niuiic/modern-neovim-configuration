@@ -1,5 +1,7 @@
 local utils = require("utils")
 
-local M = {}
+local M = {
+	root_dir = utils.fn.rootPattern,
+}
 
 return M
