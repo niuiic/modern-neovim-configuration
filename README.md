@@ -1,8 +1,8 @@
 # Modern Neovim Configuration
 
-Modern configuration for neovim.
+Neovim + Linux = Your Best Almighty IDE
 
-> It's not highly optimized for startup performance.
+> This configuration is for linux only, and it's not highly optimized for startup performance.
 
 ## Personal Environment
 
