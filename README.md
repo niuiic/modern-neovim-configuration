@@ -79,6 +79,11 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 > [Snippet examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua) and [snippet document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md) may help you.
 
+## Known Issues
+
+- `<C-o>` may not return to correct position.
+- Some completion sources may fail for unknown reasons.
+
 ## Screenshot
 
 ### Full Screen
@@ -242,8 +247,3 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 ### Git Conflict
 
 ![Git Conflict](./img/git-conflict.png)
-
-## Known Issues
-
-- `<C-o>` may not return to correct position.
-- Some completion sources may fail for unknown reasons.
