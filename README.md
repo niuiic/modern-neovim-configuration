@@ -57,7 +57,9 @@ require("plugins")
 
 ## Keymap
 
-`which-key.nvim` will tell you. You can also check `lua/plugin/*` and `lua/keymap` for details.
+`which-key.nvim` will tell you. You can also check `lua/plugin/*` and `lua/keymap.lua` for details.
+
+> leader: `<space>` | localLeader: `\`
 
 ## LSP
 
