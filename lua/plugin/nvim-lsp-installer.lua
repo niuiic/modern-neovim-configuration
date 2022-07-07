@@ -13,6 +13,7 @@ local lspList = {
 	"rust_analyzer",
 	"sqls",
 	"clangd",
+	"stylelint_lsp",
 }
 
 utils.fn.require("nvim-lsp-installer").setup({

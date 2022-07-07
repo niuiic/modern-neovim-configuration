@@ -15,6 +15,7 @@ local lspList = {
 	"clangd",
 	"taplo",
 	"verible",
+	"stylelint_lsp",
 }
 
 -- common lsp config
