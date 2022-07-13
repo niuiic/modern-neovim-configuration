@@ -240,7 +240,7 @@ require("packer").startup({
 				config = utils.fn.loadConfig({ "lsp" }),
 			},
 			{
-				"kkharji/lspsaga.nvim",
+				"glepnir/lspsaga.nvim",
 				config = utils.fn.loadConfig({ "plugin/lspsaga" }),
 			},
 		})
