@@ -86,7 +86,7 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 ## Known Issues
 
 - `<C-o>` may not return to correct position.
-- Some completion sources may fail for unknown reasons.
+- Some completion sources and the status line plugin may crash for unknown reasons.
 
 ## Screenshot
 
