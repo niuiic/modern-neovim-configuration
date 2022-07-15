@@ -6,6 +6,7 @@ local langList = {
 	"lua",
 	"vue",
 	"markdown",
+	"javascript",
 }
 
 -- load friendly-snippets
