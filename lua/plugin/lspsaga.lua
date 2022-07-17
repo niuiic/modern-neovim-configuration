@@ -32,8 +32,12 @@ utils.fn.require("lspsaga").init_lsp_saga({
 		sign_priority = 20,
 		virtual_text = true,
 	},
-	-- separator in finder
-	finder_separator = "  ",
+	-- finder icons
+	finder_icons = {
+		def = "  ",
+		ref = "諭 ",
+		link = "  ",
+	},
 	-- preview lines of lsp_finder and definition preview
 	max_preview_lines = 10,
 	finder_action_keys = {
@@ -59,6 +63,11 @@ utils.fn.require("lspsaga").init_lsp_saga({
 		show_file = true,
 		click_support = false,
 	},
+
+	-- if you don't use nvim-lspconfig you must pass your server name and
+	-- the related filetypes into this table
+	-- like server_filetype_map = { metals = { "sbt", "scala" } }
+	server_filetype_map = {},
 })
 
 -- keymap

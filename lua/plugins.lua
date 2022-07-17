@@ -241,7 +241,6 @@ require("packer").startup({
 			},
 			{
 				"glepnir/lspsaga.nvim",
-				commit = "fd07a4e583571119b33826041c47af950341325f",
 				config = utils.fn.loadConfig({ "plugin/lspsaga" }),
 			},
 		})
