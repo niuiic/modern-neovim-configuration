@@ -33,9 +33,9 @@ local M = {
 		t({ "", "</template>" }),
 	}),
 	s("scss", {
-		t({ [[<style lang="scss" scoped>]], "\t" .. [[@import url("]] }),
+		t({ [[<style lang="scss">]], "\t" }),
 		i(1),
-		t({ [[")]], "</style>" }),
+		t({ "", "</style>" }),
 	}),
 	s("style-scoped", {
 		t({ "<style scoped>" }),
@@ -47,15 +47,13 @@ local M = {
 		i(1),
 		t({ "", "</style>" }),
 	}),
-	s("script", {
-		t({ "<script>", [[import { defineComponent } from "vue"]], "", [[export default defineComponent({]], "\t" }),
-		i(1),
-		t({ "", "\t})", "</script>" }),
-	}),
 	s("log", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),
+	}),
+	s("border", {
+		t({ "border: solid black 2px;" }),
 	}),
 }
 

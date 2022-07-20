@@ -47,7 +47,7 @@ utils.fn.require("lspsaga").init_lsp_saga({
 		tabe = "t",
 		quit = "<esc>",
 		scroll_down = "<C-f>",
-		scroll_up = "<C-b>", -- quit can be a table
+		scroll_up = "<C-b>",
 	},
 	code_action_keys = {
 		quit = "<esc>",
