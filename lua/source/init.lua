@@ -10,7 +10,11 @@ local langList = {
 
 -- register custom sources
 for _, value in pairs(langList) do
-	local source = utils.fn.require("source/" .. value)
+	local M = utils.fn.require("source/" .. value)
+	local source = {}
+	function source:complete(_, callback)
+		callback(M)
+	end
 	cmp.register_source(value, source)
 	cmp.setup.filetype(value, {
 		snippet = {
