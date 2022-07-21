@@ -47,20 +47,21 @@ M.fn.require = function(package_name)
 end
 
 -- merge table
--- if override is true, table2 will override table1 (default to false)
-M.fn.mergeTable = function(table1, table2, override)
-	override = override or false
+-- table2 will override table1
+M.fn.mergeTable = function(table1, table2)
 	local res = {}
-	for key, value in pairs(table1) do
-		res[key] = value
+	for _, value in pairs(table2) do
+		table.insert(res, value)
 	end
-	for key, value in pairs(table2) do
-		if res[key] == nil then
-			res[key] = value
-		else
-			if override == true then
-				res[key] = value
+	for _, value in pairs(table1) do
+		local isInTable = false
+		for _, val in pairs(table2) do
+			if val == value then
+				isInTable = true
 			end
+		end
+		if isInTable == false then
+			table.insert(res, value)
 		end
 	end
 	return res
