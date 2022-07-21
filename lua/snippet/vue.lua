@@ -1,4 +1,5 @@
-local ls = require("luasnip")
+local utils = require("utils")
+local ls = utils.fn.require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
 local isn = ls.indent_snippet_node
@@ -47,7 +48,7 @@ local M = {
 		i(1),
 		t({ "", "</style>" }),
 	}),
-	s("log", {
+	s("print", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),
@@ -56,5 +57,8 @@ local M = {
 		t({ "border: solid black 2px;" }),
 	}),
 }
+
+local elementPlus = utils.fn.require("snippet/framework/element-plus")
+M = utils.fn.mergeTable(elementPlus, M)
 
 return M

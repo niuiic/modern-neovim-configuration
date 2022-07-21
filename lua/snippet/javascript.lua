@@ -1,4 +1,5 @@
-local ls = require("luasnip")
+local utils = require("utils")
+local ls = utils.fn.require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
 local isn = ls.indent_snippet_node
@@ -22,7 +23,7 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.expand_conditions")
 
 local M = {
-	s("log", {
+	s("print", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),
