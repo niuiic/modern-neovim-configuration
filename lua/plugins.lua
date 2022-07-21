@@ -22,10 +22,7 @@ require("packer").startup({
 		-- fold
 		use({
 			"anuvyklack/pretty-fold.nvim",
-			requires = {
-				-- only for preview
-				"anuvyklack/nvim-keymap-amend",
-			},
+			requires = { "anuvyklack/keymap-amend.nvim", "anuvyklack/fold-preview.nvim" },
 			config = utils.fn.loadConfig({ "plugin/pretty-fold" }),
 		})
 		-- repeat previous cmd
