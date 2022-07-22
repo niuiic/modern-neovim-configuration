@@ -2,6 +2,7 @@ local utils = require("utils")
 
 utils.fn.require("telescope").setup({
 	defaults = {
+		layout_strategy = "vertical",
 		mappings = {
 			i = {
 				["<C-j>"] = "move_selection_next",
@@ -12,6 +13,9 @@ utils.fn.require("telescope").setup({
 				["<C-u>"] = "results_scrolling_up",
 				["<C-d>"] = "results_scrolling_down",
 			},
+		},
+		layout_config = {
+			vertical = { width = 0.8 },
 		},
 	},
 	pickers = {},
@@ -122,3 +126,11 @@ utils.fn.whichKeyMap({
 	mode = "n",
 	prefix = "<localleader>",
 })
+
+-- for lsp
+utils.fn.map("n", "gf", ":lua require'telescope.builtin'.lsp_references()<CR>", utils.var.opt)
+utils.fn.map("n", "gi", ":lua require'telescope.builtin'.lsp_implementations()<CR>", utils.var.opt)
+utils.fn.map("n", "gd", ":lua require'telescope.builtin'.lsp_definitions()<CR>", utils.var.opt)
+utils.fn.map("n", "gD", ":lua require'telescope.builtin'.lsp_type_definitions()<CR>", utils.var.opt)
+utils.fn.map("n", "gs", ":lua require'telescope.builtin'.lsp_document_symbols()<CR>", utils.var.opt)
+utils.fn.map("n", "gS", ":lua require'telescope.builtin'.lsp_workspace_symbols()<CR>", utils.var.opt)

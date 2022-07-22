@@ -79,11 +79,8 @@ utils.fn.map("x", "ga", ":<c-u>Lspsaga range_code_action<cr>", utils.var.opt)
 -- go xx
 utils.fn.map("n", "gh", ":Lspsaga signature_help<CR>", utils.var.opt)
 utils.fn.map("n", "K", ":Lspsaga hover_doc<CR>", utils.var.opt)
-utils.fn.map("n", "gf", ":Lspsaga lsp_finder<CR>", utils.var.opt)
 utils.fn.map("n", "gj", ":Lspsaga diagnostic_jump_next<cr>", utils.var.opt)
 utils.fn.map("n", "gk", ":Lspsaga diagnostic_jump_prev<cr>", utils.var.opt)
--- diagnostic
-utils.fn.map("n", "gp", ":Lspsaga show_line_diagnostics<CR>", utils.var.opt)
 -- scroll in lspsaga
 local action = require("lspsaga.action")
 vim.keymap.set("n", "<C-f>", function()
