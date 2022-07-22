@@ -71,17 +71,71 @@ utils.fn.require("lspsaga").init_lsp_saga({
 })
 
 -- keymap
--- rename
-utils.fn.map("n", "gr", ":Lspsaga rename<CR>", utils.var.opt)
--- code action
-utils.fn.map("n", "ga", ":Lspsaga code_action<CR>", utils.var.opt)
-utils.fn.map("x", "ga", ":<c-u>Lspsaga range_code_action<cr>", utils.var.opt)
--- go xx
-utils.fn.map("n", "gh", ":Lspsaga signature_help<CR>", utils.var.opt)
+local telescope_builtin = utils.fn.require("telescope.builtin")
+utils.fn.whichKeyMap({
+	g = {
+		r = {
+			"<cmd>Lspsaga rename<CR>",
+			"lsp rename",
+		},
+		a = {
+			":Lspsaga code_action<CR>",
+			"code action",
+		},
+		f = {
+			function()
+				telescope_builtin.lsp_references()
+			end,
+			"find lsp_references",
+		},
+		m = {
+			function()
+				telescope_builtin.lsp_implementations()
+			end,
+			"find lsp_implementations",
+		},
+		d = {
+			function()
+				telescope_builtin.lsp_definitions()
+			end,
+			"find lsp_definitions",
+		},
+		D = {
+			function()
+				telescope_builtin.lsp_type_definitions()
+			end,
+			"find lsp_type_definitions",
+		},
+		s = {
+			function()
+				telescope_builtin.lsp_document_symbols()
+			end,
+			"find lsp_document_symbols",
+		},
+		S = {
+			function()
+				telescope_builtin.lsp_workspace_symbols()
+			end,
+			"find lsp_workspace_symbols",
+		},
+		h = {
+			"<cmd>Lspsaga signature_help<CR>",
+			"find signature_help",
+		},
+		j = {
+			"<cmd>Lspsaga diagnostic_jump_next<CR>",
+			"jump to next diagnostic ",
+		},
+		k = {
+			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
+			"jump to previous diagnostic ",
+		},
+	},
+}, {
+	mode = "n",
+})
+
 utils.fn.map("n", "K", ":Lspsaga hover_doc<CR>", utils.var.opt)
-utils.fn.map("n", "gj", ":Lspsaga diagnostic_jump_next<cr>", utils.var.opt)
-utils.fn.map("n", "gk", ":Lspsaga diagnostic_jump_prev<cr>", utils.var.opt)
--- scroll in lspsaga
 local action = require("lspsaga.action")
 vim.keymap.set("n", "<C-f>", function()
 	action.smart_scroll_with_saga(1)
@@ -89,3 +143,12 @@ end, { silent = true })
 vim.keymap.set("n", "<C-b>", function()
 	action.smart_scroll_with_saga(-1)
 end, { silent = true })
+
+utils.fn.whichKeyMap({
+	g = {
+		a = {
+			"<cmd>Lspsaga range_code_action<CR>",
+			"code action",
+		},
+	},
+}, { mode = "v" })

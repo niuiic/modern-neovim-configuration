@@ -126,11 +126,3 @@ utils.fn.whichKeyMap({
 	mode = "n",
 	prefix = "<localleader>",
 })
-
--- for lsp
-utils.fn.map("n", "gf", ":lua require'telescope.builtin'.lsp_references()<CR>", utils.var.opt)
-utils.fn.map("n", "gi", ":lua require'telescope.builtin'.lsp_implementations()<CR>", utils.var.opt)
-utils.fn.map("n", "gd", ":lua require'telescope.builtin'.lsp_definitions()<CR>", utils.var.opt)
-utils.fn.map("n", "gD", ":lua require'telescope.builtin'.lsp_type_definitions()<CR>", utils.var.opt)
-utils.fn.map("n", "gs", ":lua require'telescope.builtin'.lsp_document_symbols()<CR>", utils.var.opt)
-utils.fn.map("n", "gS", ":lua require'telescope.builtin'.lsp_workspace_symbols()<CR>", utils.var.opt)
