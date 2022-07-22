@@ -42,7 +42,10 @@ require("packer").startup({
 		-- dashboard (fully configured)
 		use({ "glepnir/dashboard-nvim", config = utils.fn.loadConfig({ "plugin/dashboard-nvim" }) })
 		-- automatically toggle between absolute line number and relative one
-		use("jeffkreeftmeijer/vim-numbertoggle")
+		use({
+			"sitiom/nvim-numbertoggle",
+			config = utils.fn.require("numbertoggle").setup(),
+		})
 		-- quick motion
 		use({
 			"phaazon/hop.nvim",
