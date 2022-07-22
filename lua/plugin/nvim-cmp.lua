@@ -17,6 +17,7 @@ cmp.setup({
 cmp.setup.cmdline("/", {
 	sources = {
 		{ name = "buffer" },
+		{ name = "cmdline_history" },
 	},
 })
 
@@ -25,6 +26,7 @@ cmp.setup.cmdline(":", {
 		{ name = "path" },
 	}, {
 		{ name = "cmdline" },
+		{ name = "cmdline_history" },
 	}),
 })
 

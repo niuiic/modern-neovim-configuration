@@ -106,6 +106,7 @@ require("packer").startup({
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"dmitmel/cmp-cmdline-history",
 			-- snippets
 			{ "L3MON4D3/LuaSnip", config = utils.fn.loadConfig({ "plugin/luasnip" }) },
 			"saadparwaiz1/cmp_luasnip",
