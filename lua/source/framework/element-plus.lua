@@ -1,5 +1,4 @@
 local M = {
-	{ label = "gutter" },
 	{ label = "justify" },
 }
 
