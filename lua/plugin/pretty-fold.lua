@@ -57,7 +57,7 @@ local keymap = vim.keymap
 keymap.amend = utils.fn.require("keymap-amend")
 local map = foldPreview.mapping
 
-keymap.amend("n", "h", foldPreview.show_preview)
+keymap.amend("n", "H", foldPreview.show_preview)
 keymap.amend("n", "l", map.close_preview_open_fold)
 keymap.amend("n", "zo", map.close_preview)
 keymap.amend("n", "zO", map.close_preview)
