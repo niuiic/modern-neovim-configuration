@@ -48,12 +48,16 @@ utils.fn.require("pretty-fold").setup({
 	ft_ignore = { "neorg" },
 })
 
+local foldPreview = utils.fn.require("fold-preview")
+foldPreview.setup({
+	border = "single",
+})
+
 local keymap = vim.keymap
 keymap.amend = utils.fn.require("keymap-amend")
-local map = utils.fn.require("fold-preview").mapping
+local map = foldPreview.mapping
 
--- BUG: unable to preview fold hunk
-keymap.amend("n", "h", map.show_close_preview_open_fold)
+keymap.amend("n", "h", foldPreview.show_preview)
 keymap.amend("n", "l", map.close_preview_open_fold)
 keymap.amend("n", "zo", map.close_preview)
 keymap.amend("n", "zO", map.close_preview)
