@@ -78,6 +78,11 @@ require("packer").startup({
 			},
 			-- syntax aware text-objects, select, move, swap, and peek support
 			"nvim-treesitter/nvim-treesitter-textobjects",
+			-- auto complete tag in html
+			{
+				"windwp/nvim-ts-autotag",
+				config = utils.fn.loadConfig({ "plugin/nvim-ts-autotag" }),
+			},
 		})
 		-- sql
 		use({ "nanotee/sqls.nvim", opt = true, ft = "sql", config = utils.fn.loadConfig({ "plugin/sqls" }) })
