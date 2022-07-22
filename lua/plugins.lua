@@ -241,5 +241,10 @@ require("packer").startup({
 				config = utils.fn.loadConfig({ "plugin/lspsaga" }),
 			},
 		})
+		-- marks
+		use({
+			"winston0410/mark-radar.nvim",
+			config = utils.fn.loadConfig({ "plugin/mark-radar" }),
+		})
 	end,
 })
