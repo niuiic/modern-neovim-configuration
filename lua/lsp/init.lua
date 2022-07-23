@@ -16,6 +16,7 @@ local lspList = {
 	"taplo",
 	"verible",
 	"stylelint_lsp",
+	"pyright",
 }
 
 -- common lsp config

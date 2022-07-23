@@ -14,6 +14,7 @@ local lspList = {
 	"sqls",
 	"clangd",
 	"stylelint_lsp",
+	"pyright",
 }
 
 utils.fn.require("nvim-lsp-installer").setup({

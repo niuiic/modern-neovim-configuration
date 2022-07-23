@@ -6,6 +6,7 @@ local langList = {
 	"go",
 	"lua",
 	"vue",
+	"python",
 }
 
 -- register custom sources
