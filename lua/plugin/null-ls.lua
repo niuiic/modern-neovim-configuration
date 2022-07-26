@@ -75,6 +75,11 @@ null_ls.setup({
 				"markdown",
 			},
 		}),
+		formatting.goimports.with({
+			filetypes = {
+				"go",
+			},
+		}),
 	},
 })
 
