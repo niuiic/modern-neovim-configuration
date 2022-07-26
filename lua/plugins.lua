@@ -5,6 +5,8 @@
 
 local utils = require("utils")
 
+-- TODO: add simrat39/rust-tools.nvim
+
 require("packer").startup({
 	function(use)
 		-- plugin manager (basically configured)
