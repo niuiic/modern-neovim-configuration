@@ -37,10 +37,10 @@ for _, value in pairs(lspList) do
 	if config.on_attach == nil then
 		config.on_attach = on_attach
 	else
-		local on_attach_tmp = config.on_attach
+		local on_attach_from_config = config.on_attach
 		config.on_attach = function(client, bufnr)
 			on_attach(client, bufnr)
-			on_attach_tmp(client, bufnr)
+			on_attach_from_config(client, bufnr)
 		end
 	end
 
@@ -49,7 +49,7 @@ for _, value in pairs(lspList) do
 		if config.modify_capabilities == nil then
 			config.capabilities = capabilities
 		else
-			config.capabilities = config.modify_capabilities(capabilities)
+			config.capabilities = config.modify_capabilities(utils.fn.deep_clone(capabilities))
 		end
 	end
 

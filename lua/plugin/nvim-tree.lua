@@ -3,7 +3,7 @@ local utils = require("utils")
 local nvim_tree = utils.fn.require("nvim-tree")
 local lib = utils.fn.require("nvim-tree.lib")
 local cd_dot_cb = function(node)
-	nvim_tree.change_dir(require("utils").fn.rootPattern())
+	nvim_tree.change_dir(require("utils").fn.root_pattern())
 	if node.name ~= ".." then
 		lib.set_index_and_redraw(node.absolute_path)
 	end

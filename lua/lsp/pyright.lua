@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 local M = {
-	root_dir = utils.fn.rootPattern,
+	root_dir = utils.fn.root_pattern,
 	settings = {
 		python = {
 			analysis = {

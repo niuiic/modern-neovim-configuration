@@ -19,6 +19,6 @@ local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 local M = {}
 
 local style = utils.fn.require("snippet/common/style")
-M = utils.fn.mergeTable(style, M)
+M = utils.fn.merge_table(style, M)
 
 return M

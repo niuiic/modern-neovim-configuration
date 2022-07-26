@@ -7,7 +7,7 @@ local getPrevLevelPath = function(currentPath)
 	return string.sub(currentPath, 1, string.len(currentPath) - i)
 end
 
-M.fn.rootPattern = function(pattern)
+M.fn.root_pattern = function(pattern)
 	pattern = pattern or "/.git"
 	local path = vim.fn.getcwd(-1, -1)
 	local pathBp = path
@@ -28,7 +28,7 @@ M.var.opt = { noremap = true, silent = true }
 M.fn.whichKeyMap = require("which-key").register
 
 -- load config
-M.fn.loadConfig = function(configs)
+M.fn.load_config = function(configs)
 	for _, value in pairs(configs) do
 		local status, _ = pcall(require, value)
 		if not status then
@@ -48,7 +48,7 @@ end
 
 -- merge table
 -- table2 will override table1
-M.fn.mergeTable = function(table1, table2)
+M.fn.merge_table = function(table1, table2)
 	local res = {}
 	for _, value in pairs(table2) do
 		table.insert(res, value)
@@ -65,6 +65,22 @@ M.fn.mergeTable = function(table1, table2)
 		end
 	end
 	return res
+end
+
+-- deep clone a table
+M.fn.deep_clone = function(orig)
+	local orig_type = type(orig)
+	local copy
+	if orig_type == "table" then
+		copy = {}
+		for orig_key, orig_value in next, orig, nil do
+			copy[M.fn.deep_clone(orig_key)] = M.fn.deep_clone(orig_value)
+		end
+		setmetatable(copy, M.fn.deep_clone(getmetatable(orig)))
+	else
+		copy = orig
+	end
+	return copy
 end
 
 return M

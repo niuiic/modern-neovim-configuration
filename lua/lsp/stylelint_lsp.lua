@@ -18,7 +18,7 @@ local M = {
 		"typescript",
 		"typescriptreact",
 	},
-	root_dir = utils.fn.rootPattern,
+	root_dir = utils.fn.root_pattern,
 }
 
 return M

@@ -1,6 +1,6 @@
 local M = {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
-	root_dir = require("utils").fn.rootPattern,
+	root_dir = require("utils").fn.root_pattern,
 	init_options = {
 		documentFeatures = {
 			documentColor = false,

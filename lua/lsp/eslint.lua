@@ -35,7 +35,7 @@ local M = {
 		"typescriptreact",
 		"vue",
 	},
-	root_dir = utils.fn.rootPattern,
+	root_dir = utils.fn.root_pattern,
 	handlers = {
 		["eslint/noLibrary"] = function()
 			return {}

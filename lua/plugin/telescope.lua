@@ -26,7 +26,7 @@ utils.fn.require("telescope").setup({
 local opt = {
 	hidden = true,
 	search_dirs = {
-		require("utils").fn.rootPattern(),
+		require("utils").fn.root_pattern(),
 	},
 }
 
