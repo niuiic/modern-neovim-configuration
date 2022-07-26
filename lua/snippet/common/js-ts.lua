@@ -16,9 +16,19 @@ local m = utils.fn.require("luasnip.extras").m
 local lambda = utils.fn.require("luasnip.extras").l
 local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 
-local M = {}
-
-local common = utils.fn.require("snippet/common/js-ts")
-M = utils.fn.mergeTable(common, M)
+local M = {
+	s("println", {
+		t({ "console.log(" }),
+		i(1),
+		t({ ")" }),
+	}),
+	s("import-from", {
+		t({ "import {" }),
+		i(1),
+		t({ "} from '" }),
+		i(2),
+		t({ "'" }),
+	}),
+}
 
 return M

@@ -27,6 +27,13 @@ local M = {
 		i(1),
 		t({ "", "</template>" }),
 	}),
+	s("slot", {
+		t({ "<template #" }),
+		i(1, "name"),
+		t({ ">", "\t" }),
+		i(2),
+		t({ "", "</template>" }),
+	}),
 	s("scss", {
 		t({ [[<style lang="scss">]], "\t" }),
 		i(1),
@@ -42,17 +49,39 @@ local M = {
 		i(1),
 		t({ "", "</style>" }),
 	}),
-	s("print", {
-		t({ "console.log(" }),
-		i(1),
-		t({ ")" }),
-	}),
 	s("border", {
 		t({ "border: solid black 2px;" }),
 	}),
+	s(
+		"new-file",
+		fmt(
+			[[
+<template>
+  {}    
+</template>
+
+<script setup>
+  {}  
+</script>
+
+<style lang="scss">
+  {}   
+</style>
+    ]],
+			{
+				i(1),
+				i(2),
+				i(3),
+			}
+		)
+	),
 }
 
 local elementPlus = utils.fn.require("snippet/framework/element-plus")
 M = utils.fn.mergeTable(elementPlus, M)
+local common = utils.fn.require("snippet/common/js-ts")
+M = utils.fn.mergeTable(common, M)
+local style = utils.fn.require("snippet/common/style")
+M = utils.fn.mergeTable(style, M)
 
 return M

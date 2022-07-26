@@ -26,7 +26,6 @@ local M = {
 	-- elements
 	ss(
 		"col",
-
 		fmt(
 			[[
 <el-col :span="{}">
@@ -48,7 +47,50 @@ local M = {
 	  {}
 	</el-row>
 	]],
-			{ i(1), i(2), i(3) }
+			{ i(1, "middle"), i(2, "center"), i(3) }
+		)
+	),
+	ss(
+		"icon",
+
+		fmt(
+			[[
+<el-icon :size="{}">
+  {} 
+</el-icon>
+]],
+			{ i(1), i(2) }
+		)
+	),
+	ss("input", fmt([[<el-input v-model="{}" placeholder="{}" />]], { i(1, "input"), i(2, "please input here") })),
+	ss(
+		"table",
+
+		fmt(
+			[[
+<el-table :data="{}">
+  {} 
+</el-table>
+]],
+			{ i(1, "data"), i(2) }
+		)
+	),
+	ss("table-column", fmt([[<el-table-column prop="{}" label="{}" />]], { i(1, "data.name"), i(2, "label") })),
+	ss(
+		"button",
+		fmt(
+			[[
+<el-button type="{}" :icon="{}" >
+  {}
+<el-button>]],
+			{ i(1, "primary"), i(2, "icon"), i(3, "Click Me") }
+		)
+	),
+	ss(
+		"image",
+		fmt(
+			[[<el-image style="width: {}; height: {}" :src="{}" fit="{}" />]],
+			{ i(1, "100px"), i(2, "100px"), i(3, "require('pathToImg')"), i(4, "fill") }
 		)
 	),
 
