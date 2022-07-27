@@ -114,14 +114,17 @@ require("packer").startup({
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		})
+		-- lsp status
+		use({
+			"j-hui/fidget.nvim",
+			config = utils.fn.load_config({ "plugin/fidget" }),
+		})
 		-- status line (basically configured)
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = {
 				"folke/tokyonight.nvim",
 				"kyazdani42/nvim-web-devicons",
-				-- show lsp status
-				"arkav/lualine-lsp-progress",
 				-- show current function name
 				{
 					"SmiteshP/nvim-gps",

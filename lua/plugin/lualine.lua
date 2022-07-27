@@ -17,7 +17,6 @@ utils.fn.require("lualine").setup({
 		lualine_b = { "branch", "diff", "diagnostics" },
 		lualine_c = {
 			{ gps.get_location, cond = gps.is_available },
-			"lsp_progress",
 		},
 		lualine_x = { "encoding", "filetype", "filesize" },
 		lualine_y = { "progress", "location" },
