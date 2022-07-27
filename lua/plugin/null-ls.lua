@@ -16,11 +16,6 @@ null_ls.setup({
 				"python",
 			},
 		}),
-		formatting.gofmt.with({
-			filetypes = {
-				"go",
-			},
-		}),
 		formatting.cmake_format.with({
 			filetypes = {
 				"cmake",
@@ -75,7 +70,7 @@ null_ls.setup({
 				"markdown",
 			},
 		}),
-		formatting.goimports.with({
+		formatting.golines.with({
 			filetypes = {
 				"go",
 			},
