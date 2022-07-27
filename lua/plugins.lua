@@ -243,10 +243,6 @@ require("packer").startup({
 		-- lsp
 		use({
 			{
-				"williamboman/nvim-lsp-installer",
-				config = utils.fn.load_config({ "plugin/nvim-lsp-installer" }),
-			},
-			{
 				"neovim/nvim-lspconfig",
 				config = utils.fn.load_config({ "lsp" }),
 			},
@@ -260,5 +256,7 @@ require("packer").startup({
 			"winston0410/mark-radar.nvim",
 			config = utils.fn.load_config({ "plugin/mark-radar" }),
 		})
+		-- lsp, dap, linter, formatter installer
+		use({ "williamboman/mason.nvim", config = utils.fn.load_config({ "plugin/mason" }) })
 	end,
 })

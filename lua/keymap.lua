@@ -84,7 +84,8 @@ utils.fn.whichKeyMap({
 			"lsp info",
 		},
 		i = {
-			"<cmd>LspInstallInfo<CR>",
+			-- "<cmd>LspInstallInfo<CR>",
+			"<cmd>Mason<CR>",
 			"lsp install info",
 		},
 		c = {
