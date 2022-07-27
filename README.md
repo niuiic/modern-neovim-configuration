@@ -24,7 +24,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. install `nodejs`, `go`, `rust` for `nvim-lsp-installer` and `nvim-treesitter`.
+2. install `nodejs`, `go`, `rust` for `mason.nvim` and `nvim-treesitter`.
 
 3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
@@ -69,7 +69,7 @@ Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other file
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
-If you want to install lsp by nvim-lsp-installer, then modify `lspList` in `lua/plugin/nvim-lsp-installer.lua`.
+> You can install most of the lsps with `mason.nvim`.
 
 ## Formatter
 
