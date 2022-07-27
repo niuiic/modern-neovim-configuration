@@ -82,7 +82,7 @@ local M = {
 			[[
 <el-button type="{}" :icon="{}" >
   {}
-<el-button>]],
+</el-button>]],
 			{ i(1, "primary"), i(2, "icon"), i(3, "Click Me") }
 		)
 	),
