@@ -156,7 +156,7 @@ require("packer").startup({
 		use({ "yamatsum/nvim-cursorline", config = utils.fn.load_config({ "plugin/nvim-cursorline" }) })
 		-- debug
 		use({
-			{ "mfussenegger/nvim-dap", config = utils.fn.load_config({ "plugin/nvim-dap" }) },
+			{ "mfussenegger/nvim-dap", config = utils.fn.load_config({ "plugin/nvim-dap", "debugger" }) },
 			"theHamsta/nvim-dap-virtual-text",
 			"rcarriga/nvim-dap-ui",
 		})
