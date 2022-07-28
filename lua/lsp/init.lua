@@ -17,6 +17,7 @@ local lspList = {
 	"verible",
 	"stylelint_lsp",
 	"pyright",
+	"tsserver",
 }
 
 -- common lsp config

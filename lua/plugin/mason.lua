@@ -18,6 +18,7 @@ local utils = require("utils")
 -- ◍ rust-analyzer
 -- ◍ stylelint-lsp
 -- ◍ taplo
+-- ◍ typescript-language-server
 -- install verible manually
 
 -- daps installed:
