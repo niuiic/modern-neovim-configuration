@@ -12,6 +12,7 @@ local M = {
 	init_options = {
 		hostInfo = "neovim",
 	},
+	root_dir = utils.fn.root_pattern,
 }
 
 return M
