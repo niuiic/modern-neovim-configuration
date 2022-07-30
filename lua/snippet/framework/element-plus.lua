@@ -47,7 +47,7 @@ local M = {
 	  {}
 	</el-row>
 	]],
-			{ i(1, "middle"), i(2, "center"), i(3) }
+			{ i(1, "middle"), i(2, "space-evenly"), i(3) }
 		)
 	),
 	ss(
