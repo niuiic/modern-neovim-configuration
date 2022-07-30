@@ -87,8 +87,6 @@ Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other file
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
-> You can install most of the lsps with `mason.nvim`.
-
 ## Formatter
 
 Check formatter setting in `lua/plugin/null-ls.lua`. Look for more formatters on [null-ls buildin formatters](https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting).
@@ -98,8 +96,6 @@ Check formatter setting in `lua/plugin/null-ls.lua`. Look for more formatters on
 Create a `dapname.lua` in `lua/debugger`, edit the file in the same way as other files.
 
 Modify the `debuggerList` in `lua/debugger/init.lua`.
-
-> You can install most of the daps with `mason.nvim`.
 
 ## Custom Snippets and Sources
 
