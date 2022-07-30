@@ -40,7 +40,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. Install `nodejs`, `go`, `rust` for `mason.nvim` and `nvim-treesitter`. If you want to use `fcitx.nvim`, install `fcitx5` first, or you need to remove this plugin from `lua/plugins`.
+2. Install `nodejs`, `go`, `rust` for `mason.nvim` and `nvim-treesitter`. If you want to use `fcitx.nvim`, install `fcitx5` first, or you need to remove this plugin from `lua/plugins.lua`.
 
 3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
@@ -67,7 +67,7 @@ require("plugins")
 
 8. `mv init.luabp init.lua`.
 
-9. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.nvim` for details.
+9. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.lua` for details.
 
 10. Use `:checkhealth` to check if something is missing.
 
