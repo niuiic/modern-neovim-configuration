@@ -1,6 +1,6 @@
 local utils = require("utils")
 
--- note that proxy using socks is not supported
+-- NOTE: socks proxy is not supported
 
 -- lsps installed:
 -- ◍ sqls
@@ -22,8 +22,11 @@ local utils = require("utils")
 -- install verible manually
 
 -- daps installed:
--- ◍ delve
+-- ◍ node-debug2-adapter
 -- ◍ chrome-debug-adapter
+-- ◍ codelldb
+-- ◍ debugpy
+-- ◍ delve
 
 -- formatters installed:
 -- ◍ black
