@@ -4,6 +4,21 @@ Neovim + Linux = Your Best Almighty IDE
 
 > This configuration is for linux only, and it's not highly optimized for startup performance.
 
+## Supported Language List
+
+- Rust
+- Go
+- Ts/Js
+- C/C++
+- Python
+- Shell
+- SQL
+- Lua
+- SystemVerilog
+
+> Common features: lsp、autocompletion(custom snippets and source)、debugger.
+> Not all features has been implemented, but you can easily implement most functions needed.
+
 ## Personal Environment
 
 OS: Gentoo
