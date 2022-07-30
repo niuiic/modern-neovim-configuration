@@ -18,13 +18,13 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 
 > It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
-1. install packer.nvim
+1. Install `packer.nvim`
 
 ```sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. install `nodejs`, `go`, `rust` for `mason.nvim` and `nvim-treesitter`.
+2. Install `nodejs`, `go`, `rust` for `mason.nvim` and `nvim-treesitter`. If you want to use `fcitx.nvim`, install `fcitx5` first, or you need to remove this plugin from `lua/plugins`.
 
 3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
@@ -39,21 +39,23 @@ require('packer').startup({
 })
 ```
 
-5. use `:PackerSync` to install `which-key.nvim`.
+5. Use `:PackerSync` to install `which-key.nvim`.
 
-6. modify `init.lua`.
+6. Modify `init.lua`.
 
 ```lua
 require("plugins")
 ```
 
-7. use `:PackerSync` to install remaining plugins.
+7. Use `:PackerSync` to install remaining plugins.
 
 8. `mv init.luabp init.lua`.
 
-9. use `:checkhealth` to check if something is missing.
+9. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.nvim` for details.
 
-10. Look for specific functions in `lua/plugins.lua`.
+10. Use `:checkhealth` to check if something is missing.
+
+11. Look for specific functions in `lua/plugins.lua`.
 
 ## Keymap
 
