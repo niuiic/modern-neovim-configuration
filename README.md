@@ -17,6 +17,7 @@ Neovim + Linux = Your Best Almighty IDE
 - SystemVerilog
 
 > Common features: lsp、autocompletion(custom snippets and source)、debugger.
+
 > Not all features has been implemented, but you can easily implement most functions needed.
 
 ## Personal Environment
