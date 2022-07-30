@@ -78,7 +78,7 @@ vim.cmd([[colorscheme tokyonight]])
 vim.g.omni_sql_no_default_maps = 1
 
 -- highlight line number
-vim.highlight.create("LineNr", { guifg = "#00ffff" }, false)
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
 
 -- enable mouse mode
 vim.o.mouse = "a"
