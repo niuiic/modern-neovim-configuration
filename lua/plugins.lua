@@ -34,7 +34,6 @@ require("packer").startup({
 		-- terminal (basically configured)
 		use({
 			"akinsho/toggleterm.nvim",
-			tag = "v1.*",
 			config = utils.fn.load_config({ "plugin/toggleterm" }),
 		})
 		-- tagbar
@@ -61,7 +60,6 @@ require("packer").startup({
 			requires = {
 				"kyazdani42/nvim-web-devicons",
 			},
-			tag = "nightly",
 			config = utils.fn.load_config({ "plugin/nvim-tree" }),
 		})
 		-- better syntax highlight
@@ -190,7 +188,6 @@ require("packer").startup({
 		-- tab line (basically configured)
 		use({
 			"akinsho/bufferline.nvim",
-			tag = "v2.*",
 			requires = "kyazdani42/nvim-web-devicons",
 			config = utils.fn.load_config({ "plugin/bufferline" }),
 		})
