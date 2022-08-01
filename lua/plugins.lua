@@ -39,7 +39,11 @@ require("packer").startup({
 		-- tagbar
 		use({ "simrat39/symbols-outline.nvim", config = utils.fn.load_config({ "plugin/symbols-outline" }) })
 		-- toggle comments (basically configured)
-		use({ "numToStr/Comment.nvim", config = utils.fn.load_config({ "plugin/comment" }) })
+		use({
+			"numToStr/Comment.nvim",
+			requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
+			config = utils.fn.load_config({ "plugin/comment" }),
+		})
 		-- dashboard (fully configured)
 		use({ "glepnir/dashboard-nvim", config = utils.fn.load_config({ "plugin/dashboard-nvim" }) })
 		-- automatically toggle between absolute line number and relative one
