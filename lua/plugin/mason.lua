@@ -1,7 +1,5 @@
 local utils = require("utils")
 
--- NOTE: socks proxy is not supported
-
 -- lsps installed:
 -- ◍ sqls
 -- ◍ vue-language-server
