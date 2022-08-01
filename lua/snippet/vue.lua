@@ -35,12 +35,12 @@ local M = {
 		t({ "", "</template>" }),
 	}),
 	s("scss", {
-		t({ [[<style lang="scss">]], "\t" }),
+		t({ [[<style lang="scss" scoped>]], "\t" }),
 		i(1),
 		t({ "", "</style>" }),
 	}),
-	s("style-scoped", {
-		t({ "<style scoped>" }),
+	s("scss-no-scoped", {
+		t({ [[<style lang="scss">]] }),
 		i(1),
 		t({ "", "</style>" }),
 	}),
