@@ -255,5 +255,10 @@ require("packer").startup({
 		})
 		-- lsp, dap, linter, formatter installer
 		use({ "williamboman/mason.nvim", config = utils.fn.load_config({ "plugin/mason" }) })
+		-- search and replace in project
+		use({
+			"s1n7ax/nvim-search-and-replace",
+			config = utils.fn.load_config({ "plugin/nvim-search-and-replace" }),
+		})
 	end,
 })
