@@ -109,6 +109,7 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 - `<C-o>` may not return to correct position.
 - Some completion sources and the status line plugin may crash for unknown reasons.
+- Code folding may be misplaced after re-entering the file.
 
 ## Screenshot
 
