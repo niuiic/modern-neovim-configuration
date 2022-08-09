@@ -4,7 +4,6 @@ local utils = require("utils")
 -- ◍ sqls
 -- ◍ vue-language-server
 -- ◍ bash-language-server
--- ◍ clangd
 -- ◍ css-lsp
 -- ◍ cssmodules-language-server
 -- ◍ eslint-lsp
@@ -17,7 +16,7 @@ local utils = require("utils")
 -- ◍ stylelint-lsp
 -- ◍ taplo
 -- ◍ typescript-language-server
--- install verible manually
+-- install verible, clangd manually
 
 -- daps installed:
 -- ◍ node-debug2-adapter
