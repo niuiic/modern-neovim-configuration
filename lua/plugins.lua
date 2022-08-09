@@ -49,7 +49,7 @@ require("packer").startup({
 		-- automatically toggle between absolute line number and relative one
 		use({
 			"sitiom/nvim-numbertoggle",
-			config = utils.fn.require("numbertoggle").setup(),
+			config = utils.fn.load_config({ "plugin/numbertoggle" }),
 		})
 		-- quick motion
 		use({

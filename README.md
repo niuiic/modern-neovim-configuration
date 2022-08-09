@@ -57,15 +57,30 @@ require('packer').startup({
 
 5. Use `:PackerSync` to install `which-key.nvim`.
 
-6. Modify `init.lua`.
+6. Modify `init.lua` and `lua/utils.lua`.
 
 ```lua
+-- init.lua
 require("plugins")
+```
+
+```lua
+-- lua/utils.lua
+
+-- disable this function is enough
+M.fn.load_config = function(configs)
+	-- for _, value in pairs(configs) do
+	-- 	local status, _ = pcall(require, value)
+	-- 	if not status then
+	-- 		print("Error: failed to load config " .. value)
+	-- 	end
+	-- end
+end
 ```
 
 7. Use `:PackerSync` to install remaining plugins.
 
-8. `mv init.luabp init.lua`.
+8. `mv init.luabp init.lua`. Restore `lua/utils.lua`
 
 9. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.lua` for details.
 
