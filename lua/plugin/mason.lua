@@ -22,9 +22,9 @@ local utils = require("utils")
 -- daps installed:
 -- ◍ node-debug2-adapter
 -- ◍ chrome-debug-adapter
--- ◍ codelldb
 -- ◍ debugpy
 -- ◍ delve
+-- install lldb-vscode manually (it is installed with lldb)
 
 -- formatters installed:
 -- ◍ black
