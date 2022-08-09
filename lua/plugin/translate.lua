@@ -10,4 +10,5 @@ utils.fn.require("translate").setup({
 })
 
 utils.fn.map("v", "<C-t>", ":Translate ZH-CN -source=EN<CR>", utils.var.opt)
-utils.fn.map("v", "<A-t>", ":Translate EN -source=ZH-CN -output=insert<CR>", utils.var.opt)
+utils.fn.map("v", "<A-t>", ":Translate EN -source=ZH-CN -output=replace<CR>", utils.var.opt)
+utils.fn.map("n", "<C-t>", ":Translate ZH-CN -source=EN --comment<CR>", utils.var.opt)
