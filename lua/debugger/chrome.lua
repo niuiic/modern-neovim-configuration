@@ -4,10 +4,10 @@ local dap = utils.fn.require("dap")
 dap.adapters.chrome = {
 	type = "executable",
 	command = "node",
-	args = { os.getenv("HOME") .. "/path/to/vscode-chrome-debug/out/src/chromeDebug.js" }, -- TODO adjust
+	args = { os.getenv("HOME") .. "~/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js" },
 }
 
-dap.configurations.javascriptreact = { -- change this to javascript if needed
+dap.configurations.javascriptreact = {
 	{
 		type = "chrome",
 		request = "attach",
@@ -20,7 +20,7 @@ dap.configurations.javascriptreact = { -- change this to javascript if needed
 	},
 }
 
-dap.configurations.typescriptreact = { -- change to typescript if needed
+dap.configurations.typescriptreact = {
 	{
 		type = "chrome",
 		request = "attach",
