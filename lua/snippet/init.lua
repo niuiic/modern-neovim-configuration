@@ -7,6 +7,7 @@ local langList = {
 	"vue",
 	"markdown",
 	"javascript",
+	"typescript",
 	"python",
 }
 
