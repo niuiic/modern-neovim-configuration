@@ -128,6 +128,8 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 ## Screenshot
 
+Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
+
 ### Full Screen
 
 ![Full Screen](./img/full-screen.png)
