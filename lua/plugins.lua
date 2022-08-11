@@ -151,7 +151,11 @@ require("packer").startup({
 		-- call sudo in neovim (fully configured)
 		use({ "lambdalisue/suda.vim", config = utils.fn.load_config({ "plugin/suda" }) })
 		-- translate
-		use({ "uga-rosa/translate.nvim", config = utils.fn.load_config({ "plugin/translate" }) })
+		use({
+			"uga-rosa/translate.nvim",
+			commit = "68ead8e98fb85b6364b7a5fc20ca3d6768bc5c37",
+			config = utils.fn.load_config({ "plugin/translate" }),
+		})
 		-- more smooth scroll (fully configured)
 		use({ "karb94/neoscroll.nvim", config = utils.fn.load_config({ "plugin/neoscroll" }) })
 		-- highlights cursor words and lines
