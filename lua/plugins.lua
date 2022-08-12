@@ -153,7 +153,6 @@ require("packer").startup({
 		-- translate
 		use({
 			"uga-rosa/translate.nvim",
-			commit = "68ead8e98fb85b6364b7a5fc20ca3d6768bc5c37",
 			config = utils.fn.load_config({ "plugin/translate" }),
 		})
 		-- more smooth scroll (fully configured)
