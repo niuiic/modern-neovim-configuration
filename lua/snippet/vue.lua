@@ -56,15 +56,15 @@ local M = {
 		"new-file",
 		fmt(
 			[[
+<script setup lang="ts">
+  {}  
+</script>
+
 <template>
   {}    
 </template>
 
-<script setup>
-  {}  
-</script>
-
-<style lang="scss">
+<style lang="scss" scoped>
   {}   
 </style>
     ]],
