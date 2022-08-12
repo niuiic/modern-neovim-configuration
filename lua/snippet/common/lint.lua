@@ -17,20 +17,12 @@ local lambda = utils.fn.require("luasnip.extras").l
 local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("check-ignore", {
-		t({ "// @ts-ignore" }),
+	s("disable-eslint", {
+		t({ "// eslint-disable-next-line" }),
 	}),
-	s("check-no", {
-		t({ "// @ts-nocheck" }),
-	}),
-	s("check-expect", {
-		t({ "// @ts-expect-error" }),
+	s("disable-stylelint", {
+		t({ "/* stylelint-disable-next-line */" }),
 	}),
 }
-
-local common = utils.fn.require("snippet/common/js-ts")
-M = utils.fn.merge_table(common, M)
-local lint = utils.fn.require("snippet/common/lint")
-M = utils.fn.merge_table(lint, M)
 
 return M

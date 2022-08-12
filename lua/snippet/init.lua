@@ -5,6 +5,7 @@ local langList = {
 	"go",
 	"lua",
 	"vue",
+	"scss",
 	"markdown",
 	"javascript",
 	"typescript",

@@ -20,5 +20,7 @@ local M = {}
 
 local common = utils.fn.require("snippet/common/js-ts")
 M = utils.fn.merge_table(common, M)
+local lint = utils.fn.require("snippet/common/lint")
+M = utils.fn.merge_table(lint, M)
 
 return M
