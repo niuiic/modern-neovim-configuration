@@ -40,6 +40,7 @@ local M = {
 			signatureHelp = true,
 			typeDefinition = true,
 		},
+		-- FIXME: cannot find tsserverlib.js
 		typescript = {
 			serverPath = "",
 		},
