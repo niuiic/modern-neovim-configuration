@@ -88,6 +88,12 @@ utils.fn.whichKeyMap({
 			end,
 			"toggle breakpoint",
 		},
+		T = {
+			function()
+				dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+			end,
+			"set conditional breakpoint",
+		},
 		c = {
 			function()
 				dap.continue()
@@ -133,6 +139,12 @@ utils.fn.whichKeyMap({
 utils.fn.map("n", "<A-c>", "<Cmd>lua require('dap').continue()<CR>", utils.var.opt)
 utils.fn.map("n", "<A-n>", "<Cmd>lua require('dap').step_over()<CR>", utils.var.opt)
 utils.fn.map("n", "<A-t>", "<Cmd>lua require('dap').toggle_breakpoint()<CR>", utils.var.opt)
+utils.fn.map(
+	"n",
+	"<AC-t>",
+	"<Cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+	utils.var.opt
+)
 utils.fn.map("n", "<A-b>", "<Cmd>lua require('dap').step_back()<CR>", utils.var.opt)
 utils.fn.map("n", "<A-i>", "<Cmd>lua require('dap').step_into()<CR>", utils.var.opt)
 utils.fn.map("n", "<A-o>", "<Cmd>lua require('dap').step_out()<CR>", utils.var.opt)
