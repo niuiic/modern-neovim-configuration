@@ -4,7 +4,7 @@ local dap = utils.fn.require("dap")
 dap.adapters.chrome = {
 	type = "executable",
 	command = "node",
-	args = { os.getenv("HOME") .. "~/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js" },
+	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js" },
 }
 
 dap.configurations.javascriptreact = {
@@ -32,3 +32,20 @@ dap.configurations.typescriptreact = {
 		webRoot = "${workspaceFolder}",
 	},
 }
+
+dap.configurations.vue = {
+	{
+		type = "chrome",
+		request = "attach",
+		program = "${file}",
+		cwd = vim.fn.getcwd(),
+		sourceMaps = true,
+		protocol = "inspector",
+		port = 9222,
+		webRoot = "${workspaceFolder}",
+	},
+}
+
+-- NOTE: To fix `va_getDriverName() failed` error, try following solutions.
+-- LIBVA_DRIVER_NAME=radeonsi chromium
+-- Try setting the Preferred Ozone platform (chrome://flags/#ozone-platform-hint) to Auto.
