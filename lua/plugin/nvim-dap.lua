@@ -110,7 +110,7 @@ utils.fn.whichKeyMap({
 			function()
 				dap.step_out()
 			end,
-			"step into",
+			"step out",
 		},
 		n = {
 			function()
@@ -129,6 +129,18 @@ utils.fn.whichKeyMap({
 				dap.terminate()
 			end,
 			"quit debug",
+		},
+		l = {
+			function()
+				dap.run_last()
+			end,
+			"run last",
+		},
+		r = {
+			function()
+				dap.repl.open()
+			end,
+			"repl",
 		},
 	},
 }, {

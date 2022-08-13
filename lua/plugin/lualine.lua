@@ -1,7 +1,5 @@
 local utils = require("utils")
 
-local gps = utils.fn.require("nvim-gps")
-
 utils.fn.require("lualine").setup({
 	options = {
 		icons_enabled = true,
@@ -15,9 +13,6 @@ utils.fn.require("lualine").setup({
 	sections = {
 		lualine_a = { "filename" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = {
-			{ gps.get_location, cond = gps.is_available },
-		},
 		lualine_x = { "encoding", "filetype", "filesize" },
 		lualine_y = { "progress", "location" },
 		lualine_z = { 'os.date("%H:%M:%S", os.time())' },

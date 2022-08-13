@@ -78,11 +78,6 @@ require("packer").startup({
 			"p00f/nvim-ts-rainbow",
 			-- better matchup
 			"andymass/vim-matchup",
-			-- always show code context
-			{
-				"nvim-treesitter/nvim-treesitter-context",
-				config = utils.fn.load_config({ "plugin/nvim-treesitter-context" }),
-			},
 			-- syntax aware text-objects, select, move, swap, and peek support
 			"nvim-treesitter/nvim-treesitter-textobjects",
 			-- auto complete tag in html
@@ -127,12 +122,6 @@ require("packer").startup({
 			requires = {
 				"folke/tokyonight.nvim",
 				"kyazdani42/nvim-web-devicons",
-				-- show current function name
-				{
-					"SmiteshP/nvim-gps",
-					-- "nvim-treesitter/nvim-treesitter" is required
-					config = utils.fn.load_config({ "plugin/nvim-gps" }),
-				},
 			},
 			config = utils.fn.load_config({ "plugin/lualine" }),
 		})
