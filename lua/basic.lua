@@ -91,11 +91,3 @@ vim.cmd([[
         au BufWinEnter ?* silent! loadview 1
     augroup END
 ]])
-
--- spell check
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-	pattern = { "*.md" },
-	callback = function()
-		vim.cmd([[set spell]])
-	end,
-})

@@ -233,6 +233,11 @@ require("packer").startup({
 			-- search tasks with telescope
 			{ "GustavoKatel/telescope-asynctasks.nvim" },
 		})
+		-- spell check
+		use({
+			"lewis6991/spellsitter.nvim",
+			config = utils.fn.load_config({ "plugin/spellsitter" }),
+		})
 		-- lsp
 		use({
 			{
