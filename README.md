@@ -256,9 +256,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 
 ![Lsp Progress](./img/lsp-progress.png)
 
-### Code Context
+### Symbol Winbar
 
-![Code Context](./img/code-context.png)
+![Symbol Winbar](./img/symbol-winbar.png)
 
 ### Fold
 
@@ -291,3 +291,11 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 ### Git Conflict
 
 ![Git Conflict](./img/git-conflict.png)
+
+### Show Marks
+
+![Show Marks](./img/show-marks.png)
+
+### Spell Check
+
+![Spell Check](./img/spell-check.png)
