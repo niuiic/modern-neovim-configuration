@@ -53,4 +53,4 @@ ft({ "go", "rust", "javascript" }, "//%s")
 
 -- keymap
 utils.fn.map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", utils.var.opt)
-utils.fn.map("n", "<C-a>", "<Plug>(comment_toggle_current_linewise)", utils.var.opt)
+utils.fn.map("n", "<C-a>", "<Plug>(comment_toggle_linewise_current)", utils.var.opt)
