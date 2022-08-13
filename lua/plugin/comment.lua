@@ -29,27 +29,32 @@ utils.fn.require("Comment").setup({
 		extra = false,
 		extended = false,
 	},
-	post_hook = nil,
 	pre_hook = function(ctx)
-		local U = utils.fn.require("Comment.utils")
+		if vim.bo.filetype == "vue" then
+			local U = utils.fn.require("Comment.utils")
 
-		local location = nil
-		if ctx.ctype == U.ctype.block then
-			location = utils.fn.require("ts_context_commentstring.utils").get_cursor_location()
-		elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-			location = utils.fn.require("ts_context_commentstring.utils").get_visual_start_location()
+			-- Determine whether to use linewise or blockwise commentstring
+			local type = ctx.ctype == U.ctype.linewise and "__default" or "__multiline"
+
+			-- Determine the location where to calculate commentstring from
+			local location = nil
+			if ctx.ctype == U.ctype.blockwise then
+				location = utils.fn.require("ts_context_commentstring.utils").get_cursor_location()
+			elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
+				location = utils.fn.require("ts_context_commentstring.utils").get_visual_start_location()
+			end
+
+			return utils.fn.require("")("ts_context_commentstring.internal").calculate_commentstring({
+				key = type,
+				location = location,
+			})
 		end
-
-		return require("ts_context_commentstring.internal").calculate_commentstring({
-			key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
-			location = location,
-		})
 	end,
 })
 
 local ft = utils.fn.require("Comment.ft")
-ft.lua = "--%s"
-ft({ "go", "rust", "javascript" }, "//%s")
+ft({ "go", "rust", "javascript", "typescript" }, "//%s")
+ft({ "lua" }, "--%s")
 
 -- keymap
 utils.fn.map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", utils.var.opt)
