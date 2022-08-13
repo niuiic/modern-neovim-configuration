@@ -34,6 +34,7 @@ require("packer").startup({
 		-- terminal (basically configured)
 		use({
 			"akinsho/toggleterm.nvim",
+			commit = "dfce846c609b83feef3786930c5bd7e4bad851ac",
 			config = utils.fn.load_config({ "plugin/toggleterm" }),
 		})
 		-- tagbar
