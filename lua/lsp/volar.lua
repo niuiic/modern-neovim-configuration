@@ -40,9 +40,9 @@ local M = {
 			signatureHelp = true,
 			typeDefinition = true,
 		},
-		-- FIXME: cannot find tsserverlib.js
 		typescript = {
-			serverPath = "",
+			serverPath = os.getenv("HOME")
+				.. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib/tsserverlibrary.js",
 		},
 	},
 }
