@@ -46,6 +46,7 @@ dap.configurations.vue = {
 	},
 }
 
--- NOTE: To fix `va_getDriverName() failed` error, try following solutions.
+-- Start chrome in debug mode using `google-chrome-stable --remote-debugging-port=9222`
+-- To fix `va_getDriverName() failed` error, try following solutions.
 -- LIBVA_DRIVER_NAME=radeonsi chromium
 -- Try setting the Preferred Ozone platform (chrome://flags/#ozone-platform-hint) to Auto.
