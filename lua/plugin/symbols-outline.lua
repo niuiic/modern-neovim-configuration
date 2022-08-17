@@ -1,9 +1,9 @@
 local utils = require("utils")
 
-vim.g.symbols_outline = {
+utils.fn.require("symbols-outline").setup({
 	highlight_hovered_item = true,
 	show_guides = true,
-	auto_preview = true,
+	auto_preview = false,
 	position = "right",
 	relative_width = true,
 	width = 25,
@@ -51,7 +51,7 @@ vim.g.symbols_outline = {
 		Operator = { icon = "+", hl = "TSOperator" },
 		TypeParameter = { icon = "𝙏", hl = "TSParameter" },
 	},
-}
+})
 
 -- keymap
 utils.fn.whichKeyMap({
