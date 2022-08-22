@@ -52,7 +52,6 @@ local M = {
 	),
 	ss(
 		"icon",
-
 		fmt(
 			[[
 <el-icon :size="{}">
@@ -65,7 +64,6 @@ local M = {
 	ss("input", fmt([[<el-input v-model="{}" placeholder="{}" />]], { i(1, "input"), i(2, "please input here") })),
 	ss(
 		"table",
-
 		fmt(
 			[[
 <el-table :data="{}">
