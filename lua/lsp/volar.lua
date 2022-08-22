@@ -1,12 +1,13 @@
+local utils = require("utils")
 local filetypes = { "vue" }
 
-if vim.bo.filetype == "vue" then
+if utils.fn.match_str_in_file(utils.fn.root_pattern() .. "/package.json", "vue") then
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
 end
 
 local M = {
 	filetypes = filetypes,
-	root_dir = require("utils").fn.root_pattern,
+	root_dir = utils.fn.root_pattern,
 	init_options = {
 		documentFeatures = {
 			documentColor = false,
