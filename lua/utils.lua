@@ -83,11 +83,32 @@ M.fn.deep_clone = function(orig)
 	return copy
 end
 
+-- check if file exists
 M.fn.file_exists = function(path)
 	local file = io.open(path, "r")
 	if file ~= nil then
 		io.close(file)
 		return true
+	else
+		io.close(file)
+		return false
+	end
+end
+
+-- check if str is in the file
+M.fn.match_str_in_file = function(path, str)
+	if M.fn.file_exists(path) then
+		local file = io.open(path, "r")
+		---@diagnostic disable-next-line: param-type-mismatch
+		io.input(file)
+		local content = io.read("*a")
+		if string.match(content, str) then
+			io.close(file)
+			return true
+		else
+			io.close(file)
+			return false
+		end
 	else
 		return false
 	end
