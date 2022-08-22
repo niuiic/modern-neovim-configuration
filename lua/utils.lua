@@ -90,7 +90,6 @@ M.fn.file_exists = function(path)
 		io.close(file)
 		return true
 	else
-		io.close(file)
 		return false
 	end
 end
