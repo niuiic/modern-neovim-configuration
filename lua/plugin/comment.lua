@@ -9,10 +9,6 @@ utils.fn.require("nvim-treesitter.configs").setup({
 				__default = "<!-- %s -->",
 				html = "<!-- %s -->",
 				style = "/* %s */",
-				css = "/* %s */",
-				scss = "/* %s */",
-				javascript = "// %s",
-				typescript = "// %s",
 				script = "// %s",
 				comment = "<!-- %s -->",
 			},
@@ -21,9 +17,6 @@ utils.fn.require("nvim-treesitter.configs").setup({
 })
 
 utils.fn.require("Comment").setup({
-	padding = true,
-	sticky = true,
-	ignore = nil,
 	mappings = {
 		basic = true,
 		extra = false,

@@ -10,7 +10,7 @@ local filetypes = {
 }
 
 if utils.fn.match_str_in_file(utils.fn.root_pattern() .. "/package.json", "vue") then
-	filetypes = {}
+	filetypes = { "none" }
 end
 
 local M = {

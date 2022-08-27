@@ -1,10 +1,5 @@
 local utils = require("utils")
 
-utils.fn.require("mark-radar").setup({
-	set_default_mappings = true,
-	highlight_group = "RadarMark",
-	background_highlight = true,
-	background_highlight_group = "RadarBackground",
-})
+utils.fn.require("mark-radar").setup()
 
 -- use [' / ]' to jump to previous/next mark.

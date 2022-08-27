@@ -11,8 +11,6 @@ utils.fn.require("nvim-search-and-replace").setup({
 		"package.*",
 		"yarn.*",
 	},
-	-- save the changes after replace
-	update_changes = false,
 	-- keymap for search and replace
 	replace_keymap = "<leader>rr",
 	-- keymap for search and replace ( this does not care about ignored files )

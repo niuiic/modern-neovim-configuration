@@ -9,13 +9,13 @@ local utils = require("utils")
 
 require("packer").startup({
 	function(use)
-		-- plugin manager (basically configured)
+		-- plugin manager
 		use("wbthomason/packer.nvim")
-		-- shortcut suggestions (basically configured)
+		-- shortcut suggestions
 		use({ "folke/which-key.nvim", config = utils.fn.load_config({ "plugin/which-key" }) })
 		-- auto complete pairs
 		use({ "windwp/nvim-autopairs", config = utils.fn.load_config({ "plugin/nvim-autopairs" }) })
-		-- automatically switch input method when input mode changed (fully configured)
+		-- automatically switch input method when input mode changed
 		use({ "alohaia/fcitx.nvim", config = utils.fn.load_config({ "plugin/fcitx" }) })
 		-- displays neovim startup time
 		use({ "dstein64/vim-startuptime", config = utils.fn.load_config({ "plugin/vim-startuptime" }) })
@@ -31,20 +31,20 @@ require("packer").startup({
 		use("tpope/vim-repeat")
 		-- lazygit
 		use({ "kdheepak/lazygit.nvim", config = utils.fn.load_config({ "plugin/lazygit" }) })
-		-- terminal (basically configured)
+		-- terminal
 		use({
 			"akinsho/toggleterm.nvim",
 			config = utils.fn.load_config({ "plugin/toggleterm" }),
 		})
 		-- tagbar
 		use({ "simrat39/symbols-outline.nvim", config = utils.fn.load_config({ "plugin/symbols-outline" }) })
-		-- toggle comments (basically configured)
+		-- toggle comments
 		use({
 			"numToStr/Comment.nvim",
 			requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
 			config = utils.fn.load_config({ "plugin/comment" }),
 		})
-		-- dashboard (fully configured)
+		-- dashboard
 		use({ "glepnir/dashboard-nvim", config = utils.fn.load_config({ "plugin/dashboard-nvim" }) })
 		-- automatically toggle between absolute line number and relative one
 		use({
@@ -116,7 +116,7 @@ require("packer").startup({
 			"j-hui/fidget.nvim",
 			config = utils.fn.load_config({ "plugin/fidget" }),
 		})
-		-- status line (basically configured)
+		-- status line
 		use({
 			"nvim-lualine/lualine.nvim",
 			requires = {
@@ -129,22 +129,22 @@ require("packer").startup({
 		use({ "jiaoshijie/undotree", config = utils.fn.load_config({ "plugin/undotree" }) })
 		-- run code snip
 		use({ "michaelb/sniprun", run = "bash ./install.sh", config = utils.fn.load_config({ "plugin/sniprun" }) })
-		-- a pretty diagnostics, references, telescope results, quickfix and location list (basically configured)
+		-- a pretty diagnostics, references, telescope results, quickfix and location list
 		use({
 			"folke/trouble.nvim",
 			requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
 			config = utils.fn.load_config({ "plugin/trouble" }),
 		})
 		-- quickly modify surround char
-		use({ "ur4ltz/surround.nvim", config = utils.fn.load_config({ "plugin/surround" }) })
-		-- call sudo in neovim (fully configured)
+		use({ "kylechui/nvim-surround", config = utils.fn.load_config({ "plugin/nvim-surround" }) })
+		-- call sudo in neovim
 		use({ "lambdalisue/suda.vim", config = utils.fn.load_config({ "plugin/suda" }) })
 		-- translate
 		use({
 			"uga-rosa/translate.nvim",
 			config = utils.fn.load_config({ "plugin/translate" }),
 		})
-		-- more smooth scroll (fully configured)
+		-- more smooth scroll
 		use({ "karb94/neoscroll.nvim", config = utils.fn.load_config({ "plugin/neoscroll" }) })
 		-- highlights cursor words and lines
 		use({ "yamatsum/nvim-cursorline", config = utils.fn.load_config({ "plugin/nvim-cursorline" }) })
@@ -154,7 +154,7 @@ require("packer").startup({
 			"theHamsta/nvim-dap-virtual-text",
 			"rcarriga/nvim-dap-ui",
 		})
-		-- expand and repeat expression to multiple lines (fully configured)
+		-- expand and repeat expression to multiple lines
 		use({ "AllenDang/nvim-expand-expr", config = utils.fn.load_config({ "plugin/nvim-expand-expr" }) })
 		-- unit test
 		use({
@@ -171,17 +171,17 @@ require("packer").startup({
 			},
 			config = utils.fn.load_config({ "plugin/neotest" }),
 		})
-		-- colorscheme (fully configured)
+		-- colorscheme
 		use("folke/tokyonight.nvim")
 		-- git signs
 		use({ "lewis6991/gitsigns.nvim", config = utils.fn.load_config({ "plugin/gitsigns" }) })
 		-- resolve git conflict
 		use({ "akinsho/git-conflict.nvim", config = utils.fn.load_config({ "plugin/git-conflict" }) })
-		-- colorizer (basically configured)
+		-- colorizer
 		use({ "norcalli/nvim-colorizer.lua", config = utils.fn.load_config({ "plugin/nvim-colorizer" }) })
 		-- indentation guides
 		use({ "lukas-reineke/indent-blankline.nvim", config = utils.fn.load_config({ "plugin/indent-blankline" }) })
-		-- tab line (basically configured)
+		-- tab line
 		use({
 			"akinsho/bufferline.nvim",
 			requires = "kyazdani42/nvim-web-devicons",
@@ -193,13 +193,13 @@ require("packer").startup({
 			requires = "nvim-lua/plenary.nvim",
 			config = utils.fn.load_config({ "plugin/diffview" }),
 		})
-		-- just use as a formatter manager now (continue to configure)
+		-- just use as a formatter manager now
 		use({
 			"jose-elias-alvarez/null-ls.nvim",
 			requires = "nvim-lua/plenary.nvim",
 			config = utils.fn.load_config({ "plugin/null-ls" }),
 		})
-		-- fuzzy search (basically configured)
+		-- fuzzy search
 		use({
 			{
 				"nvim-telescope/telescope.nvim",
@@ -218,7 +218,7 @@ require("packer").startup({
 				requires = "nvim-lua/plenary.nvim",
 				config = utils.fn.load_config({ "plugin/todo-comments" }),
 			},
-			-- project manager (basically configured)
+			-- project manager
 			{ "ahmedkhalf/project.nvim", config = utils.fn.load_config({ "plugin/project" }) },
 		})
 		-- aysnc tasks
