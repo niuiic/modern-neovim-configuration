@@ -16,13 +16,28 @@ utils.fn.require("lspsaga").init_lsp_saga({
 		exec = "<CR>",
 	},
 	rename_action_quit = "<esc>",
-	definition_preview_icon = "  ",
 	symbol_in_winbar = {
 		in_custom = true,
-		click_support = function(node, button)
+		click_support = function(node, clicks, button, modifiers)
+			-- To see all avaiable details: vim.pretty_print(node)
 			local st = node.range.start
+			local en = node.range["end"]
 			if button == "l" then
+				if clicks == 2 then
+				-- double left click to do nothing
+				else -- jump to node's starting line+char
+					vim.fn.cursor(st.line + 1, st.character + 1)
+				end
+			elseif button == "r" then
+				if modifiers == "s" then
+					print("lspsaga") -- shift right click to print "lspsaga"
+				end -- jump to node's ending line+char
+				vim.fn.cursor(en.line + 1, en.character + 1)
+			elseif button == "m" then
+				-- middle click to visual select node
 				vim.fn.cursor(st.line + 1, st.character + 1)
+				vim.cmd("normal v")
+				vim.fn.cursor(en.line + 1, en.character + 1)
 			end
 		end,
 	},
@@ -156,14 +171,6 @@ utils.fn.whichKeyMap({
 })
 
 utils.fn.map("n", "K", ":Lspsaga hover_doc<CR>", utils.var.opt)
-local action = require("lspsaga.action")
-vim.keymap.set("n", "<C-f>", function()
-	action.smart_scroll_with_saga(1)
-end, { silent = true })
-vim.keymap.set("n", "<C-b>", function()
-	action.smart_scroll_with_saga(-1)
-end, { silent = true })
-
 utils.fn.whichKeyMap({
 	g = {
 		a = {
