@@ -171,8 +171,9 @@ require("packer").startup({
 			},
 			config = utils.fn.load_config({ "plugin/neotest" }),
 		})
+		-- TODO: update version of tokyonight
 		-- colorscheme
-		use("folke/tokyonight.nvim")
+		use({ "folke/tokyonight.nvim", commit = "4bbf5e57a53d388a6031fee0cd06cc0a504233b0" })
 		-- git signs
 		use({ "lewis6991/gitsigns.nvim", config = utils.fn.load_config({ "plugin/gitsigns" }) })
 		-- resolve git conflict
