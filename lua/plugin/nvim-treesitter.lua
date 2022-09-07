@@ -29,6 +29,7 @@ utils.fn.require("nvim-treesitter.configs").setup({
 		"vim",
 		"vue",
 		"yaml",
+		"glsl",
 	},
 	highlight = { enable = true, additional_vim_regex_highlighting = false },
 	intent = { enable = true },
