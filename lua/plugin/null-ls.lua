@@ -41,6 +41,7 @@ null_ls.setup({
 			filetypes = {
 				"c",
 				"cpp",
+				"glsl",
 			},
 		}),
 		formatting.stylua.with({
