@@ -35,6 +35,8 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 
 > It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
 
+### Installation
+
 1. Install `packer.nvim`
 
 ```sh
@@ -89,7 +91,7 @@ end
 
 11. Look for specific functions in `lua/plugins.lua`.
 
-## Keymap
+### Keymap
 
 `which-key.nvim` will tell you. You can also check `lua/plugin/*` and `lua/keymap.lua` for details.
 
@@ -97,23 +99,23 @@ end
 
 > localLeader: `<space>`
 
-## LSP
+### LSP
 
 Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other files.
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
-## Formatter
+### Formatter
 
 Check formatter setting in `lua/plugin/null-ls.lua`. Look for more formatters on [null-ls buildin formatters](https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting).
 
-## DAP
+### DAP
 
 Create a `dapname.lua` in `lua/debugger`, edit the file in the same way as other files.
 
 Modify the `debuggerList` in `lua/debugger/init.lua`.
 
-## Custom Snippets and Sources
+### Custom Snippets and Sources
 
 Create a `filetype.lua` in `lua/snippet` or `lua/source`, edit the file in the same way as other files.
 
