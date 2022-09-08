@@ -5,7 +5,7 @@ utils.fn.require("filetype").setup({
 		extensions = {
 			h = "c",
 			hpp = "cpp",
-			cpp = "cpp",
+			frag = "glsl",
 		},
 	},
 })

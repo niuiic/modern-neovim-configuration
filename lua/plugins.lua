@@ -262,5 +262,11 @@ require("packer").startup({
 			"s1n7ax/nvim-search-and-replace",
 			config = utils.fn.load_config({ "plugin/nvim-search-and-replace" }),
 		})
+		-- glsl viewer
+		use({
+			"timtro/glslView-nvim",
+			ft = "glsl",
+			config = utils.fn.load_config({ "plugin/glsl-view" }),
+		})
 	end,
 })
