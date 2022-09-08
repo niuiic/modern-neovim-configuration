@@ -127,6 +127,12 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 - Some completion sources and the status line plugin may crash for unknown reasons.
 - Code folding may be misplaced after re-entering the file.
 
+## FAQ
+
+- GLSL syntax diagnostics not working
+
+`glslangValidator` requires files to have a specific suffix, check [document](https://github.com/KhronosGroup/glslang#execution-of-standalone-wrapper) for details.
+
 ## Screenshot
 
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
