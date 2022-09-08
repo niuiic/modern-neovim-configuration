@@ -18,7 +18,6 @@ local lspList = {
 	"stylelint_lsp",
 	"pyright",
 	"tsserver",
-	"glslls",
 }
 
 -- common lsp config

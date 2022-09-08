@@ -16,7 +16,7 @@ local utils = require("utils")
 -- ◍ stylelint-lsp
 -- ◍ taplo
 -- ◍ typescript-language-server
--- install verible, clangd, glslls manually
+-- install verible, clangd, glslang manually
 
 -- daps installed:
 -- ◍ node-debug2-adapter
