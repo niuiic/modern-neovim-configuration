@@ -42,6 +42,7 @@ null_ls.setup({
 				"c",
 				"cpp",
 				"glsl",
+				"wgsl",
 			},
 		}),
 		formatting.stylua.with({
