@@ -16,6 +16,7 @@ Neovim + Linux = Your Best Almighty IDE
 - Lua
 - SystemVerilog
 - GLSL
+- WGSL
 
 > Common features: lsp、format、autocompletion(custom snippets and source)、debug.
 
