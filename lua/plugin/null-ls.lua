@@ -67,9 +67,9 @@ null_ls.setup({
 				"less",
 				"html",
 				"json",
-				"yaml",
 				"graphql",
 				"markdown",
+				"yaml",
 			},
 		}),
 		formatting.golines.with({

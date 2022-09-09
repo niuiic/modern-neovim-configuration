@@ -17,6 +17,7 @@ local utils = require("utils")
 -- ◍ taplo
 -- ◍ typescript-language-server
 -- ◍ wgsl-analyzer
+-- ◍ yaml-language-server
 -- install verible, clangd, glslang manually
 
 -- daps installed:

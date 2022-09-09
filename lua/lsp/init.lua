@@ -19,6 +19,7 @@ local lspList = {
 	"pyright",
 	"tsserver",
 	"wgsl_analyzer",
+	"yamlls",
 }
 
 -- common lsp config
