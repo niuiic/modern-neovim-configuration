@@ -18,7 +18,7 @@ local lspList = {
 	"stylelint_lsp",
 	"pyright",
 	"tsserver",
-	"wgsl-analyzer",
+	"wgsl_analyzer",
 }
 
 -- common lsp config
