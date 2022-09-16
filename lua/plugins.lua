@@ -256,7 +256,10 @@ require("packer").startup({
 			config = utils.fn.load_config({ "plugin/mark-radar" }),
 		})
 		-- lsp, dap, linter, formatter installer
-		use({ "williamboman/mason.nvim", config = utils.fn.load_config({ "plugin/mason" }) })
+		use({
+			"williamboman/mason.nvim",
+			config = utils.fn.load_config({ "plugin/mason" }),
+		})
 		-- search and replace in project
 		use({
 			"s1n7ax/nvim-search-and-replace",
