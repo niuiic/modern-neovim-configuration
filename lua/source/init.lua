@@ -30,9 +30,3 @@ for _, value in pairs(langList) do
 		}, { { name = "buffer" }, { name = "path" } }),
 	})
 end
-
--- load local source
-local local_source = utils.fn.root_pattern() .. "/.nvim/source.lua"
-if utils.fn.file_exists(local_source) then
-	dofile(local_source)
-end
