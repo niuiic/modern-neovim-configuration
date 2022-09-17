@@ -23,4 +23,10 @@ for _, value in pairs(langList) do
 	})
 end
 
-utils.fn.require("luasnip.loaders.from_lua").load({ include = langList })
+utils.fn.require("luasnip.loaders.from_lua").lazy_load({ include = langList })
+
+-- load local snippets
+local local_snippets = utils.fn.root_pattern() .. "/.nvim/snippets.lua"
+if utils.fn.file_exists(local_snippets) then
+	dofile(local_snippets)
+end
