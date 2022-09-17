@@ -31,3 +31,26 @@ utils.fn.require("indent_blankline").setup({
 require("indent_blankline").setup({
 	space_char_blankline = " ",
 })
+
+local special_indent_width = {
+	vue = 2,
+	javascript = 2,
+	typescript = 2,
+	html = 2,
+	css = 2,
+	scss = 2,
+	javascriptreact = 2,
+	typescriptreact = 2,
+}
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "*",
+	callback = function()
+		for k, v in pairs(special_indent_width) do
+			if vim.bo.filetype == k then
+				vim.opt.tabstop = v
+				vim.opt.shiftwidth = v
+			end
+		end
+	end,
+})
