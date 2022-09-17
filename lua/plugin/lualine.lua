@@ -3,7 +3,7 @@ local utils = require("utils")
 utils.fn.require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "tokyonight",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 		disabled_filetypes = { "NvimTree", "toggleterm" },

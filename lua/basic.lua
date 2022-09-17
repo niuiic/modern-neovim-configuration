@@ -66,19 +66,8 @@ vim.o.wildmenu = true
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"
 
--- colorscheme
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_transparent_sidebar = true
-vim.g.tokyonight_dark_sidebar = false
-vim.g.tokyonight_dark_float = false
-vim.g.tokyonight_style = "storm"
-vim.cmd([[colorscheme tokyonight]])
-
 -- fix the delay to enter normal mode in sql file
 vim.g.omni_sql_no_default_maps = 1
-
--- highlight line number
-vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
 
 -- enable mouse mode
 vim.o.mouse = "a"
