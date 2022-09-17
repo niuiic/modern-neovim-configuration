@@ -124,6 +124,10 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 > [Snippet examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua) and [snippet document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md) may help you.
 
+### Config for Workspace
+
+The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua` is the entry of the local configuration.
+
 ## Known Issues
 
 - `<C-o>` may not return to correct position.
