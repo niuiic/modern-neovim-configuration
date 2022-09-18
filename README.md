@@ -144,9 +144,10 @@ The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua`
 
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
 
-### Full Screen
-
+<details>
+  <summary>Full Screen</summary>
 ![Full Screen](./img/full-screen.png)
+</details>
 
 ### Status Line
 
@@ -186,9 +187,10 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 
 ![Code AutoComplete](./img/code-autocomplete.png)
 
-### Inner Terminal
-
+<details>
+  <summary>Inner Terminal</summary>
 ![Inner Terminal](./img/inner-terminal.png)
+</details>
 
 ### Todo Comments
 
