@@ -146,9 +146,7 @@ Some functions are not convenient to display with pictures, please check `lua/pl
 
 <details>
   <summary><b>Full Screen</b></summary>
-
-![Full Screen](./img/full-screen.png)
-
+<img src="./img/full-screen.png"/>
 </details>
 
 ### Status Line
