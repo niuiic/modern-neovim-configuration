@@ -146,7 +146,9 @@ Some functions are not convenient to display with pictures, please check `lua/pl
 
 <details>
   <summary>Full Screen</summary>
+
 ![Full Screen](./img/full-screen.png)
+
 </details>
 
 ### Status Line
@@ -189,7 +191,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 
 <details>
   <summary>Inner Terminal</summary>
+
 ![Inner Terminal](./img/inner-terminal.png)
+
 </details>
 
 ### Todo Comments
