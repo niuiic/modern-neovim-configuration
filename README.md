@@ -149,171 +149,208 @@ Some functions are not convenient to display with pictures, please check `lua/pl
 <img src="./img/full-screen.png"/>
 </details>
 
-### Status Line
-
-![Status Line](./img/statusline.png)
-
-### Buffer Line
-
-![Buffer Line](./img/bufferline.png)
-
-### Diagnostic
-
-![Diagnostic](./img/diagnostic.png)
-
-### Fuzzy Finder
-
-Search files, tags, buffers, history files, marks, projects, git status, etc.
-
-![Fuzzy Finder](./img/fuzzy-finder.png)
-
-### AutoComplete CMD
-
-![AutoComplete CMD](./img/autocomplete-cmd.png)
-
-### Rename
-
-![Rename](./img/rename.png)
-
-### Go to Reference
-
-![Go to Reference](./img/goto-reference.png)
-
-### Keymap Suggestion
-
-![Keymap Suggestion](./img/keymap-suggestion.png)
-
-### Code AutoComplete
-
-![Code AutoComplete](./img/code-autocomplete.png)
-
 <details>
-  <summary>Inner Terminal</summary>
-
-![Inner Terminal](./img/inner-terminal.png)
-
+  <summary><b>Status Line</b></summary>
+<img src="./img/statusline.png"/>
 </details>
 
-### Todo Comments
+<details>
+  <summary><b>Buffer Line</b></summary>
+<img src="./img/bufferline.png"/>
+</details>
 
-![Todo Comments](./img/todo-comments.png)
+<details>
+  <summary><b><b>Diagnostic</b></b></summary>
+<img src="./img/diagnostic.png"/>
+</details>
 
-### File Tree
+<details>
+  <summary><b>Fuzzy Finder</b></summary>
+Search files, tags, buffers, history files, marks, projects, git status, etc.
+<img src="./img/fuzzy-finder.png"/>
+</details>
 
-![File Tree](./img/file-tree.png)
+<details>
+  <summary><b>AutoComplete CMD</b></summary>
+<img src="./img/autocomplete-cmd.png"/>
+</details>
 
-### Undo Tree
+<details>
+  <summary><b>Rename</b></summary>
+<img src="./img/rename.png"/>
+</details>
 
-![Undo Tree](./img/undo-tree.png)
+<details>
+  <summary><b>Go to Reference</b></summary>
+<img src="./img/goto-reference.png"/>
+</details>
 
-### Dashboard
+<details>
+  <summary><b>Keymap Suggestion</b></summary>
+<img src="./img/keymap-suggestion.png"/>
+</details>
 
-![Dashboard](./img/dashboard.png)
+<details>
+  <summary><b>Code AutoComplete</b></summary>
+<img src="./img/code-autocomplete.png"/>
+</details>
 
-### Translate
+<details>
+  <summary><b>Inner Terminal</b></summary>
+<img src="./img/inner-terminal.png"/>
+</details>
 
-![Translate](./img/translate.png)
+<details>
+  <summary><b>Todo Comments</b></summary>
+<img src="./img/todo-comments.png"/>
+</details>
 
-### Unit Test
+<details>
+  <summary><b>File Tree</b></summary>
+<img src="./img/file-tree.png"/>
+</details>
 
-![Unit Test](./img/unit-test.png)
+<details>
+  <summary><b>Undo Tree</b></summary>
+<img src="./img/undo-tree.png"/>
+</details>
 
-### Async Tasks
+<details>
+  <summary><b>Dashboard</b></summary>
+<img src="./img/dashboard.png"/>
+</details>
 
-![Async Tasks](./img/async-tasks.png)
+<details>
+  <summary><b>Translate</b></summary>
+<img src="./img/translate.png"/>
+</details>
 
-### Indentation Guides
+<details>
+  <summary><b>Unit Test</b></summary>
+<img src="./img/unit-test.png"/>
+</details>
 
-![Indentation Guides](./img/indentation-guides.png)
+<details>
+  <summary><b>Async Tasks</b></summary>
+<img src="./img/async-tasks.png"/>
+</details>
 
-### Yank History
+<details>
+  <summary><b>Indentation Guides</b></summary>
+<img src="./img/indentation-guides.png"/>
+</details>
 
-![Yank History](./img/yank-history.png)
+<details>
+  <summary><b>Yank History</b></summary>
+<img src="./img/yank-history.png"/>
+</details>
 
-### Code Action
+<details>
+  <summary><b>Code Action</b></summary>
+<img src="./img/code-action.png"/>
+</details>
 
-![Code Action](./img/code-action.png)
+<details>
+  <summary><b>Colorful Brackets</b></summary>
+<img src="./img/colorful-brackets.png"/>
+</details>
 
-### Colorful Brackets
+<details>
+  <summary><b>Debug</b></summary>
+<img src="./img/debug.png"/>
+</details>
 
-![Colorful Brackets](./img/colorful-brackets.png)
+<details>
+  <summary><b>View Git Diff</b></summary>
+<img src="./img/view-git-diff.png"/>
+</details>
 
-### Debug
+<details>
+  <summary><b>Git Signs</b></summary>
+<img src="./img/git-signs.png"/>
+</details>
 
-![Debug](./img/debug.png)
+<details>
+  <summary><b>Document</b></summary>
+<img src="./img/document.png"/>
+</details>
 
-### View Git Diff
+<details>
+  <summary><b>Sql</b></summary>
+<img src="./img/sql.png"/>
+</details>
 
-![View Git Diff](./img/view-git-diff.png)
+<details>
+  <summary><b>Quick Motion</b></summary>
+<img src="./img/quick-motion.png"/>
+</details>
 
-### Git Signs
+<details>
+  <summary><b>Expand Expression</b></summary>
+<img src="./img/expand-expression.png"/>
+</details>
 
-![Git Signs](./img/git-signs.png)
+<details>
+  <summary><b>TagBar</b></summary>
+<img src="./img/tagbar.png"/>
+</details>
 
-### Document
+<details>
+  <summary><b>Lsp Progress</b></summary>
+<img src="./img/lsp-progress.png"/>
+</details>
 
-![Document](./img/document.png)
+<details>
+  <summary><b>Symbol Winbar</b></summary>
+<img src="./img/symbol-winbar.png"/>
+</details>
 
-### Sql
+<details>
+  <summary><b>Fold</b></summary>
+<img src="./img/fold.png"/>
+</details>
 
-![Sql](./img/sql.png)
+<details>
+  <summary><b>Colorizer</b></summary>
+<img src="./img/colorizer.png"/>
+</details>
 
-### Quick Motion
+<details>
+  <summary><b>Session</b></summary>
+<img src="./img/session.png"/>
+</details>
 
-![Quick Motion](./img/quick-motion.png)
+<details>
+  <summary><b>Quickfix</b></summary>
+<img src="./img/quickfix.png"/>
+</details>
 
-### Expand Expression
+<details>
+  <summary><b>Startup Time</b></summary>
+<img src="./img/startup-time.png"/>
+</details>
 
-![Expand Expression](./img/expand-expression.png)
+<details>
+  <summary><b>Run Code Snip</b></summary>
+<img src="./img/run-code-snip.png"/>
+</details>
 
-### TagBar
+<details>
+  <summary><b>Lazygit</b></summary>
+<img src="./img/laygit.png"/>
+</details>
 
-![TagBar](./img/tagbar.png)
+<details>
+  <summary><b>Git Conflict</b></summary>
+<img src="./img/git-conflict.png"/>
+</details>
 
-### Lsp Progress
+<details>
+  <summary><b>Show Marks</b></summary>
+<img src="./img/show-marks.png"/>
+</details>
 
-![Lsp Progress](./img/lsp-progress.png)
-
-### Symbol Winbar
-
-![Symbol Winbar](./img/symbol-winbar.png)
-
-### Fold
-
-![Fold](./img/fold.png)
-
-### Colorizer
-
-![Colorizer](./img/colorizer.png)
-
-### Session
-
-![Session](./img/session.png)
-
-### Quickfix
-
-![Quickfix](./img/quickfix.png)
-
-### Startup Time
-
-![Startup Time](./img/startup-time.png)
-
-### Run Code Snip
-
-![Run Code Snip](./img/run-code-snip.png)
-
-### Lazygit
-
-![Lazygit](./img/laygit.png)
-
-### Git Conflict
-
-![Git Conflict](./img/git-conflict.png)
-
-### Show Marks
-
-![Show Marks](./img/show-marks.png)
-
-### Spell Check
-
-![Spell Check](./img/spell-check.png)
+<details>
+  <summary><b>Spell Check</b></summary>
+<img src="./img/spell-check.png"/>
+</details>
