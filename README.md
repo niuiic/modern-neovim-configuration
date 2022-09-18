@@ -140,12 +140,12 @@ The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua`
 
 `glslangValidator` requires files to have a specific suffix, check [document](https://github.com/KhronosGroup/glslang#execution-of-standalone-wrapper) for details.
 
-## Screenshot
+## Showcase
 
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
 
 <details>
-  <summary>Full Screen</summary>
+  <summary><b>Full Screen</b></summary>
 
 ![Full Screen](./img/full-screen.png)
 
