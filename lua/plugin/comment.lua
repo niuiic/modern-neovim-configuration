@@ -9,6 +9,8 @@ utils.fn.require("nvim-treesitter.configs").setup({
 				__default = "<!-- %s -->",
 				html = "<!-- %s -->",
 				style = "/* %s */",
+				scss = "/* %s */",
+				css = "/* %s */",
 				script = "// %s",
 				comment = "<!-- %s -->",
 			},
