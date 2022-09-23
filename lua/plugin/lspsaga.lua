@@ -170,7 +170,8 @@ utils.fn.whichKeyMap({
 	mode = "n",
 })
 
-utils.fn.map("n", "K", ":Lspsaga hover_doc<CR>", utils.var.opt)
+utils.fn.map("n", "J", ":Lspsaga hover_doc<CR>", utils.var.opt)
+utils.fn.map("n", "K", ":Lspsaga peek_definition<CR>", utils.var.opt)
 utils.fn.whichKeyMap({
 	g = {
 		a = {

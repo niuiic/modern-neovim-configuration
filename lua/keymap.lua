@@ -83,6 +83,10 @@ utils.fn.whichKeyMap({
 			"<cmd>LspInfo<CR>",
 			"lsp info",
 		},
+		r = {
+			"<cmd>LspRestart *<CR>",
+			"restart all lsp",
+		},
 		i = {
 			-- "<cmd>LspInstallInfo<CR>",
 			"<cmd>Mason<CR>",
