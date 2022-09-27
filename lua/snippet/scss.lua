@@ -22,5 +22,7 @@ local style = utils.fn.require("snippet/common/style")
 M = utils.fn.merge_table(style, M)
 local lint = utils.fn.require("snippet/common/lint")
 M = utils.fn.merge_table(lint, M)
+local todo = utils.fn.require("snippet/common/todo")
+M = utils.fn.merge_table(todo, M)
 
 return M

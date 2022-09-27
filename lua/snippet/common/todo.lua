@@ -17,22 +17,36 @@ local lambda = utils.fn.require("luasnip.extras").l
 local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("check-ignore", {
-		t({ "// @ts-ignore" }),
+	s("todo", {
+		t({ [[TODO: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
 	}),
-	s("check-no", {
-		t({ "// @ts-nocheck" }),
+	s("fakedata", {
+		t({ [[FAKEDATA: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
 	}),
-	s("check-expect", {
-		t({ "// @ts-expect-error" }),
+	s("fixme", {
+		t({ [[FIXME: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
+	s("note", {
+		t({ [[NOTE: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
+	s("warn", {
+		t({ [[WARN: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
+	s("perf", {
+		t({ [[PERF: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
 	}),
 }
-
-local common = utils.fn.require("snippet/common/js-ts")
-M = utils.fn.merge_table(common, M)
-local lint = utils.fn.require("snippet/common/lint")
-M = utils.fn.merge_table(lint, M)
-local todo = utils.fn.require("snippet/common/todo")
-M = utils.fn.merge_table(todo, M)
 
 return M
