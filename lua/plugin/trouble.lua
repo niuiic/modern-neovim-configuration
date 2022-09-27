@@ -20,7 +20,7 @@ utils.fn.require("trouble").setup({
 		previous = "k",
 		next = "j",
 	},
-	auto_open = true,
+	auto_close = true,
 	padding = false,
 })
 
