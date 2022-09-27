@@ -21,6 +21,7 @@ utils.fn.require("trouble").setup({
 		next = "j",
 	},
 	auto_open = true,
+	padding = false,
 })
 
 utils.fn.whichKeyMap({
