@@ -7,6 +7,9 @@ local langList = {
 	"lua",
 	"vue",
 	"python",
+	"typescript",
+	"javascript",
+	"scss",
 }
 
 -- register custom sources
