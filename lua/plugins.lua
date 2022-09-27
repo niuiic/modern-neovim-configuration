@@ -139,6 +139,8 @@ require("packer").startup({
 		use({ "kylechui/nvim-surround", config = utils.fn.load_config({ "plugin/nvim-surround" }) })
 		-- call sudo in neovim
 		use({ "lambdalisue/suda.vim", config = utils.fn.load_config({ "plugin/suda" }) })
+		-- close buffer
+		use({ "kazhala/close-buffers.nvim", config = utils.fn.load_config({ "plugin/close-buffers" }) })
 		-- translate
 		use({
 			"uga-rosa/translate.nvim",

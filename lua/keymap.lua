@@ -4,7 +4,6 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
 -- exit and refresh
-utils.fn.map("n", "<C-x>", ":bd<CR>", utils.var.opt)
 utils.fn.map("n", "<C-q>", ":q<CR>", utils.var.opt)
 utils.fn.map("n", "<A-q>", ":q!<CR>", utils.var.opt)
 utils.fn.map("n", "<C-n>", ":only<CR>", utils.var.opt)

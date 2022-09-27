@@ -20,9 +20,7 @@ utils.fn.require("trouble").setup({
 		previous = "k",
 		next = "j",
 	},
-	auto_close = true,
 	auto_open = true,
-	auto_preview = true,
 })
 
 utils.fn.whichKeyMap({
