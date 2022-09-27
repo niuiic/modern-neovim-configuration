@@ -1,27 +1,28 @@
 local utils = require("utils")
 
 utils.fn.require("trouble").setup({
-	action_keys = { -- key mappings for actions in the trouble list
-		close = "q", -- close the list
-		cancel = "<esc>", -- cancel the preview and get back to your last window / buffer / cursor
-		refresh = "r", -- manually refresh
-		jump = { "<cr>" }, -- jump to the diagnostic or open / close folds
-		open_split = { "<c-h>" }, -- open buffer in new split
-		open_vsplit = { "<c-v>" }, -- open buffer in new vsplit
-		open_tab = { "<c-t>" }, -- open buffer in new tab
-		jump_close = { "o" }, -- jump to the diagnostic and close the list
-		toggle_mode = "m", -- toggle between "workspace" and "document" diagnostics mode
-		toggle_preview = "t", -- toggle auto_preview
-		hover = "K", -- opens a small popup with the full multiline message
-		preview = "p", -- preview the diagnostic location
-		close_folds = { "zm" }, -- close all folds
-		open_folds = { "zr" }, -- open all folds
-		toggle_fold = { "z" }, -- toggle fold of current file
-		previous = "k", -- preview item
-		next = "j", -- next item
+	action_keys = {
+		close = "q",
+		cancel = "<esc>",
+		refresh = "r",
+		jump = { "<cr>" },
+		open_split = { "<c-h>" },
+		open_vsplit = { "<c-v>" },
+		open_tab = { "<c-t>" },
+		jump_close = { "o" },
+		toggle_mode = "m",
+		toggle_preview = "t",
+		hover = "K",
+		preview = "p",
+		close_folds = { "zm" },
+		open_folds = { "zr" },
+		toggle_fold = { "z" },
+		previous = "k",
+		next = "j",
 	},
-	auto_close = true, -- automatically close the list when you have no diagnostics
-	auto_preview = true, -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
+	auto_close = true,
+	auto_open = true,
+	auto_preview = true,
 })
 
 utils.fn.whichKeyMap({
