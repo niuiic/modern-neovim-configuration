@@ -12,7 +12,8 @@ utils.fn.require("todo-comments").setup({
 		WARN = { icon = " ", color = "warning", alt = { "DANGER" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 		NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-		FLAG = { icon = "", color = "flag", alt = { "FAKEDATA", "TEMP" } },
+		FAKE = { icon = "", color = "fake" },
+		TEMP = { icon = "", color = "temp" },
 	},
 	colors = {
 		error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
@@ -20,6 +21,7 @@ utils.fn.require("todo-comments").setup({
 		info = { "DiagnosticInfo", "#2563EB" },
 		hint = { "DiagnosticHint", "#10B981" },
 		default = { "Identifier", "#7C3AED" },
-		flag = { "Flag", "#A6E22E" },
+		fake = { "Fake", "#A6E22E" },
+		temp = { "Temp", "#D52CD5" },
 	},
 })
