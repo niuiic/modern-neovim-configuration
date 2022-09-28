@@ -47,6 +47,9 @@ local M = {
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
+	s("temp", {
+		t({ [[TEMP: niuiic]] }),
+	}),
 }
 
 return M

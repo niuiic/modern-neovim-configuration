@@ -12,7 +12,7 @@ utils.fn.require("todo-comments").setup({
 		WARN = { icon = " ", color = "warning", alt = { "DANGER" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 		NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-		FLAG = { icon = "", color = "flag", alt = { "FAKEDATA" } },
+		FLAG = { icon = "", color = "flag", alt = { "FAKEDATA", "TEMP" } },
 	},
 	colors = {
 		error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
