@@ -22,8 +22,8 @@ local M = {
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
-	s("fakedata", {
-		t({ [[FAKEDATA: ]] }),
+	s("fake", {
+		t({ [[FAKE: ]] }),
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
