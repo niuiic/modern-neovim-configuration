@@ -26,7 +26,7 @@ Neovim + Linux = Your Best Almighty IDE
 
 OS: Gentoo
 
-WM: Sway (use vulkan renderer)
+WM: I3
 
 Terminal: Alacritty (a GPU-accelerated terminal emulator)
 
