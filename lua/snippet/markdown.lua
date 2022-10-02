@@ -27,6 +27,14 @@ local M = {
 		i(1),
 		t({ "", [[```]] }),
 	}),
+	s("sh", {
+		t({ [[```sh]], "" }),
+		i(1),
+		t({ "", [[```]] }),
+	}),
 }
+
+local todo = utils.fn.require("snippet/common/todo")
+M = utils.fn.merge_table(todo, M)
 
 return M
