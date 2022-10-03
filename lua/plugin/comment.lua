@@ -1,5 +1,6 @@
 local utils = require("utils")
 
+-- FIXME: not worked in vue files
 utils.fn.require("nvim-treesitter.configs").setup({
 	context_commentstring = {
 		enable = true,
@@ -9,8 +10,6 @@ utils.fn.require("nvim-treesitter.configs").setup({
 				__default = "<!-- %s -->",
 				html = "<!-- %s -->",
 				style = "/* %s */",
-				scss = "/* %s */",
-				css = "/* %s */",
 				script = "// %s",
 				comment = "<!-- %s -->",
 			},
@@ -25,26 +24,7 @@ utils.fn.require("Comment").setup({
 		extended = false,
 	},
 	ignore = "^$",
-	pre_hook = function(ctx)
-		-- Only calculate commentstring for tsx filetypes
-		local U = require("Comment.utils")
-
-		-- Determine whether to use linewise or blockwise commentstring
-		local type = ctx.ctype == U.ctype.linewise and "__default" or "__multiline"
-
-		-- Determine the location where to calculate commentstring from
-		local location = nil
-		if ctx.ctype == U.ctype.blockwise then
-			location = require("ts_context_commentstring.utils").get_cursor_location()
-		elseif ctx.cmotion == U.cmotion.v or ctx.cmotion == U.cmotion.V then
-			location = require("ts_context_commentstring.utils").get_visual_start_location()
-		end
-
-		return require("ts_context_commentstring.internal").calculate_commentstring({
-			key = type,
-			location = location,
-		})
-	end,
+	pre_hook = utils.fn.require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 })
 
 utils.fn.map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", utils.var.opt)
