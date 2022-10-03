@@ -58,3 +58,10 @@ for _, value in pairs(lspList) do
 
 	utils.fn.require("lspconfig")[value].setup(config)
 end
+
+-- disable showing line diagnostic
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = true,
+	underline = false,
+})

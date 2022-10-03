@@ -114,7 +114,7 @@ utils.fn.whichKeyMap({
 			"lsp rename",
 		},
 		a = {
-			":Lspsaga code_action<CR>",
+			"<cmd>CodeActionMenu<CR>",
 			"code action",
 		},
 		f = {
@@ -172,14 +172,6 @@ utils.fn.whichKeyMap({
 
 utils.fn.map("n", "J", ":Lspsaga hover_doc<CR>", utils.var.opt)
 utils.fn.map("n", "K", ":Lspsaga peek_definition<CR>", utils.var.opt)
-utils.fn.whichKeyMap({
-	g = {
-		a = {
-			"<cmd>Lspsaga range_code_action<CR>",
-			"code action",
-		},
-	},
-}, { mode = "v" })
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

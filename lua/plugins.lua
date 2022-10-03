@@ -3,9 +3,9 @@
 -- http://neovimcraft.com
 -- https://github.com/ayamir/nvimdots/wiki/Plugins
 
-local utils = require("utils")
+-- TODO: try ms-jpq/coq_nvim
 
--- TODO: add simrat39/rust-tools.nvim
+local utils = require("utils")
 
 require("packer").startup({
 	function(use)
@@ -76,6 +76,7 @@ require("packer").startup({
 			-- extensions
 			-- rainbow brackets
 			"p00f/nvim-ts-rainbow",
+			{ "m-demare/hlargs.nvim", config = utils.fn.load_config({ "plugin/hlargs" }) },
 			-- better matchup
 			"andymass/vim-matchup",
 			-- syntax aware text-objects, select, move, swap, and peek support
@@ -131,9 +132,16 @@ require("packer").startup({
 		use({ "michaelb/sniprun", run = "bash ./install.sh", config = utils.fn.load_config({ "plugin/sniprun" }) })
 		-- a pretty diagnostics, references, telescope results, quickfix and location list
 		use({
-			"folke/trouble.nvim",
-			requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
-			config = utils.fn.load_config({ "plugin/trouble" }),
+
+			{
+				"folke/trouble.nvim",
+				requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
+				config = utils.fn.load_config({ "plugin/trouble" }),
+			},
+			{
+				"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+				config = utils.fn.load_config({ "plugin/lsp_lines" }),
+			},
 		})
 		-- quickly modify surround char
 		use({ "kylechui/nvim-surround", config = utils.fn.load_config({ "plugin/nvim-surround" }) })
@@ -179,8 +187,8 @@ require("packer").startup({
 		use({ "lewis6991/gitsigns.nvim", config = utils.fn.load_config({ "plugin/gitsigns" }) })
 		-- resolve git conflict
 		use({ "akinsho/git-conflict.nvim", config = utils.fn.load_config({ "plugin/git-conflict" }) })
-		-- colorizer
-		use({ "norcalli/nvim-colorizer.lua", config = utils.fn.load_config({ "plugin/nvim-colorizer" }) })
+		-- color picker & colorizer
+		use({ "uga-rosa/ccc.nvim", config = utils.fn.load_config({ "plugin/ccc" }) })
 		-- indentation guides
 		use({ "lukas-reineke/indent-blankline.nvim", config = utils.fn.load_config({ "plugin/indent-blankline" }) })
 		-- tab line
@@ -250,6 +258,8 @@ require("packer").startup({
 				"glepnir/lspsaga.nvim",
 				config = utils.fn.load_config({ "plugin/lspsaga" }),
 			},
+			-- code action
+			"weilbith/nvim-code-action-menu",
 		})
 		-- marks
 		use({
