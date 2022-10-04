@@ -274,5 +274,11 @@ require("packer").startup({
 			"toppair/reach.nvim",
 			config = utils.fn.load_config({ "plugin/reach" }),
 		})
+		-- annotation generator
+		use({
+			"danymat/neogen",
+			requires = "nvim-treesitter/nvim-treesitter",
+			config = utils.fn.load_config({ "plugin/neogen" }),
+		})
 	end,
 })
