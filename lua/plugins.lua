@@ -261,11 +261,6 @@ require("packer").startup({
 			-- code action
 			"weilbith/nvim-code-action-menu",
 		})
-		-- marks
-		use({
-			"winston0410/mark-radar.nvim",
-			config = utils.fn.load_config({ "plugin/mark-radar" }),
-		})
 		-- lsp, dap, linter, formatter installer
 		use({
 			"williamboman/mason.nvim",
@@ -281,6 +276,11 @@ require("packer").startup({
 			"timtro/glslView-nvim",
 			ft = "glsl",
 			config = utils.fn.load_config({ "plugin/glsl-view" }),
+		})
+		-- buffer / mark / tabpage / colorscheme switcher
+		use({
+			"toppair/reach.nvim",
+			config = utils.fn.load_config({ "plugin/reach" }),
 		})
 	end,
 })

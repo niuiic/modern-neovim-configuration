@@ -74,7 +74,7 @@ utils.fn.whichKeyMap({
 			"search git status",
 		},
 		m = {
-			"<cmd>Telescope marks<CR>",
+			"<cmd>ReachOpen marks<CR>",
 			"search marks",
 		},
 		t = {
