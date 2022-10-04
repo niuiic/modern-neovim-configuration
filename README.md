@@ -324,6 +324,11 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
+  <summary><b>Peek Defination</b></summary>
+<img src="./img/peek-defination.png"/>
+</details>
+
+<details>
   <summary><b>Sql</b></summary>
 <img src="./img/sql.png"/>
 </details>
@@ -364,6 +369,11 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
+  <summary><b>Color Picker</b></summary>
+<img src="./img/color-picker.png"/>
+</details>
+
+<details>
   <summary><b>Session</b></summary>
 <img src="./img/session.png"/>
 </details>
@@ -394,8 +404,8 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Show Marks</b></summary>
-<img src="./img/show-marks.png"/>
+  <summary><b>Jump to Marks</b></summary>
+<img src="./img/jump-to-marks.png"/>
 </details>
 
 <details>
