@@ -309,8 +309,8 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>View Git Diff</b></summary>
-<img src="./img/view-git-diff.png"/>
+  <summary><b>Git Diff</b></summary>
+<img src="./img/git-diff.png"/>
 </details>
 
 <details>
