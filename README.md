@@ -163,7 +163,8 @@ if [ "$1" = "hello" ]; then
 fi
 ```
 
-3. Require `.nvim/task/init.lua` in `.nvim/init.lua`.
+3. `chmod +x .nvim/task/task.sh`
+4. Require `.nvim/task/init.lua` in `.nvim/init.lua`.
 
 `.nvim/init.lua`
 
@@ -278,8 +279,8 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Async Tasks</b></summary>
-<img src="./img/async-tasks.png"/>
+  <summary><b>Tasks</b></summary>
+<img src="./img/tasks.png"/>
 </details>
 
 <details>
