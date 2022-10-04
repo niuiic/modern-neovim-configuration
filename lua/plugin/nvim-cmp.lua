@@ -11,7 +11,21 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-	}, { { name = "buffer" }, { name = "path" } }),
+		{ name = "path" },
+		{ name = "rg", option = { additional_arguments = "--hidden" } },
+	}),
+	sorting = {
+		comparators = {
+			cmp.config.compare.offset,
+			cmp.config.compare.exact,
+			cmp.config.compare.score,
+			utils.fn.require("cmp-under-comparator").under,
+			cmp.config.compare.kind,
+			cmp.config.compare.sort_text,
+			cmp.config.compare.length,
+			cmp.config.compare.order,
+		},
+	},
 })
 
 cmp.setup.cmdline("/", {
@@ -33,15 +47,8 @@ cmp.setup.cmdline(":", {
 cmp.setup({
 	formatting = {
 		format = utils.fn.require("lspkind").cmp_format({
-			mode = "symbol", -- show only symbol annotations
-			maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-
-			-- The function below will be called before any actual modifications from lspkind
-			-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-			-- before = function (entry, vim_item)
-			--   ...
-			--   return vim_item
-			-- end
+			mode = "symbol",
+			maxwidth = 50,
 		}),
 	},
 })

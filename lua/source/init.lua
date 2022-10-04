@@ -26,7 +26,8 @@ for _, value in pairs(langList) do
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
 			{ name = "luasnip" },
-			{ name = value },
-		}, { { name = "buffer" }, { name = "path" } }),
+			{ name = "path" },
+			{ name = "rg", option = { additional_arguments = "--hidden" } },
+		}),
 	})
 end

@@ -98,6 +98,8 @@ require("packer").startup({
 				},
 				config = utils.fn.load_config({ "plugin/nvim-cmp" }),
 			},
+			-- tools
+			"lukas-reineke/cmp-under-comparator",
 			-- source
 			-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 			"hrsh7th/cmp-nvim-lsp",
@@ -105,6 +107,7 @@ require("packer").startup({
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
 			"dmitmel/cmp-cmdline-history",
+			"lukas-reineke/cmp-rg",
 			-- snippets
 			{ "L3MON4D3/LuaSnip", config = utils.fn.load_config({ "plugin/luasnip" }) },
 			"saadparwaiz1/cmp_luasnip",
