@@ -41,8 +41,12 @@ utils.fn.whichKeyMap({
 			"open telescope list",
 		},
 		b = {
-			"<cmd>Telescope buffers<CR>",
+			"<cmd>ReachOpen buffers<CR>",
 			"search buffer",
+		},
+		B = {
+			"<cmd>Telescope buffers<CR>",
+			"search buffer with preview",
 		},
 		c = {
 			name = "command",
@@ -76,6 +80,10 @@ utils.fn.whichKeyMap({
 		m = {
 			"<cmd>ReachOpen marks<CR>",
 			"search marks",
+		},
+		M = {
+			"<cmd>Telescope marks<CR>",
+			"search marks with preview",
 		},
 		t = {
 			"<cmd>Telescope treesitter<CR>",

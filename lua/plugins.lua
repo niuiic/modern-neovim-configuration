@@ -3,8 +3,6 @@
 -- http://neovimcraft.com
 -- https://github.com/ayamir/nvimdots/wiki/Plugins
 
--- TODO: try ms-jpq/coq_nvim
-
 local utils = require("utils")
 
 require("packer").startup({
@@ -268,8 +266,9 @@ require("packer").startup({
 		})
 		-- search and replace in project
 		use({
-			"s1n7ax/nvim-search-and-replace",
-			config = utils.fn.load_config({ "plugin/nvim-search-and-replace" }),
+			"windwp/nvim-spectre",
+			requires = "nvim-lua/plenary.nvim",
+			config = utils.fn.load_config({ "plugin/nvim-spectre" }),
 		})
 		-- glsl viewer
 		use({
