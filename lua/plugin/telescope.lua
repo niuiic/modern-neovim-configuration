@@ -125,10 +125,6 @@ utils.fn.whichKeyMap({
 				"search tags globally",
 			},
 		},
-		k = {
-			"<cmd>Telescope asynctasks all<CR>",
-			"search tasks",
-		},
 	},
 }, {
 	mode = "n",

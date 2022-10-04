@@ -234,18 +234,6 @@ require("packer").startup({
 			"stevearc/overseer.nvim",
 			config = utils.fn.load_config({ "plugin/overseer" }),
 		})
-		-- aysnc tasks
-		use({
-			{
-				"skywind3000/asynctasks.vim",
-				requires = {
-					"skywind3000/asyncrun.vim",
-				},
-				config = utils.fn.load_config({ "plugin/asynctasks" }),
-			},
-			-- search tasks with telescope
-			{ "GustavoKatel/telescope-asynctasks.nvim" },
-		})
 		-- spell check
 		use({
 			"lewis6991/spellsitter.nvim",
