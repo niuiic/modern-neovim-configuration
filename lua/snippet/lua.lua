@@ -25,6 +25,52 @@ local M = {
 	s("utils", {
 		t({ [[local utils = require("utils")]] }),
 	}),
+	s("package", {
+		t({
+			'package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\\/])[^\\/]-$]])'
+				.. [[.. "?.lua;" .. package.path]],
+		}),
+	}),
+	s("tasks", {
+		t({
+			[[local utils = require("utils")]],
+			"",
+			[[local overseer = utils.fn.require("overseer")]],
+			"",
+			[[local scriptPath = utils.fn.root_pattern() .. "/.nvim/task/task.sh"]],
+			"",
+			[[overseer.register_template({]],
+			[[	name = "template",]],
+			[[	builder = function()]],
+			[[		return {]],
+			[[			cmd = { scriptPath },]],
+			[[			args = { "template" },]],
+			[[		}]],
+			[[	end,]],
+			[[})]],
+		}),
+	}),
+	s("task", {
+		t({
+			[[overseer.register_template({]],
+			[[	name = "]],
+		}),
+		i(1, "name"),
+		t({
+			[[",]],
+			[[	builder = function()]],
+			[[		return {]],
+			[[			cmd = { scriptPath },]],
+			[[			args = { "]],
+		}),
+		i(2, "args"),
+		t({
+			[[" },]],
+			[[		}]],
+			[[	end,]],
+			[[})]],
+		}),
+	}),
 }
 
 return M
