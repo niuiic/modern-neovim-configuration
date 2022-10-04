@@ -229,6 +229,11 @@ require("packer").startup({
 			-- project manager
 			{ "ahmedkhalf/project.nvim", config = utils.fn.load_config({ "plugin/project" }) },
 		})
+		-- task manager
+		use({
+			"stevearc/overseer.nvim",
+			config = utils.fn.load_config({ "plugin/overseer" }),
+		})
 		-- aysnc tasks
 		use({
 			{

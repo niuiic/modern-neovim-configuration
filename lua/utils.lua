@@ -41,7 +41,10 @@ end
 M.fn.require = function(package_name)
 	local status, package = pcall(require, package_name)
 	if not status then
-		print("Error: package " .. package_name .. " not found")
+		status, package = pcall(require, package_name .. "/init")
+		if not status then
+			print("Error: package " .. package_name .. " not found")
+		end
 	end
 	return package
 end

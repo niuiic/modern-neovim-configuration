@@ -6,7 +6,7 @@ utils.fn.require("lualine").setup({
 		theme = "tokyonight",
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
-		disabled_filetypes = { "NvimTree", "toggleterm", "Trouble", "spectre_panel" },
+		disabled_filetypes = { "NvimTree", "toggleterm", "Trouble", "spectre_panel", "OverseerList" },
 		always_divide_middle = true,
 		globalstatus = false,
 	},

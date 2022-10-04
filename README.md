@@ -128,6 +128,53 @@ Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua` is the entry of the local configuration.
 
+### Tasks
+
+[overseer.nvim](https://github.com/stevearc/overseer.nvim) is used to manage tasks. Here is the recommended way to define tasks.
+
+1. Create `.nvim/task/` under the root path of the project.
+2. Edit tasks in `.nvim/task/task.sh` and `.nvim/task/init.lua`.
+
+`.nvim/task/init.lua`
+
+```lua
+local utils = require("utils")
+
+local overseer = utils.fn.require("overseer")
+
+local scriptPath = utils.fn.root_pattern() .. "/.nvim/task/task.sh"
+
+overseer.register_template({
+	name = "Test",
+	builder = function()
+		return {
+			cmd = { scriptPath },
+			args = { "hello" },
+		}
+	end,
+})
+```
+
+`.nvim/task/task.sh`
+
+```sh
+if [ "$1" = "hello" ]; then
+	echo 'hello'
+fi
+```
+
+3. Require `.nvim/task/init.lua` in `.nvim/init.lua`.
+
+`.nvim/init.lua`
+
+```lua
+local utils = require("utils")
+
+package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?.lua;" .. package.path
+
+utils.fn.require("task")
+```
+
 ## Known Issues
 
 - `<C-o>` may not return to correct position.
