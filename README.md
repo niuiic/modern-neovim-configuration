@@ -120,7 +120,7 @@ Modify the `debuggerList` in `lua/debugger/init.lua`.
 
 Create a `filetype.lua` in `lua/snippet` or `lua/source`, edit the file in the same way as other files.
 
-Modify the `langList` in `lua/snippet/init.lua` or `lua/source/init.lua`.
+Modify the `lang_list` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 > [Snippet examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua) and [snippet document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md) may help you.
 

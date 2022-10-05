@@ -77,15 +77,4 @@ local M = {
 	),
 }
 
-local elementPlus = utils.fn.require("snippet/framework/element-plus")
-M = utils.fn.merge_table(elementPlus, M)
-local common = utils.fn.require("snippet/common/js-ts")
-M = utils.fn.merge_table(common, M)
-local style = utils.fn.require("snippet/common/style")
-M = utils.fn.merge_table(style, M)
-local lint = utils.fn.require("snippet/common/lint")
-M = utils.fn.merge_table(lint, M)
-local todo = utils.fn.require("snippet/common/todo")
-M = utils.fn.merge_table(todo, M)
-
 return M
