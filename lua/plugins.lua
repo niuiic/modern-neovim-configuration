@@ -51,8 +51,8 @@ require("packer").startup({
 		})
 		-- quick motion
 		use({
-			"phaazon/hop.nvim",
-			config = utils.fn.load_config({ "plugin/hop" }),
+			"ggandor/lightspeed.nvim",
+			config = utils.fn.load_config({ "plugin/lightspeed" }),
 		})
 		-- session
 		use({ "rmagatti/auto-session", config = utils.fn.load_config({ "plugin/auto-session" }) })
