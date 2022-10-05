@@ -1,6 +1,8 @@
 local utils = require("utils")
 
-utils.fn.require("symbols-outline").setup()
+utils.fn.require("symbols-outline").setup({
+	width = 40,
+})
 
 -- keymap
 utils.fn.whichKeyMap({

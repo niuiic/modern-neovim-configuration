@@ -80,6 +80,18 @@ utils.fn.whichKeyMap({
 			end,
 			"repl",
 		},
+		j = {
+			function()
+				utils.fn.require("goto-breakpoints").next()
+			end,
+			"go to next breakpoint",
+		},
+		k = {
+			function()
+				utils.fn.require("goto-breakpoints").prev()
+			end,
+			"go to previous breakpoint",
+		},
 	},
 }, {
 	mode = "n",

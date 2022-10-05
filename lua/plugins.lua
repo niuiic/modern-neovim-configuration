@@ -164,6 +164,7 @@ require("packer").startup({
 			{ "mfussenegger/nvim-dap", config = utils.fn.load_config({ "plugin/nvim-dap", "debugger" }) },
 			"theHamsta/nvim-dap-virtual-text",
 			"rcarriga/nvim-dap-ui",
+			"ofirgall/goto-breakpoints.nvim",
 		})
 		-- expand and repeat expression to multiple lines
 		use({ "AllenDang/nvim-expand-expr", config = utils.fn.load_config({ "plugin/nvim-expand-expr" }) })
@@ -283,8 +284,9 @@ require("packer").startup({
 			requires = "nvim-treesitter/nvim-treesitter",
 			config = utils.fn.load_config({ "plugin/neogen" }),
 		})
-		-- move
-		use({ "fedepujol/move.nvim", config = utils.fn.load_config({ "plugin/move" })
- })
+		-- move lines and blocks
+		use({ "fedepujol/move.nvim", config = utils.fn.load_config({ "plugin/move" }) })
+		-- highlight current n
+		use({ "rktjmp/highlight-current-n.nvim", config = utils.fn.load_config({ "plugin/highlight-current-n" }) })
 	end,
 })
