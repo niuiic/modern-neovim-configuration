@@ -158,11 +158,11 @@ utils.fn.whichKeyMap({
 			"find signature_help",
 		},
 		j = {
-			"<cmd>Lspsaga diagnostic_jump_next<CR>",
+			"<cmd>Lspsaga diagnostic_jump_next<CR><cmd>Lspsaga show_cursor_diagnostics<CR>",
 			"jump to next diagnostic ",
 		},
 		k = {
-			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
+			"<cmd>Lspsaga diagnostic_jump_prev<CR><cmd>Lspsaga show_cursor_diagnostics<CR>",
 			"jump to previous diagnostic ",
 		},
 	},
