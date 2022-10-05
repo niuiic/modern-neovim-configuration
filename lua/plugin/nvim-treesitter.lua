@@ -36,25 +36,19 @@ utils.fn.require("nvim-treesitter.configs").setup({
 	intent = { enable = true },
 	rainbow = {
 		enable = true,
-		-- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-		extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-		max_file_lines = nil, -- Do not enable for files with more than n lines, int
-		colors = { "#0099ff", "#00ff00", "#ff4dc3", "#ffff00", "#ff9933" }, -- table of hex strings
-		-- termcolors = {} -- table of colour name strings
+		extended_mode = true,
+		max_file_lines = nil,
+		colors = { "#0099ff", "#00ff00", "#ff4dc3", "#ffff00", "#ff9933" },
 	},
 	matchup = {
-		enable = true, -- mandatory, false will disable the whole extension
-		-- disable = { "c", "ruby" }, -- optional, list of language that will be disabled
-		-- [options]
+		enable = true,
 	},
 	-- check more textobjects on https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 	textobjects = {
 		select = {
 			enable = true,
-			-- Automatically jump forward to textobj, similar to targets.vim
 			lookahead = true,
 			keymaps = {
-				-- You can use the capture groups defined in textobjects.scm
 				["af"] = "@function.outer",
 				["if"] = "@function.inner",
 				["ac"] = "@class.outer",

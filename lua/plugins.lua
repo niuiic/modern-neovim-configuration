@@ -283,5 +283,8 @@ require("packer").startup({
 			requires = "nvim-treesitter/nvim-treesitter",
 			config = utils.fn.load_config({ "plugin/neogen" }),
 		})
+		-- move
+		use({ "fedepujol/move.nvim", config = utils.fn.load_config({ "plugin/move" })
+ })
 	end,
 })
