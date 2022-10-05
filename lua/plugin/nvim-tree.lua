@@ -55,8 +55,7 @@ nvim_tree.setup({
 	},
 	-- hide some files and directories
 	filters = {
-		dotfiles = true,
-		custom = { "node_modules" },
+		custom = { "^node_modules$", "^.git$" },
 	},
 	diagnostics = {
 		enable = true,
