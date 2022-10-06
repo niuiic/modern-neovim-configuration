@@ -193,8 +193,6 @@ require("packer").startup({
 		use({
 			"uga-rosa/ccc.nvim",
 			config = utils.fn.load_config({ "plugin/ccc" }),
-			-- TODO: delete version control
-			commit = "81dd97874eb63ac719c372bdeb1cd15d9ddcca15",
 		})
 		-- indentation guides
 		use({ "lukas-reineke/indent-blankline.nvim", config = utils.fn.load_config({ "plugin/indent-blankline" }) })
