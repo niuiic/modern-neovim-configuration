@@ -176,6 +176,8 @@ package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?.
 utils.fn.require("task")
 ```
 
+> These tasks cannot be infinite loops.
+
 ## Known Issues
 
 - `<C-o>` may not return to correct position.
