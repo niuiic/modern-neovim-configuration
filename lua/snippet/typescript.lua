@@ -17,14 +17,11 @@ local lambda = utils.fn.require("luasnip.extras").l
 local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("check-ignore", {
-		t({ "// @ts-ignore" }),
-	}),
-	s("check-no", {
-		t({ "// @ts-nocheck" }),
-	}),
-	s("check-expect", {
+	s("ignore-line", {
 		t({ "// @ts-expect-error" }),
+	}),
+	s("ignore-file", {
+		t({ "// @ts-nocheck" }),
 	}),
 	-- inner type tools
 	s(
