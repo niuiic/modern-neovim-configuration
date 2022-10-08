@@ -17,6 +17,7 @@ local list_keys = {
 	{ key = "s", action = "split" },
 	-- close node
 	{ key = "h", action = "close_node" },
+	{ key = "H", action = "collapse_all" },
 	-- toggle the state of ignored files
 	{ key = "i", action = "toggle_custom" }, -- filters
 	-- toggle the state of  hidden files
