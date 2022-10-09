@@ -291,5 +291,7 @@ require("packer").startup({
 		use({ "fedepujol/move.nvim", config = utils.fn.load_config({ "plugin/move" }) })
 		-- highlight current n
 		use({ "rktjmp/highlight-current-n.nvim", config = utils.fn.load_config({ "plugin/highlight-current-n" }) })
+		-- notify
+		use({ "rcarriga/nvim-notify", config = utils.fn.load_config({ "plugin/nvim-notify" }) })
 	end,
 })

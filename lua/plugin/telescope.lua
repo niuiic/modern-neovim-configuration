@@ -65,9 +65,15 @@ utils.fn.whichKeyMap({
 			end,
 			"search files in workspace",
 		},
-		n = {
+		N = {
 			"<cmd>Telescope help_tags<CR>",
 			"search neovim documents",
+		},
+		n = {
+			function()
+				utils.fn.require("telescope").extensions.notify.notify()
+			end,
+			"search notifications",
 		},
 		h = {
 			"<cmd>Telescope oldfiles<CR>",
