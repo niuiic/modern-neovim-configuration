@@ -10,7 +10,7 @@ local M = {
 	root_dir = utils.fn.root_pattern,
 	init_options = {
 		typescript = {
-			tsdk = os.getenv("HOME")
+			tsserver = os.getenv("HOME")
 				.. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib/tsserverlibrary.js",
 		},
 	},

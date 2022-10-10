@@ -251,6 +251,7 @@ require("packer").startup({
 			{
 				"neovim/nvim-lspconfig",
 				config = utils.fn.load_config({ "lsp" }),
+				commit = "9d4b8d393aad0e6e9227e2d67629aa99e56b994a",
 			},
 			{
 				"glepnir/lspsaga.nvim",

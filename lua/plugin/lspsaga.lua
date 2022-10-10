@@ -165,6 +165,32 @@ utils.fn.whichKeyMap({
 			"<cmd>Lspsaga diagnostic_jump_prev<CR><cmd>Lspsaga show_cursor_diagnostics<CR>",
 			"jump to previous diagnostic ",
 		},
+		J = {
+			function()
+				utils.fn.require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+				vim.cmd([[Lspsaga show_cursor_diagnostics]])
+			end,
+			"jump to next error",
+		},
+		K = {
+			function()
+				utils.fn.require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+				vim.cmd([[Lspsaga show_cursor_diagnostics]])
+			end,
+			"jump to previous error",
+		},
+		T = {
+			function()
+				utils.fn.require("todo-comments").jump_prev()
+			end,
+			"jump to previous todo comment",
+		},
+		t = {
+			function()
+				utils.fn.require("todo-comments").jump_next()
+			end,
+			"jump to next todo comment",
+		},
 	},
 }, {
 	mode = "n",

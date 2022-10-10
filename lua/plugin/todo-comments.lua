@@ -14,6 +14,7 @@ utils.fn.require("todo-comments").setup({
 		NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
 		FAKE = { icon = "", color = "fake" },
 		TEMP = { icon = "", color = "temp" },
+		VERIFY = { icon = "", color = "verify" },
 	},
 	colors = {
 		error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
@@ -23,5 +24,6 @@ utils.fn.require("todo-comments").setup({
 		default = { "Identifier", "#7C3AED" },
 		fake = { "Fake", "#A6E22E" },
 		temp = { "Temp", "#D52CD5" },
+		verify = { "Verify", "#00ffd5" },
 	},
 })

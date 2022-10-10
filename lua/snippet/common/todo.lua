@@ -22,6 +22,11 @@ local M = {
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
+	s("verify", {
+		t({ [[VERIFY: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
 	s("fake", {
 		t({ [[FAKE: ]] }),
 		i(1),
