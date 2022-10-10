@@ -183,7 +183,6 @@ utils.fn.require("task")
 - `<C-o>` may not return to correct position.
 - Some completion sources and the status line plugin may crash for unknown reasons.
 - Code folding may be misplaced after re-entering the file.
-- `symbols-outline` cannot be used in vue files.
 
 ## FAQ
 
