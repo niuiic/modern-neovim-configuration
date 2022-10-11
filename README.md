@@ -32,6 +32,13 @@ Terminal: Alacritty (a GPU-accelerated terminal emulator)
 
 Neovim: V0.8+ (build from source with LuaJIT only)
 
+## Dependencies
+
+1. `nodejs`, `go`, `rust` (required by `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
+2. `rg`, `fd` command (required by `telescope.nvim` ...)
+3. `trash-cli` command (required by `nvim-tree.nvim`)
+4. `fcitx5` (required by `fcitx.nvim`)
+
 ## QuickStart
 
 > It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
@@ -44,7 +51,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-2. Install `nodejs`, `go`, `rust` for `mason.nvim` and `nvim-treesitter` (use `:h mason-requirements` to check more requirements). If you want to use `fcitx.nvim`, install `fcitx5` first, or you need to remove this plugin from `lua/plugins.lua`.
+2. Install all dependencies.
 
 3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
