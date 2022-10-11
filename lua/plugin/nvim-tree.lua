@@ -12,6 +12,7 @@ end
 local list_keys = {
 	-- open file or directory
 	{ key = "l", action = "edit" },
+	{ key = "L", action = "expand_all" },
 	-- open file in split window
 	{ key = "v", action = "vsplit" },
 	{ key = "s", action = "split" },
@@ -23,17 +24,19 @@ local list_keys = {
 	-- toggle the state of  hidden files
 	{ key = ".", action = "toggle_dotfiles" }, -- dotfiles
 	-- toggle file info
-	{ key = "t", action = "toggle_file_info" },
+	{ key = "I", action = "toggle_file_info" },
 	-- preview file
 	{ key = "P", action = "preview" },
 	-- refresh (set root path to project root)
 	{ key = "R", action = "cd_dot", action_cb = cd_dot_cb },
 	-- close
 	{ key = "q", action = "close" },
+	-- mark
+	{ key = "m", action = "toggle_mark" },
 	-- file operations
 	{ key = "a", action = "create" },
-	{ key = "d", action = "remove" },
-	{ key = "D", action = "trash" },
+	{ key = "D", action = "remove" },
+	{ key = "d", action = "trash" },
 	{ key = "r", action = "rename" },
 	{ key = "x", action = "cut" },
 	{ key = "yy", action = "copy" },
@@ -73,7 +76,7 @@ nvim_tree.setup({
 		side = "left",
 		hide_root_folder = false,
 		mappings = {
-			custom_only = false,
+			custom_only = true,
 			list = list_keys,
 		},
 		number = false,
@@ -85,6 +88,10 @@ nvim_tree.setup({
 			resize_window = true,
 			quit_on_open = true,
 		},
+	},
+	trash = {
+		cmd = "trash-put",
+		require_confirm = true,
 	},
 })
 
