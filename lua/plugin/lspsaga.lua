@@ -158,24 +158,22 @@ utils.fn.whichKeyMap({
 			"find signature_help",
 		},
 		j = {
-			"<cmd>Lspsaga diagnostic_jump_next<CR><cmd>Lspsaga show_cursor_diagnostics<CR>",
+			"<cmd>Lspsaga diagnostic_jump_next<CR>",
 			"jump to next diagnostic ",
 		},
 		k = {
-			"<cmd>Lspsaga diagnostic_jump_prev<CR><cmd>Lspsaga show_cursor_diagnostics<CR>",
+			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
 			"jump to previous diagnostic ",
 		},
 		J = {
 			function()
 				utils.fn.require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
-				vim.cmd([[Lspsaga show_cursor_diagnostics]])
 			end,
 			"jump to next error",
 		},
 		K = {
 			function()
 				utils.fn.require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
-				vim.cmd([[Lspsaga show_cursor_diagnostics]])
 			end,
 			"jump to previous error",
 		},
