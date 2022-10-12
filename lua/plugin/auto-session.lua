@@ -3,6 +3,7 @@ local utils = require("utils")
 utils.fn.require("auto-session").setup({
 	auto_session_enabled = false,
 	auto_session_create_enabled = false,
+	auto_session_root_dir = utils.fn.root_pattern() .. "/.nvim/session/",
 })
 
 -- keymap
