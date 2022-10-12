@@ -61,11 +61,11 @@ utils.fn.map("n", "<C-j>", ":BufferLineCyclePrev<CR>", utils.var.opt)
 utils.fn.whichKeyMap({
 	b = {
 		name = "bufferline",
-		p = {
+		h = {
 			"<cmd>BufferLineMovePrev<CR>",
 			"move current tab to previous position",
 		},
-		n = {
+		l = {
 			"<cmd>BufferLineMoveNext<CR>",
 			"move current tab to next position",
 		},
@@ -77,8 +77,16 @@ utils.fn.whichKeyMap({
 			"<cmd>BufferLineSortByExtension<CR>",
 			"sort tabs by directory",
 		},
+		o = {
+			"<cmd>BufferLinePick<CR>",
+			"switch buffer",
+		},
+		p = {
+			"<cmd>BufferLineTogglePin<CR>",
+			"toggle pin ",
+		},
 	},
 }, {
 	mode = "n",
-	prefix = "<leader>",
+	prefix = "<space>",
 })
