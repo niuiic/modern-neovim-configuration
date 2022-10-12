@@ -29,6 +29,8 @@ local M = {
 		t({
 			'package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\\/])[^\\/]-$]])'
 				.. [[ .. "?.lua;" .. package.path]],
+			'package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\\/])[^\\/]-$]])'
+				.. [[ .. "?/init.lua;" .. package.path]],
 		}),
 	}),
 	s("tasks", {

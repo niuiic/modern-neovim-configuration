@@ -32,7 +32,7 @@ M.fn.load_config = function(configs)
 	for _, value in pairs(configs) do
 		local status, _ = pcall(require, value)
 		if not status then
-			print("Error: failed to load config " .. value)
+			vim.notify("Error: failed to load config " .. value, "error")
 		end
 	end
 end
@@ -41,10 +41,7 @@ end
 M.fn.require = function(package_name)
 	local status, package = pcall(require, package_name)
 	if not status then
-		status, package = pcall(require, package_name .. "/init")
-		if not status then
-			print("Error: package " .. package_name .. " not found")
-		end
+		vim.notify("Error: package " .. package_name .. " not found", "error")
 	end
 	return package
 end
