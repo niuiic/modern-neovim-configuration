@@ -1,7 +1,7 @@
 local utils = require("utils")
 
-utils.fn.require("preload")
 utils.fn.require("basic")
+utils.fn.require("preload")
 utils.fn.require("keymap")
 utils.fn.require("plugins")
 utils.fn.require("snippet")
