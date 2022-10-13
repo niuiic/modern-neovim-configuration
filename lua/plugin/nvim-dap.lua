@@ -1,4 +1,3 @@
--- TODO: update config for nvim-dap and nvim-dap-ui (niuiic)
 local utils = require("utils")
 local dapui = utils.fn.require("dapui")
 local dap = utils.fn.require("dap")
@@ -66,6 +65,7 @@ utils.fn.whichKeyMap({
 		q = {
 			function()
 				dap.terminate()
+				dapui.close()
 			end,
 			"quit debug",
 		},
