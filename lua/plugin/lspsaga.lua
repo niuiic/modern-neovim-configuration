@@ -158,22 +158,26 @@ utils.fn.whichKeyMap({
 			"find signature_help",
 		},
 		j = {
-			"<cmd>Lspsaga diagnostic_jump_next<CR>",
-			"jump to next diagnostic ",
+			function()
+				vim.diagnostic.goto_next({ float = false })
+			end,
+			"jump to next diagnostic",
 		},
 		k = {
-			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
-			"jump to previous diagnostic ",
+			function()
+				vim.diagnostic.goto_prev({ float = false })
+			end,
+			"jump to previous diagnostic",
 		},
 		J = {
 			function()
-				utils.fn.require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+				vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, float = false })
 			end,
 			"jump to next error",
 		},
 		K = {
 			function()
-				utils.fn.require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+				vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = false })
 			end,
 			"jump to previous error",
 		},
@@ -195,6 +199,7 @@ utils.fn.whichKeyMap({
 })
 
 utils.fn.map("n", "J", ":Lspsaga hover_doc<CR>", utils.var.opt)
+utils.fn.map("n", "D", ":Lspsaga show_line_diagnostics<CR>", utils.var.opt)
 utils.fn.map("n", "K", ":Lspsaga peek_definition<CR>", utils.var.opt)
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
