@@ -87,7 +87,6 @@ utils.fn.whichKeyMap({
 			"restart all lsp",
 		},
 		i = {
-			-- "<cmd>LspInstallInfo<CR>",
 			"<cmd>Mason<CR>",
 			"lsp install info",
 		},
@@ -102,6 +101,12 @@ utils.fn.whichKeyMap({
 		m = {
 			"<cmd>messages<CR>",
 			"show messages",
+		},
+		d = {
+			function()
+				utils.fn.require("osv").run_this()
+			end,
+			"debug neovim",
 		},
 	},
 }, {

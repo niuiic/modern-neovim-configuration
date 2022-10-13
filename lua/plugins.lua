@@ -165,6 +165,7 @@ require("packer").startup({
 			"theHamsta/nvim-dap-virtual-text",
 			"rcarriga/nvim-dap-ui",
 			"ofirgall/goto-breakpoints.nvim",
+			"jbyuki/one-small-step-for-vimkind",
 		})
 		-- expand and repeat expression to multiple lines
 		use({ "AllenDang/nvim-expand-expr", config = utils.fn.load_config({ "plugin/nvim-expand-expr" }) })
