@@ -87,8 +87,7 @@ null_ls.setup({
 			filetypes = {
 				"markdown",
 			},
-		}
-),
+		}),
 	},
 })
 
