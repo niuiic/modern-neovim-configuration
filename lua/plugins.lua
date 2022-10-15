@@ -289,5 +289,10 @@ require("packer").startup({
 		use({ "rktjmp/highlight-current-n.nvim", config = utils.fn.load_config({ "plugin/highlight-current-n" }) })
 		-- notify
 		use({ "rcarriga/nvim-notify", config = utils.fn.load_config({ "plugin/nvim-notify" }) })
+		-- cursor position
+		use({
+			"gen740/SmoothCursor.nvim",
+			config = utils.fn.load_config({ "plugin/smooth-cursor" }),
+		})
 	end,
 })
