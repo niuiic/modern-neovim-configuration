@@ -30,7 +30,7 @@ local on_attach = function(client, _)
 end
 
 -- nvim-cmp support
-local capabilities = utils.fn.require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = utils.fn.require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- load all lsp config
 for _, value in pairs(lspList) do
