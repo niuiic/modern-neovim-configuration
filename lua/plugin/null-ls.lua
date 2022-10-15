@@ -78,6 +78,17 @@ null_ls.setup({
 				"go",
 			},
 		}),
+		null_ls.builtins.diagnostics.cspell.with({
+			filetypes = {
+				"markdown",
+			},
+		}),
+		null_ls.builtins.code_actions.cspell.with({
+			filetypes = {
+				"markdown",
+			},
+		}
+),
 	},
 })
 

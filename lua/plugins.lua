@@ -242,11 +242,6 @@ require("packer").startup({
 			"stevearc/overseer.nvim",
 			config = utils.fn.load_config({ "plugin/overseer" }),
 		})
-		-- spell check
-		use({
-			"lewis6991/spellsitter.nvim",
-			config = utils.fn.load_config({ "plugin/spellsitter" }),
-		})
 		-- lsp
 		use({
 			{
