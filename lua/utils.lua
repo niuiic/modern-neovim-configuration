@@ -41,7 +41,7 @@ end
 M.fn.require = function(package_name)
 	local status, package = pcall(require, package_name)
 	if not status then
-		vim.notify("Error: package " .. package_name .. " not found", "error")
+		vim.notify("Error: failed to load package " .. package_name, "error")
 	end
 	return package
 end

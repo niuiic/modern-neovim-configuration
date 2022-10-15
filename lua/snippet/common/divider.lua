@@ -17,10 +17,15 @@ local lambda = utils.fn.require("luasnip.extras").l
 local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("println", {
-		t({ "console.log(" }),
+	s("divide", {
+		t({ "%%=========================== " }),
 		i(1),
-		t({ ")" }),
+		t({ " ===========================%%" }),
+	}),
+	s("divide-child", {
+		t({ "%%--------------------------- " }),
+		i(1),
+		t({ " ---------------------------%%" }),
 	}),
 }
 

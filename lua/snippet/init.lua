@@ -13,6 +13,7 @@ local lang_list = {
 
 local common_snippets = {
 	"todo",
+	"divider",
 }
 
 -- load friendly-snippets
