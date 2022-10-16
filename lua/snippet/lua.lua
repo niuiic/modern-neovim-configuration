@@ -25,6 +25,11 @@ local M = {
 	s("utils", {
 		t({ [[local utils = require("utils")]] }),
 	}),
+	s("println", {
+		t({ [[print(vim.inspect(]] }),
+		i(1),
+		t({ [[))]] }),
+	}),
 	s("package", {
 		t({
 			'package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\\/])[^\\/]-$]])'

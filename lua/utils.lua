@@ -121,4 +121,21 @@ M.fn.call = function(func, ...)
 	end
 end
 
+-- vim.cmd with return value
+M.fn.cmd = function(cmd)
+	local res = vim.api.nvim_exec(cmd, true)
+	return vim.split(res, "\n")
+end
+
+-- get buffer id by buffer name
+M.fn.get_buffer_id = function(buf_name)
+	local res = M.fn.cmd([[buffers]])
+	for _, value in ipairs(res) do
+		local buffer_id_str = string.match(value, "(%d+)[%s%p%w]+" .. buf_name)
+		if buffer_id_str ~= nil then
+			return tonumber(buffer_id_str)
+		end
+	end
+end
+
 return M

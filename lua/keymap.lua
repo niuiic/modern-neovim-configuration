@@ -10,7 +10,7 @@ utils.fn.map("n", "<C-n>", ":only<CR>", utils.var.opt)
 utils.fn.map("n", "<C-e>", ":e<CR>", utils.var.opt)
 
 -- save
-utils.fn.map("n", "<C-s>", ":w!<CR>", utils.var.opt)
+utils.fn.map("n", "<C-s>", ":SaveAndSaveQf<CR>", utils.var.opt)
 utils.fn.map("n", "<A-s>", ":wa!<CR>", utils.var.opt)
 
 -- esc
