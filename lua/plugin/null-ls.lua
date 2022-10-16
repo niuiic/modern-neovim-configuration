@@ -4,7 +4,6 @@ local null_ls = utils.fn.require("null-ls")
 local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
-	debug = false,
 	sources = {
 		formatting.shfmt.with({
 			filetypes = {
