@@ -39,6 +39,10 @@ utils.fn.whichKeyMap({
 			"<cmd>TroubleToggle lsp_references<CR>",
 			"open lsp references list",
 		},
+		t = {
+			"<cmd>TodoTrouble<CR>",
+			"search keywords(TODO, FIXME, etc) in the project",
+		},
 	},
 }, {
 	mode = "n",
