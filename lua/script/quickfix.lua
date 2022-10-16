@@ -4,24 +4,22 @@ local plenary = utils.fn.require("plenary")
 local root_dir = utils.fn.root_pattern()
 local qf_history_path = root_dir .. "/.nvim/quickfix"
 
-local function load_qf()
+local function load_qf(overwrite)
+	if overwrite ~= true and #vim.fn.getqflist() ~= 0 then
+		return
+	end
 	if utils.fn.file_exists(qf_history_path) then
 		local qf_history_content = {}
-		plenary.job
-			:new({
-				command = "cat",
-				args = { qf_history_path },
-				on_exit = function(res)
-					qf_history_content = res:result()
-				end,
-			})
-			:sync()
-		utils.fn.call(vim.fn.setqflist, {}, " ", {
+		local file = io.open(qf_history_path, "r")
+		if file ~= nil then
+			for line in file:lines() do
+				table.insert(qf_history_content, line)
+			end
+			io.close(file)
+		end
+		utils.fn.call(vim.fn.setqflist, {}, "r", {
 			lines = qf_history_content,
 		})
-		if vim.bo.filetype == "qf" then
-			vim.cmd([[set modifiable]])
-		end
 	end
 end
 
@@ -45,12 +43,13 @@ local function write_qf()
 			for _, line in ipairs(qf_content) do
 				file:write(line .. "\n")
 			end
+			io.close(file)
 		end
 	end
 end
 
 vim.api.nvim_create_user_command("LoadQf", function()
-	load_qf()
+	load_qf(true)
 end, {})
 
 vim.api.nvim_create_user_command("WriteQf", function()
@@ -71,5 +70,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		if vim.bo.filetype == "qf" then
 			vim.cmd([[set modifiable]])
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	pattern = "*",
+	callback = function()
+		load_qf()
 	end,
 })
