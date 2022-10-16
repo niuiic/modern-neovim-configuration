@@ -54,6 +54,14 @@ utils.fn.whichKeyMap({
 			"<cmd>set modifiable<CR>",
 			"set quickfix modifiable",
 		},
+		r = {
+			"<cmd>LoadQf<CR>",
+			"load quickfix history",
+		},
+		w = {
+			"<cmd>WriteQf<CR>",
+			"save quickfix",
+		},
 	},
 }, {
 	mode = "n",

@@ -113,4 +113,12 @@ M.fn.match_str_in_file = function(path, str)
 	end
 end
 
+-- wrapper of pcall
+M.fn.call = function(func, ...)
+	local success, err = pcall(func, ...)
+	if success ~= true then
+		error(err)
+	end
+end
+
 return M
