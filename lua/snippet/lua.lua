@@ -47,6 +47,7 @@ local M = {
 			[[		return {]],
 			[[			cmd = { scriptPath },]],
 			[[			args = { "template" },]],
+			[[			components = { "on_exit_set_status", "on_output_quickfix", "on_complete_notify" },]],
 			[[		}]],
 			[[	end,]],
 			[[})]],
@@ -68,6 +69,7 @@ local M = {
 		i(2, "args"),
 		t({
 			[[" },]],
+			[[			components = { "on_exit_set_status", "on_output_quickfix", "on_complete_notify" },]],
 			[[		}]],
 			[[	end,]],
 			[[})]],
