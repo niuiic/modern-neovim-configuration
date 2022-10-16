@@ -2,7 +2,7 @@ local utils = require("utils")
 
 utils.fn.require("lightspeed").setup({
 	ignore_case = true,
-	safe_labels = { "f", "F" },
+	safe_labels = { "f", "F", "c", "C" },
 })
 
 utils.fn.map("n", "s", "s", utils.var.opt)
