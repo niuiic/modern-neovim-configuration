@@ -179,6 +179,7 @@ fi
 local utils = require("utils")
 
 package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?.lua;" .. package.path
+package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?/init.lua;" .. package.path
 
 utils.fn.require("task")
 ```
