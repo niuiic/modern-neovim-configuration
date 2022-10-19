@@ -152,11 +152,27 @@ local overseer = utils.fn.require("overseer")
 local scriptPath = utils.fn.root_pattern() .. "/.nvim/task/task.sh"
 
 overseer.register_template({
-	name = "Test",
+	name = "checkTs",
 	builder = function()
 		return {
 			cmd = { scriptPath },
-			args = { "hello" },
+			args = { "checkTs" },
+			components = { "on_output_quickfix", "default", "on_complete_notify" },
+		}
+	end,
+})
+
+overseer.register_template({
+	name = "lint",
+	builder = function()
+		return {
+			cmd = { scriptPath },
+			args = { "lint" },
+			components = {
+				"on_output_quickfix",
+				"default",
+				"on_complete_notify",
+			},
 		}
 	end,
 })
@@ -165,8 +181,13 @@ overseer.register_template({
 `.nvim/task/task.sh`
 
 ```sh
-if [ "$1" = "hello" ]; then
-	echo 'hello'
+set -eE
+
+if [ "$1" = "checkTs" ]; then
+	pnpm vue-tsc --noEmit
+elif [ "$1" = "lint" ]; then
+	pnpm lint:eslint --rule "no-console: error" -f unix
+	pnpm lint:stylelint -f unix
 fi
 ```
 
