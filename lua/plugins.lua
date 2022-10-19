@@ -68,7 +68,6 @@ require("packer").startup({
 		use({
 			{
 				"nvim-treesitter/nvim-treesitter",
-				commit = "addc129a4f272aba0834bd0a7b6bd4ad5d8c801b",
 				run = ":TSUpdate",
 				config = utils.fn.load_config({ "plugin/nvim-treesitter" }),
 			},
