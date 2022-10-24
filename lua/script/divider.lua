@@ -44,7 +44,7 @@ local function divide(pattern, highlight)
 	end
 end
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWrite" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 	pattern = { "*" },
 	callback = function()
 		vim.api.nvim_buf_clear_namespace(0, ns_id, 0, -1)
