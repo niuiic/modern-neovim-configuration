@@ -23,8 +23,8 @@ end
 
 local ns_id = vim.api.nvim_create_namespace("divider")
 
-vim.api.nvim_set_hl(0, "Divider", { fg = "#00ffff" })
-vim.api.nvim_set_hl(0, "DividerChild", { fg = "#00ff00" })
+vim.api.nvim_set_hl(0, "Divider", { fg = "#ff00ff" })
+vim.api.nvim_set_hl(0, "DividerChild", { fg = "#ffff00" })
 
 local function divide(pattern, highlight)
 	local results = search(pattern)
