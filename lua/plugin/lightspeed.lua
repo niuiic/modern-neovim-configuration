@@ -5,6 +5,8 @@ utils.fn.require("lightspeed").setup({
 	safe_labels = { "f", "F", "c", "C" },
 })
 
+utils.fn.require("hop").setup({})
+
 utils.fn.map("n", "s", "s", utils.var.opt)
 utils.fn.map("n", "S", "S", utils.var.opt)
 utils.fn.map("v", "s", "s", utils.var.opt)
@@ -15,3 +17,4 @@ utils.fn.map("v", "f", "<Plug>Lightspeed_s", utils.var.opt)
 utils.fn.map("v", "F", "<Plug>Lightspeed_S", utils.var.opt)
 utils.fn.map("n", "c", "<Plug>Lightspeed_gs", utils.var.opt)
 utils.fn.map("n", "C", "<Plug>Lightspeed_gS", utils.var.opt)
+utils.fn.map("n", "L", "<cmd>HopLine<CR>", utils.var.opt)

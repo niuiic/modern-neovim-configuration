@@ -52,6 +52,7 @@ require("packer").startup({
 		-- quick motion
 		use({
 			"ggandor/lightspeed.nvim",
+			"phaazon/hop.nvim",
 			config = utils.fn.load_config({ "plugin/lightspeed" }),
 		})
 		-- session
