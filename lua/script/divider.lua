@@ -23,8 +23,9 @@ end
 
 local ns_id = vim.api.nvim_create_namespace("divider")
 
-vim.api.nvim_set_hl(0, "Divider", { fg = "#ff00ff" })
-vim.api.nvim_set_hl(0, "DividerChild", { fg = "#ffff00" })
+vim.api.nvim_set_hl(0, "Divider1", { fg = "#ff00ff" })
+vim.api.nvim_set_hl(0, "Divider2", { fg = "#ffff00" })
+vim.api.nvim_set_hl(0, "Divider3", { fg = "#00ff7c" })
 
 local function divide(pattern, highlight)
 	local results = search(pattern)
@@ -48,7 +49,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 	pattern = { "*" },
 	callback = function()
 		vim.api.nvim_buf_clear_namespace(0, ns_id, 0, -1)
-		divide([[%%=+ [\s\S]+ =+%%]], "Divider")
-		divide([[%%-+ [\s\S]+ -+%%]], "DividerChild")
+		divide([[%%=+ [\s\S]+ =+%%]], "Divider1")
+		divide([[%%-+ [\s\S]+ -+%%]], "Divider2")
+		divide([[%% [\s\S]+ %%]], "Divider3")
 	end,
 })
