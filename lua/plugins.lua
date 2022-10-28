@@ -306,5 +306,7 @@ require("packer").startup({
 			"kevinhwang91/nvim-bqf",
 			ft = "qf",
 		})
+		-- delete all buffers except the current one
+		use({ "numtostr/BufOnly.nvim", cmd = "BufOnly" })
 	end,
 })

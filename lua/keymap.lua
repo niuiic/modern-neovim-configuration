@@ -7,6 +7,7 @@ vim.g.maplocalleader = " "
 utils.fn.map("n", "<C-q>", ":q<CR>", utils.var.opt)
 utils.fn.map("n", "<A-q>", ":q!<CR>", utils.var.opt)
 utils.fn.map("n", "<C-n>", ":only<CR>", utils.var.opt)
+utils.fn.map("n", "<C-m>", ":BufOnly<CR>", utils.var.opt)
 utils.fn.map("n", "<C-e>", ":e<CR>", utils.var.opt)
 
 -- save
