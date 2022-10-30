@@ -37,7 +37,4 @@ local utils = require("utils")
 -- ◍ taplo (installed as a lsp)
 -- install cmake-format, verible, goimports manually
 
--- linter installed:
--- ◍ cspell
-
 utils.fn.require("mason").setup()
