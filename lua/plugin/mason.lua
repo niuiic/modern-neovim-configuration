@@ -21,10 +21,10 @@ local utils = require("utils")
 -- install verible, clangd, glslang manually
 
 -- daps installed:
--- ◍ node-debug2-adapter
 -- ◍ chrome-debug-adapter
 -- ◍ debugpy
 -- ◍ delve
+-- ◍ js-debug-adapter
 -- install lldb-vscode manually (it is installed with lldb)
 
 -- formatters installed:

@@ -169,6 +169,7 @@ require("packer").startup({
 		-- debug
 		use({
 			{ "mfussenegger/nvim-dap", config = utils.fn.load_config({ "plugin/nvim-dap", "debugger" }) },
+			"mxsdev/nvim-dap-vscode-js",
 			"theHamsta/nvim-dap-virtual-text",
 			"rcarriga/nvim-dap-ui",
 			"ofirgall/goto-breakpoints.nvim",

@@ -4,8 +4,8 @@ local debuggers = {
 	"dlv",
 	"chrome",
 	"lldb-vscode",
-	"node-debug2",
 	"nlua",
+	"node",
 }
 
 for _, value in pairs(debuggers) do
