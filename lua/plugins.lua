@@ -309,5 +309,11 @@ require("packer").startup({
 		})
 		-- delete all buffers except the current one
 		use({ "numtostr/BufOnly.nvim", cmd = "BufOnly" })
+		-- code shot
+		use({
+			"narutoxy/silicon.lua",
+			requires = { "nvim-lua/plenary.nvim" },
+			config = utils.fn.load_config({ "plugin/silicon" }),
+		})
 	end,
 })

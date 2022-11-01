@@ -38,6 +38,7 @@ Neovim: V0.8+ (build from source with LuaJIT only)
 2. `rg`, `fd` command (required by `telescope.nvim` ...)
 3. `trash-cli` command (required by `nvim-tree.nvim`)
 4. `fcitx5` (required by `fcitx.nvim`)
+5. `silicon` (required by `silicon.lua`)
 
 ## QuickStart
 
