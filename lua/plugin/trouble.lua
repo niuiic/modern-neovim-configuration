@@ -32,7 +32,7 @@ utils.fn.whichKeyMap({
 			"open diagnostics",
 		},
 		l = {
-			"<cmd>TroubleToggle loclist<CR>",
+			"<cmd>ListDivider<CR><cmd>TroubleToggle loclist<CR>",
 			"open loclist",
 		},
 		f = {

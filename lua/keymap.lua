@@ -63,10 +63,6 @@ utils.fn.whichKeyMap({
 			"<cmd>WriteQf<CR>",
 			"save quickfix",
 		},
-		l = {
-			"<cmd>ListDivider<CR><cmd>lope25<CR>",
-			"open location list",
-		},
 	},
 }, {
 	mode = "n",
