@@ -9,7 +9,11 @@ utils.fn.require("aerial").setup({
 -- keymap
 utils.fn.whichKeyMap({
 	m = {
-		"<cmd>AerialToggle right<CR>",
+		function()
+			if vim.bo.filetype == "markdown" then
+				utils.fn.cmd("AerialToggle right")
+			end
+		end,
 		"tagbar",
 	},
 }, {
