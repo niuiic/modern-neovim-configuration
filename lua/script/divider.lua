@@ -54,3 +54,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 		divide([[%% [\s\S]+ %%]], "Divider3")
 	end,
 })
+
+local function listDivider()
+	local file_path = vim.api.nvim_buf_get_name(0)
+	utils.fn.cmd([[lgrep "===========================" ]] .. file_path)
+end
+
+vim.api.nvim_create_user_command("ListDivider", listDivider, {})
