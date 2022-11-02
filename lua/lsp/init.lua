@@ -20,6 +20,7 @@ local lspList = {
 	"tsserver",
 	"wgsl_analyzer",
 	"yamlls",
+	"marksman",
 }
 
 -- common lsp config

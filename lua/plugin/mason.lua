@@ -18,6 +18,7 @@ local utils = require("utils")
 -- ◍ typescript-language-server
 -- ◍ wgsl-analyzer
 -- ◍ yaml-language-server
+-- ◍ marksman
 -- install verible, clangd, glslang manually
 
 -- daps installed:

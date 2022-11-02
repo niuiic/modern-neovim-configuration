@@ -1,14 +1,16 @@
 local utils = require("utils")
 
-utils.fn.require("symbols-outline").setup({
-	width = 40,
+utils.fn.require("aerial").setup({
+	layout = {
+		min_width = 30,
+	},
 })
 
 -- keymap
 utils.fn.whichKeyMap({
 	m = {
-		"<cmd>SymbolsOutline<CR>",
-		"toggle tagbar",
+		"<cmd>AerialToggle right<CR>",
+		"tagbar",
 	},
 }, {
 	mode = "n",

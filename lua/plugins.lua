@@ -34,8 +34,6 @@ require("packer").startup({
 			"akinsho/toggleterm.nvim",
 			config = utils.fn.load_config({ "plugin/toggleterm" }),
 		})
-		-- tagbar
-		use({ "simrat39/symbols-outline.nvim", config = utils.fn.load_config({ "plugin/symbols-outline" }) })
 		-- toggle comments
 		use({
 			"numToStr/Comment.nvim",
@@ -314,6 +312,11 @@ require("packer").startup({
 			"narutoxy/silicon.lua",
 			requires = { "nvim-lua/plenary.nvim" },
 			config = utils.fn.load_config({ "plugin/silicon" }),
+		})
+		-- tag bar
+		use({
+			"stevearc/aerial.nvim",
+			config = utils.fn.load_config({ "plugin/aerial" }),
 		})
 	end,
 })
