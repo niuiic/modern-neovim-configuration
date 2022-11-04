@@ -113,11 +113,18 @@ utils.fn.whichKeyMap({
 		s = { "diff open specifically" },
 		o = {
 			"<cmd>DiffviewOpen<CR>",
-			"diff open",
+			"view uncommitted change",
 		},
 		h = {
+			function()
+				local file_path = vim.api.nvim_buf_get_name(0)
+				vim.cmd("DiffviewFileHistory " .. file_path)
+			end,
+			"view git history of current file",
+		},
+		H = {
 			"<cmd>DiffviewFileHistory<CR>",
-			"diff open (git) history (path to file or directory)",
+			"view git history of current project",
 		},
 		q = {
 			"<cmd>DiffviewClose<CR>",
