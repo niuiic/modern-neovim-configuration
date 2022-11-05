@@ -17,7 +17,7 @@ local function load_qf(overwrite)
 			end
 			io.close(file)
 		end
-		utils.fn.call(vim.fn.setqflist, {}, "r", {
+		vim.fn.setqflist({}, "r", {
 			lines = qf_history_content,
 		})
 	end
