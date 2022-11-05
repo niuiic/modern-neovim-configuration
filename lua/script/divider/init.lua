@@ -42,7 +42,9 @@ local function set_autocmd()
 	vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 		pattern = { "*" },
 		callback = function()
-			divider.divide(config.dividers)
+			if vim.bo.filetype ~= "qf" then
+				divider.divide(config.dividers)
+			end
 		end,
 	})
 end
