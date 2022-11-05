@@ -300,13 +300,6 @@ require("packer").startup({
 			"gen740/SmoothCursor.nvim",
 			config = utils.fn.load_config({ "plugin/smooth-cursor" }),
 		})
-		-- better quickfix
-		use({
-			"kevinhwang91/nvim-bqf",
-			ft = "qf",
-		})
-		-- delete all buffers except the current one
-		use({ "numtostr/BufOnly.nvim", cmd = "BufOnly" })
 		-- code shot
 		use({
 			"narutoxy/silicon.lua",

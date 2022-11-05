@@ -31,10 +31,10 @@ utils.fn.whichKeyMap({
 			"<cmd>TroubleToggle workspace_diagnostics<CR>",
 			"open diagnostics",
 		},
-		-- l = {
-		-- 	"<cmd>ListDivider<CR><cmd>TroubleToggle loclist<CR>",
-		-- 	"open loclist",
-		-- },
+		l = {
+			"<cmd>lope25<CR>",
+			"open loclist",
+		},
 		f = {
 			"<cmd>TroubleToggle lsp_references<CR>",
 			"open lsp references list",
