@@ -37,8 +37,8 @@ end
 local function listDivider()
 	local file_path = vim.api.nvim_buf_get_name(0)
 	vim.api.nvim_command([[lgrep "===========================" ]] .. file_path)
-	-- local ui = require("ui")
-	-- ui.create_win()
+	local ui = require("ui")
+	ui.create_win()
 end
 
 vim.api.nvim_create_user_command("ListDivider", listDivider, {})

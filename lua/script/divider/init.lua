@@ -15,6 +15,9 @@ local config = {
 local pattern_group = {}
 
 local function setup(new_config)
+	if new_config == nil then
+		new_config = config
+	end
 	local hl_group = {}
 	for _, value in ipairs(new_config.dividers) do
 		table.insert(pattern_group, value.pattern)
@@ -23,14 +26,11 @@ local function setup(new_config)
 	ui.create_hl_group(hl_group)
 end
 
-setup(config)
+setup()
 
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 	pattern = { "*" },
 	callback = function()
-		if #pattern_group == 0 then
-			return
-		end
 		divider.divide(pattern_group)
 	end,
 })

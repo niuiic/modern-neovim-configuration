@@ -1,4 +1,4 @@
-vim.cmd([[
+vim.api.nvim_command([[
     syn match QuickFixWarn /warn/
     syn match QuickFixWarn /Warn/
     syn match QuickFixWarn /warning/

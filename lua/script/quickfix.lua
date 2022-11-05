@@ -58,9 +58,9 @@ end, {})
 
 vim.api.nvim_create_user_command("SaveAndSaveQf", function()
 	if vim.bo.filetype == "qf" then
-		vim.cmd([[write! ]] .. qf_history_path)
+		vim.api.nvim_command([[write! ]] .. qf_history_path)
 	else
-		vim.cmd([[w!]])
+		vim.api.nvim_command([[w!]])
 	end
 end, {})
 
@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	pattern = "*",
 	callback = function()
 		if vim.bo.filetype == "qf" then
-			vim.cmd([[set modifiable]])
+			vim.api.nvim_command([[set modifiable]])
 		end
 	end,
 })

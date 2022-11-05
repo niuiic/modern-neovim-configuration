@@ -50,7 +50,7 @@ utils.fn.require("fidget").setup({
 	},
 })
 
-vim.cmd([[
+vim.api.nvim_command([[
     highlight FidgetTask ctermfg=110 guifg=#a31aff
     highlight FidgetTitle ctermfg=110 guifg=#33cccc 
 ]])

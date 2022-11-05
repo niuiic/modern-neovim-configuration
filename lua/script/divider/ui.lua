@@ -1,9 +1,12 @@
-local function create_win()
+local function create_win(width)
+	if width == nil then
+		width = 40
+	end
 	vim.api.nvim_command("vsplit")
 	local win = vim.api.nvim_get_current_win()
 	local buf = vim.api.nvim_create_buf(true, true)
 	vim.api.nvim_win_set_buf(win, buf)
-	vim.api.nvim_win_set_width(win, 40)
+	vim.api.nvim_win_set_width(win, width)
 end
 
 local function create_hl_group(color_group)

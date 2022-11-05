@@ -121,7 +121,7 @@ M.fn.call = function(func, ...)
 	end
 end
 
--- vim.cmd with return value
+-- vim.api.nvim_command with return value
 M.fn.cmd = function(cmd)
 	local res = vim.api.nvim_exec(cmd, true)
 	return vim.split(res, "\n")

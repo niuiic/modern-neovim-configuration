@@ -36,7 +36,7 @@ utils.fn.require("lspsaga").init_lsp_saga({
 			elseif button == "m" then
 				-- middle click to visual select node
 				vim.fn.cursor(st.line + 1, st.character + 1)
-				vim.cmd("normal v")
+				vim.api.nvim_command("normal v")
 				vim.fn.cursor(en.line + 1, en.character + 1)
 			end
 		end,
