@@ -6,13 +6,26 @@ local ui = require("ui")
 
 local config = {
 	dividers = {
-		{ pattern = [[%%=+ [\s\S]+ =+%%]], hl = "#ff00ff" },
-		{ pattern = [[%%-+ [\s\S]+ -+%%]], hl = "#ffff00" },
-		{ pattern = [[%% [\s\S]+ %%]], hl = "#00ff7c" },
+		{
+			divider_pattern = [[%%=+ [\s\S]+ =+%%]],
+			content_pattern = [[%%%%=+ ([%s%S]*) =+%%%%]],
+			hl = "#ff00ff",
+			list = true,
+		},
+		{
+			divider_pattern = [[%%-+ [\s\S]+ -+%%]],
+			content_pattern = [[%%%%%-+ ([%s%S]*) %-+%%%%]],
+			hl = "#ffff00",
+			list = true,
+		},
+		{
+			divider_pattern = [[%% [\s\S]+ %%]],
+			content_pattern = [[%%%% ([%s%S]*) %%%%]],
+			hl = "#00ff7c",
+			list = false,
+		},
 	},
 }
-
-local pattern_group = {}
 
 local function setup(new_config)
 	if new_config == nil then
@@ -20,17 +33,19 @@ local function setup(new_config)
 	end
 	local hl_group = {}
 	for _, value in ipairs(new_config.dividers) do
-		table.insert(pattern_group, value.pattern)
 		table.insert(hl_group, value.hl)
 	end
 	ui.create_hl_group(hl_group)
 end
 
-setup()
+local function set_autocmd()
+	vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+		pattern = { "*" },
+		callback = function()
+			divider.divide(config.dividers)
+		end,
+	})
+end
 
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
-	pattern = { "*" },
-	callback = function()
-		divider.divide(pattern_group)
-	end,
-})
+setup()
+set_autocmd()
