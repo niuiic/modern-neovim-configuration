@@ -3,13 +3,6 @@ local job = require("job")
 
 local ns_id = vim.api.nvim_create_namespace("divider")
 
-local function _get_relative_file_path()
-	local project_root = utils.fn.root_pattern()
-	local file_path = vim.api.nvim_buf_get_name(0)
-	local relative_path = string.match(file_path, project_root .. "/" .. "([%s%S]*)")
-	return relative_path
-end
-
 local function _pattern(search_result, content_regexp)
 	if content_regexp == nil then
 		return nil
@@ -47,7 +40,7 @@ local function _get_divider_info(line, level, content)
 	return {
 		line = line,
 		level = level,
-		content = _get_relative_file_path() .. "|" .. line .. "| " .. prefix .. content,
+		content = vim.api.nvim_buf_get_name(0) .. "|" .. line .. "| " .. prefix .. content,
 	}
 end
 
