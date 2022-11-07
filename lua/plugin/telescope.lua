@@ -1,8 +1,6 @@
 local utils = require("utils")
 
-local telescope = utils.fn.require("telescope")
-
-telescope.setup({
+utils.fn.require("telescope").setup({
 	defaults = {
 		layout_strategy = "vertical",
 		mappings = {
@@ -32,6 +30,8 @@ local opt = {
 	},
 }
 
+local telescope_builtin = utils.fn.require("telescope.builtin")
+
 -- some search functions will respect .gitignore
 utils.fn.whichKeyMap({
 	o = {
@@ -57,7 +57,7 @@ utils.fn.whichKeyMap({
 		},
 		f = {
 			function()
-				telescope.builtin.find_files(opt)
+				telescope_builtin.find_files(opt)
 			end,
 			"search files in workspace",
 		},
@@ -115,14 +115,14 @@ utils.fn.whichKeyMap({
 			name = "global",
 			w = {
 				function()
-					telescope.builtin.live_grep(opt)
+					telescope_builtin.live_grep(opt)
 				end,
 				"search words globally",
 			},
 			t = {
 				function()
 					vim.fn.systemlist("ctags -R")
-					telescope.builtin.tags(opt)
+					telescope_builtin.tags(opt)
 				end,
 				"search tags globally",
 			},
