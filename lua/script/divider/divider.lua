@@ -86,6 +86,7 @@ local function divide(divider_config)
 		::continue::
 	end
 	_set_loclist(dividers)
+	vim.api.nvim_command("TroubleRefresh")
 end
 
 return {
