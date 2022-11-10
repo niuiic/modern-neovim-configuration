@@ -308,8 +308,8 @@ require("packer").startup({
 		})
 		-- tag bar
 		use({
-			"stevearc/aerial.nvim",
-			config = utils.fn.load_config({ "plugin/aerial" }),
+			"simrat39/symbols-outline.nvim",
+			config = utils.fn.load_config({ "plugin/symbols-outline" }),
 		})
 	end,
 })
