@@ -20,7 +20,6 @@ utils.fn.require("lightspeed").setup({
 		"q",
 		"r",
 		"s",
-		"t",
 		"u",
 		"v",
 		"w",
@@ -44,7 +43,6 @@ utils.fn.require("lightspeed").setup({
 		"Q",
 		"R",
 		"S",
-		"T",
 		"U",
 		"V",
 		"W",
@@ -68,3 +66,5 @@ utils.fn.map("n", "c", "<Plug>Lightspeed_gs", utils.var.opt)
 utils.fn.map("n", "C", "<Plug>Lightspeed_gS", utils.var.opt)
 utils.fn.map("n", "L", "<cmd>HopLine<CR>", utils.var.opt)
 utils.fn.map("v", "L", "<cmd>HopLine<CR>", utils.var.opt)
+utils.fn.map("n", "e", "<cmd>HopChar1<CR>", utils.var.opt)
+utils.fn.map("v", "e", "<cmd>HopChar1<CR>", utils.var.opt)
