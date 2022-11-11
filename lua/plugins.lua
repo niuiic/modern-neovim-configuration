@@ -275,7 +275,6 @@ require("packer").startup({
 		-- glsl viewer
 		use({
 			"timtro/glslView-nvim",
-			ft = "glsl",
 			config = utils.fn.load_config({ "plugin/glsl-view" }),
 		})
 		-- buffer / mark / tabpage / colorscheme switcher
