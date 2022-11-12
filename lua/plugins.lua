@@ -272,11 +272,6 @@ require("packer").startup({
 			requires = "nvim-lua/plenary.nvim",
 			config = utils.fn.load_config({ "plugin/nvim-spectre" }),
 		})
-		-- glsl viewer
-		use({
-			"timtro/glslView-nvim",
-			config = utils.fn.load_config({ "plugin/glsl-view" }),
-		})
 		-- buffer / mark / tabpage / colorscheme switcher
 		use({
 			"toppair/reach.nvim",
