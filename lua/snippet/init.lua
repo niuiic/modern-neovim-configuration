@@ -10,6 +10,7 @@ local lang_list = {
 	"typescript",
 	"python",
 	"scss",
+	"glsl",
 }
 
 local common_snippets = {
