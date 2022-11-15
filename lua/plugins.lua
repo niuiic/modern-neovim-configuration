@@ -49,9 +49,9 @@ require("packer").startup({
 		})
 		-- quick motion
 		use({
-			"ggandor/lightspeed.nvim",
+			"ggandor/leap.nvim",
 			"phaazon/hop.nvim",
-			config = utils.fn.load_config({ "plugin/lightspeed" }),
+			config = utils.fn.load_config({ "plugin/leap" }),
 		})
 		-- session
 		use({ "rmagatti/auto-session", config = utils.fn.load_config({ "plugin/auto-session" }) })
