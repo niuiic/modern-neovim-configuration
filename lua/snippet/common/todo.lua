@@ -32,6 +32,11 @@ local M = {
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
+	s("hack", {
+		t({ [[HACK: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
 	s("fixme", {
 		t({ [[FIXME: ]] }),
 		i(1),
