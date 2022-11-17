@@ -134,8 +134,6 @@ require("packer").startup({
 			},
 			config = utils.fn.load_config({ "plugin/undotree" }),
 		})
-		-- run code snip
-		use({ "michaelb/sniprun", run = "bash ./install.sh", config = utils.fn.load_config({ "plugin/sniprun" }) })
 		-- a pretty diagnostics, references, telescope results, quickfix and location list
 		use({
 
