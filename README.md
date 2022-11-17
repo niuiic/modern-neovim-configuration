@@ -421,11 +421,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Run Code Snip</b></summary>
-<img src="./img/run-code-snip.png"/>
-</details>
-
-<details>
   <summary><b>Lazygit</b></summary>
 <img src="./img/laygit.png"/>
 </details>
@@ -438,9 +433,4 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 <details>
   <summary><b>Jump to Marks</b></summary>
 <img src="./img/jump-to-marks.png"/>
-</details>
-
-<details>
-  <summary><b>Spell Check</b></summary>
-<img src="./img/spell-check.png"/>
 </details>
