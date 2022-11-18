@@ -22,11 +22,5 @@ for _, value in pairs(lang_list) do
 				require("luasnip").lsp_expand(args.body)
 			end,
 		},
-		sources = cmp.config.sources({
-			{ name = "nvim_lsp" },
-			{ name = "luasnip" },
-			{ name = "path" },
-			{ name = "rg", option = { additional_arguments = "--hidden" } },
-		}),
 	})
 end
