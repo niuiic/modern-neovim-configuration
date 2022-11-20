@@ -105,14 +105,16 @@ vim.api.nvim_create_autocmd("User", {
 	end,
 })
 
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+	local hl = "DiagnosticSign" .. type
+	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 -- keymap
 local telescope_builtin = utils.fn.require("telescope.builtin")
 utils.fn.whichKeyMap({
 	g = {
-		r = {
-			"<cmd>Lspsaga rename<CR>",
-			"lsp rename",
-		},
 		a = {
 			"<cmd>CodeActionMenu<CR>",
 			"code action",
@@ -202,8 +204,23 @@ utils.fn.map("n", "J", ":Lspsaga hover_doc<CR>", utils.var.opt)
 utils.fn.map("n", "D", ":Lspsaga show_line_diagnostics<CR>", utils.var.opt)
 utils.fn.map("n", "K", ":Lspsaga peek_definition<CR>", utils.var.opt)
 
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+utils.fn.whichKeyMap({
+	r = {
+		name = "refactor",
+		f = {
+			"<cmd>LSPRenameFile<CR>",
+			"rename file",
+		},
+		r = {
+			"<cmd>Lspsaga rename<CR>",
+			"rename vars",
+		},
+		i = {
+			"<cmd>LSPOrganizeImports<CR>",
+			"organize imports",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
+})
