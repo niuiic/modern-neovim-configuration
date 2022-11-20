@@ -112,11 +112,6 @@ require("packer").startup({
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
 		})
-		-- lsp status
-		use({
-			"j-hui/fidget.nvim",
-			config = utils.fn.load_config({ "plugin/fidget" }),
-		})
 		-- status line
 		use({
 			"nvim-lualine/lualine.nvim",
@@ -285,8 +280,6 @@ require("packer").startup({
 		use({ "fedepujol/move.nvim", config = utils.fn.load_config({ "plugin/move" }) })
 		-- highlight current n
 		use({ "rktjmp/highlight-current-n.nvim", config = utils.fn.load_config({ "plugin/highlight-current-n" }) })
-		-- notify
-		use({ "rcarriga/nvim-notify", config = utils.fn.load_config({ "plugin/nvim-notify" }) })
 		-- cursor position
 		use({
 			"gen740/SmoothCursor.nvim",
@@ -302,6 +295,15 @@ require("packer").startup({
 		use({
 			"simrat39/symbols-outline.nvim",
 			config = utils.fn.load_config({ "plugin/symbols-outline" }),
+		})
+		-- pretty ui
+		use({
+			"folke/noice.nvim",
+			config = utils.fn.load_config({ "plugin/noice" }),
+			requires = {
+				"MunifTanjim/nui.nvim",
+				"rcarriga/nvim-notify",
+			},
 		})
 	end,
 })
