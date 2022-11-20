@@ -2,7 +2,6 @@ local utils = require("utils")
 
 local commands = {
 	"RenameFile",
-	"OrganizeImports",
 }
 
 local function rename_command(old_prefix)
@@ -13,7 +12,7 @@ local function rename_command(old_prefix)
 	end
 end
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	pattern = "*",
 	callback = function()
 		local root_path = utils.fn.root_pattern() .. "/"

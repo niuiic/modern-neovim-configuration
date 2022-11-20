@@ -45,14 +45,6 @@ local function rename_file()
 	vim.lsp.buf.execute_command(params)
 end
 
-local function organize_imports()
-	local params = {
-		command = "_typescript.organizeImports",
-		arguments = { vim.api.nvim_buf_get_name(0) },
-	}
-	vim.lsp.buf.execute_command(params)
-end
-
 local M = {
 	filetypes = filetypes,
 	init_options = {
@@ -62,10 +54,6 @@ local M = {
 		TsserverRenameFile = {
 			rename_file,
 			description = "Rename File",
-		},
-		TsserverOrganizeImports = {
-			organize_imports,
-			description = "Organize Imports",
 		},
 	},
 	root_dir = utils.fn.root_pattern,
