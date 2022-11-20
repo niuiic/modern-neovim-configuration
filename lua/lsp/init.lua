@@ -1,5 +1,7 @@
 local utils = require("utils")
 
+utils.fn.require("lsp/command")
+
 local lspList = {
 	"cssls",
 	"volar",

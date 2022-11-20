@@ -59,11 +59,11 @@ local M = {
 		hostInfo = "neovim",
 	},
 	commands = {
-		LSPRenameFile = {
+		TsserverRenameFile = {
 			rename_file,
 			description = "Rename File",
 		},
-		LSPOrganizeImports = {
+		TsserverOrganizeImports = {
 			organize_imports,
 			description = "Organize Imports",
 		},
