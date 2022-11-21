@@ -16,24 +16,6 @@ utils.fn.map("n", "<A-s>", ":wa!<CR>", utils.var.opt)
 -- esc
 utils.fn.map("i", "<C-c>", "<Esc>", utils.var.opt)
 
--- split windows
-utils.fn.whichKeyMap({
-	w = {
-		name = "split windows",
-		h = {
-			"<cmd>sp<CR>",
-			"split window horizontally",
-		},
-		v = {
-			"<cmd>vsp<CR>",
-			"split window vertically",
-		},
-	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
-
 -- quickfix
 utils.fn.whichKeyMap({
 	q = {
