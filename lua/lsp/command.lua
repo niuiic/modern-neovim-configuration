@@ -2,6 +2,7 @@ local utils = require("utils")
 
 local commands = {
 	"RenameFile",
+	"OrganizeImports",
 }
 
 local function rename_command(old_prefix)

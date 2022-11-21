@@ -22,7 +22,9 @@ local function rename_file()
 		completion = "file",
 		default = source_file,
 	}, function(input)
-		target_file = input
+		if input ~= nil then
+			target_file = input
+		end
 	end)
 
 	-- return if input is canceled
@@ -45,6 +47,17 @@ local function rename_file()
 	vim.lsp.buf.execute_command(params)
 end
 
+local function organize_imports()
+	local params = {
+		command = "_typescript.organizeImports",
+		arguments = {
+			vim.api.nvim_buf_get_name(0),
+		},
+	}
+
+	vim.lsp.buf.execute_command(params)
+end
+
 local M = {
 	filetypes = filetypes,
 	init_options = {
@@ -54,6 +67,10 @@ local M = {
 		TsserverRenameFile = {
 			rename_file,
 			description = "Rename File",
+		},
+		TsserverOrganizeImports = {
+			organize_imports,
+			description = "Organize Imports",
 		},
 	},
 	root_dir = utils.fn.root_pattern,
