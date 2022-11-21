@@ -14,7 +14,7 @@ utils.fn.require("overseer").setup({
 			["<C-v>"] = "OpenVsplit",
 			["<C-s>"] = "OpenSplit",
 			["<C-f>"] = "OpenFloat",
-			["k"] = "OpenQuickFix",
+			["K"] = "OpenQuickFix",
 			["p"] = "TogglePreview",
 			["<C-j>"] = "IncreaseDetail",
 			["<C-k>"] = "DecreaseDetail",
