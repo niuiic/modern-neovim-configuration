@@ -11,3 +11,5 @@ utils.fn.require("noice").setup({
 		view = "mini",
 	},
 })
+
+vim.api.nvim_set_hl(0, "MsgArea", { bg = "#262728" })
