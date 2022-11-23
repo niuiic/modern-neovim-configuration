@@ -285,12 +285,6 @@ require("packer").startup({
 			"gen740/SmoothCursor.nvim",
 			config = utils.fn.load_config({ "plugin/smooth-cursor" }),
 		})
-		-- code shot
-		use({
-			"narutoxy/silicon.lua",
-			requires = { "nvim-lua/plenary.nvim" },
-			config = utils.fn.load_config({ "plugin/silicon" }),
-		})
 		-- tag bar
 		use({
 			"simrat39/symbols-outline.nvim",
