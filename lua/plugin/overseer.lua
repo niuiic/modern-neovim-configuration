@@ -43,7 +43,7 @@ utils.fn.whichKeyMap({
 		},
 		c = {
 			"<cmd>OverseerClearCache<CR>",
-			"run tasks",
+			"clear cache",
 		},
 		R = {
 			function()

@@ -1,8 +1,5 @@
-package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?.lua;" .. package.path
-package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?/init.lua;" .. package.path
-
-local divider = require("divider")
-local ui = require("ui")
+local divider = require("script/divider/divider")
+local ui = require("script/divider/ui")
 
 local config = {
 	dividers = {

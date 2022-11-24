@@ -1,5 +1,4 @@
-local utils = require("utils")
-local job = require("job")
+local job = require("script/divider/job")
 
 local ns_id = vim.api.nvim_create_namespace("divider")
 
