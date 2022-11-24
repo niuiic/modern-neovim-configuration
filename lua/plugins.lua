@@ -148,11 +148,6 @@ require("packer").startup({
 		use({ "lambdalisue/suda.vim", config = utils.fn.load_config({ "plugin/suda" }) })
 		-- close buffer
 		use({ "kazhala/close-buffers.nvim", config = utils.fn.load_config({ "plugin/close-buffers" }) })
-		-- translate
-		use({
-			"uga-rosa/translate.nvim",
-			config = utils.fn.load_config({ "plugin/translate" }),
-		})
 		-- more smooth scroll
 		use({ "karb94/neoscroll.nvim", config = utils.fn.load_config({ "plugin/neoscroll" }) })
 		-- highlights cursor words and lines

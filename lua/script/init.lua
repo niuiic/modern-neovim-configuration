@@ -4,6 +4,7 @@ local script_list = {
 	"divider",
 	"quickfix",
 	"spell",
+	"translate",
 }
 
 for _, value in ipairs(script_list) do
