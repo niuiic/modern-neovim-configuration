@@ -1,8 +1,3 @@
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-table.insert(runtime_path, "./?/init.lua")
-
 local utils = require("utils")
 
 local M = {
@@ -11,7 +6,8 @@ local M = {
 			runtime = {
 				version = "LuaJIT",
 				-- search in current workspace
-				path = runtime_path,
+				path = vim.split(package.path, ";"),
+				pathStrict = false,
 			},
 			diagnostics = {
 				globals = { "vim" },
