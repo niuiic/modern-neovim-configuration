@@ -153,4 +153,12 @@ M.get_visual_selection = function()
 	return table.concat(lines, "\n")
 end
 
+-- insert text
+M.fn.insert_text = function(text)
+	local pos = vim.api.nvim_win_get_cursor(0)[2]
+	local line = vim.api.nvim_get_current_line()
+	local new_line = line:sub(0, pos) .. " " .. text .. " " .. line:sub(pos + 1)
+	vim.api.nvim_set_current_line(new_line)
+end
+
 return M
