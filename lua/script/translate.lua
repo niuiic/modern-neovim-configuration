@@ -30,11 +30,37 @@ end, {
 })
 
 vim.api.nvim_create_user_command("TransToEN", function()
-	local text = utils.get_visual_selection()
-	trans(text, "en")
-end, {
-	range = 0,
-})
+	local source
+	vim.ui.input({
+		prompt = "Target : ",
+		completion = "file",
+	}, function(input)
+		if input ~= nil then
+			source = input
+		end
+	end)
 
-utils.fn.map("v", "<C-t>", ":<c-u>TransToZH<CR>", utils.var.opt)
-utils.fn.map("v", "<A-t>", ":<c-u>TransToEN<CR>", utils.var.opt)
+	-- return if input is canceled
+	if source == "" then
+		return
+	end
+
+	trans(source, "en")
+end, {})
+
+utils.fn.whichKeyMap({
+	t = {
+		name = "trouble",
+		t = {
+			":<c-u>TransToZH<CR>",
+			"trans to zh-CN",
+		},
+		T = {
+			"<cmd>TransToEN<CR>",
+			"trans to en",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
+})
