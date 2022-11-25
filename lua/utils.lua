@@ -139,7 +139,7 @@ M.fn.get_buffer_id = function(buf_name)
 end
 
 -- get virtual selection
-M.get_visual_selection = function()
+M.fn.get_visual_selection = function()
 	local s_start = vim.fn.getpos("'<")
 	local s_end = vim.fn.getpos("'>")
 	local n_lines = math.abs(s_end[2] - s_start[2]) + 1

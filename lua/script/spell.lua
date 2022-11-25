@@ -22,7 +22,7 @@ local function spell_check(word)
 end
 
 vim.api.nvim_create_user_command("SpellCheck", function()
-	local text = utils.get_visual_selection()
+	local text = utils.fn.get_visual_selection()
 	if string.match(text, "(%A+)") ~= nil then
 		vim.notify("unsupported language", "error")
 	else

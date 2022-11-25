@@ -23,7 +23,7 @@ local function trans(word, target)
 end
 
 vim.api.nvim_create_user_command("TransToZH", function()
-	local text = utils.get_visual_selection()
+	local text = utils.fn.get_visual_selection()
 	trans(text, "zh-CN")
 end, {
 	range = 0,
