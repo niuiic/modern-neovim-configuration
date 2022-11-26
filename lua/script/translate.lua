@@ -6,12 +6,14 @@ local utils = require("utils")
 local proxy = "http://127.0.0.1:10025"
 
 local function trans(word, target)
+	local result
+
 	plenary.job
 		:new({
 			command = "trans",
 			args = { "-b", "-e", "google", "-t", target, "-x", proxy, word },
 			on_exit = function(res)
-				local result = res:result()[1]
+				result = res:result()[1]
 				if result == nil or result == "" then
 					vim.notify("translate failed", "error")
 				else
@@ -19,7 +21,11 @@ local function trans(word, target)
 				end
 			end,
 		})
-		:start()
+		:sync()
+
+	if target == "en" then
+		vim.api.nvim_command("!echo " .. result .. " | xclip -sel clip")
+	end
 end
 
 vim.api.nvim_create_user_command("TransToZH", function()
