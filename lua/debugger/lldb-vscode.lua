@@ -22,4 +22,25 @@ dap.configurations.cpp = {
 }
 
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+
+dap.configurations.rust = {
+	{
+		name = "Launch",
+		type = "lldb",
+		request = "launch",
+		program = function()
+			vim.api.nvim_command("!cargo build")
+			local root_path = utils.fn.root_pattern()
+			local project_name = string.match(root_path, "/([%w_]+)$")
+			local target = root_path .. "/target/debug/" .. project_name
+			if utils.fn.file_exists(target) then
+				return target
+			else
+				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+			end
+		end,
+		cwd = "${workspaceFolder}",
+		stopOnEntry = false,
+		args = {},
+	},
+}
