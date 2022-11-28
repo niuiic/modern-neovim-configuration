@@ -9,7 +9,7 @@ utils.fn.require("todo-comments").setup({
 		},
 		TODO = { icon = " ", color = "info" },
 		HACK = { icon = " ", color = "warning" },
-		WARN = { icon = " ", color = "warning", alt = { "DANGER", "HACK" } },
+		WARN = { icon = " ", color = "warning", alt = { "DANGER", "HACK", "MACK" } },
 		PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
 		NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
 		FAKE = { icon = "", color = "fake" },

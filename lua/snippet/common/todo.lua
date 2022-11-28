@@ -32,6 +32,11 @@ local M = {
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
+	s("mack", {
+		t({ [[MACK: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
 	s("hack", {
 		t({ [[HACK: ]] }),
 		i(1),
