@@ -11,6 +11,7 @@ local lang_list = {
 	"python",
 	"scss",
 	"glsl",
+	"rust",
 }
 
 local common_snippets = {
