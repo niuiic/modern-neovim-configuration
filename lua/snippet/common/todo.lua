@@ -33,7 +33,7 @@ local M = {
 		t({ [[ (niuiic)]] }),
 	}),
 	s("mack", {
-		t({ [[MACK: ]] }),
+		t({ [[MARK: ]] }),
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
