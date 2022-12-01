@@ -39,6 +39,7 @@ Neovim: V0.9+ (build from source with LuaJIT)
 3. `trash-cli` command (required by `nvim-tree.lua`)
 4. `fcitx5` (required by `fcitx.nvim`)
 5. `translate-shell` (required by `script/translate` and `script/spell`)
+6. `xclip` (required by `script/translate`)
 
 ## QuickStart
 
@@ -216,11 +217,17 @@ utils.fn.require("task")
 
 ## FAQ
 
-- GLSL syntax diagnostics not working
+- GLSL syntax diagnostics not work
 
 `glslangValidator` requires files to have a specific suffix, check [document](https://github.com/KhronosGroup/glslang#execution-of-standalone-wrapper) for details.
 
-## Showcase
+- Translate not work
+
+Normally you need to modify the proxy setting(`local proxy = "http://127.0.0.1:10025"`) in `script/translate.lua`.
+
+If you don't need this, just modify this script.
+
+# Showcase
 
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
 
