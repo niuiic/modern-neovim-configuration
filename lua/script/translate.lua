@@ -47,7 +47,7 @@ vim.api.nvim_create_user_command("TransToEN", function()
 	end)
 
 	-- return if input is canceled
-	if source == "" then
+	if source == nil then
 		return
 	end
 
@@ -55,18 +55,13 @@ vim.api.nvim_create_user_command("TransToEN", function()
 end, {})
 
 utils.fn.whichKeyMap({
-	t = {
-		name = "trouble",
-		t = {
-			":<c-u>TransToZH<CR>",
-			"trans to zh-CN",
-		},
-		T = {
-			"<cmd>TransToEN<CR>",
-			"trans to en",
-		},
+	T = {
+		"<cmd>TransToEN<CR>",
+		"trans to en",
 	},
 }, {
 	mode = "n",
 	prefix = "<localleader>",
 })
+
+utils.fn.map("v", "<C-t>", ":<c-u>TransToZH<CR>", utils.var.opt)
