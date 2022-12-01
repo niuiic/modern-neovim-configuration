@@ -30,7 +30,7 @@ WM: I3
 
 Terminal: Alacritty (a GPU-accelerated terminal emulator)
 
-Neovim: V0.8+ (build from source with LuaJIT only)
+Neovim: V0.9+ (build from source with LuaJIT)
 
 ## Dependencies
 
