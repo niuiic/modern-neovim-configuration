@@ -15,9 +15,13 @@ local function trans(word, target)
 			on_exit = function(res)
 				result = res:result()[1]
 				if result == nil or result == "" then
-					vim.notify("translate failed", "error")
+					vim.notify("translate failed", "error", {
+						title = "Translate",
+					})
 				else
-					vim.notify(result, "success")
+					vim.notify(result, "success", {
+						title = "Translate",
+					})
 				end
 			end,
 		})

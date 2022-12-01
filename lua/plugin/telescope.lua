@@ -66,9 +66,7 @@ utils.fn.whichKeyMap({
 			"search neovim documents",
 		},
 		n = {
-			function()
-				utils.fn.require("telescope").extensions.notify.notify()
-			end,
+			"<cmd>Noice telescope<CR>",
 			"search notifications",
 		},
 		h = {
