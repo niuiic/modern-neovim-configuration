@@ -115,7 +115,7 @@ Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other file
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
-> Note that the name of lsp commands has to be started with the lsp name.
+> Note that the name of lsp commands has to be started with the lsp name, such as `TsserverFixAll`.
 
 ### Formatter
 
