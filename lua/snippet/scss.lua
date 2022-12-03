@@ -16,6 +16,10 @@ local m = utils.fn.require("luasnip.extras").m
 local lambda = utils.fn.require("luasnip.extras").l
 local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 
-local M = {}
+local M = {
+	s("ignore-stylelint", {
+		t({ "stylelint-disable-next-line" }),
+	}),
+}
 
 return M

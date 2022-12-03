@@ -31,10 +31,8 @@ local M = {
 		i(3),
 		t({ "", "}" }),
 	}),
-	s("er", {
-		t({ "throw new Error(" }),
-		i(1),
-		t({ ")" }),
+	s("ignore-eslint", {
+		t({ "eslint-disable-next-line" }),
 	}),
 }
 

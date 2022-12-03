@@ -80,6 +80,9 @@ local M = {
 		i(1),
 		t({ ")" }),
 	}),
+	s("ignore-stylelint", {
+		t({ "stylelint-disable-next-line" }),
+	}),
 }
 
 return M
