@@ -1,7 +1,5 @@
 local utils = require("utils")
 
-utils.fn.require("lsp/command")
-
 local lspList = {
 	"cssls",
 	"volar",
@@ -28,12 +26,24 @@ local lspList = {
 -- common lsp config
 local on_attach = function(client, _)
 	-- disable default format feature of lsp
-	client.server_capabilities.document_formatting = false -- 0.7 and earlier
-	client.server_capabilities.documentFormattingProvider = false -- 0.8 and hopefully later
+	client.server_capabilities.documentFormattingProvider = false
 end
 
 -- nvim-cmp support
 local capabilities = utils.fn.require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+local lsp_commands = {}
+
+local function set_lsp_commands(lsp, commands)
+	local lsp_upper = string.upper(string.sub(lsp, 1, 1)) .. string.sub(lsp, 2)
+	for key, _ in pairs(commands) do
+		local name = string.sub(key, string.len(lsp_upper) + 1)
+		if lsp_commands[name] == nil then
+			lsp_commands[name] = {}
+		end
+		table.insert(lsp_commands[name], lsp)
+	end
+end
 
 -- load all lsp config
 for _, value in pairs(lspList) do
@@ -59,6 +69,11 @@ for _, value in pairs(lspList) do
 		end
 	end
 
+	-- set commands
+	if config.commands ~= nil then
+		set_lsp_commands(value, config.commands)
+	end
+
 	utils.fn.require("lspconfig")[value].setup(config)
 end
 
@@ -67,4 +82,56 @@ vim.diagnostic.config({
 	virtual_text = false,
 	signs = true,
 	underline = false,
+})
+
+for command, lsps in pairs(lsp_commands) do
+	vim.api.nvim_create_user_command("LSP" .. command, function()
+		local active_clients = {}
+		for _, client in pairs(vim.lsp.get_active_clients()) do
+			active_clients[client.name] = {}
+		end
+		local new_lsp_list = {}
+		for _, value in pairs(lsps) do
+			if active_clients[value] ~= nil then
+				table.insert(new_lsp_list, value)
+			end
+		end
+		if #new_lsp_list == 0 then
+			vim.notify("no active lsp client supports this command", "warn")
+			return
+		elseif #new_lsp_list == 1 then
+			local lsp_upper = string.upper(string.sub(new_lsp_list[1], 1, 1)) .. string.sub(new_lsp_list[1], 2)
+			vim.api.nvim_command(lsp_upper .. command)
+		else
+			vim.ui.select(new_lsp_list, { prompt = "select specific lsp" }, function(choice)
+				local lsp_upper = string.upper(string.sub(choice, 1, 1)) .. string.sub(choice, 2)
+				vim.api.nvim_command(lsp_upper .. command)
+			end)
+		end
+	end, {})
+end
+
+utils.fn.whichKeyMap({
+	r = {
+		name = "refactor",
+		f = {
+			"<cmd>LSPRenameFile<CR>",
+			"rename file",
+		},
+		r = {
+			"<cmd>Lspsaga rename<CR>",
+			"rename vars",
+		},
+		i = {
+			"<cmd>LSPOrganizeImports<CR>",
+			"organize imports",
+		},
+		F = {
+			"<cmd>LSPFixAll<CR>",
+			"fix all",
+		},
+	},
+}, {
+	mode = "n",
+	prefix = "<localleader>",
 })

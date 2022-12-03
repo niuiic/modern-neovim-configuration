@@ -115,6 +115,8 @@ Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other file
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
+> Note that the name of lsp commands has to be started with the lsp name.
+
 ### Formatter
 
 Check formatter setting in `lua/plugin/null-ls.lua`. Look for more formatters on [null-ls buildin formatters](https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting).
