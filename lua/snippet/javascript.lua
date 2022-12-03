@@ -19,6 +19,6 @@ local postfix = utils.fn.require("luasnip.extras.postfix").postfix
 local M = {}
 
 local common = utils.fn.require("snippet/common/node/js-ts")
-M = utils.fn.merge_table(common, M)
+M = utils.fn.merge_list(common, M)
 
 return M

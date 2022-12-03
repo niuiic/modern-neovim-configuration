@@ -46,9 +46,15 @@ M.fn.require = function(package_name)
 	return package
 end
 
--- merge table
+-- merge list
 -- table2 will override table1
-M.fn.merge_table = function(table1, table2)
+M.fn.merge_list = function(table1, table2)
+	if table1 == nil then
+		return table2
+	end
+	if table2 == nil then
+		return table1
+	end
 	local res = {}
 	for _, value in pairs(table2) do
 		table.insert(res, value)
@@ -58,10 +64,39 @@ M.fn.merge_table = function(table1, table2)
 		for _, val in pairs(table2) do
 			if val == value then
 				isInTable = true
+				break
 			end
 		end
 		if isInTable == false then
 			table.insert(res, value)
+		end
+	end
+	return res
+end
+
+-- merge object
+-- table2 will override table1
+M.fn.merge_object = function(table1, table2)
+	if table1 == nil then
+		return table2
+	end
+	if table2 == nil then
+		return table1
+	end
+	local res = {}
+	for key, value in pairs(table2) do
+		res[key] = value
+	end
+	for key1, value in pairs(table1) do
+		local isInTable = false
+		for key2, _ in pairs(table2) do
+			if key1 == key2 then
+				isInTable = true
+				break
+			end
+		end
+		if isInTable == false then
+			table[key1] = value
 		end
 	end
 	return res

@@ -37,11 +37,13 @@ local lsp_commands = {}
 local function set_lsp_commands(lsp, commands)
 	local lsp_upper = string.upper(string.sub(lsp, 1, 1)) .. string.sub(lsp, 2)
 	for key, _ in pairs(commands) do
-		local name = string.sub(key, string.len(lsp_upper) + 1)
-		if lsp_commands[name] == nil then
-			lsp_commands[name] = {}
+		if string.find(key, lsp_upper) ~= nil then
+			local name = string.sub(key, string.len(lsp_upper) + 1)
+			if lsp_commands[name] == nil then
+				lsp_commands[name] = {}
+			end
+			table.insert(lsp_commands[name], lsp)
 		end
-		table.insert(lsp_commands[name], lsp)
 	end
 end
 
@@ -69,20 +71,15 @@ for _, value in pairs(lspList) do
 		end
 	end
 
-	-- set commands
-	if config.commands ~= nil then
-		set_lsp_commands(value, config.commands)
-	end
-
+	-- set lsp config
 	utils.fn.require("lspconfig")[value].setup(config)
-end
 
--- disable showing line diagnostic
-vim.diagnostic.config({
-	virtual_text = false,
-	signs = true,
-	underline = false,
-})
+	-- set commands
+	local commands = utils.fn.merge_object(utils.fn.require("lspconfig")[value].commands, config.commands)
+	if commands ~= nil then
+		set_lsp_commands(value, commands)
+	end
+end
 
 for command, lsps in pairs(lsp_commands) do
 	vim.api.nvim_create_user_command("LSP" .. command, function()
@@ -101,10 +98,12 @@ for command, lsps in pairs(lsp_commands) do
 			return
 		elseif #new_lsp_list == 1 then
 			local lsp_upper = string.upper(string.sub(new_lsp_list[1], 1, 1)) .. string.sub(new_lsp_list[1], 2)
+			vim.notify(lsp_upper .. " is working")
 			vim.api.nvim_command(lsp_upper .. command)
 		else
 			vim.ui.select(new_lsp_list, { prompt = "select specific lsp" }, function(choice)
 				local lsp_upper = string.upper(string.sub(choice, 1, 1)) .. string.sub(choice, 2)
+				vim.notify(lsp_upper .. " is working")
 				vim.api.nvim_command(lsp_upper .. command)
 			end)
 		end
@@ -112,8 +111,8 @@ for command, lsps in pairs(lsp_commands) do
 end
 
 utils.fn.whichKeyMap({
-	r = {
-		name = "refactor",
+	l = {
+		name = "lsp commands",
 		f = {
 			"<cmd>LSPRenameFile<CR>",
 			"rename file",
@@ -130,8 +129,19 @@ utils.fn.whichKeyMap({
 			"<cmd>LSPFixAll<CR>",
 			"fix all",
 		},
+		R = {
+			"<cmd>LspRestart *<CR>",
+			"restart all lsp",
+		},
 	},
 }, {
 	mode = "n",
 	prefix = "<localleader>",
+})
+
+-- disable showing line diagnostic
+vim.diagnostic.config({
+	virtual_text = false,
+	signs = true,
+	underline = false,
 })

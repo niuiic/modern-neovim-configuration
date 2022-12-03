@@ -29,7 +29,7 @@ for _, value in pairs(lang_list) do
 	-- merge common snippets
 	for _, val in pairs(common_snippets) do
 		local common_snippet = utils.fn.require("snippet/common/" .. val)
-		snippets = utils.fn.merge_table(common_snippet, snippets)
+		snippets = utils.fn.merge_list(common_snippet, snippets)
 	end
 
 	luasnip.add_snippets(value, snippets, {
