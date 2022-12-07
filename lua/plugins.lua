@@ -17,8 +17,6 @@ require("packer").startup({
 		use({ "alohaia/fcitx.nvim", config = utils.fn.load_config({ "plugin/fcitx" }) })
 		-- displays neovim startup time
 		use({ "dstein64/vim-startuptime", config = utils.fn.load_config({ "plugin/vim-startuptime" }) })
-		-- a faster version of filetype.vim
-		use({ "nathom/filetype.nvim", config = utils.fn.load_config({ "plugin/filetype" }) })
 		-- fold
 		use({
 			"anuvyklack/pretty-fold.nvim",
