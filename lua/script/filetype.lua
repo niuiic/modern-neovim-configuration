@@ -25,7 +25,6 @@ local custom_filetype_list = {
 local function set_filetypes()
 	local file_extension = get_file_extension()
 	if file_extension == nil then
-		vim.notify("failed to get file extension", "error")
 		return
 	end
 	for key, value in pairs(custom_filetype_list) do
