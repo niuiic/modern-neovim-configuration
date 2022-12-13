@@ -138,10 +138,3 @@ utils.fn.whichKeyMap({
 	mode = "n",
 	prefix = "<localleader>",
 })
-
--- disable showing line diagnostic
-vim.diagnostic.config({
-	virtual_text = false,
-	signs = true,
-	underline = false,
-})

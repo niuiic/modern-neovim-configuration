@@ -129,16 +129,9 @@ require("packer").startup({
 		})
 		-- a pretty diagnostics, references, telescope results, quickfix and location list
 		use({
-
-			{
-				"folke/trouble.nvim",
-				requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
-				config = utils.fn.load_config({ "plugin/trouble" }),
-			},
-			{
-				"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-				config = utils.fn.load_config({ "plugin/lsp_lines" }),
-			},
+			"folke/trouble.nvim",
+			requires = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
+			config = utils.fn.load_config({ "plugin/trouble" }),
 		})
 		-- quickly modify surround char
 		use({ "kylechui/nvim-surround", config = utils.fn.load_config({ "plugin/nvim-surround" }) })

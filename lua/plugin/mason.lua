@@ -25,7 +25,6 @@ local utils = require("utils")
 -- ◍ chrome-debug-adapter
 -- ◍ debugpy
 -- ◍ delve
--- ◍ js-debug-adapter
 -- install lldb-vscode manually (it is installed with lldb)
 
 -- formatters installed:
