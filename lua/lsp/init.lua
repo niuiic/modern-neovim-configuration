@@ -161,3 +161,7 @@ utils.fn.whichKeyMap({
 vim.diagnostic.config({
 	float = { border = "single" },
 })
+
+utils.fn.require("lspconfig.ui.windows").default_options = {
+	border = "single",
+}
