@@ -200,6 +200,6 @@ utils.fn.whichKeyMap({
 	mode = "n",
 })
 
-utils.fn.map("n", "J", ":Lspsaga hover_doc<CR>", utils.var.opt)
-utils.fn.map("n", "D", ":Lspsaga show_line_diagnostics<CR>", utils.var.opt)
+utils.fn.map("n", "J", ":lua vim.lsp.buf.hover()<CR>", utils.var.opt)
+utils.fn.map("n", "D", ":lua vim.diagnostic.open_float()<CR>", utils.var.opt)
 utils.fn.map("n", "K", ":Lspsaga peek_definition<CR>", utils.var.opt)
