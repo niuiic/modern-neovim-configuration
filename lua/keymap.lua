@@ -10,10 +10,12 @@ utils.fn.map("n", "<C-n>", ":only<CR>", utils.var.opt)
 utils.fn.map("n", "<C-e>", ":ReloadFile<CR>", utils.var.opt)
 
 local function reloadFile()
+	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	if vim.lsp.get_active_clients() ~= nil then
 		vim.diagnostic.reset()
 	end
 	vim.api.nvim_command("e")
+	vim.api.nvim_win_set_cursor(0, cursor_pos)
 end
 
 vim.api.nvim_create_user_command("ReloadFile", function()
