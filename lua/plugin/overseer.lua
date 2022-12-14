@@ -30,7 +30,7 @@ utils.fn.require("overseer").setup({
 	template_cache_threshold = 0,
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	s = {
 		name = "tasks",
 		l = {

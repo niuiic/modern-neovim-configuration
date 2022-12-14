@@ -81,7 +81,7 @@ null_ls.setup({
 })
 
 -- keymap
-utils.fn.map("n", "<AC-l>", ":lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", utils.var.opt)
+vim.keymap.set("n", "<AC-l>", ":lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", { silent = true })
 
 -- glsl diagnostics
 local function glsl()

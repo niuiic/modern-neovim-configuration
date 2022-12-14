@@ -24,7 +24,7 @@ spectre.setup({
 	},
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	r = {
 		name = "replace in project",
 		w = {
@@ -51,7 +51,7 @@ utils.fn.whichKeyMap({
 	prefix = "<leader>",
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	r = {
 		function()
 			spectre.open_visual()

@@ -32,7 +32,7 @@ end, {
 	range = 0,
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	c = {
 		":<c-u>SpellCheck<CR>",
 		"spell check",

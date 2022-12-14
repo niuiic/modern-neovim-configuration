@@ -121,7 +121,7 @@ local function rename_filter(client)
 	end
 end
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	l = {
 		name = "lsp commands",
 		f = {

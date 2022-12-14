@@ -23,9 +23,7 @@ M.fn.root_pattern = function(pattern)
 end
 
 -- set keymap
-M.fn.map = vim.api.nvim_set_keymap
-M.var.opt = { noremap = true, silent = true }
-M.fn.whichKeyMap = require("which-key").register
+M.fn.map = require("which-key").register
 
 -- load config
 M.fn.load_config = function(configs)

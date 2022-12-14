@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
     l = {
         name = "sql cmd",
         r = {
@@ -26,7 +26,7 @@ utils.fn.whichKeyMap({
     prefix = "<leader>",
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
     l = {
         name = "sql cmd",
         r = {

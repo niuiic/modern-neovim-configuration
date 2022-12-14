@@ -17,7 +17,7 @@ end
 utils.fn.require("nvim-dap-virtual-text").setup()
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
 	d = {
 		name = "debug",
 		t = {
@@ -99,15 +99,15 @@ utils.fn.whichKeyMap({
 	prefix = "<localleader>",
 })
 
-utils.fn.map("n", "<A-c>", "<Cmd>lua require('dap').continue()<CR>", utils.var.opt)
-utils.fn.map("n", "<A-n>", "<Cmd>lua require('dap').step_over()<CR>", utils.var.opt)
-utils.fn.map("n", "<A-t>", "<Cmd>lua require('dap').toggle_breakpoint()<CR>", utils.var.opt)
-utils.fn.map(
+vim.keymap.set("n", "<A-c>", "<Cmd>lua require('dap').continue()<CR>", { silent = true })
+vim.keymap.set("n", "<A-n>", "<Cmd>lua require('dap').step_over()<CR>", { silent = true })
+vim.keymap.set("n", "<A-t>", "<Cmd>lua require('dap').toggle_breakpoint()<CR>", { silent = true })
+vim.keymap.set(
 	"n",
 	"<AC-t>",
 	"<Cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-	utils.var.opt
+	{ silent = true }
 )
-utils.fn.map("n", "<A-b>", "<Cmd>lua require('dap').step_back()<CR>", utils.var.opt)
-utils.fn.map("n", "<A-i>", "<Cmd>lua require('dap').step_into()<CR>", utils.var.opt)
-utils.fn.map("n", "<A-o>", "<Cmd>lua require('dap').step_out()<CR>", utils.var.opt)
+vim.keymap.set("n", "<A-b>", "<Cmd>lua require('dap').step_back()<CR>", { silent = true })
+vim.keymap.set("n", "<A-i>", "<Cmd>lua require('dap').step_into()<CR>", { silent = true })
+vim.keymap.set("n", "<A-o>", "<Cmd>lua require('dap').step_out()<CR>", { silent = true })

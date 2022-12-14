@@ -40,8 +40,8 @@ utils.fn.require("yanky").setup({
 utils.fn.require("telescope").load_extension("yank_history")
 
 -- keymap
-utils.fn.map("n", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
-utils.fn.map("n", "P", "<Plug>(YankyPutBefore)", utils.var.opt)
-utils.fn.map("x", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
-utils.fn.map("x", "P", "<Plug>(YankyPutBefore)", utils.var.opt)
-utils.fn.map("n", "p", "<Plug>(YankyPutAfter)", utils.var.opt)
+vim.keymap.set("n", "p", "<Plug>(YankyPutAfter)", { silent = true })
+vim.keymap.set("n", "P", "<Plug>(YankyPutBefore)", { silent = true })
+vim.keymap.set("x", "p", "<Plug>(YankyPutAfter)", { silent = true })
+vim.keymap.set("x", "P", "<Plug>(YankyPutBefore)", { silent = true })
+vim.keymap.set("n", "p", "<Plug>(YankyPutAfter)", { silent = true })

@@ -58,7 +58,7 @@ vim.api.nvim_create_user_command("TransToEN", function()
 	trans(source, "en")
 end, {})
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	T = {
 		"<cmd>TransToEN<CR>",
 		"trans to en",
@@ -68,4 +68,4 @@ utils.fn.whichKeyMap({
 	prefix = "<localleader>",
 })
 
-utils.fn.map("v", "<C-t>", ":<c-u>TransToZH<CR>", utils.var.opt)
+vim.keymap.set("v", "<C-t>", ":<c-u>TransToZH<CR>", { silent = true })

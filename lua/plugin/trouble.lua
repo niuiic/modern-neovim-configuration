@@ -24,7 +24,7 @@ utils.fn.require("trouble").setup({
 	padding = false,
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	t = {
 		name = "trouble",
 		d = {

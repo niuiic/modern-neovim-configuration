@@ -4,33 +4,27 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
 -- exit and refresh
-utils.fn.map("n", "<C-q>", ":q<CR>", utils.var.opt)
-utils.fn.map("n", "<A-q>", ":q!<CR>", utils.var.opt)
-utils.fn.map("n", "<C-n>", ":only<CR>", utils.var.opt)
-utils.fn.map("n", "<C-e>", ":ReloadFile<CR>", utils.var.opt)
-
-local function reloadFile()
+vim.keymap.set("n", "<C-q>", ":q<CR>", { silent = true })
+vim.keymap.set("n", "<A-q>", ":q!<CR>", { silent = true })
+vim.keymap.set("n", "<C-n>", ":only<CR>", { silent = true })
+vim.keymap.set("n", "<C-e>", function()
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	if vim.lsp.get_active_clients() ~= nil then
 		vim.diagnostic.reset()
 	end
 	vim.api.nvim_command("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
-end
-
-vim.api.nvim_create_user_command("ReloadFile", function()
-	reloadFile()
-end, {})
+end, { silent = true })
 
 -- save
-utils.fn.map("n", "<C-s>", ":SaveAndSaveQf<CR>", utils.var.opt)
-utils.fn.map("n", "<A-s>", ":wa!<CR>", utils.var.opt)
+vim.keymap.set("n", "<C-s>", ":SaveAndSaveQf<CR>", { silent = true })
+vim.keymap.set("n", "<A-s>", ":wa!<CR>", { silent = true })
 
 -- esc
-utils.fn.map("i", "<C-c>", "<Esc>", utils.var.opt)
+vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 
 -- quickfix
-utils.fn.whichKeyMap({
+utils.fn.map({
 	q = {
 		name = "quickfix",
 		o = {
@@ -62,19 +56,19 @@ utils.fn.whichKeyMap({
 	mode = "n",
 	prefix = "<localleader>",
 })
-utils.fn.map("n", "<A-j>", ":cnext<CR>", utils.var.opt)
-utils.fn.map("n", "<A-k>", ":cprev<CR>", utils.var.opt)
-utils.fn.map("n", "<A-g>", ":cfirst<CR>", utils.var.opt)
-utils.fn.map("n", "<A-G>", ":clast<CR>", utils.var.opt)
+vim.keymap.set("n", "<A-j>", ":cnext<CR>", { silent = true })
+vim.keymap.set("n", "<A-k>", ":cprev<CR>", { silent = true })
+vim.keymap.set("n", "<A-g>", ":cfirst<CR>", { silent = true })
+vim.keymap.set("n", "<A-G>", ":clast<CR>", { silent = true })
 
 -- copy to systemclip
-utils.fn.map("x", "Y", '"+y<Esc>', utils.var.opt)
+vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 
 -- unmap
-utils.fn.map("n", "gd", "", utils.var.opt)
+vim.keymap.set("n", "gd", "", { silent = true })
 
 -- plugin operation
-utils.fn.whichKeyMap({
+utils.fn.map({
 	p = {
 		name = "plugin",
 		u = {

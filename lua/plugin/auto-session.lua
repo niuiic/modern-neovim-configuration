@@ -7,7 +7,7 @@ utils.fn.require("auto-session").setup({
 })
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
 	s = {
 		name = "session",
 		s = {

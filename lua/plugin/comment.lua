@@ -52,5 +52,5 @@ utils.fn.require("Comment").setup({
 	end,
 })
 
-utils.fn.map("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", utils.var.opt)
-utils.fn.map("n", "<C-a>", "<Plug>(comment_toggle_linewise_current)", utils.var.opt)
+vim.keymap.set("v", "<C-a>", "<Plug>(comment_toggle_linewise_visual)", { silent = true })
+vim.keymap.set("n", "<C-a>", "<Plug>(comment_toggle_linewise_current)", { silent = true })

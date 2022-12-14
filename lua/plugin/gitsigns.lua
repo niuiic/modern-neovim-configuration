@@ -7,9 +7,9 @@ gitsigns.setup()
 local gs = package.loaded.gitsigns
 
 -- keymap
-utils.fn.map("n", "gc", ":!git commit -m ", utils.var.opt)
+vim.keymap.set("n", "gc", ":!git commit -m ", { silent = true })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	g = {
 		name = "git signs",
 		c = {
@@ -90,7 +90,7 @@ utils.fn.whichKeyMap({
 	prefix = "<localleader>",
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	g = {
 		name = "git signs",
 		s = {

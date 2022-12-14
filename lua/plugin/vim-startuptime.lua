@@ -1,4 +1,4 @@
-require("utils").fn.whichKeyMap({
+require("utils").fn.map({
 	a = {
 		"<cmd>StartupTime<CR>",
 		"check startup time",

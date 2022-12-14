@@ -5,7 +5,7 @@ utils.fn.require("git-conflict").setup({
 })
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
 	c = {
 		name = "git conflict",
 		c = {

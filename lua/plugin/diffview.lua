@@ -3,8 +3,8 @@ local utils = require("utils")
 utils.fn.require("diffview").setup({})
 
 -- keymap
-utils.fn.map("n", "<leader>ds", ":DiffviewOpen ", utils.var.opt)
-utils.fn.whichKeyMap({
+vim.keymap.set("n", "<leader>ds", ":DiffviewOpen ", { silent = true })
+utils.fn.map({
 	d = {
 		name = "diffview",
 		s = {

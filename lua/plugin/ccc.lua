@@ -14,7 +14,7 @@ ccc.setup({
 	},
 })
 
-utils.fn.whichKeyMap({
+utils.fn.map({
 	c = {
 		name = "ccc",
 		o = { "<cmd>CccPick<CR>", "open color picker" },

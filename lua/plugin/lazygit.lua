@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
 	g = {
 		"<cmd>LazyGit<CR>",
 		"lazygit",

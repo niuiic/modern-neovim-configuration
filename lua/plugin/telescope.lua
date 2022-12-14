@@ -33,7 +33,7 @@ local opt = {
 local telescope_builtin = utils.fn.require("telescope.builtin")
 
 -- some search functions will respect .gitignore
-utils.fn.whichKeyMap({
+utils.fn.map({
 	o = {
 		name = "telescope",
 		l = {

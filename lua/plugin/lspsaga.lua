@@ -113,7 +113,7 @@ end
 
 -- keymap
 local telescope_builtin = utils.fn.require("telescope.builtin")
-utils.fn.whichKeyMap({
+utils.fn.map({
 	g = {
 		f = {
 			function()
@@ -196,6 +196,6 @@ utils.fn.whichKeyMap({
 	mode = "n",
 })
 
-utils.fn.map("n", "J", ":lua vim.lsp.buf.hover()<CR>", utils.var.opt)
-utils.fn.map("n", "D", ":lua vim.diagnostic.open_float()<CR>", utils.var.opt)
-utils.fn.map("n", "K", ":Lspsaga peek_definition<CR>", utils.var.opt)
+vim.keymap.set("n", "J", ":lua vim.lsp.buf.hover()<CR>", { silent = true })
+vim.keymap.set("n", "D", ":lua vim.diagnostic.open_float()<CR>", { silent = true })
+vim.keymap.set("n", "K", ":Lspsaga peek_definition<CR>", { silent = true })

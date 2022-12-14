@@ -7,7 +7,7 @@ neogen.setup({
 })
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
 	a = {
 		name = "annotations",
 		f = {

@@ -13,9 +13,9 @@ neotest.setup({
 })
 
 -- keymap
-utils.fn.map("n", ";j", "<Plug>(ultest-next-fail)", utils.var.opt)
-utils.fn.map("n", ";k", "<Plug>(ultest-prev-fail)", utils.var.opt)
-utils.fn.whichKeyMap({
+vim.keymap.set("n", ";j", "<Plug>(ultest-next-fail)", { silent = true })
+vim.keymap.set("n", ";k", "<Plug>(ultest-prev-fail)", { silent = true })
+utils.fn.map({
 	t = {
 		name = "test",
 		r = {

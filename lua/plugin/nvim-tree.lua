@@ -96,7 +96,7 @@ nvim_tree.setup({
 })
 
 -- keymap
-utils.fn.whichKeyMap({
+utils.fn.map({
 	p = {
 		"<cmd>NvimTreeToggle<CR>",
 		"toggle file tree",
