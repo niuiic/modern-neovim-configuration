@@ -115,10 +115,6 @@ end
 local telescope_builtin = utils.fn.require("telescope.builtin")
 utils.fn.whichKeyMap({
 	g = {
-		a = {
-			"<cmd>CodeActionMenu<CR>",
-			"code action",
-		},
 		f = {
 			function()
 				telescope_builtin.lsp_references()

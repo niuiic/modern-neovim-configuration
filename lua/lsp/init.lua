@@ -110,6 +110,17 @@ for command, lsps in pairs(lsp_commands) do
 	end, {})
 end
 
+local function rename_filter(client)
+	if utils.fn.match_str_in_file(utils.fn.root_pattern() .. "/package.json", "vue") then
+		if client.name == "volar" then
+			return true
+		end
+		return false
+	else
+		return true
+	end
+end
+
 utils.fn.whichKeyMap({
 	l = {
 		name = "lsp commands",
@@ -118,7 +129,11 @@ utils.fn.whichKeyMap({
 			"rename file",
 		},
 		r = {
-			"<cmd>Lspsaga rename<CR>",
+			function()
+				vim.lsp.buf.rename(nil, {
+					filter = rename_filter,
+				})
+			end,
 			"rename vars",
 		},
 		i = {
@@ -130,19 +145,25 @@ utils.fn.whichKeyMap({
 			"fix all",
 		},
 		R = {
-			name = "reset",
-			d = {
-				"<cmd>lua vim.diagnostic.reset()<CR><cmd>e<CR>",
-				"reset diagnostic",
-			},
-			l = {
-
-				"<cmd>LspRestart *<CR>",
-				"restart all lsp",
-			},
+			"<cmd>LspRestart *<CR>",
+			"restart all lsp",
+		},
+		a = {
+			"<cmd>CodeActionMenu<CR>",
+			"code action",
 		},
 	},
 }, {
 	mode = "n",
 	prefix = "<localleader>",
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "single",
+})
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = "single",
+})
+vim.diagnostic.config({
+	float = { border = "single" },
 })

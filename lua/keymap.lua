@@ -7,7 +7,18 @@ vim.g.maplocalleader = " "
 utils.fn.map("n", "<C-q>", ":q<CR>", utils.var.opt)
 utils.fn.map("n", "<A-q>", ":q!<CR>", utils.var.opt)
 utils.fn.map("n", "<C-n>", ":only<CR>", utils.var.opt)
-utils.fn.map("n", "<C-e>", ":e<CR>", utils.var.opt)
+utils.fn.map("n", "<C-e>", ":ReloadFile<CR>", utils.var.opt)
+
+local function reloadFile()
+	if vim.lsp.get_active_clients() ~= nil then
+		vim.diagnostic.reset()
+	end
+	vim.api.nvim_command("e")
+end
+
+vim.api.nvim_create_user_command("ReloadFile", function()
+	reloadFile()
+end, {})
 
 -- save
 utils.fn.map("n", "<C-s>", ":SaveAndSaveQf<CR>", utils.var.opt)
