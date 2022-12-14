@@ -130,12 +130,16 @@ utils.fn.whichKeyMap({
 			"fix all",
 		},
 		R = {
-			"<cmd>LspRestart *<CR>",
-			"restart all lsp",
-		},
-		D = {
-			"<cmd>lua vim.diagnostic.reset()<CR>",
-			"reset diagnostic",
+			name = "reset",
+			d = {
+				"<cmd>lua vim.diagnostic.reset()<CR><cmd>e<CR>",
+				"reset diagnostic",
+			},
+			l = {
+
+				"<cmd>LspRestart *<CR>",
+				"restart all lsp",
+			},
 		},
 	},
 }, {
