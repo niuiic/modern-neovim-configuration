@@ -285,5 +285,10 @@ require("packer").startup({
 				"rcarriga/nvim-notify",
 			},
 		})
+		-- macro
+		use({
+			"chrisgrieser/nvim-recorder",
+			config = utils.fn.load_config({ "plugin/nvim-recorder" }),
+		})
 	end,
 })
