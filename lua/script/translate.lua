@@ -5,15 +5,15 @@ local utils = require("utils")
 
 local proxy = "http://127.0.0.1:10025"
 
-local function trans(word, target)
-	local result
+local sender, receiver = plenary.async.control.channel.mpsc()
 
+local function trans(word, target)
 	plenary.job
 		:new({
 			command = "trans",
 			args = { "-b", "-e", "google", "-t", target, "-x", proxy, word },
 			on_exit = function(res)
-				result = res:result()[1]
+				local result = res:result()[1]
 				if result == nil or result == "" then
 					vim.notify("translate failed", "error", {
 						title = "Translate",
@@ -23,11 +23,13 @@ local function trans(word, target)
 						title = "Translate",
 					})
 				end
+				sender.send(result)
 			end,
 		})
-		:sync()
+		:start()
 
 	if target == "en" then
+		local result = receiver.recv()
 		vim.api.nvim_command("!echo " .. result .. " | xclip -sel clip")
 	end
 end
