@@ -194,4 +194,15 @@ M.fn.insert_text = function(text)
 	vim.api.nvim_set_current_line(new_line)
 end
 
+M.fn.log = function(text)
+	local file = io.open(M.fn.root_pattern() .. "/.nvim/log", "w")
+	if file == nil then
+		vim.notify("failed to write log", "error")
+		return
+	end
+	io.output(file)
+	io.write(text)
+	io.close(file)
+end
+
 return M
