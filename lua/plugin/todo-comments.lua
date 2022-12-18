@@ -24,6 +24,6 @@ utils.fn.require("todo-comments").setup({
 		default = { "Identifier", "#7C3AED" },
 		fake = { "Fake", "#A6E22E" },
 		temp = { "Temp", "#D52CD5" },
-		question = { "Question", "#00ffd5" },
+		question = { "Questions", "#00ffd5" },
 	},
 })
