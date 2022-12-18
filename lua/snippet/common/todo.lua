@@ -67,6 +67,11 @@ local M = {
 		i(1),
 		t({ [[ (niuiic)]] }),
 	}),
+	s("question", {
+		t({ [[Q: ]] }),
+		i(1),
+		t({ [[ (niuiic)]] }),
+	}),
 }
 
 return M
