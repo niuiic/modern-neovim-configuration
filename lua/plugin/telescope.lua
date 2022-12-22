@@ -1,6 +1,9 @@
 local utils = require("utils")
 
-utils.fn.require("telescope").setup({
+local telescope = utils.fn.require("telescope")
+local trouble = utils.fn.require("trouble.providers.telescope")
+
+telescope.setup({
 	defaults = {
 		layout_strategy = "vertical",
 		mappings = {
@@ -12,7 +15,9 @@ utils.fn.require("telescope").setup({
 				["<C-f>"] = "preview_scrolling_down",
 				["<C-u>"] = "results_scrolling_up",
 				["<C-d>"] = "results_scrolling_down",
+				["<c-o>"] = trouble.open_with_trouble,
 			},
+			n = { ["<c-o>"] = trouble.open_with_trouble },
 		},
 		layout_config = {
 			vertical = { width = 0.8 },
