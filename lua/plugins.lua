@@ -41,10 +41,7 @@ require("packer").startup({
 		-- dashboard
 		use({ "glepnir/dashboard-nvim", config = utils.fn.load_config({ "plugin/dashboard-nvim" }) })
 		-- automatically toggle between absolute line number and relative one
-		use({
-			"sitiom/nvim-numbertoggle",
-			config = utils.fn.load_config({ "plugin/numbertoggle" }),
-		})
+		use("sitiom/nvim-numbertoggle")
 		-- quick motion
 		use({
 			"ggandor/leap.nvim",
