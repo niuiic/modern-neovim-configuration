@@ -17,7 +17,7 @@ end
 utils.fn.require("nvim-dap-virtual-text").setup()
 
 -- keymap
-utils.fn.map({
+utils.fn.require("which-key").register({
 	d = {
 		name = "debug",
 		t = {

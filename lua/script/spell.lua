@@ -32,7 +32,7 @@ end, {
 	range = 0,
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	c = {
 		":<c-u>SpellCheck<CR>",
 		"spell check",

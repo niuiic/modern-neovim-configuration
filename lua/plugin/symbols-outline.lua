@@ -37,7 +37,7 @@ utils.fn.require("symbols-outline").setup({
 	},
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	m = {
 		function()
 			if vim.bo.filetype == "markdown" or vim.bo.filetype == "Outline" then

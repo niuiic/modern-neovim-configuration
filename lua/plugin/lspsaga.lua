@@ -113,7 +113,7 @@ end
 
 -- keymap
 local telescope_builtin = utils.fn.require("telescope.builtin")
-utils.fn.map({
+utils.fn.require("which-key").register({
 	g = {
 		f = {
 			function()

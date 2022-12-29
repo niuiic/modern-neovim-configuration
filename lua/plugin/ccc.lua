@@ -14,7 +14,7 @@ ccc.setup({
 	},
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	c = {
 		name = "ccc",
 		o = { "<cmd>CccPick<CR>", "open color picker" },

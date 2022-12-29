@@ -22,9 +22,6 @@ M.fn.root_pattern = function(pattern)
 	return pathBp
 end
 
--- set keymap
-M.fn.map = require("which-key").register
-
 -- load config
 M.fn.load_config = function(configs)
 	for _, value in pairs(configs) do

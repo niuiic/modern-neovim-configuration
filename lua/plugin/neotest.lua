@@ -15,7 +15,7 @@ neotest.setup({
 -- keymap
 vim.keymap.set("n", ";j", "<Plug>(ultest-next-fail)", { silent = true })
 vim.keymap.set("n", ";k", "<Plug>(ultest-prev-fail)", { silent = true })
-utils.fn.map({
+utils.fn.require("which-key").register({
 	t = {
 		name = "test",
 		r = {

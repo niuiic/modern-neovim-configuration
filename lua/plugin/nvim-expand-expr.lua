@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- keymap
-utils.fn.map({
+utils.fn.require("which-key").register({
 	e = {
 		function()
 			require("expand_expr").expand()

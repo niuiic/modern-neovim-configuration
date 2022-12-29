@@ -9,7 +9,7 @@ local gs = package.loaded.gitsigns
 -- keymap
 vim.keymap.set("n", "gc", ":!git commit -m ", { silent = true })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	g = {
 		name = "git signs",
 		c = {
@@ -90,7 +90,7 @@ utils.fn.map({
 	prefix = "<localleader>",
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	g = {
 		name = "git signs",
 		s = {

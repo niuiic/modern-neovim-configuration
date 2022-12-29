@@ -24,7 +24,7 @@ utils.fn.require("trouble").setup({
 	padding = false,
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	t = {
 		name = "trouble",
 		d = {

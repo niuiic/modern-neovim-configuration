@@ -24,7 +24,7 @@ spectre.setup({
 	},
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	r = {
 		name = "replace in project",
 		w = {
@@ -51,7 +51,7 @@ utils.fn.map({
 	prefix = "<leader>",
 })
 
-utils.fn.map({
+utils.fn.require("which-key").register({
 	r = {
 		function()
 			spectre.open_visual()

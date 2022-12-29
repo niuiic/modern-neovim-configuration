@@ -4,7 +4,7 @@ utils.fn.require("diffview").setup({})
 
 -- keymap
 vim.keymap.set("n", "<leader>ds", ":DiffviewOpen ", { silent = true })
-utils.fn.map({
+utils.fn.require("which-key").register({
 	d = {
 		name = "diffview",
 		s = {

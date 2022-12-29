@@ -24,7 +24,7 @@ vim.keymap.set("n", "<A-s>", ":wa!<CR>", { silent = true })
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 
 -- quickfix
-utils.fn.map({
+utils.fn.require("which-key").register({
 	q = {
 		name = "quickfix",
 		o = {
@@ -68,7 +68,7 @@ vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 vim.keymap.set("n", "gd", "", { silent = true })
 
 -- plugin operation
-utils.fn.map({
+utils.fn.require("which-key").register({
 	p = {
 		name = "plugin",
 		u = {

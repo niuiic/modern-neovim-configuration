@@ -59,7 +59,7 @@ utils.fn.require("bufferline").setup({
 vim.keymap.set("n", "<C-k>", ":BufferLineCycleNext<CR>", { silent = true })
 vim.keymap.set("n", "<C-j>", ":BufferLineCyclePrev<CR>", { silent = true })
 vim.keymap.set("n", "<C-m>", ":b#<CR>", { silent = true })
-utils.fn.map({
+utils.fn.require("which-key").register({
 	b = {
 		name = "bufferline",
 		h = {
