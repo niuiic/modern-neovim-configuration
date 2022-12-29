@@ -1,3 +1,1 @@
-local utils = require("utils")
-
-require("lsp_lines").setup()
+require("lsp_lines").setup({})

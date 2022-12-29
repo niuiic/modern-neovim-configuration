@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("nvim-treesitter.configs").setup({
 	-- use :TSInstallInfo to check pasers
 	ensure_installed = {

@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("diffview").setup({})
 
 -- keymap

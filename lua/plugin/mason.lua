@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 -- lsps installed:
 -- ◍ sqls
 -- ◍ vue-language-server

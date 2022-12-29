@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("nvim-gps").setup({
 
 	disable_icons = false, -- Setting it to true will disable all icons

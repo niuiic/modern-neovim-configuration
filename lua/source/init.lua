@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local cmp = require("cmp")
 
 local lang_list = {

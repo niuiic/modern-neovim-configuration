@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("dap-vscode-js").setup({
 	debugger_path = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/js-debug-adapter",
 })

@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local telescope = require("telescope")
 local trouble = require("trouble.providers.telescope")
 

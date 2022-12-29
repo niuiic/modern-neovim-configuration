@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local nvim_tree = require("nvim-tree")
 local lib = require("nvim-tree.lib")
 local cd_dot_cb = function(node)

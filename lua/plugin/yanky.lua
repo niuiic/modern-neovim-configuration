@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local mapping = require("yanky.telescope.mapping")
 
 require("yanky").setup({

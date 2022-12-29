@@ -1,4 +1,3 @@
-local utils = require("utils")
 local dap = require("dap")
 
 dap.adapters.chrome = {

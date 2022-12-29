@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("reach").setup({})
 
 -- delete all marks

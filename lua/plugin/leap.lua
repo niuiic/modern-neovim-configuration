@@ -1,4 +1,3 @@
-local utils = require("utils")
 local leap = require("leap")
 
 leap.setup({

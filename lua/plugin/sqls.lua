@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 -- keymap
 require("which-key").register({
     l = {

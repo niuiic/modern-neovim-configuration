@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("bufferline").setup({
 	options = {
 		mode = "buffers",

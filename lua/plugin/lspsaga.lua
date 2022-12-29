@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("lspsaga").init_lsp_saga({
 	move_in_saga = { prev = "<C-b>", next = "<C-f>" },
 	finder_action_keys = {
@@ -45,7 +43,7 @@ require("lspsaga").init_lsp_saga({
 
 --symbols in winbar
 local function get_file_name(include_path)
-	local file_name = require("lspsaga.symbolwinbar").get_file_name()
+	local file_name = require("lspsaga.symbolwinbar").get_file_name({})
 	if vim.fn.bufname("%") == "" then
 		return ""
 	end

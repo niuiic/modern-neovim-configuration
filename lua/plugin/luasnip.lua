@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("luasnip.config").setup({
 	history = true,
 	update_events = "TextChanged,TextChangedI",

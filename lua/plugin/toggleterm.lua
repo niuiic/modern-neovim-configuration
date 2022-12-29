@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("toggleterm").setup({
 	size = 15,
 	open_mapping = "<c-z>",

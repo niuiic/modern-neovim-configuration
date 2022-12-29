@@ -1,4 +1,3 @@
-local utils = require("utils")
 local undotree = require("undotree")
 undotree.setup()
 

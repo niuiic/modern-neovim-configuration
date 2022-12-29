@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local neogen = require("neogen")
 
 neogen.setup({

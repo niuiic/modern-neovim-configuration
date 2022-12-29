@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("tokyonight").setup({
 	transparent = true,
 	styles = {

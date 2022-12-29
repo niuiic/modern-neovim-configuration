@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local autopairs = require("nvim-autopairs")
 local rule = require("nvim-autopairs.rule")
 

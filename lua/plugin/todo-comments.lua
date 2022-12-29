@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("todo-comments").setup({
 	keywords = {
 		FIX = {

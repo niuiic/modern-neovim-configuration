@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("nvim-surround").setup({})
 
 -- ds<char>

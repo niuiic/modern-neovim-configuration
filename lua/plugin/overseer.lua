@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 -- check `https://github.com/stevearc/overseer.nvim/blob/master/doc/guides.md#custom-tasks` for setting tasks
 
 require("overseer").setup({

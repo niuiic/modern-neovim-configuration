@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local gitsigns = require("gitsigns")
 
 gitsigns.setup()

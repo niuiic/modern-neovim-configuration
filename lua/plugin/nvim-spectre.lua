@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local spectre = require("spectre")
 
 spectre.setup({

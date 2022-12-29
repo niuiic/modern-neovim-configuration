@@ -1,4 +1,3 @@
-local utils = require("utils")
 local db = require("dashboard")
 
 db.custom_header = {

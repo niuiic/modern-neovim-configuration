@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("git-conflict").setup({
 	default_mappings = false,
 })

@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("symbols-outline").setup({
 	width = 30,
 	keymaps = {

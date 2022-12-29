@@ -1,6 +1,4 @@
-local utils = require("utils")
-
-require("pretty-fold").setup()
+require("pretty-fold").setup({})
 
 local foldPreview = require("fold-preview")
 foldPreview.setup({

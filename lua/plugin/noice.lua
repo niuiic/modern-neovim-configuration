@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 vim.notify = require("notify")
 
 require("notify").setup({

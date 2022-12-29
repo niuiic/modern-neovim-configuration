@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("trouble").setup({
 	action_keys = {
 		close = "q",

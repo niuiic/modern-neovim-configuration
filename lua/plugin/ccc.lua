@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local ccc = require("ccc")
 local mapping = ccc.mapping
 ccc.setup({

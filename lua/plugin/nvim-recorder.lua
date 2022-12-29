@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("recorder").setup({
 	mapping = {
 		startStopRecording = "r",

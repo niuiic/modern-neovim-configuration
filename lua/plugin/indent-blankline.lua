@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 vim.opt.termguicolors = true
 vim.api.nvim_command([[highlight IndentBlanklineIndent1 guifg=#0066ff gui=nocombine]])
 vim.api.nvim_command([[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]])

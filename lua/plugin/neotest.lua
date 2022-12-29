@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 local neotest = require("neotest")
 
 neotest.setup({

@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 require("nvim-treesitter.configs").setup({
 	context_commentstring = {
 		enable = true,
@@ -47,7 +45,12 @@ require("Comment").setup({
 		if vim.bo.filetype == "vue" then
 			return calc_vue_commentstring()
 		else
-			return require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()(ctx)
+			local pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
+			local res = pre_hook(ctx)
+			if res ~= nil then
+				return res
+			end
+			return ""
 		end
 	end,
 })
