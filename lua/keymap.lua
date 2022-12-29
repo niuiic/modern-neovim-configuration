@@ -70,7 +70,7 @@ require("which-key").register({
 	p = {
 		name = "plugin",
 		u = {
-			"<cmd>PackerSync<CR>",
+			"<cmd>Lazy update<CR>",
 			"update plugins",
 		},
 		l = {

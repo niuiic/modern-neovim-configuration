@@ -24,10 +24,12 @@ end
 
 -- load config
 M.fn.load_config = function(configs)
-	for _, value in pairs(configs) do
-		local status, _ = pcall(require, value)
-		if not status then
-			vim.notify("Error: failed to load config " .. value, "error")
+	return function()
+		for _, value in pairs(configs) do
+			local status, _ = pcall(require, value)
+			if not status then
+				vim.notify("Error: failed to load config " .. value, "error")
+			end
 		end
 	end
 end

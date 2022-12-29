@@ -2,9 +2,9 @@ local utils = require("utils")
 
 package.path = "./?/init.lua;" .. package.path
 
+require("plugins")
 require("basic")
 require("keymap")
-require("plugins")
 require("snippet")
 require("source")
 require("script")

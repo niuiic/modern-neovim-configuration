@@ -47,59 +47,17 @@ Neovim: V0.9+ (build from source with LuaJIT)
 
 ### Installation
 
-1. Install `packer.nvim`
+1. Install all dependencies.
 
-```sh
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
+2. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
-2. Install all dependencies.
+3. Open neovim and all plugins would be installed automatically.
 
-3. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
+4. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.lua` for details.
 
-4. `cd ~/.config/nvim && mv init.lua init.luabp`, then create a new `init.lua`.
+5. Use `:checkhealth` to check if something is missing.
 
-```lua
-require('packer').startup({
-    function(use)
-        use("wbthomason/packer.nvim")
-        use("folke/which-key.nvim")
-    end
-})
-```
-
-5. Use `:PackerSync` to install `which-key.nvim`.
-
-6. Modify `init.lua` and `lua/utils.lua`.
-
-```lua
--- init.lua
-require("plugins")
-```
-
-```lua
--- lua/utils.lua
-
--- disable this function is enough
-M.fn.load_config = function(configs)
-	-- for _, value in pairs(configs) do
-	-- 	local status, _ = pcall(require, value)
-	-- 	if not status then
-	-- 		print("Error: failed to load config " .. value)
-	-- 	end
-	-- end
-end
-```
-
-7. Use `:PackerSync` to install remaining plugins.
-
-8. `mv init.luabp init.lua`. Restore `lua/utils.lua`
-
-9. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.lua` for details.
-
-10. Use `:checkhealth` to check if something is missing.
-
-11. Look for specific functions in `lua/plugins.lua`.
+6. Look for specific functions in `lua/plugins.lua`.
 
 ### Keymap
 
@@ -151,7 +109,7 @@ The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua`
 ```lua
 local utils = require("utils")
 
-local overseer = utils.fn.require("overseer")
+local overseer = require("overseer")
 
 local scriptPath = utils.fn.root_pattern() .. "/.nvim/task/task.sh"
 
@@ -201,12 +159,10 @@ fi
 `.nvim/init.lua`
 
 ```lua
-local utils = require("utils")
-
 package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?.lua;" .. package.path
 package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?/init.lua;" .. package.path
 
-utils.fn.require("task")
+require("task")
 ```
 
 > These tasks cannot be infinite loops.
