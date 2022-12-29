@@ -93,7 +93,7 @@ require("lazy").setup({
 	-- end
 
 	-- sql
-	{ "nanotee/sqls.nvim", opt = true, ft = "sql", config = utils.fn.load_config({ "plugin/sqls" }) },
+	{ "nanotee/sqls.nvim", ft = "sql", config = utils.fn.load_config({ "plugin/sqls" }) },
 
 	-- code auto complete
 	-- group
