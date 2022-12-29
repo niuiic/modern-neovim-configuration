@@ -15,7 +15,7 @@ utils.fn.require("luasnip.config").setup({
 	ext_prio_increase = 1,
 	enable_autosnippets = true,
 	ft_func = function()
-		return vim.split(vim.bo.filetype, ".", true)
+		return vim.split(vim.bo.filetype, ".")
 	end,
 })
 
