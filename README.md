@@ -39,7 +39,6 @@ Neovim: V0.9+ (build from source with LuaJIT)
 3. `trash-cli` command (required by `nvim-tree.lua`)
 4. `fcitx5` (required by `fcitx.nvim`)
 5. `translate-shell` (required by `script/translate` and `script/spell`)
-6. `xclip` (required by `script/translate`)
 
 ## QuickStart
 

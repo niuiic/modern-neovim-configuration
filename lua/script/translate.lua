@@ -1,11 +1,9 @@
--- translate-shell, xclip is required
+-- translate-shell is required
 
 local plenary = require("plenary")
 local utils = require("utils")
 
 local proxy = "http://127.0.0.1:10025"
-
-local sender, receiver = plenary.async.control.channel.mpsc()
 
 local function trans(word, target)
 	plenary.job
@@ -23,15 +21,14 @@ local function trans(word, target)
 						title = "Translate",
 					})
 				end
-				sender.send(result)
 			end,
 		})
 		:start()
 
-	if target == "en" then
-		local result = receiver.recv()
-		vim.api.nvim_command("!echo " .. result .. " | xclip -sel clip")
-	end
+	-- if target == "en" then
+	-- 	vim.fn.setreg("+", result)
+	-- 	vim.api.nvim_command("!echo " .. result .. " | xclip -sel clip")
+	-- end
 end
 
 vim.api.nvim_create_user_command("TransToZH", function()
