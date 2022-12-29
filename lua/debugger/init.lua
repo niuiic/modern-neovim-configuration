@@ -9,5 +9,5 @@ local debuggers = {
 }
 
 for _, value in pairs(debuggers) do
-	utils.fn.require("debugger/" .. value)
+	require("debugger/" .. value)
 end

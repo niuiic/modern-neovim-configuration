@@ -1,5 +1,5 @@
 local utils = require("utils")
-local db = utils.fn.require("dashboard")
+local db = require("dashboard")
 
 db.custom_header = {
 	[[                                                                   ]],

@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("bufferline").setup({
+require("bufferline").setup({
 	options = {
 		mode = "buffers",
 		numbers = "ordinal",
@@ -59,7 +59,7 @@ utils.fn.require("bufferline").setup({
 vim.keymap.set("n", "<C-k>", ":BufferLineCycleNext<CR>", { silent = true })
 vim.keymap.set("n", "<C-j>", ":BufferLineCyclePrev<CR>", { silent = true })
 vim.keymap.set("n", "<C-m>", ":b#<CR>", { silent = true })
-utils.fn.require("which-key").register({
+require("which-key").register({
 	b = {
 		name = "bufferline",
 		h = {

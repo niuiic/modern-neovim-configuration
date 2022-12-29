@@ -1,13 +1,13 @@
 local utils = require("utils")
 
-local neogen = utils.fn.require("neogen")
+local neogen = require("neogen")
 
 neogen.setup({
 	snippet_engine = "luasnip",
 })
 
 -- keymap
-utils.fn.require("which-key").register({
+require("which-key").register({
 	a = {
 		name = "annotations",
 		f = {

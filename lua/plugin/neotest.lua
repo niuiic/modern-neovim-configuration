@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local neotest = utils.fn.require("neotest")
+local neotest = require("neotest")
 
 neotest.setup({
 	adapters = {
@@ -15,7 +15,7 @@ neotest.setup({
 -- keymap
 vim.keymap.set("n", ";j", "<Plug>(ultest-next-fail)", { silent = true })
 vim.keymap.set("n", ";k", "<Plug>(ultest-prev-fail)", { silent = true })
-utils.fn.require("which-key").register({
+require("which-key").register({
 	t = {
 		name = "test",
 		r = {

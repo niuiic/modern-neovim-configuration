@@ -1,5 +1,5 @@
 local utils = require("utils")
-local dap = utils.fn.require("dap")
+local dap = require("dap")
 
 dap.adapters.go = function(callback, _)
 	local stdout = vim.loop.new_pipe(false)

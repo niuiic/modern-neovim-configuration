@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("symbols-outline").setup({
+require("symbols-outline").setup({
 	width = 30,
 	keymaps = {
 		toggle_preview = "p",
@@ -37,7 +37,7 @@ utils.fn.require("symbols-outline").setup({
 	},
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	m = {
 		function()
 			if vim.bo.filetype == "markdown" or vim.bo.filetype == "Outline" then

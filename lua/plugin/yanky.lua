@@ -1,8 +1,8 @@
 local utils = require("utils")
 
-local mapping = utils.fn.require("yanky.telescope.mapping")
+local mapping = require("yanky.telescope.mapping")
 
-utils.fn.require("yanky").setup({
+require("yanky").setup({
 	ring = {
 		history_length = 10,
 		storage = "shada",
@@ -37,7 +37,7 @@ utils.fn.require("yanky").setup({
 	},
 })
 
-utils.fn.require("telescope").load_extension("yank_history")
+require("telescope").load_extension("yank_history")
 
 -- keymap
 vim.keymap.set("n", "p", "<Plug>(YankyPutAfter)", { silent = true })

@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local ccc = utils.fn.require("ccc")
+local ccc = require("ccc")
 local mapping = ccc.mapping
 ccc.setup({
 	highlighter = {
@@ -14,7 +14,7 @@ ccc.setup({
 	},
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	c = {
 		name = "ccc",
 		o = { "<cmd>CccPick<CR>", "open color picker" },

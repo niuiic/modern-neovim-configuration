@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("tokyonight").setup({
+require("tokyonight").setup({
 	transparent = true,
 	styles = {
 		sidebars = "transparent",

@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local cmp = utils.fn.require("cmp")
+local cmp = require("cmp")
 
 local lang_list = {
 	"go",
@@ -10,7 +10,7 @@ local lang_list = {
 
 -- register custom sources
 for _, value in pairs(lang_list) do
-	local M = utils.fn.require("source/" .. value)
+	local M = require("source/" .. value)
 	local source = {}
 	function source:complete(_, callback)
 		callback(M)

@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local gitsigns = utils.fn.require("gitsigns")
+local gitsigns = require("gitsigns")
 
 gitsigns.setup()
 
@@ -9,7 +9,7 @@ local gs = package.loaded.gitsigns
 -- keymap
 vim.keymap.set("n", "gc", ":!git commit -m ", { silent = true })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	g = {
 		name = "git signs",
 		c = {
@@ -90,7 +90,7 @@ utils.fn.require("which-key").register({
 	prefix = "<localleader>",
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	g = {
 		name = "git signs",
 		s = {

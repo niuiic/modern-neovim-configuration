@@ -1,5 +1,5 @@
 local utils = require("utils")
-local leap = utils.fn.require("leap")
+local leap = require("leap")
 
 leap.setup({
 	safe_labels = {
@@ -69,7 +69,7 @@ vim.api.nvim_create_user_command("SearchAllWinsA", function()
 	})
 end, {})
 
-utils.fn.require("hop").setup({})
+require("hop").setup({})
 
 vim.keymap.set("n", "f", "<cmd>SearchAllWinsA<CR>", { silent = true })
 vim.keymap.set("n", "F", "<cmd>SearchAllWinsB<CR>", { silent = true })

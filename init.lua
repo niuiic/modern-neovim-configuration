@@ -2,12 +2,12 @@ local utils = require("utils")
 
 package.path = "./?/init.lua;" .. package.path
 
-utils.fn.require("basic")
-utils.fn.require("keymap")
-utils.fn.require("plugins")
-utils.fn.require("snippet")
-utils.fn.require("source")
-utils.fn.require("script")
+require("basic")
+require("keymap")
+require("plugins")
+require("snippet")
+require("source")
+require("script")
 
 -- config for Workspace
 local local_config = utils.fn.root_pattern() .. "/.nvim/init.lua"

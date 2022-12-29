@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local spectre = utils.fn.require("spectre")
+local spectre = require("spectre")
 
 spectre.setup({
 	live_update = true,
@@ -24,7 +24,7 @@ spectre.setup({
 	},
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	r = {
 		name = "replace in project",
 		w = {
@@ -51,7 +51,7 @@ utils.fn.require("which-key").register({
 	prefix = "<leader>",
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	r = {
 		function()
 			spectre.open_visual()

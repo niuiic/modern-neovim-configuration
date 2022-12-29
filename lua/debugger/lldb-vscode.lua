@@ -1,5 +1,5 @@
 local utils = require("utils")
-local dap = utils.fn.require("dap")
+local dap = require("dap")
 
 dap.adapters.lldb = {
 	type = "executable",

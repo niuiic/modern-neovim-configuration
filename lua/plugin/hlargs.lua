@@ -1,5 +1,5 @@
 local utils = require("utils")
 
-utils.fn.require("hlargs").setup({
+require("hlargs").setup({
 	color = "#ef9062",
 })

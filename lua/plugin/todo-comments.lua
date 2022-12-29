@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("todo-comments").setup({
+require("todo-comments").setup({
 	keywords = {
 		FIX = {
 			icon = " ",

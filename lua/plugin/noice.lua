@@ -1,13 +1,13 @@
 local utils = require("utils")
 
-vim.notify = utils.fn.require("notify")
+vim.notify = require("notify")
 
-utils.fn.require("notify").setup({
+require("notify").setup({
 	background_colour = "#37383a",
 	timeout = 1,
 })
 
-utils.fn.require("noice").setup({
+require("noice").setup({
 	messages = {
 		view = "mini",
 	},

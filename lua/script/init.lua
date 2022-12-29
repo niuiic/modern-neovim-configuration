@@ -9,5 +9,5 @@ local script_list = {
 }
 
 for _, value in ipairs(script_list) do
-	utils.fn.require("script/" .. value)
+	require("script/" .. value)
 end

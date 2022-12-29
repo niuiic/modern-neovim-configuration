@@ -37,4 +37,4 @@ local utils = require("utils")
 -- ◍ taplo (installed as a lsp)
 -- install cmake-format, verible, goimports manually
 
-utils.fn.require("mason").setup()
+require("mason").setup()

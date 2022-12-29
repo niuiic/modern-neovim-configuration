@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("nvim-cursorline").setup({
+require("nvim-cursorline").setup({
 	cursorline = {
 		enable = false,
 	},

@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("nvim-treesitter.configs").setup({
+require("nvim-treesitter.configs").setup({
 	-- use :TSInstallInfo to check pasers
 	ensure_installed = {
 		"bash",

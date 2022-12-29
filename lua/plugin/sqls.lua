@@ -1,7 +1,7 @@
 local utils = require("utils")
 
 -- keymap
-utils.fn.require("which-key").register({
+require("which-key").register({
     l = {
         name = "sql cmd",
         r = {
@@ -26,7 +26,7 @@ utils.fn.require("which-key").register({
     prefix = "<leader>",
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
     l = {
         name = "sql cmd",
         r = {

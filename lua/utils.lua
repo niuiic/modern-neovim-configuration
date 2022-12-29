@@ -32,15 +32,6 @@ M.fn.load_config = function(configs)
 	end
 end
 
--- `require` with error handling
-M.fn.require = function(package_name)
-	local status, package = pcall(require, package_name)
-	if not status then
-		vim.notify("Error: failed to load package " .. package_name, "error")
-	end
-	return package
-end
-
 -- merge list
 -- table2 will override table1
 M.fn.merge_list = function(table1, table2)

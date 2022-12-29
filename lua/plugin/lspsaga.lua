@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("lspsaga").init_lsp_saga({
+require("lspsaga").init_lsp_saga({
 	move_in_saga = { prev = "<C-b>", next = "<C-f>" },
 	finder_action_keys = {
 		open = "<cr>",
@@ -45,7 +45,7 @@ utils.fn.require("lspsaga").init_lsp_saga({
 
 --symbols in winbar
 local function get_file_name(include_path)
-	local file_name = utils.fn.require("lspsaga.symbolwinbar").get_file_name()
+	local file_name = require("lspsaga.symbolwinbar").get_file_name()
 	if vim.fn.bufname("%") == "" then
 		return ""
 	end
@@ -112,8 +112,8 @@ for type, icon in pairs(signs) do
 end
 
 -- keymap
-local telescope_builtin = utils.fn.require("telescope.builtin")
-utils.fn.require("which-key").register({
+local telescope_builtin = require("telescope.builtin")
+require("which-key").register({
 	g = {
 		f = {
 			function()
@@ -181,13 +181,13 @@ utils.fn.require("which-key").register({
 		},
 		T = {
 			function()
-				utils.fn.require("todo-comments").jump_prev()
+				require("todo-comments").jump_prev()
 			end,
 			"jump to previous todo comment",
 		},
 		t = {
 			function()
-				utils.fn.require("todo-comments").jump_next()
+				require("todo-comments").jump_next()
 			end,
 			"jump to next todo comment",
 		},

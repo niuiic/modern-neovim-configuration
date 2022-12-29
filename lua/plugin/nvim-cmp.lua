@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-local cmp = utils.fn.require("cmp")
+local cmp = require("cmp")
 
 cmp.setup({
 	snippet = {
@@ -20,7 +20,7 @@ cmp.setup({
 			cmp.config.compare.offset,
 			cmp.config.compare.exact,
 			cmp.config.compare.score,
-			utils.fn.require("cmp-under-comparator").under,
+			require("cmp-under-comparator").under,
 			cmp.config.compare.kind,
 			cmp.config.compare.sort_text,
 			cmp.config.compare.length,
@@ -47,7 +47,7 @@ cmp.setup.cmdline(":", {
 
 cmp.setup({
 	formatting = {
-		format = utils.fn.require("lspkind").cmp_format({
+		format = require("lspkind").cmp_format({
 			mode = "symbol",
 			maxwidth = 50,
 		}),

@@ -1,13 +1,13 @@
 local utils = require("utils")
 
-utils.fn.require("auto-session").setup({
+require("auto-session").setup({
 	auto_session_enabled = false,
 	auto_session_create_enabled = false,
 	auto_session_root_dir = utils.fn.root_pattern() .. "/.nvim/session/",
 })
 
 -- keymap
-utils.fn.require("which-key").register({
+require("which-key").register({
 	s = {
 		name = "session",
 		s = {

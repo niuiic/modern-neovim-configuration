@@ -1,11 +1,11 @@
 local utils = require("utils")
 
-utils.fn.require("git-conflict").setup({
+require("git-conflict").setup({
 	default_mappings = false,
 })
 
 -- keymap
-utils.fn.require("which-key").register({
+require("which-key").register({
 	c = {
 		name = "git conflict",
 		c = {

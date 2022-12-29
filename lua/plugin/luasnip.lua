@@ -1,11 +1,11 @@
 local utils = require("utils")
 
-utils.fn.require("luasnip.config").setup({
+require("luasnip.config").setup({
 	history = true,
 	update_events = "TextChanged,TextChangedI",
 	delete_check_events = "TextChanged",
 	ext_opts = {
-		[utils.fn.require("luasnip.util.types").choiceNode] = {
+		[require("luasnip.util.types").choiceNode] = {
 			active = {
 				virt_text = { { "choiceNode", "Comment" } },
 			},

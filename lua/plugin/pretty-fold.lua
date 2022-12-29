@@ -1,14 +1,14 @@
 local utils = require("utils")
 
-utils.fn.require("pretty-fold").setup()
+require("pretty-fold").setup()
 
-local foldPreview = utils.fn.require("fold-preview")
+local foldPreview = require("fold-preview")
 foldPreview.setup({
 	border = "single",
 })
 
 local keymap = vim.keymap
-keymap.amend = utils.fn.require("keymap-amend")
+keymap.amend = require("keymap-amend")
 local map = foldPreview.mapping
 
 keymap.amend("n", "H", foldPreview.show_preview)

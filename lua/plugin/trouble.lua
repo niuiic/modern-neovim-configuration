@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("trouble").setup({
+require("trouble").setup({
 	action_keys = {
 		close = "q",
 		cancel = "<esc>",
@@ -24,7 +24,7 @@ utils.fn.require("trouble").setup({
 	padding = false,
 })
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	t = {
 		name = "trouble",
 		d = {

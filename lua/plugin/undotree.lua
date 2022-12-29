@@ -1,8 +1,8 @@
 local utils = require("utils")
-local undotree = utils.fn.require("undotree")
+local undotree = require("undotree")
 undotree.setup()
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	u = {
 		function()
 			undotree.toggle()

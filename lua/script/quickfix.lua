@@ -1,5 +1,5 @@
 local utils = require("utils")
-local plenary = utils.fn.require("plenary")
+local plenary = require("plenary")
 
 local root_dir = utils.fn.root_pattern()
 local qf_history_path = root_dir .. "/.nvim/quickfix"

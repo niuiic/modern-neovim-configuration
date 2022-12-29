@@ -1,10 +1,10 @@
 local utils = require("utils")
 
-utils.fn.require("diffview").setup({})
+require("diffview").setup({})
 
 -- keymap
 vim.keymap.set("n", "<leader>ds", ":DiffviewOpen ", { silent = true })
-utils.fn.require("which-key").register({
+require("which-key").register({
 	d = {
 		name = "diffview",
 		s = {

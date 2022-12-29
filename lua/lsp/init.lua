@@ -30,7 +30,7 @@ local on_attach = function(client, _)
 end
 
 -- nvim-cmp support
-local capabilities = utils.fn.require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lsp_commands = {}
 
@@ -49,7 +49,7 @@ end
 
 -- load all lsp config
 for _, value in pairs(lspList) do
-	local config = utils.fn.require("lsp/" .. value)
+	local config = require("lsp/" .. value)
 
 	-- set on_attach
 	if config.on_attach == nil then
@@ -72,10 +72,10 @@ for _, value in pairs(lspList) do
 	end
 
 	-- set lsp config
-	utils.fn.require("lspconfig")[value].setup(config)
+	require("lspconfig")[value].setup(config)
 
 	-- set commands
-	local commands = utils.fn.merge_object(utils.fn.require("lspconfig")[value].commands, config.commands)
+	local commands = utils.fn.merge_object(require("lspconfig")[value].commands, config.commands)
 	if commands ~= nil then
 		set_lsp_commands(value, commands)
 	end
@@ -121,7 +121,7 @@ local function rename_filter(client)
 	end
 end
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	l = {
 		name = "lsp commands",
 		f = {
@@ -162,6 +162,6 @@ vim.diagnostic.config({
 	float = { border = "single" },
 })
 
-utils.fn.require("lspconfig.ui.windows").default_options = {
+require("lspconfig.ui.windows").default_options = {
 	border = "single",
 }

@@ -1,7 +1,7 @@
 local utils = require("utils")
 
-local telescope = utils.fn.require("telescope")
-local trouble = utils.fn.require("trouble.providers.telescope")
+local telescope = require("telescope")
+local trouble = require("trouble.providers.telescope")
 
 telescope.setup({
 	defaults = {
@@ -35,10 +35,10 @@ local opt = {
 	},
 }
 
-local telescope_builtin = utils.fn.require("telescope.builtin")
+local telescope_builtin = require("telescope.builtin")
 
 -- some search functions will respect .gitignore
-utils.fn.require("which-key").register({
+require("which-key").register({
 	o = {
 		name = "telescope",
 		l = {

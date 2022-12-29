@@ -1,6 +1,6 @@
 local utils = require("utils")
-local dapui = utils.fn.require("dapui")
-local dap = utils.fn.require("dap")
+local dapui = require("dapui")
+local dap = require("dap")
 
 dapui.setup()
 
@@ -14,10 +14,10 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 	dapui.close()
 end
 
-utils.fn.require("nvim-dap-virtual-text").setup()
+require("nvim-dap-virtual-text").setup()
 
 -- keymap
-utils.fn.require("which-key").register({
+require("which-key").register({
 	d = {
 		name = "debug",
 		t = {
@@ -83,13 +83,13 @@ utils.fn.require("which-key").register({
 		},
 		j = {
 			function()
-				utils.fn.require("goto-breakpoints").next()
+				require("goto-breakpoints").next()
 			end,
 			"go to next breakpoint",
 		},
 		k = {
 			function()
-				utils.fn.require("goto-breakpoints").prev()
+				require("goto-breakpoints").prev()
 			end,
 			"go to previous breakpoint",
 		},

@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("reach").setup({})
+require("reach").setup({})
 
 -- delete all marks
 vim.keymap.set("n", "<A-m>", "<cmd>:delm a-z A-Z<CR>", { silent = true })

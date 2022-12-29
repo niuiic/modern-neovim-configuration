@@ -60,7 +60,7 @@ vim.api.nvim_create_user_command("TransToEN", function()
 	trans(source, "en")
 end, {})
 
-utils.fn.require("which-key").register({
+require("which-key").register({
 	T = {
 		"<cmd>TransToEN<CR>",
 		"trans to en",

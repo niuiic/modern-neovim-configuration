@@ -12,7 +12,7 @@ vim.api.nvim_command([[highlight IndentBlanklineIndent8 guifg=#000066 gui=nocomb
 vim.api.nvim_command([[highlight IndentBlanklineIndent9 guifg=#00ffff gui=nocombine]])
 vim.api.nvim_command([[highlight IndentBlanklineIndent10 guifg=#666699 gui=nocombine]])
 
-utils.fn.require("indent_blankline").setup({
+require("indent_blankline").setup({
 	space_char_blankline = " ",
 	char_highlight_list = {
 		"IndentBlanklineIndent1",

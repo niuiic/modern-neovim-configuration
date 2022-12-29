@@ -1,6 +1,6 @@
 local utils = require("utils")
 
-utils.fn.require("lualine").setup({
+require("lualine").setup({
 	options = {
 		icons_enabled = true,
 		theme = "tokyonight",
