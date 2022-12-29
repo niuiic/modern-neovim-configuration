@@ -44,7 +44,7 @@ end, {
 vim.api.nvim_create_user_command("TransToEN", function()
 	local source
 	vim.ui.input({
-		prompt = "Target : ",
+		prompt = "zh-CN: ",
 		completion = "file",
 	}, function(input)
 		if input ~= nil then
