@@ -188,7 +188,7 @@ require("lazy").setup({
 	-- git signs
 	{ "lewis6991/gitsigns.nvim", config = utils.fn.load_config({ "plugin/gitsigns" }) },
 	-- resolve git conflict
-	{ "akinsho/git-conflict.nvim", config = utils.fn.load_config({ "plugin/git-conflict" }) },
+	{ "akinsho/git-conflict.nvim", config = utils.fn.load_config({ "plugin/git-conflict" }), event = "VimEnter" },
 	-- color picker & colorizer
 	{
 		"uga-rosa/ccc.nvim",
