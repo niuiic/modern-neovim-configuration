@@ -121,12 +121,31 @@ local function rename_filter(client)
 	end
 end
 
+local function copy_file_path()
+	local name = vim.api.nvim_buf_get_name(0)
+	local root_path = utils.fn.root_pattern()
+	local index = string.find(name, root_path)
+	if index == nil then
+		vim.notify("The file is not under the project", "error")
+	else
+		local str = string.sub(name, string.len(root_path) + 2)
+		vim.fn.setreg("+", str)
+		vim.notify("Copied " .. str .. " to clipboard")
+	end
+end
+
 require("which-key").register({
 	l = {
 		name = "lsp commands",
 		f = {
 			"<cmd>LSPRenameFile<CR>",
 			"rename file",
+		},
+		p = {
+			function()
+				copy_file_path()
+			end,
+			"copy path",
 		},
 		r = {
 			function()
