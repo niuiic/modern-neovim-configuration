@@ -33,8 +33,6 @@ require("lazy").setup({
 		dependencies = { "anuvyklack/keymap-amend.nvim", "anuvyklack/fold-preview.nvim" },
 		config = utils.fn.load_config({ "plugin/pretty-fold" }),
 	},
-	-- repeat previous cmd
-	"tpope/vim-repeat",
 	-- lazygit
 	{ "kdheepak/lazygit.nvim", config = utils.fn.load_config({ "plugin/lazygit" }) },
 	-- terminal
@@ -166,8 +164,6 @@ require("lazy").setup({
 	"jbyuki/one-small-step-for-vimkind",
 	-- end
 
-	-- expand and repeat expression to multiple lines
-	{ "AllenDang/nvim-expand-expr", config = utils.fn.load_config({ "plugin/nvim-expand-expr" }) },
 	-- unit test
 	{
 		"nvim-neotest/neotest",
@@ -292,6 +288,7 @@ require("lazy").setup({
 	-- tag bar
 	{
 		"simrat39/symbols-outline.nvim",
+		ft = "markdown",
 		config = utils.fn.load_config({ "plugin/symbols-outline" }),
 	},
 	-- pretty ui

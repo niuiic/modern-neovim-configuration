@@ -335,11 +335,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Expand Expression</b></summary>
-<img src="./img/expand-expression.png"/>
-</details>
-
-<details>
   <summary><b>TagBar</b></summary>
 <img src="./img/tagbar.png"/>
 </details>
