@@ -22,12 +22,8 @@ end
 
 return {
 	config = config,
-	keys = {
-		{ "<space>on", "<cmd>Noice telescope<CR>", desc = "search notifications" },
-	},
 	dependencies = {
 		"MunifTanjim/nui.nvim",
 		"rcarriga/nvim-notify",
 	},
-	lazy = false,
 }

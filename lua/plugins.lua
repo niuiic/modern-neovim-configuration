@@ -23,11 +23,11 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
 	-- auto complete pairs
 	utils.fn.load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
-	-- automatically switch input method when input mode changed #
+	-- automatically switch input method when input mode changed
 	utils.fn.load_plugin_config("alohaia/fcitx.nvim", "plugin/fcitx"),
 	-- displays neovim startup time
 	utils.fn.load_plugin_config("dstein64/vim-startuptime", "plugin/vim-startuptime"),
-	-- fold #
+	-- fold
 	utils.fn.load_plugin_config("anuvyklack/pretty-fold.nvim", "plugin/pretty-fold"),
 	-- lazygit
 	utils.fn.load_plugin_config("kdheepak/lazygit.nvim", "plugin/lazygit"),
@@ -129,7 +129,7 @@ require("lazy").setup({
 	-- just use as a formatter manager now
 	utils.fn.load_plugin_config("jose-elias-alvarez/null-ls.nvim", "plugin/null-ls"),
 
-	-- fuzzy search #
+	-- fuzzy search
 	utils.fn.load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
 	-- extensions
 	-- yank

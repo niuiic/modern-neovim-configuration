@@ -54,6 +54,7 @@ local keys = {
 	{ "<space>ow", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "search words in current buffer" },
 	{ "<space>or", "<cmd>Telescope resume<CR>", desc = "research" },
 	{ "<space>oT", "<cmd>TodoTelescope<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
+	{ "<space>on", "<cmd>Noice telescope<CR>", desc = "search notifications" },
 	{ "<space>op", "<cmd>Telescope projects<CR>", desc = "search projects" },
 	{ "<space>oy", "<cmd>Telescope yank_history<CR>", desc = "yank history" },
 	{
