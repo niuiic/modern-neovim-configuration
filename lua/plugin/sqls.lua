@@ -1,38 +1,10 @@
--- keymap
-require("which-key").register({
-    l = {
-        name = "sql cmd",
-        r = {
-            "<cmd>SqlsExecuteQuery<CR>",
-            "exec current line",
-        },
-        d = {
-            "<cmd>SqlsSwitchDatabase<CR>",
-            "show databases",
-        },
-        s = {
-            "<cmd>SqlsShowSchemas<CR>",
-            "show schemas",
-        },
-        c = {
-            "<cmd>SqlsSwitchConnection<CR>",
-            "show connections",
-        },
-    },
-}, {
-    mode = "n",
-    prefix = "<leader>",
-})
-
-require("which-key").register({
-    l = {
-        name = "sql cmd",
-        r = {
-            "<Plug>(sqls-execute-query)",
-            "exec current ",
-        },
-    },
-}, {
-    mode = "v",
-    prefix = "<leader>",
-})
+return {
+	ft = "sql",
+	keys = {
+		{ "<leader>lr", "<cmd>SqlsExecuteQuery<CR>", desc = "exec current line" },
+		{ "<leader>ld", "<cmd>SqlsSwitchDatabase<CR>", desc = "show databases" },
+		{ "<leader>ls", "<cmd>SqlsShowSchemas<CR>", desc = "show schemas" },
+		{ "<leader>lc", "<cmd>SqlsSwitchConnection<CR>", desc = "show connections" },
+		{ "<leader>lr", "<Plug>(sqls-execute-query)", desc = "exec current ", mode = "v" },
+	},
+}

@@ -1,1 +1,5 @@
-require("fcitx")({})
+return {
+	config = function()
+		require("fcitx")({})
+	end,
+}

@@ -35,4 +35,16 @@
 -- ◍ taplo (installed as a lsp)
 -- install cmake-format, verible, goimports manually
 
-require("mason").setup()
+return {
+	config = function()
+		require("mason").setup()
+	end,
+	keys = {
+		{
+			"<leader>ni",
+			"<cmd>Mason<CR>",
+			desc = "lsp installation",
+		},
+	},
+	lazy = false,
+}

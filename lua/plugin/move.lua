@@ -1,4 +1,24 @@
-vim.keymap.set("v", "<A-j>", ":MoveBlock(1)<CR>", { silent = true })
-vim.keymap.set("v", "<A-k>", ":MoveBlock(-1)<CR>", { silent = true })
-vim.keymap.set("v", "<A-l>", ":MoveHBlock(1)<CR>", { silent = true })
-vim.keymap.set("v", "<A-h>", ":MoveHBlock(-1)<CR>", { silent = true })
+return {
+	keys = {
+		{
+			"<A-j>",
+			"<cmd>MoveBlock(1)<CR>",
+			mode = "v",
+		},
+		{
+			"<A-k>",
+			"<cmd>MoveBlock(-1)<CR>",
+			mode = "v",
+		},
+		{
+			"<A-l>",
+			"<cmd>MoveHBlock(1)<CR>",
+			mode = "v",
+		},
+		{
+			"<A-h>",
+			"<cmd>MoveHBlock(-1)<CR>",
+			mode = "v",
+		},
+	},
+}

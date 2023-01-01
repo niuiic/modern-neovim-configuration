@@ -1,9 +1,5 @@
-require("which-key").register({
-	a = {
-		"<cmd>StartupTime<CR>",
-		"check startup time",
+return {
+	keys = {
+		{ "<leader>a", "<cmd>StartupTime<CR>", desc = "check startup time" },
 	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
+}

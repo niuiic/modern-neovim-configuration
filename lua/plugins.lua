@@ -20,90 +20,56 @@ vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
 	-- shortcut suggestions
-	{ "folke/which-key.nvim", config = utils.fn.load_config({ "plugin/which-key" }) },
+	utils.fn.load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
 	-- auto complete pairs
-	{ "windwp/nvim-autopairs", config = utils.fn.load_config({ "plugin/nvim-autopairs" }) },
-	-- automatically switch input method when input mode changed
-	{ "alohaia/fcitx.nvim", config = utils.fn.load_config({ "plugin/fcitx" }) },
+	utils.fn.load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
+	-- automatically switch input method when input mode changed #
+	utils.fn.load_plugin_config("alohaia/fcitx.nvim", "plugin/fcitx"),
 	-- displays neovim startup time
-	{ "dstein64/vim-startuptime", config = utils.fn.load_config({ "plugin/vim-startuptime" }) },
-	-- fold
-	{
-		"anuvyklack/pretty-fold.nvim",
-		dependencies = { "anuvyklack/keymap-amend.nvim", "anuvyklack/fold-preview.nvim" },
-		config = utils.fn.load_config({ "plugin/pretty-fold" }),
-	},
+	utils.fn.load_plugin_config("dstein64/vim-startuptime", "plugin/vim-startuptime"),
+	-- fold #
+	utils.fn.load_plugin_config("anuvyklack/pretty-fold.nvim", "plugin/pretty-fold"),
 	-- lazygit
-	{ "kdheepak/lazygit.nvim", config = utils.fn.load_config({ "plugin/lazygit" }) },
+	utils.fn.load_plugin_config("kdheepak/lazygit.nvim", "plugin/lazygit"),
 	-- terminal
-	{
-		"akinsho/toggleterm.nvim",
-		config = utils.fn.load_config({ "plugin/toggleterm" }),
-	},
+	utils.fn.load_plugin_config("akinsho/toggleterm.nvim", "plugin/toggleterm"),
 	-- toggle comments
-	{
-		"numToStr/Comment.nvim",
-		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-		config = utils.fn.load_config({ "plugin/comment" }),
-	},
+	utils.fn.load_plugin_config("numToStr/Comment.nvim", "plugin/comment"),
 	-- dashboard
-	{ "glepnir/dashboard-nvim", config = utils.fn.load_config({ "plugin/dashboard-nvim" }) },
+	utils.fn.load_plugin_config("glepnir/dashboard-nvim", "plugin/dashboard-nvim"),
 	-- automatically toggle between absolute line number and relative one
 	"sitiom/nvim-numbertoggle",
 
 	-- quick motion
-	-- group
-	{ "ggandor/leap.nvim", config = utils.fn.load_config({ "plugin/leap" }) },
+	utils.fn.load_plugin_config("ggandor/leap.nvim", "plugin/leap"),
 	"phaazon/hop.nvim",
-	-- end
 
 	-- session
-	{ "rmagatti/auto-session", config = utils.fn.load_config({ "plugin/auto-session" }) },
+	utils.fn.load_plugin_config("rmagatti/auto-session", "plugin/auto-session"),
 	-- file tree
-	{
-		"kyazdani42/nvim-tree.lua",
-		dependencies = {
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = utils.fn.load_config({ "plugin/nvim-tree" }),
-	},
+	utils.fn.load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
 
 	-- better syntax highlight
-	-- group
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		config = utils.fn.load_config({ "plugin/nvim-treesitter" }),
-	},
+	utils.fn.load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
 	-- extensions
 	-- rainbow brackets
 	"p00f/nvim-ts-rainbow",
-	{ "m-demare/hlargs.nvim", config = utils.fn.load_config({ "plugin/hlargs" }) },
+	utils.fn.load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
 	"andymass/vim-matchup",
 	-- syntax aware text-objects, select, move, swap, and peek support
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	-- auto complete tag in html
-	{
-		"windwp/nvim-ts-autotag",
-		config = utils.fn.load_config({ "plugin/nvim-ts-autotag" }),
-	},
-	-- end
+	utils.fn.load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
 
 	-- sql
-	{ "nanotee/sqls.nvim", ft = "sql", config = utils.fn.load_config({ "plugin/sqls" }) },
+	utils.fn.load_plugin_config("nanotee/sqls.nvim", "plugin/sqls"),
 
 	-- code auto complete
-	-- group
 	-- engine
-	{
-		"hrsh7th/nvim-cmp",
-		dependencies = {
-			-- better ui
-			{ "onsails/lspkind-nvim", config = utils.fn.load_config({ "plugin/lspkind-nvim" }) },
-		},
-		config = utils.fn.load_config({ "plugin/nvim-cmp" }),
-	},
+	utils.fn.load_plugin_config("hrsh7th/nvim-cmp", "plugin/nvim-cmp"),
+	-- better ui
+	utils.fn.load_plugin_config("onsails/lspkind-nvim", "plugin/lspkind-nvim"),
 	-- tools
 	"lukas-reineke/cmp-under-comparator",
 	-- source
@@ -115,208 +81,95 @@ require("lazy").setup({
 	"dmitmel/cmp-cmdline-history",
 	"lukas-reineke/cmp-rg",
 	-- snippets
-	{ "L3MON4D3/LuaSnip", config = utils.fn.load_config({ "plugin/luasnip" }) },
+	utils.fn.load_plugin_config("L3MON4D3/LuaSnip", "plugin/luasnip"),
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
-	-- end
 
 	-- status line
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = {
-			"folke/tokyonight.nvim",
-			"kyazdani42/nvim-web-devicons",
-		},
-		config = utils.fn.load_config({ "plugin/lualine" }),
-	},
+	utils.fn.load_plugin_config("nvim-lualine/lualine.nvim", "plugin/lualine"),
 	-- undotree
-	{
-		"jiaoshijie/undotree",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-		config = utils.fn.load_config({ "plugin/undotree" }),
-	},
+	utils.fn.load_plugin_config("jiaoshijie/undotree", "plugin/undotree"),
 	-- a pretty diagnostics, references, telescope results, quickfix and location list
-	{
-		"folke/trouble.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
-		config = utils.fn.load_config({ "plugin/trouble" }),
-	},
+	utils.fn.load_plugin_config("folke/trouble.nvim", "plugin/trouble"),
 	-- quickly modify surround char
-	{ "kylechui/nvim-surround", config = utils.fn.load_config({ "plugin/nvim-surround" }) },
+	utils.fn.load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- call sudo in neovim
-	{ "lambdalisue/suda.vim", config = utils.fn.load_config({ "plugin/suda" }) },
+	utils.fn.load_plugin_config("lambdalisue/suda.vim", "plugin/suda"),
 	-- close buffer
-	{ "kazhala/close-buffers.nvim", config = utils.fn.load_config({ "plugin/close-buffers" }) },
+	utils.fn.load_plugin_config("kazhala/close-buffers.nvim", "plugin/close-buffers"),
 	-- more smooth scroll
-	{ "karb94/neoscroll.nvim", config = utils.fn.load_config({ "plugin/neoscroll" }) },
+	utils.fn.load_plugin_config("karb94/neoscroll.nvim", "plugin/neoscroll"),
 	-- highlights cursor words and lines
-	{ "yamatsum/nvim-cursorline", config = utils.fn.load_config({ "plugin/nvim-cursorline" }) },
+	utils.fn.load_plugin_config("yamatsum/nvim-cursorline", "plugin/nvim-cursorline"),
 
 	-- debug
-	-- group
-	{ "mfussenegger/nvim-dap", config = utils.fn.load_config({ "plugin/nvim-dap", "debugger" }) },
+	utils.fn.load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
 	"mxsdev/nvim-dap-vscode-js",
 	"theHamsta/nvim-dap-virtual-text",
 	"rcarriga/nvim-dap-ui",
 	"ofirgall/goto-breakpoints.nvim",
 	"jbyuki/one-small-step-for-vimkind",
-	-- end
 
 	-- unit test
-	{
-		"nvim-neotest/neotest",
-		dependencies = {
-			-- "nvim-treesitter/nvim-treesitter" is required
-			"nvim-lua/plenary.nvim",
-			"antoinemadec/FixCursorHold.nvim",
-			-- adapters
-			-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
-			"haydenmeade/neotest-jest",
-			"nvim-neotest/neotest-go",
-			"nvim-neotest/neotest-vim-test",
-		},
-		config = utils.fn.load_config({ "plugin/neotest" }),
-	},
+	utils.fn.load_plugin_config("nvim-neotest/neotest", "plugin/neotest"),
 	-- colorscheme
-	{ "folke/tokyonight.nvim", config = utils.fn.load_config({ "plugin/tokyonight" }) },
+	utils.fn.load_plugin_config("folke/tokyonight.nvim", "plugin/tokyonight"),
 	-- git signs
-	{ "lewis6991/gitsigns.nvim", config = utils.fn.load_config({ "plugin/gitsigns" }) },
+	utils.fn.load_plugin_config("lewis6991/gitsigns.nvim", "plugin/gitsigns"),
 	-- resolve git conflict
-	{ "akinsho/git-conflict.nvim", config = utils.fn.load_config({ "plugin/git-conflict" }), event = "VimEnter" },
+	utils.fn.load_plugin_config("akinsho/git-conflict.nvim", "plugin/git-conflict"),
 	-- color picker & colorizer
-	{
-		"uga-rosa/ccc.nvim",
-		config = utils.fn.load_config({ "plugin/ccc" }),
-	},
+	utils.fn.load_plugin_config("uga-rosa/ccc.nvim", "plugin/ccc"),
 	-- indentation guides
-	{ "lukas-reineke/indent-blankline.nvim", config = utils.fn.load_config({ "plugin/indent-blankline" }) },
+	utils.fn.load_plugin_config("lukas-reineke/indent-blankline.nvim", "plugin/indent-blankline"),
 	-- tab line
-	{
-		"akinsho/bufferline.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
-		config = utils.fn.load_config({ "plugin/bufferline" }),
-	},
+	utils.fn.load_plugin_config("akinsho/bufferline.nvim", "plugin/bufferline"),
 	-- git diff gui
-	{
-		"sindrets/diffview.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = utils.fn.load_config({ "plugin/diffview" }),
-	},
+	utils.fn.load_plugin_config("sindrets/diffview.nvim", "plugin/diffview"),
 	-- just use as a formatter manager now
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = utils.fn.load_config({ "plugin/null-ls" }),
-	},
+	utils.fn.load_plugin_config("jose-elias-alvarez/null-ls.nvim", "plugin/null-ls"),
 
-	-- fuzzy search
-	-- group
-	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = utils.fn.load_config({ "plugin/telescope" }),
-	},
+	-- fuzzy search #
+	utils.fn.load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
 	-- extensions
 	-- yank
-	{
-		"gbprod/yanky.nvim",
-		config = utils.fn.load_config({ "plugin/yanky" }),
-	},
+	utils.fn.load_plugin_config("gbprod/yanky.nvim", "plugin/yanky"),
 	-- todo comments
-	{
-		"folke/todo-comments.nvim",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = utils.fn.load_config({ "plugin/todo-comments" }),
-	},
+	utils.fn.load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- project manager
-	{ "ahmedkhalf/project.nvim", config = utils.fn.load_config({ "plugin/project" }) },
-	-- end
+	utils.fn.load_plugin_config("ahmedkhalf/project.nvim", "plugin/project"),
 
 	-- task manager
-	{
-		"stevearc/overseer.nvim",
-		config = utils.fn.load_config({ "plugin/overseer" }),
-	},
+	utils.fn.load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
 
 	-- lsp
-	-- group
-	{
-		"neovim/nvim-lspconfig",
-		config = utils.fn.load_config({ "lsp" }),
-	},
-	{
-		"glepnir/lspsaga.nvim",
-		config = utils.fn.load_config({ "plugin/lspsaga" }),
-	},
+	"neovim/nvim-lspconfig",
+	utils.fn.load_plugin_config("glepnir/lspsaga.nvim", "plugin/lspsaga"),
 	-- code action
 	"weilbith/nvim-code-action-menu",
-	-- end
 
 	-- lsp, dap, linter, formatter installer
-	{
-		"williamboman/mason.nvim",
-		config = utils.fn.load_config({ "plugin/mason" }),
-	},
+	utils.fn.load_plugin_config("williamboman/mason.nvim", "plugin/mason"),
 	-- search and replace in project
-	{
-		"windwp/nvim-spectre",
-		dependencies = "nvim-lua/plenary.nvim",
-		config = utils.fn.load_config({ "plugin/nvim-spectre" }),
-	},
+	utils.fn.load_plugin_config("windwp/nvim-spectre", "plugin/nvim-spectre"),
 	-- buffer / mark / tabpage / colorscheme switcher
-	{
-		"toppair/reach.nvim",
-		config = utils.fn.load_config({ "plugin/reach" }),
-	},
+	utils.fn.load_plugin_config("toppair/reach.nvim", "plugin/reach"),
 	-- annotation generator
-	{
-		"danymat/neogen",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = utils.fn.load_config({ "plugin/neogen" }),
-	},
+	utils.fn.load_plugin_config("danymat/neogen", "plugin/neogen"),
 	-- move lines and blocks
-	{ "fedepujol/move.nvim", config = utils.fn.load_config({ "plugin/move" }) },
+	utils.fn.load_plugin_config("fedepujol/move.nvim", "plugin/move"),
 	-- highlight current n
-	{ "rktjmp/highlight-current-n.nvim", config = utils.fn.load_config({ "plugin/highlight-current-n" }) },
+	utils.fn.load_plugin_config("rktjmp/highlight-current-n.nvim", "plugin/highlight-current-n"),
 	-- cursor position
-	{
-		"gen740/SmoothCursor.nvim",
-		config = utils.fn.load_config({ "plugin/smooth-cursor" }),
-	},
+	utils.fn.load_plugin_config("gen740/SmoothCursor.nvim", "plugin/smooth-cursor"),
 	-- tag bar
-	{
-		"simrat39/symbols-outline.nvim",
-		ft = "markdown",
-		config = utils.fn.load_config({ "plugin/symbols-outline" }),
-	},
+	utils.fn.load_plugin_config("simrat39/symbols-outline.nvim", "plugin/symbols-outline"),
 	-- pretty ui
-	{
-		"folke/noice.nvim",
-		config = utils.fn.load_config({ "plugin/noice" }),
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
+	utils.fn.load_plugin_config("folke/noice.nvim", "plugin/noice"),
 	-- macro
-	{
-		"chrisgrieser/nvim-recorder",
-		config = utils.fn.load_config({ "plugin/nvim-recorder" }),
-	},
+	utils.fn.load_plugin_config("chrisgrieser/nvim-recorder", "plugin/nvim-recorder"),
 	-- crate
-	{
-		"saecki/crates.nvim",
-		event = "BufRead Cargo.toml",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = utils.fn.load_config({ "plugin/crates" }),
-	},
+	utils.fn.load_plugin_config("saecki/crates.nvim", "plugin/crates"),
 	-- js/ts package info
-	{
-		"vuki656/package-info.nvim",
-		event = "BufRead package.json",
-		dependencies = "MunifTanjim/nui.nvim",
-		config = utils.fn.load_config({ "plugin/package-info" }),
-	},
+	utils.fn.load_plugin_config("vuki656/package-info.nvim", "plugin/package-info"),
 })

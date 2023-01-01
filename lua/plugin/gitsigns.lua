@@ -1,136 +1,135 @@
-local gitsigns = require("gitsigns")
+local config = function()
+	local gitsigns = require("gitsigns")
 
-gitsigns.setup()
+	gitsigns.setup({})
 
-local gs = package.loaded.gitsigns
+	require("which-key").register({
+		g = {
+			name = "git signs",
+			s = {
+				"<cmd>Gitsigns stage_hunk<CR>",
+				"stage hunk",
+			},
+			r = {
+				"<cmd>Gitsigns reset_hunk<CR>",
+				"reset hunk",
+			},
+		},
+	}, {
+		mode = "v",
+		prefix = "<localleader>",
+	})
 
--- keymap
-vim.keymap.set("n", "gc", ":!git commit -m ", { silent = true })
-
-require("which-key").register({
-	g = {
-		name = "git signs",
-		c = {
-			"git commit",
-		},
-		s = {
-			"<cmd>Gitsigns stage_hunk<CR>",
-			"stage hunk",
-		},
-		r = {
-			"<cmd>Gitsigns reset_hunk<CR>",
-			"reset hunk",
-		},
-		R = {
-			function()
-				gs.reset_buffer()
-			end,
-			"reset buffer",
-		},
-		u = {
-			function()
-				gs.undo_stage_hunk()
-			end,
-			"undo stage hunk",
-		},
-		p = {
-			function()
-				gs.preview_hunk()
-			end,
-			"preview hunk",
-		},
-		d = {
-			function()
-				gs.toggle_deleted()
-			end,
-			"toggle deleted",
-		},
-		D = {
-			function()
-				gs.diffthis()
-			end,
-			"diff this",
-		},
-		S = {
-			function()
-				gs.stage_buffer()
-			end,
-			"stage buffer",
-		},
-		b = {
-			function()
-				gs.toggle_current_line_blame()
-			end,
-			"toggle current line blame",
-		},
-		B = {
-			function()
-				gs.blame_line({ full = true })
-			end,
-			"blame line",
-		},
-		i = {
-			"<cmd>Gitsigns select_hunk<CR>",
-			"select hunk",
-		},
-		-- trouble.nvim is required
-		l = {
-			"<cmd>Gitsigns setqflist<CR>",
-			"list all stage hunks in buffer",
-		},
-		L = {
-			"<cmd>Gitsigns setqflist all<CR>",
-			"list all stage hunks in project",
-		},
-	},
-}, {
-	mode = "n",
-	prefix = "<localleader>",
-})
-
-require("which-key").register({
-	g = {
-		name = "git signs",
-		s = {
-			"<cmd>Gitsigns stage_hunk<CR>",
-			"stage hunk",
-		},
-		r = {
-			"<cmd>Gitsigns reset_hunk<CR>",
-			"reset hunk",
-		},
-	},
-}, {
-	mode = "v",
-	prefix = "<localleader>",
-})
-
-gitsigns.setup({
-	on_attach = function(bufnr)
-		local function map(mode, l, r, opts)
-			opts = opts or {}
-			opts.buffer = bufnr
-			vim.keymap.set(mode, l, r, opts)
-		end
-
-		map("n", "]c", function()
-			if vim.wo.diff then
-				return "]c"
+	gitsigns.setup({
+		on_attach = function(bufnr)
+			local function map(mode, l, r, opts)
+				opts = opts or {}
+				opts.buffer = bufnr
+				vim.keymap.set(mode, l, r, opts)
 			end
-			vim.schedule(function()
-				gs.next_hunk()
-			end)
-			return "<Ignore>"
-		end, { expr = true })
 
-		map("n", "[c", function()
-			if vim.wo.diff then
-				return "[c"
-			end
-			vim.schedule(function()
-				gs.prev_hunk()
-			end)
-			return "<Ignore>"
-		end, { expr = true })
-	end,
-})
+			map("n", "]c", function()
+				if vim.wo.diff then
+					return "]c"
+				end
+				vim.schedule(function()
+					package.loaded.gitsigns.next_hunk()
+				end)
+				return "<Ignore>"
+			end, { expr = true })
+
+			map("n", "[c", function()
+				if vim.wo.diff then
+					return "[c"
+				end
+				vim.schedule(function()
+					package.loaded.gitsigns.prev_hunk()
+				end)
+				return "<Ignore>"
+			end, { expr = true })
+		end,
+	})
+end
+
+local keys = {
+	{ "<space>gs", "<cmd>Gitsigns stage_hunk<CR>", desc = "stage hunk" },
+	{ "<space>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "reset hunk" },
+	{
+		"<space>gR",
+		function()
+			package.loaded.gitsigns.reset_buffer()
+		end,
+		desc = "reset buffer",
+	},
+	{
+		"<space>gu",
+		function()
+			package.loaded.gitsigns.undo_stage_hunk()
+		end,
+		desc = "undo stage hunk",
+	},
+	{
+		"<space>gp",
+		function()
+			package.loaded.gitsigns.preview_hunk()
+		end,
+		desc = "preview hunk",
+	},
+	{
+		"<space>gd",
+		function()
+			package.loaded.gitsigns.toggle_deleted()
+		end,
+		desc = "toggle deleted",
+	},
+	{
+		"<space>gD",
+		function()
+			package.loaded.gitsigns.diffthis()
+		end,
+		desc = "diff this",
+	},
+	{
+		"<space>gS",
+		function()
+			package.loaded.gitsigns.stage_buffer()
+		end,
+		desc = "stage buffer",
+	},
+	{
+		"<space>gb",
+		function()
+			package.loaded.gitsigns.toggle_current_line_blame()
+		end,
+		desc = "toggle current line blame",
+	},
+	{
+		"<space>gB",
+		function()
+			package.loaded.gitsigns.blame_line({ full = true })
+		end,
+		desc = "blame line",
+	},
+	{
+		"<space>gi",
+		"<cmd>Gitsigns select_hunk<CR>",
+		desc = "select hunk",
+	},
+	-- trouble.nvim is required
+	{
+		"<space>gl",
+		"<cmd>Gitsigns setqflist<CR>",
+		desc = "list all stage hunks in buffer",
+	},
+	{
+		"<space>gL",
+		"<cmd>Gitsigns setqflist all<CR>",
+		desc = "list all stage hunks in project",
+	},
+}
+
+return {
+	config = config,
+	keys = keys,
+	lazy = false,
+}

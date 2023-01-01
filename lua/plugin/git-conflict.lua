@@ -1,41 +1,19 @@
-require("git-conflict").setup({
-	default_mappings = false,
-})
+local keys = {
+	{ "<space>cc", "<cmd>GitConflictChooseOurs<CR>", desc = "select current changes" },
+	{ "<space>ci", "<cmd>GitConflictChooseTheirs<CR>", desc = "select incoming changes" },
+	{ "<space>cb", "<cmd>GitConflictChooseBoth<CR>", desc = "select both changes" },
+	{ "<space>cn", "<cmd>GitConflictChooseNone<CR>", desc = "select none changes" },
+	{ "<space>cj", "<cmd>GitConflictNextConflict<CR>", desc = "move to the next conflict" },
+	{ "<space>ck", "<cmd>GitConflictPrevConflict<CR>", desc = "move to the previous conflict" },
+	{ "<space>cl", "<cmd>GitConflictListQf<CR>", desc = "get all conflict to quickfix" },
+}
 
--- keymap
-require("which-key").register({
-	c = {
-		name = "git conflict",
-		c = {
-			"<cmd>GitConflictChooseOurs<CR>",
-			"select current changes",
-		},
-		i = {
-			"<cmd>GitConflictChooseTheirs<CR>",
-			"select incoming changes",
-		},
-		b = {
-			"<cmd>GitConflictChooseBoth<CR>",
-			"select both changes",
-		},
-		n = {
-			"<cmd>GitConflictChooseNone<CR>",
-			"select none changes",
-		},
-		j = {
-			"<cmd>GitConflictNextConflict<CR>",
-			"move to the next conflict",
-		},
-		k = {
-			"<cmd>GitConflictPrevConflict<CR>",
-			"move to the previous conflict",
-		},
-		l = {
-			"<cmd>GitConflictListQf<CR>",
-			"get all conflict to quickfix",
-		},
-	},
-}, {
-	mode = "n",
-	prefix = "<localleader>",
-})
+return {
+	config = function()
+		require("git-conflict").setup({
+			default_mappings = false,
+		})
+	end,
+	keys = keys,
+	event = "VimEnter",
+}

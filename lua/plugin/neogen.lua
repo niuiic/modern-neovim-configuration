@@ -1,47 +1,50 @@
-local neogen = require("neogen")
-
-neogen.setup({
-	snippet_engine = "luasnip",
-})
-
--- keymap
-require("which-key").register({
-	a = {
-		name = "annotations",
-		f = {
-			function()
-				neogen.generate({
-					type = "func",
-				})
-			end,
-			"function annotations",
-		},
-		F = {
-			function()
-				neogen.generate({
-					type = "file",
-				})
-			end,
-			"file annotations",
-		},
-		c = {
-			function()
-				neogen.generate({
-					type = "class",
-				})
-			end,
-			"class annotations",
-		},
-		t = {
-			function()
-				neogen.generate({
-					type = "type",
-				})
-			end,
-			"type annotations",
-		},
+local keys = {
+	{
+		"<space>af",
+		function()
+			require("neogen").generate({
+				type = "func",
+			})
+		end,
+		desc = "function annotations",
 	},
-}, {
-	mode = "n",
-	prefix = "<localleader>",
-})
+	{
+		"<space>aF",
+		function()
+			require("neogen").generate({
+				type = "file",
+			})
+		end,
+		desc = "file annotations",
+	},
+	{
+		"<space>ac",
+		function()
+			require("neogen").generate({
+				type = "class",
+			})
+		end,
+		desc = "class annotations",
+	},
+	{
+		"<space>at",
+		function()
+			require("neogen").generate({
+				type = "type",
+			})
+		end,
+		desc = "type annotations",
+	},
+}
+
+return {
+	config = function()
+		local neogen = require("neogen")
+
+		neogen.setup({
+			snippet_engine = "luasnip",
+		})
+	end,
+	keys = keys,
+	dependencies = "nvim-treesitter/nvim-treesitter",
+}

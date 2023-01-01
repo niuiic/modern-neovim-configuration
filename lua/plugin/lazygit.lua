@@ -1,10 +1,9 @@
--- keymap
-require("which-key").register({
-	g = {
-		"<cmd>LazyGit<CR>",
-		"lazygit",
+return {
+	keys = {
+		{
+			"<leader>g",
+			"<cmd>LazyGit<CR>",
+			desc = "lazygit",
+		},
 	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
+}

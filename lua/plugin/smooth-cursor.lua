@@ -1,5 +1,9 @@
-require("smoothcursor").setup({
-	fancy = {
-		enable = true,
-	},
-})
+return {
+	config = function()
+		require("smoothcursor").setup({
+			fancy = {
+				enable = true,
+			},
+		})
+	end,
+}

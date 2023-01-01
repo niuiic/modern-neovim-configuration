@@ -1,35 +1,27 @@
-local ccc = require("ccc")
-local mapping = ccc.mapping
-ccc.setup({
-	highlighter = {
-		auto_enable = true,
-	},
-	mappings = {
-		["d"] = mapping.decrease5,
-		["u"] = mapping.increase5,
-		["D"] = mapping.decrease10,
-		["U"] = mapping.increase10,
-	},
-})
+local config = function()
+	local ccc = require("ccc")
+	local mapping = ccc.mapping
+	ccc.setup({
+		highlighter = {
+			auto_enable = true,
+		},
+		mappings = {
+			["d"] = mapping.decrease5,
+			["u"] = mapping.increase5,
+			["D"] = mapping.decrease10,
+			["U"] = mapping.increase10,
+		},
+	})
+end
 
-require("which-key").register({
-	c = {
-		name = "ccc",
-		o = { "<cmd>CccPick<CR>", "open color picker" },
-		c = {
-			"<cmd>CccConvert<CR>",
-			"convert color value",
-		},
-		t = {
-			"<cmd>CccHighlighterToggle<CR>",
-			"toggle color highlighter",
-		},
-		r = {
-			"<cmd>DiffviewRefresh<CR>",
-			"refresh",
-		},
-	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
+local keys = {
+	{ "<leader>co", "<cmd>CccPick<CR>", desc = "open color picker" },
+	{ "<leader>cc", "<cmd>CccConvert<CR>", desc = "convert color value" },
+	{ "<leader>ct", "<cmd>CccHighlighterToggle<CR>", desc = "toggle color highlighter" },
+	{ "<leader>cr", "<cmd>DiffviewRefresh<CR>", desc = "refresh" },
+}
+
+return {
+	config = config,
+	keys = keys,
+}

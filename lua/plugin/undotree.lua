@@ -1,14 +1,17 @@
-local undotree = require("undotree")
-undotree.setup()
-
-require("which-key").register({
-	u = {
-		function()
-			undotree.toggle()
-		end,
-		"undotree",
+return {
+	config = function()
+		require("undotree").setup({})
+	end,
+	keys = {
+		{
+			"<space>u",
+			function()
+				require("undotree").toggle()
+			end,
+			desc = "undotree",
+		},
 	},
-}, {
-	mode = "n",
-	prefix = "<localleader>",
-})
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+}

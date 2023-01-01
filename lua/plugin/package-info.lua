@@ -1,42 +1,46 @@
-local package_info = require("package-info")
-
-package_info.setup({})
-
-require("which-key").register({
-	p = {
-		name = "package",
-		t = {
-			function()
-				package_info.toggle()
-			end,
-			"toggle showing package version",
-		},
-		u = {
-			function()
-				package_info.update()
-			end,
-			"update package",
-		},
-		c = {
-			function()
-				package_info.change_version()
-			end,
-			"change package version",
-		},
-		d = {
-			function()
-				package_info.delete()
-			end,
-			"delete package",
-		},
-		i = {
-			function()
-				package_info.install()
-			end,
-			"install new package",
-		},
+local keys = {
+	{
+		"<leader>pt",
+		function()
+			require("package-info").toggle()
+		end,
+		"toggle showing package version",
 	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
+	{
+		"<leader>pu",
+		function()
+			require("package-info").update()
+		end,
+		"update package",
+	},
+	{
+		"<leader>pc",
+		function()
+			require("package-info").change_version()
+		end,
+		"change package version",
+	},
+	{
+		"<leader>pd",
+		function()
+			require("package-info").delete()
+		end,
+		"delete package",
+	},
+	{
+		"<leader>pi",
+		function()
+			require("package-info").install()
+		end,
+		"install new package",
+	},
+}
+
+return {
+	config = function()
+		require("package-info").setup({})
+	end,
+	keys = keys,
+	event = "BufRead package.json",
+	dependencies = "MunifTanjim/nui.nvim",
+}

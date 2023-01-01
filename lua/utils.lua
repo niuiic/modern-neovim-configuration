@@ -22,16 +22,15 @@ M.fn.root_pattern = function(pattern)
 	return pathBp
 end
 
--- load config
-M.fn.load_config = function(configs)
-	return function()
-		for _, value in pairs(configs) do
-			local status, _ = pcall(require, value)
-			if not status then
-				vim.notify("Error: failed to load config " .. value, "error")
-			end
-		end
+-- load plugin config
+M.fn.load_plugin_config = function(plugin, config_path)
+	local status, config = pcall(require, config_path)
+	if not status then
+		vim.notify("Error: failed to load config " .. config_path, "error")
+		return {}
 	end
+	table.insert(config, 1, plugin)
+	return config
 end
 
 -- merge list

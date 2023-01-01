@@ -1,3 +1,8 @@
-require("close_buffers").setup({})
-
-vim.keymap.set("n", "<C-x>", ":BDelete this<CR>", { silent = true })
+return {
+	config = function()
+		require("close_buffers").setup({})
+	end,
+	keys = {
+		{ "<C-x>", "<cmd>BDelete this<CR>" },
+	},
+}

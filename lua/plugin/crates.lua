@@ -1,42 +1,46 @@
-local crates = require("crates")
-
-crates.setup({})
-
-require("which-key").register({
-	p = {
-		name = "package",
-		t = {
-			function()
-				crates.toggle()
-			end,
-			"toggle showing crate version",
-		},
-		u = {
-			function()
-				crates.upgrade_crate()
-			end,
-			"update crate",
-		},
-		U = {
-			function()
-				crates.upgrade_all_crates()
-			end,
-			"update all crates",
-		},
-		i = {
-			function()
-				crates.show_popup()
-			end,
-			"show crate info",
-		},
-		f = {
-			function()
-				crates.show_features_popup()
-			end,
-			"show crate features",
-		},
+local keys = {
+	{
+		"<leader>pt",
+		function()
+			require("crates").toggle()
+		end,
+		desc = "toggle showing crate version",
 	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
+	{
+		"<leader>pu",
+		function()
+			require("crates").upgrade_crate()
+		end,
+		desc = "update crate",
+	},
+	{
+		"<leader>pU",
+		function()
+			require("crates").upgrade_all_crates()
+		end,
+		desc = "update all crates",
+	},
+	{
+		"<leader>pi",
+		function()
+			require("crates").show_popup()
+		end,
+		desc = "show crate info",
+	},
+	{
+		"<leader>pf",
+		function()
+			require("crates").show_features_popup()
+		end,
+		desc = "show crate features",
+	},
+}
+
+return {
+	config = function()
+		require("crates").setup({})
+	end,
+	keys = keys,
+	event = "BufRead Cargo.toml",
+	dependencies = { "nvim-lua/plenary.nvim" },
+}

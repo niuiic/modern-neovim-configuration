@@ -1,38 +1,23 @@
-require("diffview").setup({})
-
--- keymap
-vim.keymap.set("n", "<leader>ds", ":DiffviewOpen ", { silent = true })
-require("which-key").register({
-	d = {
-		name = "diffview",
-		s = {
-			"diff open specifically",
-		},
-		o = {
-			"<cmd>DiffviewOpen<CR>",
-			"view uncommitted change",
-		},
-		h = {
-			function()
-				local file_path = vim.api.nvim_buf_get_name(0)
-				vim.api.nvim_command("DiffviewFileHistory " .. file_path)
-			end,
-			"view git history of current file",
-		},
-		H = {
-			"<cmd>DiffviewFileHistory<CR>",
-			"view git history of current project",
-		},
-		q = {
-			"<cmd>DiffviewClose<CR>",
-			"close diff windows",
-		},
-		r = {
-			"<cmd>DiffviewRefresh<CR>",
-			"refresh",
-		},
+local keys = {
+	{ "<leader>ds", "<cmd>DiffviewOpen ", desc = "diff open specifically" },
+	{ "<leader>do", "<cmd>DiffviewOpen<CR>", desc = "view uncommitted change" },
+	{
+		"<leader>dh",
+		function()
+			local file_path = vim.api.nvim_buf_get_name(0)
+			vim.api.nvim_command("DiffviewFileHistory " .. file_path)
+		end,
+		desc = "view git history of current file",
 	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
-})
+	{ "<leader>dH", "<cmd>DiffviewFileHistory<CR>", desc = "view git history of current project" },
+	{ "<leader>dq", "<cmd>DiffviewClose<CR>", desc = "close diff windows" },
+	{ "<leader>dr", "<cmd>DiffviewRefresh<CR>", desc = "refresh" },
+}
+
+return {
+	config = function()
+		require("diffview").setup({})
+	end,
+	keys = keys,
+	dependencies = "nvim-lua/plenary.nvim",
+}
