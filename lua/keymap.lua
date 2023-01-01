@@ -67,19 +67,19 @@ vim.keymap.set("n", "gd", "", { silent = true })
 
 -- plugin operation
 require("which-key").register({
-	p = {
-		name = "plugin",
+	n = {
+		name = "neovim",
 		u = {
 			"<cmd>Lazy update<CR>",
 			"update plugins",
 		},
 		l = {
 			"<cmd>LspInfo<CR>",
-			"lsp info",
+			"lsp status",
 		},
 		i = {
 			"<cmd>Mason<CR>",
-			"lsp install info",
+			"lsp installation",
 		},
 		c = {
 			"<cmd>checkhealth<CR>",

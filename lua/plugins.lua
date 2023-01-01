@@ -305,4 +305,18 @@ require("lazy").setup({
 		"chrisgrieser/nvim-recorder",
 		config = utils.fn.load_config({ "plugin/nvim-recorder" }),
 	},
+	-- crate
+	{
+		"saecki/crates.nvim",
+		event = "BufRead Cargo.toml",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = utils.fn.load_config({ "plugin/crates" }),
+	},
+	-- js/ts package info
+	{
+		"vuki656/package-info.nvim",
+		event = "BufRead package.json",
+		dependencies = "MunifTanjim/nui.nvim",
+		config = utils.fn.load_config({ "plugin/package-info" }),
+	},
 })

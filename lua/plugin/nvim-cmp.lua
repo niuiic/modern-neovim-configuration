@@ -12,6 +12,7 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "rg", option = { additional_arguments = "--hidden" } },
+		{ name = "crates" },
 	}),
 	sorting = {
 		comparators = {
