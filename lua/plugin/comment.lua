@@ -46,12 +46,7 @@ local config = function()
 			if vim.bo.filetype == "vue" then
 				return calc_vue_commentstring()
 			else
-				local pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()
-				local res = pre_hook(ctx)
-				if res ~= nil then
-					return res
-				end
-				return ""
+				return require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook()(ctx)
 			end
 		end,
 	})
