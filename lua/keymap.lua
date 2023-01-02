@@ -62,9 +62,6 @@ vim.keymap.set("n", "<A-G>", ":clast<CR>", { silent = true })
 -- copy to systemclip
 vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 
--- unmap
-vim.keymap.set("n", "gd", "", { silent = true })
-
 -- plugin operation
 require("which-key").register({
 	n = {
