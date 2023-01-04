@@ -39,7 +39,7 @@ local config = function()
 		0,
 		1000,
 		vim.schedule_wrap(function()
-			vim.api.nvim_command("redrawstatus")
+			vim.cmd("redrawstatus")
 		end)
 	)
 end

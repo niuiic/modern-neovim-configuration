@@ -12,9 +12,9 @@ local function spell_check(word)
 				local original_res = res:result()[1]
 				local final_res = string.match(original_res, "(%[[a-zA-Z|]+])")
 				if final_res == nil then
-					vim.notify("no spell errors", "success")
+					vim.notify("no spell errors")
 				else
-					vim.notify(final_res, "error")
+					vim.notify(final_res, vim.log.levels.ERROR)
 				end
 			end,
 		})
@@ -24,7 +24,7 @@ end
 vim.api.nvim_create_user_command("SpellCheck", function()
 	local text = utils.fn.get_visual_selection()
 	if string.match(text, "(%A+)") ~= nil then
-		vim.notify("unsupported language", "error")
+		vim.notify("unsupported language", vim.log.levels.ERROR)
 	else
 		spell_check(text)
 	end

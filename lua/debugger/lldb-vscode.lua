@@ -34,11 +34,11 @@ dap.configurations.rust = {
 		type = "lldb",
 		request = "launch",
 		program = function()
-			vim.api.nvim_command("!cargo build")
+			vim.cmd("!cargo build")
 			local root_path = utils.fn.root_pattern()
 			local project_name = string.match(root_path, "/([%w_-]+)$")
 			local target = root_path .. "/target/debug/" .. project_name
-			if utils.fn.file_exists(target) then
+			if utils.fn.file_or_dir_exists(target) then
 				return target
 			else
 				local input_val

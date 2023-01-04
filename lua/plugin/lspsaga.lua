@@ -35,7 +35,7 @@ local config = function()
 				elseif button == "m" then
 					-- middle click to visual select node
 					vim.fn.cursor(st.line + 1, st.character + 1)
-					vim.api.nvim_command("normal v")
+					vim.cmd("normal v")
 					vim.fn.cursor(en.line + 1, en.character + 1)
 				end
 			end,

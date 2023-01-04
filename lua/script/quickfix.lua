@@ -8,7 +8,7 @@ local function load_qf(overwrite)
 	if overwrite ~= true and #vim.fn.getqflist() ~= 0 then
 		return
 	end
-	if utils.fn.file_exists(qf_history_path) then
+	if utils.fn.file_or_dir_exists(qf_history_path) then
 		local qf_history_content = {}
 		local file = io.open(qf_history_path, "r")
 		if file ~= nil then
@@ -25,7 +25,7 @@ end
 
 local function write_qf()
 	if #vim.fn.getqflist() ~= 0 then
-		if utils.fn.file_exists(root_dir .. "/.nvim") ~= true then
+		if utils.fn.file_or_dir_exists(root_dir .. "/.nvim") ~= true then
 			plenary.job
 				:new({
 					command = "mkdir",
@@ -35,7 +35,7 @@ local function write_qf()
 		end
 		local qf_buf_id = utils.fn.get_buffer_id("Quickfix List")
 		local qf_content = vim.api.nvim_buf_get_lines(qf_buf_id, 0, -1, false)
-		if utils.fn.file_exists(qf_history_path) == true then
+		if utils.fn.file_or_dir_exists(qf_history_path) == true then
 			os.remove(qf_history_path)
 		end
 		local file = io.open(qf_history_path, "a")
@@ -58,9 +58,9 @@ end, {})
 
 vim.api.nvim_create_user_command("SaveAndSaveQf", function()
 	if vim.bo.filetype == "qf" then
-		vim.api.nvim_command([[write! ]] .. qf_history_path)
+		vim.cmd([[write! ]] .. qf_history_path)
 	else
-		vim.api.nvim_command([[w!]])
+		vim.cmd([[w!]])
 	end
 end, {})
 
@@ -68,7 +68,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = "*",
 	callback = function()
 		if vim.bo.filetype == "qf" then
-			vim.api.nvim_command([[set modifiable]])
+			vim.cmd([[set modifiable]])
 		end
 	end,
 })

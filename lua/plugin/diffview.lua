@@ -5,7 +5,7 @@ local keys = {
 		"<leader>dh",
 		function()
 			local file_path = vim.api.nvim_buf_get_name(0)
-			vim.api.nvim_command("DiffviewFileHistory " .. file_path)
+			vim.cmd("DiffviewFileHistory " .. file_path)
 		end,
 		desc = "view git history of current file",
 	},

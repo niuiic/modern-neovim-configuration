@@ -12,6 +12,6 @@ require("script")
 
 -- config for Workspace
 local local_config = utils.fn.root_pattern() .. "/.nvim/init.lua"
-if utils.fn.file_exists(local_config) then
+if utils.fn.file_or_dir_exists(local_config) then
 	dofile(local_config)
 end

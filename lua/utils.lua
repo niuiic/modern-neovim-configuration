@@ -26,7 +26,7 @@ end
 M.fn.load_plugin_config = function(plugin, config_path)
 	local status, config = pcall(require, config_path)
 	if not status then
-		vim.notify("Error: failed to load config " .. config_path, "error")
+		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)
 		return {}
 	end
 	table.insert(config, 1, plugin)
@@ -106,7 +106,7 @@ M.fn.deep_clone = function(orig)
 end
 
 -- check if file exists
-M.fn.file_exists = function(path)
+M.fn.file_or_dir_exists = function(path)
 	local file = io.open(path, "r")
 	if file ~= nil then
 		io.close(file)
@@ -118,7 +118,7 @@ end
 
 -- check if str is in the file
 M.fn.match_str_in_file = function(path, str)
-	if M.fn.file_exists(path) then
+	if M.fn.file_or_dir_exists(path) then
 		local file = io.open(path, "r")
 		---@diagnostic disable-next-line: param-type-mismatch
 		io.input(file)
@@ -143,7 +143,7 @@ M.fn.call = function(func, ...)
 	end
 end
 
--- vim.api.nvim_command with return value
+-- vim.cmd with return value
 M.fn.cmd = function(cmd)
 	local res = vim.api.nvim_exec(cmd, true)
 	return vim.split(res, "\n")
@@ -186,7 +186,7 @@ end
 M.fn.log = function(text)
 	local file = io.open(M.fn.root_pattern() .. "/.nvim/log", "w")
 	if file == nil then
-		vim.notify("failed to write log", "error")
+		vim.notify("failed to write log", vim.log.levels.ERROR)
 		return
 	end
 	io.output(file)

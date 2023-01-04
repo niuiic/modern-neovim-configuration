@@ -43,7 +43,7 @@ local function rename_file()
 	}
 
 	vim.lsp.util.rename(source_file, target_file)
-	vim.api.nvim_command("e")
+	vim.cmd("e")
 	vim.lsp.buf.execute_command(params)
 end
 

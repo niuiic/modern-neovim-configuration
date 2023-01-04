@@ -10,7 +10,7 @@ vim.keymap.set("n", "<C-e>", function()
 	if vim.lsp.get_active_clients() ~= nil then
 		vim.diagnostic.reset()
 	end
-	vim.api.nvim_command("e")
+	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
 end, { silent = true })
 

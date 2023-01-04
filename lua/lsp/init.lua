@@ -99,12 +99,12 @@ for command, lsps in pairs(lsp_commands) do
 		elseif #new_lsp_list == 1 then
 			local lsp_upper = string.upper(string.sub(new_lsp_list[1], 1, 1)) .. string.sub(new_lsp_list[1], 2)
 			vim.notify(lsp_upper .. " is working")
-			vim.api.nvim_command(lsp_upper .. command)
+			vim.cmd(lsp_upper .. command)
 		else
 			vim.ui.select(new_lsp_list, { prompt = "select specific lsp" }, function(choice)
 				local lsp_upper = string.upper(string.sub(choice, 1, 1)) .. string.sub(choice, 2)
 				vim.notify(lsp_upper .. " is working")
-				vim.api.nvim_command(lsp_upper .. command)
+				vim.cmd(lsp_upper .. command)
 			end)
 		end
 	end, {})
@@ -126,7 +126,7 @@ local function copy_file_path()
 	local root_path = utils.fn.root_pattern()
 	local index = string.find(name, root_path)
 	if index == nil then
-		vim.notify("The file is not under the project", "error")
+		vim.notify("The file is not under the project", vim.log.levels.ERROR)
 	else
 		local str = string.sub(name, string.len(root_path) + 2)
 		vim.fn.setreg("+", str)

@@ -13,11 +13,11 @@ local function trans(word, target)
 			on_exit = function(res)
 				local result = res:result()[1]
 				if result == nil or result == "" then
-					vim.notify("translate failed", "error", {
+					vim.notify("translate failed", vim.log.levels.ERROR, {
 						title = "Translate",
 					})
 				else
-					vim.notify(result, "success", {
+					vim.notify(result, vim.log.levels.INFO, {
 						title = "Translate",
 					})
 				end
@@ -27,7 +27,7 @@ local function trans(word, target)
 
 	-- if target == "en" then
 	-- 	vim.fn.setreg("+", result)
-	-- 	vim.api.nvim_command("!echo " .. result .. " | xclip -sel clip")
+	-- 	vim.cmd("!echo " .. result .. " | xclip -sel clip")
 	-- end
 end
 

@@ -7,7 +7,7 @@ end
 
 local function search_ts_server_path()
 	local local_ts_server_path = utils.fn.root_pattern() .. "/node_modules/typescript/lib"
-	if utils.fn.file_exists(local_ts_server_path .. "/lib.d.ts") then
+	if utils.fn.file_or_dir_exists(local_ts_server_path .. "/lib.d.ts") then
 		return local_ts_server_path
 	else
 		return os.getenv("HOME") .. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib"

@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
 	pattern = "*",
 	callback = function(args)
 		if isWinValid(args.file) then
-			vim.api.nvim_command([[mkview 1]])
+			vim.cmd([[mkview 1]])
 		end
 	end,
 })
@@ -104,7 +104,7 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 	pattern = "*",
 	callback = function(args)
 		if isWinValid(args.file) then
-			vim.api.nvim_command([[silent! loadview 1]])
+			vim.cmd([[silent! loadview 1]])
 		end
 	end,
 })

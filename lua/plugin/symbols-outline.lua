@@ -44,7 +44,7 @@ return {
 			"<space>m",
 			function()
 				if vim.bo.filetype == "markdown" or vim.bo.filetype == "Outline" then
-					vim.api.nvim_command("SymbolsOutline")
+					vim.cmd("SymbolsOutline")
 				end
 			end,
 			desc = "toggle tag bar",
