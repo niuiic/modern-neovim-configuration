@@ -1,5 +1,4 @@
 local script_list = {
-	"divider",
 	"quickfix",
 	"spell",
 	"translate",

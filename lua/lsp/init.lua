@@ -98,12 +98,12 @@ for command, lsps in pairs(lsp_commands) do
 			return
 		elseif #new_lsp_list == 1 then
 			local lsp_upper = string.upper(string.sub(new_lsp_list[1], 1, 1)) .. string.sub(new_lsp_list[1], 2)
-			vim.notify(lsp_upper .. " is working")
+			vim.notify(lsp_upper .. " is working", vim.log.levels.INFO)
 			vim.cmd(lsp_upper .. command)
 		else
 			vim.ui.select(new_lsp_list, { prompt = "select specific lsp" }, function(choice)
 				local lsp_upper = string.upper(string.sub(choice, 1, 1)) .. string.sub(choice, 2)
-				vim.notify(lsp_upper .. " is working")
+				vim.notify(lsp_upper .. " is working", vim.log.levels.INFO)
 				vim.cmd(lsp_upper .. command)
 			end)
 		end
@@ -130,7 +130,7 @@ local function copy_file_path()
 	else
 		local str = string.sub(name, string.len(root_path) + 2)
 		vim.fn.setreg("+", str)
-		vim.notify("Copied " .. str .. " to clipboard")
+		vim.notify("Copied " .. str .. " to clipboard", vim.log.levels.INFO)
 	end
 end
 

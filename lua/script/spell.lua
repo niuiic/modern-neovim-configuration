@@ -12,7 +12,7 @@ local function spell_check(word)
 				local original_res = res:result()[1]
 				local final_res = string.match(original_res, "(%[[a-zA-Z|]+])")
 				if final_res == nil then
-					vim.notify("no spell errors")
+					vim.notify("no spell errors", vim.log.levels.INFO)
 				else
 					vim.notify(final_res, vim.log.levels.ERROR)
 				end
