@@ -34,6 +34,7 @@ dap.configurations.typescriptreact = {
 
 dap.configurations.vue = {
 	{
+		name = "attach chrome",
 		type = "chrome",
 		request = "attach",
 		program = "${file}",
@@ -41,7 +42,19 @@ dap.configurations.vue = {
 		sourceMaps = true,
 		protocol = "inspector",
 		port = 9222,
-		webRoot = "${workspaceFolder}",
+		webRoot = "${workspaceFolder}/xxx",
+	},
+	{
+		name = "Launch Chrome",
+		request = "launch",
+		type = "chrome",
+		url = "http://localhost:8080",
+		runtimeArgs = {
+			"--auto-open-devtools-for-tabs",
+		},
+		runtimeExecutable = "/usr/bin/google-chrome-beta",
+		userDataDir = false,
+		webRoot = "${workspaceFolder}/xxx",
 	},
 }
 
