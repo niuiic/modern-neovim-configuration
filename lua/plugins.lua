@@ -172,6 +172,8 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("saecki/crates.nvim", "plugin/crates"),
 	-- js/ts package info
 	utils.fn.load_plugin_config("vuki656/package-info.nvim", "plugin/package-info"),
-    -- divider line
+	-- divider line
 	utils.fn.load_plugin_config("niuiic/divider.nvim", "plugin/divider"),
+	-- clipboard image
+	utils.fn.load_plugin_config("niuiic/cp-image.nvim", "plugin/cp-image"),
 })
