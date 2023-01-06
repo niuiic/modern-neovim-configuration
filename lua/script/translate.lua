@@ -22,9 +22,9 @@ local function trans(word, target)
 					})
 				end
 				if target == "en" then
-					vim.schedule_wrap(function()
+					vim.schedule(function()
 						vim.fn.setreg("+", result)
-					end)()
+					end)
 				end
 			end,
 		})
