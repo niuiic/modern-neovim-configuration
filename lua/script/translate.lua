@@ -21,14 +21,14 @@ local function trans(word, target)
 						title = "Translate",
 					})
 				end
+				if target == "en" then
+					vim.schedule_wrap(function()
+						vim.fn.setreg("+", result)
+					end)()
+				end
 			end,
 		})
 		:start()
-
-	-- if target == "en" then
-	-- 	vim.fn.setreg("+", result)
-	-- 	vim.cmd("!echo " .. result .. " | xclip -sel clip")
-	-- end
 end
 
 vim.api.nvim_create_user_command("TransToZH", function()
