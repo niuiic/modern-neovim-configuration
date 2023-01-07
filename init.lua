@@ -10,7 +10,7 @@ require("snippet")
 require("source")
 require("script")
 
--- config for Workspace
+-- load config for Workspace
 local project_root = utils.fn.root_pattern()
 local local_config_entry = project_root .. "/.nvim/init.lua"
 if utils.fn.file_or_dir_exists(local_config_entry) then
