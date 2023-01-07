@@ -42,7 +42,7 @@ local config = function()
 					}
 				end,
 				input = "input",
-				output = { "notify", "clipboard", "insert" },
+				output = { "notify", "clipboard" },
 				filter = function(trans_source)
 					return trans_source
 				end,
