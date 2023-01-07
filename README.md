@@ -190,206 +190,206 @@ Some functions are not convenient to display with pictures, please check `lua/pl
 
 <details>
   <summary><b>Full Screen</b></summary>
-<img src="./img/full-screen.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/full-screen.png"/>
 </details>
 
 <details>
   <summary><b>Status Line</b></summary>
-<img src="./img/statusline.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/statusline.png"/>
 </details>
 
 <details>
   <summary><b>Buffer Line</b></summary>
-<img src="./img/bufferline.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/bufferline.png"/>
 </details>
 
 <details>
   <summary><b><b>Diagnostic</b></b></summary>
-<img src="./img/diagnostic.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/diagnostic.png"/>
 </details>
 
 <details>
   <summary><b>Fuzzy Finder</b></summary>
 Search files, tags, buffers, history files, marks, projects, git status, etc.
-<img src="./img/fuzzy-finder.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/fuzzy-finder.png"/>
 </details>
 
 <details>
   <summary><b>AutoComplete CMD</b></summary>
-<img src="./img/autocomplete-cmd.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/autocomplete-cmd.png"/>
 </details>
 
 <details>
   <summary><b>Rename</b></summary>
-<img src="./img/rename.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/rename.png"/>
 </details>
 
 <details>
   <summary><b>Go to Reference</b></summary>
-<img src="./img/goto-reference.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/goto-reference.png"/>
 </details>
 
 <details>
   <summary><b>Keymap Suggestion</b></summary>
-<img src="./img/keymap-suggestion.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/keymap-suggestion.png"/>
 </details>
 
 <details>
   <summary><b>Code AutoComplete</b></summary>
-<img src="./img/code-autocomplete.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/code-autocomplete.png"/>
 </details>
 
 <details>
   <summary><b>Inner Terminal</b></summary>
-<img src="./img/inner-terminal.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/inner-terminal.png"/>
 </details>
 
 <details>
   <summary><b>Todo Comments</b></summary>
-<img src="./img/todo-comments.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/todo-comments.png"/>
 </details>
 
 <details>
   <summary><b>File Tree</b></summary>
-<img src="./img/file-tree.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/file-tree.png"/>
 </details>
 
 <details>
   <summary><b>Undo Tree</b></summary>
-<img src="./img/undo-tree.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/undo-tree.png"/>
 </details>
 
 <details>
   <summary><b>Dashboard</b></summary>
-<img src="./img/dashboard.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/dashboard.png"/>
 </details>
 
 <details>
   <summary><b>Translate</b></summary>
-<img src="./img/translate.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/translate.png"/>
 </details>
 
 <details>
   <summary><b>Unit Test</b></summary>
-<img src="./img/unit-test.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/unit-test.png"/>
 </details>
 
 <details>
   <summary><b>Tasks</b></summary>
-<img src="./img/tasks.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/tasks.png"/>
 </details>
 
 <details>
   <summary><b>Indentation Guides</b></summary>
-<img src="./img/indentation-guides.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/indentation-guides.png"/>
 </details>
 
 <details>
   <summary><b>Yank History</b></summary>
-<img src="./img/yank-history.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/yank-history.png"/>
 </details>
 
 <details>
   <summary><b>Code Action</b></summary>
-<img src="./img/code-action.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/code-action.png"/>
 </details>
 
 <details>
   <summary><b>Colorful Brackets</b></summary>
-<img src="./img/colorful-brackets.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/colorful-brackets.png"/>
 </details>
 
 <details>
   <summary><b>Debug</b></summary>
-<img src="./img/debug.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/debug.png"/>
 </details>
 
 <details>
   <summary><b>Git Diff</b></summary>
-<img src="./img/git-diff.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/git-diff.png"/>
 </details>
 
 <details>
   <summary><b>Git Signs</b></summary>
-<img src="./img/git-signs.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/git-signs.png"/>
 </details>
 
 <details>
   <summary><b>Document</b></summary>
-<img src="./img/document.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/document.png"/>
 </details>
 
 <details>
   <summary><b>Peek Defination</b></summary>
-<img src="./img/peek-defination.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/peek-defination.png"/>
 </details>
 
 <details>
   <summary><b>Sql</b></summary>
-<img src="./img/sql.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/sql.png"/>
 </details>
 
 <details>
   <summary><b>Quick Motion</b></summary>
-<img src="./img/quick-motion.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/quick-motion.png"/>
 </details>
 
 <details>
   <summary><b>TagBar</b></summary>
-<img src="./img/tagbar.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/tagbar.png"/>
 </details>
 
 <details>
   <summary><b>Lsp Progress</b></summary>
-<img src="./img/lsp-progress.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/lsp-progress.png"/>
 </details>
 
 <details>
   <summary><b>Symbol Winbar</b></summary>
-<img src="./img/symbol-winbar.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/symbol-winbar.png"/>
 </details>
 
 <details>
   <summary><b>Fold</b></summary>
-<img src="./img/fold.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/fold.png"/>
 </details>
 
 <details>
   <summary><b>Colorizer</b></summary>
-<img src="./img/colorizer.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/colorizer.png"/>
 </details>
 
 <details>
   <summary><b>Color Picker</b></summary>
-<img src="./img/color-picker.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/color-picker.png"/>
 </details>
 
 <details>
   <summary><b>Session</b></summary>
-<img src="./img/session.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/session.png"/>
 </details>
 
 <details>
   <summary><b>Quickfix</b></summary>
-<img src="./img/quickfix.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/quickfix.png"/>
 </details>
 
 <details>
   <summary><b>Startup Time</b></summary>
-<img src="./img/startup-time.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/startup-time.png"/>
 </details>
 
 <details>
   <summary><b>Lazygit</b></summary>
-<img src="./img/laygit.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/laygit.png"/>
 </details>
 
 <details>
   <summary><b>Git Conflict</b></summary>
-<img src="./img/git-conflict.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/git-conflict.png"/>
 </details>
 
 <details>
   <summary><b>Jump to Marks</b></summary>
-<img src="./img/jump-to-marks.png"/>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/jump-to-marks.png"/>
 </details>
