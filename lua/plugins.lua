@@ -176,4 +176,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("niuiic/divider.nvim", "plugin/divider"),
 	-- clipboard image
 	utils.fn.load_plugin_config("niuiic/cp-image.nvim", "plugin/cp-image"),
+	-- translate
+	utils.fn.load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
 })
