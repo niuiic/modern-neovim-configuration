@@ -4,13 +4,13 @@ local config = function()
 
 	dapui.setup()
 
-	dap.listeners.after.event_initialized["dapui_config"] = function()
+	dap.listeners.after.event_initialized.dapui_config = function()
 		dapui.open({})
 	end
-	dap.listeners.before.event_terminated["dapui_config"] = function()
+	dap.listeners.before.event_terminated.dapui_config = function()
 		dapui.close({})
 	end
-	dap.listeners.before.event_exited["dapui_config"] = function()
+	dap.listeners.before.event_exited.dapui_config = function()
 		dapui.close({})
 	end
 
@@ -33,6 +33,20 @@ local keys = {
 			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
 		end,
 		desc = "set conditional breakpoint",
+	},
+	{
+		"<space>dl",
+		function()
+			require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+		end,
+		desc = "set log point",
+	},
+	{
+		"<space>de",
+		function()
+			require("dap").set_exception_breakpoints()
+		end,
+		desc = "set exception breakpoint",
 	},
 	{
 		"<space>dc",
@@ -78,28 +92,35 @@ local keys = {
 		desc = "quit debug",
 	},
 	{
-		"<space>dl",
+		"<space>dL",
 		function()
-			require("dap").run_last()
+			require("dap").list_breakpoints()
 		end,
-		desc = "run last",
+		desc = "list all breakpoints",
+	},
+	{
+		"<space>dC",
+		function()
+			require("dap").clear_breakpoints()
+		end,
+		desc = "clear all breakpoints",
 	},
 	{
 		"<space>dr",
 		function()
 			require("dap").repl.open()
 		end,
-		desc = "repl",
+		desc = "open repl",
 	},
 	{
-		"<space>dj",
+		"gb",
 		function()
 			require("goto-breakpoints").next()
 		end,
 		desc = "go to next breakpoint",
 	},
 	{
-		"<space>dk",
+		"gB",
 		function()
 			require("goto-breakpoints").prev()
 		end,
@@ -139,12 +160,6 @@ local keys = {
 		"<A-o>",
 		function()
 			require("dap").step_out()
-		end,
-	},
-	{
-		"<AC-t>",
-		function()
-			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
 		end,
 	},
 }
