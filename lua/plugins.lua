@@ -39,13 +39,9 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("glepnir/dashboard-nvim", "plugin/dashboard-nvim"),
 	-- automatically toggle between absolute line number and relative one
 	"sitiom/nvim-numbertoggle",
-
 	-- quick motion
 	utils.fn.load_plugin_config("ggandor/leap.nvim", "plugin/leap"),
 	"phaazon/hop.nvim",
-
-	-- session
-	utils.fn.load_plugin_config("rmagatti/auto-session", "plugin/auto-session"),
 	-- file tree
 	utils.fn.load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
 
@@ -178,4 +174,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("niuiic/cp-image.nvim", "plugin/cp-image"),
 	-- translate
 	utils.fn.load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
+	-- session
+	utils.fn.load_plugin_config("niuiic/multiple-session.nvim", "plugin/multiple-session"),
 })
