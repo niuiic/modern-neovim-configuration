@@ -108,6 +108,30 @@ local keys = {
 			require("dap").step_out()
 		end,
 	},
+	{
+		"<A-p>",
+		function()
+			require("dap").pause()
+		end,
+	},
+	{
+		"<A-u>",
+		function()
+			require("dap").up()
+		end,
+	},
+	{
+		"<A-d>",
+		function()
+			require("dap").down()
+		end,
+	},
+	{
+		"<A-g>",
+		function()
+			require("dap").run_to_cursor()
+		end,
+	},
 	-- other
 	{
 		"<space>dq",

@@ -56,8 +56,6 @@ require("which-key").register({
 })
 vim.keymap.set("n", "<A-j>", ":cnext<CR>", { silent = true })
 vim.keymap.set("n", "<A-k>", ":cprev<CR>", { silent = true })
-vim.keymap.set("n", "<A-g>", ":cfirst<CR>", { silent = true })
-vim.keymap.set("n", "<A-G>", ":clast<CR>", { silent = true })
 
 -- copy to systemclip
 vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
