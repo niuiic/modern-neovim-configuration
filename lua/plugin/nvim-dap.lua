@@ -77,14 +77,6 @@ local keys = {
 		end,
 		desc = "go to previous breakpoint",
 	},
-	-- panel
-	{
-		"<space>dr",
-		function()
-			require("dap").repl.open()
-		end,
-		desc = "open repl",
-	},
 	-- step
 	{
 		"<A-c>",
@@ -131,6 +123,14 @@ local keys = {
 			require("telescope").extensions.dap.commands({})
 		end,
 		desc = "list all commands",
+	},
+	{
+		"M",
+		function()
+			---@diagnostic disable-next-line
+			require("dapui").eval()
+		end,
+		desc = "check variable value",
 	},
 }
 

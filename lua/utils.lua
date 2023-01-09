@@ -33,6 +33,17 @@ M.fn.load_plugin_config = function(plugin, config_path)
 	return config
 end
 
+M.fn.load_dev_plugin_config = function(plugin, config_path)
+	local status, config = pcall(require, config_path)
+	if not status or config == nil then
+		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)
+		return {}
+	end
+	config.dir = plugin
+	config.dev = true
+	return config
+end
+
 -- merge list
 -- table2 will override table1
 M.fn.merge_list = function(table1, table2)
