@@ -23,6 +23,9 @@ return {
 			s = {
 				name = "tasks",
 			},
+			w = {
+				name = "window",
+			},
 			a = {
 				name = "annotations",
 			},

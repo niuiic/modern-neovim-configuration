@@ -73,6 +73,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
+	"rcarriga/cmp-dap",
 	"hrsh7th/cmp-cmdline",
 	"dmitmel/cmp-cmdline-history",
 	"lukas-reineke/cmp-rg",
@@ -101,6 +102,7 @@ require("lazy").setup({
 	-- debug
 	utils.fn.load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
 	"mxsdev/nvim-dap-vscode-js",
+	"nvim-telescope/telescope-dap.nvim",
 	"theHamsta/nvim-dap-virtual-text",
 	"rcarriga/nvim-dap-ui",
 	"ofirgall/goto-breakpoints.nvim",
@@ -176,4 +178,8 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
 	-- session
 	utils.fn.load_plugin_config("niuiic/multiple-session.nvim", "plugin/multiple-session"),
+	-- window picker
+	utils.fn.load_plugin_config("s1n7ax/nvim-window-picker", "plugin/nvim-window-picker"),
+	-- maximize window
+	utils.fn.load_plugin_config("niuiic/window.nvim", "plugin/window"),
 })

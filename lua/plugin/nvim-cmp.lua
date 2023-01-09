@@ -2,6 +2,9 @@ local config = function()
 	local cmp = require("cmp")
 
 	cmp.setup({
+		enabled = function()
+			return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+		end,
 		snippet = {
 			expand = function(args)
 				require("luasnip").lsp_expand(args.body)
@@ -26,6 +29,12 @@ local config = function()
 				cmp.config.compare.length,
 				cmp.config.compare.order,
 			},
+		},
+	})
+
+	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+		sources = {
+			{ name = "dap" },
 		},
 	})
 

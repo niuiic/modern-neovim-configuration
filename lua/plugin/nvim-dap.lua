@@ -20,15 +20,9 @@ local config = function()
 end
 
 local keys = {
+	-- set breakpoint
 	{
 		"<space>dt",
-		function()
-			require("dap").toggle_breakpoint()
-		end,
-		desc = "toggle breakpoint",
-	},
-	{
-		"<space>dT",
 		function()
 			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
 		end,
@@ -42,75 +36,32 @@ local keys = {
 		desc = "set log point",
 	},
 	{
+		"<A-t>",
+		function()
+			require("dap").toggle_breakpoint()
+		end,
+	},
+	{
 		"<space>de",
 		function()
 			require("dap").set_exception_breakpoints()
 		end,
 		desc = "set exception breakpoint",
 	},
-	{
-		"<space>dc",
-		function()
-			require("dap").continue()
-		end,
-		desc = "continue",
-	},
-	{
-		"<space>di",
-		function()
-			require("dap").step_into()
-		end,
-		desc = "step into",
-	},
-	{
-		"<space>do",
-		function()
-			require("dap").step_out()
-		end,
-		desc = "step out",
-	},
-	{
-		"<space>dn",
-		function()
-			require("dap").step_over({})
-		end,
-		desc = "step over",
-	},
-	{
-		"<space>db",
-		function()
-			require("dap").step_back()
-		end,
-		desc = "step back",
-	},
-	{
-		"<space>dq",
-		function()
-			require("dap").terminate()
-			require("dapui").close({})
-		end,
-		desc = "quit debug",
-	},
+	-- action for breakpoints
 	{
 		"<space>dL",
 		function()
-			require("dap").list_breakpoints()
+			require("telescope").extensions.dap.list_breakpoints({})
 		end,
 		desc = "list all breakpoints",
 	},
 	{
-		"<space>dC",
+		"<space>dc",
 		function()
 			require("dap").clear_breakpoints()
 		end,
 		desc = "clear all breakpoints",
-	},
-	{
-		"<space>dr",
-		function()
-			require("dap").repl.open()
-		end,
-		desc = "open repl",
 	},
 	{
 		"gb",
@@ -126,6 +77,15 @@ local keys = {
 		end,
 		desc = "go to previous breakpoint",
 	},
+	-- panel
+	{
+		"<space>dr",
+		function()
+			require("dap").repl.open()
+		end,
+		desc = "open repl",
+	},
+	-- step
 	{
 		"<A-c>",
 		function()
@@ -136,12 +96,6 @@ local keys = {
 		"<A-n>",
 		function()
 			require("dap").step_over()
-		end,
-	},
-	{
-		"<A-t>",
-		function()
-			require("dap").toggle_breakpoint()
 		end,
 	},
 	{
@@ -161,6 +115,22 @@ local keys = {
 		function()
 			require("dap").step_out()
 		end,
+	},
+	-- other
+	{
+		"<space>dq",
+		function()
+			require("dap").terminate()
+			require("dapui").close({})
+		end,
+		desc = "quit debug",
+	},
+	{
+		"<space>dC",
+		function()
+			require("telescope").extensions.dap.commands({})
+		end,
+		desc = "list all commands",
 	},
 }
 
