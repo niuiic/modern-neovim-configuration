@@ -156,6 +156,15 @@ local keys = {
 		end,
 		desc = "check variable value",
 	},
+	{
+		"M",
+		function()
+			---@diagnostic disable-next-line
+			require("dapui").eval()
+		end,
+		desc = "check variable value",
+		mode = "v",
+	},
 }
 
 return {
