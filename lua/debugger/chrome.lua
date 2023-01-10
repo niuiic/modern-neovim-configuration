@@ -34,17 +34,6 @@ dap.configurations.typescriptreact = {
 
 dap.configurations.vue = {
 	{
-		name = "attach chrome",
-		type = "chrome",
-		request = "attach",
-		program = "${file}",
-		cwd = vim.fn.getcwd(),
-		sourceMaps = true,
-		protocol = "inspector",
-		port = 9222,
-		webRoot = "${workspaceFolder}/xxx",
-	},
-	{
 		name = "Launch Chrome",
 		request = "launch",
 		type = "chrome",
@@ -54,6 +43,17 @@ dap.configurations.vue = {
 		},
 		runtimeExecutable = "/usr/bin/google-chrome-beta",
 		userDataDir = false,
+		webRoot = "${workspaceFolder}/xxx",
+	},
+	{
+		name = "attach chrome",
+		type = "chrome",
+		request = "attach",
+		program = "${file}",
+		cwd = vim.fn.getcwd(),
+		sourceMaps = true,
+		protocol = "inspector",
+		port = 9222,
 		webRoot = "${workspaceFolder}/xxx",
 	},
 }

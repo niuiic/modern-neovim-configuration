@@ -1,17 +1,32 @@
 local config = function()
+	local enable_nvim_tree_float = function()
+		require("nvim-tree").setup({
+			view = require("plugin.nvim-tree.config").view_float,
+		})
+	end
+
+	local disable_nvim_tree_float = function()
+		require("nvim-tree").setup({
+			view = require("plugin.nvim-tree.config").view_no_float,
+		})
+	end
+
 	local dapui = require("dapui")
 	local dap = require("dap")
 
 	dapui.setup()
 
 	dap.listeners.after.event_initialized.dapui_config = function()
+		enable_nvim_tree_float()
 		dapui.open({})
 	end
 	dap.listeners.before.event_terminated.dapui_config = function()
 		dapui.close({})
+		disable_nvim_tree_float()
 	end
 	dap.listeners.before.event_exited.dapui_config = function()
 		dapui.close({})
+		disable_nvim_tree_float()
 	end
 
 	require("nvim-dap-virtual-text").setup({})
