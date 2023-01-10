@@ -7,6 +7,16 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 		{
 			type = "pwa-node",
 			request = "launch",
+			name = "Launch project",
+			cwd = "${workspaceFolder}",
+			runtimeExecutable = "pnpm",
+			runtimeArgs = {
+				"debug",
+			},
+		},
+		{
+			type = "pwa-node",
+			request = "launch",
 			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
