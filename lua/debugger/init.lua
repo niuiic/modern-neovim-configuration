@@ -4,6 +4,7 @@ local debuggers = {
 	"lldb-vscode",
 	"nlua",
 	"node",
+	"sh",
 }
 
 for _, value in pairs(debuggers) do
