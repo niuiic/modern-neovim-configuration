@@ -2,7 +2,7 @@
 
 Neovim + Linux = Your Best Almighty IDE
 
-> This configuration is for linux only, and it's not highly optimized for startup performance.
+> This configuration is for linux only.
 
 ## Supported Language List
 
@@ -18,7 +18,7 @@ Neovim + Linux = Your Best Almighty IDE
 - GLSL
 - WGSL
 
-> Common features: lsp、format、autocompletion(custom snippets and source)、debug.
+> Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
 > Not all features has been implemented, but you can easily implement most functions needed.
 
@@ -38,7 +38,7 @@ Neovim: V0.9+ (build from source with LuaJIT)
 2. `rg`, `fd` command (required by `telescope.nvim` ...)
 3. `trash-cli` command (required by `nvim-tree.lua`)
 4. `fcitx5` (required by `fcitx.nvim`)
-5. `translate-shell` (required by `script/translate` and `script/spell`)
+5. `translate-shell` (required by `script/spell`)
 
 ## QuickStart
 
@@ -158,13 +158,10 @@ fi
 `.nvim/init.lua`
 
 ```lua
-package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?.lua;" .. package.path
-package.path = debug.getinfo(1, "S").source:match([[^@?(.*[\/])[^\/]-$]]) .. "?/init.lua;" .. package.path
-
 require("task")
 ```
 
-> These tasks cannot be infinite loops.
+> These tasks could not be infinite loops.
 
 ## Known Issues
 
@@ -177,12 +174,6 @@ require("task")
 - GLSL syntax diagnostics not work
 
 `glslangValidator` requires files to have a specific suffix, check [document](https://github.com/KhronosGroup/glslang#execution-of-standalone-wrapper) for details.
-
-- Translate not work
-
-Normally you need to modify the proxy setting(`local proxy = "http://127.0.0.1:10025"`) in `script/translate.lua`.
-
-If you don't need this, just modify this script.
 
 # Showcase
 
@@ -392,4 +383,14 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 <details>
   <summary><b>Jump to Marks</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/jump-to-marks.png"/>
+</details>
+
+<details>
+  <summary><b>Pick Window</b></summary>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/pick-window.png"/>
+</details>
+
+<details>
+  <summary><b>Divider</b></summary>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/divider.png"/>
 </details>
