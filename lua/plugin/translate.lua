@@ -1,12 +1,5 @@
 local config = function()
 	require("translate").setup({
-		output = {
-			float = {
-				max_width = 20,
-				max_height = 5,
-				close_on_cursor_move = false,
-			},
-		},
 		translate = {
 			{
 				cmd = "TransToZH",
