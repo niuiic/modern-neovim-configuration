@@ -23,6 +23,9 @@
 -- ◍ chrome-debug-adapter
 -- ◍ debugpy
 -- ◍ delve
+-- ◍ bash-debug-adapter
+-- ◍ js-debug-adapter
+
 -- install lldb-vscode manually (it is installed with lldb)
 
 -- formatters installed:
