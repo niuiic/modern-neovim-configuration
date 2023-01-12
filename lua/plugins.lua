@@ -152,8 +152,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("toppair/reach.nvim", "plugin/reach"),
 	-- annotation generator
 	utils.fn.load_plugin_config("danymat/neogen", "plugin/neogen"),
-	-- move lines and blocks
-	utils.fn.load_plugin_config("fedepujol/move.nvim", "plugin/move"),
 	-- highlight current n
 	utils.fn.load_plugin_config("rktjmp/highlight-current-n.nvim", "plugin/highlight-current-n"),
 	-- cursor position
