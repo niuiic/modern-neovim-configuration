@@ -95,3 +95,7 @@ require("which-key").register({
 	mode = "n",
 	prefix = "<leader>",
 })
+
+-- move line
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { silent = true })
