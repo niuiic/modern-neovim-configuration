@@ -56,6 +56,7 @@ return {
 		{
 			"<space>T",
 			"<cmd>TransToEN<CR>",
+			desc = "translate en to zh",
 			mode = "n",
 		},
 	},
