@@ -178,6 +178,4 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("s1n7ax/nvim-window-picker", "plugin/nvim-window-picker"),
 	-- maximize window
 	utils.fn.load_plugin_config("niuiic/window.nvim", "plugin/window"),
-	-- move virtual block
-	{ dir = "~/Documents/projects/nvim/move.nvim", dev = true },
 })
