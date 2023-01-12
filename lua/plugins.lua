@@ -35,8 +35,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("akinsho/toggleterm.nvim", "plugin/toggleterm"),
 	-- toggle comments
 	utils.fn.load_plugin_config("numToStr/Comment.nvim", "plugin/comment"),
-	-- dashboard
-	utils.fn.load_plugin_config("glepnir/dashboard-nvim", "plugin/dashboard-nvim"),
 	-- automatically toggle between absolute line number and relative one
 	"sitiom/nvim-numbertoggle",
 	-- quick motion

@@ -251,11 +251,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Dashboard</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/dashboard.png"/>
-</details>
-
-<details>
   <summary><b>Translate</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/translate.png"/>
 </details>
