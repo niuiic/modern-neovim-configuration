@@ -140,7 +140,7 @@ require("lazy").setup({
 
 	-- lsp
 	"neovim/nvim-lspconfig",
-	utils.fn.load_plugin_config("glepnir/lspsaga.nvim", "plugin/lspsaga"),
+	utils.fn.load_plugin_config("utilyre/barbecue.nvim", "plugin/barbecue"),
 	-- code action
 	"weilbith/nvim-code-action-menu",
 

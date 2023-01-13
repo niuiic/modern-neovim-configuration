@@ -114,6 +114,46 @@ local keys = {
 		end,
 		desc = "find lsp_workspace_symbols",
 	},
+	{
+		"J",
+		function()
+			vim.lsp.buf.hover()
+		end,
+	},
+	{
+		"D",
+		function()
+			vim.diagnostic.open_float()
+		end,
+	},
+	{
+		"gj",
+		function()
+			vim.diagnostic.goto_next({ float = false })
+		end,
+		desc = "jump to next diagnostic",
+	},
+	{
+		"gJ",
+		function()
+			vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, float = false })
+		end,
+		desc = "jump to next error",
+	},
+	{
+		"gk",
+		function()
+			vim.diagnostic.goto_prev({ float = false })
+		end,
+		desc = "jump to previous diagnostic",
+	},
+	{
+		"gK",
+		function()
+			vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = false })
+		end,
+		desc = "jump to previous error",
+	},
 }
 
 return {

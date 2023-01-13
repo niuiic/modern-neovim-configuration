@@ -126,7 +126,7 @@ end
 return {
 	config = config,
 	keys = {
-		{ "<space>oF", "<cmd>NvimTreeOpen<CR>", desc = "open file tree" },
+		{ "<space>oF", "<cmd>NvimTreeFindFile<CR>", desc = "open file tree" },
 	},
 	dependencies = {
 		"kyazdani42/nvim-web-devicons",
