@@ -29,7 +29,7 @@ local config = function()
 		-- refresh (set root path to project root)
 		{ key = "R", action = "cd_dot", action_cb = cd_dot_cb },
 		-- close
-		{ key = "q", action = "close" },
+		{ key = "<esc>", action = "close" },
 		-- mark
 		{ key = "m", action = "toggle_mark" },
 		-- file operations
@@ -126,7 +126,7 @@ end
 return {
 	config = config,
 	keys = {
-		{ "<space>p", "<cmd>NvimTreeToggle<CR>", desc = "toggle file tree" },
+		{ "<space>oF", "<cmd>NvimTreeOpen<CR>", desc = "open file tree" },
 	},
 	dependencies = {
 		"kyazdani42/nvim-web-devicons",
