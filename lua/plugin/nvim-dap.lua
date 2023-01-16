@@ -137,6 +137,13 @@ local keys = {
 		desc = "quit debug",
 	},
 	{
+		"<space>dr",
+		function()
+			require("dap").run_last()
+		end,
+		desc = "restart",
+	},
+	{
 		"<space>dC",
 		function()
 			require("telescope").extensions.dap.commands({})
