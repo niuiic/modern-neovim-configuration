@@ -21,6 +21,7 @@ local lspList = {
 	"wgsl_analyzer",
 	"yamlls",
 	"marksman",
+	"dotls",
 }
 
 -- common lsp config
