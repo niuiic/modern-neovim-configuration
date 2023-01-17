@@ -69,6 +69,7 @@ local config = function()
 					"graphql",
 					"markdown",
 					"yaml",
+					"dot",
 				},
 			}),
 			formatting.golines.with({
