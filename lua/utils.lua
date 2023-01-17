@@ -34,6 +34,12 @@ M.fn.load_plugin_config = function(plugin, config_path)
 end
 
 M.fn.load_dev_plugin_config = function(plugin, config_path)
+	if config_path == nil then
+		return {
+			dir = plugin,
+			dev = true,
+		}
+	end
 	local status, config = pcall(require, config_path)
 	if not status or config == nil then
 		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)

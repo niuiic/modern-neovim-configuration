@@ -22,7 +22,11 @@ local config = function()
 				vertical = { width = 0.8 },
 			},
 		},
-		pickers = {},
+		pickers = {
+			find_files = {
+				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
+			},
+		},
 		extensions = {},
 	})
 end
