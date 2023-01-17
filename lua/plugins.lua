@@ -178,6 +178,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("s1n7ax/nvim-window-picker", "plugin/nvim-window-picker"),
 	-- maximize window
 	utils.fn.load_plugin_config("niuiic/window.nvim", "plugin/window"),
-	-- peek code
+	-- edit part of the file
 	utils.fn.load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
 })
