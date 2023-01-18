@@ -15,16 +15,26 @@ local m = require("luasnip.extras").m
 local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
+local prefix = "svg"
+local ss = function(name, snippet)
+	return s(prefix .. "-" .. name, snippet)
+end
+
 local M = {
 	s("svg", {
 		t({ "<svg>", "\t" }),
 		i(1),
 		t({ "", "</svg>" }),
 	}),
-	s("circle", {
+	ss("circle", {
 		t({ "<circle " }),
 		i(1),
 		t({ " />" }),
+	}),
+	ss("fill", {
+		t({ [[fill="]] }),
+		i(1),
+		t({ [["]] }),
 	}),
 }
 
