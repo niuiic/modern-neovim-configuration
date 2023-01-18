@@ -12,6 +12,7 @@ local lang_list = {
 	"scss",
 	"glsl",
 	"rust",
+	"html",
 }
 
 local common_snippets = {
