@@ -18,6 +18,7 @@
 -- ◍ wgsl-analyzer
 -- ◍ yaml-language-server
 -- ◍ marksman
+-- ◍ lemminx
 -- install verible, clangd, glslang manually
 
 -- daps installed:

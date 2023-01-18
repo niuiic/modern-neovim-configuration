@@ -22,6 +22,7 @@ local lspList = {
 	"yamlls",
 	"marksman",
 	"dotls",
+	"lemminx",
 }
 
 -- common lsp config
