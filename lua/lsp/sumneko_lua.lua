@@ -18,6 +18,9 @@ local M = {
 				-- search in third party library
 				checkThirdParty = false,
 			},
+			telemetry = {
+				enable = false,
+			},
 		},
 	},
 	root_dir = utils.fn.root_pattern,
