@@ -38,6 +38,7 @@
 -- ◍ sql-formatter
 -- ◍ stylua
 -- ◍ taplo (installed as a lsp)
+-- ◍ xmlformatter
 -- install cmake-format, verible, goimports manually
 
 return {

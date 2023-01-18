@@ -77,6 +77,12 @@ local config = function()
 					"go",
 				},
 			}),
+			formatting.xmlformat.with({
+				filetypes = {
+					"svg",
+					"xml",
+				},
+			}),
 		},
 	})
 
