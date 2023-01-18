@@ -13,6 +13,7 @@ local lang_list = {
 	"glsl",
 	"rust",
 	"html",
+	"svg",
 }
 
 local common_snippets = {
