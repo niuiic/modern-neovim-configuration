@@ -90,8 +90,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- call sudo in neovim
 	utils.fn.load_plugin_config("lambdalisue/suda.vim", "plugin/suda"),
-	-- close buffer
-	utils.fn.load_plugin_config("kazhala/close-buffers.nvim", "plugin/close-buffers"),
 	-- more smooth scroll
 	utils.fn.load_plugin_config("karb94/neoscroll.nvim", "plugin/neoscroll"),
 	-- highlights cursor words and lines

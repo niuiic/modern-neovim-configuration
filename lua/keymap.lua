@@ -21,6 +21,14 @@ vim.keymap.set("n", "<A-s>", ":wa!<CR>", { silent = true })
 -- esc
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 
+-- delete buffer
+vim.keymap.set("n", "<C-x>", function()
+	local bufnr = vim.api.nvim_win_get_buf(0)
+	if vim.api.nvim_buf_is_valid(bufnr) then
+		pcall(vim.api.nvim_buf_delete, bufnr, {})
+	end
+end, {})
+
 -- quickfix
 require("which-key").register({
 	q = {
