@@ -23,6 +23,8 @@ local lspList = {
 	"marksman",
 	"dotls",
 	"lemminx",
+	"texlab",
+	"ltex",
 }
 
 -- common lsp config

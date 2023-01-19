@@ -15,43 +15,32 @@ local m = require("luasnip.extras").m
 local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
-local prefix = "svg"
-local ss = function(name, snippet)
-	return s(prefix .. "-" .. name, snippet)
-end
-
 local M = {
 	s("svg", {
-		t({ [[<svg xmlns="http://www.w3.org/2000/svg">]], "\t" }),
+		t({ [[<svg style="border:1px solid black;">]], "\t" }),
 		i(1),
 		t({ "", "</svg>" }),
 	}),
-	ss("circle", {
+	s("circle", {
 		t({ [[<circle r="]] }),
 		i(1),
-		t({ [[">]], "\t" }),
-		i(2),
-		t({ "", "</circle>" }),
+		t({ [["/>]] }),
 	}),
-	ss("rect", {
+	s("rect", {
 		t({ [[<rect height="]] }),
 		i(1),
 		t({ [[" width="]] }),
 		i(2),
-		t({ [[">]], "\t" }),
-		i(3),
-		t({ "", "</rect>" }),
+		t({ [["/>]] }),
 	}),
-	ss("ellipse", {
+	s("ellipse", {
 		t({ [[<ellipse rx="]] }),
 		i(1),
 		t({ [[" ry="]] }),
 		i(2),
-		t({ [[">]], "\t" }),
-		i(3),
-		t({ "", "</ellipse>" }),
+		t({ [["/>]] }),
 	}),
-	ss("line", {
+	s("line", {
 		t({ [[<line x1="]] }),
 		i(1),
 		t({ [[" y1="]] }),
@@ -60,23 +49,22 @@ local M = {
 		i(3),
 		t({ [[" y2="]] }),
 		i(4),
-		t({ [[">]], "\t" }),
-		i(5),
-		t({ "", "</line>" }),
+		t({ [["/>]] }),
 	}),
-	ss("polyline", {
+	s("polyline", {
 		t({ [[<polyline points="]] }),
 		i(1),
-		t({ [[">]], "\t" }),
-		i(2),
-		t({ "", "</polyline>" }),
+		t({ [["/>]] }),
 	}),
-	ss("path", {
+	s("polygon", {
+		t({ [[<polygon points="]] }),
+		i(1),
+		t({ [["/>]] }),
+	}),
+	s("path", {
 		t({ [[<path d="]] }),
 		i(1),
-		t({ [[">]], "\t" }),
-		i(2),
-		t({ "", "</path>" }),
+		t({ [["/>]] }),
 	}),
 }
 

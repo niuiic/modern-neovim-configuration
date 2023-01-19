@@ -70,6 +70,8 @@ local config = function()
 					"markdown",
 					"yaml",
 					"dot",
+					"tex",
+					"plaintex",
 				},
 			}),
 			formatting.golines.with({

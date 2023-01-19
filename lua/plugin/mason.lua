@@ -2,6 +2,8 @@
 -- ◍ sqls
 -- ◍ dot-language-server
 -- ◍ vue-language-server
+-- ◍ texlab
+-- ◍ ltex-ls
 -- ◍ bash-language-server
 -- ◍ css-lsp
 -- ◍ cssmodules-language-server
