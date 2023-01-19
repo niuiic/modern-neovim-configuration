@@ -23,10 +23,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
-	local bufnr = vim.api.nvim_win_get_buf(0)
-	if vim.api.nvim_buf_is_valid(bufnr) then
-		pcall(vim.api.nvim_buf_delete, bufnr, {})
-	end
+	pcall(vim.api.nvim_buf_delete, 0, {})
 end, {})
 
 -- quickfix
