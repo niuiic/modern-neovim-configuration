@@ -5,7 +5,7 @@ return {
 		require("part-edit").setup({
 			swap_path = function()
 				local work_path = utils.fn.root_pattern()
-				return string.format("%s%s", string.gsub(work_path, "/", "_"), "swap")
+				return string.format("%s%s", string.gsub(work_path, "/", "_"), "_swap")
 			end,
 		})
 	end,
