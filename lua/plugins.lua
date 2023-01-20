@@ -178,4 +178,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("niuiic/window.nvim", "plugin/window"),
 	-- edit part of the file
 	utils.fn.load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
+	-- move block
+	utils.fn.load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
 })
