@@ -68,4 +68,20 @@ local M = {
 	}),
 }
 
+local properties = {
+	"style",
+	"stroke",
+}
+
+for _, value in ipairs(properties) do
+	table.insert(
+		M,
+		s(value, {
+			t({ value .. [[="]] }),
+			i(1),
+			t({ [["/>]] }),
+		})
+	)
+end
+
 return M
