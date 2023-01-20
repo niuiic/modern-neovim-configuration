@@ -71,6 +71,8 @@ local M = {
 local properties = {
 	"style",
 	"stroke",
+	"stroke-width",
+	"fill",
 }
 
 for _, value in ipairs(properties) do
