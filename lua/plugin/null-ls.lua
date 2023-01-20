@@ -84,6 +84,11 @@ local config = function()
 					"svg",
 					"xml",
 				},
+				generator_opts = {
+					command = "xmlformat",
+					args = { "--selfclose", "-" },
+					to_stdin = true,
+				},
 			}),
 		},
 	})
