@@ -18,7 +18,7 @@ local postfix = require("luasnip.extras.postfix").postfix
 
 local M = {}
 
-local common = require("snippet/common/svg")
+local common = require("snippet/svg")
 M = utils.fn.merge_list(common, M)
 
 return M
