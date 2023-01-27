@@ -1,4 +1,9 @@
 return {
+	config = function()
+		require("multiple-session").setup({
+			default_arg_num = 2,
+		})
+	end,
 	keys = {
 		{ "<leader>ss", "<cmd>SaveSession<CR>", desc = "save session" },
 		{ "<leader>sr", "<cmd>RestoreSession<CR>", desc = "restore session" },

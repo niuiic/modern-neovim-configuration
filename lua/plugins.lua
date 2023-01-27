@@ -171,7 +171,8 @@ require("lazy").setup({
 	-- translate
 	utils.fn.load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
 	-- session
-	utils.fn.load_plugin_config("niuiic/multiple-session.nvim", "plugin/multiple-session"),
+	-- utils.fn.load_plugin_config("niuiic/multiple-session.nvim", "plugin/multiple-session"),
+	utils.fn.load_dev_plugin_config("~/Documents/projects/nvim/multiple-session.nvim", "plugin/multiple-session"),
 	-- window picker
 	utils.fn.load_plugin_config("s1n7ax/nvim-window-picker", "plugin/nvim-window-picker"),
 	-- maximize window
