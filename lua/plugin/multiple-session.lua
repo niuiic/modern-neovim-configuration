@@ -12,4 +12,5 @@ return {
 		{ "<leader>sd", "<cmd>DeleteSession<CR>", desc = "delete session" },
 	},
 	lazy = false,
+	dependencies = { "niuiic/niuiic-core.nvim" },
 }
