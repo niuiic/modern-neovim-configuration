@@ -4,7 +4,7 @@ Neovim + Linux = Your Best Almighty IDE
 
 > This configuration is for linux only.
 
-## Supported Language List
+## Mainly Supported Language List
 
 - Rust
 - Go
