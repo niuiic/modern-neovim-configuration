@@ -20,6 +20,11 @@ local config = function()
 					"cmake",
 				},
 			}),
+			formatting.google_java_format.with({
+				filetypes = {
+					"java",
+				},
+			}),
 			formatting.rustfmt.with({
 				filetypes = {
 					"rust",

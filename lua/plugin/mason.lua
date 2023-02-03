@@ -20,6 +20,7 @@
 -- ◍ yaml-language-server
 -- ◍ marksman
 -- ◍ lemminx
+-- ◍ jdtls
 -- install verible, clangd, glslang manually
 
 -- daps installed:
@@ -40,6 +41,7 @@
 -- ◍ stylua
 -- ◍ taplo (installed as a lsp)
 -- ◍ xmlformatter
+-- ◍ google-java-format
 -- install cmake-format, verible, goimports manually
 
 return {

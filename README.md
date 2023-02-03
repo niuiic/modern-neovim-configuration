@@ -15,6 +15,7 @@ Neovim + Linux = Your Best Almighty IDE
 - SQL
 - Lua
 - SystemVerilog
+- Java
 - GLSL
 - WGSL
 

@@ -32,6 +32,7 @@ local config = function()
 			"wgsl",
 			"dot",
 			"latex",
+			"java",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },

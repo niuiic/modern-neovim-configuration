@@ -24,6 +24,7 @@ local lspList = {
 	"dotls",
 	"lemminx",
 	"texlab",
+	"jdtls",
 }
 
 -- common lsp config
