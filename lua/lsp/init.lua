@@ -128,7 +128,7 @@ end
 local function copy_file_path()
 	local name = vim.api.nvim_buf_get_name(0)
 	local root_path = utils.fn.root_pattern()
-	local index = string.find(name, root_path)
+	local index = string.find(name, root_path, 1, true)
 	if index == nil then
 		vim.notify("The file is not under the project", vim.log.levels.ERROR)
 	else
