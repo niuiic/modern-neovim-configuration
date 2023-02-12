@@ -169,7 +169,8 @@ require("lazy").setup({
 	-- clipboard image
 	utils.fn.load_plugin_config("niuiic/cp-image.nvim", "plugin/cp-image"),
 	-- translate
-	utils.fn.load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
+	-- utils.fn.load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
+	utils.fn.load_dev_plugin_config("~/Documents/projects/nvim/translate.nvim", "plugin/translate"),
 	-- session
 	utils.fn.load_plugin_config("niuiic/multiple-session.nvim", "plugin/multiple-session"),
 	-- window picker
@@ -180,4 +181,5 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
 	-- move block
 	utils.fn.load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
+	utils.fn.load_dev_plugin_config("~/Documents/projects/nvim/niuiic-core.nvim"),
 })
