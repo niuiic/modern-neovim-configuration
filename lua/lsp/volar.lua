@@ -1,5 +1,5 @@
 local utils = require("utils")
-local filetypes = { "vue" }
+local filetypes = { "vue", "typescriptreact", "javascriptreact" }
 
 if utils.fn.match_str_in_file(utils.fn.root_pattern() .. "/package.json", "vue") then
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
