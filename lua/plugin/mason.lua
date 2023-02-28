@@ -24,7 +24,6 @@
 -- install verible, clangd, glslang manually
 
 -- daps installed:
--- ◍ chrome-debug-adapter
 -- ◍ debugpy
 -- ◍ delve
 -- ◍ bash-debug-adapter

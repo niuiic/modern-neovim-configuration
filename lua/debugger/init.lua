@@ -1,9 +1,8 @@
 local debuggers = {
 	"dlv",
-	"chrome",
 	"lldb-vscode",
 	"nlua",
-	"node",
+	"js",
 	"sh",
 }
 

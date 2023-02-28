@@ -7,9 +7,9 @@ require("dap-vscode-js").setup({
 for _, language in ipairs({ "typescript", "javascript" }) do
 	require("dap").configurations[language] = {
 		{
+			name = "Launch project",
 			type = "pwa-node",
 			request = "launch",
-			name = "Launch project",
 			cwd = "${workspaceFolder}",
 			runtimeExecutable = "pnpm",
 			runtimeArgs = {
@@ -17,9 +17,9 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			},
 		},
 		{
+			name = "Launch cmd",
 			type = "pwa-node",
 			request = "launch",
-			name = "Launch cmd",
 			cwd = utils.fn.root_pattern(),
 			runtimeExecutable = "pnpm",
 			runtimeArgs = {
@@ -27,18 +27,39 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			},
 		},
 		{
+			name = "Launch file",
 			type = "pwa-node",
 			request = "launch",
-			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
 		},
 		{
+			name = "Attach",
 			type = "pwa-node",
 			request = "attach",
-			name = "Attach",
 			processId = require("dap.utils").pick_process,
 			cwd = "${workspaceFolder}",
+		},
+	}
+end
+
+for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
+	require("dap").configurations[language] = {
+		{
+			name = "Launch Chrome",
+			request = "launch",
+			type = "pwa-chrome",
+			runtimeExecutable = "/usr/bin/google-chrome-beta",
+			userDataDir = false,
+			webRoot = "${workspaceFolder}/xxx",
+		},
+		{
+			name = "attach chrome",
+			type = "pwa-chrome",
+			request = "attach",
+			sourceMaps = true,
+			port = 9222,
+			webRoot = "${workspaceFolder}/xxx",
 		},
 	}
 end
