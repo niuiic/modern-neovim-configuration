@@ -61,6 +61,12 @@ return {
 			},
 			p = {
 				name = "package",
+				r = {
+					name = "rust",
+				},
+				n = {
+					name = "node",
+				},
 			},
 			d = {
 				name = "diff view",

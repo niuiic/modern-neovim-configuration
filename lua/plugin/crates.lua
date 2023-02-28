@@ -1,34 +1,34 @@
 local keys = {
 	{
-		"<leader>pt",
+		"<leader>prt",
 		function()
 			require("crates").toggle()
 		end,
 		desc = "toggle showing crate version",
 	},
 	{
-		"<leader>pu",
+		"<leader>pru",
 		function()
 			require("crates").upgrade_crate()
 		end,
 		desc = "update crate",
 	},
 	{
-		"<leader>pU",
+		"<leader>prU",
 		function()
 			require("crates").upgrade_all_crates()
 		end,
 		desc = "update all crates",
 	},
 	{
-		"<leader>pi",
+		"<leader>pri",
 		function()
 			require("crates").show_popup()
 		end,
 		desc = "show crate info",
 	},
 	{
-		"<leader>pf",
+		"<leader>prf",
 		function()
 			require("crates").show_features_popup()
 		end,

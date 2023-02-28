@@ -1,38 +1,38 @@
 local keys = {
 	{
-		"<leader>pt",
+		"<leader>pnt",
 		function()
 			require("package-info").toggle()
 		end,
-		"toggle showing package version",
+		desc = "toggle showing package version",
 	},
 	{
-		"<leader>pu",
+		"<leader>pnu",
 		function()
 			require("package-info").update()
 		end,
-		"update package",
+		desc = "update package",
 	},
 	{
-		"<leader>pc",
+		"<leader>pnc",
 		function()
 			require("package-info").change_version()
 		end,
-		"change package version",
+		desc = "change package version",
 	},
 	{
-		"<leader>pd",
+		"<leader>pnd",
 		function()
 			require("package-info").delete()
 		end,
-		"delete package",
+		desc = "delete package",
 	},
 	{
-		"<leader>pi",
+		"<leader>pni",
 		function()
 			require("package-info").install()
 		end,
-		"install new package",
+		desc = "install new package",
 	},
 }
 
