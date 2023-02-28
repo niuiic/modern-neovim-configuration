@@ -94,7 +94,7 @@ require("which-key").register({
 		},
 		d = {
 			function()
-				require("osv").run_this()
+				require("osv").launch({ port = 8086 })
 			end,
 			"debug neovim",
 		},
