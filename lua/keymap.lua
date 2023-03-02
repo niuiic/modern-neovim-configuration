@@ -27,9 +27,16 @@ vim.keymap.set("n", "<C-x>", function()
 	local wins = vim.api.nvim_list_wins()
 	local validWins = {}
 	for _, winnr in ipairs(wins) do
-		local success = pcall(vim.api.nvim_win_get_buf, winnr)
+		local success, bufnr2 = pcall(vim.api.nvim_win_get_buf, winnr)
 		if success then
-			table.insert(validWins, winnr)
+			if bufnr == bufnr2 then
+				table.insert(validWins, winnr)
+			else
+				local buf_name = vim.api.nvim_buf_get_name(bufnr2)
+				if buf_name ~= nil and buf_name ~= '' then
+					table.insert(validWins, winnr)
+				end
+			end
 		end
 	end
 	if table.maxn(validWins) > 1 then
