@@ -1,7 +1,7 @@
 local config = function()
 	require("lspsaga").setup({
 		lightbulb = {
-			enable = false,
+			sign_priority = 1,
 		},
 	})
 end
