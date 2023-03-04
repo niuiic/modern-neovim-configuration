@@ -23,6 +23,9 @@ return {
 			s = {
 				name = "tasks",
 			},
+			l = {
+				name = "lsp",
+			},
 			w = {
 				name = "window",
 			},

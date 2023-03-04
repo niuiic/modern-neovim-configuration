@@ -133,6 +133,7 @@ local keys = {
 			require("dap").terminate()
 			require("dapui").close({})
 			require("dap.repl").close({})
+			require("nvim-dap-virtual-text/virtual_text").clear_virtual_text()
 		end,
 		desc = "quit debug",
 	},

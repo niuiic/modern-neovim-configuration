@@ -33,7 +33,7 @@ vim.keymap.set("n", "<C-x>", function()
 				table.insert(validWins, winnr)
 			else
 				local buf_name = vim.api.nvim_buf_get_name(bufnr2)
-				if buf_name ~= nil and buf_name ~= '' then
+				if buf_name ~= nil and buf_name ~= "" then
 					table.insert(validWins, winnr)
 				end
 			end
@@ -125,6 +125,12 @@ require("which-key").register({
 				require("osv").launch({ port = 8086 })
 			end,
 			"debug neovim",
+		},
+		D = {
+			function()
+				require("osv").run_this()
+			end,
+			"debug neovim (run this)",
 		},
 	},
 }, {

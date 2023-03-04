@@ -14,13 +14,4 @@ local M = {
 	root_dir = utils.fn.root_pattern,
 }
 
-vim.api.nvim_create_user_command("AS", function()
-	local res = vim.lsp.get_active_clients()
-	for _, value in pairs(res) do
-		if value.name == "cssls" then
-			utils.fn.log(vim.inspect(value))
-		end
-	end
-end, {})
-
 return M

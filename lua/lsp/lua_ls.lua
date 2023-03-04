@@ -24,6 +24,16 @@ local M = {
 		},
 	},
 	root_dir = utils.fn.root_pattern,
+	commands = {
+		LuaLsRename = {
+			function()
+				vim.lsp.buf.rename(nil, {
+					name = "lua_ls",
+				})
+			end,
+			description = "Rename",
+		},
+	},
 }
 
 return M

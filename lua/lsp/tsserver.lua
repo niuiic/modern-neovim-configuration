@@ -68,6 +68,14 @@ local M = {
 			organize_imports,
 			description = "Organize Imports",
 		},
+		TsserverRename = {
+			function()
+				vim.lsp.buf.rename(nil, {
+					name = "tsserver",
+				})
+			end,
+			description = "Rename",
+		},
 	},
 	root_dir = utils.fn.root_pattern,
 }
