@@ -23,7 +23,9 @@ local function copy_file_path()
 	else
 		local str = string.sub(name, string.len(root_path) + 2)
 		str = string.gsub(str, "^(src)", "@", 1)
-		str = string.gsub(str, "(.[^.]*)$", "")
+		if string.find(str, "^[%s%S]*.vue$") == nil then
+			str = string.gsub(str, "(.[^.]*)$", "")
+		end
 		vim.fn.setreg("+", str)
 		vim.notify("Copied " .. str .. " to clipboard", vim.log.levels.INFO)
 	end
