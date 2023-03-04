@@ -33,6 +33,7 @@ local config = function()
 			"dot",
 			"latex",
 			"java",
+			"regex",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },

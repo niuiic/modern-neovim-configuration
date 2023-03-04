@@ -153,16 +153,14 @@ local keys = {
 	{
 		"M",
 		function()
-			---@diagnostic disable-next-line
-			require("dapui").eval()
+			require("dap.ui.widgets").hover()
 		end,
 		desc = "check variable value",
 	},
 	{
 		"M",
 		function()
-			---@diagnostic disable-next-line
-			require("dapui").eval()
+			require("dap.ui.widgets").hover()
 		end,
 		desc = "check variable value",
 		mode = "v",
