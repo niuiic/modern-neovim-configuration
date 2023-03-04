@@ -27,9 +27,7 @@ local config = function()
 							end)
 						end,
 					},
-					{
-						map = { "VolarFilePath", "LSPFilePath" },
-					},
+					{ map = { "VolarFilePath", "LSPFilePath" } },
 				},
 			},
 			lua_ls = {
