@@ -154,14 +154,18 @@ local keys = {
 	{
 		"M",
 		function()
-			require("dap.ui.widgets").hover()
+			require("dapui").eval(nil, {
+				context = "repl",
+			})
 		end,
 		desc = "check variable value",
 	},
 	{
 		"M",
 		function()
-			require("dap.ui.widgets").hover()
+			require("dapui").eval(nil, {
+				context = "repl",
+			})
 		end,
 		desc = "check variable value",
 		mode = "v",
