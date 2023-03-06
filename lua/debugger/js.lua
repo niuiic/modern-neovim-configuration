@@ -49,9 +49,9 @@ for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
 			name = "Launch Chrome",
 			request = "launch",
 			type = "pwa-chrome",
-			runtimeExecutable = "/usr/bin/google-chrome-beta",
+			runtimeExecutable = "/usr/bin/google-chrome-stable",
 			userDataDir = false,
-			webRoot = "${workspaceFolder}/xxx",
+			webRoot = "${workspaceFolder}/unknown",
 		},
 		{
 			name = "attach chrome",
@@ -59,7 +59,7 @@ for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
 			request = "attach",
 			sourceMaps = true,
 			port = 9222,
-			webRoot = "${workspaceFolder}/xxx",
+			webRoot = "${workspaceFolder}/unknown",
 		},
 	}
 end
