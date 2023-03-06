@@ -50,7 +50,7 @@ require("lazy").setup({
 	"p00f/nvim-ts-rainbow",
 	utils.fn.load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
-	"andymass/vim-matchup",
+	utils.fn.load_plugin_config("andymass/vim-matchup", "plugin/vim-matchup"),
 	-- syntax aware text-objects, select, move, swap, and peek support
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	-- auto complete tag in html
