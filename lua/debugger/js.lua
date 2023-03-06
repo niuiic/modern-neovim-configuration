@@ -47,8 +47,8 @@ for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
 	require("dap").configurations[language] = {
 		{
 			name = "Launch Chrome",
-			request = "launch",
 			type = "pwa-chrome",
+			request = "launch",
 			runtimeExecutable = "/usr/bin/google-chrome-stable",
 			userDataDir = false,
 			webRoot = "${workspaceFolder}/unknown",
@@ -57,7 +57,6 @@ for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
 			name = "attach chrome",
 			type = "pwa-chrome",
 			request = "attach",
-			sourceMaps = true,
 			port = 9222,
 			webRoot = "${workspaceFolder}/unknown",
 		},
