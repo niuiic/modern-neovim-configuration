@@ -93,8 +93,8 @@ vim.keymap.set("n", "<A-k>", ":cprev<CR>", { silent = true })
 -- copy to systemclip
 vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 
--- set to center
-vim.keymap.set("n", "Z", "zz", { silent = true })
+-- toggle current fold
+vim.keymap.set("n", "Z", "za", { silent = true })
 
 -- plugin operation
 require("which-key").register({

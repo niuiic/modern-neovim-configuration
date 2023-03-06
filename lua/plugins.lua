@@ -28,7 +28,7 @@ require("lazy").setup({
 	-- displays neovim startup time
 	utils.fn.load_plugin_config("dstein64/vim-startuptime", "plugin/vim-startuptime"),
 	-- fold
-	utils.fn.load_plugin_config("anuvyklack/pretty-fold.nvim", "plugin/pretty-fold"),
+	utils.fn.load_plugin_config("kevinhwang91/nvim-ufo", "plugin/nvim-ufo"),
 	-- lazygit
 	utils.fn.load_plugin_config("kdheepak/lazygit.nvim", "plugin/lazygit"),
 	-- terminal
