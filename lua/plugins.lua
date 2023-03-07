@@ -130,8 +130,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("gbprod/yanky.nvim", "plugin/yanky"),
 	-- todo comments
 	utils.fn.load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
-	-- project manager
-	utils.fn.load_plugin_config("ahmedkhalf/project.nvim", "plugin/project"),
 
 	-- task manager
 	utils.fn.load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),

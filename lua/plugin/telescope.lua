@@ -59,7 +59,6 @@ local keys = {
 	{ "<space>or", "<cmd>Telescope resume<CR>", desc = "research" },
 	{ "<space>oT", "<cmd>TodoTelescope<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
 	{ "<space>on", "<cmd>Noice telescope<CR>", desc = "search notifications" },
-	{ "<space>op", "<cmd>Telescope projects<CR>", desc = "search projects" },
 	{ "<space>oy", "<cmd>Telescope yank_history<CR>", desc = "yank history" },
 	{
 		"<space>ogw",
