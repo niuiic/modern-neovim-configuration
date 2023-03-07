@@ -1,7 +1,7 @@
 local config = function()
-	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 		pattern = "*",
-		callback = function(args)
+		callback = function()
 			vim.o.foldcolumn = "0"
 			vim.o.foldlevel = 99
 			vim.o.foldlevelstart = 99
