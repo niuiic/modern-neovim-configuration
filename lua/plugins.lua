@@ -183,4 +183,6 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("m4xshen/smartcolumn.nvim", "plugin/smartcolumn"),
 	-- open buffer in inner terminal but not nested
 	utils.fn.load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
+	-- custom navigation
+	utils.fn.load_plugin_config("LeonHeidelbach/trailblazer.nvim", "plugin/trailblazer"),
 })

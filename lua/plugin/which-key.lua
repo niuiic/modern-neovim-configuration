@@ -44,6 +44,9 @@ return {
 			b = {
 				name = "buffer line",
 			},
+			m = {
+				name = "mark",
+			},
 		}, {
 			mode = "n",
 			prefix = "<localleader>",
