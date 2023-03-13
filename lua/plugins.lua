@@ -179,4 +179,8 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
 	-- move block
 	utils.fn.load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
+	-- column
+	utils.fn.load_plugin_config("m4xshen/smartcolumn.nvim", "plugin/smartcolumn"),
+	-- open buffer in inner terminal but not nested
+	utils.fn.load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 })
