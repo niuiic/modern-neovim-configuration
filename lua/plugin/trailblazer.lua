@@ -34,8 +34,11 @@ return {
 	config = config,
 	keys = {
 		{ "<space>mm", "<cmd>TrailBlazerNewTrailMark<CR>", desc = "toggle mark" },
+		{ "<C-m>", "<cmd>TrailBlazerNewTrailMark<CR>", desc = "toggle mark" },
 		{ "<space>mk", "<cmd>TrailBlazerPeekMovePreviousUp<CR>", desc = "go to previous mark" },
+		{ "<C-h>", "<cmd>TrailBlazerPeekMovePreviousUp<CR>", desc = "go to previous mark" },
 		{ "<space>mj", "<cmd>TrailBlazerPeekMoveNextDown<CR>", desc = "go to next mark" },
+		{ "<C-l>", "<cmd>TrailBlazerPeekMoveNextDown<CR>", desc = "go to next mark" },
 		{ "<space>mL", "<cmd>TrailBlazerTrackBack<CR>", desc = "go to/remove last mark" },
 		{ "<space>md", "<cmd>TrailBlazerDeleteAllTrailMarks<CR>", desc = "delete all marks" },
 		{ "<space>ml", "<cmd>TrailBlazerToggleTrailMarkList<CR>", desc = "toggle mark list" },

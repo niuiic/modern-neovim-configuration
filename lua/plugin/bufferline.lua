@@ -64,7 +64,7 @@ local keys = {
 	{ "<space>bp", "<cmd>BufferLineTogglePin<CR>", desc = "toggle pin " },
 	{ "<C-k>", "<cmd>BufferLineCycleNext<CR>" },
 	{ "<C-j>", "<cmd>BufferLineCyclePrev<CR>" },
-	{ "<C-m>", "<cmd>b#<CR>" },
+	{ "<C-p>", "<cmd>b#<CR>" },
 }
 
 return {
