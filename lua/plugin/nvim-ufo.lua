@@ -54,4 +54,5 @@ end
 return {
 	config = config,
 	dependencies = { "kevinhwang91/promise-async" },
+	event = "VimEnter",
 }
