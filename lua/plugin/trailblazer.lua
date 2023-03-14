@@ -22,10 +22,26 @@ local config = function()
 			},
 		},
 		trail_options = {
-			newest_mark_symbol = "•",
-			cursor_mark_symbol = "•",
-			next_mark_symbol = "•",
-			previous_mark_symbol = "•",
+			trail_mark_priority = 11,
+			newest_mark_symbol = "M",
+			cursor_mark_symbol = "M",
+			next_mark_symbol = "M",
+			previous_mark_symbol = "M",
+			multiple_mark_symbol_counters_enabled = false,
+			number_line_color_enabled = false,
+			trail_mark_in_text_highlights_enabled = false,
+		},
+		hl_groups = {
+			TrailBlazerTrailMarkNext = {
+				guifg = "#00ff00",
+				guibg = "none",
+				gui = "bold",
+			},
+			TrailBlazerTrailMarkPrevious = {
+				guifg = "#ff00ff",
+				guibg = "none",
+				gui = "bold",
+			},
 		},
 	})
 end

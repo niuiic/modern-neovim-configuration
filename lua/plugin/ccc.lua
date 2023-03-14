@@ -24,4 +24,5 @@ local keys = {
 return {
 	config = config,
 	keys = keys,
+	lazy = false,
 }
