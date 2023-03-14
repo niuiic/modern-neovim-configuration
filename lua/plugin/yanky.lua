@@ -4,8 +4,6 @@ local config = function()
 	require("yanky").setup({
 		ring = {
 			history_length = 10,
-			storage = "shada",
-			sync_with_numbered_registers = true,
 		},
 		picker = {
 			select = {
@@ -16,23 +14,14 @@ local config = function()
 					default = mapping.put("p"),
 					n = nil,
 					i = {
-						["<C-a>"] = mapping.put("p"),
-						["<C-i>"] = mapping.put("P"),
-						["<C-x>"] = mapping.delete(),
+						["<C-j>"] = "move_selection_next",
+						["<C-k>"] = "move_selection_previous",
 					},
 				},
 			},
 		},
 		system_clipboard = {
 			sync_with_ring = false,
-		},
-		highlight = {
-			on_put = true,
-			on_yank = true,
-			timer = 500,
-		},
-		preserve_cursor_position = {
-			enabled = true,
 		},
 	})
 
