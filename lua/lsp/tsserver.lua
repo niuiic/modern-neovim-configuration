@@ -1,11 +1,11 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local filetypes = {
 	"javascript",
 	"typescript",
 }
 
-if utils.fn.match_str_in_file(utils.fn.root_pattern() .. "/package.json", "vue") then
+if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
 	filetypes = { "none" }
 end
 
@@ -77,7 +77,7 @@ local M = {
 			description = "Rename",
 		},
 	},
-	root_dir = utils.fn.root_pattern,
+	root_dir = core.file.root_path,
 }
 
 return M

@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local M = {
 	settings = {
@@ -35,7 +35,7 @@ local M = {
 		"typescriptreact",
 		"vue",
 	},
-	root_dir = utils.fn.root_pattern,
+	root_dir = core.file.root_path,
 	handlers = {
 		["eslint/noLibrary"] = function()
 			return {}

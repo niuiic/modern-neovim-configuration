@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local M = {
 	modify_capabilities = function(capabilities)
@@ -14,7 +14,7 @@ local M = {
 		},
 		provideFormatter = false,
 	},
-	root_dir = utils.fn.root_pattern,
+	root_dir = core.file.root_path,
 }
 
 return M

@@ -26,11 +26,11 @@ local M = {
 	}),
 	s("tasks", {
 		t({
-			[[local utils = require("utils")]],
+			[[local core = require("niuiic-core")]],
 			"",
 			[[local overseer = require("overseer")]],
 			"",
-			[[local scriptPath = utils.fn.root_pattern() .. "/.nvim/task/task.sh"]],
+			[[local scriptPath = core.file.file_path() .. "/.nvim/task/task.sh"]],
 			"",
 			[[overseer.register_template({]],
 			[[	name = "template",]],

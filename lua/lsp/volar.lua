@@ -1,13 +1,13 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 local filetypes = { "vue", "typescriptreact", "javascriptreact" }
 
-if utils.fn.match_str_in_file(utils.fn.root_pattern() .. "/package.json", "vue") then
+if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
 end
 
 local function search_ts_server_path()
-	local local_ts_server_path = utils.fn.root_pattern() .. "/node_modules/typescript/lib"
-	if utils.fn.file_or_dir_exists(local_ts_server_path .. "/lib.d.ts") then
+	local local_ts_server_path = core.file.root_path() .. "/node_modules/typescript/lib"
+	if core.file.file_or_dir_exists(local_ts_server_path .. "/lib.d.ts") then
 		return local_ts_server_path
 	else
 		return os.getenv("HOME") .. "/.local/share/nvim/mason/packages/vue-language-server/node_modules/typescript/lib"
@@ -16,7 +16,7 @@ end
 
 local function copy_file_path()
 	local name = vim.api.nvim_buf_get_name(0)
-	local root_path = utils.fn.root_pattern()
+	local root_path = core.file.root_path()
 	local index = string.find(name, root_path, 1, true)
 	if index == nil then
 		vim.notify("The file is not under the project", vim.log.levels.ERROR)
@@ -33,7 +33,7 @@ end
 
 local M = {
 	filetypes = filetypes,
-	root_dir = utils.fn.root_pattern,
+	root_dir = core.file.root_path,
 	init_options = {
 		typescript = {
 			tsdk = search_ts_server_path(),

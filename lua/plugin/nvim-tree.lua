@@ -2,7 +2,7 @@ local config = function()
 	local nvim_tree = require("nvim-tree")
 
 	local cd_dot_cb = function(node)
-		require("nvim-tree").change_dir(require("utils").fn.root_pattern())
+		require("nvim-tree").change_dir(require("niuiic-core").file.root_path())
 		if node.name ~= ".." then
 			require("nvim-tree.lib").set_index_and_redraw(node.absolute_path)
 		end

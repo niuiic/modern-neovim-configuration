@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 package.path = "./?/init.lua;" .. package.path
 
 require("basic")
@@ -11,9 +9,10 @@ require("source")
 require("script")
 
 -- load config for workspace
-local project_root = utils.fn.root_pattern()
+local core = require("niuiic-core")
+local project_root = core.file.root_path()
 local local_config_entry = project_root .. "/.nvim/init.lua"
-if utils.fn.file_or_dir_exists(local_config_entry) then
+if core.file.file_or_dir_exists(local_config_entry) then
 	package.path = project_root .. "/.nvim/?.lua;" .. package.path
 	package.path = project_root .. "/.nvim/?/init.lua;" .. package.path
 	dofile(local_config_entry)

@@ -33,9 +33,6 @@ end
 
 local opt = {
 	hidden = true,
-	search_dirs = {
-		require("utils").fn.root_pattern(),
-	},
 }
 
 local keys = {

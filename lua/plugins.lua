@@ -19,6 +19,8 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
+	-- nvim utils
+	"niuiic/niuiic-core.nvim",
 	-- shortcut suggestions
 	utils.fn.load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
 	-- auto complete pairs
@@ -185,4 +187,7 @@ require("lazy").setup({
 	utils.fn.load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 	-- custom navigation
 	utils.fn.load_plugin_config("LeonHeidelbach/trailblazer.nvim", "plugin/trailblazer"),
+
+	utils.fn.load_dev_plugin_config("~/Documents/projects/nvim/niuiic-core.nvim"),
+	utils.fn.load_dev_plugin_config("~/Documents/projects/nvim/lsp-utils.nvim", "plugin/lsp-utils"),
 })

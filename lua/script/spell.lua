@@ -1,7 +1,7 @@
 -- translate-shell is required
 
 local plenary = require("plenary")
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local function spell_check(word)
 	plenary.job
@@ -22,7 +22,7 @@ local function spell_check(word)
 end
 
 vim.api.nvim_create_user_command("SpellCheck", function()
-	local text = utils.fn.get_visual_selection()
+	local text = core.text.selection()
 	if string.match(text, "(%A+)") ~= nil then
 		vim.notify("unsupported language", vim.log.levels.ERROR)
 	else

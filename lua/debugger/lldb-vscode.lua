@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 local dap = require("dap")
 
 dap.adapters.lldb = {
@@ -13,7 +13,7 @@ dap.configurations.cpp = {
 		type = "lldb",
 		request = "launch",
 		program = function()
-			local root_path = utils.fn.root_pattern()
+			local root_path = core.file.root_path()
 			local input_val
 			vim.ui.input({ prompt = "Path to executable: ", default = root_path .. "/" }, function(input)
 				input_val = input
@@ -35,10 +35,10 @@ dap.configurations.rust = {
 		request = "launch",
 		program = function()
 			vim.cmd("!cargo build")
-			local root_path = utils.fn.root_pattern()
+			local root_path = core.file.root_path()
 			local project_name = string.match(root_path, "/([%w_-]+)$")
 			local target = root_path .. "/target/debug/" .. project_name
-			if utils.fn.file_or_dir_exists(target) then
+			if core.file.file_or_dir_exists(target) then
 				return target
 			else
 				local input_val

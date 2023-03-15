@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 
 require("dap-vscode-js").setup({
 	debugger_cmd = { os.getenv("HOME") .. "/.local/share/nvim/mason/bin/js-debug-adapter" },
@@ -20,7 +20,7 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			name = "Launch cmd",
 			type = "pwa-node",
 			request = "launch",
-			cwd = utils.fn.root_pattern(),
+			cwd = core.file.root_path(),
 			runtimeExecutable = "pnpm",
 			runtimeArgs = {
 				"debug:cmd",

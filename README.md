@@ -107,11 +107,11 @@ The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua`
 `.nvim/task/init.lua`
 
 ```lua
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local overseer = require("overseer")
 
-local scriptPath = utils.fn.root_pattern() .. "/.nvim/task/task.sh"
+local scriptPath = core.file.root_path() .. "/.nvim/task/task.sh"
 
 overseer.register_template({
 	name = "checkTs",

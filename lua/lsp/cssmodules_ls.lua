@@ -1,7 +1,7 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local M = {
-	root_dir = utils.fn.root_pattern,
+	root_dir = core.file.root_path,
 	filetypes = { "javascriptreact", "typescriptreact", "vue" },
 	on_attach = function(client, _)
 		if vim.bo.filetype == "vue" then
