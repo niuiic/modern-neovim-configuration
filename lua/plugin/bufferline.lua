@@ -3,10 +3,9 @@ local config = function()
 		options = {
 			mode = "buffers",
 			numbers = "ordinal",
-			indicator = { icon = "|" },
+			indicator = { icon = "➣", style = "icon" },
 			buffer_close_icon = "",
 			modified_icon = "●",
-			close_icon = "",
 			left_trunc_marker = "",
 			right_trunc_marker = "",
 			max_name_length = 18,
