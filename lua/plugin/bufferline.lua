@@ -2,15 +2,14 @@ local config = function()
 	require("bufferline").setup({
 		options = {
 			mode = "buffers",
-			numbers = "ordinal",
 			indicator = { icon = "➣", style = "icon" },
 			buffer_close_icon = "",
 			modified_icon = "●",
 			left_trunc_marker = "",
 			right_trunc_marker = "",
-			max_name_length = 18,
-			max_prefix_length = 15,
-			tab_size = 18,
+			max_name_length = 16,
+			max_prefix_length = 16,
+			tab_size = 16,
 			color_icons = true,
 			show_buffer_icons = true,
 			show_buffer_close_icons = false,
@@ -18,7 +17,7 @@ local config = function()
 			show_close_icon = false,
 			show_tab_indicators = false,
 			persist_buffer_sort = true,
-			separator_style = "thin",
+			separator_style = { "<", ">" },
 			diagnostics = "nvim_lsp",
 			enforce_regular_tabs = false,
 			always_show_bufferline = true,
@@ -42,14 +41,6 @@ local config = function()
 					return false
 				end
 			end,
-			offsets = {
-				{
-					filetype = "NvimTree",
-					text = "File Explorer",
-					highlight = "Directory",
-					text_align = "left",
-				},
-			},
 		},
 	})
 end
