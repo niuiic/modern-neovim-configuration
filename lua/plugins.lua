@@ -212,7 +212,4 @@ require("lazy").setup({
 	load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 	-- custom navigation
 	load_plugin_config("LeonHeidelbach/trailblazer.nvim", "plugin/trailblazer"),
-
-	load_dev_plugin_config("~/Documents/projects/nvim/niuiic-core.nvim"),
-	load_dev_plugin_config("~/Documents/projects/nvim/lsp-utils.nvim", "plugin/lsp-utils"),
 })
