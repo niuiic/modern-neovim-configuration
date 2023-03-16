@@ -1,5 +1,5 @@
 local config = function()
-	vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
+	vim.api.nvim_create_autocmd({ "VimEnter", "BufWinEnter" }, {
 		pattern = "*",
 		callback = function()
 			vim.o.foldcolumn = "0"
