@@ -72,6 +72,12 @@ vim.g.omni_sql_no_default_maps = 1
 -- enable mouse mode
 vim.o.mouse = "a"
 
+-- fold
+vim.o.foldcolumn = "0"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 -- auto save and load fold state
 local isWinValid = function(file_name)
 	if file_name == "" then

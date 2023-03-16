@@ -1,14 +1,4 @@
 local config = function()
-	vim.api.nvim_create_autocmd({ "VimEnter", "BufWinEnter" }, {
-		pattern = "*",
-		callback = function()
-			vim.o.foldcolumn = "0"
-			vim.o.foldlevel = 99
-			vim.o.foldlevelstart = 99
-			vim.o.foldenable = true
-		end,
-	})
-
 	local handler = function(virtText, lnum, endLnum, width, truncate)
 		local newVirtText = {}
 		local suffix = ("  %d "):format(endLnum - lnum)
