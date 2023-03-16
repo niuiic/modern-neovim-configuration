@@ -63,6 +63,7 @@ local config = function()
 		filters = {
 			custom = { "^node_modules$", "^.git$" },
 		},
+		root_dirs = { require("niuiic-core").file.root_path() },
 		diagnostics = {
 			enable = true,
 			show_on_dirs = true,
