@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 local luasnip = require("luasnip")
 
 local lang_list = {
@@ -31,7 +31,7 @@ for _, value in pairs(lang_list) do
 	-- merge common snippets
 	for _, val in pairs(common_snippets) do
 		local common_snippet = require("snippet/common/" .. val)
-		snippets = utils.fn.merge_list(common_snippet, snippets)
+		snippets = core.lua.list.merge(common_snippet, snippets)
 	end
 
 	luasnip.add_snippets(value, snippets, {

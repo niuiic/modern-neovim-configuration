@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -207,6 +207,6 @@ local M = {
 }
 
 local common = require("snippet/common/node/js-ts")
-M = utils.fn.merge_list(common, M)
+M = core.lua.list.merge(common, M)
 
 return M

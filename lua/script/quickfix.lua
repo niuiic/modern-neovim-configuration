@@ -1,4 +1,3 @@
-local utils = require("utils")
 local core = require("niuiic-core")
 local plenary = require("plenary")
 
@@ -24,6 +23,23 @@ local function load_qf(overwrite)
 	end
 end
 
+-- vim.cmd with return value
+local cmd = function(cmd)
+	local res = vim.api.nvim_exec(cmd, true)
+	return vim.split(res, "\n")
+end
+
+-- get buffer id by buffer name
+local get_buffer_id = function(buf_name)
+	local res = cmd([[buffers]])
+	for _, value in ipairs(res) do
+		local buffer_id_str = string.match(value, "(%d+)[%s%p%w]+" .. buf_name)
+		if buffer_id_str ~= nil then
+			return tonumber(buffer_id_str)
+		end
+	end
+end
+
 local function write_qf()
 	if #vim.fn.getqflist() ~= 0 then
 		if core.file.file_or_dir_exists(root_dir .. "/.nvim") ~= true then
@@ -34,7 +50,7 @@ local function write_qf()
 				})
 				:sync()
 		end
-		local qf_buf_id = utils.fn.get_buffer_id("Quickfix List")
+		local qf_buf_id = get_buffer_id("Quickfix List")
 		local qf_content = vim.api.nvim_buf_get_lines(qf_buf_id, 0, -1, false)
 		if core.file.file_or_dir_exists(qf_history_path) == true then
 			os.remove(qf_history_path)

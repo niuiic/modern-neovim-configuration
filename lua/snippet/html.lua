@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
@@ -19,6 +19,6 @@ local postfix = require("luasnip.extras.postfix").postfix
 local M = {}
 
 local common = require("snippet/svg")
-M = utils.fn.merge_list(common, M)
+M = core.lua.list.merge(common, M)
 
 return M

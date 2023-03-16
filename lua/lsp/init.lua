@@ -1,4 +1,4 @@
-local utils = require("utils")
+local core = require("niuiic-core")
 
 local lspList = {
 	"cssls",
@@ -55,7 +55,7 @@ for _, value in pairs(lspList) do
 	if config.modify_capabilities == nil then
 		config.capabilities = capabilities
 	else
-		config.capabilities = config.modify_capabilities(utils.fn.deep_clone(capabilities))
+		config.capabilities = config.modify_capabilities(core.lua.table.clone(capabilities))
 	end
 
 	-- set lsp config
