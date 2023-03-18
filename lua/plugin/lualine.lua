@@ -32,7 +32,7 @@ local config = function()
 		},
 		tabline = {},
 		extensions = {},
-		theme = "tokyonight",
+		theme = "auto",
 	})
 
 	-- Trigger rerender of status line every second for clock
