@@ -8,7 +8,7 @@ return {
 			},
 		})
 
-		vim.cmd([[colorscheme tokyonight-storm]])
+		vim.cmd("colorscheme tokyonight-storm")
 
 		-- highlight line number
 		vim.api.nvim_set_hl(0, "LineNr", { fg = "#00ffff" })
