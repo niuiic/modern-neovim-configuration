@@ -7,6 +7,7 @@ end
 local custom_filetype_list = {
 	h = "c",
 	sh = "sh",
+	ebuild = "sh",
 	hpp = "cpp",
 	vert = "glsl",
 	tesc = "glsl",
