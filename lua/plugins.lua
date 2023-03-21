@@ -206,8 +206,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
 	-- column
 	load_plugin_config("m4xshen/smartcolumn.nvim", "plugin/smartcolumn"),
-	-- open buffer in inner terminal but not nested
-	load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 	-- custom navigation
 	load_plugin_config("LeonHeidelbach/trailblazer.nvim", "plugin/trailblazer"),
 })
