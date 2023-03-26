@@ -11,6 +11,7 @@ local config = function()
 				"Trouble",
 				"spectre_panel",
 				"OverseerList",
+				"divider",
 			},
 			always_divide_middle = true,
 			globalstatus = false,

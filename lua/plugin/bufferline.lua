@@ -2,7 +2,7 @@ local config = function()
 	require("bufferline").setup({
 		options = {
 			mode = "buffers",
-			indicator = { icon = "➣", style = "icon" },
+			indicator = { icon = "", style = "icon" },
 			buffer_close_icon = "",
 			modified_icon = "●",
 			left_trunc_marker = "",
@@ -35,6 +35,7 @@ local config = function()
 					vim.bo[buf_number].buftype ~= "terminal"
 					and vim.bo[buf_number].buftype ~= "quickfix"
 					and vim.bo[buf_number].filetype ~= "dap-repl"
+					and vim.bo[buf_number].filetype ~= "divider"
 				then
 					return true
 				else
