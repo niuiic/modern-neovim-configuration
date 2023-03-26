@@ -36,4 +36,8 @@ return {
 			},
 		})
 	end,
+	keys = {
+		{ "<leader>l", "<cmd>DividerToggle<CR>", desc = "toggle divider list" },
+	},
+	lazy = false,
 }

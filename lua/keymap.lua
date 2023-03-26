@@ -24,34 +24,35 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
 	local bufnr = vim.api.nvim_win_get_buf(0)
-	local wins = vim.api.nvim_list_wins()
-	local validWins = {}
-	for _, winnr in ipairs(wins) do
-		local success, bufnr2 = pcall(vim.api.nvim_win_get_buf, winnr)
-		if success then
-			if bufnr == bufnr2 then
-				table.insert(validWins, winnr)
-			else
-				local buf_name = vim.api.nvim_buf_get_name(bufnr2)
-				if buf_name ~= nil and buf_name ~= "" then
-					table.insert(validWins, winnr)
-				end
-			end
-		end
-	end
-	if table.maxn(validWins) > 1 then
-		vim.ui.select({ "Yes", "No" }, { prompt = "close current window together" }, function(choice)
-			if choice == "No" then
-				local emptyBufnr = vim.api.nvim_create_buf(false, true)
-				vim.api.nvim_win_set_buf(0, emptyBufnr)
-				pcall(vim.api.nvim_buf_delete, bufnr, {})
-			elseif choice == "Yes" then
-				pcall(vim.api.nvim_buf_delete, bufnr, {})
-			end
-		end)
-	else
-		pcall(vim.api.nvim_buf_delete, bufnr, {})
-	end
+	-- local wins = vim.api.nvim_list_wins()
+	-- local validWins = {}
+	-- for _, winnr in ipairs(wins) do
+	-- 	local success, bufnr2 = pcall(vim.api.nvim_win_get_buf, winnr)
+	-- 	if success then
+	-- 		if bufnr == bufnr2 then
+	-- 			table.insert(validWins, winnr)
+	-- 		else
+	-- 			local buf_name = vim.api.nvim_buf_get_name(bufnr2)
+	-- 			if buf_name ~= nil and buf_name ~= "" then
+	-- 				table.insert(validWins, winnr)
+	-- 			end
+	-- 		end
+	-- 	end
+	-- end
+	-- if table.maxn(validWins) > 1 then
+	-- 	vim.ui.select({ "Yes", "No" }, { prompt = "close current window together" }, function(choice)
+	-- 		if choice == "No" then
+	-- 			local emptyBufnr = vim.api.nvim_create_buf(false, true)
+	-- 			vim.api.nvim_win_set_buf(0, emptyBufnr)
+	-- 			pcall(vim.api.nvim_buf_delete, bufnr, {})
+	-- 		elseif choice == "Yes" then
+	-- 			pcall(vim.api.nvim_buf_delete, bufnr, {})
+	-- 		end
+	-- 	end)
+	-- else
+	-- 	pcall(vim.api.nvim_buf_delete, bufnr, {})
+	-- end
+	pcall(vim.api.nvim_buf_delete, bufnr, {})
 end, {})
 
 -- quickfix

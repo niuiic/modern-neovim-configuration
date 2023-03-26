@@ -56,7 +56,7 @@ return {
 			s = {
 				name = "session",
 			},
-			l = {
+			q = {
 				name = "sql cmd",
 			},
 			t = {
@@ -86,7 +86,7 @@ return {
 		})
 
 		which_key.register({
-			l = {
+			q = {
 				name = "sql cmd",
 			},
 			r = {
