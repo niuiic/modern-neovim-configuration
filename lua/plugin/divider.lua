@@ -40,4 +40,5 @@ return {
 		{ "<leader>l", "<cmd>DividerToggle<CR>", desc = "toggle divider list" },
 	},
 	lazy = false,
+	dependencies = { "niuiic/niuiic-core.nvim" },
 }

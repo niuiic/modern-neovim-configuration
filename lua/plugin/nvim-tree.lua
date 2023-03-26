@@ -118,7 +118,7 @@ local config = function()
 			},
 		},
 		trash = {
-			cmd = "trash-put",
+			cmd = "trash put",
 			require_confirm = true,
 		},
 	})

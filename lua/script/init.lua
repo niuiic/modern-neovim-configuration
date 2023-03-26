@@ -1,6 +1,5 @@
 local script_list = {
 	"quickfix",
-	"spell",
 	"filetype",
 }
 

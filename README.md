@@ -37,7 +37,7 @@ Neovim: V0.9+ (build from source with LuaJIT)
 
 1. `nodejs`, `go`, `rust` (required by `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
 2. `rg`, `fd` command (required by `telescope.nvim` ...)
-3. `trash-cli` command (required by `nvim-tree.lua`)
+3. `trashy` command (required by `nvim-tree.lua`)
 4. `fcitx5` (required by `fcitx.nvim`)
 5. `translate-shell` (required by `script/spell`)
 
