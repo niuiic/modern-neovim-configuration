@@ -26,18 +26,19 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
 	local bufnr = vim.api.nvim_win_get_buf(0)
+	local root_path = core.file.root_path()
 	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
 		if v == bufnr then
 			return false
 		end
 		local success, name = pcall(vim.api.nvim_buf_get_name, v)
-		if not success or name == nil or name == "" then
+		if not success or name == nil or name == "" or string.find(name, root_path, 1, true) == nil then
 			return false
 		end
 		return true
 	end)
 	if #buf_list > 0 then
-		vim.api.nvim_win_set_buf(0, buf_list[1])
+		vim.api.nvim_win_set_buf(0, buf_list[#buf_list])
 	end
 	pcall(vim.api.nvim_buf_delete, bufnr, {})
 end, {})
