@@ -1,3 +1,5 @@
+local core = require("niuiic-core")
+
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
@@ -24,13 +26,19 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
 	local bufnr = vim.api.nvim_win_get_buf(0)
-	pcall(vim.api.nvim_buf_delete, bufnr, {})
-end, {})
-
-vim.keymap.set("n", "<C-W>x", function()
-	local bufnr = vim.api.nvim_win_get_buf(0)
-	local empty_bufnr = vim.api.nvim_create_buf(false, true)
-	vim.api.nvim_win_set_buf(0, empty_bufnr)
+	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
+		if v == bufnr then
+			return false
+		end
+		local success, name = pcall(vim.api.nvim_buf_get_name, v)
+		if not success or name == nil or name == "" then
+			return false
+		end
+		return true
+	end)
+	if #buf_list > 0 then
+		vim.api.nvim_win_set_buf(0, buf_list[1])
+	end
 	pcall(vim.api.nvim_buf_delete, bufnr, {})
 end, {})
 
