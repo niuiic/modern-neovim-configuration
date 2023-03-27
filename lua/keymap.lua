@@ -4,7 +4,6 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
 -- exit and refresh
-vim.keymap.set("n", "<C-q>", ":q<CR>", { silent = true })
 vim.keymap.set("n", "<A-q>", ":q!<CR>", { silent = true })
 vim.keymap.set("n", "<C-n>", ":only<CR>", { silent = true })
 vim.keymap.set("n", "<C-e>", function()
@@ -14,6 +13,20 @@ vim.keymap.set("n", "<C-e>", function()
 	end
 	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
+end, { silent = true })
+vim.keymap.set("n", "<C-q>", function()
+	local root_path = core.file.root_path()
+	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
+		local success, name = pcall(vim.api.nvim_buf_get_name, v)
+		if not success or name == nil or name == "" or string.find(name, root_path, 1, true) == nil then
+			return true
+		end
+		return false
+	end)
+	for _, bufnr in ipairs(buf_list) do
+		pcall(vim.api.nvim_buf_delete, bufnr, {})
+	end
+	vim.cmd("q")
 end, { silent = true })
 
 -- save
