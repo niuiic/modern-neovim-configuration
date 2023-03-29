@@ -15,9 +15,15 @@ return {
 					icon = "",
 				},
 				{
+					divider_regex = [[%%\++ [\s\S]+ \++%%]],
+					content_regex = [[%%%%%++ ([%s%S]*) %++%%%%]],
+					hl = "#00ff7c",
+					icon = "",
+				},
+				{
 					divider_regex = [[%% [\s\S]+ %%]],
 					content_regex = [[%%%% ([%s%S]*) %%%%]],
-					hl = "#00ff7c",
+					hl = "#00ffff",
 					icon = "",
 				},
 			},

@@ -16,7 +16,7 @@ local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("divide", {
+	s("divide1", {
 		t({ "%%=========================== " }),
 		i(1),
 		t({ " ===========================%%" }),
@@ -27,6 +27,11 @@ local M = {
 		t({ " ---------------------------%%" }),
 	}),
 	s("divide3", {
+		t({ "%%+++++++++++++++++++++++++++ " }),
+		i(1),
+		t({ " +++++++++++++++++++++++++++%%" }),
+	}),
+	s("divide4", {
 		t({ "%% " }),
 		i(1),
 		t({ " %%" }),
