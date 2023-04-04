@@ -82,6 +82,11 @@ local M = {
 	s("ignore-stylelint", {
 		t({ "stylelint-disable-next-line" }),
 	}),
+	s("comment", {
+		t({ [[/*]], " * " }),
+		i(1),
+		t({ "", [[*/]] }),
+	}),
 }
 
 return M
