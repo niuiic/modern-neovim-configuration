@@ -83,7 +83,7 @@ local M = {
 		t({ "stylelint-disable-next-line" }),
 	}),
 	s("cmt", {
-		t({ [[/*]], " * " }),
+		t({ [[/**]], " * " }),
 		i(1),
 		t({ "", [[ */]] }),
 	}),
