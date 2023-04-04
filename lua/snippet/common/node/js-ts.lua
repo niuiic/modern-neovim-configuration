@@ -33,10 +33,10 @@ local M = {
 	s("ignore-eslint", {
 		t({ "eslint-disable-next-line" }),
 	}),
-	s("comment", {
+	s("cmt", {
 		t({ [[/*]], " * " }),
 		i(1),
-		t({ "", [[*/]] }),
+		t({ "", [[ */]] }),
 	}),
 }
 
