@@ -8,9 +8,7 @@ local config = function()
 					return {
 						"-b",
 						"-e",
-						"google",
-						"-x",
-						"http://127.0.0.1:10025",
+						"bing",
 						"-t",
 						"zh-CN",
 						trans_source,
@@ -26,9 +24,7 @@ local config = function()
 					return {
 						"-b",
 						"-e",
-						"google",
-						"-x",
-						"http://127.0.0.1:10025",
+						"bing",
 						"-t",
 						"en",
 						trans_source,
