@@ -11,7 +11,7 @@ local lspList = {
 	"html",
 	"jsonls",
 	"rust_analyzer",
-	"sqls",
+	"sqlls",
 	"clangd",
 	"taplo",
 	"verible",

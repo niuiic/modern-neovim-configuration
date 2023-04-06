@@ -1,5 +1,5 @@
 -- lsps installed:
--- ◍ sqls
+-- ◍ sqlls
 -- ◍ dot-language-server
 -- ◍ vue-language-server
 -- ◍ texlab
