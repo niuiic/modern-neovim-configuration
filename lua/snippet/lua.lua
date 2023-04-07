@@ -27,7 +27,7 @@ local M = {
 			"",
 			[[local overseer = require("overseer")]],
 			"",
-			[[local scriptPath = core.file.file_path() .. "/.nvim/task/task.sh"]],
+			[[local scriptPath = core.file.root_path() .. "/.nvim/task/task.sh"]],
 			"",
 			[[overseer.register_template({]],
 			[[	name = "template",]],
