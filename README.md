@@ -18,10 +18,10 @@ Neovim + Linux = Your Best Almighty IDE
 - Java
 - GLSL
 - WGSL
-- vue
-- react
-- dart
-- flutter
+- Vue
+- React
+- Dart
+- Flutter
 
 > Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
