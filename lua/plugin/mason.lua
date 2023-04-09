@@ -21,14 +21,14 @@
 -- ◍ marksman
 -- ◍ lemminx
 -- ◍ jdtls
--- install verible, clangd, glslang manually
+-- install verible, clangd, glslang, dart manually
 
 -- daps installed:
 -- ◍ debugpy
 -- ◍ delve
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
-
+-- ◍ dart-debug-adapter
 -- install lldb-vscode manually (it is installed with lldb)
 
 -- formatters installed:

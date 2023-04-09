@@ -95,6 +95,11 @@ local config = function()
 					to_stdin = true,
 				},
 			}),
+			formatting.dart_format.with({
+				filetypes = {
+					"dart",
+				},
+			}),
 		},
 	})
 

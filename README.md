@@ -20,6 +20,7 @@ Neovim + Linux = Your Best Almighty IDE
 - WGSL
 - vue
 - react
+- dart
 
 > Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
