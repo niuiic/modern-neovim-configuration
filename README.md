@@ -4,11 +4,11 @@ Neovim + Linux = Your Best Almighty IDE
 
 > This configuration is for linux only.
 
-## Mainly Supported Language List
+## Mainly Supported Language(or Framework) List
 
 - Rust
 - Go
-- Ts/Js
+- Javascript/Typescript
 - C/C++
 - Python
 - Shell
@@ -18,6 +18,8 @@ Neovim + Linux = Your Best Almighty IDE
 - Java
 - GLSL
 - WGSL
+- vue
+- react
 
 > Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
@@ -27,11 +29,9 @@ Neovim + Linux = Your Best Almighty IDE
 
 OS: Gentoo
 
-WM: I3
+Terminal: Alacritty
 
-Terminal: Alacritty (a GPU-accelerated terminal emulator)
-
-Neovim: V0.9+ (build from source with LuaJIT)
+Neovim: V0.9+
 
 ## Dependencies
 
@@ -39,7 +39,7 @@ Neovim: V0.9+ (build from source with LuaJIT)
 2. `rg`, `fd` command (required by `telescope.nvim` ...)
 3. `trashy` command (required by `nvim-tree.lua`)
 4. `fcitx5` (required by `fcitx.nvim`)
-5. `translate-shell` (required by `script/spell`)
+5. `translate-shell` (required by `translate.nvim`)
 
 ## QuickStart
 
@@ -73,7 +73,7 @@ Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other file
 
 Modify the `lspList` in `lua/lsp/init.lua`.
 
-> Note that the name of lsp commands has to be started with the lsp name, such as `TsserverFixAll`.
+(Optional) Remap lsp commands with `lsp-utils.nvim` in `lua/plugin/lsp-utils.lua`.
 
 ### Formatter
 
