@@ -21,6 +21,7 @@ Neovim + Linux = Your Best Almighty IDE
 - vue
 - react
 - dart
+- flutter
 
 > Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
