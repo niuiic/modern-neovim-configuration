@@ -21,6 +21,7 @@ local custom_filetype_list = {
 	rchit = "glsl",
 	rmiss = "glsl",
 	rcall = "glsl",
+	wgsl = "wgsl",
 }
 
 local function set_filetypes()
