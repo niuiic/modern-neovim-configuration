@@ -42,6 +42,7 @@ Neovim: V0.9+
 3. `trashy` command (required by `nvim-tree.lua`)
 4. `fcitx5` (required by `fcitx.nvim`)
 5. `translate-shell` (required by `translate.nvim`)
+6. dependencies for previewing media files (check [here](https://github.com/nvim-telescope/telescope-media-files.nvim#prerequisites))
 
 ## QuickStart
 

@@ -65,14 +65,6 @@ local keys = {
 		desc = "search words globally",
 	},
 	{
-		"<space>ogt",
-		function()
-			vim.fn.systemlist("ctags -R")
-			require("telescope.builtin").tags(opt)
-		end,
-		desc = "search tags globally",
-	},
-	{
 		"gf",
 		function()
 			require("telescope.builtin").lsp_references()
