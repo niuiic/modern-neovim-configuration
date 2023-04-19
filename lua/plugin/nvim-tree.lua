@@ -1,50 +1,6 @@
 local config = function()
 	local nvim_tree = require("nvim-tree")
 
-	local cd_dot_cb = function(node)
-		require("nvim-tree").change_dir(require("niuiic-core").file.root_path())
-		if node.name ~= ".." then
-			require("nvim-tree.lib").set_index_and_redraw(node.absolute_path)
-		end
-	end
-
-	local list_keys = {
-		-- open file or directory
-		{ key = "l", action = "edit" },
-		{ key = "L", action = "expand_all" },
-		-- open file in split window
-		{ key = "v", action = "vsplit" },
-		{ key = "s", action = "split" },
-		-- close node
-		{ key = "h", action = "close_node" },
-		{ key = "H", action = "collapse_all" },
-		-- toggle the state of ignored files
-		{ key = "i", action = "toggle_custom" }, -- filters
-		-- toggle the state of  hidden files
-		{ key = ".", action = "toggle_dotfiles" }, -- dotfiles
-		-- toggle file info
-		{ key = "I", action = "toggle_file_info" },
-		-- preview file
-		{ key = "P", action = "preview" },
-		-- refresh (set root path to project root)
-		{ key = "R", action = "cd_dot", action_cb = cd_dot_cb },
-		-- close
-		{ key = "<esc>", action = "close" },
-		-- mark
-		{ key = "m", action = "toggle_mark" },
-		-- file operations
-		{ key = "a", action = "create" },
-		{ key = "D", action = "remove" },
-		{ key = "d", action = "trash" },
-		{ key = "r", action = "rename" },
-		{ key = "x", action = "cut" },
-		{ key = "yy", action = "copy" },
-		{ key = "yn", action = "copy_name" },
-		{ key = "yp", action = "copy_path" },
-		{ key = "ysp", action = "copy_absolute_path" },
-		{ key = "p", action = "paste" },
-	}
-
 	local HEIGHT_RATIO = 0.6
 	local WIDTH_RATIO = 0.6
 
@@ -98,10 +54,6 @@ local config = function()
 				end,
 			},
 			hide_root_folder = false,
-			mappings = {
-				custom_only = true,
-				list = list_keys,
-			},
 			number = false,
 			relativenumber = false,
 			signcolumn = "yes",
@@ -121,6 +73,26 @@ local config = function()
 			cmd = "trash put",
 			require_confirm = true,
 		},
+		on_attach = function(bufnr)
+			local api = require("nvim-tree.api")
+			local opts = function(desc)
+				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+			end
+			vim.keymap.set("n", "l", api.node.open.edit, opts("open"))
+			vim.keymap.set("n", "P", api.node.open.preview, opts("preview"))
+			vim.keymap.set("n", "a", api.fs.create, opts("create"))
+			vim.keymap.set("n", "y", api.fs.copy.node, opts("copy"))
+			vim.keymap.set("n", ".", api.tree.toggle_hidden_filter, opts("toggle hidden files"))
+			vim.keymap.set("n", "yp", api.fs.copy.absolute_path, opts("copy absolute path"))
+			vim.keymap.set("n", "yP", api.fs.copy.relative_path, opts("copy relative path"))
+			vim.keymap.set("n", "p", api.fs.paste, opts("paste"))
+			vim.keymap.set("n", "q", api.tree.close, opts("close"))
+			vim.keymap.set("n", "r", api.fs.rename, opts("rename"))
+			vim.keymap.set("n", "R", api.tree.reload, opts("reload"))
+			vim.keymap.set("n", "s", api.tree.search_node, opts("search"))
+			vim.keymap.set("n", "H", api.tree.collapse_all, opts("collapse all"))
+			vim.keymap.set("n", "x", api.fs.cut, opts("cut"))
+		end,
 	})
 end
 
