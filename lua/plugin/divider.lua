@@ -24,7 +24,7 @@ return {
 					divider_regex = [[%% [\s\S]+ %%]],
 					content_regex = [[%%%% ([%s%S]*) %%%%]],
 					hl = "#00ffff",
-					icon = "",
+					hide = true,
 				},
 			},
 			enabled_filetypes = {
