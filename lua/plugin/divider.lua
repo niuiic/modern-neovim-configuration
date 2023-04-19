@@ -23,7 +23,7 @@ return {
 				{
 					divider_regex = [[%% [\s\S]+ %%]],
 					content_regex = [[%%%% ([%s%S]*) %%%%]],
-					hl = "#00ffff",
+					hl = "#640aff",
 					hide = true,
 				},
 			},
