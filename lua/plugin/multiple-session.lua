@@ -7,9 +7,6 @@ local store_breakpoints = function(file_path)
 		prev_res[buf_name] = cur_item.v
 		return prev_res
 	end, {})
-	if table.maxn(core.lua.table.keys(breakpoints)) == 0 then
-		return
-	end
 
 	local text = vim.fn.json_encode(breakpoints)
 
