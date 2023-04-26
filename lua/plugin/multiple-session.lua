@@ -1,14 +1,71 @@
+local store_breakpoints = function(file_path)
+	local core = require("niuiic-core")
+
+	local breakpoints = require("dap.breakpoints").get()
+	breakpoints = core.lua.table.reduce(breakpoints, function(prev_res, cur_item)
+		local buf_name = vim.api.nvim_buf_get_name(cur_item.k)
+		prev_res[buf_name] = cur_item.v
+		return prev_res
+	end, {})
+	if table.maxn(core.lua.table.keys(breakpoints)) == 0 then
+		return
+	end
+
+	local text = vim.fn.json_encode(breakpoints)
+
+	local file = io.open(file_path, "w+")
+	if not file then
+		return
+	end
+	file:write(text)
+	file:close()
+end
+
+local restore_breakpoints = function(file_path)
+	local core = require("niuiic-core")
+
+	if not core.file.file_or_dir_exists(file_path) then
+		return
+	end
+	local file = io.open(file_path, "r")
+	if not file then
+		return
+	end
+	local text = file:read("all")
+
+	local breakpoints = vim.fn.json_decode(text)
+	breakpoints = core.lua.list.reduce(vim.api.nvim_list_bufs(), function(prev_res, cur_item)
+		local buf_name = vim.api.nvim_buf_get_name(cur_item)
+		if breakpoints[buf_name] ~= nil then
+			prev_res[cur_item] = breakpoints[buf_name]
+		end
+		return prev_res
+	end, {})
+
+	core.lua.table.each(breakpoints, function(bufnr, breakpoint)
+		core.lua.list.each(breakpoint, function(v)
+			require("dap.breakpoints").set({
+				condition = v.condition,
+				log_message = v.logMessage,
+				hit_condition = v.hitCondition,
+			}, tonumber(bufnr), v.line)
+		end)
+	end)
+end
+
 return {
 	config = function()
 		require("multiple-session").setup({
 			default_arg_num = 2,
 			on_session_saved = function(session_dir)
 				require("trailblazer").save_trailblazer_state_to_file(session_dir .. "/" .. "trailBlazer")
+				store_breakpoints(session_dir .. "/" .. "breakpoints")
 			end,
 			on_session_restored = function(session_dir)
 				if require("niuiic-core").file.file_or_dir_exists(session_dir .. "/" .. "trailBlazer") then
 					require("trailblazer").load_trailblazer_state_from_file(session_dir .. "/" .. "trailBlazer")
 				end
+				restore_breakpoints(session_dir .. "/" .. "breakpoints")
 			end,
 		})
 	end,
