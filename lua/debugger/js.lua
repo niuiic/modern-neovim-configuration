@@ -4,6 +4,22 @@ require("dap-vscode-js").setup({
 	debugger_cmd = { os.getenv("HOME") .. "/.local/share/nvim/mason/bin/js-debug-adapter" },
 })
 
+core.lua.list.each({ "pwa-node", "pwa-chrome" }, function(v)
+	require("dap").adapters[v] = {
+		type = "server",
+		host = "localhost",
+		port = "${port}",
+		executable = {
+			command = "node",
+			args = {
+				os.getenv("HOME")
+					.. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+				"${port}",
+			},
+		},
+	}
+end)
+
 for _, language in ipairs({ "typescript", "javascript" }) do
 	require("dap").configurations[language] = {
 		{
