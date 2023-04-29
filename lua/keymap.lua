@@ -14,14 +14,17 @@ vim.keymap.set("n", "<C-e>", function()
 	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
 end, { silent = true })
-vim.keymap.set("n", "<C-q>", function()
+local buffer_valid = function(bufnr)
 	local root_path = core.file.root_path()
-	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
-		local success, name = pcall(vim.api.nvim_buf_get_name, v)
-		if not success or name == nil or name == "" or string.find(name, root_path, 1, true) == nil then
-			return true
-		end
+	local success, name = pcall(vim.api.nvim_buf_get_name, bufnr)
+	if not success or name == nil or name == "" or string.find(name, root_path, 1, true) ~= 1 then
 		return false
+	end
+	return true
+end
+vim.keymap.set("n", "<C-q>", function()
+	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
+		return not buffer_valid(v)
 	end)
 	for _, bufnr in ipairs(buf_list) do
 		pcall(vim.api.nvim_buf_delete, bufnr, {})
@@ -42,18 +45,22 @@ vim.keymap.set("n", "<C-x>", function()
 	local bufnr = vim.api.nvim_win_get_buf(0)
 	local success, name = pcall(vim.api.nvim_buf_get_name, bufnr)
 	if success and name ~= nil and string.find(name, root_path, 1, true) ~= nil then
-		local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
+		local next_buf
+		local find_target = false
+		core.lua.list.each(vim.api.nvim_list_bufs(), function(v)
 			if v == bufnr then
-				return false
+				find_target = true
+				return
 			end
-			success, name = pcall(vim.api.nvim_buf_get_name, v)
-			if not success or name == nil or name == "" or string.find(name, root_path, 1, true) == nil then
-				return false
+			if not buffer_valid(v) then
+				return
 			end
-			return true
+			if not find_target or next_buf == nil then
+				next_buf = v
+			end
 		end)
-		if #buf_list > 0 then
-			vim.api.nvim_win_set_buf(0, buf_list[#buf_list])
+		if next_buf then
+			vim.api.nvim_win_set_buf(0, next_buf)
 		end
 	end
 	pcall(vim.api.nvim_buf_delete, bufnr, {})
