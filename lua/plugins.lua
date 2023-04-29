@@ -212,5 +212,8 @@ require("lazy").setup({
 	load_plugin_config("m4xshen/smartcolumn.nvim", "plugin/smartcolumn"),
 	-- custom navigation
 	load_plugin_config("LeonHeidelbach/trailblazer.nvim", "plugin/trailblazer"),
+	-- filetype manager
 	load_plugin_config("niuiic/filetype.nvim", "plugin/filetype"),
+	-- quickfix
+	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
 })

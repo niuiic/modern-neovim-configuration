@@ -6,7 +6,6 @@ require("keymap")
 require("lsp")
 require("snippet")
 require("source")
-require("script")
 
 -- load config for workspace
 local core = require("niuiic-core")

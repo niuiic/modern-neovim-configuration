@@ -34,7 +34,7 @@ local restore_breakpoints = function(file_path)
 	if not file then
 		return
 	end
-	local text = file:read("all")
+	local text = file:read("*a")
 
 	local breakpoints = vim.fn.json_decode(text)
 	breakpoints = core.lua.list.reduce(vim.api.nvim_list_bufs(), function(prev_res, cur_item)
@@ -62,13 +62,15 @@ return {
 			default_arg_num = 2,
 			on_session_saved = function(session_dir)
 				require("trailblazer").save_trailblazer_state_to_file(session_dir .. "/" .. "trailBlazer")
-				store_breakpoints(session_dir .. "/" .. "breakpoints")
+				store_breakpoints(session_dir .. "/breakpoints")
+				require("quickfix").store_qf(session_dir .. "/quickfix")
 			end,
 			on_session_restored = function(session_dir)
 				if require("niuiic-core").file.file_or_dir_exists(session_dir .. "/" .. "trailBlazer") then
 					require("trailblazer").load_trailblazer_state_from_file(session_dir .. "/" .. "trailBlazer")
 				end
-				restore_breakpoints(session_dir .. "/" .. "breakpoints")
+				restore_breakpoints(session_dir .. "/breakpoints")
+				require("quickfix").restore_qf(session_dir .. "/quickfix")
 			end,
 		})
 	end,

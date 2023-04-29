@@ -30,7 +30,7 @@ vim.keymap.set("n", "<C-q>", function()
 end, { silent = true })
 
 -- save
-vim.keymap.set("n", "<C-s>", ":SaveAndSaveQf<CR>", { silent = true })
+vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })
 vim.keymap.set("n", "<A-s>", ":wa!<CR>", { silent = true })
 
 -- esc
