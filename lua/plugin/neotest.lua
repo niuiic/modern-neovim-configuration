@@ -24,10 +24,10 @@ local keys = {
 		function()
 			require("neotest").run.run()
 		end,
-		desc = "run all tests in project",
+		desc = "run nearest test",
 	},
 	{
-		"<space>tc",
+		"<space>tR",
 		function()
 			require("neotest").run.run(vim.fn.expand("%"))
 		end,
@@ -57,16 +57,16 @@ local keys = {
 	{
 		"<space>to",
 		function()
-			require("neotest").output.open({ enter = true })
+			require("neotest").output.open({ auto_close = true })
 		end,
 		desc = "open result window",
 	},
 	{
 		"<space>tO",
 		function()
-			require("neotest").summary.open()
+			require("neotest").summary.toggle()
 		end,
-		desc = "open summary window",
+		desc = "toggle summary window",
 	},
 }
 
@@ -79,7 +79,7 @@ return {
 		"antoinemadec/FixCursorHold.nvim",
 		-- adapters
 		-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
-		{ "haydenmeade/neotest-jest", commit = "219033658bf8de6b91e201036a5cc5456905d9d2" },
+		"haydenmeade/neotest-jest",
 		"nvim-neotest/neotest-go",
 	},
 }
