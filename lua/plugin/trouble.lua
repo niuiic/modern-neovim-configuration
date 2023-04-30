@@ -25,10 +25,10 @@ local config = function()
 end
 
 local keys = {
-	{ "<space>td", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "open diagnostics" },
-	{ "<space>tl", "<cmd>TroubleToggle loclist<CR>", desc = "open loclist" },
-	{ "<space>tf", "<cmd>TroubleToggle lsp_references<CR>", desc = "open lsp references list" },
-	{ "<space>tt", "<cmd>TodoTrouble<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
+	{ "<leader>td", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "open diagnostics" },
+	{ "<leader>tl", "<cmd>TroubleToggle loclist<CR>", desc = "open loclist" },
+	{ "<leader>tf", "<cmd>TroubleToggle lsp_references<CR>", desc = "open lsp references list" },
+	{ "<leader>tt", "<cmd>TodoTrouble<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
 }
 
 return {

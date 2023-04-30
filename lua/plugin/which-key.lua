@@ -8,11 +8,11 @@ return {
 		})
 
 		which_key.register({
-			t = {
-				name = "trouble",
-			},
 			d = {
 				name = "debug",
+			},
+			t = {
+				name = "test",
 			},
 			g = {
 				name = "git signs",
@@ -60,7 +60,7 @@ return {
 				name = "sql cmd",
 			},
 			t = {
-				name = "test",
+				name = "trouble",
 			},
 			c = {
 				name = "color picker",
