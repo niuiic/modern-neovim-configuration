@@ -4,7 +4,7 @@ local config = function()
 	neotest.setup({
 		adapters = {
 			require("neotest-jest")({
-				jestCommand = "pnpm jest --",
+				jestCommand = "pnpm jest",
 				jestConfigFile = "jest.config.cjs",
 				env = { CI = true },
 				cwd = function()
@@ -17,8 +17,20 @@ local config = function()
 end
 
 local keys = {
-	{ ";j", "<Plug>(ultest-next-fail)" },
-	{ ";k", "<Plug>(ultest-prev-fail)" },
+	{
+		"tj",
+		function()
+			require("neotest").jump.next({ status = "failed" })
+		end,
+		desc = "jump to next failed test",
+	},
+	{
+		"tk",
+		function()
+			require("neotest").jump.prev({ status = "failed" })
+		end,
+		desc = "jump to previous failed test",
+	},
 	{
 		"<space>tr",
 		function()
