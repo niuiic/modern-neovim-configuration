@@ -46,6 +46,8 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup({
 	-- shortcut suggestions
 	load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
+	-- dev doc
+	load_plugin_config("folke/neodev.nvim", "plugin/neodev"),
 	-- auto complete pairs
 	load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
 	-- automatically switch input method when input mode changed
