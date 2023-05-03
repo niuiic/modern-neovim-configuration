@@ -85,12 +85,12 @@ local M = {
 	s("ignore-stylelint", {
 		t({ "stylelint-disable-next-line" }),
 	}),
-	s("cmt", {
+	s("ct", {
 		t({ [[/**]], " * " }),
 		i(1),
 		t({ "", [[ */]] }),
 	}),
-	s("cmtil", {
+	s("ctil", {
 		t({ [[/** ]] }),
 		i(1),
 		t({ [[ */]] }),
