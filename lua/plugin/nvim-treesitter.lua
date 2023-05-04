@@ -20,7 +20,6 @@ local config = function()
 			"luadoc",
 			"make",
 			"markdown",
-			"help",
 			"markdown_inline",
 			"ninja",
 			"git_rebase",
