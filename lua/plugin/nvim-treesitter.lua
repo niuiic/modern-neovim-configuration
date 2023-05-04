@@ -1,6 +1,5 @@
 local config = function()
 	require("nvim-treesitter.configs").setup({
-		-- use :TSInstallInfo to check pasers
 		ensure_installed = {
 			"bash",
 			"c",

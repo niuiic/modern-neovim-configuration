@@ -310,11 +310,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Peek Defination</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/peek-defination.png"/>
-</details>
-
-<details>
   <summary><b>Sql</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/sql.png"/>
 </details>
