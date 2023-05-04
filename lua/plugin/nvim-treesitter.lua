@@ -62,6 +62,8 @@ local config = function()
 					["if"] = "@function.inner",
 					["ac"] = "@class.outer",
 					["ic"] = "@class.inner",
+					["am"] = "@comment.outer",
+					["im"] = "@comment.inner",
 				},
 			},
 		},
