@@ -11,7 +11,7 @@ return {
 						"WARN",
 						"WARNING",
 					},
-					color = "#ff0000",
+					color = "#ffff00",
 				},
 				{
 					name = "QuickFixErr",
@@ -20,7 +20,7 @@ return {
 						"Error",
 						"ERROR",
 					},
-					color = "#ffff00",
+					color = "#ff0000",
 				},
 			},
 		})
