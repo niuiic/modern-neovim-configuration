@@ -179,6 +179,10 @@ require("task")
 
 `glslangValidator` requires files to have a specific suffix, check [document](https://github.com/KhronosGroup/glslang#execution-of-standalone-wrapper) for details.
 
+- gh-actions.nvim not work
+
+Define a GITHUB_TOKEN variable in your environment.
+
 # Showcase
 
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
@@ -387,4 +391,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 <details>
   <summary><b>Divider</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/divider.png"/>
+</details>
+
+<details>
+  <summary><b>GITHUB Action</b></summary>
+<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/github-action.png"/>
 </details>
