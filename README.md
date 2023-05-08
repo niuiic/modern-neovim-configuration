@@ -394,6 +394,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>GITHUB Action</b></summary>
+  <summary><b>Github Action</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/github-action.png"/>
 </details>
