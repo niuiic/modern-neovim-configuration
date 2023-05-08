@@ -47,6 +47,9 @@ return {
 			m = {
 				name = "mark",
 			},
+			r = {
+				name = "macro",
+			},
 		}, {
 			mode = "n",
 			prefix = "<localleader>",

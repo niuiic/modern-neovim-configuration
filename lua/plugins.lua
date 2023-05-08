@@ -190,7 +190,7 @@ require("lazy").setup({
 	-- pretty ui
 	load_plugin_config("folke/noice.nvim", "plugin/noice"),
 	-- macro
-	load_plugin_config("chrisgrieser/nvim-recorder", "plugin/nvim-recorder"),
+	load_plugin_config("ecthelionvi/NeoComposer.nvim", "plugin/neo-composer"),
 	-- crate
 	load_plugin_config("saecki/crates.nvim", "plugin/crates"),
 	-- js/ts package info
