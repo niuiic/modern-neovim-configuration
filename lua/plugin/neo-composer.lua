@@ -13,8 +13,8 @@ return {
 				yank_macro = "yr",
 				stop_macro = "rs",
 				toggle_record = "r",
-				cycle_next = "<c-j>",
-				cycle_prev = "<c-k>",
+				cycle_next = "rj",
+				cycle_prev = "rk",
 				toggle_macro_menu = "<space>ro",
 			},
 		})

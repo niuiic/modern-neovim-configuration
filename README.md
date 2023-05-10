@@ -181,7 +181,7 @@ require("task")
 
 - gh-actions.nvim not work
 
-Define a GITHUB_TOKEN variable in your environment.
+Define a `GITHUB_TOKEN` variable in your environment.
 
 # Showcase
 
