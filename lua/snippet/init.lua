@@ -14,6 +14,8 @@ local lang_list = {
 	"rust",
 	"html",
 	"svg",
+	"typescriptreact",
+	"javascriptreact",
 }
 
 local common_snippets = {

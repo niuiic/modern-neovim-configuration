@@ -37,6 +37,9 @@ local restore_breakpoints = function(file_path)
 	local text = file:read("*a")
 
 	local breakpoints = vim.fn.json_decode(text)
+	if breakpoints == nil then
+		return
+	end
 	breakpoints = core.lua.list.reduce(vim.api.nvim_list_bufs(), function(prev_res, cur_item)
 		local buf_name = get_buf_name(cur_item, root_path)
 		if breakpoints[buf_name] ~= nil then
