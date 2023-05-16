@@ -78,7 +78,7 @@ local config = function()
 			local opts = function(desc)
 				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 			end
-			vim.keymap.set("n", "l", api.node.open.tab, opts("open"))
+			vim.keymap.set("n", "l", api.node.open.edit, opts("open"))
 			vim.keymap.set("n", "P", api.node.open.preview, opts("preview"))
 			vim.keymap.set("n", "a", api.fs.create, opts("create"))
 			vim.keymap.set("n", "y", api.fs.copy.node, opts("copy"))
