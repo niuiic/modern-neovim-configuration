@@ -61,12 +61,14 @@ end
 
 return {
 	config = function()
+		local core = require("niuiic-core")
 		require("multiple-session").setup({
 			default_arg_num = 2,
 			on_session_saved = function(session_dir)
 				require("trailblazer").save_trailblazer_state_to_file(session_dir .. "/" .. "trailBlazer")
 				store_breakpoints(session_dir .. "/breakpoints")
 				require("quickfix").store_qf(session_dir .. "/quickfix")
+				vim.cmd("wundo" .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
 				if require("niuiic-core").file.file_or_dir_exists(session_dir .. "/" .. "trailBlazer") then
@@ -74,6 +76,9 @@ return {
 				end
 				restore_breakpoints(session_dir .. "/breakpoints")
 				require("quickfix").restore_qf(session_dir .. "/quickfix")
+				if core.file.file_or_dir_exists(session_dir .. "/undo") then
+					vim.cmd("rundo" .. session_dir .. "/undo")
+				end
 			end,
 		})
 	end,
