@@ -2,6 +2,9 @@ local config = function()
 	local neotest = require("neotest")
 
 	neotest.setup({
+		quickfix = {
+			enabled = false,
+		},
 		adapters = {
 			require("neotest-jest")({
 				jestCommand = "pnpm jest",
