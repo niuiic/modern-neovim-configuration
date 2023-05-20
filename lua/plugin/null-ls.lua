@@ -29,9 +29,7 @@ local config = function()
 				filetypes = {
 					"rust",
 				},
-				generator_opts = {
-					args = { "--edition 2021" },
-				},
+				extra_args = { "--edition=2021" },
 			}),
 			formatting.sql_formatter.with({
 				filetypes = {
