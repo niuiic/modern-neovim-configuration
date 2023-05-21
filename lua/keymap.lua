@@ -3,6 +3,10 @@ local core = require("niuiic-core")
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
+local cmd = function(cmd)
+	vim.cmd(cmd)
+end
+
 -- exit and refresh
 vim.keymap.set("n", "<A-q>", ":q!<CR>", { silent = true })
 vim.keymap.set("n", "<C-n>", ":only<CR>", { silent = true })
@@ -27,7 +31,7 @@ vim.keymap.set("n", "<C-q>", function()
 		return not buffer_valid(v)
 	end)
 	for _, bufnr in ipairs(buf_list) do
-		pcall(vim.api.nvim_buf_delete, bufnr, {})
+		pcall(cmd, "bd " .. bufnr)
 	end
 	vim.cmd("q")
 end, { silent = true })
@@ -63,7 +67,7 @@ vim.keymap.set("n", "<C-x>", function()
 			vim.api.nvim_win_set_buf(0, next_buf)
 		end
 	end
-	pcall(vim.api.nvim_buf_delete, bufnr, {})
+	vim.cmd("bd " .. bufnr)
 end, {})
 
 -- quickfix
