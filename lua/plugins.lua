@@ -188,6 +188,7 @@ require("lazy").setup({
 	load_plugin_config("simrat39/symbols-outline.nvim", "plugin/symbols-outline"),
 	-- pretty ui
 	load_plugin_config("folke/noice.nvim", "plugin/noice"),
+	load_plugin_config("stevearc/dressing.nvim", "plugin/dressing"),
 	-- macro
 	load_plugin_config("ecthelionvi/NeoComposer.nvim", "plugin/neo-composer"),
 	-- crate
