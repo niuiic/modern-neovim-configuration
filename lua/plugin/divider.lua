@@ -40,6 +40,7 @@ return {
 				"rust",
 				"go",
 			},
+			ui = { direction = "vl" },
 		})
 	end,
 	keys = {
