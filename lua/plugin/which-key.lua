@@ -40,6 +40,9 @@ return {
 				g = {
 					name = "global",
 				},
+				G = {
+					name = "git",
+				},
 			},
 			b = {
 				name = "buffer line",
