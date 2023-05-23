@@ -31,7 +31,7 @@ vim.keymap.set("n", "<C-q>", function()
 			vim.cmd(command)
 		end, "bw " .. bufnr)
 	end
-	vim.cmd("q")
+	vim.cmd("qa")
 end, { silent = true })
 
 -- save
