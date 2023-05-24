@@ -14,6 +14,9 @@ local config = function()
 			hover = {
 				opts = { border = "single" },
 			},
+			signature = {
+				enabled = false,
+			},
 		},
 	})
 
