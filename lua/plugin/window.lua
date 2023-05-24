@@ -1,7 +1,12 @@
 return {
-	keys = { {
-		"<space>wm",
-		"<cmd>ToggleMaxWin<CR>",
-		desc = "toggle max win",
-	} },
+	keys = {
+		{
+			"<space>wm",
+			function()
+				require("window").maximize()
+			end,
+			desc = "toggle max win",
+		},
+	},
+	dependencies = { "niuiic/niuiic-core.nvim" },
 }
