@@ -112,12 +112,6 @@ local keys = {
 		desc = "find lsp_workspace_symbols",
 	},
 	{
-		"J",
-		function()
-			vim.lsp.buf.hover()
-		end,
-	},
-	{
 		"D",
 		function()
 			vim.diagnostic.open_float()

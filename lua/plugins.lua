@@ -224,4 +224,6 @@ require("lazy").setup({
 	load_plugin_config("topaxi/gh-actions.nvim", "plugin/gh-actions"),
 	-- uses lua patterns instead of vim regex
 	load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
+	-- hover
+	load_plugin_config("lewis6991/hover.nvim", "plugin/hover"),
 })
