@@ -12,10 +12,10 @@ local config = function()
 		},
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
-			{ name = "buffer" },
 			{ name = "luasnip" },
+			{ name = "buffer" },
+			{ name = "rg", option = { additional_arguments = "--hidden --smart-case" } },
 			{ name = "path" },
-			{ name = "rg", option = { additional_arguments = "--hidden" } },
 			{ name = "crates" },
 		}),
 		sorting = {
