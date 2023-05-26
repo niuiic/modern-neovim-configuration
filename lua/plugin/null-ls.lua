@@ -105,7 +105,9 @@ local config = function()
 	})
 
 	-- keymap
-	vim.keymap.set("n", "<AC-l>", ":lua vim.lsp.buf.format({ timeout_ms = 2000 })<CR>", { silent = true })
+	vim.keymap.set("n", "<C-f>", function()
+		vim.lsp.buf.format({ timeout_ms = 2000 })
+	end, { silent = true })
 
 	-- glsl diagnostics
 	local function glsl()
