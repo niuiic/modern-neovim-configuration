@@ -5,7 +5,14 @@ return {
 			function()
 				require("window").maximize()
 			end,
-			desc = "toggle max win",
+			desc = "maximize window",
+		},
+		{
+			"<space>wp",
+			function()
+				require("window").pin()
+			end,
+			desc = "pin window",
 		},
 	},
 	dependencies = { "niuiic/niuiic-core.nvim" },
