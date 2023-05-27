@@ -1,14 +1,26 @@
 local use_toggle_coverage = function()
 	local loaded = false
-	return function()
+	local buf_list = {}
+	local loaded_for_buf = function()
+		local core = require("niuiic-core")
 		if not loaded then
-			require("coverage").load()
-			require("coverage").toggle()
+			return false
+		end
+		local bufnr = vim.api.nvim_win_get_buf(0)
+		return core.lua.list.includes(buf_list, function(v)
+			return v == bufnr
+		end)
+	end
+
+	return function()
+		if not loaded_for_buf() then
+			require("coverage").load(true)
 			loaded = true
 		else
-			require("coverage").toggle()
+			require("coverage").clear()
 			loaded = false
 		end
+		buf_list = vim.api.nvim_list_bufs()
 	end
 end
 
@@ -16,6 +28,7 @@ return {
 	config = function()
 		require("coverage").setup({
 			commands = false,
+			auto_reload = true,
 			highlights = {
 				covered = { fg = "#00e800" },
 				partial = { fg = "#c3ff00" },
