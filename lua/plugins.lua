@@ -169,7 +169,6 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	load_plugin_config("glepnir/lspsaga.nvim", "plugin/lspsaga"),
 	load_plugin_config("niuiic/lsp-utils.nvim", "plugin/lsp-utils"),
-	load_plugin_config("ray-x/lsp_signature.nvim", "plugin/lsp_signature"),
 	-- code action
 	"weilbith/nvim-code-action-menu",
 
