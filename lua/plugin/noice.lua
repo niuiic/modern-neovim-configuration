@@ -12,10 +12,7 @@ local config = function()
 		},
 		lsp = {
 			hover = {
-				opts = { border = "single" },
-			},
-			signature = {
-				enabled = false,
+				opts = { border = "round" },
 			},
 		},
 	})
