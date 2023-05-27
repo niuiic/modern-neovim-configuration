@@ -6,7 +6,7 @@ return {
 					divider_regex = [[%%=+ [\s\S]+ =+%%]],
 					content_regex = [[%%%%=+ ([%s%S]*) =+%%%%]],
 					hl = "#ff00ff",
-					icon = "",
+					icon = "",
 				},
 				{
 					divider_regex = [[%%-+ [\s\S]+ -+%%]],
