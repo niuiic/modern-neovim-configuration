@@ -226,4 +226,6 @@ require("lazy").setup({
 	load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
 	-- hover
 	load_plugin_config("lewis6991/hover.nvim", "plugin/hover"),
+	-- split/join functions
+	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
 })
