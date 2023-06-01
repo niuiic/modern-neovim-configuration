@@ -1,7 +1,7 @@
 return {
 	config = function()
 		require("window-picker").setup({
-			use_winbar = "always",
+			hint = "floating-big-letter",
 			highlights = {
 				winbar = {
 					focused = {
