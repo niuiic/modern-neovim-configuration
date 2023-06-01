@@ -2,7 +2,20 @@ return {
 	config = function()
 		require("window-picker").setup({
 			use_winbar = "always",
-			other_win_hl_color = "#ff23ff",
+			highlights = {
+				winbar = {
+					focused = {
+						fg = "#ededed",
+						bg = "#44cc41",
+						bold = true,
+					},
+					unfocused = {
+						fg = "#ededed",
+						bg = "#ff23ff",
+						bold = true,
+					},
+				},
+			},
 		})
 	end,
 	keys = {
