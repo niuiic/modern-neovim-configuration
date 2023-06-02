@@ -71,11 +71,15 @@ return {
 				vim.cmd("wundo" .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
-				if require("niuiic-core").file.file_or_dir_exists(session_dir .. "/" .. "trailBlazer") then
+				if core.file.file_or_dir_exists(session_dir .. "/" .. "trailBlazer") then
 					require("trailblazer").load_trailblazer_state_from_file(session_dir .. "/" .. "trailBlazer")
 				end
-				restore_breakpoints(session_dir .. "/breakpoints")
-				require("quickfix").restore_qf(session_dir .. "/quickfix")
+				if core.file.file_or_dir_exists(session_dir .. "/" .. "breakpoints") then
+					restore_breakpoints(session_dir .. "/breakpoints")
+				end
+				if core.file.file_or_dir_exists(session_dir .. "/" .. "quickfix") then
+					require("quickfix").restore_qf(session_dir .. "/quickfix")
+				end
 				if core.file.file_or_dir_exists(session_dir .. "/undo") then
 					vim.cmd("rundo" .. session_dir .. "/undo")
 				end
