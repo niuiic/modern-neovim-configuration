@@ -5,17 +5,14 @@ local config = function()
 	local WIDTH_RATIO = 0.6
 
 	nvim_tree.setup({
-		-- don't show git status icon
 		git = {
 			enable = false,
 		},
-		-- for project plugin
 		update_cwd = true,
 		update_focused_file = {
 			enable = true,
 			update_cwd = true,
 		},
-		-- hide some files and directories
 		filters = {
 			custom = { "^node_modules$", "^.git$" },
 		},
