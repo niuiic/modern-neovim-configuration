@@ -15,6 +15,7 @@ local config = function()
 				end,
 			}),
 			require("neotest-go"),
+			require("neotest-rust"),
 		},
 	})
 end
@@ -96,5 +97,6 @@ return {
 		-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
 		"haydenmeade/neotest-jest",
 		"nvim-neotest/neotest-go",
+		"nvim-neotest/neotest-rust",
 	},
 }
