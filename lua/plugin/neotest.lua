@@ -97,6 +97,6 @@ return {
 		-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
 		"haydenmeade/neotest-jest",
 		"nvim-neotest/neotest-go",
-		"nvim-neotest/neotest-rust",
+		"rouge8/neotest-rust",
 	},
 }
