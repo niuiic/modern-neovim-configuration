@@ -131,5 +131,5 @@ local keys = {
 return {
 	config = config,
 	keys = keys,
-	event = "VimEnter",
+	event = "BufRead",
 }
