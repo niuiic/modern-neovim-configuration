@@ -35,6 +35,7 @@ local config = function()
 					and vim.bo[buf_number].buftype ~= "quickfix"
 					and vim.bo[buf_number].filetype ~= "dap-repl"
 					and vim.bo[buf_number].filetype ~= "divider"
+					and vim.bo[buf_number].filetype ~= "lspsagaoutline"
 				then
 					return true
 				else

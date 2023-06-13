@@ -12,6 +12,7 @@ local config = function()
 				"spectre_panel",
 				"OverseerList",
 				"divider",
+				"lspsagaoutline",
 			},
 			always_divide_middle = true,
 			globalstatus = false,
