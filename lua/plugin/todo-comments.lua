@@ -15,6 +15,7 @@ local config = function()
 			TEMP = { icon = "", color = "temp" },
 			QUESTION = { icon = "", color = "question", alt = { "Q" } },
 		},
+		merge_keywords = false,
 		colors = {
 			error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
 			warning = { "DiagnosticWarning", "WarningMsg", "#FBBF24" },
