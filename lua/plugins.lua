@@ -183,8 +183,6 @@ require("lazy").setup({
 	load_plugin_config("danymat/neogen", "plugin/neogen"),
 	-- highlight current n
 	load_plugin_config("rktjmp/highlight-current-n.nvim", "plugin/highlight-current-n"),
-	-- cursor position
-	load_plugin_config("gen740/SmoothCursor.nvim", "plugin/smooth-cursor"),
 	-- tag bar
 	load_plugin_config("simrat39/symbols-outline.nvim", "plugin/symbols-outline"),
 	-- pretty ui
