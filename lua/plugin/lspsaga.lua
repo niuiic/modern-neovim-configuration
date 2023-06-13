@@ -3,6 +3,10 @@ local config = function()
 		lightbulb = {
 			sign_priority = 1,
 		},
+		keys = {
+			quit = { "q", "<ESC>" },
+			exec = "<CR>",
+		},
 		outline = {
 			keys = {
 				expand_or_jump = "<CR>",
@@ -79,6 +83,11 @@ return {
 			function()
 				vim.diagnostic.open_float()
 			end,
+		},
+		{
+			"<space>la",
+			"<cmd>Lspsaga code_action<CR>",
+			desc = "code action",
 		},
 	},
 }

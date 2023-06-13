@@ -75,11 +75,6 @@ local keys = {
 		"<cmd>LspRestart *<CR>",
 		desc = "restart all lsp",
 	},
-	{
-		"<space>la",
-		"<cmd>CodeActionMenu<CR>",
-		desc = "code action",
-	},
 }
 
 return {

@@ -167,8 +167,6 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	load_plugin_config("glepnir/lspsaga.nvim", "plugin/lspsaga"),
 	load_plugin_config("niuiic/lsp-utils.nvim", "plugin/lsp-utils"),
-	-- code action
-	"weilbith/nvim-code-action-menu",
 
 	-- lsp, dap, linter, formatter installer
 	load_plugin_config("williamboman/mason.nvim", "plugin/mason"),
