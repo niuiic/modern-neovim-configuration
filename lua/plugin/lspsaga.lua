@@ -70,6 +70,11 @@ return {
 			desc = "goto definitions",
 		},
 		{
+			"gp",
+			"<cmd>Lspsaga peek_definition<CR>",
+			desc = "peek definitions",
+		},
+		{
 			"D",
 			function()
 				vim.diagnostic.open_float()
