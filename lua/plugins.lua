@@ -117,8 +117,6 @@ require("lazy").setup({
 	load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- call sudo in neovim
 	load_plugin_config("lambdalisue/suda.vim", "plugin/suda"),
-	-- more smooth scroll
-	load_plugin_config("karb94/neoscroll.nvim", "plugin/neoscroll"),
 	-- highlights cursor words and lines
 	load_plugin_config("yamatsum/nvim-cursorline", "plugin/nvim-cursorline"),
 
@@ -226,4 +224,6 @@ require("lazy").setup({
 	load_plugin_config("lewis6991/hover.nvim", "plugin/hover"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
+	-- animate
+	load_plugin_config("echasnovski/mini.animate", "plugin/mini-animate"),
 })
