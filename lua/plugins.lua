@@ -225,5 +225,5 @@ require("lazy").setup({
 	-- animate
 	load_plugin_config("echasnovski/mini.animate", "plugin/mini-animate"),
 	-- remove buffer
-	load_plugin_config("echasnovski/mini.bufremove", "plugin/bufremove"),
+	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 })

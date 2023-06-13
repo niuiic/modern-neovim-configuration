@@ -4,4 +4,5 @@ return {
 			silent = true,
 		})
 	end,
+	lazy = true,
 }
