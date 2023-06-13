@@ -10,11 +10,6 @@ local config = function()
 		messages = {
 			view = "mini",
 		},
-		lsp = {
-			hover = {
-				opts = { border = "round" },
-			},
-		},
 	})
 
 	vim.api.nvim_set_hl(0, "MsgArea", { bg = "#262728" })
