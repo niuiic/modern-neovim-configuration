@@ -208,8 +208,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
 	-- move block
 	load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
-	-- column
-	load_plugin_config("m4xshen/smartcolumn.nvim", "plugin/smartcolumn"),
 	-- custom navigation
 	load_plugin_config("LeonHeidelbach/trailblazer.nvim", "plugin/trailblazer"),
 	-- filetype manager
