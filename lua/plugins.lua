@@ -131,6 +131,7 @@ require("lazy").setup({
 	-- unit test
 	load_plugin_config("nvim-neotest/neotest", "plugin/neotest"),
 	load_plugin_config("andythigpen/nvim-coverage", "plugin/nvim-coverage"),
+
 	-- colorscheme
 	load_plugin_config("folke/tokyonight.nvim", "plugin/tokyonight"),
 	-- git signs
