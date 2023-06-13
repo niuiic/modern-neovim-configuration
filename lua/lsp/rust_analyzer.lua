@@ -5,6 +5,16 @@ local core = require("niuiic-core")
 
 local M = {
 	root_dir = core.file.root_path,
+	commands = {
+		RustAnalyzerRename = {
+			function()
+				vim.lsp.buf.rename(nil, {
+					name = "rust_analyzer",
+				})
+			end,
+			description = "Rename",
+		},
+	},
 }
 
 return M

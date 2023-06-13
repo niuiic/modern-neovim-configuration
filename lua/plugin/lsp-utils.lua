@@ -35,6 +35,11 @@ local config = function()
 					{ map = { "LuaLsRename", "LSPRename" } },
 				},
 			},
+			rust_analyzer = {
+				commands_map = {
+					{ map = { "RustAnalyzerRename", "LSPRename" } },
+				},
+			},
 		},
 	})
 end
