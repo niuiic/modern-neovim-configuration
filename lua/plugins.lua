@@ -66,7 +66,6 @@ require("lazy").setup({
 	"sitiom/nvim-numbertoggle",
 	-- quick motion
 	load_plugin_config("ggandor/leap.nvim", "plugin/leap"),
-	"phaazon/hop.nvim",
 	-- file tree
 	load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
 

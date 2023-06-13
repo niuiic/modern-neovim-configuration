@@ -68,8 +68,6 @@ local config = function()
 			offset = 1,
 		})
 	end, {})
-
-	require("hop").setup({})
 end
 
 local keys = {
@@ -77,10 +75,6 @@ local keys = {
 	{ "f", "<cmd>SearchAllWinsA<CR>", mode = "v" },
 	{ "F", "<cmd>SearchAllWinsB<CR>" },
 	{ "F", "<cmd>SearchAllWinsB<CR>", mode = "v" },
-	{ "L", "<cmd>HopLine<CR>" },
-	{ "L", "<cmd>HopLine<CR>", mode = "v" },
-	{ "e", "<cmd>HopChar1<CR>" },
-	{ "e", "<cmd>HopChar1<CR>", mode = "v" },
 }
 
 return {
