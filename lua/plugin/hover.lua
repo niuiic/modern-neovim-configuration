@@ -6,7 +6,6 @@ return {
 				require("hover.providers.gh")
 				require("hover.providers.gh_user")
 				require("hover.providers.man")
-				require("hover.providers.dictionary")
 			end,
 		})
 	end,
