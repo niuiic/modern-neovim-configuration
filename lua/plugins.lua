@@ -224,4 +224,6 @@ require("lazy").setup({
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
 	-- animate
 	load_plugin_config("echasnovski/mini.animate", "plugin/mini-animate"),
+	-- remove buffer
+	load_plugin_config("echasnovski/mini.bufremove", "plugin/bufremove"),
 })

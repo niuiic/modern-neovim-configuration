@@ -43,30 +43,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
 
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
-	local bufnr = vim.api.nvim_win_get_buf(0)
-	if buffer_valid(bufnr) then
-		local next_buf
-		local find_target = false
-		core.lua.list.each(vim.api.nvim_list_bufs(), function(v)
-			if v == bufnr then
-				find_target = true
-				return
-			end
-			if not buffer_valid(v) then
-				return
-			end
-			if not vim.api.nvim_buf_is_loaded(v) then
-				return
-			end
-			if not find_target or next_buf == nil then
-				next_buf = v
-			end
-		end)
-		if next_buf then
-			vim.api.nvim_win_set_buf(0, next_buf)
-		end
-	end
-	vim.cmd("bd " .. bufnr)
+	require("mini.bufremove").delete()
 end, {})
 
 -- quickfix
