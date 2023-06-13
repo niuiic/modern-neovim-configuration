@@ -141,7 +141,7 @@ require("lazy").setup({
 	-- color picker & colorizer
 	load_plugin_config("uga-rosa/ccc.nvim", "plugin/ccc"),
 	-- indentation guides
-	load_plugin_config("lukas-reineke/indent-blankline.nvim", "plugin/indent-blankline"),
+	load_plugin_config("echasnovski/mini.indentscope", "plugin/mini-indentscope"),
 	-- tab line
 	load_plugin_config("akinsho/bufferline.nvim", "plugin/bufferline"),
 	-- git diff gui
