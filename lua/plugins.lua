@@ -220,8 +220,8 @@ require("lazy").setup({
 	load_plugin_config("lewis6991/hover.nvim", "plugin/hover"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
-	-- animate
-	load_plugin_config("echasnovski/mini.animate", "plugin/mini-animate"),
+	-- smooth scrolling
+	load_plugin_config("karb94/neoscroll.nvim", "plugin/neoscroll"),
 	-- remove buffer
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 })
