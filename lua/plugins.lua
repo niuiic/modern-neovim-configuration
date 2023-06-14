@@ -94,7 +94,7 @@ require("lazy").setup({
 	-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 	"hrsh7th/cmp-nvim-lsp",
 	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
+	"FelipeLema/cmp-async-path",
 	"rcarriga/cmp-dap",
 	"hrsh7th/cmp-cmdline",
 	"dmitmel/cmp-cmdline-history",

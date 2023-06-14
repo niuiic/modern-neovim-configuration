@@ -15,20 +15,9 @@ local config = function()
 			{ name = "luasnip" },
 			{ name = "buffer" },
 			{ name = "rg", option = { additional_arguments = "--hidden --smart-case" } },
-			{ name = "path" },
+			{ name = "async_path" },
 			{ name = "crates" },
 		}),
-		sorting = {
-			comparators = {
-				cmp.config.compare.offset,
-				cmp.config.compare.exact,
-				cmp.config.compare.score,
-				cmp.config.compare.kind,
-				cmp.config.compare.sort_text,
-				cmp.config.compare.length,
-				cmp.config.compare.order,
-			},
-		},
 	})
 
 	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
@@ -46,7 +35,7 @@ local config = function()
 
 	cmp.setup.cmdline(":", {
 		sources = cmp.config.sources({
-			{ name = "path" },
+			{ name = "async_path" },
 		}, {
 			{ name = "cmdline" },
 			{ name = "cmdline_history" },
