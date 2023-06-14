@@ -90,8 +90,6 @@ require("lazy").setup({
 	load_plugin_config("hrsh7th/nvim-cmp", "plugin/nvim-cmp"),
 	-- better ui
 	load_plugin_config("onsails/lspkind-nvim", "plugin/lspkind-nvim"),
-	-- tools
-	"lukas-reineke/cmp-under-comparator",
 	-- source
 	-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 	"hrsh7th/cmp-nvim-lsp",
