@@ -8,11 +8,14 @@ vim.keymap.set("n", "<A-q>", ":q!<CR>", { silent = true })
 vim.keymap.set("n", "<C-n>", ":only<CR>", { silent = true })
 vim.keymap.set("n", "<C-e>", function()
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
-	if vim.lsp.get_active_clients() ~= nil then
-		vim.diagnostic.reset()
-	end
 	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
+	local lsps = vim.lsp.get_active_clients()
+	if lsps ~= nil and not core.lua.list.includes(lsps, function(lsp)
+		return lsp.name == "rust_analyzer"
+	end) then
+		vim.diagnostic.reset()
+	end
 end, { silent = true })
 local buffer_valid = function(bufnr)
 	local root_path = core.file.root_path()
