@@ -11,12 +11,12 @@ local config = function()
 			end,
 		},
 		sources = cmp.config.sources({
-			{ name = "nvim_lsp" },
-			{ name = "luasnip" },
-			{ name = "buffer" },
-			{ name = "rg", option = { additional_arguments = "--hidden --smart-case" } },
-			{ name = "async_path" },
-			{ name = "crates" },
+			{ name = "nvim_lsp", group_index = 1 },
+			{ name = "luasnip", group_index = 1 },
+			{ name = "buffer", group_index = 2 },
+			{ name = "rg", option = { additional_arguments = "--hidden --smart-case" }, group_index = 2 },
+			{ name = "async_path", group_index = 3 },
+			{ name = "crates", group_index = 4 },
 		}),
 	})
 
