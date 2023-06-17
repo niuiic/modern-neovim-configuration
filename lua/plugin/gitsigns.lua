@@ -1,59 +1,12 @@
 local config = function()
-	local gitsigns = require("gitsigns")
-
-	gitsigns.setup({})
-
-	require("which-key").register({
-		g = {
-			name = "git signs",
-			s = {
-				"<cmd>Gitsigns stage_hunk<CR>",
-				"stage hunk",
-			},
-			r = {
-				"<cmd>Gitsigns reset_hunk<CR>",
-				"reset hunk",
-			},
-		},
-	}, {
-		mode = "v",
-		prefix = "<localleader>",
-	})
-
-	gitsigns.setup({
-		on_attach = function(bufnr)
-			local function map(mode, l, r, opts)
-				opts = opts or {}
-				opts.buffer = bufnr
-				vim.keymap.set(mode, l, r, opts)
-			end
-
-			map("n", "]c", function()
-				if vim.wo.diff then
-					return "]c"
-				end
-				vim.schedule(function()
-					package.loaded.gitsigns.next_hunk()
-				end)
-				return "<Ignore>"
-			end, { expr = true })
-
-			map("n", "[c", function()
-				if vim.wo.diff then
-					return "[c"
-				end
-				vim.schedule(function()
-					package.loaded.gitsigns.prev_hunk()
-				end)
-				return "<Ignore>"
-			end, { expr = true })
-		end,
-	})
+	require("gitsigns").setup({})
 end
 
 local keys = {
 	{ "<space>gs", "<cmd>Gitsigns stage_hunk<CR>", desc = "stage hunk" },
 	{ "<space>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "reset hunk" },
+	{ "<space>gs", "<cmd>Gitsigns stage_hunk<CR>", desc = "stage hunk", mode = "v" },
+	{ "<space>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "reset hunk", mode = "v" },
 	{
 		"<space>gR",
 		function()
@@ -76,14 +29,14 @@ local keys = {
 		desc = "preview hunk",
 	},
 	{
-		"<space>gd",
+		"<space>gD",
 		function()
 			package.loaded.gitsigns.toggle_deleted()
 		end,
 		desc = "toggle deleted",
 	},
 	{
-		"<space>gD",
+		"<space>gd",
 		function()
 			package.loaded.gitsigns.diffthis()
 		end,

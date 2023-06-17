@@ -98,6 +98,9 @@ return {
 			r = {
 				name = "replace in project",
 			},
+			g = {
+				name = "git signs",
+			},
 		}, {
 			mode = "v",
 			prefix = "<leader>",
