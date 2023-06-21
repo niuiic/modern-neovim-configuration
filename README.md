@@ -33,7 +33,7 @@ OS: Gentoo
 
 Terminal: Alacritty
 
-Neovim: V0.9+
+Neovim: V0.10+
 
 ## Dependencies
 

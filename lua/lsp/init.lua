@@ -70,3 +70,17 @@ vim.diagnostic.config({
 require("lspconfig.ui.windows").default_options = {
 	border = "single",
 }
+
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+	callback = function()
+		vim.lsp.buf.inlay_hint(0, false)
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+	callback = function()
+		vim.lsp.buf.inlay_hint(0, true)
+	end,
+})
+
+vim.cmd("hi LspInlayHint guibg=none guifg=#33FFBD")

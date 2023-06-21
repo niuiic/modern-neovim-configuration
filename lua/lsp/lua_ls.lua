@@ -21,6 +21,9 @@ local M = {
 			telemetry = {
 				enable = false,
 			},
+			hint = {
+				enable = true,
+			},
 		},
 	},
 	root_dir = core.file.root_path,
