@@ -44,6 +44,21 @@ local config = function()
 	})
 end
 
+local use_toggle_inlay_hint = function()
+	local enable = false
+	return function()
+		if enable then
+			vim.lsp.buf.inlay_hint(0, false)
+			enable = false
+		else
+			vim.lsp.buf.inlay_hint(0, true)
+			enable = true
+		end
+	end
+end
+
+local toggle_inlay_hint = use_toggle_inlay_hint()
+
 local keys = {
 	{
 		"<space>lf",
@@ -74,6 +89,11 @@ local keys = {
 		"<space>lR",
 		"<cmd>LspRestart *<CR>",
 		desc = "restart all lsp",
+	},
+	{
+		"<space>ll",
+		toggle_inlay_hint,
+		desc = "toggle inlay hint",
 	},
 }
 
