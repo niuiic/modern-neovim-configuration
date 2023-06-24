@@ -220,4 +220,6 @@ require("lazy").setup({
 	load_plugin_config("karb94/neoscroll.nvim", "plugin/neoscroll"),
 	-- remove buffer
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
+	-- avoid nested neovim instance
+	load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 })
