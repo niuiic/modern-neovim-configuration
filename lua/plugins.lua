@@ -89,7 +89,7 @@ require("lazy").setup({
 	-- engine
 	load_plugin_config("hrsh7th/nvim-cmp", "plugin/nvim-cmp"),
 	-- better ui
-	load_plugin_config("onsails/lspkind-nvim", "plugin/lspkind-nvim"),
+	"onsails/lspkind-nvim",
 	-- source
 	-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
 	"hrsh7th/cmp-nvim-lsp",

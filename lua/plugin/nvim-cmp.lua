@@ -2,8 +2,52 @@ local config = function()
 	local cmp = require("cmp")
 
 	cmp.setup({
+		formatting = {
+			format = require("lspkind").cmp_format({
+				mode = "symbol_text",
+				symbol_map = {
+					Text = "󰉿",
+					String = "󰉿",
+					Method = "󰆧",
+					Function = "󰊕",
+					Constructor = "",
+					Field = "󰜢",
+					Variable = "󰀫",
+					Class = "󰠱",
+					Interface = "",
+					Module = "",
+					Property = "󰜢",
+					Unit = "󰑭",
+					Value = "󰎠",
+					Enum = "",
+					Keyword = "󰌋",
+					Snippet = "",
+					Color = "󰏘",
+					File = "󰈙",
+					Reference = "󰈇",
+					Folder = "󰉋",
+					EnumMember = "",
+					Constant = "󰏿",
+					Struct = "󰙅",
+					Event = "",
+					Operator = "󰆕",
+					TypeParameter = "",
+				},
+				menu = {
+					buffer = "[Buffer]",
+					nvim_lsp = "[Lsp]",
+					luasnip = "[LuaSnip]",
+					rg = "[Rg]",
+					treesitter = "[Treesitter]",
+					async_path = "[Path]",
+					crates = "[Crates]",
+				},
+			}),
+		},
 		enabled = function()
-			return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+			return vim.api.nvim_get_option_value("buftype", {
+				buf = 0,
+			}) ~= "prompt" or require("cmp_dap").is_dap_buffer()
 		end,
 		snippet = {
 			expand = function(args)
@@ -41,15 +85,6 @@ local config = function()
 			{ name = "cmdline" },
 			{ name = "cmdline_history" },
 		}),
-	})
-
-	cmp.setup({
-		formatting = {
-			format = require("lspkind").cmp_format({
-				mode = "symbol",
-				maxwidth = 50,
-			}),
-		},
 	})
 
 	-- keymap
