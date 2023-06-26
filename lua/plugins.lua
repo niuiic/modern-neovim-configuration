@@ -99,6 +99,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-cmdline",
 	"dmitmel/cmp-cmdline-history",
 	"lukas-reineke/cmp-rg",
+	"ray-x/cmp-treesitter",
 	-- snippets
 	load_plugin_config("L3MON4D3/LuaSnip", "plugin/luasnip"),
 	"saadparwaiz1/cmp_luasnip",

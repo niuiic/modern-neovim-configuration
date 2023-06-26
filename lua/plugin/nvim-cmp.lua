@@ -15,6 +15,7 @@ local config = function()
 			{ name = "luasnip", group_index = 1 },
 			{ name = "buffer", group_index = 2 },
 			{ name = "rg", option = { additional_arguments = "--hidden --smart-case" }, group_index = 2 },
+			{ name = "treesitter" },
 			{ name = "async_path", group_index = 3 },
 			{ name = "crates", group_index = 4 },
 		}),
