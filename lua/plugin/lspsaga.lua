@@ -1,5 +1,6 @@
 local config = function()
 	require("lspsaga").setup({
+		request_timeout = 5000,
 		lightbulb = {
 			sign_priority = 1,
 		},
