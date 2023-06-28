@@ -15,7 +15,7 @@ local config = function()
 			preview = "p",
 			close_folds = { "zm" },
 			open_folds = { "zr" },
-			toggle_fold = { "z" },
+			toggle_fold = { "Z" },
 			previous = "k",
 			next = "j",
 		},
