@@ -1,5 +1,6 @@
 local config = function()
 	require("lspsaga").setup({
+		request_timeout = 5000,
 		lightbulb = {
 			sign_priority = 1,
 		},
@@ -15,6 +16,13 @@ local config = function()
 		},
 		beacon = {
 			enable = false,
+		},
+		finder = {
+			keys = {
+				jump_to = "<CR>",
+				expand_or_jump = "<CR>",
+				quit = { "q", "<ESC>" },
+			},
 		},
 	})
 end
@@ -55,6 +63,11 @@ return {
 				vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = false })
 			end,
 			desc = "jump to previous error",
+		},
+		{
+			"gf",
+			"<cmd>Lspsaga lsp_finder<CR>",
+			desc = "lsp finder",
 		},
 		{
 			"gd",

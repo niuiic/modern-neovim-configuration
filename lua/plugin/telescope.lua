@@ -63,16 +63,6 @@ local keys = {
 	{ "<space>oGC", "<cmd>Telescope git_commits<CR>", desc = "git commits" },
 	{ "<space>oGb", "<cmd>Telescope git_branches<CR>", desc = "git branches" },
 	{
-		"gf",
-		"<cmd>Telescope lsp_references<CR>",
-		desc = "lsp reference",
-	},
-	{
-		"gi",
-		"<cmd>Telescope lsp_implementations<CR>",
-		desc = "lsp reference",
-	},
-	{
 		"<space>ogw",
 		function()
 			require("telescope.builtin").live_grep(opt)
