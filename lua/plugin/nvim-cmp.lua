@@ -63,6 +63,7 @@ local config = function()
 			{ name = "async_path", group_index = 3 },
 			{ name = "crates", group_index = 4 },
 		}),
+		preselect = cmp.PreselectMode.None,
 	})
 
 	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
