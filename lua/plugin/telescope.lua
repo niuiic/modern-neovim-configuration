@@ -68,6 +68,11 @@ local keys = {
 		desc = "lsp reference",
 	},
 	{
+		"gi",
+		"<cmd>Telescope lsp_implementations<CR>",
+		desc = "lsp reference",
+	},
+	{
 		"<space>ogw",
 		function()
 			require("telescope.builtin").live_grep(opt)
