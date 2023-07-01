@@ -27,8 +27,18 @@ local config = function()
 				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
 			},
 		},
-		extensions = {},
+		extensions = {
+			undo = {
+				mappings = {
+					i = {
+						["<CR>"] = require("telescope-undo.actions").restore,
+					},
+				},
+			},
+		},
 	})
+
+	require("telescope").load_extension("undo")
 end
 
 local opt = {
@@ -69,6 +79,7 @@ local keys = {
 		end,
 		desc = "search words globally",
 	},
+	{ "<space>ou", "<cmd>Telescope undo<CR>", desc = "search undo" },
 }
 
 return {

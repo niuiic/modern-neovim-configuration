@@ -107,8 +107,6 @@ require("lazy").setup({
 
 	-- status line
 	load_plugin_config("nvim-lualine/lualine.nvim", "plugin/lualine"),
-	-- undotree
-	load_plugin_config("jiaoshijie/undotree", "plugin/undotree"),
 	-- a pretty diagnostics, references, telescope results, quickfix and location list
 	load_plugin_config("folke/trouble.nvim", "plugin/trouble"),
 	-- quickly modify surround char
@@ -160,6 +158,8 @@ require("lazy").setup({
 	load_plugin_config("nvim-telescope/telescope-media-files.nvim", "plugin/telescope-media-files"),
 	-- recent files
 	load_plugin_config("smartpde/telescope-recent-files", "plugin/telescope-recent-files"),
+	-- undo
+	"debugloop/telescope-undo.nvim",
 
 	-- task manager
 	load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
