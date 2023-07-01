@@ -10,6 +10,7 @@ return {
 			create_keymaps = false,
 			create_commands = false,
 			filetypes = {
+				vue = vue,
 				javascript = vue,
 				typescript = vue,
 				javascriptreact = vue,
