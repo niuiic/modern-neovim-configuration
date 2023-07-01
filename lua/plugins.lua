@@ -65,7 +65,7 @@ require("lazy").setup({
 	-- automatically toggle between absolute line number and relative one
 	"sitiom/nvim-numbertoggle",
 	-- quick motion
-	load_plugin_config("ggandor/leap.nvim", "plugin/leap"),
+	load_plugin_config("folke/flash.nvim", "plugin/flash"),
 	-- file tree
 	load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
 
