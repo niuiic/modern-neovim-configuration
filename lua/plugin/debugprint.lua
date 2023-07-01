@@ -1,27 +1,19 @@
 return {
 	config = function()
+		local vue = {
+			left = "console.log('",
+			right = "')",
+			mid_var = "', ",
+			right_var = ")",
+		}
 		require("debugprint").setup({
 			create_keymaps = false,
 			create_commands = false,
 			filetypes = {
-				vue = {
-					left = "console.log('",
-					right = "')",
-					mid_var = "', ",
-					right_var = ")",
-				},
-				javascriptreact = {
-					left = "console.log('",
-					right = "')",
-					mid_var = "', ",
-					right_var = ")",
-				},
-				typescriptreact = {
-					left = "console.log('",
-					right = "')",
-					mid_var = "', ",
-					right_var = ")",
-				},
+				javascript = vue,
+				typescript = vue,
+				javascriptreact = vue,
+				typescriptreact = vue,
 			},
 		})
 	end,
