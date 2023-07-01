@@ -104,7 +104,7 @@ local keys = {
 		end,
 	},
 	{
-		"<A-p>",
+		"<A-e>",
 		function()
 			require("dap").pause()
 		end,

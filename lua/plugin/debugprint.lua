@@ -3,6 +3,26 @@ return {
 		require("debugprint").setup({
 			create_keymaps = false,
 			create_commands = false,
+			filetypes = {
+				vue = {
+					left = "console.log('",
+					right = "')",
+					mid_var = "', ",
+					right_var = ")",
+				},
+				javascriptreact = {
+					left = "console.log('",
+					right = "')",
+					mid_var = "', ",
+					right_var = ")",
+				},
+				typescriptreact = {
+					left = "console.log('",
+					right = "')",
+					mid_var = "', ",
+					right_var = ")",
+				},
+			},
 		})
 	end,
 	dependencies = {
@@ -10,7 +30,7 @@ return {
 	},
 	keys = {
 		{
-			"<space>dp",
+			"<A-p>",
 			function()
 				return require("debugprint").debugprint({ variable = true })
 			end,
@@ -18,7 +38,7 @@ return {
 			expr = true,
 		},
 		{
-			"<space>dp",
+			"<A-p>",
 			function()
 				return require("debugprint").debugprint({ variable = true })
 			end,
