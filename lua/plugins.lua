@@ -222,4 +222,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- avoid nested neovim instance
 	load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
+	-- code shot
+	load_plugin_config("krivahtoo/silicon.nvim", "plugin/silicon"),
 })
