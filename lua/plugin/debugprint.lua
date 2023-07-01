@@ -30,7 +30,7 @@ return {
 	},
 	keys = {
 		{
-			"<A-p>",
+			"<C-p>",
 			function()
 				return require("debugprint").debugprint({ variable = true })
 			end,
@@ -38,7 +38,7 @@ return {
 			expr = true,
 		},
 		{
-			"<A-p>",
+			"<C-p>",
 			function()
 				return require("debugprint").debugprint({ variable = true })
 			end,
