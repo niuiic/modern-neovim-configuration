@@ -101,7 +101,17 @@ end
 return {
 	config = config,
 	keys = {
-		{ "<space>oF", "<cmd>NvimTreeFocus<CR>", desc = "open file tree" },
+		-- { "<space>oF", "<cmd>NvimTreeFocus<CR>", desc = "open file tree" },
+		{
+			"<space>oF",
+			function()
+				require("nvim-tree.api").tree.open({
+					path = require("niuiic-core").file.root_path(),
+					find_file = true,
+				})
+			end,
+			desc = "open file tree",
+		},
 	},
 	dependencies = {
 		"kyazdani42/nvim-web-devicons",

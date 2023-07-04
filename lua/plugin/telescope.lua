@@ -22,11 +22,6 @@ local config = function()
 				vertical = { width = 0.8 },
 			},
 		},
-		pickers = {
-			find_files = {
-				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
-			},
-		},
 		extensions = {
 			undo = {
 				mappings = {
@@ -41,10 +36,6 @@ local config = function()
 	require("telescope").load_extension("undo")
 end
 
-local opt = {
-	hidden = true,
-}
-
 local keys = {
 	{ "<space>ol", "<cmd>Telescope<CR>", desc = "open telescope list" },
 	{ "<space>ob", "<cmd>Telescope buffers<CR>", desc = "search buffer with preview" },
@@ -53,7 +44,11 @@ local keys = {
 	{
 		"<space>of",
 		function()
-			require("telescope.builtin").find_files(opt)
+			require("telescope.builtin").find_files({
+				hidden = true,
+				cwd = require("niuiic-core").file.root_path(),
+				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
+			})
 		end,
 		desc = "search files in workspace",
 	},
@@ -75,7 +70,10 @@ local keys = {
 	{
 		"<space>ogw",
 		function()
-			require("telescope.builtin").live_grep(opt)
+			require("telescope.builtin").live_grep({
+				hidden = true,
+				cwd = require("niuiic-core").file.root_path(),
+			})
 		end,
 		desc = "search words globally",
 	},
