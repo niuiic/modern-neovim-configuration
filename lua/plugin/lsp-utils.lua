@@ -48,10 +48,10 @@ local use_toggle_inlay_hint = function()
 	local enable = false
 	return function()
 		if enable then
-			vim.lsp.buf.inlay_hint(0, false)
+			vim.lsp.inlay_hint(0, false)
 			enable = false
 		else
-			vim.lsp.buf.inlay_hint(0, true)
+			vim.lsp.inlay_hint(0, true)
 			enable = true
 		end
 	end
