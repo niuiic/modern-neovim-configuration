@@ -103,7 +103,6 @@ end
 return {
 	config = config,
 	keys = {
-		-- { "<space>oF", "<cmd>NvimTreeFocus<CR>", desc = "open file tree" },
 		{
 			"<space>oF",
 			function()
