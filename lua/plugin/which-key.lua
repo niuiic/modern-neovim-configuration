@@ -92,21 +92,24 @@ return {
 		})
 
 		which_key.register({
-			q = {
-				name = "sql cmd",
-			},
-			s = {
-				name = "tasks",
-			},
 			r = {
 				name = "replace in project",
+			},
+		}, {
+			mode = "v",
+			prefix = "<leader>",
+		})
+
+		which_key.register({
+			s = {
+				name = "tasks",
 			},
 			g = {
 				name = "git signs",
 			},
 		}, {
 			mode = "v",
-			prefix = "<leader>",
+			prefix = "<localleader>",
 		})
 	end,
 }
