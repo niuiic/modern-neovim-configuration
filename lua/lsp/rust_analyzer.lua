@@ -1,5 +1,6 @@
 -- check more commands here
 -- https://github.com/rust-lang/rust-analyzer/blob/master/editors/code/package.json
+-- https://github.com/rust-lang/rust-analyzer/blob/master/docs/dev/lsp-extensions.md
 
 local core = require("niuiic-core")
 
