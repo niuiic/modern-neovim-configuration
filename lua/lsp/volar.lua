@@ -31,6 +31,15 @@ local function copy_file_path()
 	end
 end
 
+local function organize_imports()
+	vim.lsp.buf.code_action({
+		apply = true,
+		filter = function(action)
+			return action.title == "Add all missing imports"
+		end,
+	})
+end
+
 local M = {
 	filetypes = filetypes,
 	root_dir = core.file.root_path,
@@ -50,6 +59,10 @@ local M = {
 		},
 		VolarFilePath = {
 			copy_file_path,
+			description = "File Path",
+		},
+		VolarOrganizeImports = {
+			organize_imports,
 			description = "File Path",
 		},
 	},

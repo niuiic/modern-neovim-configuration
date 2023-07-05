@@ -17,6 +17,11 @@ local config = function()
 		beacon = {
 			enable = false,
 		},
+		code_action = {
+			keys = {
+				quit = { "q", "<ESC>" },
+			},
+		},
 		finder = {
 			keys = {
 				jump_to = "<CR>",

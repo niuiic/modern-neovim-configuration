@@ -28,6 +28,7 @@ local config = function()
 						end,
 					},
 					{ map = { "VolarFilePath", "LSPFilePath" } },
+					{ map = { "VolarOrganizeImports", "LSPOrganizeImports" } },
 				},
 			},
 			lua_ls = {
