@@ -33,6 +33,7 @@ end
 local keys = {
 	{ "<space>sl", "<cmd>OverseerToggle<CR>", desc = "toggle task list" },
 	{ "<space>sr", "<cmd>OverseerRun<CR>", desc = "run tasks" },
+	{ "<space>sr", "<c-u>OverseerRun<CR>", desc = "run tasks", mode = "v" },
 	{ "<space>sc", "<cmd>OverseerClearCache<CR>", desc = "clear cache" },
 	{
 		"<space>sR",

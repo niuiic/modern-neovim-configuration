@@ -9,6 +9,7 @@ local config = function()
 			"go",
 			"gomod",
 			"html",
+			"sql",
 			"dockerfile",
 			"javascript",
 			"typescript",

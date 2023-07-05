@@ -95,6 +95,9 @@ return {
 			q = {
 				name = "sql cmd",
 			},
+			s = {
+				name = "tasks",
+			},
 			r = {
 				name = "replace in project",
 			},
