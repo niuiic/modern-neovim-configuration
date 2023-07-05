@@ -82,9 +82,6 @@ require("lazy").setup({
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
 
-	-- sql
-	load_plugin_config("nanotee/sqls.nvim", "plugin/sqls"),
-
 	-- code auto complete
 	-- engine
 	load_plugin_config("hrsh7th/nvim-cmp", "plugin/nvim-cmp"),
