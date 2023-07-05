@@ -46,6 +46,18 @@ return {
 			mode = { "n", "x", "o" },
 		},
 		{
+			"L",
+			function()
+				require("flash").jump({
+					search = { mode = "search", max_length = 0 },
+					label = { after = { 0, 0 } },
+					pattern = "^",
+				})
+			end,
+			desc = "flash",
+			mode = { "n", "x", "o" },
+		},
+		{
 			"T",
 			function()
 				require("flash").treesitter()
