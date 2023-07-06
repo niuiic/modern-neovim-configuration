@@ -47,7 +47,9 @@ local function organize_imports()
 	vim.lsp.buf.code_action({
 		apply = true,
 		filter = function(action)
-			return action.title == "Add all missing imports" or string.find(action.title, "Update import from")
+			return action.title == "Add all missing imports"
+				or string.find(action.title, "Update import from")
+				or string.find(action.title, "Add import from")
 		end,
 	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
