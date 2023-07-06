@@ -6,9 +6,6 @@ return {
 					enabled = true,
 				},
 			},
-			jump = {
-				autojump = true,
-			},
 			modes = {
 				char = {
 					enabled = false,
