@@ -31,10 +31,8 @@ local config = function()
 				},
 				extra_args = { "--edition=2021" },
 			}),
-			formatting.sql_formatter.with({
-				filetypes = {
-					"sql",
-				},
+			formatting.sqlfluff.with({
+				extra_args = { "--dialect", "postgres" },
 			}),
 			formatting.verible_verilog_format.with({
 				filetypes = {

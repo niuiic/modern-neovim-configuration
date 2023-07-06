@@ -36,7 +36,7 @@
 -- ◍ golines
 -- ◍ prettier
 -- ◍ shfmt
--- ◍ sql-formatter
+-- ◍ sqlfluff
 -- ◍ stylua
 -- ◍ taplo (installed as a lsp)
 -- ◍ xmlformatter
