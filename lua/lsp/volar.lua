@@ -63,6 +63,15 @@ local M = {
 			tsdk = search_ts_server_path(),
 		},
 	},
+	modify_capabilities = function(capabilities)
+		if capabilities.workspace == nil then
+			capabilities.workspace = {
+				didChangeWatchedFiles = { dynamicRegistration = true },
+			}
+		else
+			capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+		end
+	end,
 	commands = {
 		VolarRename = {
 			function()
