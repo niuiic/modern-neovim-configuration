@@ -5,6 +5,7 @@ return {
 			window = {
 				open = "alternate",
 			},
+			nest_if_no_args = true,
 		})
 	end,
 }
