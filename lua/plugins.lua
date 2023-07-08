@@ -221,4 +221,6 @@ require("lazy").setup({
 	load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 	-- code shot
 	load_plugin_config("krivahtoo/silicon.nvim", "plugin/silicon"),
+	-- lsp signature
+	load_plugin_config("ray-x/lsp_signature.nvim", "plugin/lsp_signature"),
 })

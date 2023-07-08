@@ -10,6 +10,11 @@ local config = function()
 		messages = {
 			view = "mini",
 		},
+		lsp = {
+			signature = {
+				enabled = false,
+			},
+		},
 	})
 
 	vim.api.nvim_set_hl(0, "MsgArea", { bg = "#262728" })
