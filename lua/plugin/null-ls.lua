@@ -99,6 +99,11 @@ local config = function()
 					"dart",
 				},
 			}),
+			formatting.nginx_beautifier.with({
+				filetypes = {
+					"nginx",
+				},
+			}),
 		},
 	})
 
