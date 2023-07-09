@@ -1,16 +1,11 @@
 local config = function()
 	require("lspsaga").setup({
-		request_timeout = 5000,
 		lightbulb = {
 			sign_priority = 1,
 		},
-		keys = {
-			quit = { "q", "<ESC>" },
-			exec = "<CR>",
-		},
 		outline = {
 			keys = {
-				expand_or_jump = "<CR>",
+				toggle_or_jump = "<CR>",
 				quit = { "q", "<ESC>" },
 			},
 		},
@@ -19,13 +14,6 @@ local config = function()
 		},
 		code_action = {
 			keys = {
-				quit = { "q", "<ESC>" },
-			},
-		},
-		finder = {
-			keys = {
-				jump_to = "<CR>",
-				expand_or_jump = "<CR>",
 				quit = { "q", "<ESC>" },
 			},
 		},
@@ -71,8 +59,10 @@ return {
 		},
 		{
 			"gf",
-			"<cmd>Lspsaga lsp_finder<CR>",
-			desc = "lsp finder",
+			function()
+				require("telescope.builtin").lsp_references()
+			end,
+			desc = "goto references",
 		},
 		{
 			"gd",
