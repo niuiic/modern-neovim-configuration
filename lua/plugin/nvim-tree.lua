@@ -14,6 +14,11 @@ local config = function()
 		filters = {
 			custom = { "^node_modules$", "^.git$" },
 		},
+		ui = {
+			confirm = {
+				remove = false,
+			},
+		},
 		root_dirs = { require("niuiic-core").file.root_path() },
 		diagnostics = {
 			enable = true,
@@ -90,7 +95,17 @@ local config = function()
 			vim.keymap.set("n", "<esc>", api.tree.close, opts("close"))
 			vim.keymap.set("n", "r", api.fs.rename, opts("rename"))
 			vim.keymap.set("n", "d", function()
-				pcall(api.fs.remove)
+				local node = api.tree.get_node_under_cursor()
+				if node == nil then
+					return
+				end
+				local target_buf = require("niuiic-core").lua.list.find(vim.api.nvim_list_bufs(), function(v)
+					return vim.api.nvim_buf_get_name(v) == node.absolute_path
+				end)
+				if target_buf then
+					require("mini.bufremove").delete(target_buf)
+				end
+				api.fs.remove()
 			end, opts("remove"))
 			vim.keymap.set("n", "R", api.tree.reload, opts("reload"))
 			vim.keymap.set("n", "s", api.tree.search_node, opts("search"))
