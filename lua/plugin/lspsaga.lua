@@ -13,6 +13,7 @@ local config = function()
 			enable = false,
 		},
 		code_action = {
+			extend_gitsigns = false,
 			keys = {
 				quit = { "q", "<ESC>" },
 			},
