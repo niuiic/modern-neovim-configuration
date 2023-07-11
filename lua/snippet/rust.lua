@@ -36,6 +36,11 @@ local M = {
 		i(1),
 		t({ "", "}" }),
 	}),
+	s("tokio", {
+		t({ "#[tokio::main]", "async fn main() {", "\t" }),
+		i(1),
+		t({ "", "}" }),
+	}),
 }
 
 return M
