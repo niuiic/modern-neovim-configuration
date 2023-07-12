@@ -76,7 +76,7 @@ local keys = {
 	{
 		"<A-c>",
 		function()
-			require("dap").continue()
+			require("dap-utils").continue()
 		end,
 	},
 	{

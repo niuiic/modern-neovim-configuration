@@ -115,6 +115,7 @@ require("lazy").setup({
 
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
+	"niuiic/dap-utils.nvim",
 	"niuiic/nvim-dap-vscode-js",
 	"nvim-telescope/telescope-dap.nvim",
 	"theHamsta/nvim-dap-virtual-text",

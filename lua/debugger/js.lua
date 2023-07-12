@@ -1,4 +1,5 @@
 local core = require("niuiic-core")
+local dap_utils = require("dap-utils")
 
 require("dap-vscode-js").setup({
 	debugger_cmd = { os.getenv("HOME") .. "/.local/share/nvim/mason/bin/js-debug-adapter" },
@@ -20,8 +21,8 @@ core.lua.list.each({ "pwa-node", "pwa-chrome" }, function(v)
 	}
 end)
 
-for _, language in ipairs({ "typescript", "javascript" }) do
-	require("dap").configurations[language] = {
+local common = function(run)
+	run({
 		{
 			name = "Launch project",
 			type = "pwa-node",
@@ -56,11 +57,11 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			processId = require("dap.utils").pick_process,
 			cwd = "${workspaceFolder}",
 		},
-	}
+	})
 end
 
-for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
-	require("dap").configurations[language] = {
+local common2 = function(run)
+	run({
 		{
 			name = "Launch Chrome",
 			type = "pwa-chrome",
@@ -76,5 +77,13 @@ for _, language in ipairs({ "typescriptreact", "javascriptreact", "vue" }) do
 			port = 9222,
 			webRoot = "${workspaceFolder}",
 		},
-	}
+	})
 end
+
+dap_utils.setup({
+	typescript = common,
+	javascript = common,
+	javascriptreact = common2,
+	typescriptreact = common2,
+	vue = common2,
+})
