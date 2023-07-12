@@ -73,7 +73,8 @@ require("lazy").setup({
 	load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
 	-- extensions
 	-- rainbow brackets
-	"p00f/nvim-ts-rainbow",
+	load_plugin_config("HiPhish/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
+	-- highlight args
 	load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
 	"andymass/vim-matchup",
@@ -222,4 +223,6 @@ require("lazy").setup({
 	load_plugin_config("willothy/flatten.nvim", "plugin/flatten"),
 	-- code shot
 	load_plugin_config("krivahtoo/silicon.nvim", "plugin/silicon"),
+	-- format
+	load_plugin_config("niuiic/format.nvim", "plugin/format"),
 })

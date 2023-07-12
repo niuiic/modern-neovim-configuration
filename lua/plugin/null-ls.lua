@@ -108,7 +108,7 @@ local config = function()
 	})
 
 	-- keymap
-	vim.keymap.set("n", "<C-f>", function()
+	vim.keymap.set("n", "<C-g>", function()
 		vim.lsp.buf.format({ timeout_ms = 2000 })
 	end, { silent = true })
 

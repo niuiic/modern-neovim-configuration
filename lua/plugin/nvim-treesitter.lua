@@ -44,12 +44,6 @@ local config = function()
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },
-		rainbow = {
-			enable = true,
-			extended_mode = true,
-			max_file_lines = nil,
-			colors = { "#0099ff", "#00ff00", "#ff4dc3", "#ffff00", "#ff9933" },
-		},
 		matchup = {
 			enable = true,
 		},
@@ -74,4 +68,5 @@ end
 return {
 	config = config,
 	build = ":TSUpdate",
+	commit = "3af1220e18034eb2ce7d1c8e77055bc3bf3c1c36",
 }
