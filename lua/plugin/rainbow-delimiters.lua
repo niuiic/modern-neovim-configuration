@@ -12,9 +12,6 @@ return {
 				"RainbowColor4",
 				"RainbowColor5",
 			},
-			query = {
-				vue = "",
-			},
 		})
 	end,
 }
