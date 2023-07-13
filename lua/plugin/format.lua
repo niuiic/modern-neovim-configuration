@@ -35,6 +35,9 @@ local vue = function(file_path)
 				"-w",
 				file_path,
 			},
+			ignore_err = function(err, data)
+				return err == nil and data == nil
+			end,
 		},
 	}
 	local diagnostic = vim.diagnostic.get(0)
