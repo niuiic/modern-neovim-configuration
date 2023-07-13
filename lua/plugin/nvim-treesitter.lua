@@ -68,5 +68,4 @@ end
 return {
 	config = config,
 	build = ":TSUpdate",
-	commit = "3af1220e18034eb2ce7d1c8e77055bc3bf3c1c36",
 }
