@@ -16,13 +16,6 @@ end
 local vue = function(file_path)
 	local config = {
 		{
-			cmd = "prettier",
-			args = {
-				"-w",
-				file_path,
-			},
-		},
-		{
 			cmd = "pnpm",
 			args = { "eslint", "--fix", file_path },
 			ignore_err = function()
@@ -36,6 +29,13 @@ local vue = function(file_path)
 				return true
 			end,
 		},
+		{
+			cmd = "prettier",
+			args = {
+				"-w",
+				file_path,
+			},
+		},
 	}
 	local diagnostic = vim.diagnostic.get(0)
 	if not diagnostic or #diagnostic == 0 then
@@ -48,7 +48,9 @@ local config = function()
 	require("format").setup({
 		hooks = {
 			on_success = function()
-				print("Formatting Succeed")
+				vim.notify("Formatting Succeed", vim.log.levels.INFO, {
+					title = "Format",
+				})
 				vim.cmd("RefreshDivider")
 			end,
 		},
