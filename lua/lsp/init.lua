@@ -64,11 +64,11 @@ for _, value in pairs(lspList) do
 end
 
 vim.diagnostic.config({
-	float = { border = "single" },
+	float = { border = "rounded" },
 })
 
 require("lspconfig.ui.windows").default_options = {
-	border = "single",
+	border = "rounded",
 }
 
 vim.cmd("hi LspInlayHint guibg=none guifg=#33FFBD")
