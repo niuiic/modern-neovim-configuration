@@ -38,6 +38,12 @@ local vue = function(file_path)
 			ignore_err = function(err, data)
 				return err == nil and data == nil
 			end,
+			on_success = function()
+				vim.cmd("RefreshDivider")
+				vim.notify("Formatting Succeed", vim.log.levels.INFO, {
+					title = "Format",
+				})
+			end,
 		},
 	}
 	local diagnostic = vim.diagnostic.get(0)
@@ -49,14 +55,6 @@ end
 
 local config = function()
 	require("format").setup({
-		hooks = {
-			on_success = function()
-				vim.notify("Formatting Succeed", vim.log.levels.INFO, {
-					title = "Format",
-				})
-				vim.cmd("RefreshDivider")
-			end,
-		},
 		filetypes = {
 			rust = rust,
 			vue = vue,
