@@ -36,7 +36,7 @@ local config = function()
 				quit_on_focus_loss = true,
 				open_win_config = function()
 					return {
-						border = "single",
+						border = "rounded",
 						relative = "editor",
 						row = win_config.row,
 						col = win_config.col,

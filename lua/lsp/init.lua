@@ -67,8 +67,4 @@ vim.diagnostic.config({
 	float = { border = "rounded" },
 })
 
-require("lspconfig.ui.windows").default_options = {
-	border = "rounded",
-}
-
 vim.cmd("hi LspInlayHint guibg=none guifg=#33FFBD")
