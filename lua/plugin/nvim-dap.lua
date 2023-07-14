@@ -14,13 +14,6 @@ local config = function()
 	require("debugger")
 end
 
-vim.api.nvim_create_user_command("DapAddToWatch", function()
-	local lines = require("core").text.selection()
-	require("dapui").elements.watches.add(lines[1])
-end, {
-	range = 0,
-})
-
 local keys = {
 	-- set breakpoint
 	{
@@ -130,15 +123,10 @@ local keys = {
 	},
 	{
 		"<A-w>",
-		":<c-u>DapAddToWatch<CR>",
-		mode = "v",
-		silent = true,
-	},
-	{
-		"<A-w>",
-		"viw:<c-u>DapAddToWatch<CR>",
-		mode = "n",
-		silent = true,
+		function()
+			require("dap-utils").add_to_watch()
+		end,
+		mode = { "n", "v" },
 	},
 	{
 		"<A-g>",
