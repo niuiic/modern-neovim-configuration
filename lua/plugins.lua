@@ -44,8 +44,8 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
-        -- core
-{	"niuiic/core.nvim" , lazy = false},
+	--core
+	"niuiic/core.nvim",
 	-- shortcut suggestions
 	load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
 	-- dev doc
@@ -227,4 +227,5 @@ require("lazy").setup({
 	load_plugin_config("krivahtoo/silicon.nvim", "plugin/silicon"),
 	-- format
 	load_plugin_config("niuiic/format.nvim", "plugin/format"),
+	load_dev_plugin_config("~/Documents/projects/nvim/core.nvim"),
 })

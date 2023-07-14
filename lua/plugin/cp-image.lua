@@ -6,5 +6,4 @@ return {
 			desc = "paste image",
 		},
 	},
-	dependencies = { "niuiic/core.nvim" },
 }

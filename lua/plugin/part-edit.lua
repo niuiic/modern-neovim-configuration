@@ -16,5 +16,4 @@ return {
 			silent = true,
 		},
 	},
-	dependencies = { "niuiic/core.nvim" },
 }
