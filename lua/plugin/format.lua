@@ -14,21 +14,7 @@ local rust = function(file_path)
 end
 
 local vue = function(file_path)
-	local config = {
-		{
-			cmd = "pnpm",
-			args = { "eslint", "--fix", file_path },
-			ignore_err = function()
-				return true
-			end,
-		},
-		{
-			cmd = "pnpm",
-			args = { "stylelint", "--fix", file_path },
-			ignore_err = function()
-				return true
-			end,
-		},
+	return {
 		{
 			cmd = "prettier",
 			args = {
@@ -46,11 +32,6 @@ local vue = function(file_path)
 			end,
 		},
 	}
-	local diagnostic = vim.diagnostic.get(0)
-	if not diagnostic or #diagnostic == 0 then
-		return { config[1] }
-	end
-	return config
 end
 
 local config = function()
