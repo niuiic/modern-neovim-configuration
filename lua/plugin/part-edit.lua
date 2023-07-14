@@ -10,7 +10,7 @@ return {
 	keys = {
 		{
 			"<space>p",
-			":<c-u>PartEdit<CR>",
+			"<cmd>PartEdit<CR>",
 			desc = "edit selected code",
 			mode = "v",
 			silent = true,
