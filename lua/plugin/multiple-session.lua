@@ -3,7 +3,7 @@ local get_buf_name = function(bufnr, root_path)
 end
 
 local store_breakpoints = function(file_path)
-	local core = require("niuiic-core")
+	local core = require("core")
 	local root_path = core.file.root_path()
 
 	local breakpoints = require("dap.breakpoints").get()
@@ -24,7 +24,7 @@ local store_breakpoints = function(file_path)
 end
 
 local restore_breakpoints = function(file_path)
-	local core = require("niuiic-core")
+	local core = require("core")
 	local root_path = core.file.root_path()
 
 	if not core.file.file_or_dir_exists(file_path) then
@@ -61,7 +61,7 @@ end
 
 return {
 	config = function()
-		local core = require("niuiic-core")
+		local core = require("core")
 		require("multiple-session").setup({
 			default_arg_num = 2,
 			on_session_saved = function(session_dir)
@@ -90,5 +90,5 @@ return {
 		{ "<leader>sd", "<cmd>DeleteSession<CR>", desc = "delete session" },
 	},
 	lazy = false,
-	dependencies = { "niuiic/niuiic-core.nvim" },
+	dependencies = { "niuiic/core.nvim" },
 }

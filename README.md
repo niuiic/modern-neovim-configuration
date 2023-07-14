@@ -111,7 +111,7 @@ The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua`
 `.nvim/task/init.lua`
 
 ```lua
-local core = require("niuiic-core")
+local core = require("core")
 
 local overseer = require("overseer")
 

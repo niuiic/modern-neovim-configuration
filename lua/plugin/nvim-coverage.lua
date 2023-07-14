@@ -2,7 +2,7 @@ local use_toggle_coverage = function()
 	local loaded = false
 	local buf_list = {}
 	local loaded_for_buf = function()
-		local core = require("niuiic-core")
+		local core = require("core")
 		if not loaded then
 			return false
 		end

@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 local luasnip = require("luasnip")
 
 local lang_list = {

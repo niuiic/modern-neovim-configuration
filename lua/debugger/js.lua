@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 local dap_utils = require("dap-utils")
 
 require("dap-vscode-js").setup({

@@ -1,5 +1,5 @@
 local config = function()
-	local lua = require("niuiic-core").lua
+	local lua = require("core").lua
 
 	require("lsp-utils").setup({
 		lsps = {

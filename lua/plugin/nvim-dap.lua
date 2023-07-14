@@ -15,7 +15,7 @@ local config = function()
 end
 
 vim.api.nvim_create_user_command("DapAddToWatch", function()
-	local lines = require("niuiic-core").text.selection()
+	local lines = require("core").text.selection()
 	require("dapui").elements.watches.add(lines[1])
 end, {
 	range = 0,

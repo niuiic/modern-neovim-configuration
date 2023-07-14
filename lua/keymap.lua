@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "

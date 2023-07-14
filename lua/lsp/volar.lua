@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 local filetypes = { "vue", "typescriptreact", "javascriptreact" }
 
 if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then

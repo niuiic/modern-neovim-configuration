@@ -8,7 +8,7 @@ require("snippet")
 require("source")
 
 -- load config for workspace
-local core = require("niuiic-core")
+local core = require("core")
 local project_root = core.file.root_path()
 local local_config_entry = project_root .. "/.nvim/init.lua"
 if core.file.file_or_dir_exists(local_config_entry) then

@@ -46,7 +46,7 @@ local keys = {
 		function()
 			require("telescope.builtin").find_files({
 				hidden = true,
-				cwd = require("niuiic-core").file.root_path(),
+				cwd = require("core").file.root_path(),
 				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
 			})
 		end,
@@ -72,7 +72,7 @@ local keys = {
 		function()
 			require("telescope.builtin").live_grep({
 				hidden = true,
-				cwd = require("niuiic-core").file.root_path(),
+				cwd = require("core").file.root_path(),
 			})
 		end,
 		desc = "search words globally",

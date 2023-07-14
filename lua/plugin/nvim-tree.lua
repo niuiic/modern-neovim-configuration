@@ -1,6 +1,6 @@
 local config = function()
 	local nvim_tree = require("nvim-tree")
-	local win_config = require("niuiic-core").win.proportional_size(0.6, 0.6)
+	local win_config = require("core").win.proportional_size(0.6, 0.6)
 
 	nvim_tree.setup({
 		git = {
@@ -19,7 +19,7 @@ local config = function()
 				remove = false,
 			},
 		},
-		root_dirs = { require("niuiic-core").file.root_path() },
+		root_dirs = { require("core").file.root_path() },
 		diagnostics = {
 			enable = true,
 			show_on_dirs = true,
@@ -99,7 +99,7 @@ local config = function()
 				if node == nil then
 					return
 				end
-				local target_buf = require("niuiic-core").lua.list.find(vim.api.nvim_list_bufs(), function(v)
+				local target_buf = require("core").lua.list.find(vim.api.nvim_list_bufs(), function(v)
 					return string.find(vim.api.nvim_buf_get_name(v), node.absolute_path, 1, true)
 				end)
 				if target_buf then
@@ -122,7 +122,7 @@ return {
 			"<space>oF",
 			function()
 				require("nvim-tree.api").tree.open({
-					path = require("niuiic-core").file.root_path(),
+					path = require("core").file.root_path(),
 					find_file = true,
 				})
 			end,

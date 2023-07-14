@@ -2,7 +2,7 @@ return {
 	config = function()
 		require("part-edit").setup({
 			swap_path = function()
-				local work_path = require("niuiic-core").file.root_path()
+				local work_path = require("core").file.root_path()
 				return string.format("%s%s", string.gsub(work_path, "/", "_"), "_swap")
 			end,
 		})
@@ -16,5 +16,5 @@ return {
 			silent = true,
 		},
 	},
-	dependencies = { "niuiic/niuiic-core.nvim" },
+	dependencies = { "niuiic/core.nvim" },
 }

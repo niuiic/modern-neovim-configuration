@@ -23,7 +23,7 @@ local M = {
 	}),
 	s("tasks", {
 		t({
-			[[local core = require("niuiic-core")]],
+			[[local core = require("core")]],
 			"",
 			[[local overseer = require("overseer")]],
 			"",

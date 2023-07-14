@@ -11,7 +11,7 @@ return {
 		{
 			"<space>P",
 			function()
-				local core = require("niuiic-core")
+				local core = require("core")
 				local default_path = core.file.root_path() .. "/code.png"
 				vim.ui.input({ prompt = "Image path: ", default = default_path }, function(input)
 					if input == nil then

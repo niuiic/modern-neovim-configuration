@@ -2,7 +2,7 @@
 -- https://github.com/rust-lang/rust-analyzer/blob/master/editors/code/package.json
 -- https://github.com/rust-lang/rust-analyzer/blob/master/docs/dev/lsp-extensions.md
 
-local core = require("niuiic-core")
+local core = require("core")
 
 local M = {
 	root_dir = core.file.root_path,

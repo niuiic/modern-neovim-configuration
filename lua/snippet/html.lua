@@ -1,4 +1,4 @@
-local core = require("niuiic-core")
+local core = require("core")
 local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node

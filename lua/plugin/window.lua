@@ -15,5 +15,5 @@ return {
 			desc = "pin window",
 		},
 	},
-	dependencies = { "niuiic/niuiic-core.nvim" },
+	dependencies = { "niuiic/core.nvim" },
 }

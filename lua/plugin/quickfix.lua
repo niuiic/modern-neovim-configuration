@@ -26,6 +26,6 @@ return {
 		})
 	end,
 	dependencies = {
-		"niuiic/niuiic-core.nvim",
+		"niuiic/core.nvim",
 	},
 }

@@ -55,5 +55,5 @@ return {
 			desc = "translate en to zh",
 		},
 	},
-	dependencies = { "niuiic/niuiic-core.nvim" },
+	dependencies = { "niuiic/core.nvim" },
 }
