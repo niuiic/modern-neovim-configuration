@@ -45,8 +45,8 @@ return {
 	keys = {
 		{
 			"<C-t>",
-			":<c-u>TransToZH<CR>",
-			mode = "v",
+			"<cmd>TransToZH<CR>",
+			mode = { "n", "v" },
 			silent = true,
 		},
 		{
