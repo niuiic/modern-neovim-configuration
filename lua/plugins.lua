@@ -212,7 +212,7 @@ require("lazy").setup({
 	-- uses lua patterns instead of vim regex
 	load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
 	-- hover
-	load_plugin_config("lewis6991/hover.nvim", "plugin/hover"),
+	load_plugin_config("Fildo7525/pretty_hover", "plugin/pretty-hover"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
 	-- smooth scrolling
