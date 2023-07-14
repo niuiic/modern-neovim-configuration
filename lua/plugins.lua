@@ -227,5 +227,4 @@ require("lazy").setup({
 	load_plugin_config("krivahtoo/silicon.nvim", "plugin/silicon"),
 	-- format
 	load_plugin_config("niuiic/format.nvim", "plugin/format"),
-	load_dev_plugin_config("~/Documents/projects/nvim/core.nvim"),
 })
