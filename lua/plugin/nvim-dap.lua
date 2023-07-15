@@ -43,11 +43,10 @@ local keys = {
 		end,
 		desc = "set exception breakpoint",
 	},
-	-- action for breakpoints
 	{
 		"<space>dL",
 		function()
-			require("telescope").extensions.dap.list_breakpoints({})
+			require("dap-utils").search_breakpoints()
 		end,
 		desc = "list all breakpoints",
 	},
@@ -152,13 +151,6 @@ local keys = {
 			require("dap").run_last()
 		end,
 		desc = "restart",
-	},
-	{
-		"<space>dC",
-		function()
-			require("telescope").extensions.dap.commands({})
-		end,
-		desc = "list all commands",
 	},
 	{
 		"M",

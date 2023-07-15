@@ -120,7 +120,6 @@ require("lazy").setup({
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
 	"niuiic/dap-utils.nvim",
 	"mxsdev/nvim-dap-vscode-js",
-	"nvim-telescope/telescope-dap.nvim",
 	"theHamsta/nvim-dap-virtual-text",
 	"rcarriga/nvim-dap-ui",
 	"ofirgall/goto-breakpoints.nvim",
