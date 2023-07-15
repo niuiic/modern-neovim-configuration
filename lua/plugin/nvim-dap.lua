@@ -55,6 +55,7 @@ local keys = {
 		"<space>dc",
 		function()
 			require("dap").clear_breakpoints()
+			require("dap-utils").remove_watches()
 		end,
 		desc = "clear all breakpoints",
 	},
