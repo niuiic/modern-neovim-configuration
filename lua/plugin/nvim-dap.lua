@@ -124,7 +124,7 @@ local keys = {
 	{
 		"<A-w>",
 		function()
-			require("dap-utils").add_to_watch()
+			require("dapui").elements.watches.add()
 		end,
 		mode = { "n", "v" },
 	},

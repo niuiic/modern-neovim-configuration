@@ -6,12 +6,16 @@ return {
 			default_arg_num = 2,
 			on_session_saved = function(session_dir)
 				dap_utils.store_breakpoints(session_dir .. "/breakpoints")
+				dap_utils.store_watches(session_dir .. "/watches")
 				require("quickfix").store_qf(session_dir .. "/quickfix")
 				vim.cmd("wundo" .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
 				if core.file.file_or_dir_exists(session_dir .. "/" .. "breakpoints") then
 					dap_utils.restore_breakpoints(session_dir .. "/breakpoints")
+				end
+				if core.file.file_or_dir_exists(session_dir .. "/watches") then
+					dap_utils.restore_watches(session_dir .. "/watches")
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/" .. "quickfix") then
 					require("quickfix").restore_qf(session_dir .. "/quickfix")
