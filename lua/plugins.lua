@@ -114,7 +114,7 @@ require("lazy").setup({
 	-- call sudo in neovim
 	load_plugin_config("lambdalisue/suda.vim", "plugin/suda"),
 	-- highlights cursor words and lines
-	load_plugin_config("yamatsum/nvim-cursorline", "plugin/nvim-cursorline"),
+	load_plugin_config("echasnovski/mini.cursorword", "plugin/cursorword"),
 
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
