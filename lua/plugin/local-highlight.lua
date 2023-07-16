@@ -1,5 +1,5 @@
 return {
 	config = function()
-		require("mini.cursorword").setup()
+		require("local-highlight").setup()
 	end,
 }

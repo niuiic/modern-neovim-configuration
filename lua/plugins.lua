@@ -113,8 +113,8 @@ require("lazy").setup({
 	load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- call sudo in neovim
 	load_plugin_config("lambdalisue/suda.vim", "plugin/suda"),
-	-- highlights cursor words and lines
-	load_plugin_config("echasnovski/mini.cursorword", "plugin/cursorword"),
+	-- highlights cursor word
+	load_plugin_config("tzachar/local-highlight.nvim", "plugin/local-highlight"),
 
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
