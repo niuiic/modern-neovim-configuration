@@ -1,3 +1,5 @@
+local toggle_breakpoints
+
 local config = function()
 	local dapui = require("dapui")
 	local dap = require("dap")
@@ -9,27 +11,29 @@ local config = function()
 		dapui.open({})
 	end
 
+	toggle_breakpoints = require("dap-utils").use_toggle_breakpoints(".nvim/_breakpoint")
+
 	require("nvim-dap-virtual-text").setup({})
 
 	require("debugger")
 end
 
-local keys = {
-	-- set breakpoint
-	{
-		"<space>dt",
-		function()
-			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
-		end,
-		desc = "set conditional breakpoint",
-	},
-	{
-		"<space>dl",
-		function()
+local set_breakpoint = function()
+	local types = { "log point", "conditional breakpoint", "exception breakpoint" }
+	vim.ui.select(types, {
+		prompt = "Select Breakpoint types",
+	}, function(choice)
+		if choice == types[1] then
 			require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
-		end,
-		desc = "set log point",
-	},
+		elseif choice == types[2] then
+			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+		elseif choice == types[3] then
+			require("dap").set_exception_breakpoints()
+		end
+	end)
+end
+
+local keys = {
 	{
 		"<A-t>",
 		function()
@@ -37,14 +41,14 @@ local keys = {
 		end,
 	},
 	{
-		"<space>de",
+		"<AC-t>",
 		function()
-			require("dap").set_exception_breakpoints()
+			set_breakpoint()
 		end,
-		desc = "set exception breakpoint",
+		desc = "set log/conditional/exception point",
 	},
 	{
-		"<space>dL",
+		"<space>dl",
 		function()
 			require("dap-utils").search_breakpoints()
 		end,
@@ -57,6 +61,13 @@ local keys = {
 			require("dap-utils").remove_watches()
 		end,
 		desc = "clear all breakpoints",
+	},
+	{
+		"<space>dt",
+		function()
+			toggle_breakpoints()
+		end,
+		desc = "toggle all breakpoints",
 	},
 	{
 		"gb",
@@ -160,16 +171,7 @@ local keys = {
 			})
 		end,
 		desc = "check variable value",
-	},
-	{
-		"M",
-		function()
-			require("dapui").eval(nil, {
-				context = "repl",
-			})
-		end,
-		desc = "check variable value",
-		mode = "v",
+		mode = { "n", "v" },
 	},
 }
 
