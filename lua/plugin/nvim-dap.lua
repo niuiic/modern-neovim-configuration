@@ -1,5 +1,3 @@
-local toggle_breakpoints
-
 local config = function()
 	local dapui = require("dapui")
 	local dap = require("dap")
@@ -11,8 +9,6 @@ local config = function()
 		dapui.open({})
 	end
 
-	toggle_breakpoints = require("dap-utils").use_toggle_breakpoints(".nvim/_breakpoint")
-
 	require("nvim-dap-virtual-text").setup({})
 
 	require("debugger")
@@ -21,7 +17,7 @@ end
 local set_breakpoint = function()
 	local types = { "log point", "conditional breakpoint", "exception breakpoint" }
 	vim.ui.select(types, {
-		prompt = "Select Breakpoint types",
+		prompt = "Select Breakpoint Types",
 	}, function(choice)
 		if choice == types[1] then
 			require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
@@ -41,6 +37,12 @@ local keys = {
 		end,
 	},
 	{
+		"<A-f>",
+		function()
+			require("dap").focus_frame()
+		end,
+	},
+	{
 		"<AC-t>",
 		function()
 			set_breakpoint()
@@ -57,7 +59,7 @@ local keys = {
 	{
 		"<space>dc",
 		function()
-			require("dap").clear_breakpoints()
+			require("dap-utils").clear_breakpoints()
 			require("dap-utils").remove_watches()
 		end,
 		desc = "clear all breakpoints",
@@ -65,7 +67,7 @@ local keys = {
 	{
 		"<space>dt",
 		function()
-			toggle_breakpoints()
+			require("dap-utils").toggle_breakpoints()
 		end,
 		desc = "toggle all breakpoints",
 	},
