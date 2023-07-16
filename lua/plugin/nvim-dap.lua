@@ -15,6 +15,7 @@ local config = function()
 end
 
 local set_breakpoint = function()
+	local core = require("core")
 	local types = { "log point", "conditional breakpoint", "exception breakpoint" }
 	vim.ui.select(types, {
 		prompt = "Select Breakpoint Types",
@@ -22,9 +23,15 @@ local set_breakpoint = function()
 		if choice == types[1] then
 			require("dap").set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
 		elseif choice == types[2] then
-			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "), vim.fn.input("Hit times: "))
 		elseif choice == types[3] then
-			require("dap").set_exception_breakpoints()
+			vim.fn.input("Exception: ", function(input)
+				if input then
+					require("dap").set_exception_breakpoints(core.lua.string.split(input))
+				else
+					require("dap").set_exception_breakpoints("default")
+				end
+			end)
 		end
 	end)
 end
