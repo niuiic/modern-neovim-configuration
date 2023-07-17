@@ -32,7 +32,7 @@ local lspList = {
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- load all lsp config
-for _, value in pairs(lspList) do
+core.lua.list.each(lspList, function(value)
 	local config = require("lsp/" .. value)
 
 	-- set capabilities
@@ -44,7 +44,7 @@ for _, value in pairs(lspList) do
 
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
-end
+end)
 
 vim.diagnostic.config({
 	float = { border = "rounded" },
