@@ -30,5 +30,14 @@ return {
 			desc = "format",
 			silent = true,
 		},
+		{
+			"<C-f>",
+			function()
+				require("format").format_range()
+			end,
+			desc = "format",
+			silent = true,
+			mode = "v",
+		},
 	},
 }
