@@ -86,6 +86,9 @@ return {
 			r = {
 				name = "replace in project",
 			},
+			l = {
+				name = "divider",
+			},
 		}, {
 			mode = "n",
 			prefix = "<leader>",

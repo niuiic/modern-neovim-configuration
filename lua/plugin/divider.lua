@@ -3,29 +3,25 @@ return {
 		require("divider").setup({
 			dividers = {
 				{
-					divider_regex = [[%%=+ [\s\S]+ =+%%]],
-					content_regex = [[%%%%=+ ([%s%S]*) =+%%%%]],
+					regex = [[%%%%=+ ([%s%S]*) =+%%%%]],
 					hl = "#ff00ff",
 					icon_hl = "#ff00ff",
 					icon = "",
 				},
 				{
-					divider_regex = [[%%-+ [\s\S]+ -+%%]],
-					content_regex = [[%%%%%-+ ([%s%S]*) %-+%%%%]],
+					regex = [[%%%%%-+ ([%s%S]*) %-+%%%%]],
 					hl = "#ffff00",
 					icon_hl = "#ffff00",
 					icon = "",
 				},
 				{
-					divider_regex = [[%%\++ [\s\S]+ \++%%]],
-					content_regex = [[%%%%%++ ([%s%S]*) %++%%%%]],
+					regex = [[%%%%%++ ([%s%S]*) %++%%%%]],
 					hl = "#00ff7c",
 					icon_hl = "#00ff7c",
 					icon = "",
 				},
 				{
-					divider_regex = [[%% [\s\S]+ %%]],
-					content_regex = [[%%%% ([%s%S]*) %%%%]],
+					regex = [[%%%% ([%s%S]*) %%%%]],
 					hl = "#ffa000",
 					icon_hl = "#ffa000",
 					hide = true,
@@ -48,7 +44,8 @@ return {
 		})
 	end,
 	keys = {
-		{ "<leader>l", "<cmd>DividerToggle<CR>", desc = "toggle divider list" },
+		{ "<leader>ll", "<cmd>DividerToggle<CR>", desc = "toggle divider list" },
+		{ "<leader>lp", "<cmd>CopyDividers<CR>", desc = "copy dividers to clipboard" },
 	},
 	lazy = false,
 }
