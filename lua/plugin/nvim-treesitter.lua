@@ -1,4 +1,5 @@
 local config = function()
+	require("nvim-dap-repl-highlights").setup()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"bash",
@@ -41,6 +42,7 @@ local config = function()
 			"java",
 			"regex",
 			"dart",
+			"dap_repl",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },

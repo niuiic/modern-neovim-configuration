@@ -96,6 +96,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-buffer",
 	"FelipeLema/cmp-async-path",
 	"rcarriga/cmp-dap",
+	"LiadOz/nvim-dap-repl-highlights",
 	"hrsh7th/cmp-cmdline",
 	"dmitmel/cmp-cmdline-history",
 	"lukas-reineke/cmp-rg",
