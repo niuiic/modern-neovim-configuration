@@ -21,7 +21,7 @@ core.lua.list.each({ "pwa-node", "pwa-chrome" }, function(v)
 	}
 end)
 
-local common = function(run)
+local node = function(run)
 	run({
 		{
 			name = "Launch project",
@@ -60,7 +60,7 @@ local common = function(run)
 	})
 end
 
-local common2 = function(run)
+local browser = function(run)
 	run({
 		{
 			name = "Launch Chrome",
@@ -81,9 +81,21 @@ local common2 = function(run)
 end
 
 dap_utils.setup({
-	typescript = common,
-	javascript = common,
-	javascriptreact = common2,
-	typescriptreact = common2,
-	vue = common2,
+	typescript = function(run)
+		if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
+			browser(run)
+		else
+			node(run)
+		end
+	end,
+	javascript = function(run)
+		if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
+			browser(run)
+		else
+			node(run)
+		end
+	end,
+	javascriptreact = browser,
+	typescriptreact = browser,
+	vue = browser,
 })
