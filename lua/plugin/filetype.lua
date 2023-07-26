@@ -19,6 +19,7 @@ return {
 				rmiss = "glsl",
 				rcall = "glsl",
 				wgsl = "wgsl",
+				mdx = "markdown",
 			},
 		})
 	end,
