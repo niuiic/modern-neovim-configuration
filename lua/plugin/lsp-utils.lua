@@ -1,5 +1,5 @@
 local config = function()
-	local lua = require("core").lua
+	local core = require("core")
 
 	require("lsp-utils").setup({
 		lsps = {
@@ -22,7 +22,7 @@ local config = function()
 								"javascriptreact",
 								"vue",
 							}
-							return lua.list.includes(available_files, function(v)
+							return core.lua.list.includes(available_files, function(v)
 								return vim.bo.filetype == v
 							end)
 						end,
