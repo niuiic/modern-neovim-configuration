@@ -20,13 +20,26 @@ local config = function()
 	})
 end
 
+local lsp_format_langs = {
+	"wgsl",
+}
+
 return {
 	config = config,
 	keys = {
 		{
 			"<C-f>",
 			function()
-				require("format").format()
+				local core = require("core")
+				if
+					core.lua.list.includes(lsp_format_langs, function(lang)
+						return lang == vim.bo.filetype
+					end)
+				then
+					vim.lsp.buf.format()
+				else
+					require("format").format()
+				end
 			end,
 			desc = "format",
 			silent = true,
