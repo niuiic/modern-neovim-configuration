@@ -78,7 +78,28 @@ local keys = {
 		desc = "search words globally",
 	},
 	{ "<space>ou", "<cmd>Telescope undo<CR>", desc = "search undo" },
-	{ "<space>oo", "<cmd>Telescope grep_string<CR>", desc = "search current word" },
+	{
+		"<space>oo",
+		function()
+			require("telescope.builtin").grep_string({
+				search = require("core").text.selection(),
+				search_dirs = { vim.api.nvim_buf_get_name(0) },
+			})
+		end,
+		desc = "search current word in buffer",
+		mode = { "v", "n" },
+	},
+	{
+		"<space>oO",
+		function()
+			require("telescope.builtin").grep_string({
+				search = require("core").text.selection(),
+				cwd = require("core").file.root_path(),
+			})
+		end,
+		desc = "search current word in workspace",
+		mode = { "v", "n" },
+	},
 }
 
 return {
