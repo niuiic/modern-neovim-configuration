@@ -78,6 +78,7 @@ local keys = {
 		desc = "search words globally",
 	},
 	{ "<space>ou", "<cmd>Telescope undo<CR>", desc = "search undo" },
+	{ "<space>oo", "<cmd>Telescope grep_string<CR>", desc = "search current word" },
 }
 
 return {
