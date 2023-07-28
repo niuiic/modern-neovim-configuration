@@ -145,8 +145,6 @@ require("lazy").setup({
 	load_plugin_config("akinsho/bufferline.nvim", "plugin/bufferline"),
 	-- git diff gui
 	load_plugin_config("sindrets/diffview.nvim", "plugin/diffview"),
-	-- just use as a formatter manager now
-	load_plugin_config("jose-elias-alvarez/null-ls.nvim", "plugin/null-ls"),
 
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),

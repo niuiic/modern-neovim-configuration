@@ -21,7 +21,7 @@
 -- ◍ marksman
 -- ◍ lemminx
 -- ◍ jdtls
--- install verible, clangd, glslang, dart manually
+-- install verible, clangd, glslang, dart, glsl-language-server manually
 
 -- daps installed:
 -- ◍ debugpy

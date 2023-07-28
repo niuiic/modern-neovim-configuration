@@ -26,6 +26,7 @@ local lspList = {
 	"texlab",
 	"jdtls",
 	"dartls",
+	"glslls",
 }
 
 -- nvim-cmp support
