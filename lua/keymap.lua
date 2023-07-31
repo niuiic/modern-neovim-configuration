@@ -5,12 +5,36 @@ vim.g.maplocalleader = " "
 
 -- exit and refresh
 vim.keymap.set("n", "<A-q>", ":q!<CR>", { silent = true })
-vim.keymap.set("n", "<C-n>", ":only<CR>", { silent = true })
+vim.keymap.set("n", "<C-n>", function()
+	vim.ui.select({ "Window", "Buffer", "Both" }, { prompt = "Windows or Buffers to clear" }, function(choice)
+		if not choice then
+			return
+		end
+		if choice == "Window" then
+			vim.cmd("only")
+		elseif choice == "Buffer" then
+			local bufnr = vim.api.nvim_win_get_buf(0)
+			core.lua.list.each(vim.api.nvim_list_bufs(), function(buf)
+				if buf ~= bufnr then
+					pcall(require("mini.bufremove").delete, buf)
+				end
+			end)
+		else
+			local bufnr = vim.api.nvim_win_get_buf(0)
+			core.lua.list.each(vim.api.nvim_list_bufs(), function(buf)
+				if buf ~= bufnr then
+					pcall(require("mini.bufremove").delete, buf)
+				end
+			end)
+			vim.cmd("only")
+		end
+	end)
+end, { silent = true })
 vim.keymap.set("n", "<C-e>", function()
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
-	local lsps = vim.lsp.get_active_clients()
+	local lsps = vim.lsp.get_clients()
 	if lsps ~= nil and not core.lua.list.includes(lsps, function(lsp)
 		return lsp.name == "rust_analyzer"
 	end) then
@@ -18,6 +42,12 @@ vim.keymap.set("n", "<C-e>", function()
 	end
 end, { silent = true })
 local buffer_valid = function(bufnr)
+	local filetype = vim.api.nvim_get_option_value("filetype", {
+		buf = bufnr,
+	})
+	if string.find(filetype, "dap", 1, true) then
+		return false
+	end
 	local root_path = core.file.root_path()
 	local success, name = pcall(vim.api.nvim_buf_get_name, bufnr)
 	if not success or name == nil or name == "" or string.find(name, root_path, 1, true) ~= 1 then

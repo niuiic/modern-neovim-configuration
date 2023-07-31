@@ -51,7 +51,7 @@ dap_utils.setup({
 			for path, path_type in vim.fs.dir(target_dir) do
 				if path_type == "file" then
 					local perm = vim.fn.getfperm(target_dir .. path)
-					if string.match(perm, "x", 3) then
+					if perm and string.match(perm, "x", 3) then
 						table.insert(executable, path)
 					end
 				end
