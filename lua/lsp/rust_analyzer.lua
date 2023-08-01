@@ -28,6 +28,9 @@ end
 
 local M = {
 	root_dir = core.file.root_path,
+	settings = {
+		["rust-analyzer"] = { diagnostics = { experimental = { enable = true } } },
+	},
 	commands = {
 		RustAnalyzerRename = {
 			function()

@@ -34,12 +34,6 @@ vim.keymap.set("n", "<C-e>", function()
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
-	local lsps = vim.lsp.get_clients()
-	if lsps ~= nil and not core.lua.list.includes(lsps, function(lsp)
-		return lsp.name == "rust_analyzer"
-	end) then
-		vim.diagnostic.reset()
-	end
 end, { silent = true })
 local buffer_valid = function(bufnr)
 	local filetype = vim.api.nvim_get_option_value("filetype", {
