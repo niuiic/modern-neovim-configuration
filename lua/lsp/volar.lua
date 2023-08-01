@@ -87,7 +87,7 @@ local M = {
 		},
 		VolarOrganizeImports = {
 			organize_imports,
-			description = "File Path",
+			description = "Organize imports",
 		},
 	},
 }
