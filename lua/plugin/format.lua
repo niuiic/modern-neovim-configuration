@@ -3,6 +3,7 @@ local rust = function(file_path)
 		{
 			cmd = "rustfmt",
 			args = {
+				"+nightly",
 				"--edition=2021",
 				file_path,
 			},
