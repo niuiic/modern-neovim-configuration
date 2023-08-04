@@ -10,6 +10,7 @@ local config = function()
 					["<C-j>"] = "move_selection_next",
 					["<C-k>"] = "move_selection_previous",
 					["<Esc>"] = "close",
+					["<C-q>"] = "close",
 					["<C-b>"] = "preview_scrolling_up",
 					["<C-f>"] = "preview_scrolling_down",
 					["<C-u>"] = "results_scrolling_up",
