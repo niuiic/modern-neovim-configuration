@@ -81,7 +81,7 @@ Modify the `lspList` in `lua/lsp/init.lua`.
 
 ### Formatter
 
-Check formatter setting in `lua/plugin/null-ls.lua`. Look for more formatters on [null-ls buildin formatters](https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting).
+Use your favorite formatters with [niuiic/format.nvim](https://github.com/niuiic/format.nvim).
 
 ### DAP
 
@@ -167,12 +167,6 @@ require("task")
 ```
 
 > These tasks could not be infinite loops.
-
-## Known Issues
-
-- `<C-o>` may not return to correct position.
-- Some completion sources and the status line plugin may crash for unknown reasons.
-- Code folding may be misplaced after re-entering the file.
 
 ## FAQ
 
