@@ -42,7 +42,7 @@
 -- ◍ taplo (installed as a lsp)
 -- ◍ xmlformatter
 -- ◍ google-java-format
--- install cmake-format, verible, goimports manually
+-- install cmake-format, verible, goimports, typstfmt manually
 
 return {
 	config = function()
