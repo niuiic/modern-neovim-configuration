@@ -21,6 +21,7 @@
 -- ◍ marksman
 -- ◍ lemminx
 -- ◍ jdtls
+-- ◍ typst-lsp
 -- install verible, clangd, glslang, dart, glsl-language-server manually
 
 -- daps installed:
