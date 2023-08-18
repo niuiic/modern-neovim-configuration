@@ -2,7 +2,7 @@ local core = require("core")
 
 local M = {
 	settings = {
-		exportPdf = "never",
+		exportPdf = "onSave",
 	},
 	root_dir = core.file.root_path,
 }
