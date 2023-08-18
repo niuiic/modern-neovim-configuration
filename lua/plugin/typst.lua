@@ -24,7 +24,7 @@ local preview = function()
 
 	local output_path = get_output_path()
 	if not core.file.file_or_dir_exists(output_path) then
-		vim.cmd(string.format("!typst compile %s %s", file_path, output_path))
+		vim.cmd(string.format("silent !typst compile %s %s", file_path, output_path))
 	end
 
 	core.job.spawn("mimeopen", {
@@ -67,7 +67,7 @@ local move_pdf = function()
 					return
 				end
 
-				vim.cmd(string.format("!mv %s %s", pdf_path, core.file.root_path() .. "/output.pdf"))
+				vim.cmd(string.format("silent !mv %s %s", pdf_path, core.file.root_path() .. "/output.pdf"))
 				core.timer.clear_interval(timer)
 			end, 100)
 		end,
