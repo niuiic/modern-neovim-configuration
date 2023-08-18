@@ -20,15 +20,12 @@ local preview = function()
 
 	local pdf = to_pdf(file_name)
 	if not core.file.file_or_dir_exists(pdf) then
-		vim.notify("No output found", vim.log.levels.WARN)
-		return
+		vim.cmd("!typst compile " .. file_name)
 	end
 
-	core.job
-		.spawn("mimeopen", {
-			pdf,
-		}, {}, function() end, function() end, function() end)
-		.terminate()
+	core.job.spawn("mimeopen", {
+		pdf,
+	}, {}, function() end, function() end, function() end)
 end
 
 local pdf_list = {}
