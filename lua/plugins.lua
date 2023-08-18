@@ -225,4 +225,6 @@ require("lazy").setup({
 	load_plugin_config("krivahtoo/silicon.nvim", "plugin/silicon"),
 	-- format
 	load_plugin_config("niuiic/format.nvim", "plugin/format"),
+	-- typst
+	load_plugin_config("kaarmu/typst.vim", "plugin/typst"),
 })
