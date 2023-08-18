@@ -1,7 +1,11 @@
-local to_pdf = function(file_name)
+local get_output_path = function()
 	local core = require("core")
+	return core.file.root_path() .. "/output.pdf"
+end
 
-	return string.format("%s/%s.pdf", core.file.dir(file_name), core.file.name(file_name))
+local to_pdf_path = function(file_path)
+	local core = require("core")
+	return string.format("%s/%s.pdf", core.file.dir(file_path), core.file.name(file_path))
 end
 
 local preview = function()
@@ -12,35 +16,20 @@ local preview = function()
 		return
 	end
 
-	local file_name = vim.api.nvim_buf_get_name(0)
-	if not core.file.file_or_dir_exists(file_name) then
+	local file_path = vim.api.nvim_buf_get_name(0)
+	if not core.file.file_or_dir_exists(file_path) then
 		vim.notify("Buffer not saved", vim.log.levels.WARN)
 		return
 	end
 
-	local pdf = to_pdf(file_name)
-	if not core.file.file_or_dir_exists(pdf) then
-		vim.cmd("!typst compile " .. file_name)
+	local output_path = get_output_path()
+	if not core.file.file_or_dir_exists(output_path) then
+		vim.cmd(string.format("!typst compile %s %s", file_path, output_path))
 	end
 
 	core.job.spawn("mimeopen", {
-		pdf,
+		output_path,
 	}, {}, function() end, function() end, function() end)
-end
-
-local pdf_list = {}
-
-local collect_pdf = function()
-	vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
-		pattern = { "*" },
-		callback = function()
-			if not vim.bo.filetype == "typst" then
-				return
-			end
-			local buf_name = vim.api.nvim_buf_get_name(0)
-			table.insert(pdf_list, to_pdf(buf_name))
-		end,
-	})
 end
 
 local clean_pdf = function()
@@ -49,19 +38,46 @@ local clean_pdf = function()
 	vim.api.nvim_create_autocmd({ "VimLeave" }, {
 		pattern = { "*" },
 		callback = function()
-			core.lua.list.each(pdf_list, function(pdf)
-				if core.file.file_or_dir_exists(pdf) then
-					pcall(vim.loop.fs_unlink, pdf)
+			local output_path = get_output_path()
+			if core.file.file_or_dir_exists(output_path) then
+				pcall(vim.loop.fs_unlink, output_path)
+			end
+		end,
+	})
+end
+
+local move_pdf = function()
+	local core = require("core")
+
+	vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+		pattern = { "*" },
+		callback = function(args)
+			if vim.api.nvim_get_option_value("filetype", {
+				buf = args.buf,
+			}) ~= "typst" then
+				return
+			end
+
+			local buf_name = vim.api.nvim_buf_get_name(args.buf)
+			local pdf_path = to_pdf_path(buf_name)
+			local timer
+
+			timer = core.timer.set_interval(function()
+				if not core.file.file_or_dir_exists(pdf_path) then
+					return
 				end
-			end)
+
+				vim.cmd(string.format("!mv %s %s", pdf_path, core.file.root_path() .. "/output.pdf"))
+				core.timer.clear_interval(timer)
+			end, 100)
 		end,
 	})
 end
 
 return {
 	config = function()
-		collect_pdf()
 		clean_pdf()
+		move_pdf()
 	end,
 	keys = {
 		{
