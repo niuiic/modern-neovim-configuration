@@ -1,4 +1,16 @@
 return {
+	config = function()
+		require("code-shot").setup({
+			options = function()
+				return {
+					"--theme",
+					"Solarized (dark)",
+					"--font",
+					"Hack Nerd Font",
+				}
+			end,
+		})
+	end,
 	keys = {
 		{
 			"<space>P",
