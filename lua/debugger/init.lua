@@ -1,4 +1,4 @@
-local debuggers = {
+local debugger_list = {
 	"dlv",
 	"lldb-vscode",
 	"nlua",
@@ -6,6 +6,6 @@ local debuggers = {
 	"sh",
 }
 
-for _, value in pairs(debuggers) do
+for _, value in pairs(debugger_list) do
 	require("debugger/" .. value)
 end

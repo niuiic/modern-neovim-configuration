@@ -87,7 +87,7 @@ Use your favorite formatters with [niuiic/format.nvim](https://github.com/niuiic
 
 Create a `dapname.lua` in `lua/debugger`, edit the file in the same way as other files.
 
-Modify the `debuggerList` in `lua/debugger/init.lua`.
+Modify the `debugger_list` in `lua/debugger/init.lua`.
 
 ### Custom Snippets and Sources
 
