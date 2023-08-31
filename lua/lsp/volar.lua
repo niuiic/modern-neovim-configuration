@@ -37,6 +37,7 @@ local function organize_imports()
 		return string.find(diagnostic.message, "Cannot find name")
 			or string.find(diagnostic.message, "is not defined")
 			or string.find(diagnostic.message, "Use `import type`")
+			or string.find(diagnostic.message, "is only used as types")
 	end)
 	if diagnostic == nil then
 		return
