@@ -33,16 +33,16 @@ end
 
 local keys = {
 	{
-		"<leader>rw",
+		"<leader>rW",
 		function()
 			require("spectre").open_visual({ select_word = true })
 		end,
 		desc = "replace current word",
 	},
 	{
-		"<leader>rc",
+		"<leader>rw",
 		function()
-			require("spectre").open_file_search()
+			require("spectre").open_file_search({ select_word = true })
 		end,
 		desc = "replace in current file",
 	},
