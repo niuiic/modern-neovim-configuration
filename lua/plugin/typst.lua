@@ -66,8 +66,7 @@ local move_pdf = function()
 				if not core.file.file_or_dir_exists(pdf_path) then
 					return
 				end
-
-				vim.cmd(string.format("silent !mv %s %s", pdf_path, core.file.root_path() .. "/output.pdf"))
+				os.rename(pdf_path, core.file.root_path() .. "/output.pdf")
 				core.timer.clear_interval(timer)
 			end, 100)
 		end,
