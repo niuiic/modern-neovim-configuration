@@ -149,6 +149,8 @@ require("lazy").setup({
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
 	-- extensions
+	-- import
+	"piersolenski/telescope-import.nvim",
 	-- yank
 	load_plugin_config("gbprod/yanky.nvim", "plugin/yanky"),
 	-- todo comments

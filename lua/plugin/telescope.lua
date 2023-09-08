@@ -31,15 +31,20 @@ local config = function()
 					},
 				},
 			},
+			import = {
+				insert_at_top = true,
+			},
 		},
 	})
 
 	require("telescope").load_extension("undo")
+	require("telescope").load_extension("import")
 end
 
 local keys = {
 	{ "<space>ol", "<cmd>Telescope<CR>", desc = "open telescope list" },
 	{ "<space>ob", "<cmd>Telescope buffers<CR>", desc = "search buffer with preview" },
+	{ "<space>oi", "<cmd>Telescope import<CR>", desc = "search import" },
 	{ "<space>occ", "<cmd>Telescope commands<CR>", desc = "search command" },
 	{ "<space>och", "<cmd>Telescope command_history<CR>", desc = "search command history" },
 	{
