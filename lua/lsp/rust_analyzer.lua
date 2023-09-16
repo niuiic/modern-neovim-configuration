@@ -7,7 +7,7 @@ local core = require("core")
 local function organize_imports()
 	local diagnostic_list = vim.diagnostic.get()
 	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
-		return string.find(diagnostic.message, "cannot find")
+		return string.find(diagnostic.message, "cannot find") or string.find(diagnostic.message, "unused import")
 	end)
 	if diagnostic == nil then
 		return
@@ -21,6 +21,8 @@ local function organize_imports()
 		apply = true,
 		filter = function(action)
 			return string.find(action.title, "Import ")
+				or string.find(action.title, "Remove")
+				or string.find(action.title, "remove")
 		end,
 	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
