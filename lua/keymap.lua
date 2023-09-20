@@ -115,12 +115,6 @@ vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 -- toggle current fold
 vim.keymap.set("n", "Z", "za", { silent = true })
 
--- open url
-vim.keymap.set("x", "O", function()
-	local url = core.text.selection()
-	vim.cmd("!xdg-open " .. url)
-end, { silent = true })
-
 -- plugin operation
 require("which-key").register({
 	n = {

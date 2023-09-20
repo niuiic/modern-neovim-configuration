@@ -229,4 +229,6 @@ require("lazy").setup({
 	load_plugin_config("kaarmu/typst.vim", "plugin/typst"),
 	-- code shot
 	load_plugin_config("niuiic/code-shot.nvim", "plugin/code-shot"),
+	-- open url
+	load_plugin_config("sontungexpt/url-open", "plugin/url-open"),
 })
