@@ -170,10 +170,6 @@ require("task")
 
 ## FAQ
 
-- GLSL syntax diagnostics not work
-
-`glslangValidator` requires files to have a specific suffix, check [document](https://github.com/KhronosGroup/glslang#execution-of-standalone-wrapper) for details.
-
 - gh-actions.nvim not work
 
 Define a `GITHUB_TOKEN` variable in your environment.
