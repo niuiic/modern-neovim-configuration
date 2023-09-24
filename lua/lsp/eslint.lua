@@ -1,5 +1,27 @@
 local core = require("core")
 
+local function fix_all()
+	local diagnostic_list = vim.diagnostic.get()
+	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
+		return diagnostic.source == "eslint"
+	end)
+	if diagnostic == nil then
+		return
+	end
+	local cur_pos = vim.api.nvim_win_get_cursor(0)
+	vim.api.nvim_win_set_cursor(0, {
+		diagnostic.lnum + 1,
+		diagnostic.col,
+	})
+	vim.lsp.buf.code_action({
+		apply = true,
+		filter = function(action)
+			return action.title == "Fix all auto-fixable problems"
+		end,
+	})
+	vim.api.nvim_win_set_cursor(0, cur_pos)
+end
+
 local M = {
 	settings = {
 		codeAction = {
@@ -40,6 +62,12 @@ local M = {
 		["eslint/noLibrary"] = function()
 			return {}
 		end,
+	},
+	commands = {
+		EslintFixAll = {
+			fix_all,
+			description = "Fix all Problems",
+		},
 	},
 }
 

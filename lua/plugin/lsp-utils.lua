@@ -42,6 +42,11 @@ local config = function()
 					{ map = { "RustAnalyzerOrganizeImports", "LSPOrganizeImports" } },
 				},
 			},
+			eslint = {
+				commands_map = {
+					{ map = { "EslintFixAll", "LSPFixAll" } },
+				},
+			},
 		},
 	})
 end

@@ -1,11 +1,7 @@
 local core = require("core")
 
 local M = {
-	settings = {
-		stylelintplus = {
-			-- see available options in stylelint-lsp documentation
-		},
-	},
+	settings = {},
 	filetypes = {
 		"css",
 		"less",
