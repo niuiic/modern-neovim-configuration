@@ -11,4 +11,6 @@ return {
 			desc = "preview typst document",
 		},
 	},
+	ft = "typst",
+	lazy = false,
 }
