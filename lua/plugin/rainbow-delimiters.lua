@@ -15,5 +15,4 @@ return {
 			},
 		})
 	end,
-	branch = "use-children",
 }
