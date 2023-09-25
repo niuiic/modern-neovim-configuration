@@ -45,6 +45,8 @@ local config = function()
 			eslint = {
 				commands_map = {
 					{ map = { "EslintFixAll", "LSPFixAll" } },
+				},
+			},
 			bashls = {
 				commands_map = {
 					{ map = { "BashlsRename", "LSPRename" } },
