@@ -45,7 +45,6 @@ local config = function()
 					}
 				end,
 			},
-			hide_root_folder = false,
 			number = false,
 			relativenumber = false,
 			signcolumn = "yes",
