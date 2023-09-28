@@ -161,6 +161,8 @@ require("lazy").setup({
 	load_plugin_config("smartpde/telescope-recent-files", "plugin/telescope-recent-files"),
 	-- undo
 	"debugloop/telescope-undo.nvim",
+	-- project
+	load_plugin_config("cljoly/telescope-repo.nvim", "plugin/telescope-repo"),
 
 	-- task manager
 	load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
