@@ -5,6 +5,8 @@ local rust = function(file_path)
 			args = {
 				"+nightly",
 				"--edition=2021",
+				"--config",
+				"imports_granularity=Crate,group_imports=StdExternalCrate",
 				file_path,
 			},
 		},
