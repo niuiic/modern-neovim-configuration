@@ -235,4 +235,6 @@ require("lazy").setup({
 	load_plugin_config("sontungexpt/url-open", "plugin/url-open"),
 	-- preview typst documents
 	load_plugin_config("niuiic/typst-preview.nvim", "plugin/typst-preview"),
+	-- git log
+	load_plugin_config("niuiic/git-log.nvim", "plugin/git-log"),
 })

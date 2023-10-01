@@ -50,18 +50,11 @@ local keys = {
 		desc = "stage buffer",
 	},
 	{
-		"<space>gb",
+		"<space>gB",
 		function()
 			package.loaded.gitsigns.toggle_current_line_blame()
 		end,
 		desc = "toggle current line blame",
-	},
-	{
-		"<space>gB",
-		function()
-			package.loaded.gitsigns.blame_line({ full = true })
-		end,
-		desc = "blame line",
 	},
 	{
 		"<space>gi",
