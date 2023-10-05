@@ -43,6 +43,7 @@ local config = function()
 		sections = {
 			lualine_a = { "filename" },
 			lualine_b = { "branch", "diff", "diagnostics" },
+			lualine_c = {},
 			lualine_x = { "encoding", "filetype", "filesize" },
 			lualine_y = { "progress", "location" },
 			lualine_z = { 'os.date("%H:%M:%S", os.time())' },
