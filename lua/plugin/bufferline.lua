@@ -2,14 +2,8 @@ local config = function()
 	require("bufferline").setup({
 		options = {
 			mode = "buffers",
-			indicator = { icon = "", style = "icon" },
-			modified_icon = "●",
-			left_trunc_marker = "",
-			right_trunc_marker = "",
-			max_name_length = 16,
-			max_prefix_length = 16,
-			tab_size = 16,
 			color_icons = true,
+			indicator = { style = "none" },
 			show_buffer_icons = true,
 			show_buffer_close_icons = false,
 			show_close_icon = false,
@@ -41,6 +35,11 @@ local config = function()
 					return false
 				end
 			end,
+		},
+		highlights = {
+			buffer_selected = {
+				fg = "#00ffff",
+			},
 		},
 	})
 end
