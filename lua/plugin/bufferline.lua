@@ -3,7 +3,6 @@ local config = function()
 		options = {
 			mode = "buffers",
 			indicator = { icon = "", style = "icon" },
-			buffer_close_icon = "",
 			modified_icon = "●",
 			left_trunc_marker = "",
 			right_trunc_marker = "",
