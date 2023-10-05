@@ -22,7 +22,8 @@
 -- ◍ lemminx
 -- ◍ jdtls
 -- ◍ typst-lsp
--- install verible, clangd, glslang, dart, glsl-language-server manually
+-- ◍ verible
+-- install clangd, glslang, dart, glsl-language-server manually
 
 -- daps installed:
 -- ◍ debugpy
@@ -42,7 +43,7 @@
 -- ◍ taplo (installed as a lsp)
 -- ◍ xmlformatter
 -- ◍ google-java-format
--- install cmake-format, verible, goimports, typstfmt manually
+-- install cmake-format, goimports, typstfmt manually
 
 return {
 	config = function()
