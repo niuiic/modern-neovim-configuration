@@ -31,6 +31,7 @@
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
 -- ◍ dart-debug-adapter
+-- ◍ codelldb
 -- install lldb-vscode manually (it is installed with lldb)
 
 -- formatters installed:
