@@ -32,7 +32,7 @@
 -- ◍ js-debug-adapter
 -- ◍ dart-debug-adapter
 -- ◍ codelldb
--- install lldb-vscode manually (it is installed with lldb)
+-- install lldb-vscode manually
 
 -- formatters installed:
 -- ◍ black
