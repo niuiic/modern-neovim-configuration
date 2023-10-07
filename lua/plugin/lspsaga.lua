@@ -67,7 +67,9 @@ return {
 		},
 		{
 			"gd",
-			"<cmd>Lspsaga goto_definition<CR>",
+			function()
+				vim.lsp.buf.definition()
+			end,
 			desc = "goto definitions",
 		},
 		{
