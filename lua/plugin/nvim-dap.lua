@@ -175,7 +175,11 @@ local keys = {
 	{
 		"M",
 		function()
-			require("dapui").eval(nil, {
+			local expression = require("core").text.selection()
+			if vim.bo.filetype == "rust" then
+				expression = "?" .. expression
+			end
+			require("dapui").eval(expression, {
 				context = "repl",
 			})
 		end,

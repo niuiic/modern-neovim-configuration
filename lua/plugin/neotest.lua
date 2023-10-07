@@ -16,7 +16,7 @@ local config = function()
 			}),
 			require("neotest-go"),
 			require("neotest-rust")({
-				dap_adapter = "lldb",
+				dap_adapter = "codelldb",
 			}),
 		},
 	})
