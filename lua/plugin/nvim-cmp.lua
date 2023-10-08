@@ -91,18 +91,24 @@ local config = function()
 	-- keymap
 	cmp.setup({
 		mapping = {
-			["<C-k>"] = cmp.mapping(
-				cmp.mapping.select_prev_item({
+			["<C-k>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+				cmp.select_prev_item({
 					behavior = cmp.SelectBehavior.Select,
-				}),
-				{ "i", "c" }
-			),
-			["<C-j>"] = cmp.mapping(
-				cmp.mapping.select_next_item({
+				})
+			end, { "i", "c" }),
+			["<C-j>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+				cmp.select_next_item({
 					behavior = cmp.SelectBehavior.Select,
-				}),
-				{ "i", "c" }
-			),
+				})
+			end, { "i", "c" }),
 			["<CR>"] = cmp.mapping(function(fallback)
 				if not cmp.visible() then
 					fallback()
@@ -118,8 +124,30 @@ local config = function()
 					behavior = cmp.ConfirmBehavior.Insert,
 				})
 			end, { "i", "s", "c" }),
-			["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-			["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+			["<C-u>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+				for _ = 1, 10, 1 do
+					cmp.select_prev_item({
+						behavior = cmp.SelectBehavior.Select,
+					})
+				end
+			end, { "i", "s", "c" }),
+			["<C-d>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+				for _ = 1, 10, 1 do
+					cmp.select_next_item({
+						behavior = cmp.SelectBehavior.Select,
+					})
+				end
+			end, { "i", "s", "c" }),
 		},
 	})
 end
