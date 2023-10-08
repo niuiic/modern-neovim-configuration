@@ -93,20 +93,31 @@ local config = function()
 		mapping = {
 			["<C-k>"] = cmp.mapping(
 				cmp.mapping.select_prev_item({
-					behavior = cmp.SelectBehavior.Insert,
+					behavior = cmp.SelectBehavior.Select,
 				}),
 				{ "i", "c" }
 			),
 			["<C-j>"] = cmp.mapping(
 				cmp.mapping.select_next_item({
-					behavior = cmp.SelectBehavior.Insert,
+					behavior = cmp.SelectBehavior.Select,
 				}),
 				{ "i", "c" }
 			),
-			["<CR>"] = cmp.mapping.confirm({
-				select = true,
-				behavior = cmp.ConfirmBehavior.Insert,
-			}),
+			["<CR>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+
+				local entry = cmp.get_selected_entry()
+				if not entry then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				end
+				cmp.confirm({
+					select = true,
+					behavior = cmp.ConfirmBehavior.Insert,
+				})
+			end, { "i", "s", "c" }),
 			["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 			["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		},
