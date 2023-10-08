@@ -93,13 +93,13 @@ local config = function()
 		mapping = {
 			["<C-k>"] = cmp.mapping(
 				cmp.mapping.select_prev_item({
-					behavior = cmp.SelectBehavior.Select,
+					behavior = cmp.SelectBehavior.Insert,
 				}),
 				{ "i", "c" }
 			),
 			["<C-j>"] = cmp.mapping(
 				cmp.mapping.select_next_item({
-					behavior = cmp.SelectBehavior.Select,
+					behavior = cmp.SelectBehavior.Insert,
 				}),
 				{ "i", "c" }
 			),
