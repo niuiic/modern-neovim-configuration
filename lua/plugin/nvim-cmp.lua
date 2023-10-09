@@ -91,13 +91,6 @@ local config = function()
 	-- keymap
 	cmp.setup({
 		mapping = {
-			["<Tab>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-				cmp.close()
-			end, { "i", "s", "c" }),
 			["<C-k>"] = cmp.mapping(function(fallback)
 				if not cmp.visible() then
 					fallback()
