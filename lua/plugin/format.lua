@@ -15,8 +15,10 @@ end
 
 local nix = function(file_path)
 	return {
-		cmd = "alejandra",
-		args = { file_path },
+		{
+			cmd = "alejandra",
+			args = { "-q", file_path },
+		},
 	}
 end
 
