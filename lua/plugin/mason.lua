@@ -45,7 +45,7 @@
 -- ◍ taplo (installed as a lsp)
 -- ◍ xmlformatter
 -- ◍ google-java-format
--- install cmake-format, goimports, typstfmt manually
+-- install cmake-format, goimports, typstfmt, alejandra manually
 
 return {
 	config = function()
