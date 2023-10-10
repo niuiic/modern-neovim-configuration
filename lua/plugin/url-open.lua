@@ -5,7 +5,7 @@ return {
 	keys = {
 		{
 			"<leader>o",
-			"<cmd>OpenUrlUnderCursor<CR>",
+			"<cmd>URLOpenUnderCursor<CR>",
 			desc = "open url",
 		},
 	},
