@@ -124,6 +124,21 @@ local config = function()
 					behavior = cmp.ConfirmBehavior.Insert,
 				})
 			end, { "i", "s", "c" }),
+			["<C-m>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+
+				local entry = cmp.get_selected_entry()
+				if not entry then
+					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				end
+				cmp.confirm({
+					select = true,
+					behavior = cmp.ConfirmBehavior.Insert,
+				})
+			end, { "i", "s", "c" }),
 			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 			["<C-u>"] = cmp.mapping(function(fallback)
