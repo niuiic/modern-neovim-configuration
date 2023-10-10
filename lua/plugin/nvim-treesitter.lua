@@ -43,6 +43,7 @@ local config = function()
 			"regex",
 			"dart",
 			"dap_repl",
+			"nix",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },
