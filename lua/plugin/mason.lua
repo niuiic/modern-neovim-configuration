@@ -23,6 +23,7 @@
 -- ◍ jdtls
 -- ◍ typst-lsp
 -- ◍ verible
+-- ◍ nil
 -- install clangd, glslang, dart, glsl-language-server manually
 
 -- daps installed:
