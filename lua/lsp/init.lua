@@ -28,6 +28,7 @@ local lspList = {
 	"dartls",
 	"glslls",
 	"typst_lsp",
+	"nil",
 }
 
 -- nvim-cmp support
