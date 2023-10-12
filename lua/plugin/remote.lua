@@ -1,6 +1,14 @@
 return {
 	config = function()
-		require("remote").setup()
+		local core = require("core")
+
+		require("remote").setup({
+			on_each_disconnected = function(config)
+				if core.file.file_or_dir_exists(config.mount_point) and core.file.empty_dir(config.mount_point) then
+					core.file.rmdir(config.mount_point)
+				end
+			end,
+		})
 	end,
 	keys = {
 		{
@@ -30,6 +38,13 @@ return {
 				require("remote").edit_config()
 			end,
 			desc = "edit config",
+		},
+		{
+			"<leader>el",
+			function()
+				require("remote").check_log()
+			end,
+			desc = "check log file",
 		},
 	},
 }

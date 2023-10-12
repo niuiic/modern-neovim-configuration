@@ -235,4 +235,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/typst-preview.nvim", "plugin/typst-preview"),
 	-- git log
 	load_plugin_config("niuiic/git-log.nvim", "plugin/git-log"),
+	-- remote edit
+	load_plugin_config("niuiic/remote.nvim", "plugin/remote"),
 })
