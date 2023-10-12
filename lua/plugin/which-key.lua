@@ -71,6 +71,9 @@ return {
 			c = {
 				name = "color picker",
 			},
+			e = {
+				name = "remote",
+			},
 			p = {
 				name = "package",
 				r = {
