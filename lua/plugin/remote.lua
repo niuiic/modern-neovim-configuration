@@ -4,7 +4,7 @@ return {
 
 		require("remote").setup({
 			on_each_disconnected = function(config)
-				if core.file.file_or_dir_exists(config.mount_point) and core.file.empty_dir(config.mount_point) then
+				if core.file.empty_dir(config.mount_point) then
 					core.file.rmdir(config.mount_point)
 				end
 			end,
