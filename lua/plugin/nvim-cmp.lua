@@ -100,6 +100,13 @@ local config = function()
 					behavior = cmp.SelectBehavior.Select,
 				})
 			end, { "i", "c" }),
+			["<Tab>"] = cmp.mapping(function(fallback)
+				if not cmp.visible() then
+					fallback()
+					return
+				end
+				cmp.close()
+			end, { "i", "c", "s" }),
 			["<C-j>"] = cmp.mapping(function(fallback)
 				if not cmp.visible() then
 					fallback()
