@@ -3,6 +3,8 @@ return {
 		local core = require("core")
 
 		require("remote").setup({
+			config_file = core.file.root_path() .. "/.nvim/remote.json",
+			log_file = core.file.root_path() .. "/.nvim/remote.log",
 			on_each_disconnected = function(config)
 				if core.file.empty_dir(config.mount_point) then
 					core.file.rmdir(config.mount_point)
