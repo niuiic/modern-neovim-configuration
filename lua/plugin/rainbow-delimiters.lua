@@ -4,7 +4,7 @@ return {
 		for i, color in ipairs(colors) do
 			vim.api.nvim_set_hl(0, "RainbowColor" .. i, { fg = color })
 		end
-		require("rainbow-delimiters.setup")({
+		require("rainbow-delimiters.setup").setup({
 			highlight = {
 				"RainbowColor1",
 				"RainbowColor2",
