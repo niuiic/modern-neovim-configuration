@@ -24,6 +24,7 @@
 -- ◍ typst-lsp
 -- ◍ verible
 -- ◍ nil
+-- ◍ dockerfile-language-server
 -- install clangd, glslang, dart, glsl-language-server manually
 
 -- daps installed:

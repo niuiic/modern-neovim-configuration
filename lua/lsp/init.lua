@@ -29,6 +29,7 @@ local lspList = {
 	"glslls",
 	"typst_lsp",
 	"nil_ls",
+	"dockerls",
 }
 
 -- nvim-cmp support
