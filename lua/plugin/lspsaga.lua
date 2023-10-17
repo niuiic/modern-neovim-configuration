@@ -67,9 +67,7 @@ return {
 		},
 		{
 			"gd",
-			function()
-				require("telescope.builtin").lsp_definitions()
-			end,
+			"<cmd>Lspsaga goto_definition<CR>",
 			desc = "goto definitions",
 		},
 		{
