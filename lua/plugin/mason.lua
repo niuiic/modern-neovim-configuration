@@ -25,6 +25,7 @@
 -- ◍ verible
 -- ◍ nil
 -- ◍ dockerfile-language-server
+-- ◍ nginx-language-server
 -- install clangd, glslang, dart, glsl-language-server manually
 
 -- daps installed:
@@ -43,10 +44,9 @@
 -- ◍ shfmt
 -- ◍ sqlfluff
 -- ◍ stylua
--- ◍ taplo (installed as a lsp)
 -- ◍ xmlformatter
 -- ◍ google-java-format
--- install cmake-format, goimports, typstfmt, alejandra, dockerfile-utils manually
+-- install cmake-format, goimports, typstfmt, alejandra, dockerfile-utils, nginxbeautifier manually
 
 return {
 	config = function()
