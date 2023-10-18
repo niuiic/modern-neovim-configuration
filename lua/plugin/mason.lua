@@ -46,7 +46,7 @@
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ google-java-format
--- install cmake-format, goimports, typstfmt, alejandra, dockerfile-utils, nginxbeautifier manually
+-- install cmake-format, goimports, typstfmt, alejandra, nginxbeautifier manually
 
 return {
 	config = function()
