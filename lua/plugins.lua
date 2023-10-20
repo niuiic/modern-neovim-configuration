@@ -3,29 +3,19 @@
 -- http://neovimcraft.com
 -- https://github.com/ayamir/nvimdots/wiki/Plugins
 
-local load_plugin_config = function(plugin, config_path)
+local load_plugin_config = function(plugin, config_path, dir)
 	local ok, config = pcall(require, config_path)
 	if not ok or config == nil then
 		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)
 		return {}
 	end
-	table.insert(config, 1, plugin)
-	return config
-end
 
-local load_dev_plugin_config = function(plugin, config_path)
-	if config_path == nil then
-		return {
-			dir = plugin,
-			dev = true,
-		}
+	if dir then
+		config.dir = dir
+	else
+		config[1] = plugin
 	end
-	local ok, config = pcall(require, config_path)
-	if not ok or config == nil then
-		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)
-		return {}
-	end
-	config.dir = plugin
+
 	return config
 end
 
