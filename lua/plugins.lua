@@ -4,8 +4,8 @@
 -- https://github.com/ayamir/nvimdots/wiki/Plugins
 
 local load_plugin_config = function(plugin, config_path)
-	local success, config = pcall(require, config_path)
-	if not success or config == nil then
+	local ok, config = pcall(require, config_path)
+	if not ok or config == nil then
 		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)
 		return {}
 	end
@@ -20,13 +20,12 @@ local load_dev_plugin_config = function(plugin, config_path)
 			dev = true,
 		}
 	end
-	local success, config = pcall(require, config_path)
-	if not success or config == nil then
+	local ok, config = pcall(require, config_path)
+	if not ok or config == nil then
 		vim.notify("Error: failed to load config " .. config_path, vim.log.levels.ERROR)
 		return {}
 	end
 	config.dir = plugin
-	config.dev = true
 	return config
 end
 
