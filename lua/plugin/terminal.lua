@@ -8,10 +8,6 @@ return {
 					buf = bufnr,
 				})
 
-				vim.notify(vim.api.nvim_get_option_value("filetype", {
-					buf = bufnr,
-				}))
-
 				local modes = { "t", "n" }
 
 				for _, mode in ipairs(modes) do
