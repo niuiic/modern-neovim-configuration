@@ -6,7 +6,7 @@ local config = function()
 			component_separators = { left = "", right = "" },
 			disabled_filetypes = {
 				"NvimTree",
-				"toggleterm",
+				"terminal",
 				"Trouble",
 				"spectre_panel",
 				"OverseerList",
