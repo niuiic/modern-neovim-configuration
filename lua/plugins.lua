@@ -49,8 +49,6 @@ require("lazy").setup({
 	load_plugin_config("kevinhwang91/nvim-ufo", "plugin/nvim-ufo"),
 	-- lazygit
 	load_plugin_config("kdheepak/lazygit.nvim", "plugin/lazygit"),
-	-- terminal
-	load_plugin_config("akinsho/toggleterm.nvim", "plugin/toggleterm"),
 	-- toggle comments
 	load_plugin_config("numToStr/Comment.nvim", "plugin/comment"),
 	-- automatically toggle between absolute line number and relative one
@@ -226,4 +224,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/git-log.nvim", "plugin/git-log"),
 	-- remote edit
 	load_plugin_config("niuiic/remote.nvim", "plugin/remote"),
+	-- terminal
+	load_plugin_config("niuiic/terminal.nvim", "plugin/terminal"),
 })
