@@ -48,6 +48,12 @@ return {
 							vim.cmd("Quit")
 						end,
 					})
+
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<esc>", "", {
+						callback = function()
+							vim.cmd("stopinsert")
+						end,
+					})
 				end
 			end,
 		})
