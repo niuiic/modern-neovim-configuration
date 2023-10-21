@@ -55,6 +55,18 @@ return {
 						end,
 					})
 				end
+
+				vim.api.nvim_create_autocmd({ "BufEnter" }, {
+					pattern = { "*" },
+					callback = function(args)
+						local filetype = vim.api.nvim_get_option_value("filetype", {
+							buf = args.buf,
+						})
+						if filetype == "terminal" then
+							vim.cmd("startinsert")
+						end
+					end,
+				})
 			end,
 		})
 	end,
