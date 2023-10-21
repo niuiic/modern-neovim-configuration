@@ -42,6 +42,9 @@ local buffer_valid = function(bufnr)
 	if string.find(filetype, "dap", 1, true) then
 		return false
 	end
+	if filetype == "terminal" then
+		return false
+	end
 	local root_path = core.file.root_path()
 	local success, name = pcall(vim.api.nvim_buf_get_name, bufnr)
 	if not success or name == nil or name == "" or string.find(name, root_path, 1, true) ~= 1 then
@@ -49,17 +52,18 @@ local buffer_valid = function(bufnr)
 	end
 	return true
 end
-vim.keymap.set("n", "<C-q>", function()
+vim.api.nvim_create_user_command("Quit", function()
 	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
 		return not buffer_valid(v)
 	end)
 	for _, bufnr in ipairs(buf_list) do
 		pcall(function(command)
 			vim.cmd(command)
-		end, "bw " .. bufnr)
+		end, "bw! " .. bufnr)
 	end
 	vim.cmd("qa")
-end, { silent = true })
+end, {})
+vim.keymap.set("n", "<C-q>", ":Quit<CR>", { silent = true })
 
 -- save
 vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })

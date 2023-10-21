@@ -8,37 +8,51 @@ return {
 					buf = bufnr,
 				})
 
-				vim.api.nvim_buf_set_keymap(bufnr, "t", "<C-z>", "", {
-					callback = function()
-						require("terminal").open()
-					end,
-				})
+				vim.notify(vim.api.nvim_get_option_value("filetype", {
+					buf = bufnr,
+				}))
 
-				vim.api.nvim_buf_set_keymap(bufnr, "t", "<C-x>", "", {
-					callback = function()
-						vim.api.nvim_buf_delete(bufnr, {
-							force = true,
-						})
-					end,
-				})
+				local modes = { "t", "n" }
 
-				vim.api.nvim_buf_set_keymap(bufnr, "t", "<C-k>", "", {
-					callback = function()
-						vim.cmd("BufferLineCycleNext")
-					end,
-				})
+				for _, mode in ipairs(modes) do
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-z>", "", {
+						callback = function()
+							require("terminal").open()
+						end,
+					})
 
-				vim.api.nvim_buf_set_keymap(bufnr, "t", "<C-j>", "", {
-					callback = function()
-						vim.cmd("BufferLineCyclePrev")
-					end,
-				})
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-x>", "", {
+						callback = function()
+							vim.api.nvim_buf_delete(bufnr, {
+								force = true,
+							})
+						end,
+					})
 
-				vim.api.nvim_buf_set_keymap(bufnr, "t", "<space>bo", "", {
-					callback = function()
-						vim.cmd("BufferLinePick")
-					end,
-				})
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-k>", "", {
+						callback = function()
+							vim.cmd("BufferLineCycleNext")
+						end,
+					})
+
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-j>", "", {
+						callback = function()
+							vim.cmd("BufferLineCyclePrev")
+						end,
+					})
+
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bo", "", {
+						callback = function()
+							vim.cmd("BufferLinePick")
+						end,
+					})
+
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-q>", "", {
+						callback = function()
+							vim.cmd("Quit")
+						end,
+					})
+				end
 			end,
 		})
 	end,
