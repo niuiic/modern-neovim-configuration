@@ -4,6 +4,12 @@ return {
 			on_term_opened = function(bufnr)
 				require("terminal.utils").set_buf_options()
 
+				vim.api.nvim_buf_set_keymap(bufnr, "t", "<C-z>", "", {
+					callback = function()
+						require("terminal").open()
+					end,
+				})
+
 				vim.api.nvim_buf_set_keymap(bufnr, "t", "<C-x>", "", {
 					callback = function()
 						vim.api.nvim_buf_delete(bufnr, {
