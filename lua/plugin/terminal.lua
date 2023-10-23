@@ -74,15 +74,11 @@ end
 
 return {
 	config = function()
-		local term_win = 0
-
 		require("terminal").setup({
 			on_term_opened = function(bufnr)
 				vim.api.nvim_set_option_value("filetype", "terminal", {
 					buf = bufnr,
 				})
-
-				term_win = vim.api.nvim_get_current_win()
 
 				set_line_number(false)
 
@@ -101,9 +97,7 @@ return {
 					vim.cmd("startinsert")
 				end
 
-				if vim.api.nvim_get_current_win() == term_win then
-					set_line_number(filetype ~= "terminal")
-				end
+				set_line_number(filetype ~= "terminal")
 			end,
 		})
 	end,
