@@ -37,6 +37,18 @@ return {
 						end,
 					})
 
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bh", "", {
+						callback = function()
+							vim.cmd("BufferLineMovePrev")
+						end,
+					})
+
+					vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bl", "", {
+						callback = function()
+							vim.cmd("BufferLineMoveNext")
+						end,
+					})
+
 					vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bo", "", {
 						callback = function()
 							vim.cmd("BufferLinePick")
