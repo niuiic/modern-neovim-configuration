@@ -1,3 +1,6 @@
+local uv = vim.loop
+local terms = {}
+
 local set_line_number = function(show_line_number)
 	local options = {
 		"number",
@@ -22,6 +25,8 @@ local set_keymap = function(bufnr)
 
 		vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-x>", "", {
 			callback = function()
+				uv.kill(terms[bufnr], "sigkill")
+				table.remove(terms, bufnr)
 				vim.api.nvim_buf_delete(bufnr, {
 					force = true,
 				})
@@ -75,7 +80,7 @@ end
 return {
 	config = function()
 		require("terminal").setup({
-			on_term_opened = function(bufnr)
+			on_term_opened = function(bufnr, pid)
 				vim.api.nvim_set_option_value("filetype", "terminal", {
 					buf = bufnr,
 				})
@@ -83,6 +88,8 @@ return {
 				set_line_number(false)
 
 				set_keymap(bufnr)
+
+				terms[bufnr] = pid
 			end,
 		})
 
