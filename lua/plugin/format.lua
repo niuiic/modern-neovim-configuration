@@ -18,7 +18,6 @@ local config = function()
 		allow_update_if_buf_changed = true,
 		filetypes = {
 			rust = rust,
-			jsonc = require("format.builtins.prettier"),
 		},
 	})
 end
