@@ -2,7 +2,7 @@ local core = require("core")
 local filetypes = { "vue", "typescriptreact", "javascriptreact" }
 
 if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" }
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "jsonc" }
 end
 
 local function search_ts_server_path()
