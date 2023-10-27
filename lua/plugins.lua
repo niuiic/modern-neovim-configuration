@@ -226,4 +226,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/remote.nvim", "plugin/remote"),
 	-- terminal
 	load_plugin_config("niuiic/terminal.nvim", "plugin/terminal"),
+	-- columns limit
+	load_plugin_config("ecthelionvi/NeoColumn.nvim", "plugin/neo-column"),
 })
