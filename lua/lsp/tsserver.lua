@@ -3,6 +3,8 @@ local core = require("core")
 local filetypes = {
 	"javascript",
 	"typescript",
+	"javascriptreact",
+	"typescriptreact",
 }
 
 if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
