@@ -174,10 +174,6 @@ require("lazy").setup({
 	load_plugin_config("stevearc/dressing.nvim", "plugin/dressing"),
 	-- macro
 	load_plugin_config("ecthelionvi/NeoComposer.nvim", "plugin/neo-composer"),
-	-- crate
-	load_plugin_config("saecki/crates.nvim", "plugin/crates"),
-	-- js/ts package info
-	load_plugin_config("vuki656/package-info.nvim", "plugin/package-info"),
 	-- divider line
 	load_plugin_config("niuiic/divider.nvim", "plugin/divider"),
 	-- clipboard image
