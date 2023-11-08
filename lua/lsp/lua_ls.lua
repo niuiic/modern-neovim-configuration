@@ -12,7 +12,7 @@ local M = {
 				globals = { "vim" },
 			},
 			workspace = {
-				checkThirdParty = false,
+				checkThirdParty = "Disable",
 			},
 			telemetry = {
 				enable = false,
