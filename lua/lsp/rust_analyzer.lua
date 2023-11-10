@@ -6,7 +6,11 @@ local core = require("core")
 
 local function organize_imports()
 	local diagnostic_list = vim.diagnostic.get()
+	local bufnr = vim.api.nvim_get_current_buf()
 	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
+		if diagnostic.bufnr ~= bufnr then
+			return false
+		end
 		return string.find(diagnostic.message, "cannot find") or string.find(diagnostic.message, "unused import")
 	end)
 	if diagnostic == nil then
