@@ -33,6 +33,7 @@ local config = function()
 			require("neotest-go"),
 			require("neotest-rust")({
 				dap_adapter = "codelldb",
+				args = { "--no-capture" },
 			}),
 		},
 	})
