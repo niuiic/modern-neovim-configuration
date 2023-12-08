@@ -42,7 +42,7 @@ require("lazy").setup({
 	-- auto complete pairs
 	load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
 	-- automatically switch input method when input mode changed
-	load_plugin_config("alohaia/fcitx.nvim", "plugin/fcitx"),
+	load_plugin_config("niuiic/fcitx.nvim", "plugin/fcitx"),
 	-- displays neovim startup time
 	load_plugin_config("dstein64/vim-startuptime", "plugin/vim-startuptime"),
 	-- fold
