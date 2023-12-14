@@ -224,4 +224,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/terminal.nvim", "plugin/terminal"),
 	-- columns limit
 	load_plugin_config("ecthelionvi/NeoColumn.nvim", "plugin/neo-column"),
+	-- ai
+	load_plugin_config("Exafunction/codeium.nvim", "plugin/codeium"),
 })

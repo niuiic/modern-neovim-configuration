@@ -32,6 +32,7 @@ local config = function()
 					Event = "",
 					Operator = "󰆕",
 					TypeParameter = "",
+					Codeium = "",
 				},
 				menu = {
 					buffer = "[Buffer]",
@@ -62,6 +63,7 @@ local config = function()
 			{ name = "treesitter" },
 			{ name = "async_path", group_index = 3 },
 			{ name = "crates", group_index = 4 },
+			{ name = "codeium", group_index = 3 },
 		}),
 		preselect = cmp.PreselectMode.None,
 	})
