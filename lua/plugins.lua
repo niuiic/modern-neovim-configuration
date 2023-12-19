@@ -194,8 +194,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/filetype.nvim", "plugin/filetype"),
 	-- quickfix
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
-	-- github action
-	load_plugin_config("topaxi/gh-actions.nvim", "plugin/gh-actions"),
 	-- uses lua patterns instead of vim regex
 	load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
 	-- hover
