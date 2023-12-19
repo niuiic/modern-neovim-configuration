@@ -2,7 +2,6 @@
 -- ◍ sqlls
 -- ◍ dot-language-server
 -- ◍ vue-language-server
--- ◍ texlab
 -- ◍ bash-language-server
 -- ◍ css-lsp
 -- ◍ cssmodules-language-server
@@ -20,20 +19,16 @@
 -- ◍ yaml-language-server
 -- ◍ marksman
 -- ◍ lemminx
--- ◍ jdtls
 -- ◍ typst-lsp
--- ◍ verible
--- ◍ nil
 -- ◍ dockerfile-language-server
 -- ◍ nginx-language-server
--- install clangd, glslang, dart, glsl-language-server manually
+-- install clangd, glslang, glsl-language-server manually
 
 -- daps installed:
 -- ◍ debugpy
 -- ◍ delve
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
--- ◍ dart-debug-adapter
 -- ◍ codelldb
 -- install lldb-vscode manually
 
@@ -45,8 +40,7 @@
 -- ◍ sqlfluff
 -- ◍ stylua
 -- ◍ xmlformatter
--- ◍ google-java-format
--- install cmake-format, goimports, typstfmt, alejandra, nginxbeautifier manually
+-- install cmake-format, goimports, typstfmt, nginxbeautifier manually
 
 return {
 	config = function()

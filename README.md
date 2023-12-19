@@ -14,15 +14,10 @@ Neovim + Linux = Your Best Almighty IDE
 - Shell
 - SQL
 - Lua
-- SystemVerilog
-- Java
 - GLSL
 - WGSL
 - Vue
 - React
-- Dart
-- Flutter
-- Nix
 
 > Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
