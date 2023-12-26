@@ -164,12 +164,6 @@ require("task")
 
 > These tasks could not be infinite loops.
 
-## FAQ
-
-- gh-actions.nvim not work
-
-Define a `GITHUB_TOKEN` variable in your environment.
-
 # Showcase
 
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
