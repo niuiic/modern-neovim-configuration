@@ -9,6 +9,7 @@ return {
 		require("debugprint").setup({
 			create_keymaps = false,
 			create_commands = false,
+			move_to_debugline = true,
 			filetypes = {
 				vue = vue,
 				javascript = vue,
