@@ -3,37 +3,54 @@ local config = function()
 		translate = {
 			{
 				cmd = "TransToZH",
-				command = "trans",
+				command = "curl",
 				args = function(trans_source)
 					return {
-						"-b",
-						"-e",
-						"bing",
-						"-t",
-						"zh-CN",
-						trans_source,
+						"-X",
+						"POST",
+						"http://localhost:1188/translate",
+						"-H",
+						"Content-Type: application/json",
+						"-d",
+						vim.fn.json_encode({
+							text = trans_source,
+							source_lang = "EN",
+							target_lang = "ZH",
+						}),
+						"-s",
 					}
 				end,
 				input = "selection",
 				output = { "float_win" },
+				format = function(output)
+					local data = vim.fn.json_decode(output)
+					return data.data
+				end,
 			},
 			{
 				cmd = "TransToEN",
-				command = "trans",
+				command = "curl",
 				args = function(trans_source)
 					return {
-						"-b",
-						"-e",
-						"bing",
-						"-t",
-						"en",
-						trans_source,
+						"-X",
+						"POST",
+						"http://localhost:1188/translate",
+						"-H",
+						"Content-Type: application/json",
+						"-d",
+						vim.fn.json_encode({
+							text = trans_source,
+							target_lang = "EN",
+							source_lang = "ZH",
+						}),
+						"-s",
 					}
 				end,
 				input = "input",
 				output = { "notify", "clipboard" },
-				filter = function(trans_source)
-					return trans_source
+				format = function(output)
+					local data = vim.fn.json_decode(output)
+					return data.data
 				end,
 			},
 		},
