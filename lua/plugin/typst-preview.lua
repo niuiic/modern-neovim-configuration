@@ -10,7 +10,11 @@ return {
 	keys = {
 		{
 			"<leader>p",
-			"<cmd>TypstPreviewToggle<CR>",
+			function()
+				if vim.bo.filetype == "typst" then
+					vim.cmd("TypstPreviewToggle")
+				end
+			end,
 			desc = "preview typst document",
 		},
 	},
