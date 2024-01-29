@@ -3,25 +3,19 @@ return {
 		require("divider").setup({
 			dividers = {
 				{
-					regex = [[%%%%=+ ([%s%S]*) =+%%%%]],
+					regex = [[%-%-%-%- ([%s%S]*) %-%-%-%-]],
 					hl = "#ff00ff",
 					icon_hl = "#ff00ff",
 					icon = "",
 				},
 				{
-					regex = [[%%%%%-+ ([%s%S]*) %-+%%%%]],
-					hl = "#ffff00",
-					icon_hl = "#ffff00",
+					regex = [[%-%-%- ([%s%S]*) %-%-%-]],
+					hl = "#00ff7c",
+					icon_hl = "#00ff7c",
 					icon = "",
 				},
 				{
-					regex = [[%%%%%++ ([%s%S]*) %++%%%%]],
-					hl = "#00ff7c",
-					icon_hl = "#00ff7c",
-					icon = "",
-				},
-				{
-					regex = [[%%%% ([%s%S]*) %%%%]],
+					regex = [[%-%- ([%s%S]*) %-%-]],
 					hl = "#ffa000",
 					icon_hl = "#ffa000",
 					hide = true,
