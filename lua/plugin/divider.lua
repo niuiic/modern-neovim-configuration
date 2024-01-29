@@ -17,7 +17,7 @@ return {
 					extmark = "-",
 				},
 				{
-					regex = [[%*%* ([%s%S]*) %*%*]],
+					regex = [[%-%- ([%s%S]*) %-%-]],
 					hl = "#00ff7c",
 					icon_hl = "#00ff7c",
 					hide = true,
