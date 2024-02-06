@@ -1,5 +1,8 @@
 local config = function()
 	require("lspsaga").setup({
+		symbol_in_winbar = {
+			enable = false,
+		},
 		lightbulb = {
 			enable = false,
 		},
@@ -11,6 +14,18 @@ local config = function()
 		},
 		beacon = {
 			enable = false,
+		},
+		finder = {
+			keys = {
+				toggle_or_open = "<CR>",
+				quit = { "q", "<ESC>" },
+			},
+		},
+		callhierarchy = {
+			keys = {
+				toggle_or_open = "<CR>",
+				quit = { "q", "<ESC>" },
+			},
 		},
 		code_action = {
 			extend_gitsigns = false,
@@ -60,20 +75,28 @@ return {
 		},
 		{
 			"gf",
-			function()
-				require("telescope.builtin").lsp_references()
-			end,
+			"<cmd>Lspsaga finder ref<CR>",
 			desc = "goto references",
+		},
+		{
+			"gi",
+			"<cmd>Lspsaga finder imp<CR>",
+			desc = "goto implements",
+		},
+		{
+			"gc",
+			"<cmd>Lspsaga incoming_calls<CR>",
+			desc = "goto incoming calls",
+		},
+		{
+			"gC",
+			"<cmd>Lspsaga outgoing_calls<CR>",
+			desc = "goto outgoing calls",
 		},
 		{
 			"gd",
 			"<cmd>Lspsaga goto_definition<CR>",
 			desc = "goto definitions",
-		},
-		{
-			"gp",
-			"<cmd>Lspsaga peek_definition<CR>",
-			desc = "peek definitions",
 		},
 		{
 			"D",
