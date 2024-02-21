@@ -44,6 +44,7 @@ local config = function()
 			"dart",
 			"dap_repl",
 			"mermaid",
+			"typst",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },

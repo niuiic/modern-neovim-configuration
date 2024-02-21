@@ -20,6 +20,7 @@ return {
 				rcall = "glsl",
 				wgsl = "wgsl",
 				mdx = "markdown",
+				typ = "typst",
 			},
 		})
 	end,

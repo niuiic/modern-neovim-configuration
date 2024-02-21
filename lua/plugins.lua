@@ -206,8 +206,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- format
 	load_plugin_config("niuiic/format.nvim", "plugin/format"),
-	-- typst
-	load_plugin_config("kaarmu/typst.vim", "plugin/typst"),
 	-- code shot
 	load_plugin_config("niuiic/code-shot.nvim", "plugin/code-shot"),
 	-- open url
