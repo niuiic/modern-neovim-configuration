@@ -40,7 +40,8 @@
 -- ◍ sqlfluff
 -- ◍ stylua
 -- ◍ xmlformatter
--- install cmake-format, goimports, typstfmt, nginxbeautifier manually
+-- ◍ gersemi
+-- install goimports, typstfmt, nginxbeautifier manually
 
 return {
 	config = function()
