@@ -190,8 +190,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
 	-- move block
 	load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
-	-- filetype manager
-	load_plugin_config("niuiic/filetype.nvim", "plugin/filetype"),
 	-- quickfix
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
 	-- uses lua patterns instead of vim regex

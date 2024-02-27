@@ -77,3 +77,28 @@ vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+-- filetype
+vim.filetype.add({
+	extension = {
+		h = "c",
+		sh = "sh",
+		ebuild = "sh",
+		hpp = "cpp",
+		vert = "glsl",
+		tesc = "glsl",
+		tese = "glsl",
+		geom = "glsl",
+		frag = "glsl",
+		comp = "glsl",
+		rgen = "glsl",
+		rint = "glsl",
+		rahit = "glsl",
+		rchit = "glsl",
+		rmiss = "glsl",
+		rcall = "glsl",
+		wgsl = "wgsl",
+		mdx = "markdown",
+		typ = "typst",
+	},
+})
