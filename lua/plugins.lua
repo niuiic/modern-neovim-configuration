@@ -222,4 +222,6 @@ require("lazy").setup({
 	load_plugin_config("ecthelionvi/NeoColumn.nvim", "plugin/neo-column"),
 	-- ai
 	load_plugin_config("Exafunction/codeium.nvim", "plugin/codeium"),
+	-- ts error
+	load_plugin_config("dmmulroy/ts-error-translator.nvim", "plugin/ts-error-translator"),
 })
