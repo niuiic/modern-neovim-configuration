@@ -8,6 +8,7 @@ return {
 					icon_hl = "#ff00ff",
 					icon = "󰍎",
 					extmark = "-",
+					extmark_pos = "bottom",
 				},
 				{
 					regex = [[## ([%s%S]+)]],
@@ -15,6 +16,7 @@ return {
 					icon_hl = "#00a0ff",
 					icon = "󰐾",
 					extmark = "-",
+					extmark_pos = "bottom",
 				},
 				{
 					regex = [[%-%- ([%s%S]+) %-%-]],
