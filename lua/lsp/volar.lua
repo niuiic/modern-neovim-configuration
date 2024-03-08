@@ -1,4 +1,9 @@
 local core = require("core")
+local filetypes = { "vue" }
+
+if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
+	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+end
 
 local function search_ts_server_path()
 	local local_ts_server_path = core.file.root_path() .. "/node_modules/typescript/lib"
@@ -55,7 +60,7 @@ local function organize_imports()
 end
 
 local M = {
-	filetypes = { "vue" },
+	filetypes = filetypes,
 	root_dir = core.file.root_path,
 	init_options = {
 		typescript = {
