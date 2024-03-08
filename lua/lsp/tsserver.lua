@@ -1,16 +1,5 @@
 local core = require("core")
 
-local filetypes = {
-	"javascript",
-	"typescript",
-	"javascriptreact",
-	"typescriptreact",
-}
-
-if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
-	filetypes = { "none" }
-end
-
 local function rename_file()
 	local source_file = vim.api.nvim_buf_get_name(0)
 	local target_file = ""
@@ -74,9 +63,21 @@ local function organize_imports()
 end
 
 local M = {
-	filetypes = filetypes,
+	filetypes = {
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+		"vue",
+	},
 	init_options = {
-		hostInfo = "neovim",
+		plugins = {
+			{
+				name = "@vue/typescript-plugin",
+				location = core.file.root_path() .. "/node_modules/@vue/typescript-plugin",
+				languages = { "javascript", "typescript", "vue" },
+			},
+		},
 	},
 	commands = {
 		TsserverRenameFile = {
