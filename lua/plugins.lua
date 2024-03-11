@@ -222,4 +222,6 @@ require("lazy").setup({
 	load_plugin_config("dmmulroy/ts-error-translator.nvim", "plugin/ts-error-translator"),
 	-- jump outer
 	load_plugin_config("Mr-LLLLL/treesitter-outer", "plugin/treesitter-outer"),
+	-- macro
+	load_plugin_config("niuiic/macro.nvim", "plugin/macro"),
 })
