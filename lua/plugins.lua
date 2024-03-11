@@ -172,8 +172,6 @@ require("lazy").setup({
 	-- pretty ui
 	load_plugin_config("folke/noice.nvim", "plugin/noice"),
 	load_plugin_config("stevearc/dressing.nvim", "plugin/dressing"),
-	-- macro
-	load_plugin_config("ecthelionvi/NeoComposer.nvim", "plugin/neo-composer"),
 	-- divider line
 	load_plugin_config("niuiic/divider.nvim", "plugin/divider"),
 	-- clipboard image
