@@ -1,9 +1,4 @@
 local core = require("core")
-local filetypes = { "vue" }
-
-if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
-end
 
 local function search_ts_server_path()
 	local local_ts_server_path = core.file.root_path() .. "/node_modules/typescript/lib"
@@ -31,36 +26,7 @@ local function copy_file_path()
 	end
 end
 
-local function organize_imports()
-	local diagnostic_list = vim.diagnostic.get()
-	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
-		return string.find(diagnostic.message, "Cannot find name")
-			or string.find(diagnostic.message, "is not defined")
-			or string.find(diagnostic.message, "Use `import type`")
-			or string.find(diagnostic.message, "is only used as types")
-	end)
-	if diagnostic == nil then
-		return
-	end
-	local cur_pos = vim.api.nvim_win_get_cursor(0)
-	vim.api.nvim_win_set_cursor(0, {
-		diagnostic.lnum + 1,
-		diagnostic.col,
-	})
-	vim.lsp.buf.code_action({
-		apply = true,
-		filter = function(action)
-			return action.title == "Add all missing imports"
-				or string.find(action.title, "Update import from")
-				or string.find(action.title, "Add import from")
-				or action.title == "Fix this @typescript-eslint/consistent-type-imports problem"
-		end,
-	})
-	vim.api.nvim_win_set_cursor(0, cur_pos)
-end
-
 local M = {
-	filetypes = filetypes,
 	root_dir = core.file.root_path,
 	init_options = {
 		typescript = {
@@ -77,21 +43,9 @@ local M = {
 		end
 	end,
 	commands = {
-		VolarRename = {
-			function()
-				vim.lsp.buf.rename(nil, {
-					name = "volar",
-				})
-			end,
-			description = "Rename",
-		},
 		VolarFilePath = {
 			copy_file_path,
 			description = "File Path",
-		},
-		VolarOrganizeImports = {
-			organize_imports,
-			description = "Organize imports",
 		},
 	},
 }

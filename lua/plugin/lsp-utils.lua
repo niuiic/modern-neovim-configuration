@@ -1,6 +1,4 @@
 local config = function()
-	local core = require("core")
-
 	require("lsp-utils").setup({
 		lsps = {
 			["typescript-tools"] = {
@@ -13,23 +11,7 @@ local config = function()
 			},
 			volar = {
 				commands_map = {
-					{
-						map = { "VolarRename", "LSPRename" },
-						enable = function()
-							local available_files = {
-								"typescript",
-								"typescriptreact",
-								"javascript",
-								"javascriptreact",
-								"vue",
-							}
-							return core.lua.list.includes(available_files, function(v)
-								return vim.bo.filetype == v
-							end)
-						end,
-					},
 					{ map = { "VolarFilePath", "LSPFilePath" } },
-					{ map = { "VolarOrganizeImports", "LSPOrganizeImports" } },
 				},
 			},
 			lua_ls = {

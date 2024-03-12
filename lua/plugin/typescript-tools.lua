@@ -1,8 +1,27 @@
 return {
 	config = function()
-		require("typescript-tools").setup({
-			handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) },
-		})
+		local core = require("core")
+		local root_dir = core.file.root_path()
+
+		if core.file.file_contains(root_dir .. "/package.json", "vue") then
+			require("typescript-tools").setup({
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"vue",
+				},
+				settings = {
+					tsserver_plugins = { "@vue/typescript-plugin" },
+				},
+				handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) },
+			})
+		else
+			require("typescript-tools").setup({
+				handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) },
+			})
+		end
 
 		vim.api.nvim_create_user_command("TsOrganizeImports", function()
 			vim.cmd("TSToolsOrganizeImports")
