@@ -105,6 +105,11 @@ return {
 			end,
 		},
 		{
+			"J",
+			"<cmd>Lspsaga hover_doc<CR>",
+			desc = "lsp hover",
+		},
+		{
 			"<space>la",
 			"<cmd>Lspsaga code_action<CR>",
 			desc = "code action",
