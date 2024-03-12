@@ -40,6 +40,7 @@ Neovim: V0.10+
 5. `deeplx` (required by `translate.nvim`)
 6. dependencies for previewing media files (check [here](https://github.com/nvim-telescope/telescope-media-files.nvim#prerequisites))
 7. `cargo-nextest` (required by `neotest-rust`)
+8. `@vue/typescript-plugin` (vue project dependency, required by `volar`)
 
 ## QuickStart
 
