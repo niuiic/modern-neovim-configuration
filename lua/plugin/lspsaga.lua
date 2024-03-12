@@ -100,13 +100,11 @@ return {
 		},
 		{
 			"D",
-			function()
-				vim.diagnostic.open_float()
-			end,
+			vim.diagnostic.open_float,
 		},
 		{
 			"J",
-			"<cmd>Lspsaga hover_doc<CR>",
+			vim.lsp.buf.hover,
 			desc = "lsp hover",
 		},
 		{
