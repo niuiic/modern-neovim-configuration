@@ -16,7 +16,6 @@ local lspList = {
 	"taplo",
 	"stylelint_lsp",
 	"pyright",
-	"tsserver",
 	"wgsl_analyzer",
 	"yamlls",
 	"marksman",

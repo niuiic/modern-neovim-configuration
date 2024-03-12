@@ -3,11 +3,12 @@ local config = function()
 
 	require("lsp-utils").setup({
 		lsps = {
-			tsserver = {
+			["typescript-tools"] = {
 				commands_map = {
-					{ map = { "TsserverRenameFile", "LSPRenameFile" } },
-					{ map = { "TsserverRename", "LSPRename" } },
-					{ map = { "TsserverOrganizeImports", "LSPOrganizeImports" } },
+					{ map = { "TSToolsRenameFile", "LSPRenameFile" } },
+					{ map = { "TsRename", "LSPRename" } },
+					{ map = { "TsOrganizeImports", "LSPOrganizeImports" } },
+					{ map = { "TSToolsFixAll", "LSPFixAll" } },
 				},
 			},
 			volar = {

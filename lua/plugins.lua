@@ -220,4 +220,6 @@ require("lazy").setup({
 	load_plugin_config("dmmulroy/ts-error-translator.nvim", "plugin/ts-error-translator"),
 	-- jump outer
 	load_plugin_config("Mr-LLLLL/treesitter-outer", "plugin/treesitter-outer"),
+	-- typescript tools
+	load_plugin_config("pmizio/typescript-tools.nvim", "plugin/typescript-tools"),
 })
