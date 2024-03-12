@@ -33,6 +33,9 @@ local M = {
 			tsdk = search_ts_server_path(),
 		},
 	},
+	on_attach = function(client, _)
+		client.server_capabilities.hoverProvider = false
+	end,
 	modify_capabilities = function(capabilities)
 		if capabilities.workspace == nil then
 			capabilities.workspace = {
