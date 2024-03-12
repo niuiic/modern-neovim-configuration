@@ -41,6 +41,12 @@ core.lua.list.each(lspList, function(value)
 		config.capabilities = config.modify_capabilities(core.lua.table.clone(capabilities))
 	end
 
+	-- set handlers
+	if not config.handlers then
+		config.handlers = {}
+	end
+	config.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
 end)
