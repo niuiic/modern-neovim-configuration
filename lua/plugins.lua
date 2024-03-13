@@ -163,8 +163,6 @@ require("lazy").setup({
 	load_plugin_config("williamboman/mason.nvim", "plugin/mason"),
 	-- search and replace in project
 	load_plugin_config("windwp/nvim-spectre", "plugin/nvim-spectre"),
-	-- buffer / mark / tabpage / colorscheme switcher
-	load_plugin_config("toppair/reach.nvim", "plugin/reach"),
 	-- annotation generator
 	load_plugin_config("danymat/neogen", "plugin/neogen"),
 	-- highlight current n
@@ -222,4 +220,6 @@ require("lazy").setup({
 	load_plugin_config("Mr-LLLLL/treesitter-outer", "plugin/treesitter-outer"),
 	-- typescript tools
 	load_plugin_config("pmizio/typescript-tools.nvim", "plugin/typescript-tools"),
+	-- mark
+	load_plugin_config("fnune/recall.nvim", "plugin/recall"),
 })
