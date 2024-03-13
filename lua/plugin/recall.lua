@@ -1,7 +1,6 @@
 return {
 	config = function()
 		require("recall").setup({})
-		require("telescope").load_extension("recall")
 	end,
 	keys = {
 		{
@@ -18,6 +17,11 @@ return {
 			"mk",
 			"<cmd>RecallPrevious<CR>",
 			desc = "jump to previous mark",
+		},
+		{
+			"mc",
+			"<cmd>RecallClear<CR>",
+			desc = "clear all marks",
 		},
 		{
 			"<space>om",
