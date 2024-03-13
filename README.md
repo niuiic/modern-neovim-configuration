@@ -1,6 +1,6 @@
 # Modern Neovim Configuration
 
-Neovim + Linux = Your Best Almighty IDE
+Neovim + Linux = Best Almighty IDE
 
 > This configuration is for linux only.
 
@@ -21,8 +21,6 @@ Neovim + Linux = Your Best Almighty IDE
 
 > Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
 
-> Not all features has been implemented, but you can easily implement most functions needed.
-
 ## Personal Environment
 
 OS: Gentoo
@@ -34,7 +32,7 @@ Neovim: V0.10+
 ## Dependencies
 
 1. `nodejs`, `go`, `rust` (required for `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
-2. `rg`, `fd` command (required for `telescope.nvim` ...)
+2. `rg`, `fd` command (required for `telescope.nvim`)
 3. `trashy` command (required for `nvim-tree.lua`)
 4. `fcitx5` (required for `fcitx.nvim`)
 5. `deeplx` (required for `translate.nvim`)
@@ -44,25 +42,23 @@ Neovim: V0.10+
 
 ## QuickStart
 
-> It's not recommended to copy the entire configuration directly. You need your own configuration and shortcuts. It's better to find the plugins you are interested in and refer to their configuration.
-
 ### Installation
 
 1. Install all dependencies.
 
 2. `git clone https://github.com/niuiic/modern-neovim-configuration ~/.config/nvim`
 
-3. Open neovim and all plugins would be installed automatically.
+3. Open neovim and then all plugins would be installed automatically.
 
-4. Install lsps, formatters, lints, daps with `mason.nvim`. Check `lua/plugin/mason.lua` for details.
+4. Install lsps, formatters, linters, debuggers with `mason.nvim`. Check `lua/plugin/mason.lua` for details.
 
-5. Use `:checkhealth` to check if something is missing.
+5. Check if something is missing with `:checkhealth`.
 
 6. Look for specific functions in `lua/plugins.lua`.
 
 ### Keymap
 
-`which-key.nvim` will tell you. You can also check `lua/plugin/*` and `lua/keymap.lua` for details.
+`which-key.nvim` will tell you. Check `lua/plugin/*` and `lua/keymap.lua` for details.
 
 > leader: `\`
 
@@ -70,11 +66,11 @@ Neovim: V0.10+
 
 ### LSP
 
-Create a `lspname.lua` in `lua/lsp`, edit the file in the same way as other files.
+Create `lspname.lua` in `lua/lsp`.
 
-Modify the `lspList` in `lua/lsp/init.lua`.
+Update `lsp_list` in `lua/lsp/init.lua`.
 
-(Optional) Remap lsp commands with `lsp-utils.nvim` in `lua/plugin/lsp-utils.lua`.
+Remap lsp commands with `lsp-utils.nvim` in `lua/plugin/lsp-utils.lua`.
 
 ### Formatter
 
@@ -82,15 +78,15 @@ Use your favorite formatters with [niuiic/format.nvim](https://github.com/niuiic
 
 ### DAP
 
-Create a `dapname.lua` in `lua/debugger`, edit the file in the same way as other files.
+Create `dapname.lua` in `lua/debugger`.
 
-Modify the `debugger_list` in `lua/debugger/init.lua`.
+Update `debugger_list` in `lua/debugger/init.lua`.
 
 ### Custom Snippets and Sources
 
-Create a `filetype.lua` in `lua/snippet` or `lua/source`, edit the file in the same way as other files.
+Create `filetype.lua` in `lua/snippet` or `lua/source`.
 
-Modify the `lang_list` in `lua/snippet/init.lua` or `lua/source/init.lua`.
+Update `lang_list` in `lua/snippet/init.lua` or `lua/source/init.lua`.
 
 > [Snippet examples](https://github.com/L3MON4D3/LuaSnip/blob/master/Examples/snippets.lua) and [snippet document](https://github.com/L3MON4D3/LuaSnip/blob/master/DOC.md) may help you.
 
@@ -100,10 +96,10 @@ The root path of a workspace is where `.git` located. `$rootPath/.nvim/init.lua`
 
 ### Tasks
 
-[overseer.nvim](https://github.com/stevearc/overseer.nvim) is used to manage tasks. Here is the recommended way to define tasks.
+[overseer.nvim](https://github.com/stevearc/overseer.nvim) is the default task manager. Here is the recommended way to define tasks.
 
-1. Create `.nvim/task/` under the root path of the project.
-2. Edit tasks in `.nvim/task/task.sh` and `.nvim/task/init.lua`.
+1. Create `.nvim/task/` in the root path of the project.
+2. Add tasks to `.nvim/task/task.sh` and `.nvim/task/init.lua`.
 
 `.nvim/task/init.lua`
 
@@ -155,7 +151,7 @@ fi
 ```
 
 3. `chmod +x .nvim/task/task.sh`
-4. Require `.nvim/task/init.lua` in `.nvim/init.lua`.
+4. Import `.nvim/task/init.lua` in `.nvim/init.lua`.
 
 `.nvim/init.lua`
 
@@ -163,7 +159,7 @@ fi
 require("task")
 ```
 
-> These tasks could not be infinite loops.
+> These tasks must be able to be terminated automatically.
 
 # Showcase
 

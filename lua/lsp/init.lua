@@ -1,6 +1,6 @@
 local core = require("core")
 
-local lspList = {
+local lsp_list = {
 	"cssls",
 	"volar",
 	"lua_ls",
@@ -31,7 +31,7 @@ local lspList = {
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- load all lsp config
-core.lua.list.each(lspList, function(value)
+core.lua.list.each(lsp_list, function(value)
 	local config = require("lsp/" .. value)
 
 	-- set capabilities
