@@ -58,6 +58,7 @@ local keys = {
 		end,
 		desc = "search files in workspace",
 	},
+	{ "<space>od", "<cmd>Telescope diagnostics<CR>", desc = "search diagnostics" },
 	{ "<space>oN", "<cmd>Telescope help_tags<CR>", desc = "search neovim documents" },
 	{ "<space>os", "<cmd>Telescope git_status<CR>", desc = "search git status" },
 	{ "<space>oM", "<cmd>Telescope marks<CR>", desc = "search marks with preview" },

@@ -47,6 +47,16 @@ core.lua.list.each(lspList, function(value)
 	end
 	config.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
+	-- set on_attach
+	local fn = config.on_attach
+	local on_attach = function(client, bufnr)
+		require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+		if fn then
+			fn(client, bufnr)
+		end
+	end
+	config.on_attach = on_attach
+
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
 end)
