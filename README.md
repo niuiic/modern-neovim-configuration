@@ -33,14 +33,14 @@ Neovim: V0.10+
 
 ## Dependencies
 
-1. `nodejs`, `go`, `rust` (required by `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
-2. `rg`, `fd` command (required by `telescope.nvim` ...)
-3. `trashy` command (required by `nvim-tree.lua`)
-4. `fcitx5` (required by `fcitx.nvim`)
-5. `deeplx` (required by `translate.nvim`)
+1. `nodejs`, `go`, `rust` (required for `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
+2. `rg`, `fd` command (required for `telescope.nvim` ...)
+3. `trashy` command (required for `nvim-tree.lua`)
+4. `fcitx5` (required for `fcitx.nvim`)
+5. `deeplx` (required for `translate.nvim`)
 6. dependencies for previewing media files (check [here](https://github.com/nvim-telescope/telescope-media-files.nvim#prerequisites))
-7. `cargo-nextest` (required by `neotest-rust`)
-8. `@vue/typescript-plugin` (vue project dependency, required by `volar`)
+7. `cargo-nextest` (required for `neotest-rust`)
+8. `@vue/typescript-plugin` (required for vue project)
 
 ## QuickStart
 
