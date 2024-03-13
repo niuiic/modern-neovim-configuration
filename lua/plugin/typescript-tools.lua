@@ -5,6 +5,9 @@ return {
 
 		if core.file.file_contains(root_dir .. "/package.json", "vue") then
 			require("typescript-tools").setup({
+				on_attach = function(client, _)
+					client.server_capabilities.semanticTokensProvider = nil
+				end,
 				filetypes = {
 					"javascript",
 					"javascriptreact",
