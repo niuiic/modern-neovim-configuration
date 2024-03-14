@@ -222,6 +222,4 @@ require("lazy").setup({
 	load_plugin_config("pmizio/typescript-tools.nvim", "plugin/typescript-tools"),
 	-- mark
 	load_plugin_config("fnune/recall.nvim", "plugin/recall"),
-	-- workspace diagnostics
-	load_plugin_config("artemave/workspace-diagnostics.nvim", "plugin/workspace-diagnostics"),
 })
