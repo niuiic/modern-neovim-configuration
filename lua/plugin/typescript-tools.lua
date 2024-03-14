@@ -5,8 +5,7 @@ return {
 
 		if core.file.file_contains(root_dir .. "/package.json", "vue") then
 			require("typescript-tools").setup({
-				on_attach = function(client, bufnr)
-					require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+				on_attach = function(client, _)
 					client.server_capabilities.semanticTokensProvider = nil
 				end,
 				filetypes = {
@@ -23,9 +22,6 @@ return {
 			})
 		else
 			require("typescript-tools").setup({
-				on_attach = function(client, bufnr)
-					require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-				end,
 				handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) },
 			})
 		end
