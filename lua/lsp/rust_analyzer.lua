@@ -11,7 +11,15 @@ local function organize_imports()
 		if diagnostic.bufnr ~= bufnr then
 			return false
 		end
-		return string.find(diagnostic.message, "cannot find") or string.find(diagnostic.message, "unused import")
+		local start = string.find(diagnostic.message, "cannot find")
+		if start ~= nil then
+			return true
+		end
+		start = string.find(diagnostic.message, "unused import")
+		if start ~= nil then
+			return true
+		end
+		return false
 	end)
 	if diagnostic == nil then
 		return
