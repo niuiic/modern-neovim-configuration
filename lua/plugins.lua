@@ -92,6 +92,8 @@ require("lazy").setup({
 	load_plugin_config("L3MON4D3/LuaSnip", "plugin/luasnip"),
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
+	-- comparators
+	"ryo33/nvim-cmp-rust",
 
 	-- status line
 	load_plugin_config("nvim-lualine/lualine.nvim", "plugin/lualine"),
