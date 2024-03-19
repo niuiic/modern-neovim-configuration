@@ -114,6 +114,7 @@ require("lazy").setup({
 	"rcarriga/nvim-dap-ui",
 	"ofirgall/goto-breakpoints.nvim",
 	"jbyuki/one-small-step-for-vimkind",
+	"nvim-neotest/nvim-nio",
 	load_plugin_config("andrewferrier/debugprint.nvim", "plugin/debugprint"),
 
 	-- unit test
