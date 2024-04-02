@@ -1,6 +1,6 @@
 local config = function()
 	local telescope = require("telescope")
-	local trouble = require("trouble.providers.telescope")
+	local trouble = require("trouble.sources.telescope")
 
 	telescope.setup({
 		defaults = {
@@ -15,9 +15,9 @@ local config = function()
 					["<C-f>"] = "preview_scrolling_down",
 					["<C-u>"] = "results_scrolling_up",
 					["<C-d>"] = "results_scrolling_down",
-					["<c-o>"] = trouble.open_with_trouble,
+					["<c-o>"] = trouble.open,
 				},
-				n = { ["<c-o>"] = trouble.open_with_trouble },
+				n = { ["<c-o>"] = trouble.open },
 			},
 			layout_config = {
 				vertical = { width = 0.8 },
@@ -75,7 +75,7 @@ local keys = {
 	{ "<space>oGC", "<cmd>Telescope git_commits<CR>", desc = "git commits" },
 	{ "<space>oGb", "<cmd>Telescope git_branches<CR>", desc = "git branches" },
 	{
-		"<space>ogw",
+		"<space>oW",
 		function()
 			require("telescope.builtin").live_grep({
 				hidden = true,

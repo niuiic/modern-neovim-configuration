@@ -25,14 +25,13 @@ local config = function()
 end
 
 local keys = {
-	{ "<leader>td", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "open diagnostics" },
-	{ "<leader>tl", "<cmd>TroubleToggle loclist<CR>", desc = "open loclist" },
-	{ "<leader>tf", "<cmd>TroubleToggle lsp_references<CR>", desc = "open lsp references list" },
-	{ "<leader>tt", "<cmd>TodoTrouble<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
+	{ "<space>lo", "<cmd>Trouble symbols toggle<CR>", desc = "toggle symbols" },
+	{ "<space>qo", "<cmd>Trouble qflist toggle focus=true<CR>", desc = "toggle quickfix" },
 }
 
 return {
 	config = config,
 	keys = keys,
 	dependencies = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
+	branch = "dev",
 }

@@ -37,9 +37,6 @@ return {
 				c = {
 					name = "command",
 				},
-				g = {
-					name = "global",
-				},
 				G = {
 					name = "git",
 				},
@@ -50,9 +47,6 @@ return {
 			m = {
 				name = "mark",
 			},
-			r = {
-				name = "macro",
-			},
 		}, {
 			mode = "n",
 			prefix = "<localleader>",
@@ -61,12 +55,6 @@ return {
 		which_key.register({
 			s = {
 				name = "session",
-			},
-			q = {
-				name = "sql cmd",
-			},
-			t = {
-				name = "trouble",
 			},
 			c = {
 				name = "color picker",

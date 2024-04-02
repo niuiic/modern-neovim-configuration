@@ -41,11 +41,6 @@ return {
 	config = config,
 	keys = {
 		{
-			"<space>lo",
-			"<cmd>Lspsaga outline<CR>",
-			desc = "outline",
-		},
-		{
 			"gj",
 			function()
 				vim.diagnostic.goto_next({ float = false })
