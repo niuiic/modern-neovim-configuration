@@ -47,6 +47,9 @@ return {
 			m = {
 				name = "mark",
 			},
+			q = {
+				name = "quickfix",
+			},
 		}, {
 			mode = "n",
 			prefix = "<localleader>",
