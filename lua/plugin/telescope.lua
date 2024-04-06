@@ -67,7 +67,6 @@ local keys = {
 	{ "<space>or", "<cmd>Telescope resume<CR>", desc = "research" },
 	{ "<space>oT", "<cmd>TodoTelescope<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
 	{ "<space>on", "<cmd>Noice telescope<CR>", desc = "search notifications" },
-	{ "<space>oy", "<cmd>Telescope yank_history<CR>", desc = "yank history" },
 	{ "<space>oGf", "<cmd>Telescope git_files<CR>", desc = "git files" },
 	{ "<space>oGs", "<cmd>Telescope git_stash<CR>", desc = "git stash" },
 	{ "<space>oGt", "<cmd>Telescope git_status<CR>", desc = "git status" },
