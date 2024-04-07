@@ -1,6 +1,9 @@
-vim.cmd(
-	[[autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup=(vim.fn['hlexists']('HighlightedyankRegion') > 0 and 'HighlightedyankRegion' or 'IncSearch'), timeout=500}]]
-)
+vim.api.nvim_create_autocmd("TextYankPost", {
+	callback = function()
+		local higroup = vim.fn.hlexists("HighlightedyankRegion") > 0 and "HighlightedyankRegion" or "IncSearch"
+		vim.highlight.on_yank({ higroup = higroup, timeout = 500 })
+	end,
+})
 
 return {
 	config = function()
