@@ -93,7 +93,7 @@ require("lazy").setup({
 	"saadparwaiz1/cmp_luasnip",
 	"rafamadriz/friendly-snippets",
 	-- comparators
-	"ryo33/nvim-cmp-rust",
+	"zjp-CN/nvim-cmp-lsp-rs",
 
 	-- status line
 	load_plugin_config("nvim-lualine/lualine.nvim", "plugin/lualine"),
