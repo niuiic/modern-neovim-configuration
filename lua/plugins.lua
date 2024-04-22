@@ -63,6 +63,8 @@ require("lazy").setup({
 	-- extensions
 	-- rainbow brackets
 	load_plugin_config("HiPhish/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
+	-- match pairs with %
+	load_plugin_config("yorickpeterse/nvim-tree-pairs", "plugin/nvim-tree-pairs"),
 	-- highlight args
 	load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
