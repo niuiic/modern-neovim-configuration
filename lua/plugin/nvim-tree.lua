@@ -83,7 +83,6 @@ local config = function()
 				return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 			end
 			vim.keymap.set("n", "l", api.node.open.edit, opts("open"))
-			vim.keymap.set("n", "P", api.node.open.preview, opts("preview"))
 			vim.keymap.set("n", "a", api.fs.create, opts("create"))
 			vim.keymap.set("n", "y", api.fs.copy.node, opts("copy"))
 			vim.keymap.set("n", ".", api.tree.toggle_hidden_filter, opts("toggle hidden files"))
@@ -99,7 +98,7 @@ local config = function()
 					return
 				end
 				local target_buf = require("core").lua.list.find(vim.api.nvim_list_bufs(), function(v)
-					return string.find(vim.api.nvim_buf_get_name(v), node.absolute_path, 1, true)
+					return string.find(vim.api.nvim_buf_get_name(v), node.absolute_path, 1, true) == nil
 				end)
 				if target_buf then
 					require("mini.bufremove").delete(target_buf)
@@ -107,9 +106,10 @@ local config = function()
 				api.fs.remove()
 			end, opts("remove"))
 			vim.keymap.set("n", "R", api.tree.reload, opts("reload"))
-			vim.keymap.set("n", "s", api.tree.search_node, opts("search"))
 			vim.keymap.set("n", "H", api.tree.collapse_all, opts("collapse all"))
+			vim.keymap.set("n", "L", api.tree.expand_all, opts("expand all"))
 			vim.keymap.set("n", "x", api.fs.cut, opts("cut"))
+			vim.keymap.set("n", "<C-f>", api.live_filter.start, opts("filter"))
 		end,
 	})
 end
