@@ -199,8 +199,6 @@ require("lazy").setup({
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
 	-- smooth scrolling
 	load_plugin_config("karb94/neoscroll.nvim", "plugin/neoscroll"),
-	-- keep cursor in center
-	load_plugin_config("nkakouros-original/scrollofffraction.nvim", "plugin/scrollofffraction"),
 	-- remove buffer
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- format
