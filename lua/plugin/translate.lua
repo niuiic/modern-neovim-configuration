@@ -53,6 +53,32 @@ local config = function()
 					return data.data
 				end,
 			},
+			{
+				cmd = "TransToENV",
+				command = "curl",
+				args = function(trans_source)
+					return {
+						"-X",
+						"POST",
+						"http://localhost:1188/translate",
+						"-H",
+						"Content-Type: application/json",
+						"-d",
+						vim.fn.json_encode({
+							text = trans_source,
+							target_lang = "EN",
+							source_lang = "ZH",
+						}),
+						"-s",
+					}
+				end,
+				input = "selection",
+				output = { "notify", "clipboard" },
+				format = function(output)
+					local data = vim.fn.json_decode(output)
+					return data.data
+				end,
+			},
 		},
 	})
 end
@@ -70,6 +96,12 @@ return {
 			"<space>T",
 			"<cmd>TransToEN<CR>",
 			desc = "translate en to zh",
+		},
+		{
+			"<space>T",
+			"<cmd>TransToENV<CR>",
+			mode = { "v" },
+			silent = true,
 		},
 	},
 }
