@@ -16,4 +16,5 @@ return {
 			desc = "yank history",
 		},
 	},
+	lazy = false,
 }
