@@ -143,8 +143,6 @@ require("lazy").setup({
 	-- extensions
 	-- import
 	"piersolenski/telescope-import.nvim",
-	-- yank
-	load_plugin_config("ptdewey/yankbank-nvim", "plugin/yankybank"),
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- recent files

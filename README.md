@@ -38,6 +38,7 @@ Neovim: V0.10+
 5. `deeplx` (required for `translate.nvim`)
 6. `cargo-nextest` (required for `neotest-rust`)
 7. `@vue/typescript-plugin` (required for vue project)
+8. `dolphin` (required for `nvim-tree`)
 
 ## QuickStart
 
