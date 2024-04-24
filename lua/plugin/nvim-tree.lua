@@ -110,6 +110,20 @@ local config = function()
 			vim.keymap.set("n", "L", api.tree.expand_all, opts("expand all"))
 			vim.keymap.set("n", "x", api.fs.cut, opts("cut"))
 			vim.keymap.set("n", "<C-f>", api.live_filter.start, opts("filter"))
+			vim.keymap.set("n", "o", function()
+				local node = api.tree.get_node_under_cursor()
+				if node == nil then
+					return
+				end
+				if not vim.fn.executable("dolphin") then
+					vim.notify("dolphin is required", vim.log.levels.ERROR)
+					return
+				end
+				require("core").job.spawn("dolphin", {
+					"--select",
+					node.absolute_path,
+				}, {}, function() end, function() end)
+			end, opts("open with dolphin"))
 		end,
 	})
 end
