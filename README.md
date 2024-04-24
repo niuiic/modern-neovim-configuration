@@ -36,9 +36,8 @@ Neovim: V0.10+
 3. `trashy` command (required for `nvim-tree.lua`)
 4. `fcitx5` (required for `fcitx.nvim`)
 5. `deeplx` (required for `translate.nvim`)
-6. dependencies for previewing media files (check [here](https://github.com/nvim-telescope/telescope-media-files.nvim#prerequisites))
-7. `cargo-nextest` (required for `neotest-rust`)
-8. `@vue/typescript-plugin` (required for vue project)
+6. `cargo-nextest` (required for `neotest-rust`)
+7. `@vue/typescript-plugin` (required for vue project)
 
 ## QuickStart
 

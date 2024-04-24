@@ -147,8 +147,6 @@ require("lazy").setup({
 	load_plugin_config("ptdewey/yankbank-nvim", "plugin/yankybank"),
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
-	-- media preview
-	load_plugin_config("nvim-telescope/telescope-media-files.nvim", "plugin/telescope-media-files"),
 	-- recent files
 	load_plugin_config("smartpde/telescope-recent-files", "plugin/telescope-recent-files"),
 	-- undo
