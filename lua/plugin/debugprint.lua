@@ -1,9 +1,9 @@
 return {
 	config = function()
 		local vue = {
-			left = "console.log('",
+			left = "console.log(`",
 			right = "')",
-			mid_var = "', ",
+			mid_var = "`, ",
 			right_var = ")",
 		}
 		require("debugprint").setup({
