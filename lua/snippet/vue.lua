@@ -78,7 +78,7 @@ local M = {
 			}
 		)
 	),
-	s("println", {
+	s("pp", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),

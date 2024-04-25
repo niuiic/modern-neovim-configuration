@@ -16,7 +16,7 @@ local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("println", {
+	s("pp", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),

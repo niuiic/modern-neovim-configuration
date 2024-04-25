@@ -16,7 +16,7 @@ local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("println", {
+	s("pp", {
 		t({ [[print(vim.inspect(]] }),
 		i(1),
 		t({ [[))]] }),
