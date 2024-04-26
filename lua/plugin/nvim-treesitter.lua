@@ -38,7 +38,6 @@ local config = function()
 			"glsl",
 			"wgsl",
 			"dot",
-			"latex",
 			"java",
 			"regex",
 			"dart",
