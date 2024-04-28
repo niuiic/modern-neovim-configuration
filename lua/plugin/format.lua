@@ -23,12 +23,25 @@ local cmake = function(file_path)
 	}
 end
 
+local xml = function(file_path)
+	return {
+		{
+			cmd = "xmlformatter",
+			args = {
+				"--overwrite",
+				file_path,
+			},
+		},
+	}
+end
+
 local config = function()
 	require("format").setup({
 		allow_update_if_buf_changed = true,
 		filetypes = {
 			rust = rust,
 			cmake = cmake,
+			svg = xml,
 		},
 	})
 end
