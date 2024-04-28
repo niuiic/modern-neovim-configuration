@@ -26,7 +26,7 @@ end
 local xml = function(file_path)
 	return {
 		{
-			cmd = "xmlformatter",
+			cmd = "xmlformat",
 			args = {
 				"--overwrite",
 				file_path,
