@@ -183,7 +183,7 @@ return {
 	config = config,
 	keys = {
 		{
-			"<space>oF",
+			"<C-b>",
 			open_nvim_tree,
 			desc = "open file tree",
 		},
