@@ -7,8 +7,8 @@ return {
 			right_var = ")",
 		}
 		require("debugprint").setup({
-			create_keymaps = false,
-			create_commands = false,
+			keymaps = {},
+			commands = {},
 			move_to_debugline = true,
 			filetypes = {
 				vue = vue,
