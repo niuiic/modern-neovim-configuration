@@ -82,13 +82,12 @@ local open_nvim_tree = function()
 
 	prev_winnr = vim.api.nvim_get_current_win()
 
-	if winnr == nil then
+	if winnr == nil or not vim.api.nvim_win_is_valid(winnr) then
 		require("nvim-tree.api").tree.open({
 			path = require("core").file.root_path(),
 			find_file = true,
 		})
 		winnr = vim.api.nvim_get_current_win()
-		set_keymap(vim.api.nvim_get_current_buf())
 		return
 	end
 
@@ -172,6 +171,7 @@ local config = function()
 				},
 			},
 		},
+		on_attach = set_keymap,
 		trash = {
 			cmd = "trash put",
 			require_confirm = true,

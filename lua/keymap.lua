@@ -42,7 +42,7 @@ local buffer_valid = function(bufnr)
 	if string.find(filetype, "dap", 1, true) then
 		return false
 	end
-	if filetype == "terminal" then
+	if filetype == "terminal" or filetype == "NvimTree" then
 		return false
 	end
 	local root_path = core.file.root_path()
