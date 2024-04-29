@@ -7,10 +7,7 @@ Neovim + Linux = Best Almighty IDE
 ## Mainly Supported Language(or Framework) List
 
 - Rust
-- Go
 - Javascript/Typescript
-- C/C++
-- Python
 - Shell
 - SQL
 - Lua
@@ -31,14 +28,14 @@ Neovim: V0.10+
 
 ## Dependencies
 
-1. `nodejs`, `go`, `rust` (required for `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
+1. `nodejs`, `rust` (required for `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
 2. `rg`, `fd` command (required for `telescope.nvim`)
 3. `trashy` command (required for `nvim-tree.lua`)
 4. `fcitx5` (required for `fcitx.nvim`)
 5. `deeplx` (required for `translate.nvim`)
-6. `cargo-nextest` (required for `neotest-rust`)
+6. `cargo-nextest` (required for `neotest-rust.nvim`)
 7. `@vue/typescript-plugin` (required for vue project)
-8. `dolphin` (required for `nvim-tree`)
+8. `dolphin` (required for `nvim-tree.lua`)
 
 ## QuickStart
 

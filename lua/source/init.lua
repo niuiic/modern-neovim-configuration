@@ -1,9 +1,7 @@
 local cmp = require("cmp")
 
 local lang_list = {
-	"go",
 	"lua",
-	"python",
 }
 
 -- register custom sources

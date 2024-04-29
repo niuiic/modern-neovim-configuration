@@ -2,13 +2,11 @@ local core = require("core")
 local luasnip = require("luasnip")
 
 local lang_list = {
-	"go",
 	"lua",
 	"vue",
 	"markdown",
 	"javascript",
 	"typescript",
-	"python",
 	"scss",
 	"glsl",
 	"rust",

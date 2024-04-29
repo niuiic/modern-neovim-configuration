@@ -81,10 +81,8 @@ vim.o.foldenable = true
 -- filetype
 vim.filetype.add({
 	extension = {
-		h = "c",
 		sh = "sh",
 		ebuild = "sh",
-		hpp = "cpp",
 		vert = "glsl",
 		tesc = "glsl",
 		tese = "glsl",
