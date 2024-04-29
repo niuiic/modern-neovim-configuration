@@ -106,10 +106,6 @@ local config = function()
 			enable = false,
 		},
 		update_cwd = true,
-		update_focused_file = {
-			enable = true,
-			update_cwd = true,
-		},
 		filters = {
 			custom = { "^node_modules$", "^.git$" },
 		},
