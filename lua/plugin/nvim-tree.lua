@@ -102,7 +102,7 @@ end
 local config = function()
 	local nvim_tree = require("nvim-tree")
 	local core = require("core")
-	win_size = core.win.proportional_size(0.6, 0.6)
+	win_size = core.win.proportional_size(0.8, 0.8)
 
 	nvim_tree.setup({
 		git = {
