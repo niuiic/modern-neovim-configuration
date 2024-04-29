@@ -55,6 +55,7 @@ local set_keymap = function(bufnr)
 	end, opts("expand all"))
 	vim.keymap.set("n", "x", api.fs.cut, opts("cut"))
 	vim.keymap.set("n", "<C-f>", api.live_filter.start, opts("filter"))
+	vim.keymap.set("n", "<C-l>", api.live_filter.clear, opts("filter"))
 	vim.keymap.set("n", "o", function()
 		local node = api.tree.get_node_under_cursor()
 		if node == nil then
