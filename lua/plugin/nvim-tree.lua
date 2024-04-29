@@ -1,6 +1,7 @@
 local config = function()
 	local nvim_tree = require("nvim-tree")
-	local win_config = require("core").win.proportional_size(0.6, 0.6)
+	local core = require("core")
+	local win_config = core.win.proportional_size(0.6, 0.6)
 
 	nvim_tree.setup({
 		git = {
@@ -19,7 +20,7 @@ local config = function()
 				remove = false,
 			},
 		},
-		root_dirs = { require("core").file.root_path() },
+		root_dirs = { core.file.root_path() },
 		diagnostics = {
 			enable = true,
 			show_on_dirs = true,
@@ -86,8 +87,8 @@ local config = function()
 			vim.keymap.set("n", "a", api.fs.create, opts("create"))
 			vim.keymap.set("n", "y", api.fs.copy.node, opts("copy"))
 			vim.keymap.set("n", ".", api.tree.toggle_hidden_filter, opts("toggle hidden files"))
-			vim.keymap.set("n", "yp", api.fs.copy.absolute_path, opts("copy absolute path"))
-			vim.keymap.set("n", "yP", api.fs.copy.relative_path, opts("copy relative path"))
+			vim.keymap.set("n", "yP", api.fs.copy.absolute_path, opts("copy absolute path"))
+			vim.keymap.set("n", "yp", api.fs.copy.relative_path, opts("copy relative path"))
 			vim.keymap.set("n", "p", api.fs.paste, opts("paste"))
 			vim.keymap.set("n", "q", api.tree.close, opts("close"))
 			vim.keymap.set("n", "<esc>", api.tree.close, opts("close"))
@@ -97,7 +98,7 @@ local config = function()
 				if node == nil then
 					return
 				end
-				local target_buf = require("core").lua.list.find(vim.api.nvim_list_bufs(), function(v)
+				local target_buf = core.lua.list.find(vim.api.nvim_list_bufs(), function(v)
 					return string.find(vim.api.nvim_buf_get_name(v), node.absolute_path, 1, true) == nil
 				end)
 				if target_buf then
@@ -107,7 +108,10 @@ local config = function()
 			end, opts("remove"))
 			vim.keymap.set("n", "R", api.tree.reload, opts("reload"))
 			vim.keymap.set("n", "H", api.tree.collapse_all, opts("collapse all"))
-			vim.keymap.set("n", "L", api.tree.expand_all, opts("expand all"))
+			vim.keymap.set("n", "L", function()
+				vim.api.nvim_win_set_cursor(0, { 1, 1 })
+				api.tree.expand_all()
+			end, opts("expand all"))
 			vim.keymap.set("n", "x", api.fs.cut, opts("cut"))
 			vim.keymap.set("n", "<C-f>", api.live_filter.start, opts("filter"))
 			vim.keymap.set("n", "o", function()
@@ -119,7 +123,7 @@ local config = function()
 					vim.notify("dolphin is required", vim.log.levels.ERROR)
 					return
 				end
-				require("core").job.spawn("dolphin", {
+				core.job.spawn("dolphin", {
 					"--select",
 					node.absolute_path,
 				}, {}, function() end, function() end)
