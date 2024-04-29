@@ -25,7 +25,6 @@
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
 -- ◍ codelldb
--- install lldb-vscode manually
 
 -- formatters installed:
 -- ◍ prettier

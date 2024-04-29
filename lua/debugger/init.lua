@@ -1,5 +1,4 @@
 local debugger_list = {
-	"lldb-vscode",
 	"nlua",
 	"js",
 	"sh",
