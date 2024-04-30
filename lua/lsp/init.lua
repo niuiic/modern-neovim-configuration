@@ -17,7 +17,7 @@ local lsp_list = {
 	"yamlls",
 	"marksman",
 	"lemminx",
-	"glslls",
+	"glsl_analyzer",
 	"typst_lsp",
 	"dockerls",
 	"nginx_language_server",

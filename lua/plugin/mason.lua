@@ -19,7 +19,6 @@
 -- ◍ typst-lsp
 -- ◍ dockerfile-language-server
 -- ◍ nginx-language-server
--- install glslang, glsl-language-server manually
 
 -- daps installed:
 -- ◍ bash-debug-adapter

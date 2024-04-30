@@ -12,17 +12,6 @@ local rust = function(file_path)
 	}
 end
 
-local cmake = function(file_path)
-	return {
-		{
-			cmd = "gersemi",
-			args = {
-				file_path,
-			},
-		},
-	}
-end
-
 local xml = function(file_path)
 	return {
 		{
@@ -40,7 +29,6 @@ local config = function()
 		allow_update_if_buf_changed = true,
 		filetypes = {
 			rust = rust,
-			cmake = cmake,
 			svg = xml,
 		},
 	})
