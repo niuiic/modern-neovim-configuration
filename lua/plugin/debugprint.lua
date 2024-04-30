@@ -30,15 +30,7 @@ return {
 			end,
 			desc = "debug print",
 			expr = true,
-		},
-		{
-			"<C-b>",
-			function()
-				return require("debugprint").debugprint({ variable = true })
-			end,
-			desc = "debug print",
-			expr = true,
-			mode = "v",
+			mode = { "n", "x" },
 		},
 		{
 			"<space>op",
