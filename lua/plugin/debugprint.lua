@@ -41,11 +41,14 @@ return {
 			mode = "v",
 		},
 		{
-			"<space>dd",
+			"<space>op",
 			function()
-				require("debugprint").deleteprints()
+				require("telescope.builtin").grep_string({
+					search = "DEBUGPRINT",
+					cwd = require("core").file.root_path(),
+				})
 			end,
-			desc = "remove all debug print",
+			desc = "search debug print",
 		},
 	},
 }
