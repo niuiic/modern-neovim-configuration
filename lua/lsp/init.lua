@@ -10,7 +10,7 @@ local lsp_list = {
 	"html",
 	"jsonls",
 	"rust_analyzer",
-	"sqlls",
+	"sqls",
 	"taplo",
 	"stylelint_lsp",
 	"wgsl_analyzer",

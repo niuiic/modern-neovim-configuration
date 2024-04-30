@@ -1,5 +1,5 @@
 -- lsps installed:
--- ◍ sqlls
+-- ◍ sqls
 -- ◍ vue-language-server
 -- ◍ bash-language-server
 -- ◍ css-lsp
