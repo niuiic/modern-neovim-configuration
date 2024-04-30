@@ -163,11 +163,6 @@ require("task")
 Some functions are not convenient to display with pictures, please check `lua/plugins.lua`.
 
 <details>
-  <summary><b>Full Screen</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/full-screen.png"/>
-</details>
-
-<details>
   <summary><b>Status Line</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/statusline.png"/>
 </details>

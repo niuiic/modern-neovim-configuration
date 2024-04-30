@@ -101,8 +101,6 @@ require("lazy").setup({
 	load_plugin_config("folke/trouble.nvim", "plugin/trouble"),
 	-- quickly modify surround char
 	load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
-	-- call sudo in neovim
-	load_plugin_config("lambdalisue/suda.vim", "plugin/suda"),
 	-- highlights cursor word
 	load_plugin_config("tzachar/local-highlight.nvim", "plugin/local-highlight"),
 
@@ -125,8 +123,6 @@ require("lazy").setup({
 	load_plugin_config("folke/tokyonight.nvim", "plugin/tokyonight"),
 	-- git signs
 	load_plugin_config("lewis6991/gitsigns.nvim", "plugin/gitsigns"),
-	-- resolve git conflict
-	load_plugin_config("akinsho/git-conflict.nvim", "plugin/git-conflict"),
 	-- color picker & colorizer
 	load_plugin_config("uga-rosa/ccc.nvim", "plugin/ccc"),
 	-- indentation guides
@@ -138,9 +134,6 @@ require("lazy").setup({
 
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
-	-- extensions
-	-- import
-	"piersolenski/telescope-import.nvim",
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- recent files
@@ -188,7 +181,7 @@ require("lazy").setup({
 	-- quickfix
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
 	-- uses lua patterns instead of vim regex
-	load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
+	-- load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
 	-- smooth scrolling
