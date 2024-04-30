@@ -16,14 +16,56 @@ local lambda = require("luasnip.extras").l
 local postfix = require("luasnip.extras.postfix").postfix
 
 local M = {
-	s("resolution", {
-		t({ [[uniform vec2 u_resolution;]] }),
+	s("2", {
+		t({
+			"vec2(",
+		}),
+		i(1),
+		t({
+			",",
+		}),
+		i(2),
+		t({
+			")",
+		}),
 	}),
-	s("time", {
-		t({ [[uniform float u_time;]] }),
+	s("3", {
+		t({
+			"vec3(",
+		}),
+		i(1),
+		t({
+			",",
+		}),
+		i(2),
+		t({
+			",",
+		}),
+		i(3),
+		t({
+			")",
+		}),
 	}),
-	s("mouse", {
-		t({ [[uniform vec2 u_mouse;]] }),
+	s("4", {
+		t({
+			"vec4(",
+		}),
+		i(1),
+		t({
+			",",
+		}),
+		i(2),
+		t({
+			",",
+		}),
+		i(3),
+		t({
+			",",
+		}),
+		i(4),
+		t({
+			")",
+		}),
 	}),
 }
 
