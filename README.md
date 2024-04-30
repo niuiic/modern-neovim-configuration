@@ -249,11 +249,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Yank History</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/yank-history.png"/>
-</details>
-
-<details>
   <summary><b>Code Action</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/code-action.png"/>
 </details>
@@ -284,28 +279,13 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Sql</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/sql.png"/>
-</details>
-
-<details>
   <summary><b>Quick Motion</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/quick-motion.png"/>
 </details>
 
 <details>
-  <summary><b>TagBar</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/tagbar.png"/>
-</details>
-
-<details>
   <summary><b>Lsp Progress</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/lsp-progress.png"/>
-</details>
-
-<details>
-  <summary><b>Symbol Winbar</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/symbol-winbar.png"/>
 </details>
 
 <details>
@@ -344,11 +324,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 </details>
 
 <details>
-  <summary><b>Git Conflict</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/git-conflict.png"/>
-</details>
-
-<details>
   <summary><b>Jump to Marks</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/jump-to-marks.png"/>
 </details>
@@ -361,9 +336,4 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 <details>
   <summary><b>Divider</b></summary>
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/divider.png"/>
-</details>
-
-<details>
-  <summary><b>Github Action</b></summary>
-<img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/github-action.png"/>
 </details>
