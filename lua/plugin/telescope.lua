@@ -31,14 +31,10 @@ local config = function()
 					},
 				},
 			},
-			import = {
-				insert_at_top = true,
-			},
 		},
 	})
 
 	require("telescope").load_extension("undo")
-	require("telescope").load_extension("import")
 end
 
 local keys = {

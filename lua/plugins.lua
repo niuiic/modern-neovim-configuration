@@ -180,8 +180,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
 	-- quickfix
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
-	-- uses lua patterns instead of vim regex
-	-- load_plugin_config("chrisgrieser/nvim-alt-substitute", "plugin/nvim-alt-substitute"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
 	-- smooth scrolling
