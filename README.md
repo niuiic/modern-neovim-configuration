@@ -4,7 +4,7 @@ Neovim + Linux = Best Almighty IDE
 
 > This configuration is for linux only.
 
-## Mainly Supported Language(or Framework) List
+## Mainly Supported Language/Framework List
 
 - Rust
 - Javascript/Typescript
