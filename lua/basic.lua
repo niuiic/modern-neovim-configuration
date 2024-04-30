@@ -98,6 +98,7 @@ vim.filetype.add({
 		wgsl = "wgsl",
 		mdx = "markdown",
 		typ = "typst",
+		zsh = "sh",
 	},
 })
 
