@@ -16,7 +16,14 @@ Neovim + Linux = Best Almighty IDE
 - Vue
 - React
 
-> Common features: lsp、format、autocompletion (including custom snippets and source)、debug.
+To support a new one, check these.
+
+- treesitter
+- lsp
+- dap
+- formatter
+- source
+- snippet
 
 ## Personal Environment
 
