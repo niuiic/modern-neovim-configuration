@@ -18,6 +18,7 @@ return {
 				end)
 			end,
 			desc = "scroll down",
+			mode = { "n", "x" },
 		},
 		{
 			"<C-u>",
@@ -37,6 +38,7 @@ return {
 				end)
 			end,
 			desc = "scroll up",
+			mode = { "n", "x" },
 		},
 	},
 }
