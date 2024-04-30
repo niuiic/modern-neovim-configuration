@@ -118,6 +118,9 @@ vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 -- toggle current fold
 vim.keymap.set("n", "Z", "za", { silent = true })
 
+-- center this line
+vim.keymap.set("n", "e", "zz", { silent = true })
+
 -- plugin operation
 require("which-key").register({
 	n = {
