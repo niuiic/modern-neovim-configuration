@@ -36,7 +36,7 @@ return {
 					}
 				end)
 			end,
-			desc = "scroll down",
+			desc = "scroll up",
 		},
 	},
 }
