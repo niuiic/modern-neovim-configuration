@@ -19,6 +19,7 @@
 -- ◍ typst-lsp
 -- ◍ dockerfile-language-server
 -- ◍ nginx-language-server
+-- ◍ glsl_analyzer
 
 -- daps installed:
 -- ◍ bash-debug-adapter
