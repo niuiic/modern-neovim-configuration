@@ -36,6 +36,7 @@ end
 
 local lsp_format_langs = {
 	"wgsl",
+	"glsl",
 }
 
 return {
