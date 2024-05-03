@@ -4,12 +4,14 @@ local M = {
 	cmd = { "sqls", "-config", core.file.root_path() .. "/.nvim/db.yml" },
 	root_dir = core.file.root_path,
 	on_attach = function(client, bufnr)
-		vim.api.nvim_buf_create_user_command(bufnr, "SqlsExec", function(args)
-			local range
-			if args.range ~= 0 then
-				range = vim.lsp.util.make_given_range_params({ args.line1, 0 }, { args.line2, math.huge }).range
-				range["end"].character = range["end"].character - 1
+		vim.api.nvim_buf_create_user_command(bufnr, "SqlsExec", function()
+			local start_line = vim.fn.getpos("v")[2]
+			local end_line = vim.fn.getpos(".")[2]
+			if start_line > end_line then
+				start_line, end_line = end_line, start_line
 			end
+			local range = vim.lsp.util.make_given_range_params({ start_line, 0 }, { end_line, math.huge }).range
+			range["end"].character = range["end"].character - 1
 
 			client.request("workspace/executeCommand", {
 				command = "executeQuery",
