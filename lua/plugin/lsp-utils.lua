@@ -35,6 +35,11 @@ local config = function()
 					{ map = { "BashlsRename", "LSPRename" } },
 				},
 			},
+			sqls = {
+				commands_map = {
+					{ map = { "SqlsExec", "LSPExec" } },
+				},
+			},
 		},
 	})
 end
@@ -89,6 +94,12 @@ local keys = {
 		"<space>ll",
 		toggle_inlay_hint,
 		desc = "toggle inlay hint",
+	},
+	{
+		"<space>le",
+		"<cmd>LSPExec<CR>",
+		desc = "exec code",
+		mode = { "n", "x" },
 	},
 }
 

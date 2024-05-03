@@ -28,6 +28,7 @@ local config = function()
 					and vim.bo[buf_number].filetype ~= "dap-repl"
 					and vim.bo[buf_number].filetype ~= "divider"
 					and vim.bo[buf_number].filetype ~= "lspsagaoutline"
+					and vim.bo[buf_number].filetype ~= "sqls_output"
 				then
 					return true
 				else
