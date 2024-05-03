@@ -37,14 +37,14 @@ local keys = {
 	{
 		"<A-j>",
 		function()
-			require("trouble").next({ skip_groups = true, jump = true })
+			pcall(require("trouble").next, { skip_groups = true, jump = true })
 		end,
 		desc = "jump to next item",
 	},
 	{
 		"<A-k>",
 		function()
-			require("trouble").prev({ skip_groups = true, jump = true })
+			pcall(require("trouble").prev, { skip_groups = true, jump = true })
 		end,
 		desc = "jump to previous item",
 	},
