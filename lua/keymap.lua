@@ -77,41 +77,6 @@ vim.keymap.set("n", "<C-x>", function()
 	require("mini.bufremove").delete()
 end, {})
 
--- quickfix
-require("which-key").register({
-	q = {
-		o = {
-			"<cmd>cope25<CR>",
-			"open quickfix window",
-		},
-		m = {
-			"<cmd>make<CR>",
-			"make",
-		},
-		c = {
-			"<cmd>cclose<CR>",
-			"close quickfix window",
-		},
-		e = {
-			"<cmd>set modifiable<CR>",
-			"set quickfix modifiable",
-		},
-		r = {
-			"<cmd>LoadQf<CR>",
-			"load quickfix history",
-		},
-		w = {
-			"<cmd>WriteQf<CR>",
-			"save quickfix",
-		},
-	},
-}, {
-	mode = "n",
-	prefix = "<localleader>",
-})
-vim.keymap.set("n", "<A-j>", ":cnext<CR>", { silent = true })
-vim.keymap.set("n", "<A-k>", ":cprev<CR>", { silent = true })
-
 -- copy to systemclip
 vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
 
