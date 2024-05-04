@@ -2,13 +2,15 @@ local basic_parser = function(output, regex)
 	local lines = vim.split(output, "\n")
 	local qf_item
 	local qf_list = {}
+	local index = 1
 	for _, line in ipairs(lines) do
 		local file, line_nr, msg = string.match(line, regex)
 		if file and line then
 			if qf_item then
 				table.insert(qf_list, qf_item)
 			end
-			qf_item = { filename = file, lnum = tonumber(line_nr), text = msg }
+			qf_item = { filename = file, lnum = tonumber(line_nr), text = string.format("[%s]\n%s", index, msg) }
+			index = index + 1
 		else
 			if qf_item then
 				qf_item.text = qf_item.text .. "\n" .. line
