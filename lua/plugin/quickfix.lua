@@ -41,6 +41,13 @@ return {
 			desc = "open quickfix window",
 		},
 		{
+			"<space>qd",
+			function()
+				require("quickfix").remove()
+			end,
+			desc = "remove quickfix item",
+		},
+		{
 			"<space>qm",
 			function()
 				require("quickfix").make()
