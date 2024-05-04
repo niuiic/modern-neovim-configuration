@@ -10,13 +10,13 @@ return {
 				vim.cmd("wundo " .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
-				if core.file.file_or_dir_exists(session_dir .. "/" .. "breakpoints") then
+				if core.file.file_or_dir_exists(session_dir .. "/breakpoints") then
 					dap_utils.restore_breakpoints(session_dir .. "/breakpoints")
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/watches") then
 					dap_utils.restore_watches(session_dir .. "/watches")
 				end
-				if core.file.file_or_dir_exists(session_dir .. "/" .. "quickfix") then
+				if core.file.file_or_dir_exists(session_dir .. "/quickfix") then
 					require("quickfix").restore(session_dir .. "/quickfix")
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/undo") then
