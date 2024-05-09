@@ -33,16 +33,6 @@ local node = {
 		},
 	},
 	{
-		name = "Launch cmd",
-		type = "pwa-node",
-		request = "launch",
-		cwd = core.file.root_path(),
-		runtimeExecutable = "pnpm",
-		runtimeArgs = {
-			"debug:cmd",
-		},
-	},
-	{
 		name = "Launch file",
 		type = "pwa-node",
 		request = "launch",
