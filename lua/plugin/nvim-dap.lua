@@ -158,7 +158,13 @@ local keys = {
 	{
 		"<space>dq",
 		function()
-			require("dap").terminate()
+			local choice = vim.fn.confirm("Terminate program?", "&Yes\n&No")
+			if choice == 1 then
+				require("dap").terminate()
+			else
+				require("dap").disconnect()
+				require("dap").close()
+			end
 			require("dapui").close({})
 			require("dap.repl").close({})
 			require("nvim-dap-virtual-text/virtual_text").clear_virtual_text()
