@@ -211,5 +211,7 @@ require("lazy").setup({
 	-- typescript tools
 	load_plugin_config("pmizio/typescript-tools.nvim", "plugin/typescript-tools"),
 	-- mark
-	load_plugin_config("fnune/recall.nvim", "plugin/recall"),
+	-- load_plugin_config("fnune/recall.nvim", "plugin/recall"),
+	-- track
+	load_plugin_config("niuiic/track.nvim", "plugin/track", "~/Documents/projects/track.nvim"),
 })

@@ -7,6 +7,7 @@ return {
 				dap_utils.store_breakpoints(session_dir .. "/breakpoints")
 				dap_utils.store_watches(session_dir .. "/watches")
 				require("quickfix").store(session_dir .. "/quickfix")
+				require("track").store(session_dir .. "/track")
 				vim.cmd("wundo " .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
@@ -18,6 +19,9 @@ return {
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/quickfix") then
 					require("quickfix").restore(session_dir .. "/quickfix")
+				end
+				if core.file.file_or_dir_exists(session_dir .. "/track") then
+					require("track").restore(session_dir .. "/track")
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/undo") then
 					vim.cmd("rundo " .. session_dir .. "/undo")
