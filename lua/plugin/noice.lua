@@ -9,8 +9,6 @@ local config = function()
 	require("noice").setup({
 		messages = {
 			view = "mini",
-			view_error = "mini",
-			view_warn = "mini",
 		},
 		views = {
 			mini = {
