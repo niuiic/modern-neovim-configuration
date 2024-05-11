@@ -32,6 +32,13 @@ return {
 			desc = "jump to prev mark",
 		},
 		{
+			"me",
+			function()
+				require("track").edit()
+			end,
+			desc = "edit mark",
+		},
+		{
 			"<space>om",
 			function()
 				require("track").search()
