@@ -99,6 +99,7 @@ vim.filetype.add({
 		mdx = "markdown",
 		typ = "typst",
 		zsh = "sh",
+		ts = "typescript",
 	},
 })
 
