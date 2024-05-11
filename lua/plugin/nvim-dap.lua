@@ -15,7 +15,6 @@ local config = function()
 end
 
 local set_breakpoint = function()
-	local core = require("core")
 	local types = { "log point", "conditional breakpoint", "exception breakpoint" }
 	vim.ui.select(types, {
 		prompt = "Select Breakpoint Types",
@@ -25,15 +24,33 @@ local set_breakpoint = function()
 		elseif choice == types[2] then
 			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "), vim.fn.input("Hit times: "))
 		elseif choice == types[3] then
-			vim.fn.input("Exception: ", function(input)
+			vim.ui.input({ prompt = "Exception: " }, function(input)
 				if input then
-					require("dap").set_exception_breakpoints(core.lua.string.split(input))
+					require("dap").set_exception_breakpoints(input)
 				else
 					require("dap").set_exception_breakpoints("default")
 				end
 			end)
 		end
 	end)
+end
+
+local terminate_debug = function()
+	local choice = vim.fn.confirm("Terminate program?", "&Yes\n&No")
+	if not choice then
+		return
+	end
+
+	if choice == 1 then
+		require("dap").terminate()
+	else
+		require("dap").disconnect()
+		require("dap").close()
+	end
+
+	require("dapui").close({})
+	require("dap.repl").close({})
+	require("nvim-dap-virtual-text/virtual_text").clear_virtual_text()
 end
 
 local keys = {
@@ -157,23 +174,7 @@ local keys = {
 	-- other
 	{
 		"<space>dq",
-		function()
-			local choice = vim.fn.confirm("Terminate program?", "&Yes\n&No")
-			if not choice then
-				return
-			end
-
-			if choice == 1 then
-				require("dap").terminate()
-			else
-				require("dap").disconnect()
-				require("dap").close()
-			end
-
-			require("dapui").close({})
-			require("dap.repl").close({})
-			require("nvim-dap-virtual-text/virtual_text").clear_virtual_text()
-		end,
+		terminate_debug,
 		desc = "quit debug",
 	},
 	{
