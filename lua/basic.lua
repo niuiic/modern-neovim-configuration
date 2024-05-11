@@ -84,7 +84,7 @@ local buffer_valid = function(bufnr)
 	if string.find(filetype, "dap", 1, true) then
 		return false
 	end
-	if filetype == "terminal" or filetype == "NvimTree" then
+	if filetype == "terminal" or filetype == "NvimTree" or filetype == "Outline" then
 		return false
 	end
 	local root_path = require("core").file.root_path()
