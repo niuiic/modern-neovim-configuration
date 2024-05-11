@@ -28,13 +28,6 @@ end
 
 local keys = {
 	{
-		"<space>lo",
-		function()
-			require("trouble").toggle("symbols")
-		end,
-		desc = "toggle symbols",
-	},
-	{
 		"<A-j>",
 		function()
 			pcall(require("trouble").next, { skip_groups = true, jump = true })

@@ -11,6 +11,7 @@ local config = function()
 				toggle_or_jump = "<CR>",
 				quit = { "q", "<ESC>" },
 			},
+			win_width = 40,
 		},
 		beacon = {
 			enable = false,
@@ -106,6 +107,11 @@ return {
 			"<space>la",
 			"<cmd>Lspsaga code_action<CR>",
 			desc = "code action",
+		},
+		{
+			"<space>lo",
+			"<cmd>Lspsaga outline<CR>",
+			desc = "outline",
 		},
 	},
 }
