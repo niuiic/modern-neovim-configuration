@@ -108,10 +108,5 @@ return {
 			"<cmd>Lspsaga code_action<CR>",
 			desc = "code action",
 		},
-		{
-			"<space>lo",
-			"<cmd>Lspsaga outline<CR>",
-			desc = "outline",
-		},
 	},
 }

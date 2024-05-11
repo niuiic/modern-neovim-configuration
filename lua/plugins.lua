@@ -212,4 +212,6 @@ require("lazy").setup({
 	load_plugin_config("pmizio/typescript-tools.nvim", "plugin/typescript-tools"),
 	-- track
 	load_plugin_config("niuiic/track.nvim", "plugin/track"),
+	-- outline
+	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
 })
