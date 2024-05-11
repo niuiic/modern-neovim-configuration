@@ -39,8 +39,8 @@ local set_keymap = function(bufnr)
 		if node == nil then
 			return
 		end
-		local target_buf = core.lua.list.find(vim.api.nvim_list_bufs(), function(v)
-			return string.find(vim.api.nvim_buf_get_name(v), node.absolute_path, 1, true) == nil
+		local target_buf = core.lua.list.find(vim.api.nvim_list_bufs(), function(x)
+			return string.find(vim.api.nvim_buf_get_name(x), node.absolute_path, 1, true) ~= nil
 		end)
 		if target_buf then
 			require("mini.bufremove").delete(target_buf)
