@@ -214,4 +214,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/track.nvim", "plugin/track"),
 	-- outline
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
+	-- structural search and replace
+	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 })
