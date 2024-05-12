@@ -23,6 +23,7 @@ return {
 				require("ssr").open()
 			end,
 			desc = "replace structure",
+			mode = { "x" },
 		},
 	},
 }
