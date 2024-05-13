@@ -102,7 +102,14 @@ end
 local config = function()
 	local nvim_tree = require("nvim-tree")
 	local core = require("core")
-	win_size = core.win.proportional_size(0.8, 0.8)
+	local screen_w = vim.opt.columns:get()
+	local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+	win_size = {
+		col = 0,
+		row = 1,
+		height = screen_h - 4,
+		width = screen_w,
+	}
 
 	nvim_tree.setup({
 		git = {
