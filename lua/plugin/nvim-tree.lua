@@ -160,20 +160,7 @@ local config = function()
 				resize_window = true,
 				window_picker = {
 					picker = function()
-						return require("window-picker").pick_window({
-							picker_config = {
-								statusline_winbar_picker = {
-									use_winbar = "always",
-								},
-							},
-							show_prompt = false,
-							filter_rules = {
-								bo = {
-									filetype = { "NvimTree", "notify", "noice" },
-									buftype = { "terminal" },
-								},
-							},
-						})
+						return prev_winnr
 					end,
 				},
 			},
