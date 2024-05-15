@@ -1,4 +1,5 @@
 local core = require("core")
+local utils = require("utils")
 
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
@@ -35,26 +36,9 @@ vim.keymap.set("n", "<C-e>", function()
 	vim.cmd("e")
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
 end, { silent = true })
-local buffer_valid = function(bufnr)
-	local filetype = vim.api.nvim_get_option_value("filetype", {
-		buf = bufnr,
-	})
-	if string.find(filetype, "dap", 1, true) then
-		return false
-	end
-	if filetype == "terminal" or filetype == "NvimTree" or filetype == "Outline" then
-		return false
-	end
-	local root_path = core.file.root_path()
-	local success, name = pcall(vim.api.nvim_buf_get_name, bufnr)
-	if not success or name == nil or name == "" or string.find(name, root_path, 1, true) ~= 1 then
-		return false
-	end
-	return true
-end
 vim.api.nvim_create_user_command("Quit", function()
 	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
-		return not buffer_valid(v)
+		return not utils.buffer_valid(v)
 	end)
 	for _, bufnr in ipairs(buf_list) do
 		pcall(function(command)

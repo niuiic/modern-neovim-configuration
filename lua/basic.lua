@@ -1,3 +1,5 @@
+local utils = require("utils")
+
 -- file encoding
 vim.g.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
@@ -77,33 +79,16 @@ vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-local buffer_valid = function(bufnr)
-	local filetype = vim.api.nvim_get_option_value("filetype", {
-		buf = bufnr,
-	})
-	if string.find(filetype, "dap", 1, true) then
-		return false
-	end
-	if filetype == "terminal" or filetype == "NvimTree" or filetype == "Outline" then
-		return false
-	end
-	local root_path = require("core").file.root_path()
-	local success, name = pcall(vim.api.nvim_buf_get_name, bufnr)
-	if not success or name == nil or name == "" or string.find(name, root_path, 1, true) ~= 1 then
-		return false
-	end
-	return true
-end
 vim.api.nvim_create_autocmd("BufWinLeave", {
 	callback = function(args)
-		if buffer_valid(args.buf) then
+		if utils.buffer_valid(args.buf) then
 			vim.cmd("mkview")
 		end
 	end,
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(args)
-		if buffer_valid(args.buf) then
+		if utils.buffer_valid(args.buf) then
 			vim.cmd("silent! loadview")
 		end
 	end,
@@ -139,5 +124,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		local higroup = vim.fn.hlexists("HighlightedyankRegion") > 0 and "HighlightedyankRegion" or "IncSearch"
 		vim.highlight.on_yank({ higroup = higroup, timeout = 500 })
+	end,
+})
+
+-- switch normal mode when enter window
+vim.api.nvim_create_autocmd("BufWinEnter", {
+	callback = function(args)
+		if vim.fn.mode() == "i" and utils.buffer_valid(args.buf) then
+			vim.cmd("stopinsert")
+		end
 	end,
 })
