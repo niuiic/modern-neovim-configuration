@@ -9,7 +9,7 @@ local config = function()
 		adapters = {
 			require("neotest-jest")({
 				jestCommand = "pnpm jest",
-				jestConfigFile = "jest.config.cjs",
+				jestConfigFile = "jest.config.json",
 				env = { CI = true },
 				cwd = function()
 					local get_prev_level_path = function(currentPath)
