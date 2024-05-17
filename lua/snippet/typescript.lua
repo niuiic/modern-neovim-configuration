@@ -194,7 +194,7 @@ local M = {
 		)
 	),
 	s("abstract", {
-		t("abstract"),
+		t("abstract "),
 	}),
 }
 
