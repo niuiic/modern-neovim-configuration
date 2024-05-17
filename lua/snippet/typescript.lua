@@ -193,9 +193,6 @@ local M = {
 			{ i(1, "String") }
 		)
 	),
-	s("abstract", {
-		t("abstract "),
-	}),
 }
 
 local common = require("snippet/common/node/js-ts")
