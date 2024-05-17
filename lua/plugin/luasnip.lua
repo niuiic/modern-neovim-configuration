@@ -55,4 +55,5 @@ return {
 	config = config,
 	keys = keys,
 	lazy = false,
+	build = "make install_jsregexp",
 }

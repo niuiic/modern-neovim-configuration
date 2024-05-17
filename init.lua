@@ -5,7 +5,6 @@ require("plugins")
 require("keymap")
 require("lsp")
 require("snippet")
-require("source")
 
 -- load config for workspace
 local core = require("core")
