@@ -17,7 +17,7 @@ return {
 		{
 			"f",
 			function()
-				require("flash").jump({ search = { mode = "search" }, jump = { pos = "end" } })
+				require("flash").jump({ search = { mode = "search" }, jump = { pos = "start" } })
 			end,
 			desc = "flash",
 			mode = { "n", "x", "o" },
@@ -25,7 +25,7 @@ return {
 		{
 			"F",
 			function()
-				require("flash").jump({ search = { mode = "search" }, jump = { pos = "start" } })
+				require("flash").jump({ search = { mode = "search" }, jump = { pos = "end" } })
 			end,
 			desc = "flash",
 			mode = { "n", "x", "o" },
