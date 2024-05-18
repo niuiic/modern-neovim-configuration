@@ -1,6 +1,19 @@
 return {
 	config = function()
-		require("track").setup({})
+		require("track").setup({
+			search = {
+				entry_label = function(mark)
+					local core = require("core")
+					local root_path = core.file.root_path()
+					local file = mark.file
+					local index = string.find(mark.file, root_path, 1, true)
+					if index then
+						file = string.sub(file, string.len(root_path) + 2)
+					end
+					return string.format("[%s] %s | %s:%s", mark.id, mark.desc, file, mark.lnum)
+				end,
+			},
+		})
 	end,
 	keys = {
 		{
