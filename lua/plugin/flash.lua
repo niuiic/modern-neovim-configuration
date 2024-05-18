@@ -15,7 +15,7 @@ return {
 	end,
 	keys = {
 		{
-			"f",
+			"F",
 			function()
 				require("flash").jump({ search = { mode = "search" }, jump = { pos = "start" } })
 			end,
@@ -23,7 +23,7 @@ return {
 			mode = { "n", "x", "o" },
 		},
 		{
-			"F",
+			"f",
 			function()
 				require("flash").jump({ search = { mode = "search" }, jump = { pos = "end" } })
 			end,
