@@ -25,7 +25,6 @@ local config = function()
 			"toml",
 			"todotxt",
 			"tsx",
-			"vim",
 			"yaml",
 			"glsl",
 			"wgsl",
