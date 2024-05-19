@@ -116,6 +116,7 @@ vim.filetype.add({
 		typ = "typst",
 		zsh = "sh",
 		ts = "typescript",
+		dart = "dart",
 	},
 })
 
