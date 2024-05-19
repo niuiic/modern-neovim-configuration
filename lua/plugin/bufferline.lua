@@ -60,4 +60,5 @@ return {
 	keys = keys,
 	dependencies = "kyazdani42/nvim-web-devicons",
 	lazy = false,
+	commit = "73540cb95f8d95aa1af3ed57713c6720c78af915",
 }
