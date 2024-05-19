@@ -67,8 +67,6 @@ require("lazy").setup({
 	load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
 	"andymass/vim-matchup",
-	-- syntax aware text-objects, select, move, swap, and peek support
-	"nvim-treesitter/nvim-treesitter-textobjects",
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
 
@@ -216,4 +214,6 @@ require("lazy").setup({
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
 	-- structural search and replace
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
+	-- enhance a/i
+	load_plugin_config("echasnovski/mini.ai", "plugin/ai"),
 })

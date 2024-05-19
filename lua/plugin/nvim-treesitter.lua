@@ -39,21 +39,6 @@ local config = function()
 		matchup = {
 			enable = true,
 		},
-		-- check more textobjects on https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-		textobjects = {
-			select = {
-				enable = true,
-				lookahead = true,
-				keymaps = {
-					["af"] = "@function.outer",
-					["if"] = "@function.inner",
-					["ac"] = "@class.outer",
-					["ic"] = "@class.inner",
-					["am"] = "@comment.outer",
-					["im"] = "@comment.inner",
-				},
-			},
-		},
 	})
 end
 
