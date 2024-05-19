@@ -25,6 +25,7 @@
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
 -- ◍ codelldb
+-- ◍ dart-debug-adapter
 
 -- formatters installed:
 -- ◍ prettier
