@@ -215,5 +215,5 @@ require("lazy").setup({
 	-- structural search and replace
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- enhance a/i
-	load_plugin_config("echasnovski/mini.ai", "plugin/ai"),
+	load_plugin_config("echasnovski/mini.ai", "plugin/mini-ai"),
 })
