@@ -24,16 +24,18 @@ return {
 			desc = "toggle mark",
 		},
 		{
-			"mw",
+			"mM",
 			function()
 				if require("track").is_marked() then
+					require("track").unmark()
 					return
 				end
 				local desc = require("core").text.selection()
 				require("track").mark(nil, nil, nil, desc)
+				require("core").text.cancel_selection()
 			end,
-			desc = "create mark",
-			mode = { "n", "v" },
+			desc = "toggle mark",
+			mode = { "n", "x" },
 		},
 		{
 			"mc",
@@ -62,6 +64,19 @@ return {
 				require("track").edit()
 			end,
 			desc = "edit mark",
+		},
+		{
+			"mE",
+			function()
+				if not require("track").is_marked() then
+					return
+				end
+				local desc = require("core").text.selection()
+				require("track").edit(nil, nil, desc)
+				require("core").text.cancel_selection()
+			end,
+			desc = "edit mark",
+			mode = { "n", "x" },
 		},
 		{
 			"<space>om",
