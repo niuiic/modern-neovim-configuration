@@ -1,21 +1,21 @@
 return {
 	config = function()
 		local core = require("core")
-		local dap_utils = require("dap-utils")
+
 		require("multiple-session").setup({
 			on_session_saved = function(session_dir)
-				dap_utils.store_breakpoints(session_dir .. "/breakpoints")
-				dap_utils.store_watches(session_dir .. "/watches")
+				require("dap-utils").store_breakpoints(session_dir .. "/breakpoints")
+				require("dap-utils").store_watches(session_dir .. "/watches")
 				require("quickfix").store(session_dir .. "/quickfix")
 				require("track").store(session_dir .. "/track")
 				vim.cmd("wundo " .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
 				if core.file.file_or_dir_exists(session_dir .. "/breakpoints") then
-					dap_utils.restore_breakpoints(session_dir .. "/breakpoints")
+					require("dap-utils").restore_breakpoints(session_dir .. "/breakpoints")
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/watches") then
-					dap_utils.restore_watches(session_dir .. "/watches")
+					require("dap-utils").restore_watches(session_dir .. "/watches")
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/quickfix") then
 					require("quickfix").restore(session_dir .. "/quickfix")
