@@ -167,7 +167,11 @@ require("lazy").setup({
 	-- translate
 	load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
 	-- session
-	load_plugin_config("niuiic/multiple-session.nvim", "plugin/multiple-session"),
+	load_plugin_config(
+		"niuiic/multiple-session.nvim",
+		"plugin/multiple-session",
+		"~/Documents/projects/multiple-session.nvim"
+	),
 	-- window picker
 	load_plugin_config("s1n7ax/nvim-window-picker", "plugin/nvim-window-picker"),
 	-- maximize window
@@ -216,6 +220,6 @@ require("lazy").setup({
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- enhance a/i
 	load_plugin_config("echasnovski/mini.ai", "plugin/mini-ai"),
-    -- file map
+	-- file map
 	load_plugin_config("lewis6991/satellite.nvim", "plugin/satellite"),
 })
