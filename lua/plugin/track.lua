@@ -24,6 +24,18 @@ return {
 			desc = "toggle mark",
 		},
 		{
+			"mw",
+			function()
+				if require("track").is_marked() then
+					return
+				end
+				local desc = require("core").text.selection()
+				require("track").mark(nil, nil, nil, desc)
+			end,
+			desc = "create mark",
+			mode = { "n", "v" },
+		},
+		{
 			"mc",
 			function()
 				require("track").remove()
