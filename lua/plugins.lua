@@ -216,4 +216,6 @@ require("lazy").setup({
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- enhance a/i
 	load_plugin_config("echasnovski/mini.ai", "plugin/mini-ai"),
+    -- file map
+	load_plugin_config("lewis6991/satellite.nvim", "plugin/satellite"),
 })
