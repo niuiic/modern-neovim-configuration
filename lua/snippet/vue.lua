@@ -67,7 +67,7 @@ local M = {
 			}
 		)
 	),
-	s("pppppp", {
+	s("echo", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),

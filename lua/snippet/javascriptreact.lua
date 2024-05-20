@@ -4,7 +4,7 @@ local t = ls.text_node
 local i = ls.insert_node
 
 local M = {
-	s("pppppp", {
+	s("echo", {
 		t({ "console.log(" }),
 		i(1),
 		t({ ")" }),

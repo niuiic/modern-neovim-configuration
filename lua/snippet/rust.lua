@@ -19,7 +19,7 @@ local M = {
 		i(1),
 		t({ [[ */]] }),
 	}),
-	s("pppppp", {
+	s("echo", {
 		t({ "println!(" }),
 		i(1),
 		t({ ")" }),
