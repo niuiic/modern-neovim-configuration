@@ -3,13 +3,6 @@ return {
 		local core = require("core")
 
 		require("multiple-session").setup({
-			on_session_to_save = function()
-				core.lua.list.each(vim.api.nvim_list_bufs(), function(bufnr)
-					if not vim.api.nvim_buf_is_valid(bufnr) or not vim.api.nvim_buf_is_loaded(bufnr) then
-						require("mini.bufremove").delete(bufnr)
-					end
-				end)
-			end,
 			on_session_saved = function(session_dir)
 				require("dap-utils").store_breakpoints(session_dir .. "/breakpoints")
 				require("dap-utils").store_watches(session_dir .. "/watches")
