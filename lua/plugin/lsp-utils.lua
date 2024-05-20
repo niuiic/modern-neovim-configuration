@@ -44,20 +44,9 @@ local config = function()
 	})
 end
 
-local use_toggle_inlay_hint = function()
-	local enable = false
-	return function()
-		if enable then
-			vim.lsp.inlay_hint(0, false)
-			enable = false
-		else
-			vim.lsp.inlay_hint(0, true)
-			enable = true
-		end
-	end
+local toggle_inlay_hint = function()
+	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
 end
-
-local toggle_inlay_hint = use_toggle_inlay_hint()
 
 local keys = {
 	{
