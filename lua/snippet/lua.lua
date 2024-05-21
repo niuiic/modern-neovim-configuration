@@ -12,7 +12,7 @@ local M = {
 	s("task", {
 		t({
 			[[require("overseer").register_template({]],
-			[[name = "{}",]],
+			[[name = "",]],
 			[[builder = function()]],
 			[[return {]],
 			[[name = "",]],
