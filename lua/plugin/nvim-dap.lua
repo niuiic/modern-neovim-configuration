@@ -36,8 +36,8 @@ local set_breakpoint = function()
 end
 
 local terminate_debug = function()
-	local choice = vim.fn.confirm("Terminate program?", "&Yes\n&No")
-	if not choice then
+	local choice = vim.fn.confirm("Terminate program?", "&Cancel\nYes\n&No")
+	if choice == 0 then
 		return
 	end
 

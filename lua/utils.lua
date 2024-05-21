@@ -5,7 +5,7 @@ local buffer_valid = function(bufnr)
 		"terminal",
 		"NvimTree",
 		"Outline",
-		"dap*",
+		"dap+",
 	}
 	local filetype = vim.api.nvim_get_option_value("filetype", {
 		buf = bufnr,
