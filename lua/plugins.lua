@@ -142,7 +142,7 @@ require("lazy").setup({
 	load_plugin_config("cljoly/telescope-repo.nvim", "plugin/telescope-repo"),
 
 	-- task manager
-	load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
+	-- load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
 
 	-- lsp
 	"neovim/nvim-lspconfig",
@@ -218,4 +218,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.ai", "plugin/mini-ai"),
 	-- file map
 	load_plugin_config("lewis6991/satellite.nvim", "plugin/satellite"),
+	-- task manager
+	load_plugin_config("niuiic/task.nvim", "plugin/task", "~/Documents/projects/task.nvim"),
 })
