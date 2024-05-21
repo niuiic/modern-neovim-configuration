@@ -22,6 +22,9 @@ local buffer_valid = function(bufnr)
 	if not ok or name == nil or name == "" or string.find(name, root_path, 1, true) ~= 1 then
 		return false
 	end
+	if not core.file.file_or_dir_exists(name) then
+		return false
+	end
 	return true
 end
 
