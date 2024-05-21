@@ -40,6 +40,11 @@ local config = function()
 					{ map = { "SqlsExec", "LSPExec" } },
 				},
 			},
+			dartls = {
+				commands_map = {
+					{ map = { "DartlsRename", "LSPRename" } },
+				},
+			},
 		},
 	})
 end

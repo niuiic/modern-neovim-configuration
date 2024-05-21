@@ -32,9 +32,9 @@ local function organize_imports()
 	vim.lsp.buf.code_action({
 		apply = true,
 		filter = function(action)
-			return string.find(action.title, "Import ")
-				or string.find(action.title, "Remove")
-				or string.find(action.title, "remove")
+			return string.find(action.title, "Import ") ~= nil
+				or string.find(action.title, "Remove") ~= nil
+				or string.find(action.title, "remove") ~= nil
 		end,
 	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
