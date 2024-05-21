@@ -1,6 +1,7 @@
 return {
 	config = function()
 		local core = require("core")
+		local utils = require("utils")
 
 		require("multiple-session").setup({
 			on_session_saved = function(session_dir)
@@ -25,6 +26,11 @@ return {
 				end
 				if core.file.file_or_dir_exists(session_dir .. "/undo") then
 					vim.cmd("rundo " .. session_dir .. "/undo")
+				end
+
+				local bufnr = vim.api.nvim_get_current_buf()
+				if not utils.buffer_valid(bufnr) then
+					pcall(require("mini.bufremove").delete, bufnr)
 				end
 			end,
 		})
