@@ -141,9 +141,6 @@ require("lazy").setup({
 	-- project
 	load_plugin_config("cljoly/telescope-repo.nvim", "plugin/telescope-repo"),
 
-	-- task manager
-	-- load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
-
 	-- lsp
 	"neovim/nvim-lspconfig",
 	load_plugin_config("glepnir/lspsaga.nvim", "plugin/lspsaga"),
@@ -219,5 +216,5 @@ require("lazy").setup({
 	-- file map
 	load_plugin_config("lewis6991/satellite.nvim", "plugin/satellite"),
 	-- task manager
-	load_plugin_config("niuiic/task.nvim", "plugin/task", "~/Documents/projects/task.nvim"),
+	load_plugin_config("niuiic/task.nvim", "plugin/task"),
 })
