@@ -7,7 +7,6 @@ local buffer_valid = function(bufnr)
 		"Outline",
 		"dap*",
 	}
-
 	local filetype = vim.api.nvim_get_option_value("filetype", {
 		buf = bufnr,
 	})
@@ -25,6 +24,7 @@ local buffer_valid = function(bufnr)
 	if not core.file.file_or_dir_exists(name) then
 		return false
 	end
+
 	return true
 end
 

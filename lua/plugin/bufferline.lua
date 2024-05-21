@@ -1,4 +1,6 @@
 local config = function()
+	local core = require("core")
+
 	require("bufferline").setup({
 		options = {
 			mode = "buffers",
@@ -22,18 +24,22 @@ local config = function()
 				end
 				return s
 			end,
-			custom_filter = function(buf_number, _)
+			custom_filter = function(bufnr)
+				local excluded_ft = {
+					"dap-repl",
+					"divider",
+					"lspsagaoutline",
+					"sqls_output",
+				}
 				if
-					vim.bo[buf_number].buftype ~= "quickfix"
-					and vim.bo[buf_number].filetype ~= "dap-repl"
-					and vim.bo[buf_number].filetype ~= "divider"
-					and vim.bo[buf_number].filetype ~= "lspsagaoutline"
-					and vim.bo[buf_number].filetype ~= "sqls_output"
+					core.lua.list.includes(excluded_ft, function(ft)
+						return vim.bo[bufnr].filetype == ft
+					end)
 				then
-					return true
-				else
 					return false
 				end
+
+				return true
 			end,
 		},
 		highlights = {

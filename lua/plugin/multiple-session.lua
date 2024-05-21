@@ -1,7 +1,6 @@
 return {
 	config = function()
 		local core = require("core")
-		local utils = require("utils")
 
 		require("multiple-session").setup({
 			on_session_saved = function(session_dir)
@@ -28,10 +27,14 @@ return {
 					vim.cmd("rundo " .. session_dir .. "/undo")
 				end
 
-				local bufnr = vim.api.nvim_get_current_buf()
-				if not utils.buffer_valid(bufnr) then
-					pcall(require("mini.bufremove").delete, bufnr)
-				end
+				core.lua.list.each(vim.api.nvim_list_bufs(), function(bufnr)
+					if vim.bo[bufnr].filetype == "notify" then
+						return
+					end
+					if not core.file.file_or_dir_exists(vim.api.nvim_buf_get_name(bufnr)) then
+						require("mini.bufremove").delete(bufnr)
+					end
+				end)
 			end,
 		})
 	end,
