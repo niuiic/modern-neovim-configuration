@@ -37,14 +37,12 @@ vim.keymap.set("n", "<C-e>", function()
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
 end, { silent = true })
 vim.api.nvim_create_user_command("Quit", function()
-	local buf_list = core.lua.list.filter(vim.api.nvim_list_bufs(), function(v)
-		return not utils.buffer_valid(v)
+	core.lua.list.each(vim.api.nvim_list_bufs(), function(bufnr)
+		if not utils.buffer_valid(bufnr) then
+			---@diagnostic disable-next-line: param-type-mismatch
+			pcall(vim.cmd, "bw! " .. bufnr)
+		end
 	end)
-	for _, bufnr in ipairs(buf_list) do
-		pcall(function(command)
-			vim.cmd(command)
-		end, "bw! " .. bufnr)
-	end
 	vim.cmd("qa")
 end, {})
 vim.keymap.set("n", "<C-q>", ":Quit<CR>", { silent = true })
