@@ -5,7 +5,7 @@ local i = ls.insert_node
 
 local M = {
 	s("echo", {
-		t({ [[print(vim.inspect(]] }),
+		t({ [[vim.notify(vim.inspect(]] }),
 		i(1),
 		t({ [[))]] }),
 	}),
