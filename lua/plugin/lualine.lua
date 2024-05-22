@@ -9,7 +9,6 @@ local config = function()
 				"terminal",
 				"Trouble",
 				"spectre_panel",
-				"OverseerList",
 				"divider",
 				"lspsagaoutline",
 				"dapui_scopes",
