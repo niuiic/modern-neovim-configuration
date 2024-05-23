@@ -1,5 +1,8 @@
 return {
 	config = function()
+		vim.api.nvim_set_hl(0, "SatelliteCursor", {
+			fg = "#00ffff",
+		})
 		require("satellite").setup({
 			current_only = true,
 			winblend = 0,
