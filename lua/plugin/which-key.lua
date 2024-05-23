@@ -71,6 +71,9 @@ return {
 			r = {
 				name = "replace in project",
 			},
+			f = {
+				name = "flutter",
+			},
 			l = {
 				name = "divider",
 			},

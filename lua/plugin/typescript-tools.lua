@@ -5,9 +5,9 @@ return {
 
 		if core.file.file_contains(root_dir .. "/package.json", "vue") then
 			require("typescript-tools").setup({
-				on_attach = function(client, _)
-					client.server_capabilities.semanticTokensProvider = nil
-				end,
+				capabilities = require("cmp_nvim_lsp").default_capabilities(
+					vim.lsp.protocol.make_client_capabilities()
+				),
 				filetypes = {
 					"javascript",
 					"javascriptreact",
