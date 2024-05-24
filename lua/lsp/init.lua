@@ -24,7 +24,7 @@ local lsp_list = {
 }
 
 -- nvim-cmp support
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- load all lsp config
 core.lua.list.each(lsp_list, function(value)

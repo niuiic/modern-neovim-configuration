@@ -2,9 +2,7 @@ return {
 	config = function()
 		require("flutter-tools").setup({
 			lsp = {
-				capabilities = require("cmp_nvim_lsp").default_capabilities(
-					vim.lsp.protocol.make_client_capabilities()
-				),
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			},
 			dev_log = {
 				enabled = false,
