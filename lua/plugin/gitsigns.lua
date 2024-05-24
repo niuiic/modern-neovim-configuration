@@ -1,5 +1,8 @@
 local config = function()
-	require("gitsigns").setup({})
+	require("gitsigns").setup({
+		signcolumn = false,
+		numhl = true,
+	})
 end
 
 local keys = {
