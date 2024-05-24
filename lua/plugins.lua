@@ -217,6 +217,6 @@ require("lazy").setup({
 	load_plugin_config("lewis6991/satellite.nvim", "plugin/satellite"),
 	-- task manager
 	load_plugin_config("niuiic/task.nvim", "plugin/task"),
-    -- flutter
+	-- flutter
 	load_plugin_config("akinsho/flutter-tools.nvim", "plugin/flutter-tools"),
 })

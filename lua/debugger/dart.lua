@@ -1,5 +1,6 @@
 local dap = require("dap")
 local dap_utils = require("dap-utils")
+local core = require("core")
 
 dap.adapters.dart = {
 	type = "executable",
@@ -19,8 +20,8 @@ dap_utils.setup({
 				type = "dart",
 				request = "launch",
 				name = "Launch dart",
-				dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart",
-				flutterSdkPath = "/opt/flutter/bin/flutter",
+				dartSdkPath = core.file.file_or_dir_exists("/opt/bin/dart") and "/opt/bin/dart" or "/usr/bin/dart",
+				flutterSdkPath = core.file.file_or_dir_exists("/opt/bin/flutter") and "/opt/bin/flutter",
 				program = vim.api.nvim_buf_get_name(0),
 				cwd = "${workspaceFolder}",
 			},
@@ -28,10 +29,11 @@ dap_utils.setup({
 				type = "flutter",
 				request = "launch",
 				name = "Launch flutter",
-				dartSdkPath = "/opt/flutter/bin/cache/dart-sdk/bin/dart",
-				flutterSdkPath = "/opt/flutter/bin/flutter",
+				dartSdkPath = core.file.file_or_dir_exists("/opt/bin/dart") and "/opt/bin/dart" or "/usr/bin/dart",
+				flutterSdkPath = core.file.file_or_dir_exists("/opt/bin/flutter") and "/opt/bin/flutter",
 				program = "${workspaceFolder}/lib/main.dart",
 				cwd = "${workspaceFolder}",
+				toolArgs = { "-d", "chrome" },
 			},
 		})
 	end,

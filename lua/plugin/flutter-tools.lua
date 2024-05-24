@@ -7,6 +7,9 @@ return {
 			dev_log = {
 				enabled = false,
 			},
+			closing_tags = {
+				prefix = "--> ",
+			},
 		})
 
 		vim.api.nvim_create_user_command("DartlsRename", function()
