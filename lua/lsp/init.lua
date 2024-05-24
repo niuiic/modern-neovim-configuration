@@ -21,6 +21,8 @@ local lsp_list = {
 	"typst_lsp",
 	"dockerls",
 	"nginx_language_server",
+	"somesass_ls",
+	"css_variables",
 }
 
 -- nvim-cmp support
