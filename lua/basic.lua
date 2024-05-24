@@ -16,21 +16,8 @@ vim.wo.signcolumn = "yes"
 -- termguicolors
 vim.opt.termguicolors = true
 
--- line number
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.api.nvim_create_autocmd("ModeChanged", {
-	callback = function()
-		local mode = vim.fn.mode()
-		if mode == "i" then
-			vim.opt.number = true
-			vim.opt.relativenumber = false
-		else
-			vim.opt.number = true
-			vim.opt.relativenumber = true
-		end
-	end,
-})
+-- show line number
+vim.wo.number = true
 
 -- tab width
 vim.opt.tabstop = 4
