@@ -5,14 +5,14 @@ return {
 			function()
 				require("task").launch()
 			end,
-			"launch task",
+			desc = "launch task",
 		},
 		{
 			"<space>so",
 			function()
 				require("task").preview()
 			end,
-			"preview task",
+			desc = "preview task",
 		},
 	},
 }
