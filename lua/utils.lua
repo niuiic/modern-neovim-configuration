@@ -1,7 +1,7 @@
 local buffer_valid = function(bufnr)
 	local core = require("core")
 
-	if not vim.api.nvim_buf_is_valid(bufnr) or not vim.api.nvim_buf_is_loaded(bufnr) then
+	if not vim.api.nvim_buf_is_valid(bufnr) then
 		return false
 	end
 
