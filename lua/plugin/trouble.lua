@@ -47,5 +47,4 @@ return {
 	config = config,
 	keys = keys,
 	dependencies = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
-	branch = "dev",
 }
