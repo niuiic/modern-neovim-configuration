@@ -92,7 +92,7 @@ return {
 		{
 			"gd",
 			function()
-				vim.lsp.buf.definition()
+				require("telescope.builtin").lsp_definitions()
 			end,
 			desc = "goto definitions",
 		},
