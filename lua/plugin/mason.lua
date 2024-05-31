@@ -11,7 +11,7 @@
 -- ◍ rust-analyzer
 -- ◍ stylelint-lsp
 -- ◍ taplo
--- ◍ typescript-language-server
+-- ◍ vtsls
 -- ◍ wgsl-analyzer
 -- ◍ yaml-language-server
 -- ◍ marksman

@@ -23,6 +23,7 @@ local lsp_list = {
 	"nginx_language_server",
 	"somesass_ls",
 	"css_variables",
+	"vtsls",
 }
 
 -- nvim-cmp support
