@@ -5,7 +5,6 @@ local config = function()
 	dapui.setup()
 
 	dap.listeners.after.event_initialized.dapui_config = function()
-		vim.cmd("only")
 		dapui.open({})
 	end
 
