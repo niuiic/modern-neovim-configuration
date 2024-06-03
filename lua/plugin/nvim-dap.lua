@@ -36,13 +36,15 @@ local set_breakpoint = function()
 end
 
 local terminate_debug = function()
-	local choice = vim.fn.confirm("Terminate program?", "&Yes\n&No", 2)
+	local choice = vim.fn.confirm("Terminate program?", "&Cancel\n&Yes\n&No", 1)
 
-	if choice == 1 then
+	if choice == 2 then
 		require("dap").terminate()
-	else
+	elseif choice == 3 then
 		require("dap").disconnect()
 		require("dap").close()
+	else
+		return
 	end
 
 	require("dapui").close({})
