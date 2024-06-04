@@ -121,8 +121,8 @@ require("lazy").setup({
 	load_plugin_config("folke/tokyonight.nvim", "plugin/tokyonight"),
 	-- git signs
 	load_plugin_config("lewis6991/gitsigns.nvim", "plugin/gitsigns"),
-	-- color picker & colorizer
-	load_plugin_config("uga-rosa/ccc.nvim", "plugin/ccc"),
+	-- colorizer
+	load_plugin_config("brenoprata10/nvim-highlight-colors", "plugin/nvim-highlight-colors"),
 	-- indentation guides
 	load_plugin_config("echasnovski/mini.indentscope", "plugin/mini-indentscope"),
 	-- tab line
