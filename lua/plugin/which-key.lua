@@ -17,9 +17,6 @@ return {
 			g = {
 				name = "git signs",
 			},
-			c = {
-				name = "git conflict",
-			},
 			s = {
 				name = "tasks",
 			},
@@ -59,9 +56,6 @@ return {
 			s = {
 				name = "session",
 			},
-			c = {
-				name = "color picker",
-			},
 			e = {
 				name = "remote",
 			},
@@ -92,9 +86,6 @@ return {
 		})
 
 		which_key.register({
-			s = {
-				name = "tasks",
-			},
 			g = {
 				name = "git signs",
 			},
