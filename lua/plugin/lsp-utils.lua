@@ -5,7 +5,7 @@ local config = function()
 				commands_map = {
 					{ map = { "VtsExec rename_file", "LSPRenameFile" } },
 					{ map = { "VtslsRename", "LSPRename" } },
-					{ map = { "VtslsOrganizeImports", "LSPOrganizeImports" } },
+					{ map = { "VtsExec add_missing_imports", "LSPOrganizeImports" } },
 					{ map = { "VtsExec fix_all", "LSPFixAll" } },
 				},
 			},
