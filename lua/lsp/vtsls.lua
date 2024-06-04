@@ -8,6 +8,11 @@ vim.api.nvim_create_user_command("VtslsRename", function()
 	})
 end, {})
 
+vim.api.nvim_create_user_command("VtslsOrganizeImports", function()
+	vim.cmd("VtsExec add_missing_imports")
+	vim.cmd("VtsExec remove_unused_imports")
+end, {})
+
 local M = {
 	root_dir = core.file.root_path,
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
