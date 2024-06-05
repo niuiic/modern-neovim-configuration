@@ -37,8 +37,6 @@ require("lazy").setup({
 	"niuiic/core.nvim",
 	-- shortcut suggestions
 	load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
-	-- dev doc
-	load_plugin_config("folke/neodev.nvim", "plugin/neodev"),
 	-- auto complete pairs
 	load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
 	-- automatically switch input method when input mode changed
@@ -219,4 +217,6 @@ require("lazy").setup({
 	"yioneko/nvim-vtsls",
 	-- yank
 	load_plugin_config("gbprod/yanky.nvim", "plugin/yanky"),
+	-- lua lsp
+	load_plugin_config("folke/lazydev.nvim", "plugin/lazydev"),
 })

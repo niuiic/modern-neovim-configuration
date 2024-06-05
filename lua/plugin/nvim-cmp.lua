@@ -62,8 +62,12 @@ local config = function()
 			{ name = "rg", option = { additional_arguments = "--hidden --smart-case" }, group_index = 2 },
 			{ name = "treesitter" },
 			{ name = "async_path", group_index = 3 },
-			{ name = "crates", group_index = 4 },
 			{ name = "codeium", group_index = 3 },
+			{ name = "crates", group_index = 4 },
+			{
+				name = "lazydev",
+				group_index = 3,
+			},
 		}),
 		preselect = cmp.PreselectMode.None,
 	})
