@@ -119,14 +119,6 @@ vim.filetype.add({
 	},
 })
 
--- yank
-vim.api.nvim_create_autocmd("TextYankPost", {
-	callback = function()
-		local higroup = vim.fn.hlexists("HighlightedyankRegion") > 0 and "HighlightedyankRegion" or "IncSearch"
-		vim.highlight.on_yank({ higroup = higroup, timeout = 500 })
-	end,
-})
-
 -- switch normal mode when enter window
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(args)
