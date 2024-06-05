@@ -1,4 +1,3 @@
-local uv = vim.loop
 local terms = {}
 
 local set_line_number = function(show_line_number)
@@ -25,7 +24,7 @@ local set_keymap = function(bufnr)
 
 		vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-x>", "", {
 			callback = function()
-				uv.kill(terms[bufnr], "sigkill")
+				vim.uv.kill(terms[bufnr], "sigkill")
 				table.remove(terms, bufnr)
 				vim.api.nvim_buf_delete(bufnr, {
 					force = true,
