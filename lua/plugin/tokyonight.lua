@@ -16,7 +16,7 @@ return {
 			"LineNr",
 			"LineNrBelow",
 		}, function(hl)
-			vim.api.nvim_set_hl(0, hl, { fg = "#00ffff" })
+			vim.api.nvim_set_hl(0, hl, { fg = "#16D8B5" })
 		end)
 	end,
 }
