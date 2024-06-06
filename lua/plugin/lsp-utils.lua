@@ -45,6 +45,11 @@ local config = function()
 					{ map = { "DartlsRename", "LSPRename" } },
 				},
 			},
+			stylelint_lsp = {
+				commands_map = {
+					{ map = { "StylelintFixAll", "LSPFixAll" } },
+				},
+			},
 		},
 	})
 end
