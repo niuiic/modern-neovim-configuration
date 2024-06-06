@@ -31,12 +31,6 @@ return {
 			},
 			o = {
 				name = "fuzzy search",
-				c = {
-					name = "command",
-				},
-				G = {
-					name = "git",
-				},
 			},
 			b = {
 				name = "buffer line",

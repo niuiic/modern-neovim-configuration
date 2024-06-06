@@ -40,8 +40,6 @@ end
 local keys = {
 	{ "<space>ol", "<cmd>Telescope<CR>", desc = "open telescope list" },
 	{ "<space>ob", "<cmd>Telescope buffers<CR>", desc = "search buffer with preview" },
-	{ "<space>occ", "<cmd>Telescope commands<CR>", desc = "search command" },
-	{ "<space>och", "<cmd>Telescope command_history<CR>", desc = "search command history" },
 	{
 		"<space>of",
 		function()
@@ -62,12 +60,6 @@ local keys = {
 	{ "<space>or", "<cmd>Telescope resume<CR>", desc = "research" },
 	{ "<space>oT", "<cmd>TodoTelescope<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
 	{ "<space>on", "<cmd>Noice telescope<CR>", desc = "search notifications" },
-	{ "<space>oGf", "<cmd>Telescope git_files<CR>", desc = "git files" },
-	{ "<space>oGs", "<cmd>Telescope git_stash<CR>", desc = "git stash" },
-	{ "<space>oGt", "<cmd>Telescope git_status<CR>", desc = "git status" },
-	{ "<space>oGc", "<cmd>Telescope git_bcommits<CR>", desc = "git buffer commits" },
-	{ "<space>oGC", "<cmd>Telescope git_commits<CR>", desc = "git commits" },
-	{ "<space>oGb", "<cmd>Telescope git_branches<CR>", desc = "git branches" },
 	{
 		"<space>oW",
 		function()
