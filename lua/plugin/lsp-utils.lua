@@ -60,7 +60,7 @@ end
 
 local keys = {
 	{
-		"<space>lf",
+		"<space>lF",
 		"<cmd>LSPRenameFile<CR>",
 		desc = "rename file",
 	},
@@ -80,7 +80,7 @@ local keys = {
 		desc = "organize imports",
 	},
 	{
-		"<space>lF",
+		"<space>lf",
 		"<cmd>LSPFixAll<CR>",
 		desc = "fix all",
 	},
