@@ -39,12 +39,6 @@ local config = function()
 		matchup = {
 			enable = true,
 		},
-		keymaps = {
-			["af"] = "@function.outer",
-			["if"] = "@function.inner",
-			["ac"] = "@class.outer",
-			["ic"] = { query = "@class.inner" },
-		},
 	})
 end
 

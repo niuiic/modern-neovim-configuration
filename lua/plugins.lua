@@ -67,8 +67,6 @@ require("lazy").setup({
 	"andymass/vim-matchup",
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
-	-- extra text objects
-	"nvim-treesitter/nvim-treesitter-textobjects",
 
 	-- code auto complete
 	-- engine
