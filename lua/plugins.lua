@@ -67,6 +67,8 @@ require("lazy").setup({
 	"andymass/vim-matchup",
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
+	-- extra text objects
+	"nvim-treesitter/nvim-treesitter-textobjects",
 
 	-- code auto complete
 	-- engine
@@ -207,8 +209,6 @@ require("lazy").setup({
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
 	-- structural search and replace
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
-	-- enhance a/i
-	load_plugin_config("echasnovski/mini.ai", "plugin/mini-ai"),
 	-- task manager
 	load_plugin_config("niuiic/task.nvim", "plugin/task"),
 	-- flutter
