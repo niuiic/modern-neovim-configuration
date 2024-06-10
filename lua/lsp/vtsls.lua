@@ -30,30 +30,7 @@ local fix_type_import = function()
 	vim.api.nvim_win_set_cursor(0, cur_pos)
 end
 
-local remove_unused_imports = function()
-	local diagnostic_list = vim.diagnostic.get()
-	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
-		return diagnostic.code == "@typescript-eslint/no-unused-vars"
-	end)
-	if diagnostic == nil then
-		return
-	end
-	local cur_pos = vim.api.nvim_win_get_cursor(0)
-	vim.api.nvim_win_set_cursor(0, {
-		diagnostic.lnum + 1,
-		diagnostic.col,
-	})
-	vim.lsp.buf.code_action({
-		apply = true,
-		filter = function(action)
-			return string.match(action.title, "Remove unused declaration for: .*")
-		end,
-	})
-	vim.api.nvim_win_set_cursor(0, cur_pos)
-end
-
 vim.api.nvim_create_user_command("VtslsOrganizeImports", function()
-	remove_unused_imports()
 	vim.cmd("VtsExec add_missing_imports")
 	fix_type_import()
 end, {})
