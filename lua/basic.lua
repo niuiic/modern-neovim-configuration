@@ -117,6 +117,10 @@ vim.filetype.add({
 		zsh = "sh",
 		ts = "typescript",
 	},
+	pattern = {
+		[".*/openresty/conf/.*"] = "nginx",
+		[".*/nginx/conf/.*"] = "nginx",
+	},
 })
 
 -- switch normal mode when enter window
