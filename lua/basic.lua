@@ -118,8 +118,8 @@ vim.filetype.add({
 		ts = "typescript",
 	},
 	pattern = {
-		[".*/openresty/conf/.*"] = "nginx",
-		[".*/nginx/conf/.*"] = "nginx",
+		[".*/openresty/conf/.*%.conf"] = "nginx",
+		[".*/nginx/conf/.*%.conf"] = "nginx",
 	},
 })
 
