@@ -12,6 +12,7 @@ local fix_type_import = function()
 	local diagnostic_list = vim.diagnostic.get()
 	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
 		return diagnostic.code == "@typescript-eslint/consistent-type-imports"
+			or diagnostic.code == "@typescript-eslint/no-import-type-side-effects"
 	end)
 	if diagnostic == nil then
 		return
@@ -25,6 +26,7 @@ local fix_type_import = function()
 		apply = true,
 		filter = function(action)
 			return action.title == "Fix this @typescript-eslint/consistent-type-imports problem"
+				or action.title == "Fix this @typescript-eslint/no-import-type-side-effects problem"
 		end,
 	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
