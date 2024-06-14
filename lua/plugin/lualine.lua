@@ -7,7 +7,7 @@ local config = function()
 			disabled_filetypes = {
 				"NvimTree",
 				"terminal",
-				"Trouble",
+				"trouble",
 				"spectre_panel",
 				"divider",
 				"lspsagaoutline",

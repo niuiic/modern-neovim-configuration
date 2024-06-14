@@ -28,8 +28,9 @@ local config = function()
 				local excluded_ft = {
 					"dap-repl",
 					"divider",
-					"lspsagaoutline",
 					"sqls_output",
+					"trouble",
+					"terminal",
 				}
 				if
 					core.lua.list.includes(excluded_ft, function(ft)
