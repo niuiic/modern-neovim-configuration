@@ -8,6 +8,10 @@ return {
 							["<C-j>"] = "move_selection_next",
 							["<C-k>"] = "move_selection_previous",
 						},
+						o = {
+							["<C-j>"] = "move_selection_next",
+							["<C-k>"] = "move_selection_previous",
+						},
 					},
 				},
 			},
