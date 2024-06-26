@@ -146,8 +146,6 @@ require("lazy").setup({
 
 	-- lsp, dap, linter, formatter installer
 	load_plugin_config("williamboman/mason.nvim", "plugin/mason"),
-	-- search and replace in project
-	load_plugin_config("windwp/nvim-spectre", "plugin/nvim-spectre"),
 	-- annotation generator
 	load_plugin_config("danymat/neogen", "plugin/neogen"),
 	-- highlight current n
@@ -217,4 +215,8 @@ require("lazy").setup({
 	load_plugin_config("gbprod/yanky.nvim", "plugin/yanky"),
 	-- lua lsp
 	load_plugin_config("folke/lazydev.nvim", "plugin/lazydev"),
+	-- replace in buffer
+	load_plugin_config("chrisgrieser/nvim-rip-substitute", "plugin/nvim-rip-substitute"),
+	-- replace in project
+	load_plugin_config("MagicDuck/grug-far.nvim", "plugin/grug-far"),
 })
