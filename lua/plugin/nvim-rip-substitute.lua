@@ -7,9 +7,6 @@ return {
 			prefill = {
 				normal = false,
 			},
-			keymaps = {
-				abort = "<esc>",
-			},
 		})
 	end,
 	keys = {
