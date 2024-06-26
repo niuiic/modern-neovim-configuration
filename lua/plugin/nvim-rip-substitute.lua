@@ -7,6 +7,9 @@ return {
 			prefill = {
 				normal = false,
 			},
+			keymaps = {
+				confirm = "r",
+			},
 		})
 	end,
 	keys = {
