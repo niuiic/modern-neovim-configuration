@@ -203,8 +203,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/track.nvim", "plugin/track"),
 	-- outline
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
-	-- structural search and replace
-	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- task manager
 	load_plugin_config("niuiic/task.nvim", "plugin/task"),
 	-- flutter
@@ -219,4 +217,6 @@ require("lazy").setup({
 	load_plugin_config("chrisgrieser/nvim-rip-substitute", "plugin/nvim-rip-substitute"),
 	-- replace in project
 	load_plugin_config("MagicDuck/grug-far.nvim", "plugin/grug-far"),
+	-- structural replace
+	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 })

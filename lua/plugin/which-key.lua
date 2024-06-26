@@ -56,9 +56,6 @@ return {
 			d = {
 				name = "diff view",
 			},
-			r = {
-				name = "replace in project",
-			},
 			f = {
 				name = "flutter",
 			},
@@ -67,15 +64,6 @@ return {
 			},
 		}, {
 			mode = "n",
-			prefix = "<leader>",
-		})
-
-		which_key.register({
-			r = {
-				name = "replace in project",
-			},
-		}, {
-			mode = "v",
 			prefix = "<leader>",
 		})
 

@@ -18,7 +18,7 @@ return {
 	end,
 	keys = {
 		{
-			"<leader>rs",
+			"R",
 			function()
 				require("ssr").open()
 			end,
