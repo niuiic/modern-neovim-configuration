@@ -31,6 +31,15 @@ local M = {
 			")",
 		}),
 	}),
+	s("gl_PointSize", {
+		t({ "gl_PointSize" }),
+	}),
+	s("projectionMatrix", {
+		t({ "projectionMatrix" }),
+	}),
+	s("modelViewMatrix", {
+		t({ "modelViewMatrix" }),
+	}),
 }
 
 return M
