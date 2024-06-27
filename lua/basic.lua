@@ -111,6 +111,7 @@ vim.filetype.add({
 		rchit = "glsl",
 		rmiss = "glsl",
 		rcall = "glsl",
+		glsl = "glsl",
 		wgsl = "wgsl",
 		mdx = "markdown",
 		typ = "typst",
