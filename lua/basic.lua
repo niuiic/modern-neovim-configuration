@@ -97,25 +97,12 @@ vim.api.nvim_create_autocmd("BufWinEnter", {
 -- filetype
 vim.filetype.add({
 	extension = {
-		sh = "sh",
 		ebuild = "sh",
-		vert = "glsl",
-		tesc = "glsl",
-		tese = "glsl",
-		geom = "glsl",
-		frag = "glsl",
-		comp = "glsl",
-		rgen = "glsl",
-		rint = "glsl",
-		rahit = "glsl",
-		rchit = "glsl",
-		rmiss = "glsl",
-		rcall = "glsl",
+		zsh = "sh",
 		glsl = "glsl",
 		wgsl = "wgsl",
 		mdx = "markdown",
 		typ = "typst",
-		zsh = "sh",
 		ts = "typescript",
 	},
 	pattern = {
