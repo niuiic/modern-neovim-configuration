@@ -30,6 +30,7 @@ local config = function()
 					return vim.fn.getcwd()
 				end,
 			}),
+			require("neotest-vitest"),
 			require("neotest-go"),
 			require("neotest-rust")({
 				dap_adapter = "codelldb",
@@ -117,5 +118,6 @@ return {
 		"haydenmeade/neotest-jest",
 		"nvim-neotest/neotest-go",
 		"rouge8/neotest-rust",
+		"marilari88/neotest-vitest",
 	},
 }
