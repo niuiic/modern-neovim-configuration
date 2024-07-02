@@ -50,8 +50,4 @@ core.lua.list.each(lsp_list, function(value)
 	require("lspconfig")[value].setup(config)
 end)
 
-vim.diagnostic.config({
-	float = { border = "rounded" },
-})
-
 vim.cmd("hi LspInlayHint guibg=none guifg=#33FFBD")

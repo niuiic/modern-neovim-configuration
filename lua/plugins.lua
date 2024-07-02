@@ -219,4 +219,6 @@ require("lazy").setup({
 	load_plugin_config("MagicDuck/grug-far.nvim", "plugin/grug-far"),
 	-- structural replace
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
+	-- inline diagnostic
+	load_plugin_config("rachartier/tiny-inline-diagnostic.nvim", "plugin/tiny-inline-diagnostic"),
 })

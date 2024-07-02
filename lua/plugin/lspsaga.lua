@@ -97,10 +97,6 @@ return {
 			desc = "goto definitions",
 		},
 		{
-			"D",
-			vim.diagnostic.open_float,
-		},
-		{
 			"J",
 			vim.lsp.buf.hover,
 			desc = "lsp hover",
