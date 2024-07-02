@@ -23,7 +23,7 @@ return {
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextError", { fg = "#DB4B4B" })
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarn", { fg = "#E0AF68" })
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfo", { fg = "#0DB9D7" })
-		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHint", { fg = "#171E4C" })
+		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHint", { fg = "#00FFCC" })
 	end,
 	event = "VeryLazy",
 }

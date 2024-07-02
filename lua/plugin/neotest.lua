@@ -1,40 +1,21 @@
 local config = function()
 	local neotest = require("neotest")
-	local core = require("core")
 
 	neotest.setup({
 		quickfix = {
 			enabled = false,
 		},
 		adapters = {
-			require("neotest-jest")({
-				jestCommand = "pnpm jest",
-				jestConfigFile = "jest.config.json",
-				env = { CI = true },
-				cwd = function()
-					local get_prev_level_path = function(currentPath)
-						local tmp = string.reverse(currentPath)
-						local _, i = string.find(tmp, "/")
-						return string.sub(currentPath, 1, string.len(currentPath) - i)
-					end
-
-					local cur_dir = get_prev_level_path(vim.api.nvim_buf_get_name(0))
-					while cur_dir ~= "" do
-						if core.file.file_or_dir_exists(cur_dir .. "/jest.config.json") then
-							return cur_dir
-						else
-							cur_dir = get_prev_level_path(cur_dir)
-						end
-					end
-
-					return vim.fn.getcwd()
-				end,
-			}),
 			require("neotest-vitest"),
 			require("neotest-go"),
 			require("neotest-rust")({
 				dap_adapter = "codelldb",
 				args = { "--no-capture" },
+			}),
+			require("neotest-jest")({
+				jestCommand = "pnpm jest",
+				jestConfigFile = "jest.config.json",
+				env = { CI = true },
 			}),
 		},
 	})
