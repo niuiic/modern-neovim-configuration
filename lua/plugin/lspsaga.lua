@@ -102,6 +102,10 @@ return {
 			desc = "lsp hover",
 		},
 		{
+			"D",
+			vim.diagnostic.open_float,
+		},
+		{
 			"<space>la",
 			"<cmd>Lspsaga code_action<CR>",
 			desc = "code action",
