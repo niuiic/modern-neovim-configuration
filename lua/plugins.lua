@@ -48,7 +48,7 @@ require("lazy").setup({
 	-- lazygit
 	load_plugin_config("kdheepak/lazygit.nvim", "plugin/lazygit"),
 	-- toggle comments
-	load_plugin_config("numToStr/Comment.nvim", "plugin/comment"),
+	load_plugin_config("folke/ts-comments.nvim", "plugin/ts-comments"),
 	-- automatically toggle between absolute line number and relative one
 	"sitiom/nvim-numbertoggle",
 	-- quick motion
