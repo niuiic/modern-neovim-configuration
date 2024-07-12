@@ -5,6 +5,9 @@ local config = function()
 		quickfix = {
 			enabled = false,
 		},
+		diagnostic = {
+			enabled = false,
+		},
 		adapters = {
 			require("neotest-vitest"),
 			require("neotest-go"),
@@ -14,7 +17,18 @@ local config = function()
 			}),
 			require("neotest-jest")({
 				jestCommand = "pnpm jest",
-				jestConfigFile = "jest.config.json",
+				jestConfigFile = function(file)
+					if string.find(file, "/packages/") then
+						return string.match(file, "(.-/[^/]+/)src") .. "jest.config.json"
+					end
+					return vim.fn.getcwd() .. "/jest.config.json"
+				end,
+				cwd = function(file)
+					if string.find(file, "/packages/") then
+						return string.match(file, "(.-/[^/]+/)src")
+					end
+					return vim.fn.getcwd()
+				end,
 				env = { CI = true },
 			}),
 		},
