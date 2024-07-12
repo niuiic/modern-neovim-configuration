@@ -8,7 +8,7 @@ return {
 		})
 	end,
 	keys = {
-		{ "<C-a>", "<cmd>normal gcc<cr>", mode = "v" },
+		{ "<C-a>", "<cmd>normal gcc<cr>", mode = "x" },
 		{ "<C-a>", "<cmd>normal gcc<cr>" },
 	},
 }
