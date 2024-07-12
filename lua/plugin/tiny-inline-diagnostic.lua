@@ -19,6 +19,9 @@ return {
 			hi = {
 				background = "None",
 			},
+			options = {
+				multiple_diag_under_cursor = true,
+			},
 		})
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextError", { fg = "#DB4B4B" })
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextWarn", { fg = "#E0AF68" })
