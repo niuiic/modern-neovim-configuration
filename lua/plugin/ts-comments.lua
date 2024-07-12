@@ -1,5 +1,13 @@
 return {
 	config = function()
+		require("mini.comment").setup({
+			mappings = {
+				comment = "<C-a>",
+				comment_line = "<C-a>",
+				comment_visual = "<C-a>",
+				textobject = "<C-a>",
+			},
+		})
 		require("ts-comments").setup({
 			lang = {
 				typescript = { "// %s", "/* %s */", "/** %s */" },
@@ -7,16 +15,5 @@ return {
 			},
 		})
 	end,
-	keys = {
-		{
-			"<C-a>",
-			function()
-				local pos = vim.api.nvim_win_get_cursor(0)
-				vim.notify(vim.inspect(pos))
-				vim.cmd("normal gcc")
-				vim.api.nvim_win_set_cursor(0, pos)
-			end,
-			mode = { "n", "x" },
-		},
-	},
+	dependencies = { "echasnovski/mini.comment" },
 }
