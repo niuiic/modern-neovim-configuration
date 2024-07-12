@@ -65,6 +65,13 @@ local keys = {
 		desc = "run all tests in current file",
 	},
 	{
+		"<space>tw",
+		function()
+			require("neotest").watch.toggle()
+		end,
+		desc = "watch nearest test",
+	},
+	{
 		"<space>td",
 		function()
 			require("neotest").run.run({ strategy = "dap" })
