@@ -8,6 +8,15 @@ return {
 		})
 	end,
 	keys = {
-		{ "<C-a>", "<cmd>normal gcc<cr>", mode = { "n", "x" } },
+		{
+			"<C-a>",
+			function()
+				local pos = vim.api.nvim_win_get_cursor(0)
+				vim.notify(vim.inspect(pos))
+				vim.cmd("normal gcc")
+				vim.api.nvim_win_set_cursor(0, pos)
+			end,
+			mode = { "n", "x" },
+		},
 	},
 }
