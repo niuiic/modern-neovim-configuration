@@ -21,7 +21,7 @@ To support a new one, check these.
 
 - treesitter
 - lsp
-- dap
+- dap (nvim-dap, neotest)
 - formatter
 - snippet
 
