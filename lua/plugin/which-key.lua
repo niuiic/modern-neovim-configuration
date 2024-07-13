@@ -61,10 +61,6 @@ return {
 					group = "diff view",
 				},
 				{
-					"<leader>f",
-					group = "flutter",
-				},
-				{
 					"<leader>l",
 					group = "divider",
 				},

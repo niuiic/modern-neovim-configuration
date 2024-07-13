@@ -24,18 +24,6 @@ local xml = function(file_path)
 	}
 end
 
-local dart = function(file_path)
-	return {
-		{
-			cmd = "dart",
-			args = {
-				"format",
-				file_path,
-			},
-		},
-	}
-end
-
 local config = function()
 	require("format").setup({
 		temp_file = function(file_path)
@@ -51,7 +39,6 @@ local config = function()
 		filetypes = {
 			rust = rust,
 			svg = xml,
-			dart = dart,
 		},
 	})
 end

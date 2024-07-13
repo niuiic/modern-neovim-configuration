@@ -205,8 +205,6 @@ require("lazy").setup({
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
 	-- task manager
 	load_plugin_config("niuiic/task.nvim", "plugin/task"),
-	-- flutter
-	load_plugin_config("akinsho/flutter-tools.nvim", "plugin/flutter-tools"),
 	-- vtsls
 	"yioneko/nvim-vtsls",
 	-- yank

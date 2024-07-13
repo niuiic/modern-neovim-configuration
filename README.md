@@ -15,7 +15,6 @@ Neovim + Linux = Best Almighty IDE
 - WGSL
 - Vue
 - React
-- Flutter
 
 To support a new one, check these.
 
@@ -43,7 +42,6 @@ Neovim: V0.10+
 6. `cargo-nextest` (required for `neotest-rust.nvim`)
 7. `@vue/typescript-plugin` (required for vue project)
 8. `dolphin` (required for `nvim-tree.lua`)
-9. `flutter-sdk` (required for flutter project)
 
 ## QuickStart
 
