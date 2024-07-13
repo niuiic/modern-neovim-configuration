@@ -44,23 +44,25 @@ local set_keymap = function(bufnr)
 			end,
 		})
 
-		vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bh", "", {
-			callback = function()
-				vim.cmd("BufferLineMovePrev")
-			end,
-		})
+		if mode == "n" then
+			vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bh", "", {
+				callback = function()
+					vim.cmd("BufferLineMovePrev")
+				end,
+			})
 
-		vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bl", "", {
-			callback = function()
-				vim.cmd("BufferLineMoveNext")
-			end,
-		})
+			vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bl", "", {
+				callback = function()
+					vim.cmd("BufferLineMoveNext")
+				end,
+			})
 
-		vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bo", "", {
-			callback = function()
-				vim.cmd("BufferLinePick")
-			end,
-		})
+			vim.api.nvim_buf_set_keymap(bufnr, mode, "<space>bo", "", {
+				callback = function()
+					vim.cmd("BufferLinePick")
+				end,
+			})
+		end
 
 		vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-q>", "", {
 			callback = function()
