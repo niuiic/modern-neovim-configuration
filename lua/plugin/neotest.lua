@@ -11,7 +11,6 @@ local config = function()
 		adapters = {
 			require("neotest-python"),
 			require("neotest-vitest"),
-			require("neotest-go"),
 			require("neotest-rust")({
 				dap_adapter = "codelldb",
 				args = { "--no-capture" },
@@ -119,7 +118,6 @@ return {
 		-- adapters
 		-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
 		"haydenmeade/neotest-jest",
-		"nvim-neotest/neotest-go",
 		"rouge8/neotest-rust",
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-python",

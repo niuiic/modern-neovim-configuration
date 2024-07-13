@@ -36,7 +36,9 @@ return {
 				"scss",
 				"html",
 				"rust",
-				"go",
+				"python",
+				"glsl",
+				"wgsl",
 			},
 			ui = { direction = "vl" },
 		})
