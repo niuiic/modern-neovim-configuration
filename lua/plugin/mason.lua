@@ -22,11 +22,13 @@
 -- ◍ glsl_analyzer
 -- ◍ some-sass-language-server
 -- ◍ css-variables-language-server
+-- ◍ pyright
 
 -- daps installed:
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
 -- ◍ codelldb
+-- ◍ debugpy
 
 -- formatters installed:
 -- ◍ prettier

@@ -3,6 +3,7 @@ local debugger_list = {
 	"js",
 	"sh",
 	"codelldb",
+	"debugpy",
 }
 
 for _, value in pairs(debugger_list) do

@@ -8,6 +8,7 @@ Neovim + Linux = Best Almighty IDE
 
 - Rust
 - Javascript/Typescript
+- Python
 - Shell
 - SQL
 - Lua

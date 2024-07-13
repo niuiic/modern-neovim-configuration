@@ -14,6 +14,7 @@ local lang_list = {
 	"svg",
 	"typescriptreact",
 	"javascriptreact",
+	"python",
 }
 
 local common_snippets = {

@@ -24,6 +24,7 @@ local lsp_list = {
 	"somesass_ls",
 	"css_variables",
 	"vtsls",
+	"pyright",
 }
 
 -- nvim-cmp support

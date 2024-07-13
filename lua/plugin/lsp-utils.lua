@@ -45,6 +45,11 @@ local config = function()
 					{ map = { "StylelintFixAll", "LSPFixAll" } },
 				},
 			},
+			pyright = {
+				commands_map = {
+					{ map = { "PyrightRename", "LSPRename" } },
+				},
+			},
 		},
 	})
 end

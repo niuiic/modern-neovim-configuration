@@ -9,6 +9,7 @@ local config = function()
 			enabled = false,
 		},
 		adapters = {
+			require("neotest-python"),
 			require("neotest-vitest"),
 			require("neotest-go"),
 			require("neotest-rust")({
@@ -121,5 +122,6 @@ return {
 		"nvim-neotest/neotest-go",
 		"rouge8/neotest-rust",
 		"marilari88/neotest-vitest",
+		"nvim-neotest/neotest-python",
 	},
 }
