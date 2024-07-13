@@ -89,18 +89,20 @@ return {
 		{
 			"<C-t>",
 			"<cmd>TransToZH<cr>",
-			mode = { "n", "v" },
+			mode = { "n", "x" },
+			desc = "translate en to zh",
 			silent = true,
 		},
 		{
 			"<space>T",
 			"<cmd>TransToEN<cr>",
-			desc = "translate en to zh",
+			desc = "translate zh to en",
 		},
 		{
 			"<space>T",
 			"<cmd>TransToENV<cr>",
-			mode = { "v" },
+			mode = { "x" },
+			desc = "translate zh to en",
 			silent = true,
 		},
 	},

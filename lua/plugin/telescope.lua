@@ -80,7 +80,7 @@ local keys = {
 			})
 		end,
 		desc = "search current word in buffer",
-		mode = { "v", "n" },
+		mode = { "x", "n" },
 	},
 	{
 		"<space>oO",
@@ -91,7 +91,7 @@ local keys = {
 			})
 		end,
 		desc = "search current word in workspace",
-		mode = { "v", "n" },
+		mode = { "x", "n" },
 	},
 }
 

@@ -34,6 +34,7 @@ return {
 				{
 					"<space>o",
 					group = "fuzzy search",
+					mode = { "n", "x" },
 				},
 				{
 					"<space>b",
