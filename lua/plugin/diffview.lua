@@ -1,6 +1,6 @@
 local keys = {
 	{ "<leader>ds", "<cmd>DiffviewOpen ", desc = "diff open specifically" },
-	{ "<leader>do", "<cmd>DiffviewOpen<CR>", desc = "view uncommitted change" },
+	{ "<leader>do", "<cmd>DiffviewOpen<cr>", desc = "view uncommitted change" },
 	{
 		"<leader>dh",
 		function()
@@ -9,9 +9,9 @@ local keys = {
 		end,
 		desc = "view git history of current file",
 	},
-	{ "<leader>dH", "<cmd>DiffviewFileHistory<CR>", desc = "view git history of current project" },
-	{ "<leader>dq", "<cmd>DiffviewClose<CR>", desc = "close diff windows" },
-	{ "<leader>dr", "<cmd>DiffviewRefresh<CR>", desc = "refresh" },
+	{ "<leader>dH", "<cmd>DiffviewFileHistory<cr>", desc = "view git history of current project" },
+	{ "<leader>dq", "<cmd>DiffviewClose<cr>", desc = "close diff windows" },
+	{ "<leader>dr", "<cmd>DiffviewRefresh<cr>", desc = "refresh" },
 }
 
 return {

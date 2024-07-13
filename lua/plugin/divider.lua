@@ -42,8 +42,8 @@ return {
 		})
 	end,
 	keys = {
-		{ "<leader>ll", "<cmd>DividerToggle<CR>", desc = "toggle divider list" },
-		{ "<leader>lp", "<cmd>CopyDividers<CR>", desc = "copy dividers to clipboard" },
+		{ "<leader>ll", "<cmd>DividerToggle<cr>", desc = "toggle divider list" },
+		{ "<leader>lp", "<cmd>CopyDividers<cr>", desc = "copy dividers to clipboard" },
 	},
 	lazy = false,
 }

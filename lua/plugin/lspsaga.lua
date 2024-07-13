@@ -8,7 +8,7 @@ local config = function()
 		},
 		outline = {
 			keys = {
-				toggle_or_jump = "<CR>",
+				toggle_or_jump = "<cr>",
 				quit = { "q", "<ESC>" },
 			},
 			win_width = 40,
@@ -18,13 +18,13 @@ local config = function()
 		},
 		finder = {
 			keys = {
-				toggle_or_open = "<CR>",
+				toggle_or_open = "<cr>",
 				quit = { "q", "<ESC>" },
 			},
 		},
 		callhierarchy = {
 			keys = {
-				toggle_or_open = "<CR>",
+				toggle_or_open = "<cr>",
 				quit = { "q", "<ESC>" },
 			},
 		},
@@ -71,22 +71,22 @@ return {
 		},
 		{
 			"gf",
-			"<cmd>Lspsaga finder ref<CR>",
+			"<cmd>Lspsaga finder ref<cr>",
 			desc = "goto references",
 		},
 		{
 			"gi",
-			"<cmd>Lspsaga finder imp<CR>",
+			"<cmd>Lspsaga finder imp<cr>",
 			desc = "goto implements",
 		},
 		{
 			"gc",
-			"<cmd>Lspsaga incoming_calls<CR>",
+			"<cmd>Lspsaga incoming_calls<cr>",
 			desc = "goto incoming calls",
 		},
 		{
 			"gC",
-			"<cmd>Lspsaga outgoing_calls<CR>",
+			"<cmd>Lspsaga outgoing_calls<cr>",
 			desc = "goto outgoing calls",
 		},
 		{
@@ -107,7 +107,7 @@ return {
 		},
 		{
 			"<space>la",
-			"<cmd>Lspsaga code_action<CR>",
+			"<cmd>Lspsaga code_action<cr>",
 			desc = "code action",
 		},
 	},

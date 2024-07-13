@@ -27,7 +27,7 @@ local config = function()
 			undo = {
 				mappings = {
 					i = {
-						["<CR>"] = require("telescope-undo.actions").restore,
+						["<cr>"] = require("telescope-undo.actions").restore,
 					},
 				},
 			},
@@ -38,8 +38,8 @@ local config = function()
 end
 
 local keys = {
-	{ "<space>ol", "<cmd>Telescope<CR>", desc = "open telescope list" },
-	{ "<space>ob", "<cmd>Telescope buffers<CR>", desc = "search buffer with preview" },
+	{ "<space>ol", "<cmd>Telescope<cr>", desc = "open telescope list" },
+	{ "<space>ob", "<cmd>Telescope buffers<cr>", desc = "search buffer with preview" },
 	{
 		"<space>of",
 		function()
@@ -51,15 +51,15 @@ local keys = {
 		end,
 		desc = "search files in workspace",
 	},
-	{ "<space>od", "<cmd>Telescope diagnostics<CR>", desc = "search diagnostics" },
-	{ "<space>oN", "<cmd>Telescope help_tags<CR>", desc = "search neovim documents" },
-	{ "<space>os", "<cmd>Telescope git_status<CR>", desc = "search git status" },
-	{ "<space>oM", "<cmd>Telescope marks<CR>", desc = "search marks with preview" },
-	{ "<space>ot", "<cmd>Telescope treesitter<CR>", desc = "search tags" },
-	{ "<space>ow", "<cmd>Telescope current_buffer_fuzzy_find<CR>", desc = "search words in current buffer" },
-	{ "<space>or", "<cmd>Telescope resume<CR>", desc = "research" },
-	{ "<space>oT", "<cmd>TodoTelescope<CR>", desc = "search keywords(TODO, FIXME, etc) in the project" },
-	{ "<space>on", "<cmd>Noice telescope<CR>", desc = "search notifications" },
+	{ "<space>od", "<cmd>Telescope diagnostics<cr>", desc = "search diagnostics" },
+	{ "<space>oN", "<cmd>Telescope help_tags<cr>", desc = "search neovim documents" },
+	{ "<space>os", "<cmd>Telescope git_status<cr>", desc = "search git status" },
+	{ "<space>oM", "<cmd>Telescope marks<cr>", desc = "search marks with preview" },
+	{ "<space>ot", "<cmd>Telescope treesitter<cr>", desc = "search tags" },
+	{ "<space>ow", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "search words in current buffer" },
+	{ "<space>or", "<cmd>Telescope resume<cr>", desc = "research" },
+	{ "<space>oT", "<cmd>TodoTelescope<cr>", desc = "search keywords(TODO, FIXME, etc) in the project" },
+	{ "<space>on", "<cmd>Noice telescope<cr>", desc = "search notifications" },
 	{
 		"<space>oW",
 		function()
@@ -70,7 +70,7 @@ local keys = {
 		end,
 		desc = "search words globally",
 	},
-	{ "<space>ou", "<cmd>Telescope undo<CR>", desc = "search undo" },
+	{ "<space>ou", "<cmd>Telescope undo<cr>", desc = "search undo" },
 	{
 		"<space>oo",
 		function()

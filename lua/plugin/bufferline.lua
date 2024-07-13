@@ -51,14 +51,14 @@ local config = function()
 end
 
 local keys = {
-	{ "<space>bh", "<cmd>BufferLineMovePrev<CR>", desc = "move current tab to previous position" },
-	{ "<space>bl", "<cmd>BufferLineMoveNext<CR>", desc = "move current tab to next position" },
-	{ "<space>be", "<cmd>BufferLineSortByExtension<CR>", desc = "sort tabs by extension" },
-	{ "<space>bd", "<cmd>BufferLineSortByExtension<CR>", desc = "sort tabs by directory" },
-	{ "<space>bo", "<cmd>BufferLinePick<CR>", desc = "switch buffer" },
-	{ "<space>bp", "<cmd>BufferLineTogglePin<CR>", desc = "toggle pin " },
-	{ "<C-k>", "<cmd>BufferLineCycleNext<CR>" },
-	{ "<C-j>", "<cmd>BufferLineCyclePrev<CR>" },
+	{ "<space>bh", "<cmd>BufferLineMovePrev<cr>", desc = "move current tab to previous position" },
+	{ "<space>bl", "<cmd>BufferLineMoveNext<cr>", desc = "move current tab to next position" },
+	{ "<space>be", "<cmd>BufferLineSortByExtension<cr>", desc = "sort tabs by extension" },
+	{ "<space>bd", "<cmd>BufferLineSortByExtension<cr>", desc = "sort tabs by directory" },
+	{ "<space>bo", "<cmd>BufferLinePick<cr>", desc = "switch buffer" },
+	{ "<space>bp", "<cmd>BufferLineTogglePin<cr>", desc = "toggle pin " },
+	{ "<C-k>", "<cmd>BufferLineCycleNext<cr>" },
+	{ "<C-j>", "<cmd>BufferLineCyclePrev<cr>" },
 }
 
 return {

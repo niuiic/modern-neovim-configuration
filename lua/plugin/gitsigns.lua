@@ -6,10 +6,10 @@ local config = function()
 end
 
 local keys = {
-	{ "<space>gs", "<cmd>Gitsigns stage_hunk<CR>", desc = "stage hunk" },
-	{ "<space>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "reset hunk" },
-	{ "<space>gs", "<cmd>Gitsigns stage_hunk<CR>", desc = "stage hunk", mode = "v" },
-	{ "<space>gr", "<cmd>Gitsigns reset_hunk<CR>", desc = "reset hunk", mode = "v" },
+	{ "<space>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "stage hunk" },
+	{ "<space>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "reset hunk" },
+	{ "<space>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "stage hunk", mode = "v" },
+	{ "<space>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "reset hunk", mode = "v" },
 	{
 		"<space>gR",
 		function()
@@ -61,18 +61,18 @@ local keys = {
 	},
 	{
 		"<space>gi",
-		"<cmd>Gitsigns select_hunk<CR>",
+		"<cmd>Gitsigns select_hunk<cr>",
 		desc = "select hunk",
 	},
 	-- trouble.nvim is required
 	{
 		"<space>gl",
-		"<cmd>Gitsigns setqflist<CR>",
+		"<cmd>Gitsigns setqflist<cr>",
 		desc = "list all stage hunks in buffer",
 	},
 	{
 		"<space>gL",
-		"<cmd>Gitsigns setqflist all<CR>",
+		"<cmd>Gitsigns setqflist all<cr>",
 		desc = "list all stage hunks in project",
 	},
 }

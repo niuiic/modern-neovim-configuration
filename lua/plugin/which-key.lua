@@ -1,79 +1,78 @@
 return {
 	config = function()
-		local which_key = require("which-key")
-
-		which_key.setup({
-			show_help = false,
-			show_keys = false,
-		})
-
-		which_key.register({
-			d = {
-				name = "debug",
+		require("which-key").setup({
+			preset = "helix",
+			spec = {
+				{
+					"<space>d",
+					group = "debug",
+				},
+				{
+					"<space>t",
+					group = "test",
+				},
+				{
+					"<space>g",
+					group = "git signs",
+				},
+				{
+					"<space>s",
+					group = "tasks",
+				},
+				{
+					"<space>l",
+					group = "lsp",
+				},
+				{
+					"<space>w",
+					group = "window",
+				},
+				{
+					"<space>a",
+					group = "annotations",
+				},
+				{
+					"<space>o",
+					group = "fuzzy search",
+				},
+				{
+					"<space>b",
+					group = "buffer line",
+				},
+				{
+					"<space>m",
+					group = "mark",
+				},
+				{
+					"<space>q",
+					group = "quickfix",
+				},
+				{
+					"<leader>s",
+					group = "session",
+				},
+				{
+					"<leader>e",
+					group = "remote",
+				},
+				{
+					"<leader>d",
+					group = "diff view",
+				},
+				{
+					"<leader>f",
+					group = "flutter",
+				},
+				{
+					"<leader>l",
+					group = "divider",
+				},
+				{
+					"<space>g",
+					group = "git signs",
+					mode = "x",
+				},
 			},
-			t = {
-				name = "test",
-			},
-			g = {
-				name = "git signs",
-			},
-			s = {
-				name = "tasks",
-			},
-			l = {
-				name = "lsp",
-			},
-			w = {
-				name = "window",
-			},
-			a = {
-				name = "annotations",
-			},
-			o = {
-				name = "fuzzy search",
-			},
-			b = {
-				name = "buffer line",
-			},
-			m = {
-				name = "mark",
-			},
-			q = {
-				name = "quickfix",
-			},
-		}, {
-			mode = "n",
-			prefix = "<localleader>",
-		})
-
-		which_key.register({
-			s = {
-				name = "session",
-			},
-			e = {
-				name = "remote",
-			},
-			d = {
-				name = "diff view",
-			},
-			f = {
-				name = "flutter",
-			},
-			l = {
-				name = "divider",
-			},
-		}, {
-			mode = "n",
-			prefix = "<leader>",
-		})
-
-		which_key.register({
-			g = {
-				name = "git signs",
-			},
-		}, {
-			mode = "v",
-			prefix = "<localleader>",
 		})
 	end,
 }

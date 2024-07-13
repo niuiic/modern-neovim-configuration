@@ -133,7 +133,7 @@ local config = function()
 					behavior = cmp.SelectBehavior.Select,
 				})
 			end, { "i", "c" }),
-			["<CR>"] = cmp.mapping(function(fallback)
+			["<cr>"] = cmp.mapping(function(fallback)
 				if not cmp.visible() then
 					fallback()
 					return

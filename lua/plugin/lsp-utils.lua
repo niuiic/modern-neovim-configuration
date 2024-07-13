@@ -61,32 +61,32 @@ end
 local keys = {
 	{
 		"<space>lF",
-		"<cmd>LSPRenameFile<CR>",
+		"<cmd>LSPRenameFile<cr>",
 		desc = "rename file",
 	},
 	{
 		"<space>lp",
-		"<cmd>LSPFilePath<CR>",
+		"<cmd>LSPFilePath<cr>",
 		desc = "copy path",
 	},
 	{
 		"<space>lr",
-		"<cmd>LSPRename<CR>",
+		"<cmd>LSPRename<cr>",
 		desc = "rename vars",
 	},
 	{
 		"<space>li",
-		"<cmd>LSPOrganizeImports<CR>",
+		"<cmd>LSPOrganizeImports<cr>",
 		desc = "organize imports",
 	},
 	{
 		"<space>lf",
-		"<cmd>LSPFixAll<CR>",
+		"<cmd>LSPFixAll<cr>",
 		desc = "fix all",
 	},
 	{
 		"<space>lR",
-		"<cmd>LspRestart *<CR>",
+		"<cmd>LspRestart *<cr>",
 		desc = "restart all lsp",
 	},
 	{
@@ -96,7 +96,7 @@ local keys = {
 	},
 	{
 		"<space>le",
-		"<cmd>LSPExec<CR>",
+		"<cmd>LSPExec<cr>",
 		desc = "exec code",
 		mode = { "n", "x" },
 	},

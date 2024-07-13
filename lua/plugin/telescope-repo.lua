@@ -17,7 +17,7 @@ return {
 		require("telescope").load_extension("repo")
 	end,
 	keys = {
-		{ "<space>oP", "<cmd>Telescope repo list<CR>", desc = "search projects" },
+		{ "<space>oP", "<cmd>Telescope repo list<cr>", desc = "search projects" },
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",

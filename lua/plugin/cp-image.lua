@@ -2,7 +2,7 @@ return {
 	keys = {
 		{
 			"<space>np",
-			"<cmd>PasteImage<CR>",
+			"<cmd>PasteImage<cr>",
 			desc = "paste image",
 		},
 	},

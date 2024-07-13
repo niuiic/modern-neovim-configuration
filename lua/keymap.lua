@@ -5,7 +5,7 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
 -- exit and refresh
-vim.keymap.set("n", "<A-q>", ":q!<CR>", { silent = true })
+vim.keymap.set("n", "<A-q>", ":q!<cr>", { silent = true })
 vim.keymap.set("n", "<C-n>", function()
 	vim.ui.select({ "Window", "Buffer", "Both" }, { prompt = "Windows or Buffers to clear" }, function(choice)
 		if not choice then
@@ -45,11 +45,11 @@ vim.api.nvim_create_user_command("Quit", function()
 	end)
 	vim.cmd("qa")
 end, {})
-vim.keymap.set("n", "<C-q>", ":Quit<CR>", { silent = true })
+vim.keymap.set("n", "<C-q>", ":Quit<cr>", { silent = true })
 
 -- save
-vim.keymap.set("n", "<C-s>", ":w<CR>", { silent = true })
-vim.keymap.set("n", "<A-s>", ":wa!<CR>", { silent = true })
+vim.keymap.set("n", "<C-s>", ":w<cr>", { silent = true })
+vim.keymap.set("n", "<A-s>", ":wa!<cr>", { silent = true })
 
 -- esc
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
@@ -69,43 +69,25 @@ vim.keymap.set("n", "Z", "za", { silent = true })
 vim.keymap.set("n", "e", "zz", { silent = true })
 
 -- plugin operation
-require("which-key").register({
-	n = {
-		name = "neovim",
-		p = {
-			"<cmd>Lazy<CR>",
-			"plugin management",
-		},
-		l = {
-			"<cmd>LspInfo<CR>",
-			"lsp status",
-		},
-		c = {
-			"<cmd>checkhealth<CR>",
-			"checkhealth",
-		},
-		t = {
-			"<cmd>TSUpdate<CR>",
-			"update language parsers of nvim-treesitter",
-		},
-		m = {
-			"<cmd>messages<CR>",
-			"show messages",
-		},
-		d = {
-			function()
-				require("osv").launch({ port = 8086 })
-			end,
-			"debug neovim",
-		},
-		D = {
-			function()
-				require("osv").run_this()
-			end,
-			"debug neovim (run this)",
-		},
+require("which-key").add({
+	{ "<leader>n", group = "neovim" },
+	{ "<leader>np", "<cmd>Lazy<cr>", desc = "plugin management" },
+	{ "<leader>nl", "<cmd>LspInfo<cr>", desc = "lsp status" },
+	{ "<leader>nc", "<cmd>checkhealth<cr>", desc = "checkhealth" },
+	{ "<leader>nt", "<cmd>TSUpdate<cr>", desc = "update language parsers of nvim-treesitter" },
+	{ "<leader>nm", "<cmd>messages<cr>", desc = "show messages" },
+	{
+		"<leader>nd",
+		function()
+			require("osv").launch({ port = 8086 })
+		end,
+		desc = "debug neovim",
 	},
-}, {
-	mode = "n",
-	prefix = "<leader>",
+	{
+		"<leader>nD",
+		function()
+			require("osv").run_this()
+		end,
+		desc = "debug neovim (run this)",
+	},
 })

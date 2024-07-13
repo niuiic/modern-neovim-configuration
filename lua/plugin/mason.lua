@@ -44,7 +44,7 @@ return {
 	keys = {
 		{
 			"<leader>ni",
-			"<cmd>Mason<CR>",
+			"<cmd>Mason<cr>",
 			desc = "lsp installation",
 		},
 	},

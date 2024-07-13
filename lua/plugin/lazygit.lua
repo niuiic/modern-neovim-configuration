@@ -2,7 +2,7 @@ return {
 	keys = {
 		{
 			"<leader>g",
-			"<cmd>LazyGit<CR>",
+			"<cmd>LazyGit<cr>",
 			desc = "lazygit",
 		},
 	},

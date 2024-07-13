@@ -88,18 +88,18 @@ return {
 	keys = {
 		{
 			"<C-t>",
-			"<cmd>TransToZH<CR>",
+			"<cmd>TransToZH<cr>",
 			mode = { "n", "v" },
 			silent = true,
 		},
 		{
 			"<space>T",
-			"<cmd>TransToEN<CR>",
+			"<cmd>TransToEN<cr>",
 			desc = "translate en to zh",
 		},
 		{
 			"<space>T",
-			"<cmd>TransToENV<CR>",
+			"<cmd>TransToENV<cr>",
 			mode = { "v" },
 			silent = true,
 		},
