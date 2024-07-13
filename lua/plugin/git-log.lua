@@ -7,7 +7,7 @@ return {
 				require("git-log").check_log()
 			end,
 			desc = "git log",
-			mode = { "v", "n" },
+			mode = { "x", "n" },
 		},
 	},
 }

@@ -161,7 +161,7 @@ local keys = {
 		function()
 			require("dapui").elements.watches.add()
 		end,
-		mode = { "n", "v" },
+		mode = { "n", "x" },
 	},
 	{
 		"<A-g>",
@@ -194,7 +194,7 @@ local keys = {
 			})
 		end,
 		desc = "check variable value",
-		mode = { "n", "v" },
+		mode = { "n", "x" },
 	},
 }
 

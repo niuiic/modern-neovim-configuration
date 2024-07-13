@@ -8,8 +8,8 @@ end
 local keys = {
 	{ "<space>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "stage hunk" },
 	{ "<space>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "reset hunk" },
-	{ "<space>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "stage hunk", mode = "v" },
-	{ "<space>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "reset hunk", mode = "v" },
+	{ "<space>gs", "<cmd>Gitsigns stage_hunk<cr>", desc = "stage hunk", mode = "x" },
+	{ "<space>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "reset hunk", mode = "x" },
 	{
 		"<space>gR",
 		function()

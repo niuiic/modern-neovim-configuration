@@ -12,7 +12,7 @@ return {
 			"<space>p",
 			"<cmd>PartEdit<cr>",
 			desc = "edit selected code",
-			mode = "v",
+			mode = "x",
 			silent = true,
 		},
 	},

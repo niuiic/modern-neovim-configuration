@@ -88,7 +88,7 @@ return {
 			end,
 			desc = "format",
 			silent = true,
-			mode = "v",
+			mode = "x",
 		},
 	},
 }
