@@ -3,16 +3,7 @@ return {
 		require("yanky").setup({
 			picker = {
 				telescope = {
-					mappings = {
-						i = {
-							["<C-j>"] = "move_selection_next",
-							["<C-k>"] = "move_selection_previous",
-						},
-						o = {
-							["<C-j>"] = "move_selection_next",
-							["<C-k>"] = "move_selection_previous",
-						},
-					},
+					use_default_mappings = false,
 				},
 			},
 		})
