@@ -36,6 +36,7 @@
 -- ◍ sqlfluff
 -- ◍ stylua
 -- ◍ xmlformatter
+-- ◍ black
 -- install typstfmt, nginxbeautifier manually
 
 return {
