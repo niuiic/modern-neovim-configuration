@@ -69,6 +69,11 @@ return {
 					group = "git signs",
 					mode = "x",
 				},
+				{
+					"<leader>f",
+					group = "fittencode",
+					mode = { "n", "x" },
+				},
 			},
 		})
 	end,
