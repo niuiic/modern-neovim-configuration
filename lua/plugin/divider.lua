@@ -36,7 +36,6 @@ return {
 				"scss",
 				"html",
 				"rust",
-				"python",
 				"glsl",
 				"wgsl",
 			},
