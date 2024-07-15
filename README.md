@@ -278,7 +278,7 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 <img src="https://github.com/niuiic/assets/blob/main/modern-neovim-configuration/divider.png"/>
 </details>
 
-## plugins
+## Plugins
 
 - [Bilal2453/luvit-meta](https://github.com/Bilal2453/luvit-meta) ![](https://img.shields.io/github/stars/Bilal2453/luvit-meta) ![](https://img.shields.io/github/last-commit/Bilal2453/luvit-meta) ![](https://img.shields.io/github/commit-activity/y/Bilal2453/luvit-meta)
 - [FelipeLema/cmp-async-path](https://github.com/FelipeLema/cmp-async-path) ![](https://img.shields.io/github/stars/FelipeLema/cmp-async-path) ![](https://img.shields.io/github/last-commit/FelipeLema/cmp-async-path) ![](https://img.shields.io/github/commit-activity/y/FelipeLema/cmp-async-path)
