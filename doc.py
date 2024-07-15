@@ -35,12 +35,12 @@ def filter_valid_plugin(plugin):
     try:
         if plugin.startswith("plugin/"):
             return
-        print(f"check {plugin}")
-        conn = HTTPSConnection("github.com", timeout=10)
+        conn = HTTPSConnection("github.com", timeout=30)
         conn.request("GET", f"/{plugin}")
         response = conn.getresponse()
         conn.close()
-        if response.status != 200:
+        if response.status >= 400:
+            print(f"{response.status} {plugin} is not a valid plugin")
             return
         valid_plugins.append(plugin)
     except:
