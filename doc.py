@@ -62,8 +62,11 @@ with ThreadPoolExecutor(max_workers=20) as executor:
 
 lines = []
 for plugin in plugins:
+    desc = ""
+    if plugins[plugin]:
+        desc = f" - {plugins[plugin]}"
     lines.append(
-        f"- [{plugin}](https://github.com/{plugin}) - {plugins[plugin]}\n\n![](https://img.shields.io/github/stars/{plugin}) ![](https://img.shields.io/github/last-commit/{plugin}) ![](https://img.shields.io/github/commit-activity/y/{plugin})"
+        f"- [{plugin}](https://github.com/{plugin}){desc}\n\n\t![](https://img.shields.io/github/stars/{plugin}) ![](https://img.shields.io/github/last-commit/{plugin}) ![](https://img.shields.io/github/commit-activity/y/{plugin})"
     )
 
 
