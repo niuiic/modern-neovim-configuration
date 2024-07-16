@@ -1,7 +1,12 @@
+import sys
 import os
 import re
 from http.client import HTTPSConnection
 from concurrent.futures import ThreadPoolExecutor
+
+if len(sys.argv) < 2:
+    print("Usage: python doc.py <GITHUB_TOKEN>")
+    sys.exit(1)
 
 
 def walk_dir(dir, cb):
@@ -36,8 +41,17 @@ def filter_valid_plugin(plugin):
         if plugin.startswith("plugin/"):
             return
         print(f"check {plugin}")
-        conn = HTTPSConnection("github.com", timeout=30)
-        conn.request("GET", f"/{plugin}")
+        conn = HTTPSConnection("api.github.com", timeout=10)
+        conn.request(
+            "GET",
+            f"/repos/{plugin}",
+            headers={
+                "Accept": "application/vnd.github+json",
+                "Authorization": f"Bearer {sys.argv[1]}",
+                "X-GitHub-Api-Version": "2022-11-28",
+                "User-Agent": "App/1.0",
+            },
+        )
         response = conn.getresponse()
         conn.close()
         if response.status >= 400:
