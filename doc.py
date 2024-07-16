@@ -62,8 +62,9 @@ with ThreadPoolExecutor(max_workers=20) as executor:
 
 lines = []
 for plugin in plugins:
+    lines.append(f"- [{plugin}](https://github.com/{plugin}) - {plugins[plugin]}")
     lines.append(
-        f"- [{plugin}](https://github.com/{plugin}) {plugins[plugin]}\n![](https://img.shields.io/github/stars/{plugin}) ![](https://img.shields.io/github/last-commit/{plugin}) ![](https://img.shields.io/github/commit-activity/y/{plugin})\n"
+        f"![](https://img.shields.io/github/stars/{plugin}) ![](https://img.shields.io/github/last-commit/{plugin}) ![](https://img.shields.io/github/commit-activity/y/{plugin})"
     )
 
 doc = ""
@@ -75,7 +76,7 @@ with open("./README.md", "r") as f:
             break
 lines = sorted(lines)
 for line in lines:
-    doc += line
+    doc += line + "\n"
 
 with open("./README.md", "w") as f:
     f.write(doc)
