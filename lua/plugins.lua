@@ -219,4 +219,6 @@ require("lazy").setup({
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- inline diagnostic
 	load_plugin_config("rachartier/tiny-inline-diagnostic.nvim", "plugin/tiny-inline-diagnostic"),
+	-- display symbol usage
+	load_plugin_config("Wansmer/symbol-usage.nvim", "plugin/symbol-usage"),
 })

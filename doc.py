@@ -59,7 +59,7 @@ with open("./README.md", "r") as f:
     for line in f.readlines():
         doc = doc + line
         if line.startswith("## Plugins"):
-            doc = doc + "\n\n"
+            doc = doc + "\n"
             break
 
 for plugin in valid_plugins:
