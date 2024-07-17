@@ -3,7 +3,7 @@ return {
 		require("divider").setup({
 			dividers = {
 				{
-					regex = [[[^#]# ([%s%S]+)]],
+					regex = [[[^~]~ ([%s%S]+)]],
 					hl = "#ff00ff",
 					icon_hl = "#ff00ff",
 					icon = "󰍎",
@@ -11,7 +11,7 @@ return {
 					extmark_pos = "bottom",
 				},
 				{
-					regex = [[## ([%s%S]+)]],
+					regex = [[[^~]~~ ([%s%S]+)]],
 					hl = "#00a0ff",
 					icon_hl = "#00a0ff",
 					icon = "󰐾",
@@ -19,7 +19,7 @@ return {
 					extmark_pos = "bottom",
 				},
 				{
-					regex = [[%-%- ([%s%S]+) %-%-]],
+					regex = [[~~~ ([%s%S]+)]],
 					hl = "#00ff7c",
 					icon_hl = "#00ff7c",
 					hide = true,
