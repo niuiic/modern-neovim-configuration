@@ -19,7 +19,7 @@ local config = function()
 					{ map = { "LuaLsRename", "LSPRename" } },
 				},
 			},
-			rust_analyzer = {
+			["rust-analyzer"] = {
 				commands_map = {
 					{ map = { "RustAnalyzerRename", "LSPRename" } },
 					{ map = { "RustAnalyzerOrganizeImports", "LSPOrganizeImports" } },

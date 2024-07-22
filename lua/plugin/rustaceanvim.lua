@@ -59,7 +59,7 @@ local config = function()
 
 	local rename = function()
 		vim.lsp.buf.rename(nil, {
-			name = "rust_analyzer",
+			name = "rust-analyzer",
 		})
 	end
 
