@@ -457,6 +457,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim
 
 	![](https://img.shields.io/github/stars/mfussenegger/nvim-dap) ![](https://img.shields.io/github/last-commit/mfussenegger/nvim-dap) ![](https://img.shields.io/github/commit-activity/y/mfussenegger/nvim-dap)
+- [mrcjkb/rustaceanvim](https://github.com/mrcjkb/rustaceanvim) - Supercharge your Rust experience in Neovim! A heavily modified fork of rust-tools.nvim
+
+	![](https://img.shields.io/github/stars/mrcjkb/rustaceanvim) ![](https://img.shields.io/github/last-commit/mrcjkb/rustaceanvim) ![](https://img.shields.io/github/commit-activity/y/mrcjkb/rustaceanvim)
 - [mxsdev/nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js) - nvim-dap adapter for vscode-js-debug
 
 	![](https://img.shields.io/github/stars/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/last-commit/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/commit-activity/y/mxsdev/nvim-dap-vscode-js)
@@ -568,9 +571,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [rktjmp/highlight-current-n.nvim](https://github.com/rktjmp/highlight-current-n.nvim) - Highlights the current /, ? or * match under your cursor when pressing n or N and gets out of the way afterwards.
 
 	![](https://img.shields.io/github/stars/rktjmp/highlight-current-n.nvim) ![](https://img.shields.io/github/last-commit/rktjmp/highlight-current-n.nvim) ![](https://img.shields.io/github/commit-activity/y/rktjmp/highlight-current-n.nvim)
-- [rouge8/neotest-rust](https://github.com/rouge8/neotest-rust) - Neotest adapter for Rust, using cargo-nextest.
-
-	![](https://img.shields.io/github/stars/rouge8/neotest-rust) ![](https://img.shields.io/github/last-commit/rouge8/neotest-rust) ![](https://img.shields.io/github/commit-activity/y/rouge8/neotest-rust)
 - [s1n7ax/nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker) - This plugins prompts the user to pick a window and returns the window id of the picked window
 
 	![](https://img.shields.io/github/stars/s1n7ax/nvim-window-picker) ![](https://img.shields.io/github/last-commit/s1n7ax/nvim-window-picker) ![](https://img.shields.io/github/commit-activity/y/s1n7ax/nvim-window-picker)
