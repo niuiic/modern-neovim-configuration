@@ -19,6 +19,10 @@ local function organize_imports()
 		if start ~= nil then
 			return true
 		end
+		start = string.find(diagnostic.message, "undeclared type")
+		if start ~= nil then
+			return true
+		end
 		return false
 	end)
 	if diagnostic == nil then
