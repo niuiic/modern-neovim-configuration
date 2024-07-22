@@ -9,7 +9,6 @@ local lsp_list = {
 	"eslint",
 	"html",
 	"jsonls",
-	"rust_analyzer",
 	"sqls",
 	"taplo",
 	"stylelint_lsp",
