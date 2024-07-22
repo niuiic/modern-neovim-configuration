@@ -28,5 +28,4 @@ return {
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextInfo", { fg = "#0DB9D7" })
 		vim.api.nvim_set_hl(0, "TinyInlineDiagnosticVirtualTextHint", { fg = "#00FFCC" })
 	end,
-	event = "BufRead",
 }
