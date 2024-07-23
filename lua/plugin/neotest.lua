@@ -10,6 +10,7 @@ local config = function()
 		},
 		adapters = {
 			require("neotest-python")({
+				args = { "--capture=no" },
 				is_test_file = function(file)
 					local core = require("core")
 					return core.file.extension(file) == "py"
