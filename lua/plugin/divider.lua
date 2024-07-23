@@ -38,6 +38,7 @@ return {
 				"rust",
 				"glsl",
 				"wgsl",
+				"python",
 			},
 			ui = { direction = "vl" },
 		})
