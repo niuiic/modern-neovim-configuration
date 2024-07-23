@@ -63,8 +63,40 @@ local config = function()
 		})
 	end
 
+	local extra_operations = {
+		["expand macros"] = function()
+			vim.cmd.RustLsp("expandMacro")
+		end,
+		["rebuild proc macros"] = function()
+			vim.cmd.RustLsp("rebuildProcMacros")
+		end,
+		["explain error"] = function()
+			vim.cmd.RustLsp({ "explainError", "current" })
+		end,
+		["view hir"] = function()
+			vim.cmd.RustLsp({ "view", "mir" })
+		end,
+		["view mir"] = function()
+			vim.cmd.RustLsp({ "view", "mir" })
+		end,
+	}
+	local choices = core.lua.table.keys(extra_operations)
+
+	local extra = function()
+		vim.ui.select(choices, {
+			prompt = "Select Operation",
+		}, function(choice)
+			if not choice then
+				return
+			end
+
+			extra_operations[choice]()
+		end)
+	end
+
 	vim.api.nvim_create_user_command("RustAnalyzerRename", rename, {})
 	vim.api.nvim_create_user_command("RustAnalyzerOrganizeImports", organize_imports, {})
+	vim.api.nvim_create_user_command("RustAnalyzerExtra", extra, {})
 end
 
 return {

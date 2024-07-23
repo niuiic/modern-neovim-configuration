@@ -23,6 +23,7 @@ local config = function()
 				commands_map = {
 					{ map = { "RustAnalyzerRename", "LSPRename" } },
 					{ map = { "RustAnalyzerOrganizeImports", "LSPOrganizeImports" } },
+					{ map = { "RustAnalyzerExtra", "LSPExtra" } },
 				},
 			},
 			eslint = {
@@ -98,6 +99,12 @@ local keys = {
 		"<space>le",
 		"<cmd>LSPExec<cr>",
 		desc = "exec code",
+		mode = { "n", "x" },
+	},
+	{
+		"<space>lE",
+		"<cmd>LSPExtra<cr>",
+		desc = "extra operations",
 		mode = { "n", "x" },
 	},
 }
