@@ -33,6 +33,13 @@ local config = function()
 				.. core.file.name(file_path)
 				.. "."
 				.. (core.file.extension(file_path) or "")
+			if vim.bo.filetype == "rust" then
+				new_file_path = core.file.dir(file_path)
+					.. "/_"
+					.. core.file.name(file_path)
+					.. "."
+					.. (core.file.extension(file_path) or "")
+			end
 			return new_file_path
 		end,
 		allow_update_if_buf_changed = true,
