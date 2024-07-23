@@ -58,7 +58,7 @@ return {
 			mode = "x",
 		},
 		{
-			"<leader>tc",
+			"<leader>fc",
 			"<cmd>Fitten toggle_chat<cr>",
 			desc = "toggle chat",
 		},
