@@ -9,7 +9,12 @@ local config = function()
 			enabled = false,
 		},
 		adapters = {
-			require("neotest-python"),
+			require("neotest-python")({
+				is_test_file = function(file)
+					local core = require("core")
+					return core.file.extension(file) == "py"
+				end,
+			}),
 			require("neotest-vitest"),
 			require("rustaceanvim.neotest"),
 			require("neotest-jest")({
