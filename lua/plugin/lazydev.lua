@@ -3,10 +3,10 @@ return {
 		require("lazydev").setup({
 			library = {
 				{ path = "luvit-meta/library", words = { "vim%.uv" } },
-				{ path = "niuiic/core.nvim", words = { [[require("core")]] } },
+				{ path = "xmake-luals-addon/library", files = { "xmake.lua" } },
 			},
 		})
 	end,
 	ft = "lua",
-	dependencies = { "Bilal2453/luvit-meta" },
+	dependencies = { "Bilal2453/luvit-meta", "LelouchHe/xmake-luals-addon" },
 }
