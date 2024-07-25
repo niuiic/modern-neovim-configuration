@@ -70,6 +70,11 @@ return {
 					mode = "x",
 				},
 				{
+					"<space>m",
+					group = "todo",
+					mode = "n",
+				},
+				{
 					"<leader>f",
 					group = "fittencode",
 					mode = { "n", "x" },
