@@ -220,5 +220,5 @@ require("lazy").setup({
 	-- rust
 	load_plugin_config("mrcjkb/rustaceanvim", "plugin/rustaceanvim"),
 	-- todo manager
-	load_plugin_config("niuiic/todo.nvim", "plugin/todo", "~/Documents/projects/todo.nvim"),
+	load_plugin_config("niuiic/todo.nvim", "plugin/todo"),
 })
