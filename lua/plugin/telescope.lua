@@ -55,10 +55,8 @@ local keys = {
 	{ "<space>oN", "<cmd>Telescope help_tags<cr>", desc = "search neovim documents" },
 	{ "<space>os", "<cmd>Telescope git_status<cr>", desc = "search git status" },
 	{ "<space>oM", "<cmd>Telescope marks<cr>", desc = "search marks with preview" },
-	{ "<space>ot", "<cmd>Telescope treesitter<cr>", desc = "search tags" },
 	{ "<space>ow", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "search words in current buffer" },
 	{ "<space>or", "<cmd>Telescope resume<cr>", desc = "research" },
-	{ "<space>oT", "<cmd>TodoTelescope<cr>", desc = "search keywords(TODO, FIXME, etc) in the project" },
 	{ "<space>on", "<cmd>Noice telescope<cr>", desc = "search notifications" },
 	{
 		"<space>oW",

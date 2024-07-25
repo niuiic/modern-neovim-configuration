@@ -10,7 +10,7 @@ return {
 	end,
 	keys = {
 		{
-			"<space>p",
+			"<space>oy",
 			function()
 				require("telescope").extensions.yank_history.yank_history()
 			end,

@@ -33,7 +33,7 @@ end
 vim.opt.runtimepath:prepend(lazypath)
 
 require("lazy").setup({
-	--core
+	-- core
 	"niuiic/core.nvim",
 	-- shortcut suggestions
 	load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
@@ -130,8 +130,6 @@ require("lazy").setup({
 
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
-	-- todo comments
-	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- recent files
 	load_plugin_config("smartpde/telescope-recent-files", "plugin/telescope-recent-files"),
 	-- undo
@@ -221,4 +219,6 @@ require("lazy").setup({
 	load_plugin_config("rachartier/tiny-inline-diagnostic.nvim", "plugin/tiny-inline-diagnostic"),
 	-- rust
 	load_plugin_config("mrcjkb/rustaceanvim", "plugin/rustaceanvim"),
+	-- todo manager
+	load_plugin_config("niuiic/todo.nvim", "plugin/todo", "~/Documents/projects/todo.nvim"),
 })
