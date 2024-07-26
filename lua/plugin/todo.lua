@@ -13,8 +13,11 @@ return {
 		{
 			"<space>ma",
 			function()
-				require("todo").search_all(function(todo)
-					return todo.status ~= "DONE"
+				local core = require("core")
+				require("todo").search_all(function(items)
+					return core.lua.list.filter(items, function(item)
+						return item.status ~= "DONE"
+					end)
 				end)
 			end,
 			desc = "search all todos",
@@ -22,8 +25,11 @@ return {
 		{
 			"<space>mu",
 			function()
-				require("todo").search_upstream(function(todo)
-					return todo.status ~= "DONE"
+				local core = require("core")
+				require("todo").search_upstream(function(items)
+					return core.lua.list.filter(items, function(item)
+						return item.status ~= "DONE"
+					end)
 				end)
 			end,
 			desc = "search upstream todos",
@@ -31,8 +37,11 @@ return {
 		{
 			"<space>md",
 			function()
-				require("todo").search_downstream(function(todo)
-					return todo.status ~= "DONE"
+				local core = require("core")
+				require("todo").search_downstream(function(items)
+					return core.lua.list.filter(items, function(item)
+						return item.status ~= "DONE"
+					end)
 				end)
 			end,
 			desc = "search downstream todos",
