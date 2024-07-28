@@ -8,7 +8,6 @@ local config = function()
 				"NvimTree",
 				"terminal",
 				"trouble",
-				"spectre_panel",
 				"divider",
 				"lspsagaoutline",
 				"dapui_scopes",
