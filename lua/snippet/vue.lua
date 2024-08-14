@@ -47,24 +47,17 @@ local M = {
 <!-- ~ script -->
 <script setup lang="ts">
 // ~~ 组件配置
-  {}  
 </script>
 
 <!-- ~ template -->
 <template>
-  {}    
+  <div></div>
 </template>
 
 <!-- ~ style -->
-<style lang="scss" scoped>
-  {}   
-</style>
+<style lang="scss" scoped></style>
     ]],
-			{
-				i(1),
-				i(2),
-				i(3),
-			}
+			{}
 		)
 	),
 	s("echo", {
