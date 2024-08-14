@@ -9,11 +9,6 @@ local config = function()
 					{ map = { "VtsExec fix_all", "LSPFixAll" } },
 				},
 			},
-			denols = {
-				commands_map = {
-					{ map = { "DenolsRename", "LSPRename" } },
-				},
-			},
 			volar = {
 				commands_map = {
 					{ map = { "VolarFilePath", "LSPFilePath" } },
