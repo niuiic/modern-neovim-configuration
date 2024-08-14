@@ -118,8 +118,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		"nvim-lua/plenary.nvim",
 		"antoinemadec/FixCursorHold.nvim",
-		-- adapters
-		-- check more adapters on https://github.com/nvim-neotest/neotest#supported-runners
 		"haydenmeade/neotest-jest",
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-python",
