@@ -16,7 +16,7 @@ local M = {
 		t({ "", "</template>" }),
 	}),
 	s("slot", {
-		t({ "<template #" }),
+		t({ "<template ~" }),
 		i(1, "name"),
 		t({ ">", "\t" }),
 		i(2),
@@ -44,18 +44,18 @@ local M = {
 		"new-file",
 		fmt(
 			[[
-<!-- # script -->
+<!-- ~ script -->
 <script setup lang="ts">
-// ## 组件配置
+// ~~ 组件配置
   {}  
 </script>
 
-<!-- # template -->
+<!-- ~ template -->
 <template>
   {}    
 </template>
 
-<!-- # style -->
+<!-- ~ style -->
 <style lang="scss" scoped>
   {}   
 </style>
