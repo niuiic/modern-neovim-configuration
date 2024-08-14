@@ -22,14 +22,9 @@ local lsp_list = {
 	"nginx_language_server",
 	"somesass_ls",
 	"css_variables",
+	"vtsls",
 	"pyright",
 }
-
-if core.file.file_or_dir_exists(core.file.root_path() .. "/deno.json") then
-	table.insert(lsp_list, "denols")
-else
-	table.insert(lsp_list, "vtsls")
-end
 
 -- nvim-cmp support
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
