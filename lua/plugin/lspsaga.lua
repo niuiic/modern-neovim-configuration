@@ -92,16 +92,7 @@ return {
 		{
 			"gd",
 			function()
-				local denols = vim.lsp.get_clients({
-					name = "denols",
-				})
-				if denols then
-					vim.lsp.buf.definition({
-						loclist = true,
-					})
-				else
-					require("telescope.builtin").lsp_definitions()
-				end
+				require("telescope.builtin").lsp_definitions()
 			end,
 			desc = "goto definitions",
 		},

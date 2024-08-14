@@ -7,7 +7,7 @@ vim.g.maplocalleader = " "
 -- exit and refresh
 vim.keymap.set("n", "<A-q>", ":q!<cr>", { silent = true })
 vim.keymap.set("n", "<C-n>", function()
-	vim.ui.select({ "Window", "Buffer", "Both" }, { prompt = "Clear Windows or Buffers" }, function(choice)
+	vim.ui.select({ "Window", "Buffer", "Both" }, { prompt = "Windows or Buffers to clear" }, function(choice)
 		if not choice then
 			return
 		end
