@@ -30,6 +30,7 @@ local config = function()
 					"divider",
 					"sqls_output",
 					"trouble",
+					"qf",
 				}
 				if
 					core.lua.list.includes(excluded_ft, function(ft)
