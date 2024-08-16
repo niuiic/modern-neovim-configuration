@@ -16,7 +16,7 @@ local M = {
 		t({ "", "</template>" }),
 	}),
 	s("slot", {
-		t({ "<template ~" }),
+		t({ "<template #" }),
 		i(1, "name"),
 		t({ ">", "\t" }),
 		i(2),
