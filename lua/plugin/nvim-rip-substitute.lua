@@ -10,6 +10,9 @@ return {
 			keymaps = {
 				confirm = "r",
 			},
+			regexOptions = {
+				pcre2 = false,
+			},
 		})
 	end,
 	keys = {
