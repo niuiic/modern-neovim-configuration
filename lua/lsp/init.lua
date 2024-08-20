@@ -62,3 +62,17 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+local hl_list = {
+	"DiagnosticVirtualTextError",
+	"DiagnosticVirtualTextHint",
+	"DiagnosticVirtualTextInfo",
+	"DiagnosticVirtualTextWarn",
+}
+core.lua.list.each(hl_list, function(hl)
+	vim.api.nvim_set_hl(0, hl, {
+		fg = vim.api.nvim_get_hl(0, {
+			name = hl,
+		}).fg,
+	})
+end)

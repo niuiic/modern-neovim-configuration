@@ -103,7 +103,12 @@ return {
 		},
 		{
 			"D",
-			vim.diagnostic.open_float,
+			function()
+				vim.diagnostic.open_float({
+					source = true,
+					border = "rounded",
+				})
+			end,
 		},
 		{
 			"<space>la",
