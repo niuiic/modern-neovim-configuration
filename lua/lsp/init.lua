@@ -51,3 +51,14 @@ core.lua.list.each(lsp_list, function(value)
 end)
 
 vim.cmd("hi LspInlayHint guibg=none guifg=#33FFBD")
+
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "",
+		},
+	},
+})
