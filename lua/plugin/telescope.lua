@@ -57,6 +57,7 @@ local keys = {
 	{ "<space>oM", "<cmd>Telescope marks<cr>", desc = "search marks with preview" },
 	{ "<space>ow", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "search words in current buffer" },
 	{ "<space>or", "<cmd>Telescope resume<cr>", desc = "research" },
+	{ "<space>ot", "<cmd>TodoTelescope<cr>", desc = "search todo comments" },
 	{ "<space>on", "<cmd>Noice telescope<cr>", desc = "search notifications" },
 	{
 		"<space>oW",

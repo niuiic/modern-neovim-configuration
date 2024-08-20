@@ -219,4 +219,6 @@ require("lazy").setup({
 	load_plugin_config("mrcjkb/rustaceanvim", "plugin/rustaceanvim"),
 	-- todo manager
 	load_plugin_config("niuiic/todo.nvim", "plugin/todo"),
+	-- todo comments
+	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 })
