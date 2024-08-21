@@ -41,8 +41,6 @@ require("lazy").setup({
 	load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
 	-- automatically switch input method when input mode changed
 	load_plugin_config("niuiic/fcitx.nvim", "plugin/fcitx"),
-	-- displays neovim startup time
-	load_plugin_config("dstein64/vim-startuptime", "plugin/vim-startuptime"),
 	-- fold
 	load_plugin_config("kevinhwang91/nvim-ufo", "plugin/nvim-ufo"),
 	-- lazygit
@@ -153,8 +151,6 @@ require("lazy").setup({
 	load_plugin_config("stevearc/dressing.nvim", "plugin/dressing"),
 	-- divider line
 	load_plugin_config("niuiic/divider.nvim", "plugin/divider"),
-	-- clipboard image
-	load_plugin_config("niuiic/cp-image.nvim", "plugin/cp-image"),
 	-- translate
 	load_plugin_config("niuiic/translate.nvim", "plugin/translate"),
 	-- session
@@ -217,8 +213,6 @@ require("lazy").setup({
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- rust
 	load_plugin_config("mrcjkb/rustaceanvim", "plugin/rustaceanvim"),
-	-- todo manager
-	load_plugin_config("niuiic/todo.nvim", "plugin/todo"),
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 })
