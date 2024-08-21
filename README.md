@@ -352,9 +352,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [dmmulroy/ts-error-translator.nvim](https://github.com/dmmulroy/ts-error-translator.nvim)
 
 	![](https://img.shields.io/github/stars/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/last-commit/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/commit-activity/y/dmmulroy/ts-error-translator.nvim)
-- [dstein64/vim-startuptime](https://github.com/dstein64/vim-startuptime) - A plugin for profiling Vim and Neovim startup time.
-
-	![](https://img.shields.io/github/stars/dstein64/vim-startuptime) ![](https://img.shields.io/github/last-commit/dstein64/vim-startuptime) ![](https://img.shields.io/github/commit-activity/y/dstein64/vim-startuptime)
 - [echasnovski/mini.bufremove](https://github.com/echasnovski/mini.bufremove) - Neovim Lua plugin to remove buffers. Part of 'mini.nvim' library.
 
 	![](https://img.shields.io/github/stars/echasnovski/mini.bufremove) ![](https://img.shields.io/github/last-commit/echasnovski/mini.bufremove) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.bufremove)
@@ -475,9 +472,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/core.nvim](https://github.com/niuiic/core.nvim) - Neovim utils
 
 	![](https://img.shields.io/github/stars/niuiic/core.nvim) ![](https://img.shields.io/github/last-commit/niuiic/core.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/core.nvim)
-- [niuiic/cp-image.nvim](https://github.com/niuiic/cp-image.nvim) - Quickly insert image in neovim
-
-	![](https://img.shields.io/github/stars/niuiic/cp-image.nvim) ![](https://img.shields.io/github/last-commit/niuiic/cp-image.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/cp-image.nvim)
 - [niuiic/dap-utils.nvim](https://github.com/niuiic/dap-utils.nvim) - Better use of nvim-dap
 
 	![](https://img.shields.io/github/stars/niuiic/dap-utils.nvim) ![](https://img.shields.io/github/last-commit/niuiic/dap-utils.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/dap-utils.nvim)
@@ -517,9 +511,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/terminal.nvim](https://github.com/niuiic/terminal.nvim) - Simple and highly configurable terminal plugin for neovim.
 
 	![](https://img.shields.io/github/stars/niuiic/terminal.nvim) ![](https://img.shields.io/github/last-commit/niuiic/terminal.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/terminal.nvim)
-- [niuiic/todo.nvim](https://github.com/niuiic/todo.nvim) - Simple but powerful todo manager based on text.
-
-	![](https://img.shields.io/github/stars/niuiic/todo.nvim) ![](https://img.shields.io/github/last-commit/niuiic/todo.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/todo.nvim)
 - [niuiic/track.nvim](https://github.com/niuiic/track.nvim) - Neovim plugin to track the thought process of reading source code.
 
 	![](https://img.shields.io/github/stars/niuiic/track.nvim) ![](https://img.shields.io/github/last-commit/niuiic/track.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/track.nvim)
