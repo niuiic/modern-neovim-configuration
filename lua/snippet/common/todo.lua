@@ -5,10 +5,16 @@ local i = ls.insert_node
 
 local M = {
 	s("todo", {
-		t({ "[ ] (" }),
+		t({ "TODO: " }),
 		i(1),
-		t({ "): " }),
-		i(2),
+	}),
+	s("fix", {
+		t({ "FIXME: " }),
+		i(1),
+	}),
+	s("hack", {
+		t({ "HACK: " }),
+		i(1),
 	}),
 }
 
