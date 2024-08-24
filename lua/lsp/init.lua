@@ -24,6 +24,7 @@ local lsp_list = {
 	"css_variables",
 	"vtsls",
 	"pyright",
+	"nushell",
 }
 
 -- nvim-cmp support
