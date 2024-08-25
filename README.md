@@ -37,12 +37,12 @@ Neovim: V0.10+
 
 1. `nodejs`, `rust` (required for `mason.nvim` and `nvim-treesitter`). Use `:h mason-requirements` to check more dependencies.
 2. `rg`, `fd` command (required for `telescope.nvim`)
-3. `trashy` command (required for `nvim-tree.lua`)
-4. `fcitx5` (required for `fcitx.nvim`)
-5. `deeplx` (required for `translate.nvim`)
-6. `cargo-nextest` (required for `neotest-rust.nvim`)
-7. `@vue/typescript-plugin` (required for vue project)
-8. `yazi` and `ueberzugpp` (required for `yazi.nvim`)
+3. `fcitx5` (required for `fcitx.nvim`)
+4. `deeplx` (required for `translate.nvim`)
+5. `cargo-nextest` (required for `neotest-rust.nvim`)
+6. `@vue/typescript-plugin` (required for vue project)
+7. `yazi` and `ueberzugpp` (required for `yazi.nvim`)
+7. `nushell` (recommended)
 
 ## QuickStart
 

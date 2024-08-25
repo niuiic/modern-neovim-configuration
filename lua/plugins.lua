@@ -215,4 +215,6 @@ require("lazy").setup({
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- file manager
 	load_plugin_config("mikavilpas/yazi.nvim", "plugin/yazi"),
+	-- nushell
+	load_plugin_config("LhKipp/nvim-nu", "plugin/nvim-nu"),
 })
