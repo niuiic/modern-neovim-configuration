@@ -295,6 +295,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [LelouchHe/xmake-luals-addon](https://github.com/LelouchHe/xmake-luals-addon) - Lua-LS Addon for Xmake
 
 	![](https://img.shields.io/github/stars/LelouchHe/xmake-luals-addon) ![](https://img.shields.io/github/last-commit/LelouchHe/xmake-luals-addon) ![](https://img.shields.io/github/commit-activity/y/LelouchHe/xmake-luals-addon)
+- [LhKipp/nvim-nu](https://github.com/LhKipp/nvim-nu) - Basic editor support for the nushell language
+
+	![](https://img.shields.io/github/stars/LhKipp/nvim-nu) ![](https://img.shields.io/github/last-commit/LhKipp/nvim-nu) ![](https://img.shields.io/github/commit-activity/y/LhKipp/nvim-nu)
 - [LiadOz/nvim-dap-repl-highlights](https://github.com/LiadOz/nvim-dap-repl-highlights) - Add syntax highlighting to the nvim-dap REPL
 
 	![](https://img.shields.io/github/stars/LiadOz/nvim-dap-repl-highlights) ![](https://img.shields.io/github/last-commit/LiadOz/nvim-dap-repl-highlights) ![](https://img.shields.io/github/commit-activity/y/LiadOz/nvim-dap-repl-highlights)
