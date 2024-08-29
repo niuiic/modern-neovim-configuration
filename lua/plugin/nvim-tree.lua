@@ -72,6 +72,21 @@ local set_keymap = function(bufnr)
 			node.absolute_path,
 		}, {}, function() end, function() end)
 	end, opts("open with dolphin"))
+	vim.keymap.set("n", "t", function()
+		local node = api.tree.get_node_under_cursor()
+		if node == nil then
+			return
+		end
+		if not vim.fn.executable("wezterm") then
+			vim.notify("wezterm is required", vim.log.levels.ERROR)
+			return
+		end
+		core.job.spawn("wezterm", {
+			"start",
+			"--cwd",
+			node.absolute_path,
+		}, {}, function() end, function() end)
+	end, opts("open with terminal"))
 end
 
 local open_nvim_tree = function()
