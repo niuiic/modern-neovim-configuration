@@ -51,6 +51,8 @@ require("lazy").setup({
 	"sitiom/nvim-numbertoggle",
 	-- quick motion
 	load_plugin_config("folke/flash.nvim", "plugin/flash"),
+	-- file tree
+	load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
 
 	-- better syntax highlight
 	load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
@@ -213,8 +215,6 @@ require("lazy").setup({
 	load_plugin_config("mrcjkb/rustaceanvim", "plugin/rustaceanvim"),
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
-	-- file manager
-	load_plugin_config("mikavilpas/yazi.nvim", "plugin/yazi"),
 	-- nushell
 	load_plugin_config("LhKipp/nvim-nu", "plugin/nvim-nu"),
 })
