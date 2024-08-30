@@ -109,6 +109,7 @@ vim.filetype.add({
 	pattern = {
 		[".*/openresty/.*%.conf"] = "nginx",
 		[".*/nginx/.*%.conf"] = "nginx",
+		["TODO"] = "todo",
 	},
 })
 
