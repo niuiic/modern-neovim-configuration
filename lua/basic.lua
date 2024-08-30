@@ -104,6 +104,7 @@ vim.filetype.add({
 		mdx = "markdown",
 		typ = "typst",
 		ts = "typescript",
+		todo = "todo",
 	},
 	pattern = {
 		[".*/openresty/.*%.conf"] = "nginx",

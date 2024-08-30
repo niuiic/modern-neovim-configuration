@@ -16,6 +16,10 @@ local M = {
 		t({ "HACK: " }),
 		i(1),
 	}),
+	s("checkbox", {
+		t({ "☐ " }),
+		i(1),
+	}),
 }
 
 return M
