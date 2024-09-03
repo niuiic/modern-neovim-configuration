@@ -177,8 +177,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/code-shot.nvim", "plugin/code-shot"),
 	-- open url
 	load_plugin_config("sontungexpt/url-open", "plugin/url-open"),
-	-- preview typst documents
-	load_plugin_config("chomosuke/typst-preview.nvim", "plugin/typst-preview"),
 	-- git log
 	load_plugin_config("niuiic/git-log.nvim", "plugin/git-log"),
 	-- remote edit
