@@ -451,9 +451,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [marilari88/neotest-vitest](https://github.com/marilari88/neotest-vitest) - Vitest adapter for Neovim Neotest plugin
 
 	![](https://img.shields.io/github/stars/marilari88/neotest-vitest) ![](https://img.shields.io/github/last-commit/marilari88/neotest-vitest) ![](https://img.shields.io/github/commit-activity/y/marilari88/neotest-vitest)
-- [mei28/luminate.nvim](https://github.com/mei28/luminate.nvim) - 🌟 Highlight yanked, pasted, and undone/redone text in Neovim with a splash of color.
-
-	![](https://img.shields.io/github/stars/mei28/luminate.nvim) ![](https://img.shields.io/github/last-commit/mei28/luminate.nvim) ![](https://img.shields.io/github/commit-activity/y/mei28/luminate.nvim)
 - [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap) - Debug Adapter Protocol client implementation for Neovim
 
 	![](https://img.shields.io/github/stars/mfussenegger/nvim-dap) ![](https://img.shields.io/github/last-commit/mfussenegger/nvim-dap) ![](https://img.shields.io/github/commit-activity/y/mfussenegger/nvim-dap)
