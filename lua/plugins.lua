@@ -199,8 +199,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/task.nvim", "plugin/task"),
 	-- vtsls
 	"yioneko/nvim-vtsls",
-	-- highlight yanked, pasted, and undone/redone text
-	load_plugin_config("mei28/luminate.nvim", "plugin/luminate"),
 	-- lua lsp
 	load_plugin_config("folke/lazydev.nvim", "plugin/lazydev"),
 	-- replace in buffer
