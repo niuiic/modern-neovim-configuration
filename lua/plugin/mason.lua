@@ -16,7 +16,7 @@
 -- ◍ yaml-language-server
 -- ◍ marksman
 -- ◍ lemminx
--- ◍ typst-lsp
+-- ◍ tinymist
 -- ◍ dockerfile-language-server
 -- ◍ nginx-language-server
 -- ◍ glsl_analyzer
