@@ -37,7 +37,8 @@
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ black
--- install typstfmt, nginxbeautifier manually
+-- ◍ typstfmt
+-- install nginxbeautifier manually
 
 return {
 	config = function()
