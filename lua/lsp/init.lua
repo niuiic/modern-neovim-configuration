@@ -9,7 +9,6 @@ local lsp_list = {
 	"eslint",
 	"html",
 	"jsonls",
-	"sqls",
 	"taplo",
 	"stylelint_lsp",
 	"wgsl_analyzer",

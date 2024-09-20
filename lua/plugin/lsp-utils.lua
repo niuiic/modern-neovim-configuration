@@ -36,11 +36,6 @@ local config = function()
 					{ map = { "BashlsRename", "LSPRename" } },
 				},
 			},
-			sqls = {
-				commands_map = {
-					{ map = { "SqlsExec", "LSPExec" } },
-				},
-			},
 			stylelint_lsp = {
 				commands_map = {
 					{ map = { "StylelintFixAll", "LSPFixAll" } },

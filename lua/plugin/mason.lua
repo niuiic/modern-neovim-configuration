@@ -1,5 +1,4 @@
 -- lsps installed:
--- ◍ sqls
 -- ◍ vue-language-server
 -- ◍ bash-language-server
 -- ◍ css-lsp
@@ -33,7 +32,6 @@
 -- formatters installed:
 -- ◍ prettier
 -- ◍ shfmt
--- ◍ sqlfluff
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ black

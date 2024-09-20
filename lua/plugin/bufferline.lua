@@ -28,7 +28,6 @@ local config = function()
 				local excluded_ft = {
 					"dap-repl",
 					"divider",
-					"sqls_output",
 					"trouble",
 					"qf",
 				}

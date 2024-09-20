@@ -68,9 +68,6 @@ vim.o.wildmenu = true
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"
 
--- fix the delay to enter normal mode in sql file
-vim.g.omni_sql_no_default_maps = 1
-
 -- enable mouse mode
 vim.o.mouse = "a"
 
