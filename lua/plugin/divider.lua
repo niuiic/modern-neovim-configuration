@@ -42,7 +42,7 @@ return {
 				"wgsl",
 				"python",
 			},
-			ui = { direction = "vl" },
+			ui = { direction = "vl", size = 30 },
 		})
 	end,
 	keys = {
