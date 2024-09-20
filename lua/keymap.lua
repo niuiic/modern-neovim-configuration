@@ -5,32 +5,8 @@ vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
 -- exit and refresh
-vim.keymap.set("n", "<A-q>", ":q!<cr>", { silent = true })
-vim.keymap.set("n", "<C-n>", function()
-	vim.ui.select({ "Window", "Buffer", "Both" }, { prompt = "Windows or Buffers to clear" }, function(choice)
-		if not choice then
-			return
-		end
-		if choice == "Window" then
-			vim.cmd("only")
-		elseif choice == "Buffer" then
-			local bufnr = vim.api.nvim_win_get_buf(0)
-			core.lua.list.each(vim.api.nvim_list_bufs(), function(buf)
-				if buf ~= bufnr then
-					pcall(require("mini.bufremove").delete, buf)
-				end
-			end)
-		else
-			local bufnr = vim.api.nvim_win_get_buf(0)
-			core.lua.list.each(vim.api.nvim_list_bufs(), function(buf)
-				if buf ~= bufnr then
-					pcall(require("mini.bufremove").delete, buf)
-				end
-			end)
-			vim.cmd("only")
-		end
-	end)
-end, { silent = true })
+vim.keymap.set("n", "<A-q>", "<cmd>q!<cr>", { silent = true })
+vim.keymap.set("n", "<C-n>", "<cmd>only<cr>", { silent = true })
 vim.keymap.set("n", "<C-e>", function()
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	vim.cmd("e")
@@ -45,7 +21,7 @@ vim.api.nvim_create_user_command("Quit", function()
 	end)
 	vim.cmd("qa")
 end, {})
-vim.keymap.set("n", "<C-q>", ":Quit<cr>", { silent = true })
+vim.keymap.set("n", "<C-q>", "<cmd>Quit<cr>", { silent = true })
 
 -- save
 vim.keymap.set("n", "<C-s>", ":w<cr>", { silent = true })
