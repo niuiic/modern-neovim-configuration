@@ -61,10 +61,6 @@ return {
 					group = "diff view",
 				},
 				{
-					"<leader>l",
-					group = "divider",
-				},
-				{
 					"<space>g",
 					group = "git signs",
 					mode = "x",
