@@ -70,11 +70,6 @@ return {
 			desc = "jump to previous error",
 		},
 		{
-			"gf",
-			"<cmd>Lspsaga finder ref<cr>",
-			desc = "goto references",
-		},
-		{
 			"gi",
 			"<cmd>Lspsaga finder imp<cr>",
 			desc = "goto implements",
@@ -95,6 +90,13 @@ return {
 				require("telescope.builtin").lsp_definitions()
 			end,
 			desc = "goto definitions",
+		},
+		{
+			"gf",
+			function()
+				require("telescope.builtin").lsp_references()
+			end,
+			desc = "goto references",
 		},
 		{
 			"J",
