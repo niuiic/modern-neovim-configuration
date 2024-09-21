@@ -17,7 +17,6 @@
 -- ◍ lemminx
 -- ◍ tinymist
 -- ◍ dockerfile-language-server
--- ◍ nginx-language-server
 -- ◍ glsl_analyzer
 -- ◍ some-sass-language-server
 -- ◍ css-variables-language-server
@@ -36,7 +35,6 @@
 -- ◍ xmlformatter
 -- ◍ black
 -- ◍ typstfmt
--- install nginxbeautifier manually
 
 return {
 	config = function()

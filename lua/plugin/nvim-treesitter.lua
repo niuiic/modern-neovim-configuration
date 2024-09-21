@@ -36,7 +36,6 @@ local config = function()
 			"typst",
 			"vimdoc",
 			"python",
-			"nginx",
 			"xml",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },

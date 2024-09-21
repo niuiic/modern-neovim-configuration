@@ -18,7 +18,6 @@ local lsp_list = {
 	"glsl_analyzer",
 	"tinymist",
 	"dockerls",
-	"nginx_language_server",
 	"somesass_ls",
 	"css_variables",
 	"vtsls",
