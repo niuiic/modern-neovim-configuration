@@ -43,11 +43,7 @@ local keys = {
 	{
 		"<space>of",
 		function()
-			require("telescope.builtin").find_files({
-				hidden = true,
-				cwd = require("core").file.root_path(),
-				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
-			})
+			require("plugin.telescope.file").search_file_in_workspace()
 		end,
 		desc = "search files in workspace",
 	},
@@ -62,35 +58,61 @@ local keys = {
 	{
 		"<space>oW",
 		function()
-			require("telescope.builtin").live_grep({
-				hidden = true,
-				cwd = require("core").file.root_path(),
-			})
+			require("plugin.telescope.word").search_word_in_workspace()
 		end,
-		desc = "search words globally",
+		desc = "search word in workspace",
 	},
 	{ "<space>ou", "<cmd>Telescope undo<cr>", desc = "search undo" },
 	{
 		"<space>oo",
 		function()
-			require("telescope.builtin").grep_string({
-				search = require("core").text.selection(),
-				search_dirs = { vim.api.nvim_buf_get_name(0) },
-			})
+			require("plugin.telescope.word").search_cursor_word_in_buffer()
 		end,
-		desc = "search current word in buffer",
+		desc = "search cursor word in buffer",
 		mode = { "x", "n" },
 	},
 	{
 		"<space>oO",
 		function()
-			require("telescope.builtin").grep_string({
-				search = require("core").text.selection(),
-				cwd = require("core").file.root_path(),
-			})
+			require("plugin.telescope.word").search_cursor_word_in_workspace()
 		end,
-		desc = "search current word in workspace",
+		desc = "search cursor word in workspace",
 		mode = { "x", "n" },
+	},
+	{
+		"gf",
+		function()
+			require("plugin.telescope.lsp").references()
+		end,
+		desc = "goto references",
+	},
+	{
+		"gi",
+		function()
+			require("plugin.telescope.lsp").implementations()
+		end,
+		desc = "goto implements",
+	},
+	{
+		"gc",
+		function()
+			require("plugin.telescope.lsp").incoming_calls()
+		end,
+		desc = "goto incoming calls",
+	},
+	{
+		"gC",
+		function()
+			require("plugin.telescope.lsp").outgoing_calls()
+		end,
+		desc = "goto outgoing calls",
+	},
+	{
+		"gd",
+		function()
+			require("plugin.telescope.lsp").definitions()
+		end,
+		desc = "goto definitions",
 	},
 }
 

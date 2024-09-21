@@ -70,35 +70,6 @@ return {
 			desc = "jump to previous error",
 		},
 		{
-			"gi",
-			"<cmd>Lspsaga finder imp<cr>",
-			desc = "goto implements",
-		},
-		{
-			"gc",
-			"<cmd>Lspsaga incoming_calls<cr>",
-			desc = "goto incoming calls",
-		},
-		{
-			"gC",
-			"<cmd>Lspsaga outgoing_calls<cr>",
-			desc = "goto outgoing calls",
-		},
-		{
-			"gd",
-			function()
-				require("telescope.builtin").lsp_definitions()
-			end,
-			desc = "goto definitions",
-		},
-		{
-			"gf",
-			function()
-				require("telescope.builtin").lsp_references()
-			end,
-			desc = "goto references",
-		},
-		{
 			"J",
 			vim.lsp.buf.hover,
 			desc = "lsp hover",
