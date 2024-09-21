@@ -173,8 +173,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- format
 	load_plugin_config("niuiic/format.nvim", "plugin/format"),
-	-- code shot
-	load_plugin_config("niuiic/code-shot.nvim", "plugin/code-shot"),
 	-- open url
 	load_plugin_config("sontungexpt/url-open", "plugin/url-open"),
 	-- git log
