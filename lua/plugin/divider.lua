@@ -22,7 +22,7 @@ return {
 					regex = [[~~~ ([%s%S]+)]],
 					hl = "#00ff7c",
 					icon_hl = "#00ff7c",
-					icon = "󰍎",
+					icon = "󰉋",
 					extmark = "-",
 					extmark_pos = "bottom",
 				},
