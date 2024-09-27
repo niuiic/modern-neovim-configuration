@@ -40,7 +40,7 @@ require("lazy").setup({
 	-- auto complete pairs
 	load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
 	-- automatically switch input method when input mode changed
-	load_plugin_config("niuiic/fcitx.nvim", "plugin/fcitx"),
+	"niuiic/fcitx.nvim",
 	-- fold
 	load_plugin_config("kevinhwang91/nvim-ufo", "plugin/nvim-ufo"),
 	-- lazygit
