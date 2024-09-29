@@ -47,6 +47,13 @@ vim.keymap.set("n", "e", "zz", { silent = true })
 -- plugin operation
 require("which-key").add({
 	{ "<leader>n", group = "neovim" },
+	{
+		"<leader>nr",
+		function()
+			dofile(vim.api.nvim_buf_get_name(0))
+		end,
+		desc = "run lua file",
+	},
 	{ "<leader>np", "<cmd>Lazy<cr>", desc = "plugin management" },
 	{ "<leader>nl", "<cmd>LspInfo<cr>", desc = "lsp status" },
 	{ "<leader>nc", "<cmd>checkhealth<cr>", desc = "checkhealth" },
