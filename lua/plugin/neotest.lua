@@ -12,8 +12,7 @@ local config = function()
 			require("neotest-python")({
 				args = { "--capture=no" },
 				is_test_file = function(file)
-					local core = require("core")
-					return core.file.extension(file) == "py"
+					return string.match(file, "^.+%.py$") ~= nil
 				end,
 			}),
 			require("neotest-vitest"),
@@ -34,6 +33,7 @@ local config = function()
 				end,
 				env = { CI = true },
 			}),
+			require("neotest-plenary"),
 		},
 	})
 end
