@@ -33,7 +33,6 @@ local config = function()
 				end,
 				env = { CI = true },
 			}),
-			require("neotest-plenary"),
 		},
 	})
 end
