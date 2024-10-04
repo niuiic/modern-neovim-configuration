@@ -57,12 +57,8 @@ return {
 					group = "remote",
 				},
 				{
-					"<leader>d",
-					group = "diff view",
-				},
-				{
 					"<space>g",
-					group = "git signs",
+					group = "git",
 					mode = "x",
 				},
 				{
