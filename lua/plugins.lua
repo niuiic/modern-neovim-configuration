@@ -1,8 +1,3 @@
--- find more awesome plugins
--- https://github.com/rockerBOO/awesome-neovim
--- http://neovimcraft.com
--- https://github.com/ayamir/nvimdots/wiki/Plugins
-
 local load_plugin_config = function(plugin, config_path, dir)
 	local ok, config = pcall(require, config_path)
 	if not ok or config == nil then
@@ -123,8 +118,6 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.indentscope", "plugin/mini-indentscope"),
 	-- tab line
 	load_plugin_config("akinsho/bufferline.nvim", "plugin/bufferline"),
-	-- git diff gui
-	load_plugin_config("sindrets/diffview.nvim", "plugin/diffview"),
 
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
