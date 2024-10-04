@@ -12,10 +12,6 @@ return {
 					group = "test",
 				},
 				{
-					"<space>g",
-					group = "git signs",
-				},
-				{
 					"<space>s",
 					group = "tasks",
 				},
