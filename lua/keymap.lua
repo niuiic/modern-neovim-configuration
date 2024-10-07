@@ -44,6 +44,19 @@ vim.keymap.set("n", "Z", "za", { silent = true })
 -- center this line
 vim.keymap.set("n", "e", "zz", { silent = true })
 
+-- calc max node id
+vim.keymap.set("x", "<leader>p", function()
+	local text = require("core").text.selection()
+	local max = "1"
+	for id in string.gmatch(text, "n([%d]+)") do
+		if tonumber(id) > tonumber(max) then
+			max = id
+		end
+	end
+	vim.notify(max, vim.log.levels.INFO)
+	require("core").text.cancel_selection()
+end, { silent = true })
+
 -- plugin operation
 require("which-key").add({
 	{ "<leader>n", group = "neovim" },
