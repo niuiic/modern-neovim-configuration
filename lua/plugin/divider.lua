@@ -1,52 +1,55 @@
 return {
 	config = function()
+		vim.api.nvim_set_hl(0, "Divider1", { fg = "#ff00ff" })
+		vim.api.nvim_set_hl(0, "Divider2", { fg = "#00a0ff" })
+		vim.api.nvim_set_hl(0, "Divider3", { fg = "#00ff7c" })
+
 		require("divider").setup({
 			dividers = {
 				{
-					regex = [[ %% (.+) %%]],
-					hl = "#ff00ff",
-					icon_hl = "#ff00ff",
-					icon = "󰉋",
-					extmark = "-",
-					extmark_pos = "bottom",
+					pattern = [[ %% (.+) %%]],
+					level = 1,
+					hl_group = "Divider1",
+					mark_char = "-",
+					mark_pos = "bottom",
+					is_visible_in_outline = true,
+					is_enabled = function()
+						return true
+					end,
 				},
 				{
-					regex = [[ %%%% (.+) %%%%]],
-					hl = "#00a0ff",
-					icon_hl = "#00a0ff",
-					icon = "󰉋",
-					extmark = "-",
-					extmark_pos = "bottom",
+					pattern = [[ %%%% (.+) %%%%]],
+					level = 2,
+					hl_group = "Divider2",
+					mark_char = "-",
+					mark_pos = "bottom",
+					is_visible_in_outline = true,
+					is_enabled = function()
+						return true
+					end,
 				},
 				{
-					regex = [[ %%%%%% (.+) %%%%%%]],
-					hl = "#00ff7c",
-					icon_hl = "#00ff7c",
-					icon = "󰉋",
-					extmark = "-",
-					extmark_pos = "bottom",
+					pattern = [[ %%%%%% (.+) %%%%%%]],
+					level = 3,
+					hl_group = "Divider3",
+					mark_char = "-",
+					mark_pos = "bottom",
+					is_visible_in_outline = true,
+					is_enabled = function()
+						return true
+					end,
 				},
 			},
-			enabled_filetypes = {
-				"lua",
-				"vue",
-				"typescript",
-				"javascript",
-				"typescriptreact",
-				"javascriptreact",
-				"css",
-				"scss",
-				"html",
-				"rust",
-				"glsl",
-				"wgsl",
-				"python",
-			},
-			ui = { direction = "vl", size = 30 },
 		})
 	end,
 	keys = {
-		{ "<C-/>", "<cmd>DividerToggle<cr>", desc = "toggle divider list" },
+		{
+			"<C-/>",
+			function()
+				require("divider").toggle_outline()
+			end,
+			desc = "toggle divider outline",
+		},
 	},
 	lazy = false,
 }
