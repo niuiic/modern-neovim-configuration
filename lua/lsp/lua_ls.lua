@@ -5,6 +5,7 @@ local M = {
 				version = "LuaJIT",
 			},
 		},
+		completion = { autoRequire = false },
 	},
 	commands = {
 		LuaLsRename = {
