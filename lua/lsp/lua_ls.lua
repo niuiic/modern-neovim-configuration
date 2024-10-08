@@ -4,8 +4,8 @@ local M = {
 			runtime = {
 				version = "LuaJIT",
 			},
+			completion = { autoRequire = false },
 		},
-		completion = { autoRequire = false },
 	},
 	commands = {
 		LuaLsRename = {
