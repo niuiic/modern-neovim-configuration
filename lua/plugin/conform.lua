@@ -1,9 +1,28 @@
 return {
 	config = function()
+		local core = require("core")
+
 		require("conform").formatters.rustfmt = {
 			prepend_args = {
 				"--config",
 				"imports_granularity=Crate,group_imports=StdExternalCrate",
+			},
+		}
+
+		local biome_config_path = core.file.root_path() .. "/biome.json"
+		if not core.file.file_or_dir_exists(biome_config_path) then
+			local config_dir = vim.fn.stdpath("config")
+			if type(config_dir) == "table" then
+				config_dir = config_dir[1]
+			end
+			biome_config_path = config_dir .. "/biome.json"
+		end
+		require("conform").formatters.biome = {
+			args = {
+				"format",
+				"--stdin-file-path",
+				"$FILENAME",
+				"--config-path=" .. biome_config_path,
 			},
 		}
 
@@ -38,25 +57,15 @@ return {
 				sh = { "shfmt" },
 				zsh = { "shfmt" },
 				dockerfile = { "shfmt" },
-				-- sqlfluff
-				sql = { "sqlfluff" },
 				-- taplo
 				toml = { "taplo" },
-				-- clang-format
-				c = { "clang_format" },
-				cpp = { "clang_format" },
-				glsl = { "clang_format" },
-				-- golines
-				go = { "golines" },
-				-- nginxbeautifier
-				nginx = { "nginxbeautifier" },
-				elixir = { "mixformat" },
 				-- typstfmt
 				typst = { "typstfmt" },
-				-- alejandra
-				nix = { "alejandra" },
 				-- xmlformat
 				svg = { "xmlformat" },
+				-- lsp
+				glsl = { lsp_format = "fallback" },
+				wgsl = { lsp_format = "fallback" },
 			},
 		})
 	end,
