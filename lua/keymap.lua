@@ -45,7 +45,7 @@ vim.keymap.set("n", "Z", "za", { silent = true })
 vim.keymap.set("n", "e", "zz", { silent = true })
 
 -- calc max node id
-vim.keymap.set("x", "<leader>p", function()
+vim.keymap.set("x", "<C-p>", function()
 	local text = require("core").text.selection()
 	local max = "1"
 	for id in string.gmatch(text, "n([%d]+)") do
