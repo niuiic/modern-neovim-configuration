@@ -77,7 +77,7 @@ Remap lsp commands with `lsp-utils.nvim` in `lua/plugin/lsp-utils.lua`.
 
 ### Formatter
 
-Use your favorite formatters with [niuiic/format.nvim](https://github.com/niuiic/format.nvim).
+Use your favorite formatters with [stevearc/conform.nvim](https://github.com/stevearc/conform.nvim).
 
 ### DAP
 
