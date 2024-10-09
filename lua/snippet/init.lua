@@ -15,6 +15,7 @@ local lang_list = {
 	"typescriptreact",
 	"javascriptreact",
 	"python",
+	"json",
 }
 
 local common_snippets = {

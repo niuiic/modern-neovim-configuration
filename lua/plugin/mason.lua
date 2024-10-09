@@ -35,6 +35,7 @@
 -- ◍ xmlformatter
 -- ◍ black
 -- ◍ typstfmt
+-- ◍ biome
 
 return {
 	config = function()

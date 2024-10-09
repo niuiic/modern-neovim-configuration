@@ -14,23 +14,24 @@ return {
 				-- rustfmt
 				rust = { "rustfmt" },
 				-- prettier
-				javascript = { "prettier" },
-				typescript = { "prettier" },
 				markdown = { "prettier" },
-				javascriptreact = { "prettier" },
-				typescriptreact = { "prettier" },
-				vue = { "prettier" },
-				css = { "prettier" },
 				scss = { "prettier" },
 				less = { "prettier" },
 				html = { "prettier" },
-				json = { "prettier" },
-				jsonc = { "prettier" },
 				graphql = { "prettier" },
 				yaml = { "prettier" },
 				dot = { "prettier" },
 				tex = { "prettier" },
 				plaintex = { "prettier" },
+				vue = { "prettier" },
+				-- biome
+				javascript = { "biome" },
+				typescript = { "biome" },
+				javascriptreact = { "biome" },
+				typescriptreact = { "biome" },
+				css = { "biome" },
+				json = { "biome" },
+				jsonc = { "biome" },
 				-- black
 				python = { "black" },
 				-- shfmt
