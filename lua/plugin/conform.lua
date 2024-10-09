@@ -70,14 +70,4 @@ return {
 			format_on_save = {},
 		})
 	end,
-	keys = {
-		{
-			"<C-f>",
-			function()
-				require("conform").format({ async = true })
-			end,
-			desc = "format",
-		},
-	},
-	lazy = false,
 }
