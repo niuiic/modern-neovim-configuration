@@ -165,7 +165,7 @@ require("lazy").setup({
 	-- remove buffer
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- format
-	load_plugin_config("niuiic/format.nvim", "plugin/format"),
+	load_plugin_config("stevearc/conform.nvim", "plugin/conform"),
 	-- open url
 	load_plugin_config("sontungexpt/url-open", "plugin/url-open"),
 	-- git log
