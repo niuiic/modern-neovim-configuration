@@ -63,7 +63,7 @@ return {
 		{
 			"<C-f>",
 			function()
-				require("conform").format()
+				require("conform").format({ async = true })
 			end,
 			desc = "format",
 		},
