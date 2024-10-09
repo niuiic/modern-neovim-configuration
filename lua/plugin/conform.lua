@@ -67,6 +67,7 @@ return {
 				glsl = { lsp_format = "fallback" },
 				wgsl = { lsp_format = "fallback" },
 			},
+			format_on_save = {},
 		})
 	end,
 	keys = {
@@ -78,4 +79,5 @@ return {
 			desc = "format",
 		},
 	},
+	lazy = false,
 }
