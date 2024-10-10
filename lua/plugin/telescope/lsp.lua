@@ -184,7 +184,6 @@ local function list_or_jump(action, title, funname, params, opts)
 
 		for client_id, result_or_error in pairs(results_per_client) do
 			local error, result = result_or_error.error, result_or_error.result
-			print("DEBUGPRINT[6]: lsp.lua:186: result=" .. vim.inspect(result))
 			if error then
 				errors[client_id] = error
 			else
