@@ -24,7 +24,7 @@ return {
 	},
 	keys = {
 		{
-			"<C-b>",
+			"<C-f>",
 			function()
 				return require("debugprint").debugprint({ variable = true })
 			end,
