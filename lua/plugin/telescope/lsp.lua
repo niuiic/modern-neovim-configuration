@@ -184,6 +184,7 @@ local function list_or_jump(action, title, funname, params, opts)
 
 		for client_id, result_or_error in pairs(results_per_client) do
 			local error, result = result_or_error.error, result_or_error.result
+			print("DEBUGPRINT[6]: lsp.lua:186: result=" .. vim.inspect(result))
 			if error then
 				errors[client_id] = error
 			else
@@ -207,21 +208,14 @@ local function list_or_jump(action, title, funname, params, opts)
 			end
 		end
 
-		local filtered_items = {}
-		local function has_another_item_with_same_lnum(item)
-			for _, x in ipairs(filtered_items) do
-				if x.lnum == item.lnum then
-					return true
-				end
-			end
-			return false
-		end
+		local item_map = {}
 		for _, item in ipairs(items) do
-			if not has_another_item_with_same_lnum(item) then
-				table.insert(filtered_items, item)
-			end
+			item_map[item.lnum] = item
 		end
-		items = filtered_items
+		items = {}
+		for _, item in pairs(item_map) do
+			table.insert(items, item)
+		end
 
 		for _, error in pairs(errors) do
 			vim.api.nvim_err_writeln("Error when executing " .. action .. " : " .. error.message)
