@@ -233,6 +233,28 @@ local function list_or_jump(action, title, funname, params, opts)
 
 		if #items == 1 and opts.jump_type ~= "never" then
 			local item = items[1]
+
+			if string.match(item.filename, "deno:/.*") then
+				local client = vim.lsp.get_clients({
+					name = "denols",
+				})[1]
+				local res = client.request_sync("deno/virtualTextDocument", {
+					textDocument = {
+						uri = item.filename,
+					},
+				}, 9999, 0)
+				if not res then
+					return
+				end
+				vim.cmd("tabedit " .. item.filename)
+				local lines = vim.split(res.result, "\n")
+				vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+				vim.api.nvim_set_option_value("modifiable", false, { buf = 0 })
+				vim.api.nvim_set_option_value("modified", false, { buf = 0 })
+				vim.lsp.buf_attach_client(0, client.id)
+				return
+			end
+
 			if opts.curr_filepath ~= item.filename then
 				local cmd
 				if opts.jump_type == "tab" then
