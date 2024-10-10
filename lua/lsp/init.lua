@@ -20,10 +20,15 @@ local lsp_list = {
 	"dockerls",
 	"somesass_ls",
 	"css_variables",
-	"vtsls",
 	"pyright",
 	"nushell",
 }
+
+if core.file.file_or_dir_exists(core.file.root_path() .. "/package.json") then
+	table.insert(lsp_list, "vtsls")
+else
+	table.insert(lsp_list, "denols")
+end
 
 -- nvim-cmp support
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
