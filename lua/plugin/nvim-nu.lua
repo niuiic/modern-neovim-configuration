@@ -4,7 +4,5 @@ return {
 			use_lsp_features = false,
 		})
 	end,
-	build = function()
-		vim.cmd("TSInstall nu")
-	end,
+	build = ":TSInstall nu",
 }
