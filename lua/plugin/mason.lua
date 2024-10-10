@@ -21,6 +21,7 @@
 -- ◍ some-sass-language-server
 -- ◍ css-variables-language-server
 -- ◍ pyright
+-- ◍ deno
 
 -- daps installed:
 -- ◍ bash-debug-adapter
