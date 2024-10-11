@@ -1,5 +1,4 @@
 local dap = require("dap")
-local core = require("core")
 local dap_utils = require("dap-utils")
 
 dap.adapters.codelldb = {
@@ -22,9 +21,9 @@ dap_utils.setup({
 			stopOnEntry = false,
 		}
 		vim.cmd("!cargo build")
-		local root_path = core.file.root_path()
-		local target_dir = root_path .. "/target/debug/"
-		if core.file.file_or_dir_exists(target_dir) then
+		local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+		local target_dir = root_dir .. "/target/debug/"
+		if require("omega").exist(target_dir) then
 			local executable = {}
 			for path, path_type in vim.fs.dir(target_dir) do
 				if path_type == "file" then
@@ -47,7 +46,7 @@ dap_utils.setup({
 				end)
 			end
 		else
-			vim.ui.input({ prompt = "Path to executable: ", default = root_path .. "/target/debug/" }, function(input)
+			vim.ui.input({ prompt = "Path to executable: ", default = root_dir .. "/target/debug/" }, function(input)
 				config.program = input
 				run(config)
 			end)
