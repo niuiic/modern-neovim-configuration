@@ -1,4 +1,5 @@
 local core = require("core")
+local omega = require("omega")
 
 local lsp_list = {
 	"cssls",
@@ -24,10 +25,8 @@ local lsp_list = {
 	"nushell",
 }
 
-if
-	not core.file.file_or_dir_exists(core.file.root_path() .. "/package.json")
-	or core.file.file_or_dir_exists(core.file.root_path() .. "/deno.json")
-then
+local root_dir = omega.root_pattern(".git") or vim.fn.getcwd()
+if not omega.exist(root_dir .. "/package.json") or omega.exist(root_dir .. "/deno.json") then
 	table.insert(lsp_list, "denols")
 else
 	table.insert(lsp_list, "vtsls")
@@ -37,7 +36,7 @@ end
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- load all lsp config
-core.lua.list.each(lsp_list, function(value)
+local load_lsp = function(value)
 	local config = require("lsp/" .. value)
 
 	-- set capabilities
@@ -55,7 +54,10 @@ core.lua.list.each(lsp_list, function(value)
 
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
-end)
+end
+for _, value in ipairs(lsp_list) do
+	load_lsp(value)
+end
 
 vim.cmd("hi LspInlayHint guibg=none guifg=#33FFBD")
 
@@ -76,10 +78,13 @@ local hl_list = {
 	"DiagnosticVirtualTextInfo",
 	"DiagnosticVirtualTextWarn",
 }
-core.lua.list.each(hl_list, function(hl)
+local function set_hl(hl)
 	vim.api.nvim_set_hl(0, hl, {
 		fg = vim.api.nvim_get_hl(0, {
 			name = hl,
 		}).fg,
 	})
-end)
+end
+for _, hl in ipairs(hl_list) do
+	set_hl(hl)
+end
