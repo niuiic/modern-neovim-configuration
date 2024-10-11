@@ -1,4 +1,3 @@
-local core = require("core")
 local utils = require("utils")
 
 vim.g.mapleader = "\\"
@@ -50,8 +49,9 @@ vim.keymap.set("n", "e", "zz", { silent = true })
 
 -- calc max node id
 vim.keymap.set("x", "<C-p>", function()
-	local text = require("core").text.selection()
+	local text = require("omega").get_selection()
 	local max = "1"
+	---@diagnostic disable-next-line: param-type-mismatch
 	for id in string.gmatch(text, "n([%d]+)") do
 		if tonumber(id) > tonumber(max) then
 			max = id
@@ -71,6 +71,7 @@ require("which-key").add({
 				require("omega").dofile(vim.api.nvim_buf_get_name(0))
 			end
 		end,
+		mode = { "n", "x" },
 		desc = "run lua file",
 	},
 	{ "<leader>np", "<cmd>Lazy<cr>", desc = "plugin management" },
