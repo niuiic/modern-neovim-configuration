@@ -24,8 +24,8 @@ end, {})
 vim.keymap.set("n", "<C-q>", "<cmd>Quit<cr>", { silent = true })
 
 -- save
-vim.keymap.set("n", "<C-s>", ":w<cr>", { silent = true })
-vim.keymap.set("n", "<A-s>", ":wa!<cr>", { silent = true })
+vim.keymap.set("n", "<C-s>", ":silent w<cr>", { silent = true })
+vim.keymap.set("n", "<A-s>", ":silent wa!<cr>", { silent = true })
 
 -- esc
 vim.keymap.set("i", "<C-c>", "<Esc>", { silent = true })
