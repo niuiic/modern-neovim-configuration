@@ -24,10 +24,13 @@ local lsp_list = {
 	"nushell",
 }
 
-if core.file.file_or_dir_exists(core.file.root_path() .. "/package.json") then
-	table.insert(lsp_list, "vtsls")
-else
+if
+	not core.file.file_or_dir_exists(core.file.root_path() .. "/package.json")
+	or core.file.file_or_dir_exists(core.file.root_path() .. "/deno.json")
+then
 	table.insert(lsp_list, "denols")
+else
+	table.insert(lsp_list, "vtsls")
 end
 
 -- nvim-cmp support
