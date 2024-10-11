@@ -1,4 +1,3 @@
-local core = require("core")
 local luasnip = require("luasnip")
 
 local lang_list = {
@@ -38,7 +37,7 @@ end
 local snippets = {}
 for _, val in pairs(common_snippets) do
 	local common_snippet = require("snippet/common/" .. val)
-	snippets = core.lua.list.merge(common_snippet, snippets)
+	snippets = vim.list_extend(common_snippet, snippets)
 end
 luasnip.add_snippets("all", snippets, {
 	key = "all",

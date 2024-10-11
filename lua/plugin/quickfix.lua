@@ -57,7 +57,4 @@ return {
 			desc = "make",
 		},
 	},
-	dependencies = {
-		"niuiic/core.nvim",
-	},
 }

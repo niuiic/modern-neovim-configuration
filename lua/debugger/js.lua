@@ -69,17 +69,24 @@ local browser = {
 	},
 }
 
+local function is_vue_project()
+	return require("omega").exist_in_file(
+		"vue",
+		(require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/package.json"
+	)
+end
+
 dap_utils.setup({
 	typescript = function(run)
-		if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
-			run(core.lua.list.merge(browser, node))
+		if is_vue_project() then
+			run(vim.list_extend(browser, node))
 		else
 			run(node)
 		end
 	end,
 	javascript = function(run)
-		if core.file.file_contains(core.file.root_path() .. "/package.json", "vue") then
-			run(core.lua.list.merge(browser, node))
+		if is_vue_project() then
+			run(vim.list_extend(browser, node))
 		else
 			run(node)
 		end
