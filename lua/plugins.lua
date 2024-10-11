@@ -63,7 +63,7 @@ require("lazy").setup({
 
 	-- code auto complete
 	-- engine
-	load_plugin_config("hrsh7th/nvim-cmp", "plugin/nvim-cmp"),
+	load_plugin_config("iguanacucumber/magazine.nvim", "plugin/nvim-cmp"),
 	-- better ui
 	"onsails/lspkind-nvim",
 	-- source

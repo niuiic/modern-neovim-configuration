@@ -190,5 +190,6 @@ local config = function()
 end
 
 return {
+	name = "nvim-cmp",
 	config = config,
 }
