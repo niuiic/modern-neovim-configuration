@@ -1,8 +1,6 @@
-local core = require("core")
-
 local function fix_all()
 	local diagnostic_list = vim.diagnostic.get()
-	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
+	local diagnostic = require("omega").list_find(diagnostic_list, function(diagnostic)
 		return diagnostic.source == "eslint"
 	end)
 	if diagnostic == nil then
@@ -57,7 +55,6 @@ local M = {
 		"typescriptreact",
 		"vue",
 	},
-	root_dir = core.file.root_path,
 	handlers = {
 		["eslint/noLibrary"] = function()
 			return {}

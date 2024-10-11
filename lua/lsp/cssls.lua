@@ -1,5 +1,3 @@
-local core = require("core")
-
 local M = {
 	modify_capabilities = function(capabilities)
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -11,7 +9,6 @@ local M = {
 		end
 	end,
 	filetypes = { "css", "scss", "less", "vue" },
-	root_dir = core.file.root_path,
 }
 
 return M

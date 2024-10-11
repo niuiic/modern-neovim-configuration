@@ -1,5 +1,3 @@
-local core = require("core")
-
 local M = {
 	modify_capabilities = function(capabilities)
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -17,7 +15,6 @@ local M = {
 		},
 		provideFormatter = false,
 	},
-	root_dir = core.file.root_path,
 }
 
 return M

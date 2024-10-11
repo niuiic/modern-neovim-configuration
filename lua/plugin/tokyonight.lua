@@ -11,12 +11,13 @@ return {
 		vim.cmd("colorscheme tokyonight-storm")
 
 		-- highlight line number
-		require("core").lua.list.each({
+		local hls = {
 			"LineNrAbove",
 			"LineNr",
 			"LineNrBelow",
-		}, function(hl)
+		}
+		for _, hl in ipairs(hls) do
 			vim.api.nvim_set_hl(0, hl, { fg = "#16D8B5" })
-		end)
+		end
 	end,
 }

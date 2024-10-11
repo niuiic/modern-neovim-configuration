@@ -24,6 +24,16 @@ local M = {
 			[[})]],
 		}),
 	}),
+	s("root_dir", {
+		t({
+			[[require("omega").root_pattern(".git") or vim.fn.getcwd()]],
+		}),
+	}),
+	s("omega", {
+		t({
+			[[require("omega").]],
+		}),
+	}),
 }
 
 return M

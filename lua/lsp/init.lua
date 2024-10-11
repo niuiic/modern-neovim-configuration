@@ -1,5 +1,4 @@
 local core = require("core")
-local omega = require("omega")
 
 local lsp_list = {
 	"cssls",
@@ -25,8 +24,8 @@ local lsp_list = {
 	"nushell",
 }
 
-local root_dir = omega.root_pattern(".git") or vim.fn.getcwd()
-if not omega.exist(root_dir .. "/package.json") or omega.exist(root_dir .. "/deno.json") then
+local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+if not require("omega").exist(root_dir .. "/package.json") or require("omega").exist(root_dir .. "/deno.json") then
 	table.insert(lsp_list, "denols")
 else
 	table.insert(lsp_list, "vtsls")

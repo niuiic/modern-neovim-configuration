@@ -2,14 +2,13 @@ local use_toggle_coverage = function()
 	local loaded = false
 	local buf_list = {}
 	local loaded_for_buf = function()
-		local core = require("core")
 		if not loaded then
 			return false
 		end
 		local bufnr = vim.api.nvim_win_get_buf(0)
-		return core.lua.list.includes(buf_list, function(v)
+		return require("omega").list_find(buf_list, function(v)
 			return v == bufnr
-		end)
+		end) ~= nil
 	end
 
 	return function()
@@ -55,7 +54,7 @@ return {
 		{
 			"<space>tl",
 			function()
-				require("coverage").load()
+				require("coverage").load(true)
 				require("coverage").summary()
 			end,
 			desc = "view test coverage summary",

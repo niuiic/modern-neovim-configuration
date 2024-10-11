@@ -3,12 +3,11 @@ return {
 		require("track").setup({
 			search = {
 				entry_label = function(mark)
-					local core = require("core")
-					local root_path = core.file.root_path()
+					local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
 					local file = mark.file
-					local index = string.find(mark.file, root_path, 1, true)
+					local index = string.find(mark.file, root_dir, 1, true)
 					if index then
-						file = string.sub(file, string.len(root_path) + 2)
+						file = string.sub(file, string.len(root_dir) + 2)
 					end
 					return string.format("[%s] %s | %s:%s", mark.id, mark.desc, file, mark.lnum)
 				end,

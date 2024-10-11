@@ -1,6 +1,4 @@
 local config = function()
-	local core = require("core")
-
 	require("bufferline").setup({
 		options = {
 			mode = "buffers",
@@ -32,7 +30,7 @@ local config = function()
 					"qf",
 				}
 				if
-					core.lua.list.includes(excluded_ft, function(ft)
+					require("omega").list_find(excluded_ft, function(ft)
 						return vim.bo[bufnr].filetype == ft
 					end)
 				then

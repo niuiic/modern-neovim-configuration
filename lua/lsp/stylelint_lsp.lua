@@ -1,5 +1,3 @@
-local core = require("core")
-
 local fix_all = function()
 	local util = require("lspconfig.util")
 	local opts = { sync = true, bufnr = 0 }
@@ -44,7 +42,6 @@ local M = {
 		"javascriptreact",
 		"typescriptreact",
 	},
-	root_dir = core.file.root_path,
 	commands = {
 		StylelintFixAll = {
 			fix_all,

@@ -13,12 +13,16 @@ vim.keymap.set("n", "<C-e>", function()
 	vim.api.nvim_win_set_cursor(0, cursor_pos)
 end, { silent = true })
 vim.api.nvim_create_user_command("Quit", function()
-	core.lua.list.each(vim.api.nvim_list_bufs(), function(bufnr)
+	local function delete_invalid_buffer(bufnr)
 		if not utils.buffer_valid(bufnr) then
-			---@diagnostic disable-next-line: param-type-mismatch
-			pcall(vim.cmd, "bw! " .. bufnr)
+			pcall(function()
+				vim.cmd("bw! " .. bufnr)
+			end)
 		end
-	end)
+	end
+	for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+		delete_invalid_buffer(bufnr)
+	end
 	vim.cmd("qa")
 end, {})
 vim.keymap.set("n", "<C-q>", "<cmd>Quit<cr>", { silent = true })

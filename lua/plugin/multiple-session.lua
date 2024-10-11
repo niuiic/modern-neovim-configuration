@@ -1,8 +1,5 @@
 return {
 	config = function()
-		local core = require("core")
-		local omega = require("omega")
-
 		require("multiple-session").setup({
 			on_session_saved = function(session_dir)
 				require("dap-utils").store_breakpoints(session_dir .. "/breakpoints")
@@ -12,19 +9,19 @@ return {
 				vim.cmd("wundo " .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
-				if omega.exist(session_dir .. "/breakpoints") then
+				if require("omega").exist(session_dir .. "/breakpoints") then
 					require("dap-utils").restore_breakpoints(session_dir .. "/breakpoints")
 				end
-				if omega.exist(session_dir .. "/watches") then
+				if require("omega").exist(session_dir .. "/watches") then
 					require("dap-utils").restore_watches(session_dir .. "/watches")
 				end
-				if omega.exist(session_dir .. "/quickfix") then
+				if require("omega").exist(session_dir .. "/quickfix") then
 					require("quickfix").restore(session_dir .. "/quickfix")
 				end
-				if omega.exist(session_dir .. "/track") then
+				if require("omega").exist(session_dir .. "/track") then
 					require("track").restore(session_dir .. "/track")
 				end
-				if omega.exist(session_dir .. "/undo") then
+				if require("omega").exist(session_dir .. "/undo") then
 					vim.cmd("rundo " .. session_dir .. "/undo")
 				end
 
@@ -32,7 +29,7 @@ return {
 					if vim.api.nvim_get_option_value("filetype", { buf = bufnr }) == "notify" then
 						return
 					end
-					if not omega.exist(vim.api.nvim_buf_get_name(bufnr)) then
+					if not require("omega").exist(vim.api.nvim_buf_get_name(bufnr)) then
 						require("mini.bufremove").delete(bufnr)
 					end
 				end

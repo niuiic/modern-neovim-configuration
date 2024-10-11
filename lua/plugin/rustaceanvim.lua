@@ -1,6 +1,4 @@
 local config = function()
-	local core = require("core")
-
 	vim.g.rustaceanvim = {
 		tools = {
 			hover_actions = {
@@ -8,7 +6,6 @@ local config = function()
 			},
 		},
 		server = {
-			root_dir = core.file.root_path,
 			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) },
 			default_settings = {
@@ -20,7 +17,7 @@ local config = function()
 	local function organize_imports()
 		local diagnostic_list = vim.diagnostic.get()
 		local bufnr = vim.api.nvim_get_current_buf()
-		local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
+		local diagnostic = require("omega").list_find(diagnostic_list, function(diagnostic)
 			if diagnostic.bufnr ~= bufnr then
 				return false
 			end
@@ -80,7 +77,7 @@ local config = function()
 			vim.cmd.RustLsp({ "view", "mir" })
 		end,
 	}
-	local choices = core.lua.table.keys(extra_operations)
+	local choices = vim.tbl_keys(extra_operations)
 
 	local extra = function()
 		vim.ui.select(choices, {
