@@ -1,5 +1,3 @@
-local core = require("core")
-
 require("lspconfig.configs").vtsls = require("vtsls").lspconfig
 
 vim.api.nvim_create_user_command("VtslsRename", function()
@@ -9,14 +7,18 @@ vim.api.nvim_create_user_command("VtslsRename", function()
 end, {})
 
 local fix_type_import = function()
-	local diagnostic_list = vim.diagnostic.get()
-	local diagnostic = core.lua.list.find(diagnostic_list, function(diagnostic)
-		return diagnostic.code == "@typescript-eslint/consistent-type-imports"
-			or diagnostic.code == "@typescript-eslint/no-import-type-side-effects"
+	local diagnostic = require("omega").list_find(vim.diagnostic.get(), function(diagnostic)
+		local targets = {
+			"@typescript-eslint/consistent-type-imports",
+			"@typescript-eslint/no-import-type-side-effects",
+			"@typescript-eslint/no-unused-vars",
+		}
+		return vim.list_contains(targets, diagnostic.code)
 	end)
 	if diagnostic == nil then
 		return
 	end
+
 	local cur_pos = vim.api.nvim_win_get_cursor(0)
 	vim.api.nvim_win_set_cursor(0, {
 		diagnostic.lnum + 1,
@@ -25,8 +27,14 @@ local fix_type_import = function()
 	vim.lsp.buf.code_action({
 		apply = true,
 		filter = function(action)
-			return action.title == "Fix this @typescript-eslint/consistent-type-imports problem"
-				or action.title == "Fix this @typescript-eslint/no-import-type-side-effects problem"
+			local targets = {
+				"Fix this @typescript-eslint/consistent-type-imports problem",
+				"Fix this @typescript-eslint/no-import-type-side-effects problem",
+				"Remove unused declaration",
+			}
+			return require("omega").list_find(targets, function(target)
+				return string.find(action.title, target, 1, true) ~= nil
+			end)
 		end,
 	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
@@ -38,15 +46,14 @@ vim.api.nvim_create_user_command("VtslsOrganizeImports", function()
 end, {})
 
 local M = {
-	root_dir = core.file.root_path,
 	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 	settings = {
 		vtsls = { tsserver = { globalPlugins = {} } },
 	},
 	before_init = function(_, config)
-		local root_dir = core.file.root_path()
-		if core.file.file_contains(root_dir .. "/package.json", "vue") then
+		local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+		if require("omega").exist_in_file("vue", root_dir .. "/package.json") then
 			local vuePluginConfig = {
 				name = "@vue/typescript-plugin",
 				location = require("mason-registry").get_package("vue-language-server"):get_install_path()
