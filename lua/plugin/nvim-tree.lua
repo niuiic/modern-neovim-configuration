@@ -77,14 +77,15 @@ local set_keymap = function(bufnr)
 		if node == nil then
 			return
 		end
-		-- TODO:
-		if not vim.fn.executable("wezterm") then
-			vim.notify("wezterm is required", vim.log.levels.ERROR)
+		if not vim.fn.executable("alacritty") then
+			vim.notify("alacritty is required", vim.log.levels.ERROR)
 			return
 		end
-		core.job.spawn("wezterm", {
-			"start",
-			"--cwd",
+		if not require("omega").is_dir(node.absolute_path) then
+			return
+		end
+		core.job.spawn("alacritty", {
+			"--working-directory",
 			node.absolute_path,
 		}, {}, function() end, function() end)
 	end, opts("open with terminal"))
