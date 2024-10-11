@@ -1,12 +1,11 @@
-local core = require("core")
 local dap_utils = require("dap-utils")
 
 require("dap-vscode-js").setup({
 	debugger_cmd = { os.getenv("HOME") .. "/.local/share/nvim/mason/bin/js-debug-adapter" },
 })
 
-core.lua.list.each({ "pwa-node", "pwa-chrome" }, function(v)
-	require("dap").adapters[v] = {
+local function set_adapter(adapter)
+	require("dap").adapters[adapter] = {
 		type = "server",
 		host = "localhost",
 		port = "${port}",
@@ -19,7 +18,11 @@ core.lua.list.each({ "pwa-node", "pwa-chrome" }, function(v)
 			},
 		},
 	}
-end)
+end
+local adapters = { "pwa-node", "pwa-chrome" }
+for _, adapter in ipairs(adapters) do
+	set_adapter(adapter)
+end
 
 local node = {
 	{

@@ -1,7 +1,5 @@
 return {
 	config = function()
-		local core = require("core")
-
 		require("conform").formatters.rustfmt = {
 			prepend_args = {
 				"--config",
@@ -9,8 +7,8 @@ return {
 			},
 		}
 
-		local biome_config_path = core.file.root_path() .. "/biome.json"
-		if not core.file.file_or_dir_exists(biome_config_path) then
+		local biome_config_path = (require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/biome.json"
+		if not require("omega").exist(biome_config_path) then
 			local config_dir = vim.fn.stdpath("config")
 			if type(config_dir) == "table" then
 				config_dir = config_dir[1]

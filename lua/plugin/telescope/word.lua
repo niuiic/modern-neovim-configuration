@@ -10,14 +10,14 @@ end
 local search_cursor_word_in_workspace = function()
 	require("telescope.builtin").grep_string({
 		search = core.text.selection(),
-		cwd = core.file.root_path(),
+		cwd = require("omega").root_pattern(".git") or vim.fn.getcwd(),
 	})
 end
 
 local search_word_in_workspace = function()
 	require("telescope.builtin").live_grep({
 		hidden = true,
-		cwd = core.file.root_path(),
+		cwd = require("omega").root_pattern(".git") or vim.fn.getcwd(),
 	})
 end
 

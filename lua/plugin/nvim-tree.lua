@@ -77,6 +77,7 @@ local set_keymap = function(bufnr)
 		if node == nil then
 			return
 		end
+		-- TODO:
 		if not vim.fn.executable("wezterm") then
 			vim.notify("wezterm is required", vim.log.levels.ERROR)
 			return
@@ -98,7 +99,7 @@ local open_nvim_tree = function()
 
 	if winnr == nil or not vim.api.nvim_win_is_valid(winnr) then
 		require("nvim-tree.api").tree.open({
-			path = require("core").file.root_path(),
+			path = require("omega").root_pattern(".git") or vim.fn.getcwd(),
 			find_file = true,
 		})
 		winnr = vim.api.nvim_get_current_win()
@@ -138,7 +139,7 @@ local config = function()
 				remove = false,
 			},
 		},
-		root_dirs = { core.file.root_path() },
+		root_dirs = { require("omega").root_pattern(".git") or vim.fn.getcwd() },
 		diagnostics = {
 			enable = true,
 			show_on_dirs = true,
