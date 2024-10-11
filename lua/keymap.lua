@@ -64,7 +64,7 @@ require("which-key").add({
 		"<C-f>",
 		function()
 			if vim.bo.filetype == "lua" then
-				dofile(vim.api.nvim_buf_get_name(0))
+				require("omega").dofile(vim.api.nvim_buf_get_name(0))
 			end
 		end,
 		desc = "run lua file",
