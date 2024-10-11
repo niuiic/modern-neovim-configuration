@@ -31,7 +31,7 @@ return {
 				end
 				local desc = require("omega").get_selection()
 				require("track").mark(nil, nil, nil, desc)
-				require("core").text.cancel_selection()
+				require("omega").to_normal_mode()
 			end,
 			desc = "toggle mark",
 			mode = { "n", "x" },
@@ -72,7 +72,7 @@ return {
 				end
 				local desc = require("omega").get_selection()
 				require("track").edit(nil, nil, desc)
-				require("core").text.cancel_selection()
+				require("omega").to_normal_mode()
 			end,
 			desc = "edit mark",
 			mode = { "n", "x" },

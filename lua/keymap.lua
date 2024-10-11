@@ -58,7 +58,7 @@ vim.keymap.set("x", "<C-p>", function()
 		end
 	end
 	vim.notify(max, vim.log.levels.INFO)
-	require("core").text.cancel_selection()
+	require("omega").to_normal_mode()
 end, { silent = true })
 
 -- plugin operation
