@@ -1,5 +1,3 @@
-local core = require("core")
-
 local lsp_list = {
 	"cssls",
 	"volar",
@@ -39,11 +37,7 @@ local load_lsp = function(value)
 	local config = require("lsp/" .. value)
 
 	-- set capabilities
-	if config.modify_capabilities == nil then
-		config.capabilities = capabilities
-	else
-		config.capabilities = config.modify_capabilities(core.lua.table.clone(capabilities))
-	end
+	config.capabilities = vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
 
 	-- set handlers
 	if not config.handlers then

@@ -1,8 +1,5 @@
 local M = {
-	modify_capabilities = function(capabilities)
-		capabilities.textDocument.completion.completionItem.snippetSupport = true
-		return capabilities
-	end,
+	capabilities = { textDocument = { completion = { completionItem = { snippetSupport = true } } } },
 	on_attach = function(client, _)
 		client.server_capabilities.hoverProvider = false
 	end,

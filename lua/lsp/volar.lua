@@ -35,15 +35,7 @@ local M = {
 	on_attach = function(client, _)
 		client.server_capabilities.hoverProvider = false
 	end,
-	modify_capabilities = function(capabilities)
-		if capabilities.workspace == nil then
-			capabilities.workspace = {
-				didChangeWatchedFiles = { dynamicRegistration = true },
-			}
-		else
-			capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-		end
-	end,
+	capabilities = { workspace = { didChangeWatchedFiles = { dynamicRegistration = true } } },
 	commands = {
 		VolarFilePath = {
 			copy_file_path,
