@@ -67,7 +67,7 @@ return {
 				glsl = { lsp_format = "fallback" },
 				wgsl = { lsp_format = "fallback" },
 			},
-			format_on_save = {},
+			format_after_save = {},
 		})
 	end,
 }
