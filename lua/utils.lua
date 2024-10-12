@@ -12,7 +12,7 @@ local buffer_valid = function(bufnr)
 	local filetype = vim.api.nvim_get_option_value("filetype", {
 		buf = bufnr,
 	})
-	if require("omega").list_find(exclude_filetypes, function(ft)
+	if vim.iter(exclude_filetypes):find(function(ft)
 		return string.match(filetype, ft)
 	end) then
 		return false

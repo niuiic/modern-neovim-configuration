@@ -17,7 +17,7 @@ local config = function()
 	local function organize_imports()
 		local diagnostic_list = vim.diagnostic.get()
 		local bufnr = vim.api.nvim_get_current_buf()
-		local diagnostic = require("omega").list_find(diagnostic_list, function(diagnostic)
+		local diagnostic = vim.iter(diagnostic_list):find(function(diagnostic)
 			if diagnostic.bufnr ~= bufnr then
 				return false
 			end

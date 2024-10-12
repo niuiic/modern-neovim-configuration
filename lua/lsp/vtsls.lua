@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command("VtslsRename", function()
 end, {})
 
 local fix_type_import = function()
-	local diagnostic = require("omega").list_find(vim.diagnostic.get(), function(diagnostic)
+	local diagnostic = vim.iter(vim.diagnostic.get(), function(diagnostic)
 		local targets = {
 			"@typescript-eslint/consistent-type-imports",
 			"@typescript-eslint/no-import-type-side-effects",
@@ -32,7 +32,7 @@ local fix_type_import = function()
 				"Fix this @typescript-eslint/no-import-type-side-effects problem",
 				"Remove unused declaration",
 			}
-			return require("omega").list_find(targets, function(target)
+			return vim.iter(targets):find(function(target)
 				return string.find(action.title, target, 1, true) ~= nil
 			end)
 		end,

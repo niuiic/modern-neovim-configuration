@@ -29,11 +29,9 @@ local config = function()
 					"trouble",
 					"qf",
 				}
-				if
-					require("omega").list_find(excluded_ft, function(ft)
-						return vim.bo[bufnr].filetype == ft
-					end)
-				then
+				if vim.iter(excluded_ft):find(function(ft)
+					return vim.bo[bufnr].filetype == ft
+				end) then
 					return false
 				end
 

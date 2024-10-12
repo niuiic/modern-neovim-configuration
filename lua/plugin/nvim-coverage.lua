@@ -6,7 +6,7 @@ local use_toggle_coverage = function()
 			return false
 		end
 		local bufnr = vim.api.nvim_win_get_buf(0)
-		return require("omega").list_find(buf_list, function(v)
+		return vim.iter(buf_list):find(function(v)
 			return v == bufnr
 		end) ~= nil
 	end

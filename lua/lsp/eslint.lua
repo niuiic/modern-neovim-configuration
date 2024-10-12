@@ -1,6 +1,6 @@
 local function fix_all()
 	local diagnostic_list = vim.diagnostic.get()
-	local diagnostic = require("omega").list_find(diagnostic_list, function(diagnostic)
+	local diagnostic = vim.iter(diagnostic_list):find(function(diagnostic)
 		return diagnostic.source == "eslint"
 	end)
 	if diagnostic == nil then
