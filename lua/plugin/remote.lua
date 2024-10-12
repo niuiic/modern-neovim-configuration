@@ -7,7 +7,7 @@ return {
 			log_file = (require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/.nvim/remote/log",
 			on_each_disconnected = function(config)
 				if core.file.empty_dir(config.mount_point) then
-					core.file.rmdir(config.mount_point)
+					vim.uv.fs_rmdir(config.mount_point)
 				end
 			end,
 		})
