@@ -29,7 +29,7 @@ return {
 					require("track").unmark()
 					return
 				end
-				local desc = require("omega").get_selection()
+				local desc = (require("omega").get_selection() or { "" })[1]
 				require("track").mark(nil, nil, nil, desc)
 				require("omega").to_normal_mode()
 			end,
@@ -70,7 +70,7 @@ return {
 				if not require("track").is_marked() then
 					return
 				end
-				local desc = require("omega").get_selection()
+				local desc = (require("omega").get_selection() or { "" })[1]
 				require("track").edit(nil, nil, desc)
 				require("omega").to_normal_mode()
 			end,

@@ -185,7 +185,7 @@ local keys = {
 	{
 		"M",
 		function()
-			local expression = require("omega").get_selection()
+			local expression = (require("omega").get_selection() or { "" })[1]
 			if vim.bo.filetype == "rust" then
 				expression = "?" .. expression
 			end
