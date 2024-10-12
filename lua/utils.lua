@@ -23,7 +23,7 @@ local buffer_valid = function(bufnr)
 	if not ok or name == nil or name == "" or string.find(name, root_dir, 1, true) ~= 1 then
 		return false
 	end
-	if not require("omega").exist(name) then
+	if not vim.uv.fs_stat(name) then
 		return false
 	end
 

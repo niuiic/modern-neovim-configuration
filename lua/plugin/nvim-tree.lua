@@ -66,10 +66,7 @@ local set_keymap = function(bufnr)
 			vim.notify("dolphin is required", vim.log.levels.ERROR)
 			return
 		end
-		require("omega").spawn("dolphin", {
-			"--select",
-			node.absolute_path,
-		})
+		vim.system({ "dolphin", "--select", node.absolute_path })
 	end, opts("open with dolphin"))
 	vim.keymap.set("n", "t", function()
 		local node = api.tree.get_node_under_cursor()
@@ -80,13 +77,10 @@ local set_keymap = function(bufnr)
 			vim.notify("alacritty is required", vim.log.levels.ERROR)
 			return
 		end
-		if not require("omega").is_dir(node.absolute_path) then
+		if not vim.fn.isdirectory(node.absolute_path) then
 			return
 		end
-		require("omega").spawn("alacritty", {
-			"--working-directory",
-			node.absolute_path,
-		})
+		vim.system({ "alacritty", "--working-directory", node.absolute_path })
 	end, opts("open with terminal"))
 end
 

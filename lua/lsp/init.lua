@@ -23,7 +23,7 @@ local lsp_list = {
 }
 
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
-if not require("omega").exist(root_dir .. "/package.json") or require("omega").exist(root_dir .. "/deno.json") then
+if not vim.uv.fs_stat(root_dir .. "/package.json") or vim.uv.fs_stat(root_dir .. "/deno.json") then
 	table.insert(lsp_list, "denols")
 else
 	table.insert(lsp_list, "vtsls")

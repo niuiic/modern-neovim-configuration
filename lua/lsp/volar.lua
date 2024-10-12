@@ -1,7 +1,7 @@
 local function search_ts_server_path()
 	local local_ts_server_path = (vim.fs.root(0, ".git") or vim.fn.getcwd())
 		.. "/node_modules/typescript/lib"
-	if require("omega").exist(local_ts_server_path .. "/lib.d.ts") then
+	if vim.uv.fs_stat(local_ts_server_path .. "/lib.d.ts") then
 		return local_ts_server_path
 	else
 		return os.getenv("HOME")

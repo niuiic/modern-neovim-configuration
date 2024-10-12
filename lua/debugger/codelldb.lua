@@ -23,7 +23,7 @@ dap_utils.setup({
 		vim.cmd("!cargo build")
 		local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 		local target_dir = root_dir .. "/target/debug/"
-		if require("omega").exist(target_dir) then
+		if vim.uv.fs_stat(target_dir) then
 			local executable = {}
 			for path, path_type in vim.fs.dir(target_dir) do
 				if path_type == "file" then
