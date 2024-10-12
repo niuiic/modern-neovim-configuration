@@ -1,12 +1,10 @@
 return {
 	config = function()
-		local core = require("core")
-
 		require("remote").setup({
 			config_file = (require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/.nvim/remote/config.json",
 			log_file = (require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/.nvim/remote/log",
 			on_each_disconnected = function(config)
-				if core.file.empty_dir(config.mount_point) then
+				if require("omega").exist(config.mount_point) and not vim.uv.fs_readdir(config.mount_point) then
 					vim.uv.fs_rmdir(config.mount_point)
 				end
 			end,

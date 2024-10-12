@@ -12,7 +12,6 @@ local close_nvim_tree = function()
 end
 
 local set_keymap = function(bufnr)
-	local core = require("core")
 	local api = require("nvim-tree.api")
 	local opts = function(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -67,10 +66,10 @@ local set_keymap = function(bufnr)
 			vim.notify("dolphin is required", vim.log.levels.ERROR)
 			return
 		end
-		core.job.spawn("dolphin", {
+		require("omega").spawn("dolphin", {
 			"--select",
 			node.absolute_path,
-		}, {}, function() end, function() end)
+		})
 	end, opts("open with dolphin"))
 	vim.keymap.set("n", "t", function()
 		local node = api.tree.get_node_under_cursor()
@@ -84,10 +83,10 @@ local set_keymap = function(bufnr)
 		if not require("omega").is_dir(node.absolute_path) then
 			return
 		end
-		core.job.spawn("alacritty", {
+		require("omega").spawn("alacritty", {
 			"--working-directory",
 			node.absolute_path,
-		}, {}, function() end, function() end)
+		})
 	end, opts("open with terminal"))
 end
 
@@ -117,7 +116,6 @@ end
 
 local config = function()
 	local nvim_tree = require("nvim-tree")
-	local core = require("core")
 	local screen_w = vim.opt.columns:get()
 	local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
 	win_size = {
