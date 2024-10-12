@@ -1,7 +1,7 @@
 local search_file_in_workspace = function()
 	require("telescope.builtin").find_files({
 		hidden = true,
-		cwd = require("omega").root_pattern(".git") or vim.fn.getcwd(),
+		cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
 		find_command = { "rg", "--files", "--glob", "!**/.git/*" },
 	})
 end

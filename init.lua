@@ -7,7 +7,7 @@ require("lsp")
 require("snippet")
 
 -- load config for workspace
-local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 local local_config_entry = root_dir .. "/.nvim/init.lua"
 if require("omega").exist(local_config_entry) then
 	package.path = root_dir .. "/.nvim/?.lua;" .. package.path

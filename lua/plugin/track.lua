@@ -3,7 +3,7 @@ return {
 		require("track").setup({
 			search = {
 				entry_label = function(mark)
-					local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+					local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 					local file = mark.file
 					local index = string.find(mark.file, root_dir, 1, true)
 					if index then

@@ -18,7 +18,7 @@ local buffer_valid = function(bufnr)
 		return false
 	end
 
-	local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+	local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 	local ok, name = pcall(vim.api.nvim_buf_get_name, bufnr)
 	if not ok or name == nil or name == "" or string.find(name, root_dir, 1, true) ~= 1 then
 		return false

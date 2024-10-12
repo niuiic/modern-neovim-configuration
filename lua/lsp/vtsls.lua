@@ -52,7 +52,7 @@ local M = {
 		vtsls = { tsserver = { globalPlugins = {} } },
 	},
 	before_init = function(_, config)
-		local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+		local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 		if require("omega").exist_in_file("vue", root_dir .. "/package.json") then
 			local vuePluginConfig = {
 				name = "@vue/typescript-plugin",

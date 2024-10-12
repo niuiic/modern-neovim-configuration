@@ -37,7 +37,7 @@ return {
 			function()
 				require("telescope.builtin").grep_string({
 					search = "DEBUGPRINT",
-					cwd = require("omega").root_pattern(".git") or vim.fn.getcwd(),
+					cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
 				})
 			end,
 			desc = "search debug print",

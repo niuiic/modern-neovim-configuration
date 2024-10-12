@@ -8,14 +8,14 @@ end
 local search_cursor_word_in_workspace = function()
 	require("telescope.builtin").grep_string({
 		search = require("omega").get_selection(),
-		cwd = require("omega").root_pattern(".git") or vim.fn.getcwd(),
+		cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
 	})
 end
 
 local search_word_in_workspace = function()
 	require("telescope.builtin").live_grep({
 		hidden = true,
-		cwd = require("omega").root_pattern(".git") or vim.fn.getcwd(),
+		cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
 	})
 end
 

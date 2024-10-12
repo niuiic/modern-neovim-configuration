@@ -99,7 +99,7 @@ local open_nvim_tree = function()
 
 	if winnr == nil or not vim.api.nvim_win_is_valid(winnr) then
 		require("nvim-tree.api").tree.open({
-			path = require("omega").root_pattern(".git") or vim.fn.getcwd(),
+			path = vim.fs.root(0, ".git") or vim.fn.getcwd(),
 			find_file = true,
 		})
 		winnr = vim.api.nvim_get_current_win()
@@ -138,7 +138,7 @@ local config = function()
 				remove = false,
 			},
 		},
-		root_dirs = { require("omega").root_pattern(".git") or vim.fn.getcwd() },
+		root_dirs = { vim.fs.root(0, ".git") or vim.fn.getcwd() },
 		diagnostics = {
 			enable = true,
 			show_on_dirs = true,

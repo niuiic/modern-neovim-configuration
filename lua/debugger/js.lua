@@ -72,7 +72,7 @@ local browser = {
 local function is_vue_project()
 	return require("omega").exist_in_file(
 		"vue",
-		(require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/package.json"
+		(vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/package.json"
 	)
 end
 

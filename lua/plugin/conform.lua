@@ -7,7 +7,7 @@ return {
 			},
 		}
 
-		local biome_config_path = (require("omega").root_pattern(".git") or vim.fn.getcwd()) .. "/biome.json"
+		local biome_config_path = (vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/biome.json"
 		if not require("omega").exist(biome_config_path) then
 			local config_dir = vim.fn.stdpath("config")
 			if type(config_dir) == "table" then

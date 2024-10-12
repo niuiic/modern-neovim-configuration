@@ -21,7 +21,7 @@ dap_utils.setup({
 			stopOnEntry = false,
 		}
 		vim.cmd("!cargo build")
-		local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+		local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 		local target_dir = root_dir .. "/target/debug/"
 		if require("omega").exist(target_dir) then
 			local executable = {}

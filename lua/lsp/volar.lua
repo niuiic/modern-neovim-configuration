@@ -1,5 +1,5 @@
 local function search_ts_server_path()
-	local local_ts_server_path = (require("omega").root_pattern(".git") or vim.fn.getcwd())
+	local local_ts_server_path = (vim.fs.root(0, ".git") or vim.fn.getcwd())
 		.. "/node_modules/typescript/lib"
 	if require("omega").exist(local_ts_server_path .. "/lib.d.ts") then
 		return local_ts_server_path
@@ -11,7 +11,7 @@ end
 
 local function copy_file_path()
 	local name = vim.api.nvim_buf_get_name(0)
-	local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+	local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 	local index = string.find(name, root_dir, 1, true)
 	if index == nil then
 		vim.notify("The file is not under the project", vim.log.levels.ERROR)

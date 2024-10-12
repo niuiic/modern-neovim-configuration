@@ -22,7 +22,7 @@ local lsp_list = {
 	"nushell",
 }
 
-local root_dir = require("omega").root_pattern(".git") or vim.fn.getcwd()
+local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 if not require("omega").exist(root_dir .. "/package.json") or require("omega").exist(root_dir .. "/deno.json") then
 	table.insert(lsp_list, "denols")
 else
