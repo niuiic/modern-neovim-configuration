@@ -29,7 +29,7 @@ local get_expr_prev = function()
 	if root_dir then
 		file_name = file_name:match(root_dir .. "/(.*)")
 	end
-	return string.format("%s(%s)[%s:%s]", symbol, count, file_name, lnum)
+	return string.format("[%s] %s(%s:%s)", count, symbol, file_name, lnum)
 end
 
 vim.keymap.set({ "n", "x" }, "<C-f>", function()
