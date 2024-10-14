@@ -11,9 +11,9 @@ local fix_type_import = function()
 		local targets = {
 			"@typescript-eslint/consistent-type-imports",
 			"@typescript-eslint/no-import-type-side-effects",
-			"@typescript-eslint/no-unused-vars",
 		}
 		return vim.list_contains(targets, diagnostic.code)
+			or string.find(diagnostic.message, "is declared but its value is never read")
 	end)
 	if diagnostic == nil then
 		return
@@ -30,7 +30,7 @@ local fix_type_import = function()
 			local targets = {
 				"Fix this @typescript-eslint/consistent-type-imports problem",
 				"Fix this @typescript-eslint/no-import-type-side-effects problem",
-				"Remove unused declaration",
+				"Delete all unused imports",
 			}
 			return vim.iter(targets):find(function(target)
 				return string.find(action.title, target, 1, true) ~= nil
