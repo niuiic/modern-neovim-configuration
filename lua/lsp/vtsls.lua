@@ -7,7 +7,7 @@ vim.api.nvim_create_user_command("VtslsRename", function()
 end, {})
 
 local fix_type_import = function()
-	local diagnostic = vim.iter(vim.diagnostic.get(), function(diagnostic)
+	local diagnostic = vim.iter(vim.diagnostic.get()):find(function(diagnostic)
 		local targets = {
 			"@typescript-eslint/consistent-type-imports",
 			"@typescript-eslint/no-import-type-side-effects",
