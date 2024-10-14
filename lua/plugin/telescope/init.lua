@@ -114,6 +114,16 @@ local keys = {
 		end,
 		desc = "goto definitions",
 	},
+	{
+		"<space>op",
+		function()
+			require("telescope.builtin").grep_string({
+				search = "QUICK_PRINT",
+				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+			})
+		end,
+		desc = "search quick print",
+	},
 }
 
 return {
