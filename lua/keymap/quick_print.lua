@@ -32,7 +32,7 @@ local get_expr_prev = function()
 	return string.format("%s(%s)[%s:%s]", symbol, count, file_name, lnum)
 end
 
-vim.keymap.set({ "n", "x" }, "<C-b>", function()
+vim.keymap.set({ "n", "x" }, "<C-f>", function()
 	local selection = require("omega").get_selection()[1]
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	local print_expr = get_print_expr(selection, get_expr_prev())

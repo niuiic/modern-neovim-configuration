@@ -64,16 +64,6 @@ end, { silent = true })
 -- plugin operation
 require("which-key").add({
 	{ "<leader>n", group = "neovim" },
-	{
-		"<C-f>",
-		function()
-			if vim.bo.filetype == "lua" then
-				require("omega").dofile(vim.api.nvim_buf_get_name(0))
-			end
-		end,
-		mode = { "n", "x" },
-		desc = "run lua file",
-	},
 	{ "<leader>np", "<cmd>Lazy<cr>", desc = "plugin management" },
 	{ "<leader>nl", "<cmd>LspInfo<cr>", desc = "lsp status" },
 	{ "<leader>nc", "<cmd>checkhealth<cr>", desc = "checkhealth" },
@@ -97,3 +87,10 @@ require("which-key").add({
 
 -- quick print
 require("keymap.quick_print")
+
+-- run lua file
+vim.keymap.set({ "n", "x" }, "<C-b>", function()
+	if vim.bo.filetype == "lua" then
+		require("omega").dofile(vim.api.nvim_buf_get_name(0))
+	end
+end)
