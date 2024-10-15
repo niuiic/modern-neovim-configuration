@@ -44,6 +44,11 @@ local M = {
 		i(1),
 		t({ "", [[```]] }),
 	}),
+	s("flow", {
+		t({ [[```mermaid]], [[flowchart LR]], [[    start([start])]] }),
+		i(1),
+		t({ "", [[    finish([finish])]], [[```]] }),
+	}),
 }
 
 return M
