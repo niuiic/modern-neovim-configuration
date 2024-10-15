@@ -12,6 +12,7 @@ return {
 			lang = {
 				typescript = { "// %s", "/* %s */", "/** %s */" },
 				javascript = { "// %s", "/* %s */", "/** %s */" },
+				mermaid = { "%% %s" },
 			},
 		})
 	end,
