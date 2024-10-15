@@ -49,7 +49,7 @@ vim.keymap.set("n", "e", "zz", { silent = true })
 
 -- calc max node id
 vim.keymap.set("x", "<C-p>", function()
-	local text = (require("omega").get_selection() or { "" })[1]
+	local text = vim.iter(require("omega").get_selection() or { "" }):join("\n")
 	local max = "1"
 	---@diagnostic disable-next-line: param-type-mismatch
 	for id in string.gmatch(text, "n([%d]+)") do
