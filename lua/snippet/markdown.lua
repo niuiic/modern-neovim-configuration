@@ -45,9 +45,9 @@ local M = {
 		t({ "", [[```]] }),
 	}),
 	s("flow", {
-		t({ [[```mermaid]], [[flowchart LR]], [[    start([start])]] }),
+		t({ [[```mermaid]], [[flowchart LR]], [[    start([start]) --> n1]], "", "    " }),
 		i(1),
-		t({ "", [[    finish([finish])]], [[```]] }),
+		t({ "", "", [[    finish([finish])]], [[```]] }),
 	}),
 }
 
