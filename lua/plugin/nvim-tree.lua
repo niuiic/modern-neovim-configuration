@@ -77,7 +77,7 @@ local set_keymap = function(bufnr)
 			vim.notify("alacritty is required", vim.log.levels.ERROR)
 			return
 		end
-		if not vim.fn.isdirectory(node.absolute_path) then
+		if not vim.fn.isdirectory(node.absolute_path) == 1 then
 			return
 		end
 		vim.system({ "alacritty", "--working-directory", node.absolute_path })
