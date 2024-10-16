@@ -46,7 +46,6 @@ vim.api.nvim_create_user_command("VtslsOrganizeImports", function()
 end, {})
 
 local M = {
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 	settings = {
 		vtsls = { tsserver = { globalPlugins = {} } },

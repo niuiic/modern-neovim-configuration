@@ -1,0 +1,47 @@
+{
+  "vue": {
+    "prefix": "vue",
+    "body": ["```vue", "${1}", "```"]
+  },
+  "ts": {
+    "prefix": "ts",
+    "body": ["```typescript", "${1}", "```"]
+  },
+  "js": {
+    "prefix": "js",
+    "body": ["```javascript", "${1}", "```"]
+  },
+  "glsl": {
+    "prefix": "glsl",
+    "body": ["```glsl", "${1}", "```"]
+  },
+  "sh": {
+    "prefix": "sh",
+    "body": ["```sh", "${1}", "```"]
+  },
+  "rust": {
+    "prefix": "rust",
+    "body": ["```rust", "${1}", "```"]
+  },
+  "scss": {
+    "prefix": "scss",
+    "body": ["```scss", "${1}", "```"]
+  },
+  "mermaid": {
+    "prefix": "mermaid",
+    "body": ["```mermaid", "${1}", "```"]
+  },
+  "flow": {
+    "prefix": "flow",
+    "body": [
+      "```mermaid",
+      "flowchart LR",
+      "    start([start]) --> n1",
+      "",
+      "    ${1}",
+      "",
+      "    finish([finish])",
+      "```"
+    ]
+  }
+}

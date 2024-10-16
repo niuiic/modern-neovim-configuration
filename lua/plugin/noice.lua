@@ -1,9 +1,6 @@
 local config = function()
 	vim.notify = require("notify")
-
-	require("notify").setup({
-		timeout = 1,
-	})
+	require("notify").setup({ timeout = 1 })
 
 	require("noice").setup({
 		messages = {
@@ -15,6 +12,11 @@ local config = function()
 				win_options = {
 					winblend = 0,
 				},
+			},
+		},
+		lsp = {
+			signature = {
+				enabled = false,
 			},
 		},
 	})

@@ -6,7 +6,6 @@ local config = function()
 			},
 		},
 		server = {
-			capabilities = require("cmp_nvim_lsp").default_capabilities(),
 			handlers = { ["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }) },
 			default_settings = {
 				["rust-analyzer"] = { diagnostics = { experimental = { enable = true } } },

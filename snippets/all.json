@@ -1,0 +1,26 @@
+{
+  "d1": {
+    "prefix": "d1",
+    "body": ["% ${1} %"]
+  },
+  "d2": {
+    "prefix": "d2",
+    "body": ["%% ${1} %%"]
+  },
+  "d3": {
+    "prefix": "d3",
+    "body": ["%%% ${1} %%%"]
+  },
+  "todo": {
+    "prefix": "todo",
+    "body": ["TODO: ${1}"]
+  },
+  "fix": {
+    "prefix": "fix",
+    "body": ["FIXME: ${1}"]
+  },
+  "hack": {
+    "prefix": "hack",
+    "body": ["HACK: ${1}"]
+  }
+}

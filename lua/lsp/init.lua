@@ -29,20 +29,12 @@ else
 	table.insert(lsp_list, "vtsls")
 end
 
--- nvim-cmp support
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 -- load all lsp config
 local load_lsp = function(value)
 	local config = require("lsp/" .. value)
 
-	-- set capabilities
-	config.capabilities = vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
-
 	-- set handlers
-	if not config.handlers then
-		config.handlers = {}
-	end
+	config.handlers = config.handlers or {}
 	config.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
 	-- set lsp config

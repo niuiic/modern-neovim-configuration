@@ -61,30 +61,8 @@ require("lazy").setup({
 	"andymass/vim-matchup",
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
-
-	-- code auto complete
-	-- engine
-	load_plugin_config("iguanacucumber/magazine.nvim", "plugin/nvim-cmp"),
-	-- better ui
-	"onsails/lspkind-nvim",
-	-- source
-	-- more sources on https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"FelipeLema/cmp-async-path",
-	"rcarriga/cmp-dap",
-	"LiadOz/nvim-dap-repl-highlights",
-	"hrsh7th/cmp-cmdline",
-	"dmitmel/cmp-cmdline-history",
-	"lukas-reineke/cmp-rg",
-	"ray-x/cmp-treesitter",
-	-- snippets
-	load_plugin_config("L3MON4D3/LuaSnip", "plugin/luasnip"),
-	"saadparwaiz1/cmp_luasnip",
-	"rafamadriz/friendly-snippets",
-	-- comparators
-	"zjp-CN/nvim-cmp-lsp-rs",
-
+	-- complete
+	load_plugin_config("Saghen/blink.cmp", "plugin/blink-cmp"),
 	-- status line
 	load_plugin_config("nvim-lualine/lualine.nvim", "plugin/lualine"),
 	-- a pretty diagnostics, references, telescope results, quickfix and location list
@@ -97,6 +75,7 @@ require("lazy").setup({
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
 	"niuiic/dap-utils.nvim",
+	"LiadOz/nvim-dap-repl-highlights",
 	"mxsdev/nvim-dap-vscode-js",
 	"theHamsta/nvim-dap-virtual-text",
 	"rcarriga/nvim-dap-ui",

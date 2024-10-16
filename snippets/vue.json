@@ -1,0 +1,35 @@
+{
+  "echo": {
+    "prefix": "echo",
+    "body": ["console.log(${1})"]
+  },
+  "ct": {
+    "prefix": "ct",
+    "body": ["/**", " * ${1}", "*/"]
+  },
+  "ctil": {
+    "prefix": "ctil",
+    "body": ["/** ${1} */"]
+  },
+  "slot": {
+    "prefix": "slot",
+    "body": ["<template #${1}>", "  ${2}", "</template>"]
+  },
+  "new-file": {
+    "prefix": "new-file",
+    "body": [
+      "<!-- ~ script -->",
+      "<script setup lang=\"ts\">",
+      "// ~~ 组件配置",
+      "</script>",
+      "",
+      "<!-- ~ template -->",
+      "<template>",
+      "  <div></div>",
+      "</template>",
+      "",
+      "<!-- ~ style -->",
+      "<style lang=\"scss\" scoped></style>"
+    ]
+  }
+}

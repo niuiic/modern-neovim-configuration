@@ -4,7 +4,6 @@ require("basic")
 require("plugins")
 require("keymap")
 require("lsp")
-require("snippet")
 
 -- load config for workspace
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
