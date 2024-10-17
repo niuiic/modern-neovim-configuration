@@ -16,6 +16,7 @@ local config = function()
 				"dapui_watches",
 				"dap-repl",
 				"dapui_console",
+				"track",
 			},
 			always_divide_middle = true,
 			globalstatus = false,

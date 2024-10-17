@@ -1,88 +1,75 @@
 return {
 	config = function()
+		vim.api.nvim_set_hl(0, "TrackFlow", { fg = "#eb9007" })
+		vim.api.nvim_set_hl(0, "TrackMark", { fg = "#15f700" })
+
 		require("track").setup({
-			search = {
-				entry_label = function(mark)
-					local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
-					local file = mark.file
-					local index = string.find(mark.file, root_dir, 1, true)
-					if index then
-						file = string.sub(file, string.len(root_dir) + 2)
-					end
-					return string.format("[%s] %s | %s:%s", mark.id, mark.desc, file, mark.lnum)
-				end,
+			mark = {
+				mark_hl_group = "TrackMark",
+			},
+			outline = {
+				flow_hl_group = "TrackFlow",
+				mark_hl_group = "TrackMark",
 			},
 		})
 	end,
 	keys = {
 		{
+			"mf",
+			function()
+				require("track").add_flow()
+			end,
+			desc = "add flow",
+		},
+		{
 			"mm",
 			function()
-				require("track").toggle()
+				require("track").add_mark()
 			end,
-			desc = "toggle mark",
-		},
-		{
-			"mM",
-			function()
-				if require("track").is_marked() then
-					require("track").unmark()
-					return
-				end
-				local desc = (require("omega").get_selection() or { "" })[1]
-				require("track").mark(nil, nil, nil, desc)
-				require("omega").to_normal_mode()
-			end,
-			desc = "toggle mark",
-			mode = { "n", "x" },
-		},
-		{
-			"mc",
-			function()
-				require("track").remove()
-			end,
-			desc = "remove all marks",
-		},
-		{
-			"mj",
-			function()
-				require("track").jump_to_next()
-			end,
-			desc = "jump to next mark",
-		},
-		{
-			"mk",
-			function()
-				require("track").jump_to_prev()
-			end,
-			desc = "jump to prev mark",
+			desc = "add mark",
 		},
 		{
 			"me",
 			function()
-				require("track").edit()
+				require("track").update_mark()
 			end,
-			desc = "edit mark",
+			desc = "update mark",
 		},
 		{
 			"mE",
 			function()
-				if not require("track").is_marked() then
-					return
-				end
-				local desc = (require("omega").get_selection() or { "" })[1]
-				require("track").edit(nil, nil, desc)
-				require("omega").to_normal_mode()
+				require("track").update_flow()
 			end,
-			desc = "edit mark",
-			mode = { "n", "x" },
+			desc = "update flow",
 		},
 		{
-			"<space>om",
+			"md",
 			function()
-				require("track").search()
+				require("track").delete_mark()
 			end,
-			desc = "search marks",
+			desc = "delete mark",
+		},
+		{
+			"mD",
+			function()
+				require("track").delete_marks()
+			end,
+			desc = "delete flow",
+		},
+		{
+			"mo",
+			function()
+				require("track").open_outline(true)
+			end,
+			desc = "open outline",
+		},
+		{
+			"mc",
+			function()
+				require("track").close_outline()
+			end,
+			desc = "close outline",
 		},
 	},
+	branch = "dev",
 }

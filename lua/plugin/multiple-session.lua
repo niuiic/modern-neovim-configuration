@@ -5,7 +5,7 @@ return {
 				require("dap-utils").store_breakpoints(session_dir .. "/breakpoints")
 				require("dap-utils").store_watches(session_dir .. "/watches")
 				require("quickfix").store(session_dir .. "/quickfix")
-				require("track").store(session_dir .. "/track")
+				require("track").store_marks(session_dir .. "/track")
 				vim.cmd("wundo " .. session_dir .. "/undo")
 			end,
 			on_session_restored = function(session_dir)
@@ -19,7 +19,7 @@ return {
 					require("quickfix").restore(session_dir .. "/quickfix")
 				end
 				if vim.uv.fs_stat(session_dir .. "/track") then
-					require("track").restore(session_dir .. "/track")
+					require("track").restore_marks(session_dir .. "/track")
 				end
 				if vim.uv.fs_stat(session_dir .. "/undo") then
 					vim.cmd("rundo " .. session_dir .. "/undo")
