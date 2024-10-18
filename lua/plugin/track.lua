@@ -11,6 +11,7 @@ return {
 				flow_hl_group = "TrackFlow",
 				mark_hl_group = "TrackMark",
 				set_default_when_update_mark = true,
+				preview_on_hover = false,
 			},
 		})
 	end,
