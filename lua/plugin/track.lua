@@ -10,6 +10,7 @@ return {
 			outline = {
 				flow_hl_group = "TrackFlow",
 				mark_hl_group = "TrackMark",
+				set_default_when_update_mark = true,
 			},
 		})
 	end,
@@ -22,7 +23,7 @@ return {
 			desc = "add flow",
 		},
 		{
-			"mm",
+			"ma",
 			function()
 				require("track").add_mark()
 			end,
@@ -31,7 +32,7 @@ return {
 		{
 			"me",
 			function()
-				require("track").update_mark()
+				require("track").update_mark(true)
 			end,
 			desc = "update mark",
 		},
@@ -69,6 +70,13 @@ return {
 				require("track").close_outline()
 			end,
 			desc = "close outline",
+		},
+		{
+			"mm",
+			function()
+				require("track").navigate_to_outline()
+			end,
+			desc = "navigate_to_outline",
 		},
 	},
 }
