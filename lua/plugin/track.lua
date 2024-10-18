@@ -12,6 +12,10 @@ return {
 				mark_hl_group = "TrackMark",
 				set_default_when_update_mark = true,
 				preview_on_hover = false,
+				get_mark_line_text = function(_, _, text)
+					local space, content = string.match(text, "([%s]*)(.*)")
+					return space .. "- " .. content
+				end,
 			},
 		})
 	end,
