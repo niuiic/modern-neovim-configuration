@@ -16,10 +16,12 @@ local set_keymap = function(bufnr)
 	local opts = function(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
+	local cut_files = {}
+	local cut_dirs = {}
 	vim.keymap.set("n", "l", function()
 		api.node.open.edit()
 		local node = api.tree.get_node_under_cursor()
-		if node and node.type == "file" then
+		if node.type == "file" then
 			close_nvim_tree()
 		end
 	end, opts("open"))
@@ -28,15 +30,39 @@ local set_keymap = function(bufnr)
 	vim.keymap.set("n", ".", api.tree.toggle_hidden_filter, opts("toggle hidden files"))
 	vim.keymap.set("n", "yP", api.fs.copy.absolute_path, opts("copy absolute path"))
 	vim.keymap.set("n", "yp", api.fs.copy.relative_path, opts("copy relative path"))
-	vim.keymap.set("n", "p", api.fs.paste, opts("paste"))
+	vim.keymap.set("n", "p", function()
+		local node = api.tree.get_node_under_cursor()
+		api.fs.paste()
+		for _, path in ipairs(cut_files) do
+			require("track").notify_file_path_change(
+				path[1],
+				node.type == "file" and node.parent.absolute_path or node.absolute_path .. "/" .. path[2]
+			)
+		end
+		for _, path in ipairs(cut_dirs) do
+			require("track").notify_dir_path_change(
+				path[1],
+				node.type == "file" and node.parent.absolute_path or node.absolute_path .. "/" .. path[2]
+			)
+		end
+		cut_files = {}
+		cut_dirs = {}
+	end, opts("paste"))
 	vim.keymap.set("n", "q", close_nvim_tree, opts("close"))
 	vim.keymap.set("n", "<esc>", close_nvim_tree, opts("close"))
-	vim.keymap.set("n", "r", api.fs.rename, opts("rename"))
+	vim.keymap.set("n", "r", function()
+		local node = api.tree.get_node_under_cursor()
+		local old = node.absolute_path
+		api.fs.rename()
+		local new = api.tree.get_node_under_cursor().absolute_path
+		if node.type == "file" then
+			require("track").notify_file_path_change(old, new)
+		else
+			require("track").notify_dir_path_change(old, new)
+		end
+	end, opts("rename"))
 	vim.keymap.set("n", "d", function()
 		local node = api.tree.get_node_under_cursor()
-		if node == nil then
-			return
-		end
 		local target_buf = vim.iter(vim.api.nvim_list_bufs()):find(function(x)
 			return string.find(vim.api.nvim_buf_get_name(x), node.absolute_path, 1, true) ~= nil
 		end)
@@ -44,6 +70,11 @@ local set_keymap = function(bufnr)
 			require("mini.bufremove").delete(target_buf)
 		end
 		api.fs.remove()
+		if node.type == "file" then
+			require("track").notify_file_path_change(node.absolute_path)
+		else
+			require("track").notify_dir_path_change(node.absolute_path)
+		end
 	end, opts("remove"))
 	vim.keymap.set("n", "R", api.tree.reload, opts("reload"))
 	vim.keymap.set("n", "f", function()
@@ -54,14 +85,25 @@ local set_keymap = function(bufnr)
 		vim.api.nvim_win_set_cursor(0, { 1, 1 })
 		api.tree.expand_all()
 	end, opts("expand all"))
-	vim.keymap.set("n", "x", api.fs.cut, opts("cut"))
+	vim.keymap.set("n", "x", function()
+		local node = api.tree.get_node_under_cursor()
+		api.fs.cut()
+		if node.type == "file" then
+			table.insert(
+				cut_files,
+				{ node.absolute_path, string.match(node.absolute_path, node.parent.absolute_path .. "/(.*)") }
+			)
+		else
+			table.insert(
+				cut_dirs,
+				{ node.absolute_path, string.match(node.absolute_path, node.parent.absolute_path .. "/(.*)") }
+			)
+		end
+	end, opts("cut"))
 	vim.keymap.set("n", "<C-f>", api.live_filter.start, opts("filter"))
 	vim.keymap.set("n", "<C-l>", api.live_filter.clear, opts("filter"))
 	vim.keymap.set("n", "o", function()
 		local node = api.tree.get_node_under_cursor()
-		if node == nil then
-			return
-		end
 		if not vim.fn.executable("dolphin") then
 			vim.notify("dolphin is required", vim.log.levels.ERROR)
 			return
@@ -70,9 +112,6 @@ local set_keymap = function(bufnr)
 	end, opts("open with dolphin"))
 	vim.keymap.set("n", "t", function()
 		local node = api.tree.get_node_under_cursor()
-		if node == nil then
-			return
-		end
 		if not vim.fn.executable("alacritty") then
 			vim.notify("alacritty is required", vim.log.levels.ERROR)
 			return
