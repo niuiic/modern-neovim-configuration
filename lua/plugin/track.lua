@@ -71,5 +71,4 @@ return {
 			desc = "close outline",
 		},
 	},
-	branch = "dev",
 }
