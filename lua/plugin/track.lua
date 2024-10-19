@@ -70,6 +70,13 @@ return {
 			desc = "open outline",
 		},
 		{
+			"mO",
+			function()
+				require("track").open_outline()
+			end,
+			desc = "select flow then open outline",
+		},
+		{
 			"mc",
 			function()
 				require("track").close_outline()
