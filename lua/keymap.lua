@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = " "
 
@@ -13,7 +11,7 @@ vim.keymap.set("n", "<C-e>", function()
 end, { silent = true })
 vim.api.nvim_create_user_command("Quit", function()
 	local function delete_invalid_buffer(bufnr)
-		if not utils.buffer_valid(bufnr) then
+		if not require("tools.buffer_valid")(bufnr) then
 			pcall(function()
 				vim.cmd("bw! " .. bufnr)
 			end)
@@ -85,12 +83,14 @@ require("which-key").add({
 	},
 })
 
--- quick print
-require("keymap.quick_print")
-
 -- run lua file
 vim.keymap.set({ "n", "x" }, "<C-b>", function()
 	if vim.bo.filetype == "lua" then
 		require("omega").dofile(vim.api.nvim_buf_get_name(0))
 	end
+end)
+
+-- quick print
+vim.keymap.set({ "n", "x" }, "<C-f>", function()
+	require("tools.quick_print")()
 end)

@@ -1,4 +1,4 @@
-local buffer_valid = function(bufnr)
+return function(bufnr)
 	if not vim.api.nvim_buf_is_valid(bufnr) then
 		return false
 	end
@@ -29,7 +29,3 @@ local buffer_valid = function(bufnr)
 
 	return true
 end
-
-return {
-	buffer_valid = buffer_valid,
-}

@@ -1,5 +1,3 @@
-local utils = require("utils")
-
 -- file encoding
 vim.g.encoding = "utf-8"
 vim.o.fileencoding = "utf-8"
@@ -78,14 +76,14 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.api.nvim_create_autocmd("BufWinLeave", {
 	callback = function(args)
-		if utils.buffer_valid(args.buf) then
+		if require("tools.buffer_valid")(args.buf) then
 			vim.cmd("mkview")
 		end
 	end,
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(args)
-		if utils.buffer_valid(args.buf) then
+		if require("tools.buffer_valid")(args.buf) then
 			vim.cmd("silent! loadview")
 		end
 	end,
@@ -111,7 +109,7 @@ vim.filetype.add({
 -- switch normal mode when enter window
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(args)
-		if vim.fn.mode() == "i" and utils.buffer_valid(args.buf) then
+		if vim.fn.mode() == "i" and require("tools.buffer_valid")(args.buf) then
 			vim.cmd("stopinsert")
 		end
 	end,
