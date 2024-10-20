@@ -51,6 +51,19 @@ local node = {
 	},
 }
 
+local deno = {
+	name = "Deno",
+	type = "pwa-node",
+	request = "launch",
+	program = "${file}",
+	runtimeExecutable = "deno",
+	runtimeArgs = {
+		"--inspect-wait",
+	},
+	cwd = "${workspaceFolder}",
+	attachSimplePort = 9229,
+}
+
 local browser = {
 	{
 		name = "Launch Chrome",
@@ -70,22 +83,28 @@ local browser = {
 }
 
 local function is_vue_project()
-	return require("omega").exist_in_file(
-		"vue",
-		(vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/package.json"
-	)
+	return require("omega").exist_in_file("vue", (vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/package.json")
+end
+
+local function is_deno_project()
+	local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
+	return not vim.uv.fs_stat(root_dir .. "/package.json") or vim.uv.fs_stat(root_dir .. "/deno.json")
 end
 
 dap_utils.setup({
 	typescript = function(run)
-		if is_vue_project() then
+		if is_deno_project() then
+			run(deno)
+		elseif is_vue_project() then
 			run(vim.list_extend(browser, node))
 		else
 			run(node)
 		end
 	end,
 	javascript = function(run)
-		if is_vue_project() then
+		if is_deno_project() then
+			run(deno)
+		elseif is_vue_project() then
 			run(vim.list_extend(browser, node))
 		else
 			run(node)
