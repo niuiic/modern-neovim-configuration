@@ -21,6 +21,9 @@ local function fix_all()
 end
 
 local M = {
+	root_dir = function()
+		return vim.fs.root(0, ".git") or vim.fn.getcwd()
+	end,
 	settings = {
 		codeAction = {
 			disableRuleComment = {
