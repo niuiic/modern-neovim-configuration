@@ -14,6 +14,15 @@ return {
 				snippet_forward = "<A-j>",
 				snippet_backward = "<A-k>",
 			},
+			sources = {
+				providers = {
+					{ "blink.cmp.sources.lsp", name = "LSP" },
+					{ "blink.cmp.sources.path", name = "Path", score_offset = 3 },
+					{ "blink.cmp.sources.snippets", name = "Snippets", score_offset = -3 },
+					{ "blink.cmp.sources.buffer", name = "Buffer" },
+					{ "blink.cmp.sources.rg", name = "Rg" },
+				},
+			},
 			fuzzy = {
 				prebuiltBinaries = {
 					download = false,
