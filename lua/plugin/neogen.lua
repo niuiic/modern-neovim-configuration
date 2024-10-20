@@ -42,7 +42,7 @@ return {
 		local neogen = require("neogen")
 
 		neogen.setup({
-			snippet_engine = "luasnip",
+			snippet_engine = "nvim",
 		})
 	end,
 	keys = keys,
