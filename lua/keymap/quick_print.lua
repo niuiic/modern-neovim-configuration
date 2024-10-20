@@ -4,6 +4,9 @@ end
 local lua = function(selection, expr_prev)
 	return string.format([[print("%s %s = ", vim.inspect(%s))]], expr_prev, selection, selection)
 end
+local rust = function(selection, expr_prev)
+	return string.format([[println!("%s %s = {:?}", %s);]], expr_prev, selection, selection)
+end
 
 local get_print_expr = function(selection, expr_prev)
 	local getters = {
@@ -13,6 +16,7 @@ local get_print_expr = function(selection, expr_prev)
 		typescriptreact = js,
 		vue = js,
 		lua = lua,
+		rust = rust,
 	}
 
 	local getter = getters[vim.bo.filetype] or getters["default"]
