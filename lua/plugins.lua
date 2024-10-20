@@ -30,7 +30,8 @@ vim.opt.runtimepath:prepend(lazypath)
 require("lazy").setup({
 	-- core
 	"niuiic/core.nvim",
-	"niuiic/omega.nvim",
+	-- omega
+	load_plugin_config("niuiic/omega.nvim", "plugin/omega"),
 	-- shortcut suggestions
 	load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
 	-- auto complete pairs
@@ -62,7 +63,7 @@ require("lazy").setup({
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
 	-- complete
-	load_plugin_config("Saghen/blink.cmp", "plugin/blink-cmp"),
+	load_plugin_config("niuiic/blink.cmp", "plugin/blink-cmp"),
 	-- status line
 	load_plugin_config("nvim-lualine/lualine.nvim", "plugin/lualine"),
 	-- a pretty diagnostics, references, telescope results, quickfix and location list
