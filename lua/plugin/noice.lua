@@ -5,7 +5,6 @@ local config = function()
 	require("noice").setup({
 		messages = {
 			view = "mini",
-			view_history = "mini",
 		},
 		views = {
 			mini = {
