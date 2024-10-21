@@ -67,6 +67,7 @@ require("which-key").add({
 	{ "<leader>nc", "<cmd>checkhealth<cr>", desc = "checkhealth" },
 	{ "<leader>nt", "<cmd>TSUpdate<cr>", desc = "update language parsers of nvim-treesitter" },
 	{ "<leader>nm", "<cmd>messages<cr>", desc = "show messages" },
+	{ "<leader>nM", "<cmd>messages clear<cr>", desc = "clear messages" },
 	{
 		"<leader>nd",
 		function()
