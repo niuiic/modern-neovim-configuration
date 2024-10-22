@@ -19,7 +19,26 @@ return {
 					{ "blink.cmp.sources.path", name = "Path", score_offset = 4 },
 					{ "blink.cmp.sources.lsp", name = "LSP", score_offset = 3 },
 					{ "blink.cmp.sources.snippets", name = "Snippets", score_offset = 2 },
-					{ "blink.cmp.sources.rg", name = "Rg", score_offset = 1 },
+					{
+						"blink.cmp.sources.rg",
+						name = "Rg",
+						score_offset = 1,
+						opts = {
+							get_command = function(_, prefix)
+								return {
+									"rg",
+									"--heading",
+									"--json",
+									"--word-regexp",
+									"--color",
+									"never",
+									"-i",
+									prefix .. "[\\w_-]+",
+									vim.fs.root(0, "git") or vim.fn.getcwd(),
+								}
+							end,
+						},
+					},
 					{ "blink.cmp.sources.buffer", name = "Buffer", score_offset = 0 },
 				},
 			},
