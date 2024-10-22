@@ -50,18 +50,14 @@ local keys = {
 	{
 		"gf",
 		function()
-			vim.lsp.buf.references(nil, {
-				on_list = on_list,
-			})
+			vim.lsp.buf.references(nil, { on_list = on_list })
 		end,
 		desc = "goto references",
 	},
 	{
 		"gi",
 		function()
-			vim.lsp.buf.implementation({
-				on_list = on_list,
-			})
+			vim.lsp.buf.implementation({ on_list = on_list })
 		end,
 		desc = "goto implements",
 	},
