@@ -64,7 +64,11 @@ local keys = {
 	{
 		"<space>of",
 		function()
-			require("plugin.telescope.file").search_file_in_workspace()
+			require("telescope.builtin").find_files({
+				hidden = true,
+				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
+			})
 		end,
 		desc = "search files in workspace",
 	},
@@ -79,7 +83,10 @@ local keys = {
 	{
 		"<space>oW",
 		function()
-			require("plugin.telescope.word").search_word_in_workspace()
+			require("telescope.builtin").live_grep({
+				hidden = true,
+				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+			})
 		end,
 		desc = "search word in workspace",
 	},
@@ -87,7 +94,10 @@ local keys = {
 	{
 		"<space>oo",
 		function()
-			require("plugin.telescope.word").search_cursor_word_in_buffer()
+			require("telescope.builtin").grep_string({
+				search = (require("omega").get_selection() or { "" })[1],
+				search_dirs = { vim.api.nvim_buf_get_name(0) },
+			})
 		end,
 		desc = "search cursor word in buffer",
 		mode = { "x", "n" },
@@ -95,7 +105,10 @@ local keys = {
 	{
 		"<space>oO",
 		function()
-			require("plugin.telescope.word").search_cursor_word_in_workspace()
+			require("telescope.builtin").grep_string({
+				search = (require("omega").get_selection() or { "" })[1],
+				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+			})
 		end,
 		desc = "search cursor word in workspace",
 		mode = { "x", "n" },
