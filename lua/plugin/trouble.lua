@@ -26,7 +26,46 @@ local config = function()
 	})
 end
 
+local on_list = function(options)
+	local item_set = {}
+	for _, item in ipairs(options.items) do
+		local key = string.format("%s:%s:%s", item.filename, item.lnum, item.col)
+		item_set[key] = item
+	end
+
+	vim.fn.setloclist(0, {}, "r", {
+		context = options.context,
+		items = vim.tbl_values(item_set),
+	})
+	require("trouble").open({ mode = "loclist" })
+end
+
 local keys = {
+	{
+		"gf",
+		function()
+			vim.lsp.buf.references(nil, { on_list = on_list })
+		end,
+		desc = "goto references",
+	},
+	{
+		"gi",
+		function()
+			vim.lsp.buf.implementation({
+				on_list = on_list,
+			})
+		end,
+		desc = "goto implements",
+	},
+	{
+		"gd",
+		function()
+			vim.lsp.buf.definition({
+				on_list = on_list,
+			})
+		end,
+		desc = "goto definitions",
+	},
 	{
 		"<A-j>",
 		function()

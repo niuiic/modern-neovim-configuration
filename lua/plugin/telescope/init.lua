@@ -80,41 +80,6 @@ local keys = {
 		mode = { "x", "n" },
 	},
 	{
-		"gf",
-		function()
-			require("plugin.telescope.lsp").references()
-		end,
-		desc = "goto references",
-	},
-	{
-		"gi",
-		function()
-			require("plugin.telescope.lsp").implementations()
-		end,
-		desc = "goto implements",
-	},
-	{
-		"gc",
-		function()
-			require("plugin.telescope.lsp").incoming_calls()
-		end,
-		desc = "goto incoming calls",
-	},
-	{
-		"gC",
-		function()
-			require("plugin.telescope.lsp").outgoing_calls()
-		end,
-		desc = "goto outgoing calls",
-	},
-	{
-		"gd",
-		function()
-			require("plugin.telescope.lsp").definitions()
-		end,
-		desc = "goto definitions",
-	},
-	{
 		"<space>op",
 		function()
 			require("telescope.builtin").grep_string({
@@ -123,6 +88,20 @@ local keys = {
 			})
 		end,
 		desc = "search quick print",
+	},
+	{
+		"gc",
+		function()
+			require("telescope.builtin").lsp_incoming_calls()
+		end,
+		desc = "goto incoming calls",
+	},
+	{
+		"gC",
+		function()
+			require("telescope.builtin").lsp_outgoing_calls()
+		end,
+		desc = "goto outgoing calls",
 	},
 }
 
