@@ -37,6 +37,27 @@ local config = function()
 	require("telescope").load_extension("undo")
 end
 
+local on_list = function(options, is_def)
+	local item_set = {}
+	for _, item in ipairs(options.items) do
+		local key = string.format("%s:%s", item.filename, item.lnum)
+		item_set[key] = item
+	end
+	local items = vim.tbl_values(item_set)
+
+	if #items == 1 and is_def then
+		require("telescope.builtin").lsp_definitions()
+		return
+	end
+
+	vim.fn.setloclist(0, {}, "r", {
+		context = options.context,
+		items = items,
+	})
+
+	require("telescope.builtin").loclist()
+end
+
 local keys = {
 	{ "<space>ol", "<cmd>Telescope<cr>", desc = "open telescope list" },
 	{ "<space>ob", "<cmd>Telescope buffers<cr>", desc = "search buffer with preview" },
@@ -88,6 +109,31 @@ local keys = {
 			})
 		end,
 		desc = "search quick print",
+	},
+	{
+		"gf",
+		function()
+			vim.lsp.buf.references(nil, { on_list = on_list })
+		end,
+		desc = "goto references",
+	},
+	{
+		"gi",
+		function()
+			vim.lsp.buf.implementation({ on_list = on_list })
+		end,
+		desc = "goto implements",
+	},
+	{
+		"gd",
+		function()
+			vim.lsp.buf.definition({
+				on_list = function(options)
+					on_list(options, true)
+				end,
+			})
+		end,
+		desc = "goto definitions",
 	},
 	{
 		"gc",
