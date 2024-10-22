@@ -77,14 +77,18 @@ vim.o.foldenable = true
 vim.api.nvim_create_autocmd("BufWinLeave", {
 	callback = function(args)
 		if require("tools.buffer_valid")(args.buf) then
-			vim.cmd("mkview")
+			pcall(function()
+				vim.cmd("mkview")
+			end)
 		end
 	end,
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
 	callback = function(args)
 		if require("tools.buffer_valid")(args.buf) then
-			vim.cmd("silent! loadview")
+			pcall(function()
+				vim.cmd("silent! loadview")
+			end)
 		end
 	end,
 })
