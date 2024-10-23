@@ -70,4 +70,5 @@ return {
 	end,
 	build = "cargo build --release",
 	dependencies = { "rafamadriz/friendly-snippets" },
+	branch = "dev",
 }
