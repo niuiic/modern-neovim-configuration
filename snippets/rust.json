@@ -10,5 +10,9 @@
   "ctil": {
     "prefix": "ctil",
     "body": ["/** ${1} */"]
+  },
+  "test": {
+    "prefix": "test",
+    "body": ["#[test]", "fn ${1}() {", "", "}"]
   }
 }
