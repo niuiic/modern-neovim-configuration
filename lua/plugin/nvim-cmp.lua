@@ -136,8 +136,8 @@ local config = function()
 					behavior = cmp.ConfirmBehavior.Insert,
 				})
 			end, { "i", "s", "c" }),
-			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 			["<C-u>"] = cmp.mapping(function(fallback)
 				if not cmp.visible() then
 					fallback()
