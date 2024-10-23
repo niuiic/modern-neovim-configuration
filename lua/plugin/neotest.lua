@@ -16,7 +16,10 @@ local config = function()
 				end,
 			}),
 			require("neotest-vitest"),
-			require("rustaceanvim.neotest"),
+			require("neotest-rust")({
+				args = { "--no-capture" },
+				dap_adapter = "lldb",
+			}),
 			require("neotest-jest")({
 				jestCommand = "pnpm jest",
 				jestConfigFile = function(file)
@@ -120,5 +123,6 @@ return {
 		"haydenmeade/neotest-jest",
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-python",
+		"niuiic/neotest-rust",
 	},
 }
