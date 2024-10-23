@@ -40,8 +40,8 @@
       "",
       "    ${1}",
       "",
-      "",
       "    error[notify error] --> finish",
+      "",
       "    finish([finish])",
       "```"
     ]
