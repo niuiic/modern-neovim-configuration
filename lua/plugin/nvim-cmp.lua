@@ -1,49 +1,133 @@
+local get_mapping = function()
+	local cmp = require("cmp")
+
+	return {
+		["<C-k>"] = cmp.mapping(function(fallback)
+			if not cmp.visible() then
+				fallback()
+				return
+			end
+			cmp.select_prev_item({
+				behavior = cmp.SelectBehavior.Select,
+			})
+		end, { "i", "c" }),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if not cmp.visible() then
+				fallback()
+				return
+			end
+			cmp.close()
+		end, { "i", "c", "s" }),
+		["<C-j>"] = cmp.mapping(function(fallback)
+			if not cmp.visible() then
+				fallback()
+				return
+			end
+			cmp.select_next_item({
+				behavior = cmp.SelectBehavior.Select,
+			})
+		end, { "i", "c" }),
+		["<cr>"] = cmp.mapping(function(fallback)
+			if not cmp.visible() then
+				fallback()
+				return
+			end
+
+			local entry = cmp.get_selected_entry()
+			if not entry then
+				cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+			end
+			cmp.confirm({
+				select = true,
+				behavior = cmp.ConfirmBehavior.Insert,
+			})
+		end, { "i", "s", "c" }),
+		["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-u>"] = cmp.mapping(function(fallback)
+			if not cmp.visible() then
+				fallback()
+				return
+			end
+			for _ = 1, 10, 1 do
+				cmp.select_prev_item({
+					behavior = cmp.SelectBehavior.Select,
+				})
+			end
+		end, { "i", "c" }),
+		["<C-d>"] = cmp.mapping(function(fallback)
+			if not cmp.visible() then
+				fallback()
+				return
+			end
+			for _ = 1, 10, 1 do
+				cmp.select_next_item({
+					behavior = cmp.SelectBehavior.Select,
+				})
+			end
+		end, { "i", "c" }),
+	}
+end
+
+local get_formatting = function()
+	return {
+		format = require("lspkind").cmp_format({
+			mode = "symbol_text",
+			symbol_map = {
+				Text = "󰉿",
+				String = "󰉿",
+				Method = "󰆧",
+				Function = "󰊕",
+				Constructor = "",
+				Field = "󰜢",
+				Variable = "󰀫",
+				Class = "󰠱",
+				Interface = "",
+				Module = "",
+				Property = "󰜢",
+				Unit = "󰑭",
+				Value = "󰎠",
+				Enum = "",
+				Keyword = "󰌋",
+				Snippet = "",
+				Color = "󰏘",
+				File = "󰈙",
+				Reference = "󰈇",
+				Folder = "󰉋",
+				EnumMember = "",
+				Constant = "󰏿",
+				Struct = "󰙅",
+				Event = "",
+				Operator = "󰆕",
+				TypeParameter = "",
+			},
+			menu = {
+				buffer = "[Buffer]",
+				nvim_lsp = "[Lsp]",
+				luasnip = "[LuaSnip]",
+				rg = "[Rg]",
+				treesitter = "[Treesitter]",
+				async_path = "[Path]",
+				crates = "[Crates]",
+			},
+		}),
+	}
+end
+
 local config = function()
 	local cmp = require("cmp")
 
 	cmp.setup({
-		formatting = {
-			format = require("lspkind").cmp_format({
-				mode = "symbol_text",
-				symbol_map = {
-					Text = "󰉿",
-					String = "󰉿",
-					Method = "󰆧",
-					Function = "󰊕",
-					Constructor = "",
-					Field = "󰜢",
-					Variable = "󰀫",
-					Class = "󰠱",
-					Interface = "",
-					Module = "",
-					Property = "󰜢",
-					Unit = "󰑭",
-					Value = "󰎠",
-					Enum = "",
-					Keyword = "󰌋",
-					Snippet = "",
-					Color = "󰏘",
-					File = "󰈙",
-					Reference = "󰈇",
-					Folder = "󰉋",
-					EnumMember = "",
-					Constant = "󰏿",
-					Struct = "󰙅",
-					Event = "",
-					Operator = "󰆕",
-					TypeParameter = "",
-				},
-				menu = {
-					buffer = "[Buffer]",
-					nvim_lsp = "[Lsp]",
-					luasnip = "[LuaSnip]",
-					rg = "[Rg]",
-					treesitter = "[Treesitter]",
-					async_path = "[Path]",
-					crates = "[Crates]",
-				},
+		mapping = get_mapping(),
+		window = {
+			completion = cmp.config.window.bordered({
+				winhighlight = "Normal:None,FloatBorder:FloatBorder,CursorLine:CursorLine,Search:None",
+			}),
+			documentation = cmp.config.window.bordered({
+				winhighlight = "Normal:None,FloatBorder:FloatBorder,CursorLine:CursorLine,Search:None",
 			}),
 		},
+		formatting = get_formatting(),
 		enabled = function()
 			return vim.api.nvim_get_option_value("buftype", {
 				buf = 0,
@@ -90,76 +174,6 @@ local config = function()
 				comparators.inscope_inherent_import,
 				comparators.sort_by_label_but_underscore_last,
 			},
-		},
-	})
-
-	-- keymap
-	cmp.setup({
-		mapping = {
-			["<C-k>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-				cmp.select_prev_item({
-					behavior = cmp.SelectBehavior.Select,
-				})
-			end, { "i", "c" }),
-			["<Tab>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-				cmp.close()
-			end, { "i", "c", "s" }),
-			["<C-j>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-				cmp.select_next_item({
-					behavior = cmp.SelectBehavior.Select,
-				})
-			end, { "i", "c" }),
-			["<cr>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-
-				local entry = cmp.get_selected_entry()
-				if not entry then
-					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-				end
-				cmp.confirm({
-					select = true,
-					behavior = cmp.ConfirmBehavior.Insert,
-				})
-			end, { "i", "s", "c" }),
-			["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-			["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-			["<C-u>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-				for _ = 1, 10, 1 do
-					cmp.select_prev_item({
-						behavior = cmp.SelectBehavior.Select,
-					})
-				end
-			end, { "i", "c" }),
-			["<C-d>"] = cmp.mapping(function(fallback)
-				if not cmp.visible() then
-					fallback()
-					return
-				end
-				for _ = 1, 10, 1 do
-					cmp.select_next_item({
-						behavior = cmp.SelectBehavior.Select,
-					})
-				end
-			end, { "i", "c" }),
 		},
 	})
 end
