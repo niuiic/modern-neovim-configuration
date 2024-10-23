@@ -20,7 +20,7 @@ return {
 					{ "blink.cmp.sources.lsp", name = "LSP", score_offset = 3 },
 					{ "blink.cmp.sources.snippets", name = "Snippets", score_offset = 2 },
 					{
-						"blink.cmp.sources.rg",
+						"blink-cmp-rg",
 						name = "Rg",
 						score_offset = 1,
 						opts = {
@@ -69,6 +69,5 @@ return {
 		})
 	end,
 	build = "cargo build --release",
-	dependencies = { "rafamadriz/friendly-snippets" },
-	branch = "dev",
+	dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim" },
 }
