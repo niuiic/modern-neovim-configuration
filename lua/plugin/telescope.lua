@@ -48,7 +48,7 @@ local on_list = function(options, is_def)
 	local items = vim.tbl_values(item_set)
 
 	if #items == 1 and is_def then
-		require("telescope.builtin").lsp_definitions()
+		vim.cmd("Lspsaga goto_definition")
 		return
 	end
 
