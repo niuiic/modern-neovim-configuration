@@ -30,12 +30,16 @@ else
 end
 
 -- load all lsp config
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local load_lsp = function(value)
 	local config = require("lsp/" .. value)
 
 	-- set handlers
 	config.handlers = config.handlers or {}
 	config.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+
+	-- set capabilities
+	config.capabilities = vim.tbl_deep_extend("force", capabilities, config.capabilities or {})
 
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
