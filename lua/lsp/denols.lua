@@ -6,4 +6,14 @@ return {
 	root_dir = function()
 		return vim.fs.root(0, ".git") or vim.fn.getcwd()
 	end,
+	deno = {
+		suggest = {
+			imports = {
+				hosts = {
+					["https://deno.land"] = true,
+					["https://jsr.io"] = true,
+				},
+			},
+		},
+	},
 }
