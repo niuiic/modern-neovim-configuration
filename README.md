@@ -476,6 +476,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/multiple-session.nvim](https://github.com/niuiic/multiple-session.nvim) - Session manager for neovim
 
 	![](https://img.shields.io/github/stars/niuiic/multiple-session.nvim) ![](https://img.shields.io/github/last-commit/niuiic/multiple-session.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/multiple-session.nvim)
+- [niuiic/neotest-rust](https://github.com/niuiic/neotest-rust) - Neotest adapter for Rust, using cargo-nextest.
+
+	![](https://img.shields.io/github/stars/niuiic/neotest-rust) ![](https://img.shields.io/github/last-commit/niuiic/neotest-rust) ![](https://img.shields.io/github/commit-activity/y/niuiic/neotest-rust)
 - [niuiic/omega.nvim](https://github.com/niuiic/omega.nvim) - Neovim lua utils
 
 	![](https://img.shields.io/github/stars/niuiic/omega.nvim) ![](https://img.shields.io/github/last-commit/niuiic/omega.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/omega.nvim)
