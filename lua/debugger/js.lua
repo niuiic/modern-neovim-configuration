@@ -31,9 +31,7 @@ local node = {
 		request = "launch",
 		cwd = "${workspaceFolder}",
 		runtimeExecutable = "pnpm",
-		runtimeArgs = {
-			"debug",
-		},
+		runtimeArgs = { "debug" },
 	},
 	{
 		name = "Launch file",
