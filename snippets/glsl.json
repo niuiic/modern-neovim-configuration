@@ -10,5 +10,59 @@
   "4": {
     "prefix": "4",
     "body": ["vec4(${1})"]
+  },
+  "iResolution": {
+    "prefix": "iResolution",
+    "body": ["iResolution"]
+  },
+  "iGlobalTime": {
+    "prefix": "iGlobalTime",
+    "body": ["iGlobalTime"]
+  },
+  "iTimeDelta": {
+    "prefix": "iTimeDelta",
+    "body": ["iTimeDelta"]
+  },
+  "iFrame": {
+    "prefix": "iFrame",
+    "body": ["iFrame"]
+  },
+  "iMouse": {
+    "prefix": "iMouse",
+    "body": ["iMouse"]
+  },
+  "iMouseButton": {
+    "prefix": "iMouseButton",
+    "body": ["iMouseButton"]
+  },
+  "iDate": {
+    "prefix": "iDate",
+    "body": ["iDate"]
+  },
+  "iSampleRate": {
+    "prefix": "iSampleRate",
+    "body": ["iSampleRate"]
+  },
+  "iChannel": {
+    "prefix": "iChannel",
+    "body": ["iChannel"]
+  },
+  "iChannelResolution": {
+    "prefix": "iChannelResolution",
+    "body": ["iChannelResolution"]
+  },
+  "include": {
+    "prefix": "include",
+    "body": ["#include \"${1}\""]
+  },
+  "mainImage": {
+    "prefix": "mainImage",
+    "body": [
+      "#StrictCompatibility",
+      "",
+      "void mainImage(out vec4 color, in vec2 pos) {",
+      "    ${1}",
+      "}"
+    ]
   }
 }
