@@ -58,8 +58,6 @@
   "mainImage": {
     "prefix": "mainImage",
     "body": [
-      "#StrictCompatibility",
-      "",
       "vec4 debugColor = vec4(1., 0., 1., 1.);",
       "",
       "void mainImage(out vec4 color, in vec2 pos) {",
