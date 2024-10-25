@@ -8,8 +8,7 @@ local config = function()
 		dapui.open({})
 	end
 
-	require("nvim-dap-virtual-text").setup()
-
+	require("nvim-dap-virtual-text").setup({})
 	require("debugger")
 end
 
@@ -23,13 +22,7 @@ local set_breakpoint = function()
 		elseif choice == types[2] then
 			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "), vim.fn.input("Hit times: "))
 		elseif choice == types[3] then
-			vim.ui.input({ prompt = "Exception: " }, function(input)
-				if input then
-					require("dap").set_exception_breakpoints(input)
-				else
-					require("dap").set_exception_breakpoints("default")
-				end
-			end)
+			require("dap").set_exception_breakpoints()
 		end
 	end)
 end
@@ -189,9 +182,7 @@ local keys = {
 			if vim.bo.filetype == "rust" then
 				expression = "?" .. expression
 			end
-			require("dapui").eval(expression, {
-				context = "repl",
-			})
+			require("dapui").eval(expression, { context = "repl" })
 		end,
 		desc = "check variable value",
 		mode = { "n", "x" },
