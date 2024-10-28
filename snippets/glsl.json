@@ -1,16 +1,4 @@
 {
-  "2": {
-    "prefix": "2",
-    "body": ["vec2(${1})"]
-  },
-  "3": {
-    "prefix": "3",
-    "body": ["vec3(${1})"]
-  },
-  "4": {
-    "prefix": "4",
-    "body": ["vec4(${1})"]
-  },
   "iResolution": {
     "prefix": "iResolution",
     "body": ["iResolution"]
