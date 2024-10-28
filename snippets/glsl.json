@@ -58,10 +58,12 @@
   "mainImage": {
     "prefix": "mainImage",
     "body": [
-      "vec4 debugColor = vec4(1., 0., 1., 1.);",
+      "const vec4 bgColor = vec4(1., 1., 1., 1.);",
+      "const vec4 debugColor = vec4(1., 0., 1., 1.);",
       "",
       "void mainImage(out vec4 color, in vec2 pos) {",
       "    ${1}",
+      "    color = mix(bgColor, color, color.a);",
       "}"
     ]
   }
