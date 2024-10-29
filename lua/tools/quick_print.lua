@@ -1,5 +1,5 @@
 local function js(selection, expr_prev)
-	return string.format([[console.log("%s %s = ", %s)]], expr_prev, selection, selection)
+	return string.format([[console.log('%s %s = ', %s)]], expr_prev, selection, selection)
 end
 local function lua(selection, expr_prev)
 	return string.format([[print("%s %s = ", vim.inspect(%s))]], expr_prev, selection, selection)
