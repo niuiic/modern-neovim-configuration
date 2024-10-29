@@ -18,17 +18,17 @@
   "new-file": {
     "prefix": "new-file",
     "body": [
-      "<!-- ~ script -->",
+      "<!-- % script % -->",
       "<script setup lang=\"ts\">",
-      "// ~~ 组件配置",
+      "// %% 组件配置 %%",
       "</script>",
       "",
-      "<!-- ~ template -->",
+      "<!-- % template % -->",
       "<template>",
       "  <div></div>",
       "</template>",
       "",
-      "<!-- ~ style -->",
+      "<!-- % style % -->",
       "<style lang=\"scss\" scoped></style>"
     ]
   }
