@@ -31,10 +31,17 @@ local config = function()
 					},
 				},
 			},
+			repo = {
+				list = {
+					fd_opts = { "-E", ".local", "-E", ".cargo" },
+				},
+			},
 		},
 	})
 
 	require("telescope").load_extension("undo")
+	require("telescope").load_extension("recent-files")
+	require("telescope").load_extension("repo")
 end
 
 local on_list = function(options, is_def)
@@ -83,6 +90,13 @@ local keys = {
 	{ "<space>ot", "<cmd>TodoTelescope<cr>", desc = "search todo comments" },
 	{ "<space>on", "<cmd>Noice telescope<cr>", desc = "search notifications" },
 	{
+		"<space>oh",
+		function()
+			require("telescope").extensions["recent-files"].recent_files({})
+		end,
+		desc = "search recent files",
+	},
+	{
 		"<space>oW",
 		function()
 			require("telescope.builtin").live_grep({
@@ -115,6 +129,7 @@ local keys = {
 		desc = "search cursor word in workspace",
 		mode = { "x", "n" },
 	},
+	{ "<space>oP", "<cmd>Telescope repo list<cr>", desc = "search projects" },
 	{
 		"<space>op",
 		function()
@@ -169,5 +184,10 @@ local keys = {
 return {
 	config = config,
 	keys = keys,
-	dependencies = { "nvim-lua/plenary.nvim" },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"debugloop/telescope-undo.nvim",
+		"mollerhoj/telescope-recent-files.nvim",
+		"cljoly/telescope-repo.nvim",
+	},
 }

@@ -100,16 +100,8 @@ require("lazy").setup({
 	load_plugin_config("echasnovski/mini.indentscope", "plugin/mini-indentscope"),
 	-- tab line
 	load_plugin_config("akinsho/bufferline.nvim", "plugin/bufferline"),
-
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
-	-- recent files
-	load_plugin_config("smartpde/telescope-recent-files", "plugin/telescope-recent-files"),
-	-- undo
-	"debugloop/telescope-undo.nvim",
-	-- project
-	load_plugin_config("cljoly/telescope-repo.nvim", "plugin/telescope-repo"),
-
 	-- lsp
 	"neovim/nvim-lspconfig",
 	load_plugin_config("glepnir/lspsaga.nvim", "plugin/lspsaga"),
