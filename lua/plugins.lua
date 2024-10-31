@@ -172,8 +172,6 @@ require("lazy").setup({
 	load_plugin_config("MagicDuck/grug-far.nvim", "plugin/grug-far"),
 	-- structural replace
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
-	-- rust
-	load_plugin_config("mrcjkb/rustaceanvim", "plugin/rustaceanvim"),
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- nushell
