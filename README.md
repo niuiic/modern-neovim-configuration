@@ -287,9 +287,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet Engine for Neovim written in Lua.
 
 	![](https://img.shields.io/github/stars/L3MON4D3/LuaSnip) ![](https://img.shields.io/github/last-commit/L3MON4D3/LuaSnip) ![](https://img.shields.io/github/commit-activity/y/L3MON4D3/LuaSnip)
-- [LelouchHe/xmake-luals-addon](https://github.com/LelouchHe/xmake-luals-addon) - Lua-LS Addon for Xmake
-
-	![](https://img.shields.io/github/stars/LelouchHe/xmake-luals-addon) ![](https://img.shields.io/github/last-commit/LelouchHe/xmake-luals-addon) ![](https://img.shields.io/github/commit-activity/y/LelouchHe/xmake-luals-addon)
 - [LhKipp/nvim-nu](https://github.com/LhKipp/nvim-nu) - Basic editor support for the nushell language
 
 	![](https://img.shields.io/github/stars/LhKipp/nvim-nu) ![](https://img.shields.io/github/last-commit/LhKipp/nvim-nu) ![](https://img.shields.io/github/commit-activity/y/LhKipp/nvim-nu)
