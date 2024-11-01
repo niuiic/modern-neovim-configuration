@@ -491,9 +491,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/scroll.nvim](https://github.com/niuiic/scroll.nvim) - Smooth scroll for neovim.
 
 	![](https://img.shields.io/github/stars/niuiic/scroll.nvim) ![](https://img.shields.io/github/last-commit/niuiic/scroll.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/scroll.nvim)
-- [niuiic/task.nvim](https://github.com/niuiic/task.nvim) - Task manager for neovim.
-
-	![](https://img.shields.io/github/stars/niuiic/task.nvim) ![](https://img.shields.io/github/last-commit/niuiic/task.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/task.nvim)
 - [niuiic/terminal.nvim](https://github.com/niuiic/terminal.nvim) - Simple and highly configurable terminal plugin for neovim.
 
 	![](https://img.shields.io/github/stars/niuiic/terminal.nvim) ![](https://img.shields.io/github/last-commit/niuiic/terminal.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/terminal.nvim)
@@ -569,6 +566,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) - Neovim plugin to improve the default vim.ui interfaces
 
 	![](https://img.shields.io/github/stars/stevearc/dressing.nvim) ![](https://img.shields.io/github/last-commit/stevearc/dressing.nvim) ![](https://img.shields.io/github/commit-activity/y/stevearc/dressing.nvim)
+- [stevearc/overseer.nvim](https://github.com/stevearc/overseer.nvim) - A task runner and job management plugin for Neovim
+
+	![](https://img.shields.io/github/stars/stevearc/overseer.nvim) ![](https://img.shields.io/github/last-commit/stevearc/overseer.nvim) ![](https://img.shields.io/github/commit-activity/y/stevearc/overseer.nvim)
 - [theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 
 	![](https://img.shields.io/github/stars/theHamsta/nvim-dap-virtual-text) ![](https://img.shields.io/github/last-commit/theHamsta/nvim-dap-virtual-text) ![](https://img.shields.io/github/commit-activity/y/theHamsta/nvim-dap-virtual-text)
