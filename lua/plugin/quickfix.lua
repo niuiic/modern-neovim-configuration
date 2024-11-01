@@ -1,10 +1,11 @@
-local basic_parser = function(output, regex)
+local basic_parser = function(output, pattern)
 	local lines = vim.split(output, "\n")
 	local qf_item
 	local qf_list = {}
 	local index = 1
 	for _, line in ipairs(lines) do
-		local file, line_nr, msg = string.match(line, regex)
+		local file, line_nr, msg = string.match(line, pattern)
+		msg = msg or ""
 		if file and line then
 			if qf_item then
 				table.insert(qf_list, qf_item)
@@ -24,12 +25,33 @@ end
 return {
 	config = function()
 		require("quickfix").setup({
+			make = {
+				node = {
+					cmd = "node",
+					args = { vim.api.nvim_buf_get_name(0) },
+					is_enabled = function()
+						return vim.bo.filetype == "javascript"
+					end,
+					parser = "node",
+				},
+				rust = {
+					cmd = "cargo",
+					args = { "build" },
+					options = {
+						cwd = vim.fs.root(0, "Cargo.toml"),
+					},
+					is_enabled = function()
+						return vim.fs.root(0, "Cargo.toml")
+					end,
+					parser = "rust",
+				},
+			},
 			parser = {
 				node = function(_, err)
 					basic_parser(err, "^(%S+):(%d+):?(.*)")
 				end,
-				tsc = function(output)
-					basic_parser(output, "^(%S+)%((%d+),%d+%):(.*)")
+				rust = function(_, err)
+					basic_parser(err, "--> (%S+):(%d+):%d+")
 				end,
 			},
 		})
