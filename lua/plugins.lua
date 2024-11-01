@@ -160,8 +160,8 @@ require("lazy").setup({
 	load_plugin_config("niuiic/track.nvim", "plugin/track"),
 	-- outline
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
-	-- task manager
-	load_plugin_config("niuiic/task.nvim", "plugin/task"),
+	-- task
+	load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
 	-- vtsls
 	"yioneko/nvim-vtsls",
 	-- lua lsp
