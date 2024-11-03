@@ -8,13 +8,13 @@ table.insert(M, {
 			args = { "run" },
 			cwd = vim.fs.root(0, "Cargo.toml"),
 			components = { "on_exit_set_status", "open_output" },
-			condition = {
-				callback = function()
-					return vim.fs.root(0, "Cargo.toml") ~= nil
-				end,
-			},
 		}
 	end,
+	condition = {
+		callback = function()
+			return vim.fs.root(0, "Cargo.toml") ~= nil
+		end,
+	},
 })
 
 return M

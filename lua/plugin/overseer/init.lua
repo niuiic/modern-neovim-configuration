@@ -4,9 +4,7 @@ return {
 	config = function()
 		local overseer = require("overseer")
 
-		overseer.setup({ templates = {}, task_list = {
-			max_height = { 30 },
-		} })
+		overseer.setup({ templates = {}, task_list = { max_height = { 30 } } })
 
 		vim.iter(modules):each(function(module)
 			local templates = require("plugin.overseer." .. module)
