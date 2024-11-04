@@ -63,7 +63,7 @@ require("lazy").setup({
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
 	-- complete
-	load_plugin_config("hrsh7th/nvim-cmp", "plugin/nvim-cmp"),
+	load_plugin_config("Saghen/blink.cmp", "plugin/blink-cmp"),
 	-- snippets
 	load_plugin_config("L3MON4D3/LuaSnip", "plugin/luasnip"),
 	-- status line
