@@ -22,7 +22,7 @@ table.insert(M, {
 	builder = function()
 		return {
 			cmd = { "cargo" },
-			args = { "build" },
+			args = { "build", "--release" },
 			cwd = vim.fs.root(0, "Cargo.toml"),
 			components = { "on_exit_set_status", "open_output" },
 		}
@@ -39,7 +39,7 @@ table.insert(M, {
 	builder = function()
 		return {
 			cmd = { "cargo" },
-			args = { "nextest", "run" },
+			args = { "nextest", "run", "--no-capture" },
 			cwd = vim.fs.root(0, "Cargo.toml"),
 			components = { "on_exit_set_status", "open_output" },
 		}
