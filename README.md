@@ -479,6 +479,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/terminal.nvim](https://github.com/niuiic/terminal.nvim) - Simple and highly configurable terminal plugin for neovim.
 
 	![](https://img.shields.io/github/stars/niuiic/terminal.nvim) ![](https://img.shields.io/github/last-commit/niuiic/terminal.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/terminal.nvim)
+- [niuiic/todo.nvim](https://github.com/niuiic/todo.nvim) - Simple but powerful todo manager based on text.
+
+	![](https://img.shields.io/github/stars/niuiic/todo.nvim) ![](https://img.shields.io/github/last-commit/niuiic/todo.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/todo.nvim)
 - [niuiic/track.nvim](https://github.com/niuiic/track.nvim) - Neovim plugin to track the thought process of reading source code.
 
 	![](https://img.shields.io/github/stars/niuiic/track.nvim) ![](https://img.shields.io/github/last-commit/niuiic/track.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/track.nvim)
