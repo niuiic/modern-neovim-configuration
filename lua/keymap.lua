@@ -99,3 +99,15 @@ end)
 vim.keymap.set({ "n", "x" }, "<C-f>", function()
 	require("tools.quick_print")()
 end)
+
+-- mark todo as done
+vim.keymap.set({ "n" }, "<C-space>", function()
+	local lnum = vim.api.nvim_win_get_cursor(0)[1]
+	local line = vim.api.nvim_buf_get_lines(0, lnum - 1, lnum, false)[1]
+	local space, todo = line:match("^([%s]*)- (.+)$")
+	if todo then
+		vim.api.nvim_buf_set_lines(0, lnum - 1, lnum, false, {
+			string.format("%s- [x] %s @(%s)", space, todo, os.date("%Y-%m-%d %H:%M:%S")),
+		})
+	end
+end)
