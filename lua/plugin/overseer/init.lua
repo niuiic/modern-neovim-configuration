@@ -1,4 +1,4 @@
-local modules = { "rust" }
+local modules = { "rust", "node" }
 
 return {
 	config = function()
