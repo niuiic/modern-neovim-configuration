@@ -32,6 +32,13 @@ return {
 					enabled = true,
 				},
 			},
+			accept = {
+				auto_brackets = {
+					semantic_token_resolution = {
+						enabled = false,
+					},
+				},
+			},
 			windows = {
 				autocomplete = {
 					border = "rounded",
