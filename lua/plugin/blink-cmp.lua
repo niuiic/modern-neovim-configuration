@@ -4,15 +4,16 @@ return {
 			keymap = {
 				["<C-j>"] = { "select_next", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },
+				["<C-l>"] = { "accept", "fallback" },
 				["<A-j>"] = { "snippet_forward", "fallback" },
 				["<A-k>"] = { "snippet_backward", "fallback" },
 				["<C-b>"] = { "scroll_documentation_up", "fallback" },
 				["<C-f>"] = { "scroll_documentation_down", "fallback" },
-				["<C-l>"] = { "accept", "fallback" },
-				["<tab>"] = { "hide", "fallback" },
 			},
 			sources = {
-				completion = { enabled_providers = { "lsp", "path", "buffer", "snippets", "ripgrep" } },
+				completion = {
+					enabled_providers = { "lsp", "path", "buffer", "snippets", "ripgrep" },
+				},
 				providers = {
 					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
 					lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 3 },
@@ -26,9 +27,6 @@ return {
 				sorts = { "score" },
 			},
 			trigger = {
-				completion = {
-					show_on_x_blocked_trigger_characters = { "'", '"', "`", "(", "{", "[" },
-				},
 				signature_help = {
 					enabled = true,
 				},
