@@ -8,7 +8,7 @@ return {
 				["<A-k>"] = { "snippet_backward", "fallback" },
 				["<C-b>"] = { "scroll_documentation_up", "fallback" },
 				["<C-f>"] = { "scroll_documentation_down", "fallback" },
-				["<cr>"] = { "accept", "fallback" },
+				["<C-l>"] = { "accept", "fallback" },
 				["<tab>"] = { "hide", "fallback" },
 			},
 			sources = {
@@ -22,21 +22,15 @@ return {
 				},
 			},
 			fuzzy = {
-				prebuiltBinaries = {
-					download = false,
-				},
+				prebuiltBinaries = { download = false },
 				sorts = { "score" },
 			},
 			trigger = {
+				completion = {
+					show_on_x_blocked_trigger_characters = { "'", '"', "`", "(", "{", "[" },
+				},
 				signature_help = {
 					enabled = true,
-				},
-			},
-			accept = {
-				auto_brackets = {
-					semantic_token_resolution = {
-						enabled = false,
-					},
 				},
 			},
 			windows = {

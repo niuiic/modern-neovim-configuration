@@ -6,7 +6,7 @@ return {
 	end,
 	keys = {
 		{
-			"<C-l>",
+			"<C-y>",
 			function()
 				require("treesj").toggle()
 			end,
