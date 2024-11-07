@@ -4,7 +4,7 @@ return {
 			keymap = {
 				["<C-j>"] = { "select_next", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },
-				["<C-l>"] = { "accept", "fallback" },
+				["<C-l>"] = { "accept" },
 				["<A-j>"] = { "snippet_forward", "fallback" },
 				["<A-k>"] = { "snippet_backward", "fallback" },
 				["<C-b>"] = { "scroll_documentation_up", "fallback" },
