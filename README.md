@@ -281,9 +281,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) - Rainbow delimiters for Neovim with Tree-sitter
 
 	![](https://img.shields.io/github/stars/HiPhish/rainbow-delimiters.nvim) ![](https://img.shields.io/github/last-commit/HiPhish/rainbow-delimiters.nvim) ![](https://img.shields.io/github/commit-activity/y/HiPhish/rainbow-delimiters.nvim)
-- [LhKipp/nvim-nu](https://github.com/LhKipp/nvim-nu) - Basic editor support for the nushell language
-
-	![](https://img.shields.io/github/stars/LhKipp/nvim-nu) ![](https://img.shields.io/github/last-commit/LhKipp/nvim-nu) ![](https://img.shields.io/github/commit-activity/y/LhKipp/nvim-nu)
 - [LiadOz/nvim-dap-repl-highlights](https://github.com/LiadOz/nvim-dap-repl-highlights) - Add syntax highlighting to the nvim-dap REPL
 
 	![](https://img.shields.io/github/stars/LiadOz/nvim-dap-repl-highlights) ![](https://img.shields.io/github/last-commit/LiadOz/nvim-dap-repl-highlights) ![](https://img.shields.io/github/commit-activity/y/LiadOz/nvim-dap-repl-highlights)
