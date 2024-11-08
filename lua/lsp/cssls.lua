@@ -4,7 +4,6 @@ local M = {
 			client.server_capabilities.hoverProvider = false
 		end
 	end,
-	filetypes = { "css", "scss", "less", "vue" },
 }
 
 return M
