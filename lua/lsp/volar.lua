@@ -1,6 +1,5 @@
 local function search_ts_server_path()
-	local local_ts_server_path = (vim.fs.root(0, ".git") or vim.fn.getcwd())
-		.. "/node_modules/typescript/lib"
+	local local_ts_server_path = (vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/node_modules/typescript/lib"
 	if vim.uv.fs_stat(local_ts_server_path .. "/lib.d.ts") then
 		return local_ts_server_path
 	else
@@ -32,7 +31,7 @@ local M = {
 			tsdk = search_ts_server_path(),
 		},
 	},
-	on_attach = function(client, _)
+	on_attach = function(client)
 		client.server_capabilities.hoverProvider = false
 	end,
 	capabilities = { workspace = { didChangeWatchedFiles = { dynamicRegistration = true } } },
