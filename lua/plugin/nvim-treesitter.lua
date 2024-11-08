@@ -1,5 +1,7 @@
 local config = function()
 	require("nvim-dap-repl-highlights").setup()
+	require("nvim-treesitter.parsers").get_parser_configs().scss.install_info.url =
+		"https://github.com/savetheclocktower/tree-sitter-scss"
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"bash",
