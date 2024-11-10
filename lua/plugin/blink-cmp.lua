@@ -1,5 +1,21 @@
 return {
 	config = function()
+		local sources = require("blink.cmp.sources.lib")
+		local listen_on_completions = sources.listen_on_completions
+		---@diagnostic disable-next-line: duplicate-set-field
+		sources.listen_on_completions = function(callback)
+			local function cb(context, items)
+				local item_map = {}
+				for _, item in ipairs(items) do
+					local key = string.format("%s,%s", item.label, item.kind)
+					item_map[key] = item
+				end
+				callback(context, vim.tbl_values(item_map))
+			end
+
+			listen_on_completions(cb)
+		end
+
 		require("blink.cmp").setup({
 			keymap = {
 				["<C-j>"] = { "select_next", "fallback" },
