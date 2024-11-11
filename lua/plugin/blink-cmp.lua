@@ -7,7 +7,7 @@ return {
 			local function cb(context, items)
 				local item_map = {}
 				for _, item in ipairs(items) do
-					local key = string.format("%s,%s", item.label, item.kind)
+					local key = string.format("%s:%s", item.label, item.kind)
 					item_map[key] = item
 				end
 				callback(context, vim.tbl_values(item_map))

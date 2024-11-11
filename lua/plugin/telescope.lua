@@ -58,15 +58,15 @@ local on_list = function(options, is_def)
 		return
 	end
 
-	if #items == 1 and is_def then
-		vim.cmd("Lspsaga goto_definition")
-		return
-	end
-
 	vim.fn.setloclist(0, {}, "r", {
 		context = options.context,
 		items = items,
 	})
+
+	if #items == 1 and is_def then
+		vim.cmd("lfirst")
+		return
+	end
 
 	require("telescope.builtin").loclist()
 end
