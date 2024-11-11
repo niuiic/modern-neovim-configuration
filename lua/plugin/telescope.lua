@@ -45,6 +45,10 @@ local config = function()
 end
 
 local on_list = function(options, is_def)
+	if #options == 0 then
+		return
+	end
+
 	local item_set = {}
 	for _, item in ipairs(options.items) do
 		local key = string.format("%s:%s", item.filename, item.lnum)
