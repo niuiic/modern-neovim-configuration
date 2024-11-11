@@ -45,10 +45,6 @@ local config = function()
 end
 
 local on_list = function(options, is_def)
-	if #options == 0 then
-		return
-	end
-
 	local item_set = {}
 	for _, item in ipairs(options.items) do
 		local key = string.format("%s:%s", item.filename, item.lnum)
@@ -57,6 +53,10 @@ local on_list = function(options, is_def)
 	local cur = string.format("%s:%s", vim.api.nvim_buf_get_name(0), vim.api.nvim_win_get_cursor(0)[1])
 	item_set[cur] = nil
 	local items = vim.tbl_values(item_set)
+
+	if #items == 0 then
+		return
+	end
 
 	if #items == 1 and is_def then
 		vim.cmd("Lspsaga goto_definition")
