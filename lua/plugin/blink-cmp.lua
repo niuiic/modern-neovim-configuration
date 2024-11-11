@@ -5,12 +5,17 @@ return {
 		---@diagnostic disable-next-line: duplicate-set-field
 		sources.listen_on_completions = function(callback)
 			local function cb(context, items)
-				local item_map = {}
 				for _, item in ipairs(items) do
-					local key = string.format("%s:%s", item.label, item.kind)
-					item_map[key] = item
+					if
+						item.textEdit
+						and item.insertTextFormat ~= vim.lsp.protocol.InsertTextFormat.Snippet
+						and string.find(item.textEdit.newText, "%$%d")
+					then
+						item.insertTextFormat = vim.lsp.protocol.InsertTextFormat.Snippet
+					end
 				end
-				callback(context, vim.tbl_values(item_map))
+
+				callback(context, items)
 			end
 
 			listen_on_completions(cb)
