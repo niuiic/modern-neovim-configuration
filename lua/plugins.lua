@@ -159,7 +159,7 @@ require("lazy").setup({
 	-- outline
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
 	-- task
-	load_plugin_config("stevearc/overseer.nvim", "plugin/overseer"),
+	load_plugin_config("niuiic/task.nvim", "plugin/task"),
 	-- vtsls
 	"yioneko/nvim-vtsls",
 	-- lua lsp
