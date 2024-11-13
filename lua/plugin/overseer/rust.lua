@@ -51,4 +51,21 @@ table.insert(M, {
 	},
 })
 
+table.insert(M, {
+	name = "open rust project documentation",
+	builder = function()
+		return {
+			cmd = { "cargo" },
+			args = { "doc", "--open" },
+			cwd = vim.fs.root(0, "Cargo.toml"),
+			components = { "on_exit_set_status", "open_output" },
+		}
+	end,
+	condition = {
+		callback = function()
+			return vim.fs.root(0, "Cargo.toml") ~= nil
+		end,
+	},
+})
+
 return M
