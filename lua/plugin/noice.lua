@@ -13,6 +13,11 @@ local config = function()
 				},
 			},
 		},
+		lsp = {
+			signature = {
+				enabled = false,
+			},
+		},
 	})
 
 	vim.api.nvim_set_hl(0, "NoiceFormatProgressTodo", { fg = "#262728" })
