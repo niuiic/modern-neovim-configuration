@@ -12,13 +12,16 @@ return {
 				end
 
 				if
-					vim.list_contains({
+					not vim.bo.filetype
+					or vim.list_contains({
 						"help",
 						"NvimTree",
 						"Outline",
 						"dap-repl",
 						"trouble",
 						"qf",
+						"track",
+						"TelescopePrompt",
 					}, vim.bo.filetype)
 				then
 					return false

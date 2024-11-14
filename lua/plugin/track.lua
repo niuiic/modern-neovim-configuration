@@ -8,6 +8,7 @@ return {
 				mark_hl_group = "TrackMark",
 			},
 			outline = {
+				win_pos = "right",
 				flow_hl_group = "TrackFlow",
 				mark_hl_group = "TrackMark",
 				set_default_when_update = true,
