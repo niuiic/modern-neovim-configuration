@@ -33,7 +33,7 @@ vim.keymap.set("n", "<C-s>", ":silent w<cr>", { silent = true })
 vim.keymap.set("n", "<A-s>", ":silent wa!<cr>", { silent = true })
 
 -- esc
-vim.keymap.set({ "i", "n", "v", "s", "c" }, "<C-c>", "<Esc>", { silent = true })
+vim.keymap.set({ "i", "n", "v", "s", "c" }, "<C-c>", "<esc>", { silent = true })
 
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
@@ -41,7 +41,7 @@ vim.keymap.set("n", "<C-x>", function()
 end, {})
 
 -- copy to systemclip
-vim.keymap.set("x", "Y", '"+y<Esc>', { silent = true })
+vim.keymap.set("x", "Y", '"+y<esc>', { silent = true })
 
 -- toggle current fold
 vim.keymap.set("n", "Z", "za", { silent = true })
