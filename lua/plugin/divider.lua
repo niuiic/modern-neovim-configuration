@@ -5,6 +5,27 @@ return {
 		vim.api.nvim_set_hl(0, "Divider3", { fg = "#00ff7c" })
 
 		require("divider").setup({
+			is_enabled = function(bufnr)
+				local ok, value = pcall(vim.api.nvim_buf_get_var, bufnr, "divider")
+				if ok and value == "disabled" then
+					return false
+				end
+
+				if
+					vim.list_contains({
+						"help",
+						"NvimTree",
+						"Outline",
+						"dap-repl",
+						"trouble",
+						"qf",
+					}, vim.bo.filetype)
+				then
+					return false
+				end
+
+				return true
+			end,
 			dividers = {
 				{
 					pattern = [[ %% (.+) %%]],
