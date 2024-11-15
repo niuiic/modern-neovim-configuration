@@ -11,8 +11,8 @@
     "prefix": "ctil",
     "body": ["/** ${1} */"]
   },
-  "ignore-error": {
-    "prefix": "ignore-error",
+  "caught": {
+    "prefix": "caught",
     "body": [".catch(() => {})"]
   }
 }
