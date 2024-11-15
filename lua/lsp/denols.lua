@@ -4,7 +4,7 @@ vim.g.markdown_fenced_languages = {
 
 return {
 	root_dir = function()
-		return vim.fs.root(0, ".git") or vim.fn.getcwd()
+		return vim.fs.root(0, "deno.json") or vim.fn.getcwd()
 	end,
 	deno = {
 		suggest = {
