@@ -1,16 +1,4 @@
 {
-  "echo": {
-    "prefix": "echo",
-    "body": ["console.log(${1})"]
-  },
-  "ct": {
-    "prefix": "ct",
-    "body": ["/**", " * ${1}", "*/"]
-  },
-  "ctil": {
-    "prefix": "ctil",
-    "body": ["/** ${1} */"]
-  },
   "slot": {
     "prefix": "slot",
     "body": ["<template #${1}>", "  ${2}", "</template>"]

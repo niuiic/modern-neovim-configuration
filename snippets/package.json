@@ -11,14 +11,6 @@
         "path": "./glsl.json"
       },
       {
-        "language": ["javascript"],
-        "path": "./javascript.json"
-      },
-      {
-        "language": ["javascriptreact"],
-        "path": "./javascriptreact.json"
-      },
-      {
         "language": ["lua"],
         "path": "./lua.json"
       },
@@ -35,12 +27,14 @@
         "path": "./rust.json"
       },
       {
-        "language": ["typescript"],
+        "language": [
+          "typescript",
+          "javascript",
+          "javascriptreact",
+          "typescriptreact",
+          "vue"
+        ],
         "path": "./typescript.json"
-      },
-      {
-        "language": ["typescriptreact"],
-        "path": "./typescriptreact.json"
       },
       {
         "language": ["vue"],
