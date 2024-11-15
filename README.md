@@ -287,6 +287,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [MagicDuck/grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) - Find And Replace plugin for neovim
 
 	![](https://img.shields.io/github/stars/MagicDuck/grug-far.nvim) ![](https://img.shields.io/github/last-commit/MagicDuck/grug-far.nvim) ![](https://img.shields.io/github/commit-activity/y/MagicDuck/grug-far.nvim)
+- [MatrosMartz/neotest-deno](https://github.com/MatrosMartz/neotest-deno) - Neotest adapter for Deno.
+
+	![](https://img.shields.io/github/stars/MatrosMartz/neotest-deno) ![](https://img.shields.io/github/last-commit/MatrosMartz/neotest-deno) ![](https://img.shields.io/github/commit-activity/y/MatrosMartz/neotest-deno)
 - [Mr-LLLLL/treesitter-outer](https://github.com/Mr-LLLLL/treesitter-outer) - Jump outer node smartly
 
 	![](https://img.shields.io/github/stars/Mr-LLLLL/treesitter-outer) ![](https://img.shields.io/github/last-commit/Mr-LLLLL/treesitter-outer) ![](https://img.shields.io/github/commit-activity/y/Mr-LLLLL/treesitter-outer)
