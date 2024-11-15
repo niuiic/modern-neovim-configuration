@@ -50,10 +50,8 @@ require("lazy").setup({
 	load_plugin_config("folke/flash.nvim", "plugin/flash"),
 	-- file tree
 	load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
-
-	-- better syntax highlight
+	-- parsers
 	load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
-	-- extensions
 	-- rainbow brackets
 	load_plugin_config("HiPhish/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
 	-- highlight args
@@ -72,18 +70,8 @@ require("lazy").setup({
 	load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- highlights cursor word
 	load_plugin_config("tzachar/local-highlight.nvim", "plugin/local-highlight"),
-
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
-	"niuiic/dap-utils.nvim",
-	"LiadOz/nvim-dap-repl-highlights",
-	"mxsdev/nvim-dap-vscode-js",
-	"theHamsta/nvim-dap-virtual-text",
-	"rcarriga/nvim-dap-ui",
-	"ofirgall/goto-breakpoints.nvim",
-	"jbyuki/one-small-step-for-vimkind",
-	"nvim-neotest/nvim-nio",
-
 	-- unit test
 	load_plugin_config("nvim-neotest/neotest", "plugin/neotest"),
 	load_plugin_config("andythigpen/nvim-coverage", "plugin/nvim-coverage"),

@@ -192,4 +192,14 @@ local keys = {
 return {
 	config = config,
 	keys = keys,
+	dependencies = {
+		"niuiic/dap-utils.nvim",
+		"LiadOz/nvim-dap-repl-highlights",
+		"mxsdev/nvim-dap-vscode-js",
+		"theHamsta/nvim-dap-virtual-text",
+		"rcarriga/nvim-dap-ui",
+		"ofirgall/goto-breakpoints.nvim",
+		"jbyuki/one-small-step-for-vimkind",
+		"nvim-neotest/nvim-nio",
+	},
 }
