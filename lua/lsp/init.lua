@@ -1,6 +1,5 @@
 local lsp_list = {
 	"cssls",
-	"cssmodules_ls",
 	"css_variables",
 	"somesass_ls",
 	"volar",
@@ -28,6 +27,9 @@ if not vim.uv.fs_stat(root_dir .. "/package.json") or vim.uv.fs_stat(root_dir ..
 	table.insert(lsp_list, "denols")
 else
 	table.insert(lsp_list, "vtsls")
+end
+if require("omega").exist_in_file("react", root_dir .. "/package.json") then
+	table.insert(lsp_list, "cssmodules_ls")
 end
 
 -- load all lsp config
