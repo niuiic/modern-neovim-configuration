@@ -16,6 +16,7 @@ local config = function()
 				end,
 			}),
 			require("neotest-vitest"),
+			require("neotest-deno"),
 			require("neotest-rust")({
 				args = { "--no-capture" },
 				dap_adapter = "lldb",
@@ -124,5 +125,6 @@ return {
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-python",
 		"niuiic/neotest-rust",
+		"MatrosMartz/neotest-deno",
 	},
 }
