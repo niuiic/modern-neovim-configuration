@@ -40,6 +40,7 @@ local config = function()
 			"python",
 			"xml",
 			"nu",
+			"http",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },
