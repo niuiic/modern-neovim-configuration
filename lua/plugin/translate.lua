@@ -62,5 +62,4 @@ return {
 			silent = true,
 		},
 	},
-	branch = "dev",
 }
