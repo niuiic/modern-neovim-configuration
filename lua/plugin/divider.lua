@@ -29,6 +29,9 @@ return {
 
 				return true
 			end,
+			outline = {
+				preview_on_hover = false,
+			},
 			dividers = {
 				{
 					pattern = [[ %% (.+) %%]],
