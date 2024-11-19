@@ -99,13 +99,3 @@ end)
 vim.keymap.set({ "n", "x" }, "<C-f>", function()
 	require("tools.quick_print")()
 end)
-
--- vim.keymap.set({ "n" }, "<C-v>", function()
--- 	local async = vim.uv.new_async(vim.schedule_wrap(function(x)
--- 		print(x)
--- 	end))
---
--- 	vim.uv.new_thread(function(handle)
--- 		handle:send("hello")
--- 	end, async)
--- end)
