@@ -9,7 +9,7 @@ return {
 			biome_config_path = config_dir .. "/biome.json"
 		end
 
-		local function biome(context, apply_diff)
+		local function biome(context, apply_change)
 			vim.system({
 				"biome",
 				"format",
@@ -20,7 +20,7 @@ return {
 				stdin = context.text,
 			}, function(result)
 				if result.code == 0 then
-					apply_diff(context.text, result.stdout, context.bufnr)
+					apply_change(context.text, result.stdout, context.bufnr)
 				end
 			end)
 		end
