@@ -1,8 +1,4 @@
 {
-  "slot": {
-    "prefix": "slot",
-    "body": ["<template #${1}>", "  ${2}", "</template>"]
-  },
   "new-file": {
     "prefix": "new-file",
     "body": [

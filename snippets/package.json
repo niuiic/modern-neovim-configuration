@@ -27,6 +27,10 @@
         "path": "./rust.json"
       },
       {
+        "language": ["html"],
+        "path": "./html.json"
+      },
+      {
         "language": [
           "typescript",
           "javascript",
