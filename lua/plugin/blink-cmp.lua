@@ -51,11 +51,11 @@ return {
 								if filetype == "vue" then
 									local node = vim.treesitter.get_node()
 									while node do
-										if string.find(node:sexpr(), "script_element") then
+										if string.find(node:sexpr(), "(script_element", 1, true) == 1 then
 											return "typescript"
-										elseif string.find(node:sexpr(), "template_element") then
+										elseif string.find(node:sexpr(), "(template_element", 1, true) == 1 then
 											return "html"
-										elseif string.find(node:sexpr(), "style_element") then
+										elseif string.find(node:sexpr(), "(style_element", 1, true) == 1 then
 											return "scss"
 										end
 

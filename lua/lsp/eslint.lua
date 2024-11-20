@@ -21,23 +21,26 @@ local function fix_all()
 end
 
 local function is_enabled()
-	if not #vim.lsp.get_clients({
+	if not (#vim.lsp.get_clients({
 		name = "eslint",
-	}) > 0 then
+	}) > 0) then
 		return false
 	end
 
 	if vim.bo.filetype == "vue" then
 		local node = vim.treesitter.get_node()
 		while node do
-			if string.find(node:sexpr(), "style_element") then
-				return false
+			if
+				string.find(node:sexpr(), "(script_element", 1, true) == 1
+				or string.find(node:sexpr(), "(template_element", 1, true) == 1
+			then
+				return true
 			end
 
 			node = node:parent()
 		end
 
-		return true
+		return false
 	end
 
 	return true
