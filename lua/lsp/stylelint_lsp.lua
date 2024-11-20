@@ -3,7 +3,7 @@ local function fix_all()
 	local opts = { sync = true, bufnr = 0 }
 	local bufnr = util.validate_bufnr(opts.bufnr or 0)
 
-	local stylelint_lsp_client = vim.lsp.get_clients({ name = "stylelint_lsp" })[1]
+	local stylelint_lsp_client = util.get_active_client_by_name(bufnr, "stylelint_lsp")
 	if stylelint_lsp_client == nil then
 		return
 	end
