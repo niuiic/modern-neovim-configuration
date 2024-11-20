@@ -1,49 +1,28 @@
 require("lspconfig.configs").vtsls = require("vtsls").lspconfig
 
-vim.api.nvim_create_user_command("VtslsRename", function()
-	vim.lsp.buf.rename(nil, {
+local function is_enabled()
+	return #vim.lsp.get_clients({
 		name = "vtsls",
-	})
-end, {})
-
-local fix_type_import = function()
-	local diagnostic = vim.iter(vim.diagnostic.get()):find(function(diagnostic)
-		local targets = {
-			"@typescript-eslint/consistent-type-imports",
-			"@typescript-eslint/no-import-type-side-effects",
-		}
-		return vim.list_contains(targets, diagnostic.code)
-			or string.find(diagnostic.message, "is declared but its value is never read")
-	end)
-	if diagnostic == nil then
-		return
-	end
-
-	local cur_pos = vim.api.nvim_win_get_cursor(0)
-	vim.api.nvim_win_set_cursor(0, {
-		diagnostic.lnum + 1,
-		diagnostic.col,
-	})
-	vim.lsp.buf.code_action({
-		apply = true,
-		filter = function(action)
-			local targets = {
-				"Fix this @typescript-eslint/consistent-type-imports problem",
-				"Fix this @typescript-eslint/no-import-type-side-effects problem",
-				"Delete all unused imports",
-			}
-			return vim.iter(targets):find(function(target)
-				return string.find(action.title, target, 1, true) ~= nil
-			end)
-		end,
-	})
-	vim.api.nvim_win_set_cursor(0, cur_pos)
+	}) > 0
 end
 
-vim.api.nvim_create_user_command("VtslsOrganizeImports", function()
-	vim.cmd("VtsExec add_missing_imports")
-	fix_type_import()
-end, {})
+require("lsp-commands").register_command("rename vars", {
+	name = "vtsls",
+	run = function()
+		vim.lsp.buf.rename(nil, {
+			name = "vtsls",
+		})
+	end,
+	is_enabled = is_enabled,
+})
+
+require("lsp-commands").register_command("organize imports", {
+	name = "vtsls",
+	run = function()
+		vim.cmd("VtsExec add_missing_imports")
+	end,
+	is_enabled = is_enabled,
+})
 
 local M = {
 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },

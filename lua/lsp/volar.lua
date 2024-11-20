@@ -8,7 +8,7 @@ local function search_ts_server_path()
 	end
 end
 
-local function copy_file_path()
+local function copy_path()
 	local name = vim.api.nvim_buf_get_name(0)
 	local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 	local index = string.find(name, root_dir, 1, true)
@@ -25,7 +25,17 @@ local function copy_file_path()
 	end
 end
 
-local M = {
+require("lsp-commands").register_command("copy path", {
+	name = "volar",
+	run = copy_path,
+	is_enabled = function()
+		return #vim.lsp.get_clients({
+			name = "volar",
+		}) > 0
+	end,
+})
+
+return {
 	init_options = {
 		typescript = {
 			tsdk = search_ts_server_path(),
@@ -35,12 +45,4 @@ local M = {
 		client.server_capabilities.hoverProvider = false
 	end,
 	capabilities = { workspace = { didChangeWatchedFiles = { dynamicRegistration = true } } },
-	commands = {
-		VolarFilePath = {
-			copy_file_path,
-			description = "File Path",
-		},
-	},
 }
-
-return M

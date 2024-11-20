@@ -1,7 +1,3 @@
-local M = {
-	settings = {
-		exportPdf = "never",
-	},
-}
+local M = { settings = { exportPdf = "never" } }
 
 return M

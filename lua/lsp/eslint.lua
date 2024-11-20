@@ -20,7 +20,36 @@ local function fix_all()
 	vim.api.nvim_win_set_cursor(0, cur_pos)
 end
 
-local M = {
+local function is_enabled()
+	if not #vim.lsp.get_clients({
+		name = "eslint",
+	}) > 0 then
+		return false
+	end
+
+	if vim.bo.filetype == "vue" then
+		local node = vim.treesitter.get_node()
+		while node do
+			if string.find(node:sexpr(), "style_element") then
+				return false
+			end
+
+			node = node:parent()
+		end
+
+		return true
+	end
+
+	return true
+end
+
+require("lsp-commands").register_command("fix all", {
+	name = "eslint",
+	run = fix_all,
+	is_enabled = is_enabled,
+})
+
+return {
 	root_dir = function()
 		return vim.fs.root(0, ".git") or vim.fn.getcwd()
 	end,
@@ -63,12 +92,4 @@ local M = {
 			return {}
 		end,
 	},
-	commands = {
-		EslintFixAll = {
-			fix_all,
-			description = "Fix all Problems",
-		},
-	},
 }
-
-return M

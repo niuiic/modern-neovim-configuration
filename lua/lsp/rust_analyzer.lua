@@ -38,16 +38,26 @@ local function organize_imports()
 	vim.api.nvim_win_set_cursor(0, cur_pos)
 end
 
-local rename = function()
-	vim.lsp.buf.rename(nil, {
-		name = "rust_analyzer",
-	})
+local function is_enabled()
+	return #vim.lsp.get_clients({
+		name = "luals",
+	}) > 0
 end
 
-return {
-	capabilities = { experimental = { enable = true } },
-	commands = {
-		RustAnalyzerRename = { rename, description = "Rename" },
-		RustAnalyzerOrganizeImports = { organize_imports, description = "Organize imports" },
-	},
-}
+require("lsp-commands").register_command("rename vars", {
+	name = "rust_analyzer",
+	run = function()
+		vim.lsp.buf.rename(nil, {
+			name = "rust_analyzer",
+		})
+	end,
+	is_enabled = is_enabled,
+})
+
+require("lsp-commands").register_command("organize imports", {
+	name = "rust_analyzer",
+	run = organize_imports,
+	is_enabled = is_enabled,
+})
+
+return { capabilities = { experimental = { enable = true } } }

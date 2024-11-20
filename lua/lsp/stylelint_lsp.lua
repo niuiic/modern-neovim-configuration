@@ -1,9 +1,9 @@
-local fix_all = function()
+local function fix_all()
 	local util = require("lspconfig.util")
 	local opts = { sync = true, bufnr = 0 }
 	local bufnr = util.validate_bufnr(opts.bufnr or 0)
 
-	local stylelint_lsp_client = util.get_active_client_by_name(bufnr, "stylelint_lsp")
+	local stylelint_lsp_client = vim.lsp.get_clients({ name = "stylelint_lsp" })[1]
 	if stylelint_lsp_client == nil then
 		return
 	end
@@ -30,8 +30,36 @@ local fix_all = function()
 	})
 end
 
-local M = {
-	settings = {},
+local function is_enabled()
+	if not #vim.lsp.get_clients({
+		name = "stylelint_lsp",
+	}) > 0 then
+		return false
+	end
+
+	if vim.bo.filetype == "vue" then
+		local node = vim.treesitter.get_node()
+		while node do
+			if string.find(node:sexpr(), "style_element") then
+				return true
+			end
+
+			node = node:parent()
+		end
+
+		return false
+	end
+
+	return true
+end
+
+require("lsp-commands").register_command("fix all", {
+	name = "stylelint_lsp",
+	run = fix_all,
+	is_enabled = is_enabled,
+})
+
+return {
 	filetypes = {
 		"css",
 		"less",
@@ -42,12 +70,4 @@ local M = {
 		"javascriptreact",
 		"typescriptreact",
 	},
-	commands = {
-		StylelintFixAll = {
-			fix_all,
-			description = "Fix all problems",
-		},
-	},
 }
-
-return M
