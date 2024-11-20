@@ -40,7 +40,33 @@ return {
 					lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 3 },
 					ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 2 },
 					buffer = { name = "Buffer", module = "blink.cmp.sources.buffer", score_offset = 1 },
-					snippets = { name = "Snippets", module = "blink.cmp.sources.snippets", score_offset = 0 },
+					snippets = {
+						name = "Snippets",
+						module = "blink.cmp.sources.snippets",
+						score_offset = 0,
+						opts = {
+							get_filetype = function()
+								local filetype = vim.bo.filetype
+
+								if filetype == "vue" then
+									local node = vim.treesitter.get_node()
+									while node do
+										if string.find(node:sexpr(), "script_element") then
+											return "typescript"
+										elseif string.find(node:sexpr(), "template_element") then
+											return "html"
+										elseif string.find(node:sexpr(), "style_element") then
+											return "scss"
+										end
+
+										node = node:parent()
+									end
+								end
+
+								return filetype
+							end,
+						},
+					},
 				},
 			},
 			fuzzy = {
