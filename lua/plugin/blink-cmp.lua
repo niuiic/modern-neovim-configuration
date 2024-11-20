@@ -78,7 +78,7 @@ return {
 				fg = "#f4d03f",
 			},
 		}
-		vim.fn.timer_start(100, function()
+		vim.schedule(function()
 			for key, value in pairs(hl_groups) do
 				vim.api.nvim_set_hl(0, key, value)
 			end
