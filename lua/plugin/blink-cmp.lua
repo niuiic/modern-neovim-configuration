@@ -38,9 +38,9 @@ return {
 				providers = {
 					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
 					lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 3 },
-					snippets = { name = "Snippets", module = "blink.cmp.sources.snippets", score_offset = 2 },
-					ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 1 },
-					buffer = { name = "Buffer", module = "blink.cmp.sources.buffer", score_offset = 0 },
+					ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 2 },
+					buffer = { name = "Buffer", module = "blink.cmp.sources.buffer", score_offset = 1 },
+					snippets = { name = "Snippets", module = "blink.cmp.sources.snippets", score_offset = 0 },
 				},
 			},
 			fuzzy = {
@@ -66,6 +66,23 @@ return {
 				},
 			},
 		})
+
+		local hl_groups = {
+			BlinkCmpKindVariable = {
+				fg = "#2ecc71",
+			},
+			BlinkCmpKindText = {
+				fg = "#34495e",
+			},
+			BlinkCmpKindSnippet = {
+				fg = "#f4d03f",
+			},
+		}
+		vim.fn.timer_start(100, function()
+			for key, value in pairs(hl_groups) do
+				vim.api.nvim_set_hl(0, key, value)
+			end
+		end)
 	end,
 	build = "cargo build --release",
 	dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim" },
