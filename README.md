@@ -296,9 +296,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) - UI Component Library for Neovim.
 
 	![](https://img.shields.io/github/stars/MunifTanjim/nui.nvim) ![](https://img.shields.io/github/last-commit/MunifTanjim/nui.nvim) ![](https://img.shields.io/github/commit-activity/y/MunifTanjim/nui.nvim)
-- [Saghen/blink.cmp](https://github.com/Saghen/blink.cmp) - Performant, batteries-included completion plugin for Neovim 
-
-	![](https://img.shields.io/github/stars/Saghen/blink.cmp) ![](https://img.shields.io/github/last-commit/Saghen/blink.cmp) ![](https://img.shields.io/github/commit-activity/y/Saghen/blink.cmp)
 - [Wansmer/treesj](https://github.com/Wansmer/treesj) - Neovim plugin for splitting/joining blocks of code
 
 	![](https://img.shields.io/github/stars/Wansmer/treesj) ![](https://img.shields.io/github/last-commit/Wansmer/treesj) ![](https://img.shields.io/github/commit-activity/y/Wansmer/treesj)
@@ -434,6 +431,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/blink-cmp-rg.nvim](https://github.com/niuiic/blink-cmp-rg.nvim) - Ripgrep source for blink.nvim
 
 	![](https://img.shields.io/github/stars/niuiic/blink-cmp-rg.nvim) ![](https://img.shields.io/github/last-commit/niuiic/blink-cmp-rg.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/blink-cmp-rg.nvim)
+- [niuiic/blink.cmp](https://github.com/niuiic/blink.cmp) - Performant, batteries-included completion plugin for Neovim 
+
+	![](https://img.shields.io/github/stars/niuiic/blink.cmp) ![](https://img.shields.io/github/last-commit/niuiic/blink.cmp) ![](https://img.shields.io/github/commit-activity/y/niuiic/blink.cmp)
 - [niuiic/core.nvim](https://github.com/niuiic/core.nvim) - Neovim utils
 
 	![](https://img.shields.io/github/stars/niuiic/core.nvim) ![](https://img.shields.io/github/last-commit/niuiic/core.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/core.nvim)
