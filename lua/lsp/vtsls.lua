@@ -17,7 +17,10 @@ require("lsp-commands").register_command({
 require("lsp-commands").register_command({
 	name = "vtsls/organize imports",
 	run = function()
-		vim.cmd("VtsExec add_missing_imports")
+		vim.cmd("VtsExec remove_unused_imports")
+		vim.fn.timer_start(500, function()
+			vim.cmd("VtsExec add_missing_imports")
+		end)
 	end,
 	is_enabled = is_enabled,
 })
