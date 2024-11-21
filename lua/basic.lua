@@ -75,21 +75,17 @@ vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.api.nvim_create_autocmd("BufWinLeave", {
-	callback = function(args)
-		if require("tools.buffer_valid")(args.buf) then
-			pcall(function()
-				vim.cmd("mkview")
-			end)
-		end
+	callback = function()
+		pcall(function()
+			vim.cmd("silent! mkview")
+		end)
 	end,
 })
 vim.api.nvim_create_autocmd("BufWinEnter", {
-	callback = function(args)
-		if require("tools.buffer_valid")(args.buf) then
-			pcall(function()
-				vim.cmd("silent! loadview")
-			end)
-		end
+	callback = function()
+		pcall(function()
+			vim.cmd("silent! loadview")
+		end)
 	end,
 })
 
@@ -109,15 +105,6 @@ vim.filetype.add({
 	pattern = {
 		["TODO"] = "todo",
 	},
-})
-
--- switch normal mode when enter window
-vim.api.nvim_create_autocmd("BufWinEnter", {
-	callback = function(args)
-		if vim.fn.mode() == "i" and require("tools.buffer_valid")(args.buf) then
-			vim.cmd("stopinsert")
-		end
-	end,
 })
 
 -- yank
