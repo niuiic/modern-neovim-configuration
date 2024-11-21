@@ -26,6 +26,7 @@ return {
 		end
 
 		require("format").setup({
+			force_format = true,
 			format_on_save = true,
 			filetypes = {
 				javascript = biome,
