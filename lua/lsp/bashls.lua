@@ -6,9 +6,7 @@ require("lsp-commands").register_command({
 		})
 	end,
 	is_enabled = function()
-		return #vim.lsp.get_clients({
-			name = "bashls",
-		}) > 0
+		return require("tools.lsp_valid")("bashls")
 	end,
 })
 

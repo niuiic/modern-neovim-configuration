@@ -10,9 +10,7 @@ require("lsp-commands").register_command({
 		})
 	end,
 	is_enabled = function()
-		return #vim.lsp.get_clients({
-			name = "denols",
-		}) > 0
+		return require("tools.lsp_valid")("denols")
 	end,
 })
 

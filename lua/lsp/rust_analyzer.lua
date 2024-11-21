@@ -39,9 +39,7 @@ local function organize_imports()
 end
 
 local function is_enabled()
-	return #vim.lsp.get_clients({
-		name = "luals",
-	}) > 0
+	return require("tools.lsp_valid")("rust_analyzer")
 end
 
 require("lsp-commands").register_command({

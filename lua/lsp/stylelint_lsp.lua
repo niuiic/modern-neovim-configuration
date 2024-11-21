@@ -31,9 +31,7 @@ local function fix_all()
 end
 
 local function is_enabled()
-	if not (#vim.lsp.get_clients({
-		name = "stylelint_lsp",
-	}) > 0) then
+	if not require("tools.lsp_valid")("stylelint_lsp") then
 		return false
 	end
 

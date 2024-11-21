@@ -29,9 +29,7 @@ require("lsp-commands").register_command({
 	name = "volar/copy path",
 	run = copy_path,
 	is_enabled = function()
-		return #vim.lsp.get_clients({
-			name = "volar",
-		}) > 0
+		return require("tools.lsp_valid")("volar")
 	end,
 })
 

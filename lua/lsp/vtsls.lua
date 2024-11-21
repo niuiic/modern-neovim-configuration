@@ -1,9 +1,7 @@
 require("lspconfig.configs").vtsls = require("vtsls").lspconfig
 
 local function is_enabled()
-	return #vim.lsp.get_clients({
-		name = "vtsls",
-	}) > 0
+	return require("tools.lsp_valid")("vtsls")
 end
 
 require("lsp-commands").register_command({
