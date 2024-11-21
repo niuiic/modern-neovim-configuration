@@ -13,10 +13,8 @@ local config = function()
 				},
 			},
 		},
-		lsp = {
-			signature = {
-				enabled = false,
-			},
+		presets = {
+			lsp_doc_border = true,
 		},
 	})
 

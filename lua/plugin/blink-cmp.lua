@@ -73,11 +73,6 @@ return {
 				prebuiltBinaries = { download = false },
 				sorts = { "score" },
 			},
-			trigger = {
-				signature_help = {
-					enabled = true,
-				},
-			},
 			windows = {
 				autocomplete = {
 					border = "rounded",
