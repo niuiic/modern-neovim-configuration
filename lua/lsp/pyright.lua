@@ -1,5 +1,5 @@
-require("lsp-commands").register_command("rename vars", {
-	name = "pyright",
+require("lsp-commands").register_command({
+	name = "pyright/rename vars",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "pyright",

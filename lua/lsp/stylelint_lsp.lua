@@ -53,8 +53,8 @@ local function is_enabled()
 	return true
 end
 
-require("lsp-commands").register_command("fix all", {
-	name = "stylelint_lsp",
+require("lsp-commands").register_command({
+	name = "stylelint_lsp/fix all",
 	run = fix_all,
 	is_enabled = is_enabled,
 })

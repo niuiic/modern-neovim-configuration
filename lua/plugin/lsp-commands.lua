@@ -6,28 +6,36 @@ local keys = {
 	{
 		"<space>lF",
 		function()
-			require("lsp-commands").run_command("rename file")
+			require("lsp-commands").run_command(function(name)
+				return string.find(name, "rename file") ~= nil
+			end)
 		end,
 		desc = "rename file",
 	},
 	{
 		"<space>lr",
 		function()
-			require("lsp-commands").run_command("rename vars")
+			require("lsp-commands").run_command(function(name)
+				return string.find(name, "rename vars") ~= nil
+			end)
 		end,
 		desc = "rename vars",
 	},
 	{
 		"<space>li",
 		function()
-			require("lsp-commands").run_command("organize imports")
+			require("lsp-commands").run_command(function(name)
+				return string.find(name, "organize imports") ~= nil
+			end)
 		end,
 		desc = "organize imports",
 	},
 	{
 		"<space>lf",
 		function()
-			require("lsp-commands").run_command("fix all")
+			require("lsp-commands").run_command(function(name)
+				return string.find(name, "fix all") ~= nil
+			end)
 		end,
 		desc = "fix all",
 	},
@@ -44,7 +52,9 @@ local keys = {
 	{
 		"<space>lp",
 		function()
-			require("lsp-commands").run_command("copy path")
+			require("lsp-commands").run_command(function(name)
+				return string.find(name, "copy path") ~= nil
+			end)
 		end,
 		desc = "copy path",
 	},

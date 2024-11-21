@@ -1,5 +1,5 @@
-require("lsp-commands").register_command("rename vars", {
-	name = "bashls",
+require("lsp-commands").register_command({
+	name = "bashls/rename vars",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "bashls",

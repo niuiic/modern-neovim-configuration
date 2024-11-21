@@ -2,8 +2,8 @@ vim.g.markdown_fenced_languages = {
 	"ts=typescript",
 }
 
-require("lsp-commands").register_command("rename vars", {
-	name = "denols",
+require("lsp-commands").register_command({
+	name = "denols/rename vars",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "denols",

@@ -25,8 +25,8 @@ local function copy_path()
 	end
 end
 
-require("lsp-commands").register_command("copy path", {
-	name = "volar",
+require("lsp-commands").register_command({
+	name = "volar/copy path",
 	run = copy_path,
 	is_enabled = function()
 		return #vim.lsp.get_clients({

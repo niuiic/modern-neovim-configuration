@@ -46,8 +46,8 @@ local function is_enabled()
 	return true
 end
 
-require("lsp-commands").register_command("fix all", {
-	name = "eslint",
+require("lsp-commands").register_command({
+	name = "eslint/fix all",
 	run = fix_all,
 	is_enabled = is_enabled,
 })

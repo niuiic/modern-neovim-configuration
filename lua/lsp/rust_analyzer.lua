@@ -44,8 +44,8 @@ local function is_enabled()
 	}) > 0
 end
 
-require("lsp-commands").register_command("rename vars", {
-	name = "rust_analyzer",
+require("lsp-commands").register_command({
+	name = "rust_analyzer/rename vars",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "rust_analyzer",
@@ -54,8 +54,8 @@ require("lsp-commands").register_command("rename vars", {
 	is_enabled = is_enabled,
 })
 
-require("lsp-commands").register_command("organize imports", {
-	name = "rust_analyzer",
+require("lsp-commands").register_command({
+	name = "rust_analyzer/organize imports",
 	run = organize_imports,
 	is_enabled = is_enabled,
 })
