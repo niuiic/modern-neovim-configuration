@@ -33,8 +33,8 @@ vim.keymap.set("n", "<C-s>", ":silent w<cr>", { silent = true })
 vim.keymap.set("n", "<A-s>", ":silent wa!<cr>", { silent = true })
 
 -- esc
-vim.api.nvim_set_keymap("i", "<C-c>", "<nop>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<C-c>", "<esc>", { noremap = true, silent = true })
+vim.keymap.set({ "i", "n", "x" }, "<C-c>", "<nop>", { noremap = true, silent = true })
+vim.keymap.set({ "i", "n", "x" }, "<C-c>", "<esc>", { noremap = true, silent = true })
 
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
