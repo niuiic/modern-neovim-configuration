@@ -36,3 +36,15 @@ require("task").register_task({
 		return vim.fs.root(0, "Cargo.toml") ~= nil
 	end,
 })
+
+require("task").register_task({
+	name = "open rust project document",
+	run = function()
+		vim.system({ "cargo", "doc", "--open" }, {
+			cwd = vim.fs.root(0, "Cargo.toml"),
+		})
+	end,
+	is_enabled = function()
+		return vim.fs.root(0, "Cargo.toml") ~= nil
+	end,
+})
