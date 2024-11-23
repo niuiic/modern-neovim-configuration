@@ -133,14 +133,25 @@ local set_keymap = function(bufnr)
 		if not node then
 			return
 		end
-		if not vim.fn.executable("alacritty") then
-			vim.notify("alacritty is required", vim.log.levels.ERROR)
-			return
+
+		local dir_path = node.absolute_path
+		if vim.fn.isdirectory(dir_path) == 0 then
+			dir_path = string.match(dir_path, "(.*)/[^/]+")
 		end
-		if not vim.fn.isdirectory(node.absolute_path) == 1 then
-			return
-		end
-		vim.system({ "alacritty", "--working-directory", node.absolute_path })
+
+		close_nvim_tree()
+
+		vim.fn.timer_start(100, function()
+			local on_term_opened = require("terminal.static").config.on_term_opened
+			require("terminal").open(nil, nil, function(buf, pid, channel)
+				on_term_opened(buf, pid, channel)
+
+				local enter = vim.api.nvim_replace_termcodes("<cr>", true, true, true)
+				vim.defer_fn(function()
+					vim.api.nvim_chan_send(channel, "cd " .. dir_path .. enter)
+				end, 100)
+			end)
+		end)
 	end, opts("open with terminal"))
 end
 
