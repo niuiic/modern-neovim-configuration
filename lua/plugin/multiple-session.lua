@@ -6,13 +6,7 @@ return {
 				require("dap-utils").store_watches(session_dir .. "/watches")
 				require("quickfix").store(session_dir .. "/quickfix")
 				require("track").store_marks(session_dir .. "/track")
-				require("todo").store(session_dir .. "/todo")
 				vim.cmd("wundo " .. session_dir .. "/undo")
-			end,
-			on_session_to_restore = function(session_dir)
-				if vim.uv.fs_stat(session_dir .. "/todo") then
-					require("todo").restore(session_dir .. "/todo")
-				end
 			end,
 			on_session_restored = function(session_dir)
 				if vim.uv.fs_stat(session_dir .. "/breakpoints") then
