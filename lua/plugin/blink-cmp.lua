@@ -42,7 +42,7 @@ return {
 				},
 				providers = {
 					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
-					lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 10 },
+					lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 3 },
 					ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 2 },
 					buffer = { name = "Buffer", module = "blink.cmp.sources.buffer", score_offset = 1 },
 					snippets = {

@@ -1,3 +1,3 @@
 return {
-	build = "cd omega-rs; cargo build --release",
+	build = "cd rs; cargo build --release",
 }
