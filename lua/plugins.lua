@@ -158,6 +158,4 @@ require("lazy").setup({
 	load_plugin_config("cshuaimin/ssr.nvim", "plugin/ssr"),
 	-- todo comments
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
-	-- todo
-	load_plugin_config("niuiic/todo.nvim", "plugin/todo"),
 })
