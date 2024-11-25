@@ -9,7 +9,7 @@
       "",
       "<!-- % template % -->",
       "<template>",
-      "  <div></div>",
+      "  <div class=\"${1}\"></div>",
       "</template>",
       "",
       "<!-- % style % -->",
