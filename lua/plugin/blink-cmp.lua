@@ -1,3 +1,5 @@
+---@diagnostic disable: missing-fields
+
 return {
 	config = function()
 		local sources = require("blink.cmp.sources.lib")
@@ -31,64 +33,66 @@ return {
 				["<C-b>"] = { "scroll_documentation_up", "fallback" },
 				["<C-f>"] = { "scroll_documentation_down", "fallback" },
 			},
-			trigger = {
-				signature_help = {
-					enabled = true,
-				},
-			},
-			sources = {
-				completion = {
-					enabled_providers = { "lsp", "path", "buffer", "snippets", "ripgrep" },
-				},
-				providers = {
-					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
-					lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 3 },
-					ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 2 },
-					buffer = { name = "Buffer", module = "blink.cmp.sources.buffer", score_offset = 1 },
-					snippets = {
-						name = "Snippets",
-						module = "blink.cmp.sources.snippets",
-						score_offset = 0,
-						opts = {
-							get_filetype = function()
-								local filetype = vim.bo.filetype
+			completion = {
+				sources = {
+					completion = {
+						enabled_providers = { "lsp", "path", "buffer", "snippets", "ripgrep" },
+					},
+					providers = {
+						path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
+						lsp = { name = "LSP", module = "blink.cmp.sources.lsp", score_offset = 3 },
+						ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 2 },
+						buffer = { name = "Buffer", module = "blink.cmp.sources.buffer", score_offset = 1 },
+						snippets = {
+							name = "Snippets",
+							module = "blink.cmp.sources.snippets",
+							score_offset = 0,
+							opts = {
+								get_filetype = function()
+									local filetype = vim.bo.filetype
 
-								if filetype == "vue" then
-									local node = vim.treesitter.get_node()
-									while node do
-										if string.find(node:sexpr(), "(script_element", 1, true) == 1 then
-											return "typescript"
-										elseif string.find(node:sexpr(), "(template_element", 1, true) == 1 then
-											return "html"
-										elseif string.find(node:sexpr(), "(style_element", 1, true) == 1 then
-											return "scss"
+									if filetype == "vue" then
+										local node = vim.treesitter.get_node()
+										while node do
+											if string.find(node:sexpr(), "(script_element", 1, true) == 1 then
+												return "typescript"
+											elseif string.find(node:sexpr(), "(template_element", 1, true) == 1 then
+												return "html"
+											elseif string.find(node:sexpr(), "(style_element", 1, true) == 1 then
+												return "scss"
+											end
+
+											node = node:parent()
 										end
-
-										node = node:parent()
 									end
-								end
 
-								return filetype
-							end,
+									return filetype
+								end,
+							},
 						},
 					},
 				},
-			},
-			fuzzy = {
-				prebuiltBinaries = { download = false },
-				sorts = { "score" },
-			},
-			windows = {
-				autocomplete = {
+				fuzzy = {
+					prebuiltBinaries = { download = false },
+					sorts = { "score" },
+				},
+				menu = {
 					border = "rounded",
 					winhighlight = "Normal:None,FloatBorder:BlinkCmpDocBorder,CursorLine:CursorLine,Search:None",
 				},
 				documentation = {
 					auto_show = true,
-					border = "rounded",
+					auto_show_delay_ms = 50,
+					window = {
+						border = "rounded",
+					},
 				},
-				signature_help = {
-					border = "rounded",
+				signature = {
+					enabled = true,
+					window = {
+						border = "rounded",
+						winhighlight = "Normal:None,FloatBorder:BlinkCmpDocBorder",
+					},
 				},
 			},
 		})
