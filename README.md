@@ -375,9 +375,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim) - 💥   Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 
 	![](https://img.shields.io/github/stars/folke/which-key.nvim) ![](https://img.shields.io/github/last-commit/folke/which-key.nvim) ![](https://img.shields.io/github/commit-activity/y/folke/which-key.nvim)
-- [glepnir/lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
-
-	![](https://img.shields.io/github/stars/glepnir/lspsaga.nvim) ![](https://img.shields.io/github/last-commit/glepnir/lspsaga.nvim) ![](https://img.shields.io/github/commit-activity/y/glepnir/lspsaga.nvim)
 - [haydenmeade/neotest-jest](https://github.com/haydenmeade/neotest-jest)
 
 	![](https://img.shields.io/github/stars/haydenmeade/neotest-jest) ![](https://img.shields.io/github/last-commit/haydenmeade/neotest-jest) ![](https://img.shields.io/github/commit-activity/y/haydenmeade/neotest-jest)
@@ -513,6 +510,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [ofirgall/goto-breakpoints.nvim](https://github.com/ofirgall/goto-breakpoints.nvim) - Cycle between breakpoints with keymappings for nvim-dap
 
 	![](https://img.shields.io/github/stars/ofirgall/goto-breakpoints.nvim) ![](https://img.shields.io/github/last-commit/ofirgall/goto-breakpoints.nvim) ![](https://img.shields.io/github/commit-activity/y/ofirgall/goto-breakpoints.nvim)
+- [rachartier/tiny-code-action.nvim](https://github.com/rachartier/tiny-code-action.nvim) - A Neovim plugin that provides a simple way to run and visualize code actions with Telescope.
+
+	![](https://img.shields.io/github/stars/rachartier/tiny-code-action.nvim) ![](https://img.shields.io/github/last-commit/rachartier/tiny-code-action.nvim) ![](https://img.shields.io/github/commit-activity/y/rachartier/tiny-code-action.nvim)
 - [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) - Set of preconfigured snippets for different languages. 
 
 	![](https://img.shields.io/github/stars/rafamadriz/friendly-snippets) ![](https://img.shields.io/github/last-commit/rafamadriz/friendly-snippets) ![](https://img.shields.io/github/commit-activity/y/rafamadriz/friendly-snippets)
