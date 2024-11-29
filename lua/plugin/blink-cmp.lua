@@ -4,18 +4,16 @@ return {
 		local event_emitter = require("blink.cmp.lib.event_emitter")
 		---@diagnostic disable-next-line: duplicate-set-field
 		function event_emitter:emit(data)
-			data = data or {}
-			data.event = self.event
-			for _, callback in ipairs(self.listeners) do
-				require("blink.cmp.lib.utils").schedule_if_needed(function()
+			require("blink.cmp.lib.utils").schedule_if_needed(function()
+				data = data or {}
+				data.event = self.event
+				for _, callback in ipairs(self.listeners) do
 					callback(data)
-				end)
-			end
-			if self.autocmd then
-				require("blink.cmp.lib.utils").schedule_if_needed(function()
+				end
+				if self.autocmd then
 					vim.api.nvim_exec_autocmds("User", { pattern = self.autocmd, modeline = false, data = data })
-				end)
-			end
+				end
+			end)
 		end
 
 		require("blink.cmp").setup({
