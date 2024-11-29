@@ -1,7 +1,3 @@
-local toggle_inlay_hint = function()
-	vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
-end
-
 local keys = {
 	{
 		"<space>lF",
@@ -41,7 +37,9 @@ local keys = {
 	},
 	{
 		"<space>ll",
-		toggle_inlay_hint,
+		function()
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
+		end,
 		desc = "toggle inlay hint",
 	},
 	{
@@ -57,6 +55,48 @@ local keys = {
 			end)
 		end,
 		desc = "copy path",
+	},
+	{
+		"gj",
+		function()
+			vim.diagnostic.goto_next({ float = false })
+		end,
+		desc = "jump to next diagnostic",
+	},
+	{
+		"gJ",
+		function()
+			vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, float = false })
+		end,
+		desc = "jump to next error",
+	},
+	{
+		"gk",
+		function()
+			vim.diagnostic.goto_prev({ float = false })
+		end,
+		desc = "jump to previous diagnostic",
+	},
+	{
+		"gK",
+		function()
+			vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = false })
+		end,
+		desc = "jump to previous error",
+	},
+	{
+		"J",
+		vim.lsp.buf.hover,
+		desc = "lsp hover",
+	},
+	{
+		"D",
+		function()
+			vim.diagnostic.open_float({
+				source = true,
+				border = "rounded",
+			})
+		end,
 	},
 }
 
