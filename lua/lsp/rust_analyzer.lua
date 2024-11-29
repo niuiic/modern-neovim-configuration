@@ -5,19 +5,13 @@ local function organize_imports()
 		if diagnostic.bufnr ~= bufnr then
 			return false
 		end
-		local start = string.find(diagnostic.message, "cannot find")
-		if start ~= nil then
-			return true
-		end
-		start = string.find(diagnostic.message, "unused import")
-		if start ~= nil then
-			return true
-		end
-		start = string.find(diagnostic.message, "undeclared type")
-		if start ~= nil then
-			return true
-		end
-		return false
+		return vim.iter({
+			"cannot find",
+			"unused import",
+			"undeclared type",
+		}):any(function(x)
+			return string.find(diagnostic.message, x) ~= nil
+		end)
 	end)
 	if diagnostic == nil then
 		return
@@ -30,9 +24,7 @@ local function organize_imports()
 	vim.lsp.buf.code_action({
 		apply = true,
 		filter = function(action)
-			return string.find(action.title, "Import ") ~= nil
-				or string.find(action.title, "Remove") ~= nil
-				or string.find(action.title, "remove") ~= nil
+			return string.find(action.title, "Import ") ~= nil or string.find(action.title, "Remove") ~= nil
 		end,
 	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
