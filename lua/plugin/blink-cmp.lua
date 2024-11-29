@@ -1,6 +1,33 @@
 ---@diagnostic disable: missing-fields
 return {
 	config = function()
+		local sources = require("blink.cmp.sources.lib")
+		---@diagnostic disable-next-line: duplicate-set-field
+		function sources.get_enabled_providers(context)
+			local config = require("blink.cmp.config")
+			local mode_providers = type(config.sources.completion.enabled_providers) == "function"
+					and config.sources.completion.enabled_providers(context)
+				or config.sources.completion.enabled_providers
+			--- @cast mode_providers string[]
+
+			for _, provider in ipairs(mode_providers) do
+				-- initialize the provider if it hasn't been initialized yet
+				if not sources.providers[provider] then
+					sources.providers[provider] =
+						require("blink.cmp.sources.lib.provider").new(provider, config.sources.providers[provider])
+				end
+			end
+
+			--- @type table<string, blink.cmp.SourceProvider>
+			local providers = {}
+			for key, provider in pairs(sources.providers) do
+				if vim.tbl_contains(mode_providers, key) and provider:enabled(context) then
+					providers[key] = provider
+				end
+			end
+			return providers
+		end
+
 		require("blink.cmp").setup({
 			keymap = {
 				["<C-j>"] = { "select_next", "fallback" },
