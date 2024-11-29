@@ -1,31 +1,21 @@
 ---@diagnostic disable: missing-fields
 return {
 	config = function()
-		local sources = require("blink.cmp.sources.lib")
+		local event_emitter = require("blink.cmp.lib.event_emitter")
 		---@diagnostic disable-next-line: duplicate-set-field
-		function sources.get_enabled_providers(context)
-			local config = require("blink.cmp.config")
-			local mode_providers = type(config.sources.completion.enabled_providers) == "function"
-					and config.sources.completion.enabled_providers(context)
-				or config.sources.completion.enabled_providers
-			--- @cast mode_providers string[]
-
-			for _, provider in ipairs(mode_providers) do
-				-- initialize the provider if it hasn't been initialized yet
-				if not sources.providers[provider] then
-					sources.providers[provider] =
-						require("blink.cmp.sources.lib.provider").new(provider, config.sources.providers[provider])
-				end
+		function event_emitter:emit(data)
+			data = data or {}
+			data.event = self.event
+			for _, callback in ipairs(self.listeners) do
+				require("blink.cmp.lib.utils").schedule_if_needed(function()
+					callback(data)
+				end)
 			end
-
-			--- @type table<string, blink.cmp.SourceProvider>
-			local providers = {}
-			for key, provider in pairs(sources.providers) do
-				if vim.tbl_contains(mode_providers, key) and provider:enabled(context) then
-					providers[key] = provider
-				end
+			if self.autocmd then
+				require("blink.cmp.lib.utils").schedule_if_needed(function()
+					vim.api.nvim_exec_autocmds("User", { pattern = self.autocmd, modeline = false, data = data })
+				end)
 			end
-			return providers
 		end
 
 		require("blink.cmp").setup({
