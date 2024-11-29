@@ -1,22 +1,6 @@
 ---@diagnostic disable: missing-fields
-
 return {
 	config = function()
-		local event_emitter = require("blink.cmp.lib.event_emitter")
-		---@diagnostic disable-next-line: duplicate-set-field
-		function event_emitter:emit(data)
-			data = data or {}
-			data.event = self.event
-			for _, callback in ipairs(self.listeners) do
-				callback(data)
-			end
-			if self.autocmd then
-				vim.schedule(function()
-					vim.api.nvim_exec_autocmds("User", { pattern = self.autocmd, modeline = false, data = data })
-				end)
-			end
-		end
-
 		require("blink.cmp").setup({
 			keymap = {
 				["<C-j>"] = { "select_next", "fallback" },
