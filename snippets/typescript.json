@@ -14,5 +14,9 @@
   "caught": {
     "prefix": "caught",
     "body": [".catch(() => {})"]
+  },
+  "impl": {
+    "prefix": "impl",
+    "body": ["throw new Error('not implemented')"]
   }
 }
