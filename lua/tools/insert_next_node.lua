@@ -5,13 +5,15 @@ return function()
 	end
 	local text = vim.treesitter.get_node_text(node, vim.api.nvim_get_current_buf())
 
-	local max = "1"
+	local max
 	---@diagnostic disable-next-line: param-type-mismatch
 	for id in string.gmatch(text, "n([%d]+)") do
-		if tonumber(id) > tonumber(max) then
+		if not max or tonumber(id) > tonumber(max) then
 			max = id
 		end
 	end
 
-	vim.snippet.expand(string.format("n%s[${1}]", tonumber(max) + 1))
+	if max then
+		vim.snippet.expand(string.format("n%s[${1}]", tonumber(max) + 1))
+	end
 end
