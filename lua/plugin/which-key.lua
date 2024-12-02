@@ -20,6 +20,10 @@ return {
 					group = "lsp",
 				},
 				{
+					"<space>g",
+					group = "git",
+				},
+				{
 					"<space>w",
 					group = "window",
 				},

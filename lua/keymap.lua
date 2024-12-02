@@ -89,13 +89,18 @@ require("which-key").add({
 })
 
 -- run lua file
-vim.keymap.set({ "n", "x" }, "<C-b>", function()
+vim.keymap.set({ "n" }, "<C-b>", function()
 	if vim.bo.filetype == "lua" then
 		require("omega").dofile(vim.api.nvim_buf_get_name(0))
 	end
 end)
 
 -- quick print
-vim.keymap.set({ "n", "x" }, "<C-f>", function()
+vim.keymap.set({ "n", "v" }, "<C-f>", function()
 	require("tools.quick_print")()
+end)
+
+-- expand branches
+vim.keymap.set({ "v" }, "<C-b>", function()
+	require("tools.expand_branches")()
 end)
