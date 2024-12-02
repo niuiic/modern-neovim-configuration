@@ -31,21 +31,6 @@
     "prefix": "mermaid",
     "body": ["```mermaid", "${1}", "```"]
   },
-  "mindmap": {
-    "prefix": "mindmap",
-    "body": [
-      "```mermaid",
-      "---",
-      "config:",
-      "  theme: neutral",
-      "---",
-      "",
-      "mindmap",
-      "((root))",
-      "  ${1}",
-      "```"
-    ]
-  },
   "flow": {
     "prefix": "flow",
     "body": [
