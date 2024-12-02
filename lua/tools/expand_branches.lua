@@ -22,6 +22,9 @@ return function()
 			end
 		end
 	end
+	if vim.tbl_isempty(branches) then
+		return
+	end
 
 	local prev_results = {}
 	for topic, branch_list in pairs(branches) do
@@ -39,6 +42,8 @@ return function()
 
 		prev_results = results
 	end
+
+	table.insert(prev_results, 1, "")
 
 	vim.api.nvim_buf_set_lines(bufnr, area.end_lnum + 1, area.end_lnum + 1, false, prev_results)
 end
