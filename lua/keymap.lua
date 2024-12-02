@@ -49,20 +49,6 @@ vim.keymap.set("n", "Z", "za", { silent = true })
 -- center this line
 vim.keymap.set("n", "e", "zz", { silent = true })
 
--- calc max node id
-vim.keymap.set("x", "<C-p>", function()
-	local text = vim.iter(require("omega").get_selection() or { "" }):join("\n")
-	local max = "1"
-	---@diagnostic disable-next-line: param-type-mismatch
-	for id in string.gmatch(text, "n([%d]+)") do
-		if tonumber(id) > tonumber(max) then
-			max = id
-		end
-	end
-	vim.notify(max, vim.log.levels.INFO)
-	require("omega").to_normal_mode()
-end, { silent = true })
-
 -- plugin operation
 require("which-key").add({
 	{ "<leader>n", group = "neovim" },
@@ -104,3 +90,8 @@ end)
 vim.keymap.set({ "v" }, "<C-b>", function()
 	require("tools.expand_branches")()
 end)
+
+-- insert next node
+vim.keymap.set("i", "<C-b>", function()
+	require("tools.insert_next_node")()
+end, { silent = true })
