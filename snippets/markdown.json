@@ -36,15 +36,19 @@
     "body": [
       "```mermaid",
       "flowchart LR",
-      "    start([start]) --> n1",
+      "  start([start]) --> n1",
       "",
-      "    ${1}",
+      "  ${1}",
       "",
-      "    error[notify error] --> finish",
+      "  error[notify error] --> finish",
       "",
-      "    finish([finish])",
+      "  finish([finish])",
       "```"
     ]
+  },
+  "task": {
+    "prefix": "flow",
+    "body": ["```mermaid", "flowchart LR", "  ${1}", "```"]
   },
   "done": {
     "prefix": "done",
