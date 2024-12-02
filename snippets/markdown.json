@@ -45,5 +45,29 @@
       "    finish([finish])",
       "```"
     ]
+  },
+  "done": {
+    "prefix": "done",
+    "body": ["✅"]
+  },
+  "question": {
+    "prefix": "question",
+    "body": ["❓"]
+  },
+  "block": {
+    "prefix": "block",
+    "body": ["🚧"]
+  },
+  "start": {
+    "prefix": "start",
+    "body": ["⏳"]
+  },
+  "validate": {
+    "prefix": "validate",
+    "body": ["⚡"]
+  },
+  "defer": {
+    "prefix": "defer",
+    "body": ["🕑"]
   }
 }
