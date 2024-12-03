@@ -47,7 +47,7 @@
     ]
   },
   "task": {
-    "prefix": "flow",
+    "prefix": "task",
     "body": ["```mermaid", "flowchart LR", "  ${1}", "```"]
   },
   "done": {
