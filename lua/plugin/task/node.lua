@@ -10,7 +10,7 @@ require("task").register_task({
 			return
 		end
 
-		local tasks = vim.tbl_values(scripts)
+		local tasks = vim.tbl_keys(scripts)
 
 		if #tasks == 1 then
 			require("plugin.task.utils").run_in_term({
