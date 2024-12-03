@@ -8,6 +8,16 @@ vim.keymap.set("n", "<C-n>", function()
 		vim.cmd("only")
 	end)
 end, { silent = true })
+vim.keymap.set("i", "<C-n>", function()
+	local wins = vim.api.nvim_list_wins()
+	for _, winnr in ipairs(wins) do
+		if vim.api.nvim_win_get_config(winnr).relative ~= "" then
+			pcall(function()
+				vim.api.nvim_win_close(winnr, true)
+			end)
+		end
+	end
+end, { silent = true })
 vim.keymap.set("n", "<C-e>", function()
 	local cursor_pos = vim.api.nvim_win_get_cursor(0)
 	vim.cmd("e")
