@@ -102,10 +102,10 @@ vim.keymap.set({ "v" }, "<C-b>", function()
 end)
 
 -- insert flow node
-vim.keymap.set("i", "<C-u>", function()
+vim.keymap.set("i", "<C-d>", function()
 	require("tools.insert_flow_node")("last")
 end, { silent = true })
 
-vim.keymap.set("i", "<C-d>", function()
+vim.keymap.set("i", "<C-u>", function()
 	require("tools.insert_flow_node")("next")
 end, { silent = true })
