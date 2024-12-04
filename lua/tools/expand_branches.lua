@@ -45,5 +45,5 @@ return function()
 
 	table.insert(prev_results, 1, "")
 
-	vim.api.nvim_buf_set_lines(bufnr, area.end_lnum + 1, area.end_lnum + 1, false, prev_results)
+	vim.api.nvim_buf_set_lines(bufnr, area.end_lnum, area.end_lnum, false, prev_results)
 end
