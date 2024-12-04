@@ -31,7 +31,9 @@ local function get_expr_prev()
 	local file_name = vim.api.nvim_buf_get_name(0)
 	local root_dir = vim.fs.root(0, ".git")
 	if root_dir then
-		file_name = file_name:match(root_dir .. "/(.*)")
+		if file_name:find(root_dir, 1, true) then
+			file_name = file_name:sub(string.len(root_dir) + 2)
+		end
 	end
 	return string.format("[%s] %s(%s:%s)", count, symbol, file_name, lnum)
 end
