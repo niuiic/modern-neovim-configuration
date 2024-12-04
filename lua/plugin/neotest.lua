@@ -102,7 +102,7 @@ local keys = {
 	{
 		"<space>to",
 		function()
-			require("neotest").output.open({ auto_close = true })
+			require("neotest").output.open({ auto_close = true, enter = true })
 		end,
 		desc = "open result window",
 	},
