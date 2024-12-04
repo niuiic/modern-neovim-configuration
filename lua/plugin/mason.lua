@@ -26,8 +26,8 @@
 -- daps installed:
 -- ◍ bash-debug-adapter
 -- ◍ js-debug-adapter
--- ◍ codelldb
 -- ◍ debugpy
+-- install lldb manually
 
 -- formatters installed:
 -- ◍ prettier

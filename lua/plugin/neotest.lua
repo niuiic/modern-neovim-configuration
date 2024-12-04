@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 local config = function()
 	local neotest = require("neotest")
 
@@ -19,7 +20,7 @@ local config = function()
 			require("neotest-deno"),
 			require("neotest-rust")({
 				args = { "--no-capture" },
-				dap_adapter = "codelldb",
+				dap_adapter = "lldb",
 			}),
 			require("neotest-jest")({
 				jestCommand = "pnpm jest",

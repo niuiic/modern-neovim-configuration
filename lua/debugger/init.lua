@@ -2,8 +2,8 @@ local debugger_list = {
 	"nlua",
 	"js",
 	"sh",
-	"codelldb",
 	"debugpy",
+	"lldb",
 }
 
 for _, value in pairs(debugger_list) do

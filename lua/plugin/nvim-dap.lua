@@ -179,9 +179,6 @@ local keys = {
 		"M",
 		function()
 			local expression = (require("omega").get_selection() or { "" })[1]
-			if vim.bo.filetype == "rust" then
-				expression = "?" .. expression
-			end
 			require("dapui").eval(expression, { context = "repl" })
 		end,
 		desc = "check variable value",
