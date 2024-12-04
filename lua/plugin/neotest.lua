@@ -19,7 +19,7 @@ local config = function()
 			require("neotest-deno"),
 			require("neotest-rust")({
 				args = { "--no-capture" },
-				dap_adapter = "lldb",
+				dap_adapter = "codelldb",
 			}),
 			require("neotest-jest")({
 				jestCommand = "pnpm jest",
