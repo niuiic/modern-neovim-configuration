@@ -7,6 +7,7 @@ return function()
 		return
 	end
 
+	local topics = {}
 	local branches = {}
 	local cur_topic
 
@@ -14,6 +15,7 @@ return function()
 		local topic = line:match("^%- (.*)$")
 		if topic then
 			branches[topic] = {}
+			table.insert(topics, topic)
 			cur_topic = topic
 		else
 			local branch = line:match("^  %- (.*)$")
@@ -27,9 +29,10 @@ return function()
 	end
 
 	local prev_results = {}
-	for topic, branch_list in pairs(branches) do
+	for _, topic in ipairs(topics) do
 		local results = {}
 
+		local branch_list = branches[topic]
 		for _, branch in ipairs(branch_list) do
 			if #prev_results == 0 then
 				table.insert(results, string.format("- %s: %s", topic, branch))
@@ -43,7 +46,22 @@ return function()
 		prev_results = results
 	end
 
-	table.insert(prev_results, 1, "")
+	local results = {}
+	for _, result in ipairs(prev_results) do
+		if #results == 0 then
+			table.insert(results, result)
+		else
+			for i, x in ipairs(results) do
+				if result <= x then
+					table.insert(results, i, result)
+					goto continue
+				end
+			end
+			table.insert(results, result)
+			::continue::
+		end
+	end
+	table.insert(results, 1, "")
 
-	vim.api.nvim_buf_set_lines(bufnr, area.end_lnum, area.end_lnum, false, prev_results)
+	vim.api.nvim_buf_set_lines(bufnr, area.end_lnum, area.end_lnum, false, results)
 end
