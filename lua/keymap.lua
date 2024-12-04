@@ -101,7 +101,11 @@ vim.keymap.set({ "v" }, "<C-b>", function()
 	require("tools.expand_branches")()
 end)
 
--- insert next node
-vim.keymap.set("i", "<C-b>", function()
-	require("tools.insert_next_node")()
+-- insert flow node
+vim.keymap.set("i", "<C-u>", function()
+	require("tools.insert_flow_node")("last")
+end, { silent = true })
+
+vim.keymap.set("i", "<C-d>", function()
+	require("tools.insert_flow_node")("next")
 end, { silent = true })

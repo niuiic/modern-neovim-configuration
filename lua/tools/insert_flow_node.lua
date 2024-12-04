@@ -1,8 +1,9 @@
-return function()
+return function(type)
 	local node = vim.treesitter.get_node()
 	if not node then
 		return
 	end
+
 	local text = vim.treesitter.get_node_text(node, vim.api.nvim_get_current_buf())
 
 	local max
@@ -12,8 +13,18 @@ return function()
 			max = id
 		end
 	end
-
-	if max then
-		vim.snippet.expand(string.format("n%s[${1}]", tonumber(max) + 1))
+	if not max then
+		return
 	end
+
+	local num
+	if type == "last" then
+		num = tonumber(max)
+	elseif type == "next" then
+		num = tonumber(max) + 1
+	else
+		return
+	end
+
+	vim.snippet.expand(string.format("n%s[${1}]", num))
 end
