@@ -17,14 +17,9 @@ return function(type)
 		return
 	end
 
-	local num
 	if type == "last" then
-		num = tonumber(max)
+		vim.snippet.expand(string.format("n%s --> ${1}", tonumber(max)))
 	elseif type == "next" then
-		num = tonumber(max) + 1
-	else
-		return
+		vim.snippet.expand(string.format("n%s[${1}]", tonumber(max) + 1))
 	end
-
-	vim.snippet.expand(string.format("n%s[${1}]", num))
 end
