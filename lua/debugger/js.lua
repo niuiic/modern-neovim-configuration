@@ -48,6 +48,13 @@ local get_node = function()
 			name = "Attach",
 			type = "pwa-node",
 			request = "attach",
+			port = 9229,
+			cwd = cwd,
+		},
+		{
+			name = "Attach process",
+			type = "pwa-node",
+			request = "attach",
 			processId = require("dap.utils").pick_process,
 			cwd = cwd,
 		},
@@ -88,7 +95,7 @@ local get_browser = function()
 			type = "pwa-chrome",
 			request = "attach",
 			port = 9222,
-			webRoot = cwd,
+			webroot = cwd,
 		},
 	}
 end
