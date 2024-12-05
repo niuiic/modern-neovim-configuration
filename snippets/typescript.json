@@ -19,8 +19,8 @@
     "prefix": "impl",
     "body": ["throw new Error('not implemented')"]
   },
-  "defer": {
-    "prefix": "defer",
+  "promise": {
+    "prefix": "promise",
     "body": ["const { promise, resolve, reject } = Promise.withResolvers()"]
   }
 }
