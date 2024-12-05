@@ -179,6 +179,7 @@ local keys = {
 		"M",
 		function()
 			local expression = (require("omega").get_selection() or { "" })[1]
+			---@diagnostic disable-next-line: missing-fields
 			require("dapui").eval(expression, { context = "repl" })
 		end,
 		desc = "check variable value",
