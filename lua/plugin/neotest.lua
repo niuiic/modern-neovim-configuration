@@ -40,6 +40,18 @@ local config = function()
 			}),
 		},
 	})
+
+	vim.api.nvim_create_autocmd("BufEnter", {
+		callback = vim.schedule_wrap(function(args)
+			if vim.bo.filetype == "neotest-output" then
+				vim.api.nvim_buf_set_keymap(args.buf, "n", "q", "", {
+					callback = function()
+						pcall(vim.api.nvim_buf_delete, args.buf, { force = true })
+					end,
+				})
+			end
+		end),
+	})
 end
 
 local keys = {
