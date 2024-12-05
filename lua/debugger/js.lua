@@ -1,5 +1,6 @@
 local dap_utils = require("dap-utils")
 
+---@diagnostic disable-next-line: missing-fields
 require("dap-vscode-js").setup({
 	debugger_cmd = { os.getenv("HOME") .. "/.local/share/nvim/mason/bin/js-debug-adapter" },
 })
@@ -24,61 +25,73 @@ for _, adapter in ipairs(adapters) do
 	set_adapter(adapter)
 end
 
-local node = {
-	{
-		name = "Launch project",
-		type = "pwa-node",
-		request = "launch",
-		cwd = "${workspaceFolder}",
-		runtimeExecutable = "pnpm",
-		runtimeArgs = { "debug" },
-	},
-	{
-		name = "Launch file",
+local get_node = function()
+	local cwd = vim.fs.root(0, "package.json") or vim.fn.getcwd()
+
+	return {
+		{
+			name = "Launch project",
+			type = "pwa-node",
+			request = "launch",
+			cwd = cwd,
+			runtimeExecutable = "pnpm",
+			runtimeArgs = { "debug" },
+		},
+		{
+			name = "Launch file",
+			type = "pwa-node",
+			request = "launch",
+			program = "${file}",
+			cwd = cwd,
+		},
+		{
+			name = "Attach",
+			type = "pwa-node",
+			request = "attach",
+			processId = require("dap.utils").pick_process,
+			cwd = cwd,
+		},
+	}
+end
+
+local get_deno = function()
+	local cwd = vim.fs.root(0, "package.json") or vim.fn.getcwd()
+
+	return {
+		name = "Deno",
 		type = "pwa-node",
 		request = "launch",
 		program = "${file}",
-		cwd = "${workspaceFolder}",
-	},
-	{
-		name = "Attach",
-		type = "pwa-node",
-		request = "attach",
-		processId = require("dap.utils").pick_process,
-		cwd = "${workspaceFolder}",
-	},
-}
+		runtimeExecutable = "deno",
+		runtimeArgs = {
+			"--inspect-wait",
+		},
+		cwd = cwd,
+		attachSimplePort = 9229,
+	}
+end
 
-local deno = {
-	name = "Deno",
-	type = "pwa-node",
-	request = "launch",
-	program = "${file}",
-	runtimeExecutable = "deno",
-	runtimeArgs = {
-		"--inspect-wait",
-	},
-	cwd = "${workspaceFolder}",
-	attachSimplePort = 9229,
-}
+local get_browser = function()
+	local cwd = vim.fs.root(0, "package.json") or vim.fn.getcwd()
 
-local browser = {
-	{
-		name = "Launch Chrome",
-		type = "pwa-chrome",
-		request = "launch",
-		runtimeExecutable = "/usr/bin/google-chrome-stable",
-		userDataDir = false,
-		webRoot = "${workspaceFolder}",
-	},
-	{
-		name = "attach chrome",
-		type = "pwa-chrome",
-		request = "attach",
-		port = 9222,
-		webRoot = "${workspaceFolder}",
-	},
-}
+	return {
+		{
+			name = "Launch Chrome",
+			type = "pwa-chrome",
+			request = "launch",
+			runtimeExecutable = "/usr/bin/google-chrome-stable",
+			userDataDir = false,
+			webRoot = cwd,
+		},
+		{
+			name = "attach chrome",
+			type = "pwa-chrome",
+			request = "attach",
+			port = 9222,
+			webRoot = cwd,
+		},
+	}
+end
 
 local function is_vue_project()
 	return require("omega").exist_in_file("vue", (vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/package.json")
@@ -92,29 +105,29 @@ end
 dap_utils.setup({
 	typescript = function(run)
 		if is_deno_project() then
-			run(deno)
+			run(get_deno())
 		elseif is_vue_project() then
-			run(vim.list_extend(browser, node))
+			run(vim.list_extend(get_browser(), get_node()))
 		else
-			run(node)
+			run(get_node())
 		end
 	end,
 	javascript = function(run)
 		if is_deno_project() then
-			run(deno)
+			run(get_deno())
 		elseif is_vue_project() then
-			run(vim.list_extend(browser, node))
+			run(vim.list_extend(get_browser(), get_node()))
 		else
-			run(node)
+			run(get_node())
 		end
 	end,
 	javascriptreact = function(run)
-		run(browser)
+		run(get_browser())
 	end,
 	typescriptreact = function(run)
-		run(browser)
+		run(get_browser())
 	end,
 	vue = function(run)
-		run(browser)
+		run(get_browser())
 	end,
 })
