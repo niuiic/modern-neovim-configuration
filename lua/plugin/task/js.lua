@@ -1,5 +1,5 @@
 require("task").register_task({
-	name = "run node project scripts",
+	name = "run js project scripts",
 	run = function()
 		local scripts = vim.json.decode(
 			vim.fn.join(vim.fn.readfile(vim.fs.root(0, "package.json") .. "/package.json"), "\n")
@@ -35,3 +35,16 @@ require("task").register_task({
 		return vim.fs.root(0, "package.json") ~= nil
 	end,
 })
+
+require("task").register_task({
+	name = "run js file",
+	run = function()
+		require("plugin.task.utils").run_in_term({
+			"deno " .. vim.api.nvim_buf_get_name(0),
+		})
+	end,
+	is_enabled = function()
+		return vim.bo.filetype == "javascript" or vim.bo.filetype == "typescript" and not vim.fs.root(0, "package.json")
+	end,
+})
+
