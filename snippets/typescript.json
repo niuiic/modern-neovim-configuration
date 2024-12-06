@@ -21,6 +21,8 @@
   },
   "pw": {
     "prefix": "pw",
-    "body": ["const { promise, resolve, reject } = Promise.withResolvers()"]
+    "body": [
+      "const { promise, resolve, reject } = Promise.withResolvers<${1}>()"
+    ]
   }
 }
