@@ -36,6 +36,8 @@ return {
 			"<space>p",
 			function()
 				require("code-shot").shot(function(context)
+					require("omega").to_normal_mode()
+
 					vim.fn.setreg("+", context.selection)
 
 					vim.system(
