@@ -73,5 +73,4 @@ return {
 			mode = "x",
 		},
 	},
-	branch = "dev",
 }
