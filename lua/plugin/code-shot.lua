@@ -1,7 +1,7 @@
 return {
 	keys = {
 		{
-			"<space>p",
+			"<leader>p",
 			function()
 				require("code-shot").shot(function(context)
 					vim.system(
@@ -33,7 +33,7 @@ return {
 			desc = "shot code",
 		},
 		{
-			"<space>p",
+			"<leader>p",
 			function()
 				require("code-shot").shot(function(context)
 					require("omega").to_normal_mode()
