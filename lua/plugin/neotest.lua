@@ -16,7 +16,11 @@ local config = function()
 					return string.match(file, "^.+%.py$") ~= nil
 				end,
 			}),
-			require("neotest-vitest"),
+			require("neotest-vitest")({
+				cwd = function()
+					return vim.fs.root(0, "package.json")
+				end,
+			}),
 			require("neotest-deno"),
 			require("neotest-rust")({
 				args = { "--no-capture" },
