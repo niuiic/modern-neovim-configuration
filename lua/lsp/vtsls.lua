@@ -5,7 +5,7 @@ local function is_enabled()
 end
 
 require("lsp-commands").register_command({
-	name = "vtsls/rename vars",
+	name = "vtsls/rename var",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "vtsls",
@@ -21,6 +21,14 @@ require("lsp-commands").register_command({
 		vim.fn.timer_start(500, function()
 			vim.cmd("VtsExec add_missing_imports")
 		end)
+	end,
+	is_enabled = is_enabled,
+})
+
+require("lsp-commands").register_command({
+	name = "vtsls/rename file",
+	run = function()
+		vim.cmd("VtsExec rename_file")
 	end,
 	is_enabled = is_enabled,
 })

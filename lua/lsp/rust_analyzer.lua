@@ -35,7 +35,7 @@ local function is_enabled()
 end
 
 require("lsp-commands").register_command({
-	name = "rust_analyzer/rename vars",
+	name = "rust_analyzer/rename var",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "rust_analyzer",

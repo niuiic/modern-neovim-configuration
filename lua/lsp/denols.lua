@@ -3,7 +3,7 @@ vim.g.markdown_fenced_languages = {
 }
 
 require("lsp-commands").register_command({
-	name = "denols/rename vars",
+	name = "denols/rename var",
 	run = function()
 		vim.lsp.buf.rename(nil, {
 			name = "denols",

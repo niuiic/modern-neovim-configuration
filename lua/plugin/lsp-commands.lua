@@ -12,10 +12,19 @@ local keys = {
 		"<space>lr",
 		function()
 			require("lsp-commands").run_command(function(name)
-				return string.find(name, "rename vars") ~= nil
+				return string.find(name, "rename var") ~= nil
 			end)
 		end,
-		desc = "rename vars",
+		desc = "rename var",
+	},
+	{
+		"<space>lR",
+		function()
+			require("lsp-commands").run_command(function(name)
+				return string.find(name, "rename file") ~= nil
+			end)
+		end,
+		desc = "rename file",
 	},
 	{
 		"<space>li",
@@ -41,11 +50,6 @@ local keys = {
 			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({}))
 		end,
 		desc = "toggle inlay hint",
-	},
-	{
-		"<space>lR",
-		"<cmd>LspRestart *<cr>",
-		desc = "restart all lsp",
 	},
 	{
 		"<space>lp",
