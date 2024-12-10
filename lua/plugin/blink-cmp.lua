@@ -114,5 +114,6 @@ return {
 		end)
 	end,
 	build = "cargo build --release",
+	commit = "610414963590",
 	dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim" },
 }
