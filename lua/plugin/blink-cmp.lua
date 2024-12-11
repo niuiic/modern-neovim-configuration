@@ -32,9 +32,7 @@ return {
 				sorts = { "score" },
 			},
 			sources = {
-				completion = {
-					enabled_providers = { "lsp", "path", "buffer", "snippets", "ripgrep" },
-				},
+				default = { "lsp", "path", "buffer", "snippets", "ripgrep" },
 				providers = {
 					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
 					lsp = {
