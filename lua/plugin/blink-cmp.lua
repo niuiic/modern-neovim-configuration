@@ -28,7 +28,7 @@ return {
 				},
 			},
 			fuzzy = {
-				prebuiltBinaries = { download = false },
+				prebuilt_binaries = { download = false },
 				sorts = { "score" },
 			},
 			sources = {
