@@ -19,6 +19,10 @@
     "prefix": "impl",
     "body": ["throw new Error('not implemented')"]
   },
+  "bail": {
+    "prefix": "bail",
+    "body": ["throw new Error(${1})"]
+  },
   "pw": {
     "prefix": "pw",
     "body": [
