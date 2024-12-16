@@ -43,7 +43,7 @@ vim.keymap.set("n", "<C-s>", ":silent w<cr>", { silent = true })
 vim.keymap.set("n", "<A-s>", ":silent wa!<cr>", { silent = true })
 
 -- esc
-vim.keymap.set({ "i", "n", "v" }, "<C-c>", "<esc>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-c>", "<esc>", { noremap = true, silent = true })
 
 -- delete buffer
 vim.keymap.set("n", "<C-x>", function()
