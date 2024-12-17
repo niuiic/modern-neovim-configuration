@@ -34,6 +34,9 @@ return {
 			},
 			sources = {
 				default = { "lsp", "path", "buffer", "snippets", "ripgrep" },
+				transform_items = function(_, items)
+					return items
+				end,
 				providers = {
 					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
 					lsp = {
