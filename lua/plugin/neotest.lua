@@ -141,7 +141,7 @@ return {
 		"haydenmeade/neotest-jest",
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-python",
-		"niuiic/neotest-rust",
+		"rouge8/neotest-rust",
 		"MatrosMartz/neotest-deno",
 	},
 }
