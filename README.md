@@ -453,9 +453,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/multiple-session.nvim](https://github.com/niuiic/multiple-session.nvim) - Session manager for neovim
 
 	![](https://img.shields.io/github/stars/niuiic/multiple-session.nvim) ![](https://img.shields.io/github/last-commit/niuiic/multiple-session.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/multiple-session.nvim)
-- [niuiic/neotest-rust](https://github.com/niuiic/neotest-rust) - Neotest adapter for Rust, using cargo-nextest.
-
-	![](https://img.shields.io/github/stars/niuiic/neotest-rust) ![](https://img.shields.io/github/last-commit/niuiic/neotest-rust) ![](https://img.shields.io/github/commit-activity/y/niuiic/neotest-rust)
 - [niuiic/omega.nvim](https://github.com/niuiic/omega.nvim) - Neovim lua utils
 
 	![](https://img.shields.io/github/stars/niuiic/omega.nvim) ![](https://img.shields.io/github/last-commit/niuiic/omega.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/omega.nvim)
@@ -525,6 +522,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [rktjmp/highlight-current-n.nvim](https://github.com/rktjmp/highlight-current-n.nvim) - Highlights the current /, ? or * match under your cursor when pressing n or N and gets out of the way afterwards.
 
 	![](https://img.shields.io/github/stars/rktjmp/highlight-current-n.nvim) ![](https://img.shields.io/github/last-commit/rktjmp/highlight-current-n.nvim) ![](https://img.shields.io/github/commit-activity/y/rktjmp/highlight-current-n.nvim)
+- [rouge8/neotest-rust](https://github.com/rouge8/neotest-rust) - Neotest adapter for Rust, using cargo-nextest.
+
+	![](https://img.shields.io/github/stars/rouge8/neotest-rust) ![](https://img.shields.io/github/last-commit/rouge8/neotest-rust) ![](https://img.shields.io/github/commit-activity/y/rouge8/neotest-rust)
 - [s1n7ax/nvim-window-picker](https://github.com/s1n7ax/nvim-window-picker) - This plugins prompts the user to pick a window and returns the window id of the picked window
 
 	![](https://img.shields.io/github/stars/s1n7ax/nvim-window-picker) ![](https://img.shields.io/github/last-commit/s1n7ax/nvim-window-picker) ![](https://img.shields.io/github/commit-activity/y/s1n7ax/nvim-window-picker)
