@@ -8,7 +8,7 @@ return {
 	end,
 	keys = {
 		{
-			"<space>sr",
+			"<C-b>",
 			function()
 				require("task").run_task()
 			end,
