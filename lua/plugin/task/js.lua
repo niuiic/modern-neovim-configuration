@@ -64,3 +64,49 @@ require("task").register_task({
 		}) > 0
 	end,
 })
+
+require("task").register_task({
+	name = "update divider",
+	run = function()
+		local get_class_node = function()
+			local node = vim.treesitter.get_node()
+			while node do
+				if node:type() == "class_body" then
+					return node
+				end
+				node = node:parent()
+			end
+		end
+
+		local class_node = get_class_node()
+		if not class_node then
+			return
+		end
+
+		vim.iter(class_node:iter_children())
+			:filter(function(node)
+				return node:type() == "method_definition"
+			end)
+			:each(function(node)
+				local name_node = vim.iter(node:iter_children()):find(function(x)
+					return x:type() == "property_identifier"
+				end)
+				local method_name = vim.treesitter.get_node_text(name_node, 0)
+				if method_name == "constructor" then
+					return
+				end
+
+				local start_lnum = node:range()
+
+				vim.api.nvim_buf_set_lines(
+					0,
+					node:prev_sibling():type() == "comment" and start_lnum - 1 or start_lnum,
+					start_lnum,
+					false,
+					{
+						"// %%" .. " " .. method_name .. " " .. "%%",
+					}
+				)
+			end)
+	end,
+})
