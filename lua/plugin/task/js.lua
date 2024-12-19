@@ -123,4 +123,7 @@ require("task").register_task({
 				fn()
 			end)
 	end,
+	is_enabled = function()
+		return vim.bo.filetype == "typescript"
+	end,
 })
