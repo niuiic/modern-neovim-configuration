@@ -83,30 +83,44 @@ require("task").register_task({
 			return
 		end
 
+		local insert_count = 0
 		vim.iter(class_node:iter_children())
 			:filter(function(node)
 				return node:type() == "method_definition"
 			end)
-			:each(function(node)
-				local name_node = vim.iter(node:iter_children()):find(function(x)
+			:map(function(method_node)
+				local name_node = vim.iter(method_node:iter_children()):find(function(x)
 					return x:type() == "property_identifier"
 				end)
+				if not name_node then
+					return function() end
+				end
 				local method_name = vim.treesitter.get_node_text(name_node, 0)
-				if method_name == "constructor" then
-					return
+
+				local start_lnum
+				local end_lnum
+				local node_start_lnum = method_node:range()
+				if method_node:prev_sibling() and method_node:prev_sibling():type() == "comment" then
+					start_lnum = node_start_lnum - 1 + insert_count
+					end_lnum = node_start_lnum + insert_count
+				else
+					start_lnum = node_start_lnum + insert_count
+					end_lnum = node_start_lnum + insert_count
+					insert_count = insert_count + 1
 				end
 
-				local start_lnum = node:range()
-
-				vim.api.nvim_buf_set_lines(
-					0,
-					node:prev_sibling():type() == "comment" and start_lnum - 1 or start_lnum,
-					start_lnum,
-					false,
-					{
-						"// %%" .. " " .. method_name .. " " .. "%%",
-					}
-				)
+				return function()
+					vim.api.nvim_buf_set_lines(
+						0,
+						start_lnum,
+						end_lnum,
+						false,
+						{ "// %%" .. " " .. method_name .. " " .. "%%" }
+					)
+				end
+			end)
+			:each(function(fn)
+				fn()
 			end)
 	end,
 })
