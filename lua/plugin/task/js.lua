@@ -78,22 +78,26 @@ require("task").register_task({
 			end
 		end
 
-		local get_method_start_lnum = function(method_node)
-			local node = method_node
-			local prev_sibling = method_node:prev_sibling()
+		local get_method_head_node = function(method_def_node)
+			local node = method_def_node
+			local prev_sibling = method_def_node:prev_sibling()
 
 			while prev_sibling do
 				if prev_sibling:type() == "method_definition" or prev_sibling:type() == "comment" then
-					local start_lnum = node:range()
-					return start_lnum
+					return node
 				end
 
 				node = prev_sibling
 				prev_sibling = node:prev_sibling()
 			end
 
-			local start_lnum = method_node:range()
-			return start_lnum
+			return node
+		end
+
+		local get_method_name_node = function(method_def_node)
+			return vim.iter(method_def_node:iter_children()):find(function(node)
+				return node:type() == "property_identifier"
+			end)
 		end
 
 		local class_node = get_class_node()
@@ -104,23 +108,21 @@ require("task").register_task({
 		local insert_count = 0
 		local fns = vim.iter(class_node:iter_children())
 			:filter(function(node)
-				print(node:type())
 				return node:type() == "method_definition"
 			end)
-			:map(function(method_node)
-				local name_node = vim.iter(method_node:iter_children()):find(function(x)
-					return x:type() == "property_identifier"
-				end)
-				if not name_node then
+			:map(function(method_def_node)
+				local method_name_node = get_method_name_node(method_def_node)
+				if not method_name_node then
 					return function() end
 				end
-				local method_name = vim.treesitter.get_node_text(name_node, 0)
+				local method_name = vim.treesitter.get_node_text(method_name_node, 0)
 
 				local start_lnum
 				local end_lnum
 				local insert_line = "// %%" .. " " .. method_name .. " " .. "%%"
-				local node_start_lnum = get_method_start_lnum(method_node)
-				if method_node:prev_sibling() and method_node:prev_sibling():type() == "comment" then
+				local method_head_node = get_method_head_node(method_def_node)
+				local node_start_lnum = method_head_node:range()
+				if method_head_node:prev_sibling() and method_head_node:prev_sibling():type() == "comment" then
 					start_lnum = node_start_lnum - 1 + insert_count
 					end_lnum = node_start_lnum + insert_count
 				else
