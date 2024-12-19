@@ -103,18 +103,3 @@ end, { silent = true })
 vim.keymap.set("i", "<C-u>", function()
 	require("tools.insert_flow_node")("next")
 end, { silent = true })
-
--- run lua file / toggle parameters
-vim.keymap.set({ "n" }, "<C-b>", function()
-	if vim.bo.filetype == "lua" then
-		require("omega").dofile(vim.api.nvim_buf_get_name(0))
-		return
-	end
-
-	if #vim.lsp.get_clients({
-		name = "vtsls",
-	}) > 0 then
-		require("tools.toggle_parameters")()
-		return
-	end
-end)

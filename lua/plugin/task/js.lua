@@ -48,3 +48,19 @@ require("task").register_task({
 	end,
 })
 
+require("task").register_task({
+	name = "toggle parameters",
+	run = function()
+		vim.lsp.buf.code_action({
+			apply = true,
+			filter = function(action)
+				return string.find(action.title, "Convert parameters to destructured object") ~= nil
+			end,
+		})
+	end,
+	is_enabled = function()
+		return #vim.lsp.get_clients({
+			name = "vtsls",
+		}) > 0
+	end,
+})
