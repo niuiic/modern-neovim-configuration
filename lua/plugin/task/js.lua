@@ -78,6 +78,24 @@ require("task").register_task({
 			end
 		end
 
+		local get_method_start_lnum = function(method_node)
+			local node = method_node
+			local prev_sibling = method_node:prev_sibling()
+
+			while prev_sibling do
+				if prev_sibling:type() == "method_definition" or prev_sibling:type() == "comment" then
+					local start_lnum = node:range()
+					return start_lnum
+				end
+
+				node = prev_sibling
+				prev_sibling = node:prev_sibling()
+			end
+
+			local start_lnum = method_node:range()
+			return start_lnum
+		end
+
 		local class_node = get_class_node()
 		if not class_node then
 			return
@@ -86,6 +104,7 @@ require("task").register_task({
 		local insert_count = 0
 		local fns = vim.iter(class_node:iter_children())
 			:filter(function(node)
+				print(node:type())
 				return node:type() == "method_definition"
 			end)
 			:map(function(method_node)
@@ -100,7 +119,7 @@ require("task").register_task({
 				local start_lnum
 				local end_lnum
 				local insert_line = "// %%" .. " " .. method_name .. " " .. "%%"
-				local node_start_lnum = method_node:range()
+				local node_start_lnum = get_method_start_lnum(method_node)
 				if method_node:prev_sibling() and method_node:prev_sibling():type() == "comment" then
 					start_lnum = node_start_lnum - 1 + insert_count
 					end_lnum = node_start_lnum + insert_count
