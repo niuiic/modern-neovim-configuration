@@ -89,11 +89,6 @@ vim.keymap.set({ "n", "v" }, "<C-f>", function()
 	require("tools.quick_print")()
 end)
 
--- expand branches
-vim.keymap.set({ "v" }, "<C-b>", function()
-	require("tools.expand_branches")()
-end)
-
 -- insert flow node
 vim.keymap.set("i", "<C-d>", function()
 	require("tools.insert_flow_node")("last")
