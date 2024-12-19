@@ -84,7 +84,7 @@ require("task").register_task({
 		end
 
 		local insert_count = 0
-		vim.iter(class_node:iter_children())
+		local fns = vim.iter(class_node:iter_children())
 			:filter(function(node)
 				return node:type() == "method_definition"
 			end)
@@ -99,6 +99,7 @@ require("task").register_task({
 
 				local start_lnum
 				local end_lnum
+				local insert_line = "// %%" .. " " .. method_name .. " " .. "%%"
 				local node_start_lnum = method_node:range()
 				if method_node:prev_sibling() and method_node:prev_sibling():type() == "comment" then
 					start_lnum = node_start_lnum - 1 + insert_count
@@ -110,18 +111,13 @@ require("task").register_task({
 				end
 
 				return function()
-					vim.api.nvim_buf_set_lines(
-						0,
-						start_lnum,
-						end_lnum,
-						false,
-						{ "// %%" .. " " .. method_name .. " " .. "%%" }
-					)
+					vim.api.nvim_buf_set_lines(0, start_lnum, end_lnum, false, { insert_line })
 				end
 			end)
-			:each(function(fn)
-				fn()
-			end)
+			:totable()
+		for _, fn in ipairs(fns) do
+			fn()
+		end
 	end,
 	is_enabled = function()
 		return vim.bo.filetype == "typescript"
