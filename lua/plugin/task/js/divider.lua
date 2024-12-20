@@ -67,7 +67,7 @@ function M.get_method_head_node(method_def_node)
 	local prev_sibling = method_def_node:prev_sibling()
 
 	while prev_sibling do
-		if prev_sibling:type() == "method_definition" or prev_sibling:type() == "comment" then
+		if vim.list_contains({ "method_definition", "comment", "{" }, prev_sibling:type()) then
 			return node
 		end
 
