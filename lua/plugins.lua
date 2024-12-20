@@ -118,8 +118,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
-	-- smooth scrolling
-	load_plugin_config("niuiic/scroll.nvim", "plugin/scroll"),
 	-- remove buffer
 	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- format
@@ -160,4 +158,6 @@ require("lazy").setup({
 	load_plugin_config("folke/todo-comments.nvim", "plugin/todo-comments"),
 	-- shot code
 	load_plugin_config("niuiic/code-shot.nvim", "plugin/code-shot"),
+	-- animate cursor
+	load_plugin_config("sphamba/smear-cursor.nvim", "plugin/smear-cursor"),
 })
