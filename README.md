@@ -465,9 +465,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/remote.nvim](https://github.com/niuiic/remote.nvim) - Edit remote files locally.
 
 	![](https://img.shields.io/github/stars/niuiic/remote.nvim) ![](https://img.shields.io/github/last-commit/niuiic/remote.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/remote.nvim)
-- [niuiic/scroll.nvim](https://github.com/niuiic/scroll.nvim) - Smooth scroll for neovim.
-
-	![](https://img.shields.io/github/stars/niuiic/scroll.nvim) ![](https://img.shields.io/github/last-commit/niuiic/scroll.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/scroll.nvim)
 - [niuiic/task.nvim](https://github.com/niuiic/task.nvim) - Task manager for neovim.
 
 	![](https://img.shields.io/github/stars/niuiic/task.nvim) ![](https://img.shields.io/github/last-commit/niuiic/task.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/task.nvim)
@@ -531,6 +528,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [sontungexpt/url-open](https://github.com/sontungexpt/url-open) - Minimal plugin allow you to open url under cursor in neovim without netrw with default browser of your system and highlight url
 
 	![](https://img.shields.io/github/stars/sontungexpt/url-open) ![](https://img.shields.io/github/last-commit/sontungexpt/url-open) ![](https://img.shields.io/github/commit-activity/y/sontungexpt/url-open)
+- [sphamba/smear-cursor.nvim](https://github.com/sphamba/smear-cursor.nvim) - 🌠 Neovim plugin to animate the cursor with a smear effect in all terminals
+
+	![](https://img.shields.io/github/stars/sphamba/smear-cursor.nvim) ![](https://img.shields.io/github/last-commit/sphamba/smear-cursor.nvim) ![](https://img.shields.io/github/commit-activity/y/sphamba/smear-cursor.nvim)
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim) - Neovim plugin to improve the default vim.ui interfaces
 
 	![](https://img.shields.io/github/stars/stevearc/dressing.nvim) ![](https://img.shields.io/github/last-commit/stevearc/dressing.nvim) ![](https://img.shields.io/github/commit-activity/y/stevearc/dressing.nvim)
