@@ -66,3 +66,20 @@ require("task").register_task({
 		}) > 0
 	end,
 })
+
+require("task").register_task({
+	name = "infer function return type",
+	run = function()
+		vim.lsp.buf.code_action({
+			apply = true,
+			filter = function(action)
+				return string.find(action.title, "Infer function return type") ~= nil
+			end,
+		})
+	end,
+	is_enabled = function()
+		return #vim.lsp.get_clients({
+			name = "vtsls",
+		}) > 0
+	end,
+})
