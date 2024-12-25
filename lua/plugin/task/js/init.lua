@@ -42,11 +42,23 @@ require("task").register_task({
 	name = "run js file",
 	run = function()
 		require("plugin.task.utils").run_in_term({
-			"deno " .. vim.api.nvim_buf_get_name(0),
+			"deno run -A " .. vim.api.nvim_buf_get_name(0),
 		})
 	end,
 	is_enabled = function()
-		return vim.bo.filetype == "javascript" or vim.bo.filetype == "typescript" and not vim.fs.root(0, "package.json")
+		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
+			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
+	end,
+})
+
+require("task").register_task({
+	name = "run benchmark",
+	run = function()
+		require("plugin.task.utils").run_in_term({ "deno bench -A " .. vim.api.nvim_buf_get_name(0) })
+	end,
+	is_enabled = function()
+		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
+			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
 	end,
 })
 
