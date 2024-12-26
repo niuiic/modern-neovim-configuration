@@ -13,6 +13,7 @@ return {
 				mark_hl_group = "TrackMark",
 				set_default_when_update = true,
 				preview_on_hover = false,
+				keymap_update = "r",
 			},
 		})
 	end,
