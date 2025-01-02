@@ -11,7 +11,7 @@ function M.run_in_term(commands)
 			for _, command in ipairs(commands) do
 				vim.api.nvim_chan_send(channel, command .. enter)
 			end
-		end, 100)
+		end, 300)
 	end)
 end
 
