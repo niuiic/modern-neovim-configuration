@@ -5,9 +5,9 @@ local config = function()
 		"https://github.com/savetheclocktower/tree-sitter-scss"
 	require("nvim-treesitter.parsers").list.d2 = {
 		install_info = {
-			url = "https://git.pleshevski.ru/pleshevskiy/tree-sitter-d2",
+			url = "https://github.com/ravsii/tree-sitter-d2",
 			branch = "main",
-			files = { "src/parser.c", "src/scanner.c" },
+			files = { "src/parser.c" },
 		},
 	}
 	require("nvim-treesitter.configs").setup({

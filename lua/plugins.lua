@@ -160,4 +160,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/code-shot.nvim", "plugin/code-shot"),
 	-- animate cursor
 	load_plugin_config("sphamba/smear-cursor.nvim", "plugin/smear-cursor"),
+	-- manage deps
+	load_plugin_config("niuiic/deps.nvim", "plugin/deps"),
 })
