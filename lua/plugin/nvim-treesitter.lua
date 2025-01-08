@@ -6,10 +6,9 @@ local config = function()
 	require("nvim-treesitter.parsers").list.d2 = {
 		install_info = {
 			url = "https://git.pleshevski.ru/pleshevskiy/tree-sitter-d2",
-			revision = "main",
+			branch = "main",
 			files = { "src/parser.c", "src/scanner.c" },
 		},
-		filetype = "d2",
 	}
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
