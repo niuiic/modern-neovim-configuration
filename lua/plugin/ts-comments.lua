@@ -12,6 +12,7 @@ return {
 				typescript = { "// %s", "/* %s */", "/** %s */" },
 				javascript = { "// %s", "/* %s */", "/** %s */" },
 				mermaid = { "%% %s" },
+				d2 = { "# %s" },
 			},
 		})
 	end,
