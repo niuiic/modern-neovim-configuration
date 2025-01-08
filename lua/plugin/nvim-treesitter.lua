@@ -1,7 +1,16 @@
+---@diagnostic disable: inject-field, missing-fields
 local config = function()
 	require("nvim-dap-repl-highlights").setup()
 	require("nvim-treesitter.parsers").get_parser_configs().scss.install_info.url =
 		"https://github.com/savetheclocktower/tree-sitter-scss"
+	require("nvim-treesitter.parsers").get_parser_configs().d2 = {
+		install_info = {
+			url = "https://git.pleshevski.ru/pleshevskiy/tree-sitter-d2",
+			revision = "main",
+			files = { "src/parser.c", "src/scanner.c" },
+		},
+		filetype = "d2",
+	}
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"bash",
@@ -41,6 +50,7 @@ local config = function()
 			"xml",
 			"nu",
 			"http",
+			"d2",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },
