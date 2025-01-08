@@ -101,6 +101,7 @@ vim.filetype.add({
 		ts = "typescript",
 		todo = "todo",
 		http = "http",
+		d2 = "d2",
 	},
 	pattern = {
 		["TODO"] = "todo",
