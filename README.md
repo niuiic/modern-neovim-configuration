@@ -435,6 +435,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/dap-utils.nvim](https://github.com/niuiic/dap-utils.nvim) - Better use of nvim-dap
 
 	![](https://img.shields.io/github/stars/niuiic/dap-utils.nvim) ![](https://img.shields.io/github/last-commit/niuiic/dap-utils.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/dap-utils.nvim)
+- [niuiic/deps.nvim](https://github.com/niuiic/deps.nvim) - Neovim plugin to manage dependencies.
+
+	![](https://img.shields.io/github/stars/niuiic/deps.nvim) ![](https://img.shields.io/github/last-commit/niuiic/deps.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/deps.nvim)
 - [niuiic/divider.nvim](https://github.com/niuiic/divider.nvim) - Divider line for neovim
 
 	![](https://img.shields.io/github/stars/niuiic/divider.nvim) ![](https://img.shields.io/github/last-commit/niuiic/divider.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/divider.nvim)
