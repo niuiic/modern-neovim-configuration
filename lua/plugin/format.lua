@@ -25,6 +25,22 @@ return {
 			end)
 		end
 
+		local function d2(context, apply_change)
+			local cache_dir = vim.fn.stdpath("cache")
+			---@cast cache_dir string
+			local cache_file = vim.fs.joinpath(cache_dir, os.time() .. ".d2")
+			vim.uv.fs_copyfile(context.file_path, cache_file)
+			local result = vim.system({
+				"d2",
+				"fmt",
+				cache_file,
+			}, {}):wait()
+			if result.code == 0 then
+				apply_change(context.text, vim.fn.join(vim.fn.readfile(cache_file), "\n"), context.bufnr)
+			end
+			vim.fn.delete(cache_file)
+		end
+
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
@@ -35,6 +51,7 @@ return {
 				css = biome,
 				json = biome,
 				jsonc = biome,
+				d2 = d2,
 			},
 		})
 	end,
