@@ -11,9 +11,6 @@ return {
 					model = "deepseek-coder",
 				},
 			},
-			behaviour = {
-				auto_set_keymaps = false,
-			},
 		})
 	end,
 	keys = {
