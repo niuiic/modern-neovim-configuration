@@ -163,6 +163,4 @@ require("lazy").setup({
 	load_plugin_config("sphamba/smear-cursor.nvim", "plugin/smear-cursor"),
 	-- manage deps
 	load_plugin_config("niuiic/deps.nvim", "plugin/deps"),
-	-- markdown
-	load_plugin_config("MeanderingProgrammer/render-markdown.nvim", "plugin/render-markdown"),
 })

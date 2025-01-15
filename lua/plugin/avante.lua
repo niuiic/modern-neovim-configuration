@@ -22,6 +22,15 @@ return {
 			"<cmd>AvanteToggle<cr>",
 		},
 	},
+	dependencies = {
+		{
+			"MeanderingProgrammer/render-markdown.nvim",
+			opts = {
+				file_types = { "Avante" },
+			},
+			ft = { "Avante" },
+		},
+	},
 	build = "make BUILD_FROM_SOURCE=true",
 	event = "VeryLazy",
 }
