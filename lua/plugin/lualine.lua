@@ -17,6 +17,8 @@ local config = function()
 				"dap-repl",
 				"dapui_console",
 				"track",
+				"Avante",
+				"AvanteInput",
 			},
 			always_divide_middle = true,
 			globalstatus = false,
