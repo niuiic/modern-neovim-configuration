@@ -9,7 +9,9 @@
       "error -> end",
       "end: {",
       "  shape: oval",
-      "}"
+      "}",
+      "",
+      "start -> n1"
     ]
   },
   "done": {
