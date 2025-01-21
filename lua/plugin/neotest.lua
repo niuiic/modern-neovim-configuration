@@ -102,6 +102,13 @@ local keys = {
 		desc = "debug the nearest test",
 	},
 	{
+		"<space>tD",
+		function()
+			require("neotest").run.run_last({ strategy = "dap" })
+		end,
+		desc = "debug the last nearest test",
+	},
+	{
 		"<space>ts",
 		function()
 			require("neotest").run.stop()
