@@ -13,7 +13,8 @@ local config = function()
 end
 
 local set_breakpoint = function()
-	local types = { "log point", "conditional breakpoint", "exception breakpoint" }
+	local types =
+		{ "log point", "conditional breakpoint", "uncaught exception breakpoint", "caught exception breakpoint" }
 	vim.ui.select(types, {
 		prompt = "Select Breakpoint Types",
 	}, function(choice)
@@ -22,7 +23,9 @@ local set_breakpoint = function()
 		elseif choice == types[2] then
 			require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "), vim.fn.input("Hit times: "))
 		elseif choice == types[3] then
-			require("dap").set_exception_breakpoints()
+			require("dap").set_exception_breakpoints({ "all uncaught" })
+		elseif choice == types[4] then
+			require("dap").set_exception_breakpoints({ "all caught" })
 		end
 	end)
 end
