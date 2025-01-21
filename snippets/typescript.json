@@ -15,6 +15,10 @@
     "prefix": "caught",
     "body": [".catch(() => {})"]
   },
+  "debug-exception": {
+    "prefix": "debug-exception",
+    "body": [".catch((e) => {throw e})"]
+  },
   "impl": {
     "prefix": "impl",
     "body": ["throw new Error('not implemented')"]
