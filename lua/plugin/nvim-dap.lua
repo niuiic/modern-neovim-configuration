@@ -20,7 +20,7 @@ local set_breakpoint = function()
 	}, function(choice)
 		if choice == types[1] then
 			-- 'none' | 'uncaught' | 'all'
-			require("dap").set_exception_breakpoints({ "all" })
+			require("dap").set_exception_breakpoints({ "uncaught" })
 		elseif choice == types[2] then
 			require("dap").set_exception_breakpoints({ "none" })
 		elseif choice == types[3] then
