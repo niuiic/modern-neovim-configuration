@@ -23,15 +23,14 @@ local config = function()
 				return s
 			end,
 			custom_filter = function(bufnr)
-				local excluded_ft = {
+				local disable_filetypes = {
 					"dap-repl",
 					"divider",
 					"trouble",
 					"qf",
 				}
-				if vim.iter(excluded_ft):find(function(ft)
-					return vim.bo[bufnr].filetype == ft
-				end) then
+
+				if vim.list_contains(disable_filetypes, vim.bo[bufnr].filetype) then
 					return false
 				end
 
