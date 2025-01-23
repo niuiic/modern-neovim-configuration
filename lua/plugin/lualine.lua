@@ -1,24 +1,7 @@
 local config = function()
-	local disabled_filetypes = {
-		"NvimTree",
-		"terminal",
-		"trouble",
-		"divider",
-		"lspsagaoutline",
-		"dapui_scopes",
-		"dapui_breakpoints",
-		"dapui_stacks",
-		"dapui_watches",
-		"dap-repl",
-		"dapui_console",
-		"track",
-		"Avante",
-		"AvanteInput",
-	}
-
 	vim.api.nvim_create_autocmd("BufEnter", {
 		callback = function()
-			if vim.list_contains(disabled_filetypes, vim.bo.filetype) or vim.bo.buftype == "nofile" then
+			if vim.bo.buftype == "nofile" then
 				---@diagnostic disable-next-line: missing-parameter
 				require("lualine").hide()
 			end
@@ -32,6 +15,24 @@ local config = function()
 			component_separators = { left = "", right = "" },
 			always_divide_middle = true,
 			globalstatus = false,
+			disabled_filetypes = {
+				statusline = {
+					"NvimTree",
+					"terminal",
+					"trouble",
+					"divider",
+					"lspsagaoutline",
+					"dapui_scopes",
+					"dapui_breakpoints",
+					"dapui_stacks",
+					"dapui_watches",
+					"dap-repl",
+					"dapui_console",
+					"track",
+					"Avante",
+					"AvanteInput",
+				},
+			},
 			theme = {
 				normal = {
 					a = { fg = "#6633FF" },
