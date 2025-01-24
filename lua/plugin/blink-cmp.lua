@@ -18,6 +18,19 @@ return {
 				menu = {
 					border = "rounded",
 					winhighlight = "Normal:None,FloatBorder:BlinkCmpDocBorder,CursorLine:CursorLine,Search:None",
+					draw = {
+						columns = { { "kind_icon" }, { "label", gap = 1 } },
+						components = {
+							label = {
+								text = function(ctx)
+									return require("colorful-menu").blink_components_text(ctx)
+								end,
+								highlight = function(ctx)
+									return require("colorful-menu").blink_components_highlight(ctx)
+								end,
+							},
+						},
+					},
 				},
 				accept = { auto_brackets = { enabled = false } },
 				documentation = {
@@ -116,5 +129,5 @@ return {
 		end)
 	end,
 	build = "cargo build --release",
-	dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim" },
+	dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim", "xzbdmw/colorful-menu.nvim" },
 }
