@@ -21,6 +21,16 @@ return {
 					draw = {
 						columns = { { "kind_icon" }, { "label", gap = 1 } },
 						components = {
+							kind_icon = {
+								text = function(ctx)
+									local kind_icon, _, _ = require("mini.icons").get("lsp", ctx.kind)
+									return kind_icon
+								end,
+								highlight = function(ctx)
+									local _, hl, _ = require("mini.icons").get("lsp", ctx.kind)
+									return hl
+								end,
+							},
 							label = {
 								text = function(ctx)
 									return require("colorful-menu").blink_components_text(ctx)
@@ -110,24 +120,12 @@ return {
 				},
 			},
 		})
-
-		local hl_groups = {
-			BlinkCmpKindVariable = {
-				fg = "#2ecc71",
-			},
-			BlinkCmpKindText = {
-				fg = "#34495e",
-			},
-			BlinkCmpKindSnippet = {
-				fg = "#f4d03f",
-			},
-		}
-		vim.schedule(function()
-			for key, value in pairs(hl_groups) do
-				vim.api.nvim_set_hl(0, key, value)
-			end
-		end)
 	end,
 	build = "cargo build --release",
-	dependencies = { "rafamadriz/friendly-snippets", "niuiic/blink-cmp-rg.nvim", "xzbdmw/colorful-menu.nvim" },
+	dependencies = {
+		"rafamadriz/friendly-snippets",
+		"niuiic/blink-cmp-rg.nvim",
+		"xzbdmw/colorful-menu.nvim",
+		"echasnovski/mini.icons",
+	},
 }
