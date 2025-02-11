@@ -22,9 +22,5 @@
   "hack": {
     "prefix": "hack",
     "body": ["HACK: ${1}"]
-  },
-  "ai": {
-    "prefix": "ai",
-    "body": ["\n\n// ${1}\n"]
   }
 }

@@ -97,3 +97,13 @@ end, { silent = true })
 vim.keymap.set("i", "<C-u>", function()
 	require("tools.insert_flow_node")("next")
 end, { silent = true })
+
+-- new comment line
+vim.keymap.set({ "n" }, "<C-y>", function()
+	local lnum = vim.api.nvim_win_get_cursor(0)[1]
+	vim.api.nvim_buf_set_lines(0, lnum, lnum, false, { "" })
+	local commentstring = vim.api.nvim_get_option_value("commentstring", { buf = 0 })
+	commentstring = string.format(commentstring, " ")
+	vim.api.nvim_win_set_cursor(0, { lnum + 1, 0 })
+	vim.snippet.expand(string.format("\n%s$1\n$2", commentstring))
+end, { silent = true })
