@@ -57,9 +57,6 @@ return {
 			},
 			sources = {
 				default = { "lsp", "path", "buffer", "snippets", "ripgrep" },
-				transform_items = function(_, items)
-					return items
-				end,
 				providers = {
 					path = { name = "Path", module = "blink.cmp.sources.path", score_offset = 4 },
 					lsp = {
@@ -68,7 +65,10 @@ return {
 						score_offset = 3,
 						transform_items = function(_, items)
 							if vim.bo.filetype == "vue" then
-								for _, item in ipairs(items) do
+								for i, item in ipairs(items) do
+									if item.detail == "Emmet Abbreviation" then
+										items[i] = nil
+									end
 									if
 										item.textEdit
 										and item.insertTextFormat ~= vim.lsp.protocol.InsertTextFormat.Snippet
