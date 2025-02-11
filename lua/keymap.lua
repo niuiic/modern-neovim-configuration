@@ -102,8 +102,30 @@ end, { silent = true })
 vim.keymap.set({ "n" }, "<C-y>", function()
 	local lnum = vim.api.nvim_win_get_cursor(0)[1]
 	vim.api.nvim_buf_set_lines(0, lnum, lnum, false, { "" })
+
 	local commentstring = vim.api.nvim_get_option_value("commentstring", { buf = 0 })
-	commentstring = string.format(commentstring, " ")
+	if vim.bo.filetype == "vue" then
+		local node = vim.treesitter.get_node()
+		while node do
+			if string.find(node:sexpr(), "(script_element", 1, true) == 1 then
+				commentstring = "// %s"
+				break
+			elseif string.find(node:sexpr(), "(template_element", 1, true) == 1 then
+				commentstring = "<!-- %s -->"
+				break
+			elseif string.find(node:sexpr(), "(style_element", 1, true) == 1 then
+				commentstring = "// %s"
+				break
+			end
+
+			node = node:parent()
+		end
+		if commentstring == "" then
+			commentstring = string.format(commentstring, " $1")
+		end
+	end
+	commentstring = string.format(commentstring, " $1")
+
 	vim.api.nvim_win_set_cursor(0, { lnum + 1, 0 })
-	vim.snippet.expand(string.format("\n%s$1\n$2", commentstring))
+	vim.snippet.expand(string.format("\n%s\n$2", commentstring))
 end, { silent = true })
