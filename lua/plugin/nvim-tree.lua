@@ -203,7 +203,7 @@ local config = function()
 				remove = false,
 			},
 		},
-		root_dirs = { vim.fs.root(0, ".git") or vim.fn.getcwd() },
+		root_dirs = { vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd() },
 		diagnostics = {
 			enable = true,
 			show_on_dirs = true,
