@@ -52,7 +52,7 @@ require("lsp-commands").register_command({
 
 return {
 	root_dir = function()
-		return vim.fs.root(0, ".git") or vim.fn.getcwd()
+		return vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd()
 	end,
 	settings = {
 		codeAction = {

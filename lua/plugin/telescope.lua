@@ -105,7 +105,7 @@ local keys = {
 		function()
 			require("telescope.builtin").live_grep({
 				hidden = true,
-				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+				cwd = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
 			})
 		end,
 		desc = "search word in workspace",
@@ -127,7 +127,7 @@ local keys = {
 		function()
 			require("telescope.builtin").grep_string({
 				search = (require("omega").get_selection() or { "" })[1],
-				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+				cwd = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
 			})
 		end,
 		desc = "search cursor word in workspace",
@@ -139,7 +139,7 @@ local keys = {
 		function()
 			require("telescope.builtin").grep_string({
 				search = "QUICK_PRINT",
-				cwd = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+				cwd = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
 			})
 		end,
 		desc = "search quick print",

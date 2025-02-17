@@ -164,7 +164,7 @@ local open_nvim_tree = function()
 
 	if winnr == nil or not vim.api.nvim_win_is_valid(winnr) then
 		require("nvim-tree.api").tree.open({
-			path = vim.fs.root(0, ".git") or vim.fn.getcwd(),
+			path = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
 			find_file = true,
 		})
 		winnr = vim.api.nvim_get_current_win()
