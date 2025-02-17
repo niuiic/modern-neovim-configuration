@@ -292,9 +292,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [MatrosMartz/neotest-deno](https://github.com/MatrosMartz/neotest-deno) - Neotest adapter for Deno.
 
 	![](https://img.shields.io/github/stars/MatrosMartz/neotest-deno) ![](https://img.shields.io/github/last-commit/MatrosMartz/neotest-deno) ![](https://img.shields.io/github/commit-activity/y/MatrosMartz/neotest-deno)
-- [MeanderingProgrammer/render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) - Plugin to improve viewing Markdown files in Neovim
-
-	![](https://img.shields.io/github/stars/MeanderingProgrammer/render-markdown.nvim) ![](https://img.shields.io/github/last-commit/MeanderingProgrammer/render-markdown.nvim) ![](https://img.shields.io/github/commit-activity/y/MeanderingProgrammer/render-markdown.nvim)
 - [Mr-LLLLL/treesitter-outer](https://github.com/Mr-LLLLL/treesitter-outer) - Jump outer node smartly
 
 	![](https://img.shields.io/github/stars/Mr-LLLLL/treesitter-outer) ![](https://img.shields.io/github/last-commit/Mr-LLLLL/treesitter-outer) ![](https://img.shields.io/github/commit-activity/y/Mr-LLLLL/treesitter-outer)
@@ -565,9 +562,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [xzbdmw/colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) - Bring enjoyment to your auto completion.
 
 	![](https://img.shields.io/github/stars/xzbdmw/colorful-menu.nvim) ![](https://img.shields.io/github/last-commit/xzbdmw/colorful-menu.nvim) ![](https://img.shields.io/github/commit-activity/y/xzbdmw/colorful-menu.nvim)
-- [yetone/avante.nvim](https://github.com/yetone/avante.nvim) - Use your Neovim like using Cursor AI IDE!
-
-	![](https://img.shields.io/github/stars/yetone/avante.nvim) ![](https://img.shields.io/github/last-commit/yetone/avante.nvim) ![](https://img.shields.io/github/commit-activity/y/yetone/avante.nvim)
 - [yioneko/nvim-vtsls](https://github.com/yioneko/nvim-vtsls)
 
 	![](https://img.shields.io/github/stars/yioneko/nvim-vtsls) ![](https://img.shields.io/github/last-commit/yioneko/nvim-vtsls) ![](https://img.shields.io/github/commit-activity/y/yioneko/nvim-vtsls)
