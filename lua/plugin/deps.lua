@@ -17,13 +17,13 @@ return {
 
 				local files = { "highlights.scm", "injections.scm", "locals.scm" }
 				if vim.uv.fs_stat(target_dir) then
-					vim.system({ "rm", "-rf", target_dir })
+					vim.fn.system({ "rm", "-rf", target_dir })
 				end
-				vim.system({ "mkdir", "-p", target_dir })
+				vim.fn.system({ "mkdir", "-p", target_dir })
 				for _, file in ipairs(files) do
 					local url =
 						string.format("https://github.com/ravsii/tree-sitter-d2/raw/refs/heads/main/queries/%s", file)
-					vim.system({ "curl", "-L", "-o", vim.fs.joinpath(target_dir, file), url })
+					vim.fn.system({ "curl", "-L", "-o", vim.fs.joinpath(target_dir, file), url })
 				end
 				notify.finish()
 			end,
@@ -34,7 +34,7 @@ return {
 				local target_dir = vim.fs.joinpath(data_dir, "lazy/nvim-treesitter/queries/d2")
 
 				if vim.uv.fs_stat(target_dir) then
-					vim.system({ "rm", "-rf", target_dir })
+					vim.fn.system({ "rm", "-rf", target_dir })
 				end
 				notify.finish()
 			end,
