@@ -64,21 +64,18 @@ return {
 						module = "blink.cmp.sources.lsp",
 						score_offset = 3,
 						transform_items = function(_, items)
+							local new_items = {}
 							if vim.bo.filetype == "vue" then
-								for i, item in ipairs(items) do
-									if item.detail == "Emmet Abbreviation" then
-										items[i] = nil
-									end
-									if
-										item.textEdit
+								for _, item in ipairs(items) do
+									local is_err = item.textEdit
 										and item.insertTextFormat ~= vim.lsp.protocol.InsertTextFormat.Snippet
 										and string.find(item.textEdit.newText, "%$%d")
-									then
-										item.insertTextFormat = vim.lsp.protocol.InsertTextFormat.Snippet
+									if not is_err then
+										table.insert(new_items, item)
 									end
 								end
 							end
-							return items
+							return new_items
 						end,
 					},
 					ripgrep = { name = "Ripgrep", module = "blink-cmp-rg", score_offset = 2 },
