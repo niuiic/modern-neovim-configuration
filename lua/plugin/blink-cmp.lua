@@ -64,15 +64,17 @@ return {
 						module = "blink.cmp.sources.lsp",
 						score_offset = 3,
 						transform_items = function(_, items)
+							if vim.bo.filetype ~= "vue" then
+								return items
+							end
+
 							local new_items = {}
-							if vim.bo.filetype == "vue" then
-								for _, item in ipairs(items) do
-									local is_err = item.textEdit
-										and item.insertTextFormat ~= vim.lsp.protocol.InsertTextFormat.Snippet
-										and string.find(item.textEdit.newText, "%$%d")
-									if not is_err then
-										table.insert(new_items, item)
-									end
+							for _, item in ipairs(items) do
+								local is_err = item.textEdit
+									and item.insertTextFormat ~= vim.lsp.protocol.InsertTextFormat.Snippet
+									and string.find(item.textEdit.newText, "%$%d")
+								if not is_err then
+									table.insert(new_items, item)
 								end
 							end
 							return new_items
