@@ -67,7 +67,7 @@ require("lazy").setup({
 	-- quickly modify surround char
 	load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- highlights cursor word
-	load_plugin_config("tzachar/local-highlight.nvim", "plugin/local-highlight"),
+	load_plugin_config("echasnovski/mini.cursorword", "plugin/cursorword"),
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
 	-- unit test
