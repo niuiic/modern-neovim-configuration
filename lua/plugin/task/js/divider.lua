@@ -79,7 +79,7 @@ function M._get_divider_text(node)
 	end
 
 	for n in export_node:iter_children() do
-		if n:type():match("identifier") then
+		if n:type():match("identifier") and n:type() ~= "type_identifier" then
 			return vim.treesitter.get_node_text(n, 0)
 		end
 
