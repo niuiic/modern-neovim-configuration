@@ -31,12 +31,10 @@ function M._update_dividers()
 	local new_lines = {}
 	for lnum, line in ipairs(lines) do
 		if dividers[lnum] then
-			if M._is_top_level_divider(line) then
-				table.insert(new_lines, string.format("// %% %s %%", dividers[lnum]))
-			else
+			if not M._is_top_level_divider(line) then
 				table.insert(new_lines, line)
-				table.insert(new_lines, string.format("// %% %s %%", dividers[lnum]))
 			end
+			table.insert(new_lines, string.format("// %% %s %%", dividers[lnum]))
 		else
 			table.insert(new_lines, line)
 		end
@@ -44,7 +42,6 @@ function M._update_dividers()
 	vim.api.nvim_buf_set_lines(0, 0, -1, false, new_lines)
 end
 
--- lnum start from 1
 function M._get_divider_lnum(node)
 	local lnum = node:start()
 	local n = node:prev_sibling()
@@ -71,15 +68,20 @@ end
 
 function M._get_divider_text(node)
 	local export_node
+	local is_class
+
 	for n in node:iter_children() do
 		if n:type():match("declaration") then
+			if n:type() == "class_declaration" then
+				is_class = true
+			end
 			export_node = n
 			break
 		end
 	end
 
 	for n in export_node:iter_children() do
-		if n:type():match("identifier") and n:type() ~= "type_identifier" then
+		if n:type():match("identifier") and (is_class or n:type() ~= "type_identifier") then
 			return vim.treesitter.get_node_text(n, 0)
 		end
 
