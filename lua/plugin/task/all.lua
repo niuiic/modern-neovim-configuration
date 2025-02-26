@@ -2,9 +2,13 @@ require("task").register_task({
 	name = "open unstaged files",
 	run = function()
 		local root_dir = vim.fs.root(0, ".git")
-		local results = vim.fn.system({ "git", "diff", "--name-only" })
+		local results = vim.system({ "git", "diff", "--name-only" }, { cwd = root_dir }):wait().stdout or ""
+		local files = vim.split(results, "\n")
+		results = vim.system({ "git", "ls-files", "--others", "--exclude-standard" }, { cwd = root_dir }):wait().stdout
+			or ""
+		files = vim.list_extend(files, vim.split(results, "\n"))
 
-		vim.iter(vim.split(results, "\n"))
+		vim.iter(files)
 			:map(function(file)
 				return vim.fs.joinpath(root_dir, file)
 			end)
