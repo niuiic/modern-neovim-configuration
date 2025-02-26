@@ -2,86 +2,95 @@ local M = {}
 
 function M.register_task()
 	require("task").register_task({
-		name = "update class divider",
-		run = M.update_class_divider,
+		name = "update dividers",
+		run = M._update_dividers,
 		is_enabled = function()
-			return vim.bo.filetype == "typescript" and M.get_class_node() ~= nil
+			return vim.list_contains(
+				{ "typescript", "javascript", "typescriptreact", "javascriptreact" },
+				vim.bo.filetype
+			)
 		end,
 	})
 end
 
-function M.update_class_divider()
-	local class_node = M.get_class_node()
-	if not class_node then
-		return
+function M._update_dividers()
+	local parser = vim.treesitter.get_parser(0)
+	local tree = parser:parse()[1]
+	local root = tree:root()
+
+	local dividers = {}
+
+	for node in root:iter_children() do
+		if node:type() == "export_statement" then
+			local lnum = M._get_divider_lnum(node)
+			dividers[lnum] = M._get_divider_text(node)
+		end
 	end
 
-	local insert_count = 0
-	local fns = vim.iter(class_node:iter_children())
-		:filter(function(node)
-			return node:type() == "method_definition"
-		end)
-		:map(function(method_def_node)
-			local method_name_node = M.get_method_name_node(method_def_node)
-			if not method_name_node then
-				return function() end
-			end
-			local method_name = vim.treesitter.get_node_text(method_name_node, 0)
-
-			local start_lnum
-			local end_lnum
-			local insert_line = "// %%" .. " " .. method_name .. " " .. "%%"
-			local method_head_node = M.get_method_head_node(method_def_node)
-			local node_start_lnum = method_head_node:range()
-			if method_head_node:prev_sibling() and method_head_node:prev_sibling():type() == "comment" then
-				start_lnum = node_start_lnum - 1 + insert_count
-				end_lnum = node_start_lnum + insert_count
+	local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+	local new_lines = {}
+	for lnum, line in ipairs(lines) do
+		if dividers[lnum] then
+			if M._is_top_level_divider(line) then
+				table.insert(new_lines, string.format("// %% %s %%", dividers[lnum]))
 			else
-				start_lnum = node_start_lnum + insert_count
-				end_lnum = node_start_lnum + insert_count
-				insert_count = insert_count + 1
+				table.insert(new_lines, line)
+				table.insert(new_lines, string.format("// %% %s %%", dividers[lnum]))
 			end
-
-			return function()
-				vim.api.nvim_buf_set_lines(0, start_lnum, end_lnum, false, { insert_line })
-			end
-		end)
-		:totable()
-	for _, fn in ipairs(fns) do
-		fn()
-	end
-end
-
-function M.get_class_node()
-	local node = vim.treesitter.get_node()
-	while node do
-		if node:type() == "class_body" then
-			return node
+		else
+			table.insert(new_lines, line)
 		end
-		node = node:parent()
 	end
+	vim.api.nvim_buf_set_lines(0, 0, -1, false, new_lines)
 end
 
-function M.get_method_head_node(method_def_node)
-	local node = method_def_node
-	local prev_sibling = method_def_node:prev_sibling()
+-- lnum start from 1
+function M._get_divider_lnum(node)
+	local lnum = node:start()
+	local n = node:prev_sibling()
 
-	while prev_sibling do
-		if vim.list_contains({ "method_definition", "comment", "{" }, prev_sibling:type()) then
-			return node
+	while n do
+		if n:type() ~= "comment" then
+			return lnum
 		end
 
-		node = prev_sibling
-		prev_sibling = node:prev_sibling()
+		if n:type() == "comment" and M._is_top_level_divider(vim.treesitter.get_node_text(n, 0)) then
+			return n:start() + 1
+		end
+
+		lnum = n:start()
+		n = n:prev_sibling()
 	end
 
-	return node
+	return lnum
 end
 
-function M.get_method_name_node(method_def_node)
-	return vim.iter(method_def_node:iter_children()):find(function(node)
-		return node:type() == "property_identifier"
-	end)
+function M._is_top_level_divider(line)
+	return line:match("%% (.*) %%")
+end
+
+function M._get_divider_text(node)
+	local export_node
+	for n in node:iter_children() do
+		if n:type():match("declaration") then
+			export_node = n
+			break
+		end
+	end
+
+	for n in export_node:iter_children() do
+		if n:type():match("identifier") then
+			return vim.treesitter.get_node_text(n, 0)
+		end
+
+		if n:type() == "variable_declarator" then
+			for m in n:iter_children() do
+				if m:type() == "identifier" then
+					return vim.treesitter.get_node_text(m, 0)
+				end
+			end
+		end
+	end
 end
 
 M.register_task()
