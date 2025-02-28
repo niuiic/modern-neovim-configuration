@@ -55,7 +55,7 @@ require("lazy").setup({
 	-- highlight args
 	load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
-	"andymass/vim-matchup",
+	load_plugin_config("andymass/vim-matchup", "plugin/vim-matchup"),
 	-- auto complete tag in html
 	load_plugin_config("windwp/nvim-ts-autotag", "plugin/nvim-ts-autotag"),
 	-- complete
