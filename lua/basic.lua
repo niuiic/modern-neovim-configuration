@@ -118,3 +118,33 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- snippet
 vim.api.nvim_set_hl(0, "SnippetTabstop", {})
+
+-- statusline
+vim.o.statusline = "%f"
+vim.schedule(function()
+	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = "#666666", bold = true })
+	vim.api.nvim_set_hl(0, "StatusLine", { fg = "#00ffff", bold = true })
+end)
+local disabled_filetypes = {
+	"NvimTree",
+	"terminal",
+	"trouble",
+	"divider",
+	"lspsagaoutline",
+	"dapui_scopes",
+	"dapui_breakpoints",
+	"dapui_stacks",
+	"dapui_watches",
+	"dap-repl",
+	"dapui_console",
+	"track",
+	"Avante",
+	"AvanteInput",
+}
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		if vim.bo.filetype == "" or vim.list_contains(disabled_filetypes, vim.bo.filetype) then
+			vim.wo.statusline = " "
+		end
+	end,
+})
