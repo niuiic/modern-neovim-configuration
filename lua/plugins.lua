@@ -159,5 +159,5 @@ require("lazy").setup({
 	-- manage deps
 	load_plugin_config("niuiic/deps.nvim", "plugin/deps"),
 	-- buffer manager
-	load_plugin_config("niuiic/buffers.nvim", "plugin/buffers", "~/Documents/projects/buffers.nvim"),
+	load_plugin_config("niuiic/buffers.nvim", "plugin/buffers"),
 })
