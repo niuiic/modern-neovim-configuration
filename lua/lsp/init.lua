@@ -40,9 +40,6 @@ local load_lsp = function(value)
 	config.handlers = config.handlers or {}
 	config.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
 
-	-- set capabilities
-	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
 end
