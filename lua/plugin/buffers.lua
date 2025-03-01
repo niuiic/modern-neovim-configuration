@@ -9,6 +9,7 @@ return {
 
 				return filetype and not vim.tbl_contains(disabled_filetypes, filetype)
 			end,
+			window = { width = 80 },
 		})
 	end,
 	keys = {
