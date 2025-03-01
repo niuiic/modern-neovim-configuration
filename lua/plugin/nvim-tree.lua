@@ -88,6 +88,7 @@ local set_keymap = function(bufnr)
 			require("track").notify_dir_path_change(node.absolute_path)
 		end
 	end, opts("remove"))
+	vim.keymap.set("n", "i", api.node.show_info_popup)
 	vim.keymap.set("n", "R", api.tree.reload, opts("reload"))
 	vim.keymap.set("n", "f", function()
 		api.tree.find_file({ buf = vim.api.nvim_win_get_buf(prev_winnr) })
