@@ -304,9 +304,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [Wansmer/treesj](https://github.com/Wansmer/treesj) - Neovim plugin for splitting/joining blocks of code
 
 	![](https://img.shields.io/github/stars/Wansmer/treesj) ![](https://img.shields.io/github/last-commit/Wansmer/treesj) ![](https://img.shields.io/github/commit-activity/y/Wansmer/treesj)
-- [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - A snazzy bufferline for Neovim
-
-	![](https://img.shields.io/github/stars/akinsho/bufferline.nvim) ![](https://img.shields.io/github/last-commit/akinsho/bufferline.nvim) ![](https://img.shields.io/github/commit-activity/y/akinsho/bufferline.nvim)
 - [andymass/vim-matchup](https://github.com/andymass/vim-matchup) - vim match-up: even better % :facepunch: navigate and highlight matching words :facepunch: modern matchit and matchparen.  Supports both vim and neovim + tree-sitter.
 
 	![](https://img.shields.io/github/stars/andymass/vim-matchup) ![](https://img.shields.io/github/last-commit/andymass/vim-matchup) ![](https://img.shields.io/github/commit-activity/y/andymass/vim-matchup)
@@ -436,6 +433,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/blink-cmp-rg.nvim](https://github.com/niuiic/blink-cmp-rg.nvim) - Ripgrep source for blink.nvim
 
 	![](https://img.shields.io/github/stars/niuiic/blink-cmp-rg.nvim) ![](https://img.shields.io/github/last-commit/niuiic/blink-cmp-rg.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/blink-cmp-rg.nvim)
+- [niuiic/buffers.nvim](https://github.com/niuiic/buffers.nvim) - Neovim buffer manager.
+
+	![](https://img.shields.io/github/stars/niuiic/buffers.nvim) ![](https://img.shields.io/github/last-commit/niuiic/buffers.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/buffers.nvim)
 - [niuiic/code-shot.nvim](https://github.com/niuiic/code-shot.nvim) - Neovim plugin to shot code
 
 	![](https://img.shields.io/github/stars/niuiic/code-shot.nvim) ![](https://img.shields.io/github/last-commit/niuiic/code-shot.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/code-shot.nvim)
