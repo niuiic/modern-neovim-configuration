@@ -49,8 +49,16 @@ return {
 				set_keymap(bufnr)
 
 				terms[bufnr] = pid
+			end,
+		})
 
-				vim.cmd("startinsert")
+		vim.api.nvim_create_autocmd("BufEnter", {
+			callback = function()
+				vim.schedule(function()
+					if vim.bo.filetype == "terminal" then
+						vim.cmd("startinsert")
+					end
+				end)
 			end,
 		})
 	end,
