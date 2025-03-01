@@ -2,6 +2,18 @@
 return {
 	config = function()
 		require("blink.cmp").setup({
+			cmdline = {
+				keymap = {
+					preset = "none",
+					["<C-j>"] = { "select_next", "fallback" },
+					["<C-k>"] = { "select_prev", "fallback" },
+					["<C-l>"] = { "accept" },
+				},
+				completion = {
+					menu = { auto_show = true },
+					ghost_text = { enabled = false },
+				},
+			},
 			keymap = {
 				["<C-j>"] = { "select_next", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },
