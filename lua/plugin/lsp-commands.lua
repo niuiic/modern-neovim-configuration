@@ -63,34 +63,48 @@ local keys = {
 	{
 		"gj",
 		function()
-			vim.diagnostic.goto_next({ float = false })
+			local diagnostic = vim.diagnostic.get_next()
+			if diagnostic then
+				vim.api.nvim_win_set_cursor(0, { diagnostic.lnum + 1, diagnostic.col })
+			end
 		end,
 		desc = "jump to next diagnostic",
 	},
 	{
 		"gJ",
 		function()
-			vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR, float = false })
+			local diagnostic = vim.diagnostic.get_next({ severity = vim.diagnostic.severity.ERROR })
+			if diagnostic then
+				vim.api.nvim_win_set_cursor(0, { diagnostic.lnum + 1, diagnostic.col })
+			end
 		end,
 		desc = "jump to next error",
 	},
 	{
 		"gk",
 		function()
-			vim.diagnostic.goto_prev({ float = false })
+			local diagnostic = vim.diagnostic.get_prev()
+			if diagnostic then
+				vim.api.nvim_win_set_cursor(0, { diagnostic.lnum + 1, diagnostic.col })
+			end
 		end,
 		desc = "jump to previous diagnostic",
 	},
 	{
 		"gK",
 		function()
-			vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR, float = false })
+			local diagnostic = vim.diagnostic.get_prev({ severity = vim.diagnostic.severity.ERROR })
+			if diagnostic then
+				vim.api.nvim_win_set_cursor(0, { diagnostic.lnum + 1, diagnostic.col })
+			end
 		end,
 		desc = "jump to previous error",
 	},
 	{
 		"J",
-		vim.lsp.buf.hover,
+		function()
+			vim.lsp.buf.hover({ border = "rounded" })
+		end,
 		desc = "lsp hover",
 	},
 	{

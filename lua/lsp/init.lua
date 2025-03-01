@@ -36,10 +36,6 @@ end
 local load_lsp = function(value)
 	local config = require("lsp/" .. value)
 
-	-- set handlers
-	config.handlers = config.handlers or {}
-	config.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
 end
