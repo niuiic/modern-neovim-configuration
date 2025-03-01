@@ -36,6 +36,9 @@ end
 local load_lsp = function(value)
 	local config = require("lsp/" .. value)
 
+	-- set capabilities
+	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
+
 	-- set lsp config
 	require("lspconfig")[value].setup(config)
 end
