@@ -14,9 +14,6 @@ vim.wo.signcolumn = "yes"
 -- termguicolors
 vim.opt.termguicolors = true
 
--- show line number
-vim.wo.number = true
-
 -- tab width
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
@@ -146,5 +143,20 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		if vim.bo.filetype == "" or vim.list_contains(disabled_filetypes, vim.bo.filetype) then
 			vim.wo.statusline = " "
 		end
+	end,
+})
+
+-- line number
+vim.wo.number = true
+vim.api.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		local options = { "number", "relativenumber" }
+		vim.iter(options):each(function(option)
+			vim.api.nvim_set_option_value(
+				option,
+				not vim.list_contains(disabled_filetypes, vim.bo.filetype),
+				{ win = vim.api.nvim_get_current_win() }
+			)
+		end)
 	end,
 })
