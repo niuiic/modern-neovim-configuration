@@ -12,7 +12,7 @@ return {
 	end,
 	keys = {
 		{
-			"<C-g>",
+			"<C-b>",
 			function()
 				require("buffers").open()
 			end,
