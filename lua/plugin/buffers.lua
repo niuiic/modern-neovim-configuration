@@ -5,6 +5,7 @@ return {
 				local disabled_filetypes = { "NvimTree", "smear-cursor", "notify", "noice", "", "buffers" }
 
 				local filetype = vim.filetype.match({ filename = vim.api.nvim_buf_get_name(bufnr) })
+					or vim.api.nvim_get_option_value("filetype", { buf = bufnr })
 
 				return filetype and not vim.tbl_contains(disabled_filetypes, filetype)
 			end,
