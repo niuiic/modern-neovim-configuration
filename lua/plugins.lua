@@ -80,8 +80,6 @@ require("lazy").setup({
 	load_plugin_config("brenoprata10/nvim-highlight-colors", "plugin/nvim-highlight-colors"),
 	-- indentation guides
 	load_plugin_config("echasnovski/mini.indentscope", "plugin/mini-indentscope"),
-	-- tab line
-	load_plugin_config("akinsho/bufferline.nvim", "plugin/bufferline"),
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
 	-- lsp
@@ -160,4 +158,6 @@ require("lazy").setup({
 	load_plugin_config("sphamba/smear-cursor.nvim", "plugin/smear-cursor"),
 	-- manage deps
 	load_plugin_config("niuiic/deps.nvim", "plugin/deps"),
+	-- buffer manager
+	load_plugin_config("niuiic/buffers.nvim", "plugin/buffers", "~/Documents/projects/buffers.nvim"),
 })
