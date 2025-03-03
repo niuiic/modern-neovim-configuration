@@ -1,7 +1,6 @@
 return {
 	config = function()
 		require("grug-far").setup({
-			windowCreationCommand = "tabnew %",
 			keymaps = {
 				replace = { n = "R" },
 				qflist = { n = "Q" },
@@ -21,7 +20,7 @@ return {
 		{
 			"R",
 			function()
-				require("grug-far").grug_far()
+				require("grug-far").open()
 			end,
 			desc = "replace in project",
 			mode = "n",
