@@ -10,6 +10,9 @@ return {
 				return filetype and not vim.tbl_contains(disabled_filetypes, filetype) and not filetype:find("blink")
 			end,
 			window = { width = 80 },
+			keymap = {
+				quit = "<esc>",
+			},
 		})
 	end,
 	keys = {
