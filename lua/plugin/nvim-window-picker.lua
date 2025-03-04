@@ -1,7 +1,7 @@
 return {
 	keys = {
 		{
-			"<space>wo",
+			"<C-n>",
 			function()
 				local winid = require("window-picker").pick_window({
 					picker_config = {
@@ -21,8 +21,6 @@ return {
 					vim.api.nvim_set_current_win(winid)
 				end
 			end,
-			desc = "pick window",
-			silent = true,
 		},
 	},
 }
