@@ -1,5 +1,3 @@
-local terms = {}
-
 local set_keymap = function(bufnr)
 	local modes = { "t", "n" }
 
@@ -7,16 +5,6 @@ local set_keymap = function(bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-z>", "", {
 			callback = function()
 				require("terminal").open()
-			end,
-		})
-
-		vim.api.nvim_buf_set_keymap(bufnr, mode, "<C-x>", "", {
-			callback = function()
-				vim.uv.kill(terms[bufnr], "sigkill")
-				table.remove(terms, bufnr)
-				vim.api.nvim_buf_delete(bufnr, {
-					force = true,
-				})
 			end,
 		})
 
@@ -43,12 +31,9 @@ end
 return {
 	config = function()
 		require("terminal").setup({
-			on_term_opened = function(bufnr, pid)
+			on_term_opened = function(bufnr)
 				vim.api.nvim_set_option_value("filetype", "terminal", { buf = bufnr })
-
 				set_keymap(bufnr)
-
-				terms[bufnr] = pid
 			end,
 		})
 
