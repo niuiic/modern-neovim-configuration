@@ -2,7 +2,7 @@ return {
 	config = function()
 		require("buffers").setup({
 			enable = function(bufnr)
-				local disabled_filetypes = { "NvimTree", "smear-cursor", "notify", "noice", "", "buffers" }
+				local disabled_filetypes = { "NvimTree", "smear-cursor", "notify", "noice", "", "buffers", "track" }
 
 				local filetype = vim.filetype.match({ filename = vim.api.nvim_buf_get_name(bufnr) })
 					or vim.api.nvim_get_option_value("filetype", { buf = bufnr })
