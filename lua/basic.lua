@@ -137,6 +137,7 @@ local disabled_filetypes = {
 	"track",
 	"Avante",
 	"AvanteInput",
+	"buffers",
 }
 vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function()
