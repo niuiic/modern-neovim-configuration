@@ -30,11 +30,6 @@ vim.keymap.set("n", "<A-s>", ":silent wa!<cr>", { silent = true })
 -- esc
 vim.keymap.set({ "i", "n", "x" }, "<C-h>", "<esc>", { noremap = true, silent = true })
 
--- delete buffer
-vim.keymap.set("n", "<C-x>", function()
-	require("mini.bufremove").delete()
-end, {})
-
 -- copy to systemclip
 vim.keymap.set("x", "Y", '"+y<esc>', { silent = true })
 
