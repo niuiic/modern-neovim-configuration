@@ -20,4 +20,5 @@ return {
 			end,
 		},
 	},
+	lazy = false,
 }
