@@ -119,9 +119,11 @@ if vim.fn.has("nvim-0.11") == 1 then
 		local stab_map = vim.fn.maparg("<S-Tab>", "i", false, true)
 		expand(...)
 		vim.schedule(function()
-			tab_map.buffer, stab_map.buffer = 1, 1
-			vim.fn.mapset("i", false, tab_map)
-			vim.fn.mapset("i", false, stab_map)
+			pcall(function()
+				tab_map.buffer, stab_map.buffer = 1, 1
+				vim.fn.mapset("i", false, tab_map)
+				vim.fn.mapset("i", false, stab_map)
+			end)
 		end)
 	end
 end
