@@ -71,7 +71,6 @@ require("lazy").setup({
 	-- unit test
 	load_plugin_config("nvim-neotest/neotest", "plugin/neotest"),
 	load_plugin_config("andythigpen/nvim-coverage", "plugin/nvim-coverage"),
-
 	-- colorscheme
 	load_plugin_config("folke/tokyonight.nvim", "plugin/tokyonight"),
 	-- git signs
@@ -86,7 +85,6 @@ require("lazy").setup({
 	"neovim/nvim-lspconfig",
 	load_plugin_config("niuiic/lsp-commands.nvim", "plugin/lsp-commands"),
 	load_plugin_config("rachartier/tiny-code-action.nvim", "plugin/tiny-code-action"),
-
 	-- lsp, dap, linter, formatter installer
 	load_plugin_config("williamboman/mason.nvim", "plugin/mason"),
 	-- annotation generator
@@ -114,8 +112,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
 	-- split/join functions
 	load_plugin_config("Wansmer/treesj", "plugin/treesj"),
-	-- remove buffer
-	load_plugin_config("echasnovski/mini.bufremove", "plugin/mini-bufremove"),
 	-- format
 	load_plugin_config("niuiic/format.nvim", "plugin/format"),
 	-- open url

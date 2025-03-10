@@ -79,7 +79,7 @@ local set_keymap = function(bufnr)
 			return string.find(vim.api.nvim_buf_get_name(x), node.absolute_path, 1, true) ~= nil
 		end)
 		if target_buf then
-			require("mini.bufremove").delete(target_buf)
+			vim.api.nvim_buf_delete(target_buf, { force = true })
 		end
 		api.fs.remove()
 		if node.type == "file" then

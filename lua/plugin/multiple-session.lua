@@ -30,7 +30,7 @@ return {
 						return
 					end
 					if not vim.uv.fs_stat(vim.api.nvim_buf_get_name(bufnr)) then
-						require("mini.bufremove").delete(bufnr)
+						vim.api.nvim_buf_delete(bufnr, { force = true })
 					end
 				end
 			end,
