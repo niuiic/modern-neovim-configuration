@@ -334,9 +334,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [dmmulroy/ts-error-translator.nvim](https://github.com/dmmulroy/ts-error-translator.nvim)
 
 	![](https://img.shields.io/github/stars/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/last-commit/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/commit-activity/y/dmmulroy/ts-error-translator.nvim)
-- [echasnovski/mini.bufremove](https://github.com/echasnovski/mini.bufremove) - Neovim Lua plugin to remove buffers. Part of 'mini.nvim' library.
-
-	![](https://img.shields.io/github/stars/echasnovski/mini.bufremove) ![](https://img.shields.io/github/last-commit/echasnovski/mini.bufremove) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.bufremove)
 - [echasnovski/mini.cursorword](https://github.com/echasnovski/mini.cursorword) - Neovim Lua plugin for autohighlighting word under cursor. Part of 'mini.nvim' library.
 
 	![](https://img.shields.io/github/stars/echasnovski/mini.cursorword) ![](https://img.shields.io/github/last-commit/echasnovski/mini.cursorword) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.cursorword)
