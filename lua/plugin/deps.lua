@@ -20,12 +20,20 @@ return {
 					vim.fn.system({ "rm", "-rf", target_dir })
 				end
 				vim.fn.system({ "mkdir", "-p", target_dir })
-				for _, file in ipairs(files) do
-					local url =
-						string.format("https://github.com/ravsii/tree-sitter-d2/raw/refs/heads/main/queries/%s", file)
-					vim.fn.system({ "curl", "-L", "-o", vim.fs.joinpath(target_dir, file), url })
-				end
-				notify.finish()
+				require("omega").async(function()
+					for _, file in ipairs(files) do
+						require("omega").await(function(callback)
+							local url = string.format(
+								"https://github.com/ravsii/tree-sitter-d2/raw/refs/heads/main/queries/%s",
+								file
+							)
+							vim.system({ "curl", "-L", "-o", vim.fs.joinpath(target_dir, file), url }, {}, function()
+								callback()
+							end)
+						end)
+					end
+					notify.finish()
+				end)()
 			end,
 			uninstall = function(notify)
 				notify.start()
