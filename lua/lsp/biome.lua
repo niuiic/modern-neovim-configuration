@@ -1,6 +1,6 @@
 local function fix_all()
 	vim.cmd("w")
-	vim.system({ "biome", "lint", vim.api.nvim_buf_get_name(0) }, {}, function()
+	vim.system({ "biome", "lint", "--write", vim.api.nvim_buf_get_name(0) }, {}, function()
 		vim.schedule(function()
 			vim.cmd("e")
 		end)
