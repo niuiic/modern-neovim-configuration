@@ -17,12 +17,6 @@ local function fix_all()
 			return action.title == "Fix all auto-fixable problems"
 		end,
 	})
-	vim.lsp.buf.code_action({
-		apply = true,
-		filter = function(action)
-			return action.title:match("Fix .+")
-		end,
-	})
 	vim.api.nvim_win_set_cursor(0, cur_pos)
 end
 
