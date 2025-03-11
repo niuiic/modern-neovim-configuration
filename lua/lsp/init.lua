@@ -20,6 +20,7 @@ local lsp_list = {
 	"pyright",
 	"nushell",
 	"rust_analyzer",
+	"biome",
 }
 
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
