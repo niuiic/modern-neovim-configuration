@@ -1,18 +1,18 @@
 require("plugin.task.js.divider")
 
 require("task").register_task({
-	name = "run js project scripts",
+	name = "run task",
 	run = function()
-		local scripts = vim.json.decode(
+		local tasks = vim.json.decode(
 			vim.fn.join(vim.fn.readfile(vim.fs.root(0, "package.json") .. "/package.json"), "\n")
 		).scripts
 
-		if not scripts or vim.tbl_isempty(scripts) then
+		if not tasks or vim.tbl_isempty(tasks) then
 			vim.notify("no scripts found in package.json", vim.log.levels.WARN)
 			return
 		end
 
-		local tasks = vim.tbl_keys(scripts)
+		tasks = vim.tbl_keys(tasks)
 
 		if #tasks == 1 then
 			require("plugin.task.utils").run_in_term({
@@ -22,7 +22,7 @@ require("task").register_task({
 			return
 		end
 
-		vim.ui.select(tasks, { prompt = "select script to run" }, function(choice)
+		vim.ui.select(tasks, { prompt = "select task to run" }, function(choice)
 			if not choice then
 				return
 			end
@@ -66,6 +66,44 @@ require("task").register_task({
 	name = "run test",
 	run = function()
 		require("plugin.task.utils").run_in_term({ "deno test -A " .. vim.api.nvim_buf_get_name(0) })
+	end,
+	is_enabled = function()
+		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
+			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
+	end,
+})
+
+require("task").register_task({
+	name = "run task",
+	run = function()
+		local tasks =
+			vim.json.decode(vim.fn.join(vim.fn.readfile(vim.fs.root(0, "deno.json") .. "/deno.json"), "\n")).tasks
+
+		if not tasks or vim.tbl_isempty(tasks) then
+			vim.notify("no scripts found in package.json", vim.log.levels.WARN)
+			return
+		end
+
+		tasks = vim.tbl_keys(tasks)
+
+		if #tasks == 1 then
+			require("plugin.task.utils").run_in_term({
+				"cd " .. vim.fs.root(0, "package.json"),
+				"deno task " .. tasks[1],
+			})
+			return
+		end
+
+		vim.ui.select(tasks, { prompt = "select task to run" }, function(choice)
+			if not choice then
+				return
+			end
+
+			require("plugin.task.utils").run_in_term({
+				"cd " .. vim.fs.root(0, "package.json"),
+				"deno task " .. choice,
+			})
+		end)
 	end,
 	is_enabled = function()
 		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
