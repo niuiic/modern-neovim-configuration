@@ -1,7 +1,7 @@
 require("plugin.task.js.divider")
 
 require("task").register_task({
-	name = "run task",
+	name = "run node task",
 	run = function()
 		local tasks = vim.json.decode(
 			vim.fn.join(vim.fn.readfile(vim.fs.root(0, "package.json") .. "/package.json"), "\n")
@@ -74,7 +74,7 @@ require("task").register_task({
 })
 
 require("task").register_task({
-	name = "run task",
+	name = "run deno task",
 	run = function()
 		local tasks =
 			vim.json.decode(vim.fn.join(vim.fn.readfile(vim.fs.root(0, "deno.json") .. "/deno.json"), "\n")).tasks
