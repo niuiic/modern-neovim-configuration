@@ -11,11 +11,11 @@ local function fix_all()
 	local request
 	if opts.sync then
 		request = function(buf, method, params)
-			stylelint_lsp_client.request_sync(method, params, nil, buf)
+			stylelint_lsp_client:request_sync(method, params, nil, buf)
 		end
 	else
 		request = function(buf, method, params)
-			stylelint_lsp_client.request(method, params, nil, buf)
+			stylelint_lsp_client:request(method, params, nil, buf)
 		end
 	end
 
