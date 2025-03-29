@@ -104,14 +104,9 @@ local function is_vue_project()
 	return require("omega").exist_in_file("vue", (vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/package.json")
 end
 
-local function is_deno_project()
-	local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
-	return not vim.uv.fs_stat(root_dir .. "/package.json") or vim.uv.fs_stat(root_dir .. "/deno.json")
-end
-
 dap_utils.setup({
 	typescript = function(run)
-		if is_deno_project() then
+		if require("tools.is_deno_project")() then
 			run(get_deno())
 		elseif is_vue_project() then
 			run(vim.list_extend(get_browser(), get_node()))
@@ -120,7 +115,7 @@ dap_utils.setup({
 		end
 	end,
 	javascript = function(run)
-		if is_deno_project() then
+		if require("tools.is_deno_project")() then
 			run(get_deno())
 		elseif is_vue_project() then
 			run(vim.list_extend(get_browser(), get_node()))
