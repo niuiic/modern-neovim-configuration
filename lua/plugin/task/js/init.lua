@@ -34,7 +34,7 @@ require("task").register_task({
 		end)
 	end,
 	is_enabled = function()
-		return vim.fs.root(0, "package.json") ~= nil
+		return vim.fs.root(0, "package.json") ~= nil and not require("tools.is_deno_project")()
 	end,
 })
 
