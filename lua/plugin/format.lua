@@ -31,15 +31,16 @@ return {
 			---@cast cache_dir string
 			local cache_file = vim.fs.joinpath(cache_dir, os.time() .. ".d2")
 			vim.uv.fs_copyfile(context.file_path, cache_file)
-			local result = vim.system({
+			vim.system({
 				"d2",
 				"fmt",
 				cache_file,
-			}, {}):wait()
-			if result.code == 0 then
-				apply_change(context.text, vim.fn.join(vim.fn.readfile(cache_file), "\n"), context.bufnr)
-			end
-			vim.fn.delete(cache_file)
+			}, {}, function(result)
+				if result.code == 0 then
+					apply_change(context.text, vim.fn.join(vim.fn.readfile(cache_file), "\n"), context.bufnr)
+				end
+				vim.fn.delete(cache_file)
+			end)
 		end
 
 		require("format").setup({
