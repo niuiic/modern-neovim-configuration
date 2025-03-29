@@ -24,7 +24,7 @@ local lsp_list = {
 }
 
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
-if not vim.uv.fs_stat(root_dir .. "/package.json") or vim.uv.fs_stat(root_dir .. "/deno.json") then
+if require("tools.is_deno_project")() then
 	table.insert(lsp_list, "denols")
 else
 	table.insert(lsp_list, "vtsls")

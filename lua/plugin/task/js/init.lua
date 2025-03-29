@@ -46,8 +46,7 @@ require("task").register_task({
 		})
 	end,
 	is_enabled = function()
-		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
-			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
+		return require("tools.is_deno_project")()
 	end,
 })
 
@@ -57,8 +56,7 @@ require("task").register_task({
 		require("plugin.task.utils").run_in_term({ "deno bench -A " .. vim.api.nvim_buf_get_name(0) })
 	end,
 	is_enabled = function()
-		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
-			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
+		return require("tools.is_deno_project")()
 	end,
 })
 
@@ -68,8 +66,7 @@ require("task").register_task({
 		require("plugin.task.utils").run_in_term({ "deno test -A " .. vim.api.nvim_buf_get_name(0) })
 	end,
 	is_enabled = function()
-		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
-			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
+		return require("tools.is_deno_project")()
 	end,
 })
 
@@ -106,8 +103,7 @@ require("task").register_task({
 		end)
 	end,
 	is_enabled = function()
-		return vim.list_contains({ "javascript", "typescript" }, vim.bo.filetype)
-			and (not vim.fs.root(0, "package.json") or vim.fs.root(0, "deno.json"))
+		return require("tools.is_deno_project")()
 	end,
 })
 
