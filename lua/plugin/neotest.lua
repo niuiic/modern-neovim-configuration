@@ -16,17 +16,17 @@ local config = function()
 					return string.match(file, "^.+%.py$") ~= nil
 				end,
 			}),
-			require("neotest-vitest")({
+			require("tools.is_deno_project")() and require("neotest-vitest")({
 				cwd = function()
 					return vim.fs.root(0, "package.json")
-				end,
+				end or nil,
 			}),
 			require("neotest-deno"),
 			require("neotest-rust")({
 				args = { "--no-capture" },
 				dap_adapter = "lldb",
 			}),
-			require("neotest-jest")({
+			require("tools.is_deno_project")() and require("neotest-jest")({
 				jestCommand = "pnpm jest",
 				jestConfigFile = function(file)
 					if string.find(file, "/packages/") then
@@ -41,7 +41,7 @@ local config = function()
 					return vim.fn.getcwd()
 				end,
 				env = { CI = true },
-			}),
+			}) or nil,
 		},
 	})
 
