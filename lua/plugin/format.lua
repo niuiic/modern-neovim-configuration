@@ -36,10 +36,12 @@ return {
 				"fmt",
 				cache_file,
 			}, {}, function(result)
-				if result.code == 0 then
-					apply_change(context.text, vim.fn.join(vim.fn.readfile(cache_file), "\n"), context.bufnr)
-				end
-				vim.fn.delete(cache_file)
+				vim.schedule(function()
+					if result.code == 0 then
+						apply_change(context.text, vim.fn.join(vim.fn.readfile(cache_file), "\n"), context.bufnr)
+					end
+					vim.fn.delete(cache_file)
+				end)
 			end)
 		end
 
