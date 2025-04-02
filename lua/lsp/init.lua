@@ -20,6 +20,7 @@ local lsp_list = {
 	"pyright",
 	"nushell",
 	"rust_analyzer",
+	"docker_compose_language_service",
 	-- "biome",
 }
 

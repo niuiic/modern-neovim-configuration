@@ -17,6 +17,7 @@
 -- ◍ lemminx
 -- ◍ tinymist
 -- ◍ dockerfile-language-server
+-- ◍ docker-compose-language-service
 -- ◍ glsl_analyzer
 -- ◍ some-sass-language-server
 -- ◍ css-variables-language-server
