@@ -35,17 +35,3 @@ require("task").register_task({
 		end
 	end,
 })
-
-require("task").register_task({
-	name = "snap buffer",
-	run = function()
-		local filetype = vim.bo.filetype
-		local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-
-		local bufnr = vim.api.nvim_create_buf(false, true)
-		vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
-		vim.api.nvim_win_set_buf(0, bufnr)
-		vim.api.nvim_set_option_value("filetype", filetype, { buf = bufnr })
-		vim.api.nvim_set_option_value("modified", false, { buf = bufnr })
-	end,
-})
