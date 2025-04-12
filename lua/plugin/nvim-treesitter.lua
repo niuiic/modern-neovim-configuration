@@ -55,6 +55,9 @@ local config = function()
 		intent = { enable = true },
 		matchup = { enable = true },
 	})
+
+	-- HACK: wait for https://github.com/neovim/neovim/pull/33145
+	vim.g._ts_force_sync_parsing = true
 end
 
 return {
