@@ -27,7 +27,7 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-require("lazy").setup({
+local plugins = {
 	-- core
 	"niuiic/core.nvim",
 	-- omega
@@ -36,8 +36,6 @@ require("lazy").setup({
 	load_plugin_config("folke/which-key.nvim", "plugin/which-key"),
 	-- auto complete pairs
 	load_plugin_config("windwp/nvim-autopairs", "plugin/nvim-autopairs"),
-	-- automatically switch input method when input mode changed
-	vim.fn.getenv("WSL_INTEROP") and "niuiic/fcitx.nvim" or nil,
 	-- fold
 	load_plugin_config("kevinhwang91/nvim-ufo", "plugin/nvim-ufo"),
 	-- lazygit
@@ -156,4 +154,11 @@ require("lazy").setup({
 	load_plugin_config("niuiic/deps.nvim", "plugin/deps"),
 	-- buffer manager
 	load_plugin_config("niuiic/buffers.nvim", "plugin/buffers"),
-})
+}
+
+-- automatically switch input method when input mode changed
+if not vim.fn.getenv("WSL_INTEROP") then
+	table.insert(plugins, "niuiic/fcitx.nvim")
+end
+
+require("lazy").setup(plugins)
