@@ -157,7 +157,7 @@ local plugins = {
 }
 
 -- automatically switch input method when input mode changed
-if not vim.fn.getenv("WSL_INTEROP") then
+if vim.fn.getenv("WSL_INTEROP") == vim.NIL then
 	table.insert(plugins, "niuiic/fcitx.nvim")
 end
 

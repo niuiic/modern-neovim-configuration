@@ -163,7 +163,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 })
 
 -- clipboard
-if vim.fn.getenv("WSL_INTEROP") then
+if vim.fn.getenv("WSL_INTEROP") ~= vim.NIL then
 	vim.cmd([[
         let g:clipboard = {
           \   'name': 'WslClipboard',
