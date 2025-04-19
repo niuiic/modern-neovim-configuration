@@ -41,6 +41,32 @@ require("task").register_task({
 require("task").register_task({
 	name = "run js file",
 	run = function()
+		if vim.api.nvim_buf_get_name(0):match("%.ts$" or vim.api.nvim_buf_get_name(0):match("%.mts$")) then
+			require("plugin.task.utils").run_in_term({
+				"pnpx tsx " .. vim.api.nvim_buf_get_name(0),
+			})
+			return
+		end
+
+		require("plugin.task.utils").run_in_term({
+			"node " .. vim.api.nvim_buf_get_name(0),
+		})
+	end,
+	is_enabled = function()
+		if require("tools.is_deno_project")() then
+			return false
+		end
+
+		local file_name = vim.api.nvim_buf_get_name(0)
+
+		return file_name:match("%.js$" or file_name:match("%.mjs$"))
+			or file_name:match("%.ts$" or file_name:match("%.mts$"))
+	end,
+})
+
+require("task").register_task({
+	name = "run ts file",
+	run = function()
 		require("plugin.task.utils").run_in_term({
 			"deno run -A " .. vim.api.nvim_buf_get_name(0),
 		})
