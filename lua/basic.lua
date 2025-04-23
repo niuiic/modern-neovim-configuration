@@ -143,6 +143,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
 	callback = function()
 		if vim.bo.filetype == "" or vim.list_contains(disabled_filetypes, vim.bo.filetype) then
 			vim.wo.statusline = " "
+		else
+			vim.wo.statusline = "%f"
 		end
 	end,
 })
