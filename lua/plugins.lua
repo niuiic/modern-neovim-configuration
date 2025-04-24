@@ -27,7 +27,7 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
-local plugins = {
+require("lazy").setup({
 	-- core
 	"niuiic/core.nvim",
 	-- omega
@@ -154,11 +154,6 @@ local plugins = {
 	load_plugin_config("niuiic/deps.nvim", "plugin/deps"),
 	-- buffer manager
 	load_plugin_config("niuiic/buffers.nvim", "plugin/buffers"),
-}
-
--- automatically switch input method when input mode changed
-if vim.fn.getenv("WSL_INTEROP") == vim.NIL then
-	table.insert(plugins, "niuiic/fcitx.nvim")
-end
-
-require("lazy").setup(plugins)
+	-- automatically switch input method when input mode changed
+	load_plugin_config("niuiic/im-switch.nvim", "plugin/im-switch"),
+})
