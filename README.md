@@ -446,15 +446,15 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/divider.nvim](https://github.com/niuiic/divider.nvim) - Divider line for neovim
 
 	![](https://img.shields.io/github/stars/niuiic/divider.nvim) ![](https://img.shields.io/github/last-commit/niuiic/divider.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/divider.nvim)
-- [niuiic/fcitx.nvim](https://github.com/niuiic/fcitx.nvim) - Neovim plugin to automatically switch fcitx input method
-
-	![](https://img.shields.io/github/stars/niuiic/fcitx.nvim) ![](https://img.shields.io/github/last-commit/niuiic/fcitx.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/fcitx.nvim)
 - [niuiic/format.nvim](https://github.com/niuiic/format.nvim) - An asynchronous, multitasking, and highly configurable formatting plugin.
 
 	![](https://img.shields.io/github/stars/niuiic/format.nvim) ![](https://img.shields.io/github/last-commit/niuiic/format.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/format.nvim)
 - [niuiic/git-log.nvim](https://github.com/niuiic/git-log.nvim) - Check git log of the selected code.
 
 	![](https://img.shields.io/github/stars/niuiic/git-log.nvim) ![](https://img.shields.io/github/last-commit/niuiic/git-log.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/git-log.nvim)
+- [niuiic/im-switch.nvim](https://github.com/niuiic/im-switch.nvim) - Neovim plugin to automatically switch fcitx input method
+
+	![](https://img.shields.io/github/stars/niuiic/im-switch.nvim) ![](https://img.shields.io/github/last-commit/niuiic/im-switch.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/im-switch.nvim)
 - [niuiic/lsp-commands.nvim](https://github.com/niuiic/lsp-commands.nvim)
 
 	![](https://img.shields.io/github/stars/niuiic/lsp-commands.nvim) ![](https://img.shields.io/github/last-commit/niuiic/lsp-commands.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/lsp-commands.nvim)
