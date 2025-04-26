@@ -452,7 +452,7 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/git-log.nvim](https://github.com/niuiic/git-log.nvim) - Check git log of the selected code.
 
 	![](https://img.shields.io/github/stars/niuiic/git-log.nvim) ![](https://img.shields.io/github/last-commit/niuiic/git-log.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/git-log.nvim)
-- [niuiic/im-switch.nvim](https://github.com/niuiic/im-switch.nvim) - Neovim plugin to automatically switch fcitx input method
+- [niuiic/im-switch.nvim](https://github.com/niuiic/im-switch.nvim) - Neovim plugin to automatically switch input method
 
 	![](https://img.shields.io/github/stars/niuiic/im-switch.nvim) ![](https://img.shields.io/github/last-commit/niuiic/im-switch.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/im-switch.nvim)
 - [niuiic/lsp-commands.nvim](https://github.com/niuiic/lsp-commands.nvim)
