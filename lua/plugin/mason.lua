@@ -36,7 +36,7 @@
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ black
--- ◍ typstfmt
+-- ◍ typstyle
 -- ◍ biome
 
 return {
