@@ -43,8 +43,10 @@ local M = {
 		if require("omega").exist_in_file("vue", root_dir .. "/package.json") then
 			local vuePluginConfig = {
 				name = "@vue/typescript-plugin",
-				location = os.getenv("HOME")
-					.. ".local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server",
+				location = vim.fs.joinpath(
+					os.getenv("HOME"),
+					".local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
+				),
 				languages = { "vue" },
 				configNamespace = "typescript",
 				enableForWorkspaceTypeScriptVersions = true,
