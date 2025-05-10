@@ -278,9 +278,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [Bilal2453/luvit-meta](https://github.com/Bilal2453/luvit-meta) - Meta type definitions for the Lua platform Luvit.
 
 	![](https://img.shields.io/github/stars/Bilal2453/luvit-meta) ![](https://img.shields.io/github/last-commit/Bilal2453/luvit-meta) ![](https://img.shields.io/github/commit-activity/y/Bilal2453/luvit-meta)
-- [HiPhish/rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim) - Rainbow delimiters for Neovim with Tree-sitter
-
-	![](https://img.shields.io/github/stars/HiPhish/rainbow-delimiters.nvim) ![](https://img.shields.io/github/last-commit/HiPhish/rainbow-delimiters.nvim) ![](https://img.shields.io/github/commit-activity/y/HiPhish/rainbow-delimiters.nvim)
 - [LiadOz/nvim-dap-repl-highlights](https://github.com/LiadOz/nvim-dap-repl-highlights) - Add syntax highlighting to the nvim-dap REPL
 
 	![](https://img.shields.io/github/stars/LiadOz/nvim-dap-repl-highlights) ![](https://img.shields.io/github/last-commit/LiadOz/nvim-dap-repl-highlights) ![](https://img.shields.io/github/commit-activity/y/LiadOz/nvim-dap-repl-highlights)
@@ -470,6 +467,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [niuiic/quickfix.nvim](https://github.com/niuiic/quickfix.nvim) - Neovim plugin providing extended functionality for quickfix.
 
 	![](https://img.shields.io/github/stars/niuiic/quickfix.nvim) ![](https://img.shields.io/github/last-commit/niuiic/quickfix.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/quickfix.nvim)
+- [niuiic/rainbow-delimiters.nvim](https://github.com/niuiic/rainbow-delimiters.nvim) - Rainbow delimiters for Neovim with Tree-sitter
+
+	![](https://img.shields.io/github/stars/niuiic/rainbow-delimiters.nvim) ![](https://img.shields.io/github/last-commit/niuiic/rainbow-delimiters.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/rainbow-delimiters.nvim)
 - [niuiic/remote.nvim](https://github.com/niuiic/remote.nvim) - Edit remote files locally.
 
 	![](https://img.shields.io/github/stars/niuiic/remote.nvim) ![](https://img.shields.io/github/last-commit/niuiic/remote.nvim) ![](https://img.shields.io/github/commit-activity/y/niuiic/remote.nvim)
