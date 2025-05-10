@@ -110,21 +110,3 @@ vim.keymap.set({ "n" }, "<C-y>", function()
 	vim.api.nvim_win_set_cursor(0, { lnum + 1, 0 })
 	vim.snippet.expand(string.format("\n%s\n$2", commentstring))
 end, { silent = true })
-
--- HACK: fix tab
--- unbind tab for vim.snippet
-if vim.fn.has("nvim-0.11") == 1 then
-	local expand = vim.snippet.expand
-	vim.snippet.expand = function(...)
-		local tab_map = vim.fn.maparg("<Tab>", "i", false, true)
-		local stab_map = vim.fn.maparg("<S-Tab>", "i", false, true)
-		expand(...)
-		vim.schedule(function()
-			pcall(function()
-				tab_map.buffer, stab_map.buffer = 1, 1
-				vim.fn.mapset("i", false, tab_map)
-				vim.fn.mapset("i", false, stab_map)
-			end)
-		end)
-	end
-end

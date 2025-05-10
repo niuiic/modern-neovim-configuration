@@ -49,7 +49,7 @@ require("lazy").setup({
 	-- parsers
 	load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
 	-- rainbow brackets
-	load_plugin_config("HiPhish/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
+	load_plugin_config("niuiic/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
 	-- highlight args
 	load_plugin_config("m-demare/hlargs.nvim", "plugin/hlargs"),
 	-- better matchup
