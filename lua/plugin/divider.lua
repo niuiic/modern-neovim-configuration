@@ -71,7 +71,7 @@ return {
 	end,
 	keys = {
 		{
-			"<C-/>",
+			"<AC-h>",
 			function()
 				require("divider").toggle_outline()
 			end,

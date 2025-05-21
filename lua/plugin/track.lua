@@ -61,6 +61,17 @@ return {
 			desc = "delete flow",
 		},
 		{
+			"<AC-l>",
+			function()
+				if require("track").is_outline_open() then
+					require("track").close_outline()
+				else
+					require("track").open_outline(true)
+				end
+			end,
+			desc = "open outline",
+		},
+		{
 			"mo",
 			function()
 				require("track").open_outline(true)
