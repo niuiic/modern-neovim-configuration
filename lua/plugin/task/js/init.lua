@@ -103,7 +103,7 @@ require("task").register_task({
 			vim.json.decode(vim.fn.join(vim.fn.readfile(vim.fs.root(0, "deno.json") .. "/deno.json"), "\n")).tasks
 
 		if not tasks or vim.tbl_isempty(tasks) then
-			vim.notify("no scripts found in package.json", vim.log.levels.WARN)
+			vim.notify("no scripts found in deno.json", vim.log.levels.WARN)
 			return
 		end
 
@@ -111,7 +111,7 @@ require("task").register_task({
 
 		if #tasks == 1 then
 			require("plugin.task.utils").run_in_term({
-				"cd " .. vim.fs.root(0, "package.json"),
+				"cd " .. vim.fs.root(0, "deno.json"),
 				"deno task " .. tasks[1],
 			})
 			return
@@ -123,7 +123,7 @@ require("task").register_task({
 			end
 
 			require("plugin.task.utils").run_in_term({
-				"cd " .. vim.fs.root(0, "package.json"),
+				"cd " .. vim.fs.root(0, "deno.json"),
 				"deno task " .. choice,
 			})
 		end)
