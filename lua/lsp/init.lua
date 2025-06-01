@@ -21,7 +21,7 @@ local lsp_list = {
 	"nushell",
 	"rust_analyzer",
 	"docker_compose_language_service",
-	-- "biome",
+	"biome",
 }
 
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
