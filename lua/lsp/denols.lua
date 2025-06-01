@@ -8,6 +8,12 @@ require("lsp-commands").register_command({
 	is_enabled = function()
 		return require("tools.lsp_valid")("denols")
 	end,
+})
+
+return {
+	root_dir = function()
+		return vim.fs.root(0, "deno.json") or vim.fn.getcwd()
+	end,
 	on_attach = function()
 		vim.g.markdown_fenced_languages = {
 			"ts=typescript",
@@ -53,11 +59,5 @@ require("lsp-commands").register_command({
 			pattern = { "deno:/*", "asset://*" },
 			callback = virtual_text_document,
 		})
-	end,
-})
-
-return {
-	root_dir = function()
-		return vim.fs.root(0, "deno.json") or vim.fn.getcwd()
 	end,
 }
