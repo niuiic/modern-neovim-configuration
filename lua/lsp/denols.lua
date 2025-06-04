@@ -10,6 +10,34 @@ require("lsp-commands").register_command({
 	end,
 })
 
+require("lsp-commands").register_command({
+	name = "denols/organize imports",
+	run = function()
+		local diagnostic_list = vim.diagnostic.get()
+		local diagnostic = vim.iter(diagnostic_list):find(function(diagnostic)
+			return diagnostic.source == "deno-ts"
+		end)
+		if diagnostic == nil then
+			return
+		end
+		local cur_pos = vim.api.nvim_win_get_cursor(0)
+		vim.api.nvim_win_set_cursor(0, {
+			diagnostic.lnum + 1,
+			diagnostic.col,
+		})
+		vim.lsp.buf.code_action({
+			apply = true,
+			filter = function(action)
+				return action.title == "Add all missing imports"
+			end,
+		})
+		vim.api.nvim_win_set_cursor(0, cur_pos)
+	end,
+	is_enabled = function()
+		return require("tools.lsp_valid")("denols")
+	end,
+})
+
 return {
 	root_dir = function()
 		return vim.fs.root(0, "deno.json") or vim.fn.getcwd()
