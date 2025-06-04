@@ -63,7 +63,6 @@ return {
 			},
 			fuzzy = {
 				prebuilt_binaries = { download = false },
-				sorts = { "score" },
 			},
 			sources = {
 				default = { "lsp", "path", "buffer", "snippets", "ripgrep" },
