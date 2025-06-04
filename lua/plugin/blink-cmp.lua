@@ -63,9 +63,6 @@ return {
 			},
 			fuzzy = {
 				prebuilt_binaries = { download = false },
-				implementation = "rust",
-				use_proximity = false,
-				use_frecency = false,
 			},
 			sources = {
 				default = { "lsp", "path", "buffer", "snippets", "ripgrep" },
