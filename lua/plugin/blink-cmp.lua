@@ -136,5 +136,4 @@ return {
 		"xzbdmw/colorful-menu.nvim",
 		"echasnovski/mini.icons",
 	},
-	-- commit = "30f0a7b",
 }
