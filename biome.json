@@ -2,9 +2,6 @@
   "formatter": {
     "indentStyle": "space"
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
