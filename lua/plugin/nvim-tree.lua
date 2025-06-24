@@ -118,17 +118,6 @@ local set_keymap = function(bufnr)
 	end, opts("cut"))
 	vim.keymap.set("n", "<C-f>", api.live_filter.start, opts("filter"))
 	vim.keymap.set("n", "<C-l>", api.live_filter.clear, opts("filter"))
-	vim.keymap.set("n", "o", function()
-		local node = api.tree.get_node_under_cursor()
-		if not node then
-			return
-		end
-		if not vim.fn.executable("dolphin") then
-			vim.notify("dolphin is required", vim.log.levels.ERROR)
-			return
-		end
-		vim.system({ "dolphin", "--select", node.absolute_path })
-	end, opts("open with dolphin"))
 	vim.keymap.set("n", "t", function()
 		local node = api.tree.get_node_under_cursor()
 		if not node then
