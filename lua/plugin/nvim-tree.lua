@@ -75,13 +75,9 @@ local set_keymap = function(bufnr)
 		if not node then
 			return
 		end
-		local target_buf = vim.iter(vim.api.nvim_list_bufs()):find(function(x)
-			return string.find(vim.api.nvim_buf_get_name(x), node.absolute_path, 1, true) ~= nil
+		pcall(function()
+			api.fs.remove()
 		end)
-		if target_buf then
-			vim.api.nvim_buf_delete(target_buf, { force = true })
-		end
-		api.fs.remove()
 		if node.type == "file" then
 			require("track").notify_file_path_change(node.absolute_path)
 		else
