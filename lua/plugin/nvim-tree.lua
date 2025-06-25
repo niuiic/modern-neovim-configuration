@@ -8,7 +8,14 @@ local close_nvim_tree = function()
 		height = 1,
 		border = "none",
 	})
-	vim.api.nvim_set_current_win(prev_winnr)
+
+	local target_winnr = prev_winnr
+	if not vim.api.nvim_win_is_valid(target_winnr) then
+		target_winnr = vim.iter(vim.api.nvim_list_wins()):find(function(win)
+			return win ~= target_winnr
+		end)
+	end
+	vim.api.nvim_set_current_win(target_winnr)
 end
 
 local set_keymap = function(bufnr)
