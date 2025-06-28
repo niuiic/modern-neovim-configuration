@@ -44,3 +44,14 @@ require("task").register_task({
 		end)
 	end,
 })
+
+require("task").register_task({
+	name = "search text globally (case sensitive)",
+	run = function()
+		require("telescope.builtin").live_grep({
+			hidden = true,
+			cwd = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
+			additional_args = { "-s" },
+		})
+	end,
+})
