@@ -35,3 +35,10 @@ require("task").register_task({
 		end
 	end,
 })
+
+require("task").register_task({
+	name = "toggle to block visual mode",
+	run = function()
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-v>", true, false, true), "n", false)
+	end,
+})
