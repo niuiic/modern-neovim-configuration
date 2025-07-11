@@ -1,14 +1,3 @@
-local function search_ts_server_path()
-	local local_ts_server_path = (vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd())
-		.. "/node_modules/typescript/lib"
-	if vim.uv.fs_stat(local_ts_server_path .. "/lib.d.ts") then
-		return local_ts_server_path
-	else
-		return os.getenv("HOME")
-			.. "/.local/share/nvim/mason/packages/vtsls/node_modules/@vtsls/language-server/node_modules/typescript/lib"
-	end
-end
-
 local function copy_path()
 	local name = vim.api.nvim_buf_get_name(0)
 	local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
@@ -27,19 +16,14 @@ local function copy_path()
 end
 
 require("lsp-commands").register_command({
-	name = "volar/copy path",
+	name = "vue_ls/copy path",
 	run = copy_path,
 	is_enabled = function()
-		return require("tools.lsp_valid")("volar")
+		return require("tools.lsp_valid")("vue_ls")
 	end,
 })
 
 return {
-	init_options = {
-		typescript = {
-			tsdk = search_ts_server_path(),
-		},
-	},
 	on_attach = function(client)
 		client.server_capabilities.hoverProvider = false
 	end,

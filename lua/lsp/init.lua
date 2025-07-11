@@ -2,7 +2,7 @@ local lsp_list = {
 	"cssls",
 	"css_variables",
 	"somesass_ls",
-	"volar",
+	"vue_ls",
 	"lua_ls",
 	"bashls",
 	"eslint",
