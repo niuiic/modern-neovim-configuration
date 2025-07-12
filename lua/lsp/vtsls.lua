@@ -41,17 +41,15 @@ local M = {
 	before_init = function(_, config)
 		local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 		if require("omega").exist_in_file("vue", root_dir .. "/package.json") then
-			local vuePluginConfig = {
+			local vue_plugin = {
 				name = "@vue/typescript-plugin",
-				location = vim.fs.joinpath(
-					os.getenv("HOME"),
-					".local/share/nvim/mason/packages/vue-language-server/node_modules/@vue/language-server"
-				),
 				languages = { "vue" },
 				configNamespace = "typescript",
-				enableForWorkspaceTypeScriptVersions = true,
+				location = vim.fn.expand("$MASON/packages")
+					.. "/vue-language-server"
+					.. "/node_modules/@vue/language-server",
 			}
-			table.insert(config.settings.vtsls.tsserver.globalPlugins, vuePluginConfig)
+			table.insert(config.settings.vtsls.tsserver.globalPlugins, vue_plugin)
 		end
 	end,
 }
