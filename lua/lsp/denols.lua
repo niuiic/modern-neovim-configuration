@@ -39,9 +39,6 @@ require("lsp-commands").register_command({
 })
 
 return {
-	root_dir = function()
-		return vim.fs.root(0, "deno.json") or vim.fn.getcwd()
-	end,
 	on_attach = function()
 		vim.g.markdown_fenced_languages = {
 			"ts=typescript",

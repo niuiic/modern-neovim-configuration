@@ -41,7 +41,8 @@ local load_lsp = function(value)
 	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
 
 	-- set lsp config
-	require("lspconfig")[value].setup(config)
+	vim.lsp.enable(value)
+	vim.lsp.config(value, config)
 end
 for _, value in ipairs(lsp_list) do
 	load_lsp(value)
