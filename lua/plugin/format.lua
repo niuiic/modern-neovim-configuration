@@ -26,6 +26,18 @@ return {
 			end)
 		end
 
+		local function plantuml(context, apply_change)
+			vim.system({
+				"pumlformat",
+			}, {
+				stdin = context.text,
+			}, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		local function d2(context, apply_change)
 			local cache_dir = vim.fn.stdpath("cache")
 			---@cast cache_dir string
@@ -56,6 +68,7 @@ return {
 				json = biome,
 				jsonc = biome,
 				d2 = d2,
+				plantuml = plantuml,
 			},
 		})
 	end,
