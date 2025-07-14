@@ -62,6 +62,8 @@ require("task").register_task({
 		vim.system({
 			"podman",
 			"run",
+			"--name",
+			"web-previewer",
 			"--rm",
 			"-d",
 			"-p",
@@ -75,5 +77,18 @@ require("task").register_task({
 			"docker.io/niuiic/web-previewer",
 		})
 		vim.notify("web previewer is running at http://127.0.0.1:10002")
+	end,
+})
+
+require("task").register_task({
+	name = "close web previewer",
+	run = function()
+		vim.system({
+			"podman",
+			"stop",
+			"web-previewer",
+		}, function()
+			vim.notify("web previewer is closed")
+		end)
 	end,
 })
