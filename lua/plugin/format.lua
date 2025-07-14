@@ -64,6 +64,7 @@ return {
 				typescript = biome,
 				javascriptreact = biome,
 				typescriptreact = biome,
+				css = require("format.formatters.prettier"),
 				json = biome,
 				jsonc = biome,
 				d2 = d2,
