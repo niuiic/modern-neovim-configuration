@@ -64,7 +64,6 @@ return {
 				typescript = biome,
 				javascriptreact = biome,
 				typescriptreact = biome,
-				css = biome,
 				json = biome,
 				jsonc = biome,
 				d2 = d2,
