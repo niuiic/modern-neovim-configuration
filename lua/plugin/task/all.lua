@@ -59,24 +59,33 @@ require("task").register_task({
 require("task").register_task({
 	name = "open web previewer",
 	run = function()
-		vim.system({
-			"podman",
-			"run",
-			"--name",
-			"web-previewer",
-			"--rm",
-			"-d",
-			"-p",
-			"10001:10001",
-			"-p",
-			"10002:10002",
-			"-v",
-			(vim.fs.root(0, ".git") or vim.fn.getcwd()) .. ":/app/workDir:ro",
-			"-e",
-			"SERVER_BASEURL=http://127.0.0.1:10001",
-			"docker.io/niuiic/web-previewer",
-		})
-		vim.notify("web previewer is running at http://127.0.0.1:10002")
+		vim.system(
+			{
+				"podman",
+				"stop",
+				"web-previewer",
+			},
+			vim.schedule_wrap(function()
+				vim.system({
+					"podman",
+					"run",
+					"--name",
+					"web-previewer",
+					"--rm",
+					"-d",
+					"-p",
+					"10001:10001",
+					"-p",
+					"10002:10002",
+					"-v",
+					(vim.fs.root(0, ".git") or vim.fn.getcwd()) .. ":/app/workDir:ro",
+					"-e",
+					"SERVER_BASEURL=http://127.0.0.1:10001",
+					"docker.io/niuiic/web-previewer",
+				})
+				vim.notify("web previewer is running at http://127.0.0.1:10002")
+			end)
+		)
 	end,
 })
 
