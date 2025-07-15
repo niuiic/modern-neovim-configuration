@@ -1,0 +1,7 @@
+{
+  "panic": {
+    "prefix": "panic",
+    "body": [":error;", "kill"]
+  }
+}
+

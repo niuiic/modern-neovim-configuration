@@ -3,31 +3,45 @@
   "contributes": {
     "snippets": [
       {
-        "language": ["all"],
+        "language": [
+          "all"
+        ],
         "path": "./all.json"
       },
       {
-        "language": ["glsl"],
+        "language": [
+          "glsl"
+        ],
         "path": "./glsl.json"
       },
       {
-        "language": ["lua"],
+        "language": [
+          "lua"
+        ],
         "path": "./lua.json"
       },
       {
-        "language": ["markdown"],
+        "language": [
+          "markdown"
+        ],
         "path": "./markdown.json"
       },
       {
-        "language": ["python"],
+        "language": [
+          "python"
+        ],
         "path": "./python.json"
       },
       {
-        "language": ["rust"],
+        "language": [
+          "rust"
+        ],
         "path": "./rust.json"
       },
       {
-        "language": ["html"],
+        "language": [
+          "html"
+        ],
         "path": "./html.json"
       },
       {
@@ -41,12 +55,22 @@
         "path": "./typescript.json"
       },
       {
-        "language": ["vue"],
+        "language": [
+          "vue"
+        ],
         "path": "./vue.json"
       },
       {
-        "language": ["d2"],
+        "language": [
+          "d2"
+        ],
         "path": "./d2.json"
+      },
+      {
+        "language": [
+          "plantuml"
+        ],
+        "path": "./plantuml.json"
       }
     ]
   }
