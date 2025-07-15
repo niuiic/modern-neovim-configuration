@@ -110,3 +110,8 @@ vim.keymap.set({ "n" }, "<C-y>", function()
 	vim.api.nvim_win_set_cursor(0, { lnum + 1, 0 })
 	vim.snippet.expand(string.format("\n%s\n$2", commentstring))
 end, { silent = true })
+
+-- comment
+vim.keymap.set({ "n", "x" }, "<C-a>", function()
+	vim.cmd("normal gcc")
+end, { silent = true })
