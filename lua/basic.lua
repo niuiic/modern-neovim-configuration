@@ -181,3 +181,25 @@ if vim.fn.getenv("WSL_INTEROP") ~= vim.NIL then
           \ }
     ]])
 end
+
+-- commentstring
+local commentstrings = {
+	typescript = { "// %s", "/* %s */", "/** %s */" },
+	javascript = { "// %s", "/* %s */", "/** %s */" },
+	mermaid = { "%% %s" },
+	d2 = { "# %s" },
+	plantuml = { "/' %s '/" },
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(args)
+		local filetype = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
+		if commentstrings[filetype] then
+			vim.api.nvim_set_option_value(
+				"commentstring",
+				table.concat(commentstrings[filetype], "|"),
+				{ buf = args.buf }
+			)
+		end
+	end,
+})

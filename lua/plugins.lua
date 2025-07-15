@@ -40,8 +40,6 @@ require("lazy").setup({
 	load_plugin_config("kevinhwang91/nvim-ufo", "plugin/nvim-ufo"),
 	-- lazygit
 	load_plugin_config("kdheepak/lazygit.nvim", "plugin/lazygit"),
-	-- comments
-	load_plugin_config("folke/ts-comments.nvim", "plugin/ts-comments"),
 	-- quick motion
 	load_plugin_config("folke/flash.nvim", "plugin/flash"),
 	-- file tree
