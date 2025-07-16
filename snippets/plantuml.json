@@ -38,5 +38,53 @@
       "${1}",
       "@enduml"
     ]
+  },
+  "event": {
+    "prefix": "event",
+    "body": "<<Event>>"
+  },
+  "command": {
+    "prefix": "command",
+    "body": "<<Command>>"
+  },
+  "role": {
+    "prefix": "role",
+    "body": "<<Role>>"
+  },
+  "businessRule": {
+    "prefix": "businessRule",
+    "body": "<<BusinessRule>>"
+  },
+  "entity": {
+    "prefix": "entity",
+    "body": "<<Entity>>"
+  },
+  "valueObject": {
+    "prefix": "valueObject",
+    "body": "<<ValueObject>>"
+  },
+  "aggregate": {
+    "prefix": "aggregate",
+    "body": "<<Aggregate>>"
+  },
+  "aggregateRoot": {
+    "prefix": "aggregateRoot",
+    "body": "<<AggregateRoot>>"
+  },
+  "boundedContext": {
+    "prefix": "boundedContext",
+    "body": "<<BoundedContext>>"
+  },
+  "policy": {
+    "prefix": "policy",
+    "body": "<<Policy>>"
+  },
+  "readModel": {
+    "prefix": "readModel",
+    "body": "<<ReadModel>>"
+  },
+  "repository": {
+    "prefix": "repository",
+    "body": "<<Repository>>"
   }
 }
