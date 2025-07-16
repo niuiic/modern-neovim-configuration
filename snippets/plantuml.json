@@ -21,6 +21,7 @@
     "prefix": "eventStorm",
     "body": [
       "@startuml",
+      "allowmixing",
       "skinparam rectangle {",
       "    BackgroundColor<<Event>> #FFD700",
       "    BackgroundColor<<Command>> #87CEEB",
