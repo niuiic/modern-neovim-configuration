@@ -40,51 +40,51 @@
     ]
   },
   "event": {
-    "prefix": "event",
+    "prefix": "EVENT",
     "body": "<<Event>>"
   },
   "command": {
-    "prefix": "command",
+    "prefix": "COMMAND",
     "body": "<<Command>>"
   },
   "role": {
-    "prefix": "role",
+    "prefix": "ROLE",
     "body": "<<Role>>"
   },
   "businessRule": {
-    "prefix": "businessRule",
+    "prefix": "BUSINESSRULE",
     "body": "<<BusinessRule>>"
   },
   "entity": {
-    "prefix": "entity",
+    "prefix": "ENTITY",
     "body": "<<Entity>>"
   },
   "valueObject": {
-    "prefix": "valueObject",
+    "prefix": "VALUEOBJECT",
     "body": "<<ValueObject>>"
   },
   "aggregate": {
-    "prefix": "aggregate",
+    "prefix": "AGGREGATE",
     "body": "<<Aggregate>>"
   },
   "aggregateRoot": {
-    "prefix": "aggregateRoot",
+    "prefix": "AGGREGATEROOT",
     "body": "<<AggregateRoot>>"
   },
   "boundedContext": {
-    "prefix": "boundedContext",
+    "prefix": "BOUNDEDCONTEXT",
     "body": "<<BoundedContext>>"
   },
   "policy": {
-    "prefix": "policy",
+    "prefix": "POLICY",
     "body": "<<Policy>>"
   },
   "readModel": {
-    "prefix": "readModel",
+    "prefix": "READMODEL",
     "body": "<<ReadModel>>"
   },
   "repository": {
-    "prefix": "repository",
+    "prefix": "REPOSITORY",
     "body": "<<Repository>>"
   }
 }
