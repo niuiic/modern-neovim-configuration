@@ -2,6 +2,19 @@
   "panic": {
     "prefix": "panic",
     "body": [":error;", "kill"]
+  },
+  "flow": {
+    "prefix": "flow",
+    "body": [
+      "@startuml",
+      "title ${1}",
+      "",
+      "start",
+      "",
+      "${2}",
+      "",
+      "end",
+      "@enduml"
+    ]
   }
 }
-
