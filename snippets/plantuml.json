@@ -16,5 +16,27 @@
       "end",
       "@enduml"
     ]
+  },
+  "eventStorm": {
+    "prefix": "eventStorm",
+    "body": [
+      "@startuml",
+      "skinparam rectangle {",
+      "    BackgroundColor<<Event>> #FFD700",
+      "    BackgroundColor<<Command>> #87CEEB",
+      "    BackgroundColor<<Role>> #9370DB",
+      "    BackgroundColor<<BusinessRule>> #FF6347",
+      "    BackgroundColor<<Entity>> #20B2AA",
+      "    BackgroundColor<<ValueObject>> #F0E68C",
+      "    BackgroundColor<<Aggregate>> #98FB98",
+      "    BackgroundColor<<AggregateRoot>> #32CD32",
+      "    BackgroundColor<<BoundedContext>> #DDA0DD",
+      "    BackgroundColor<<Policy>> #FFB6C1",
+      "    BackgroundColor<<ReadModel>> #D2B48C",
+      "    BackgroundColor<<Repository>> #8FBC8F",
+      "}",
+      "${1}",
+      "@enduml"
+    ]
   }
 }
