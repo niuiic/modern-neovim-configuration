@@ -35,6 +35,7 @@
       "    BackgroundColor<<Policy>> #FFB6C1",
       "    BackgroundColor<<ReadModel>> #D2B48C",
       "    BackgroundColor<<Repository>> #8FBC8F",
+      "    BackgroundColor<<Service>> #FF8C00",
       "}",
       "${1}",
       "@enduml"
@@ -87,5 +88,9 @@
   "repository": {
     "prefix": "REPOSITORY",
     "body": "<<Repository>>"
+  },
+  "service": {
+    "prefix": "SERVICE",
+    "body": "<<Service>>"
   }
 }
