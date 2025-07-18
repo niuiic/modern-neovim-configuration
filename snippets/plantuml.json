@@ -41,56 +41,69 @@
       "@enduml"
     ]
   },
+  "taskStorm": {
+    "prefix": "taskStorm",
+    "body": [
+      "@startuml",
+      "allowmixing",
+      "skinparam rectangle {",
+      "    BackgroundColor<<Task>> #FFB347",
+      "    BackgroundColor<<Step>> #EEDDFF",
+      "    BackgroundColor<<Issue>> #FF4444",
+      "    BackgroundColor<<RootCause>> #8B0000",
+      "    BackgroundColor<<Solution>> #66BB6A",
+      "    BackgroundColor<<Checkpoint>> #5F9EA0",
+      "    BackgroundColor<<Dependency>> #7B68EE",
+      "    BackgroundColor<<Milestone>> #FFC300",
+      "    BackgroundColor<<Impact>> #FF85C0",
+      "    BackgroundColor<<Improvement>> #48D1CC",
+      "}",
+      "${1}",
+      "@enduml"
+    ]
+  },
+  "task": {
+    "prefix": "TASK",
+    "body": "rectangle ${1} <<Task>>"
+  },
+  "step": {
+    "prefix": "STEP",
+    "body": "rectangle ${1} <<Step>>"
+  },
+  "issue": {
+    "prefix": "ISSUE",
+    "body": "rectangle ${1} <<Issue>>"
+  },
+  "rootCause": {
+    "prefix": "ROOTCAUSE",
+    "body": "rectangle ${1} <<RootCause>>"
+  },
+  "solution": {
+    "prefix": "SOLUTION",
+    "body": "rectangle ${1} <<Solution>>"
+  },
+  "checkpoint": {
+    "prefix": "CHECKPOINT",
+    "body": "rectangle ${1} <<Checkpoint>>"
+  },
+  "dependency": {
+    "prefix": "DEPENDENCY",
+    "body": "rectangle ${1} <<Dependency>>"
+  },
+  "milestone": {
+    "prefix": "MILESTONE",
+    "body": "rectangle ${1} <<Milestone>>"
+  },
+  "impact": {
+    "prefix": "IMPACT",
+    "body": "rectangle ${1} <<Impact>>"
+  },
+  "improvement": {
+    "prefix": "IMPROVEMENT",
+    "body": "rectangle ${1} <<Improvement>>"
+  },
   "event": {
     "prefix": "EVENT",
-    "body": "<<Event>>"
-  },
-  "command": {
-    "prefix": "COMMAND",
-    "body": "<<Command>>"
-  },
-  "role": {
-    "prefix": "ROLE",
-    "body": "<<Role>>"
-  },
-  "businessRule": {
-    "prefix": "BUSINESSRULE",
-    "body": "<<BusinessRule>>"
-  },
-  "entity": {
-    "prefix": "ENTITY",
-    "body": "<<Entity>>"
-  },
-  "valueObject": {
-    "prefix": "VALUEOBJECT",
-    "body": "<<ValueObject>>"
-  },
-  "aggregate": {
-    "prefix": "AGGREGATE",
-    "body": "<<Aggregate>>"
-  },
-  "aggregateRoot": {
-    "prefix": "AGGREGATEROOT",
-    "body": "<<AggregateRoot>>"
-  },
-  "boundedContext": {
-    "prefix": "BOUNDEDCONTEXT",
-    "body": "<<BoundedContext>>"
-  },
-  "policy": {
-    "prefix": "POLICY",
-    "body": "<<Policy>>"
-  },
-  "readModel": {
-    "prefix": "READMODEL",
-    "body": "<<ReadModel>>"
-  },
-  "repository": {
-    "prefix": "REPOSITORY",
-    "body": "<<Repository>>"
-  },
-  "service": {
-    "prefix": "SERVICE",
-    "body": "<<Service>>"
+    "body": "rectangle ${1} <<Event>>"
   }
 }

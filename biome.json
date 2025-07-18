@@ -11,5 +11,8 @@
     "parser": {
       "unsafeParameterDecoratorsEnabled": true
     }
+  },
+  "linter": {
+    "enabled": false
   }
 }
