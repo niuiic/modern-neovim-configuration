@@ -36,6 +36,7 @@
       "    BackgroundColor<<ReadModel>> #D2B48C",
       "    BackgroundColor<<Repository>> #8FBC8F",
       "    BackgroundColor<<Service>> #FF8C00",
+      "    BackgroundColor<<Table>> #D3D3D3",
       "}",
       "${1}",
       "@enduml"
@@ -105,5 +106,57 @@
   "event": {
     "prefix": "EVENT",
     "body": "rectangle ${1} <<Event>>"
+  },
+  "command": {
+    "prefix": "COMMAND",
+    "body": "rectangle ${1} <<Command>>"
+  },
+  "role": {
+    "prefix": "ROLE",
+    "body": "rectangle ${1} <<Role>>"
+  },
+  "businessRule": {
+    "prefix": "BUSINESSRULE",
+    "body": "rectangle ${1} <<BusinessRule>>"
+  },
+  "entity": {
+    "prefix": "ENTITY",
+    "body": "rectangle ${1} <<Entity>>"
+  },
+  "valueObject": {
+    "prefix": "VALUEOBJECT",
+    "body": "rectangle ${1} <<ValueObject>>"
+  },
+  "aggregate": {
+    "prefix": "AGGREGATE",
+    "body": "rectangle ${1} <<Aggregate>>"
+  },
+  "aggregateRoot": {
+    "prefix": "AGGREGATEROOT",
+    "body": "rectangle ${1} <<AggregateRoot>>"
+  },
+  "boundedContext": {
+    "prefix": "BOUNDEDCONTEXT",
+    "body": "rectangle ${1} <<BoundedContext>>"
+  },
+  "policy": {
+    "prefix": "POLICY",
+    "body": "rectangle ${1} <<Policy>>"
+  },
+  "readModel": {
+    "prefix": "READMODEL",
+    "body": "rectangle ${1} <<ReadModel>>"
+  },
+  "repository": {
+    "prefix": "REPOSITORY",
+    "body": "rectangle ${1} <<Repository>>"
+  },
+  "service": {
+    "prefix": "SERVICE",
+    "body": "rectangle ${1} <<Service>>"
+  },
+  "table": {
+    "prefix": "TABLE",
+    "body": "rectangle ${1} <<Table>>"
   }
 }
