@@ -61,6 +61,9 @@ return {
 					},
 				},
 			},
+			fuzzy = {
+				prebuilt_binaries = { download = false },
+			},
 			sources = {
 				default = { "lsp", "path", "buffer", "snippets", "ripgrep" },
 				providers = {
@@ -126,6 +129,7 @@ return {
 			},
 		})
 	end,
+	build = "cargo build --release",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"niuiic/blink-cmp-rg.nvim",
