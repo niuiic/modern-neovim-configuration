@@ -77,6 +77,18 @@ require("task").register_task({
 })
 
 require("task").register_task({
+	name = "debug ts file",
+	run = function()
+		require("plugin.task.utils").run_in_term({
+			"deno run --inspect -A " .. vim.api.nvim_buf_get_name(0),
+		})
+	end,
+	is_enabled = function()
+		return require("tools.is_deno_project")()
+	end,
+})
+
+require("task").register_task({
 	name = "run benchmark",
 	run = function()
 		require("plugin.task.utils").run_in_term({ "deno bench -A " .. vim.api.nvim_buf_get_name(0) })
