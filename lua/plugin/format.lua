@@ -1,31 +1,5 @@
 return {
 	config = function()
-		local biome_config_path = (vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd())
-			.. "/biome.json"
-		if not vim.uv.fs_stat(biome_config_path) then
-			local config_dir = vim.fn.stdpath("config")
-			if type(config_dir) == "table" then
-				config_dir = config_dir[1]
-			end
-			biome_config_path = config_dir .. "/biome.json"
-		end
-
-		local function biome(context, apply_change)
-			vim.system({
-				"biome",
-				"format",
-				"--stdin-file-path",
-				context.file_path,
-				"--config-path=" .. biome_config_path,
-			}, {
-				stdin = context.text,
-			}, function(result)
-				if result.code == 0 then
-					apply_change(context.text, result.stdout, context.bufnr)
-				end
-			end)
-		end
-
 		local function plantuml(context, apply_change)
 			vim.system({
 				"pumlformat",
@@ -57,16 +31,34 @@ return {
 			end)
 		end
 
+		local function deno(context, apply_change)
+			vim.system({
+				"deno",
+				"fmt",
+				"--no-semicolons",
+				"--single-quote",
+				"--line-width",
+				"120",
+				"--unstable-component",
+				"--unstable-sql",
+				"-",
+			}, { stdin = context.text }, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
-				javascript = biome,
-				typescript = biome,
-				javascriptreact = biome,
-				typescriptreact = biome,
+				javascript = deno,
+				typescript = deno,
+				javascriptreact = deno,
+				typescriptreact = deno,
 				css = require("format.formatters.prettier"),
-				json = biome,
-				jsonc = biome,
+				json = deno,
+				jsonc = deno,
 				d2 = d2,
 				plantuml = plantuml,
 			},
