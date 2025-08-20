@@ -32,17 +32,32 @@ return {
 		end
 
 		local function deno(context, apply_change)
-			vim.system({
+			local args = {
 				"deno",
 				"fmt",
 				"--no-semicolons",
 				"--single-quote",
 				"--line-width",
 				"120",
-				"--unstable-component",
-				"--unstable-sql",
-				"-",
-			}, { stdin = context.text }, function(result)
+			}
+			local ext = vim.api.nvim_buf_get_name(context.bufnr):match("%.([^.]+)")
+
+			if ext then
+				table.insert(args, "--ext")
+				table.insert(args, ext)
+			end
+
+			if ext == "vue" then
+				table.insert(args, "--unstable-component")
+			end
+
+			if ext == "sql" then
+				table.insert(args, "--unstable-sql")
+			end
+
+			table.insert(args, "-")
+
+			vim.system(args, { stdin = context.text }, function(result)
 				if result.code == 0 then
 					apply_change(context.text, result.stdout, context.bufnr)
 				end
@@ -56,9 +71,15 @@ return {
 				typescript = deno,
 				javascriptreact = deno,
 				typescriptreact = deno,
-				css = require("format.formatters.prettier"),
+				markdown = deno,
+				html = deno,
+				yaml = deno,
+				yml = deno,
+				css = deno,
+				scss = deno,
 				json = deno,
 				jsonc = deno,
+				vue = deno,
 				d2 = d2,
 				plantuml = plantuml,
 			},
