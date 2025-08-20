@@ -40,7 +40,7 @@ return {
 				"--line-width",
 				"120",
 			}
-			local ext = vim.api.nvim_buf_get_name(context.bufnr):match("%.([^.]+)")
+			local ext = vim.api.nvim_buf_get_name(context.bufnr):match("%.([^%.]+)$")
 
 			if ext then
 				table.insert(args, "--ext")
