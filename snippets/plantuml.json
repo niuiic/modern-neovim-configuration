@@ -37,6 +37,7 @@
       "    BackgroundColor<<Repository>> #8FBC8F",
       "    BackgroundColor<<Service>> #FF8C00",
       "    BackgroundColor<<Table>> #D3D3D3",
+      "    BackgroundColor<<DataTransferObject>> #FFA07A",
       "}",
       "${1}",
       "@enduml"
@@ -158,5 +159,9 @@
   "table": {
     "prefix": "TABLE",
     "body": "rectangle ${1} <<Table>>"
+  },
+  "dataTransferObject": {
+    "prefix": "DATATRANSFEROBJECT",
+    "body": "rectangle ${1} <<DataTransferObject>>"
   }
 }
