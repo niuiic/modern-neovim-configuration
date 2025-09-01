@@ -335,16 +335,16 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [dmmulroy/ts-error-translator.nvim](https://github.com/dmmulroy/ts-error-translator.nvim)
 
 	![](https://img.shields.io/github/stars/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/last-commit/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/commit-activity/y/dmmulroy/ts-error-translator.nvim)
-- [echasnovski/mini.cursorword](https://github.com/echasnovski/mini.cursorword) - Neovim Lua plugin for autohighlighting word under cursor. Part of 'mini.nvim' library.
+- [echasnovski/mini.cursorword](https://github.com/echasnovski/mini.cursorword)
 
 	![](https://img.shields.io/github/stars/echasnovski/mini.cursorword) ![](https://img.shields.io/github/last-commit/echasnovski/mini.cursorword) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.cursorword)
-- [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons) - Icon provider. Part of 'mini.nvim' library. 
+- [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
 
 	![](https://img.shields.io/github/stars/echasnovski/mini.icons) ![](https://img.shields.io/github/last-commit/echasnovski/mini.icons) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.icons)
-- [echasnovski/mini.indentscope](https://github.com/echasnovski/mini.indentscope) - Neovim Lua plugin to visualize and operate on indent scope. Part of 'mini.nvim' library.
+- [echasnovski/mini.indentscope](https://github.com/echasnovski/mini.indentscope)
 
 	![](https://img.shields.io/github/stars/echasnovski/mini.indentscope) ![](https://img.shields.io/github/last-commit/echasnovski/mini.indentscope) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.indentscope)
-- [echasnovski/mini.move](https://github.com/echasnovski/mini.move) - Neovim Lua plugin to move any selection in any direction. Part of 'mini.nvim' library. 
+- [echasnovski/mini.move](https://github.com/echasnovski/mini.move)
 
 	![](https://img.shields.io/github/stars/echasnovski/mini.move) ![](https://img.shields.io/github/last-commit/echasnovski/mini.move) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.move)
 - [ecthelionvi/NeoColumn.nvim](https://github.com/ecthelionvi/NeoColumn.nvim) - Neovim plugin that highlights individual characters with a toggleable ColorColumn.
