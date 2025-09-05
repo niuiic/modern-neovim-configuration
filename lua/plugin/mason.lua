@@ -15,7 +15,6 @@
 -- ◍ yaml-language-server
 -- ◍ marksman
 -- ◍ lemminx
--- ◍ tinymist
 -- ◍ dockerfile-language-server
 -- ◍ docker-compose-language-service
 -- ◍ glsl_analyzer
@@ -36,7 +35,6 @@
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ black
--- ◍ typstyle
 
 return {
 	config = function()

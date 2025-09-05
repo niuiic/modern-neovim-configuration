@@ -94,7 +94,6 @@ vim.filetype.add({
 		glsl = "glsl",
 		wgsl = "wgsl",
 		mdx = "markdown",
-		typ = "typst",
 		ts = "typescript",
 		todo = "todo",
 		http = "http",

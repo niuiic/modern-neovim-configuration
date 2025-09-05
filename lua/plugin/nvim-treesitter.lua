@@ -43,7 +43,6 @@ local config = function()
 			"regex",
 			"dap_repl",
 			"mermaid",
-			"typst",
 			"vimdoc",
 			"python",
 			"xml",

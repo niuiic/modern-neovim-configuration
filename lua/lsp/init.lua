@@ -15,7 +15,6 @@ local lsp_list = {
 	"marksman",
 	"lemminx",
 	"glsl_analyzer",
-	"tinymist",
 	"dockerls",
 	"pyright",
 	"nushell",
