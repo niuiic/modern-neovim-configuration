@@ -156,4 +156,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/im-switch.nvim", "plugin/im-switch"),
 	-- plantuml
 	"aklt/plantuml-syntax",
+	-- embed lsp
+	load_plugin_config("jmbuhr/otter.nvim", "plugin/otter"),
 })
