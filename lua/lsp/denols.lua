@@ -85,4 +85,16 @@ return {
 			callback = virtual_text_document,
 		})
 	end,
+	settings = {
+		deno = {
+			enable = true,
+			suggest = {
+				imports = {
+					hosts = {
+						["https://deno.land"] = false,
+					},
+				},
+			},
+		},
+	},
 }
