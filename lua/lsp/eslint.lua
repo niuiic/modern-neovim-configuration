@@ -50,47 +50,4 @@ require("lsp-commands").register_command({
 	is_enabled = is_enabled,
 })
 
-return {
-	root_dir = function()
-		return vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd()
-	end,
-	settings = {
-		codeAction = {
-			disableRuleComment = {
-				enable = true,
-				location = "separateLine",
-			},
-			showDocumentation = {
-				enable = true,
-			},
-		},
-		codeActionOnSave = {
-			enable = false,
-			mode = "all",
-		},
-		format = true,
-		nodePath = "",
-		onIgnoredFiles = "off",
-		packageManager = "pnpm",
-		quiet = false,
-		rulesCustomizations = {},
-		run = "onType",
-		useESLintClass = false,
-		validate = "on",
-		workingDirectory = {
-			mode = "location",
-		},
-	},
-	filetypes = {
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"vue",
-	},
-	handlers = {
-		["eslint/noLibrary"] = function()
-			return {}
-		end,
-	},
-}
+return {}
