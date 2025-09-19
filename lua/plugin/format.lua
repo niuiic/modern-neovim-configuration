@@ -37,8 +37,6 @@ return {
 				"fmt",
 				"--no-semicolons",
 				"--single-quote",
-				"--line-width",
-				"120",
 			}
 			local ext = vim.api.nvim_buf_get_name(context.bufnr):match("%.([^%.]+)$")
 
