@@ -61,7 +61,7 @@ require("lazy").setup({
 	-- quickly modify surround char
 	load_plugin_config("kylechui/nvim-surround", "plugin/nvim-surround"),
 	-- highlights cursor word
-	load_plugin_config("echasnovski/mini.cursorword", "plugin/cursorword"),
+	load_plugin_config("nvim-mini/mini.cursorword", "plugin/cursorword"),
 	-- debug
 	load_plugin_config("mfussenegger/nvim-dap", "plugin/nvim-dap"),
 	-- unit test
@@ -74,7 +74,7 @@ require("lazy").setup({
 	-- colorizer
 	load_plugin_config("brenoprata10/nvim-highlight-colors", "plugin/nvim-highlight-colors"),
 	-- indentation guides
-	load_plugin_config("echasnovski/mini.indentscope", "plugin/mini-indentscope"),
+	load_plugin_config("nvim-mini/mini.indentscope", "plugin/mini-indentscope"),
 	-- fuzzy search
 	load_plugin_config("nvim-telescope/telescope.nvim", "plugin/telescope"),
 	-- lsp
@@ -103,7 +103,7 @@ require("lazy").setup({
 	-- edit part of the file
 	load_plugin_config("niuiic/part-edit.nvim", "plugin/part-edit"),
 	-- move block
-	load_plugin_config("echasnovski/mini.move", "plugin/mini-move"),
+	load_plugin_config("nvim-mini/mini.move", "plugin/mini-move"),
 	-- quickfix
 	load_plugin_config("niuiic/quickfix.nvim", "plugin/quickfix"),
 	-- split/join functions
