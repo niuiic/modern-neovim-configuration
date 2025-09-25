@@ -121,7 +121,7 @@ require("lazy").setup({
 	-- columns limit
 	load_plugin_config("ecthelionvi/NeoColumn.nvim", "plugin/neo-column"),
 	-- ai
-	load_plugin_config("luozhiya/fittencode.nvim", "plugin/fittencode"),
+	load_plugin_config("monkoose/neocodeium", "plugin/neocodeium"),
 	-- ts error
 	load_plugin_config("dmmulroy/ts-error-translator.nvim", "plugin/ts-error-translator"),
 	-- jump outer
