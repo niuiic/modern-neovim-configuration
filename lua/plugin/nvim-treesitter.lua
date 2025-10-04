@@ -49,6 +49,7 @@ local config = function()
 			"nu",
 			"http",
 			"d2",
+			"java",
 		},
 		highlight = { enable = true, additional_vim_regex_highlighting = false },
 		intent = { enable = true },
