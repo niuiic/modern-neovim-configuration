@@ -82,7 +82,7 @@ require("lazy").setup({
 	load_plugin_config("niuiic/lsp-commands.nvim", "plugin/lsp-commands"),
 	load_plugin_config("rachartier/tiny-code-action.nvim", "plugin/tiny-code-action"),
 	-- lsp, dap, linter, formatter installer
-	load_plugin_config("williamboman/mason.nvim", "plugin/mason"),
+	load_plugin_config("mason-org/mason.nvim", "plugin/mason"),
 	-- annotation generator
 	load_plugin_config("danymat/neogen", "plugin/neogen"),
 	-- highlight current n
