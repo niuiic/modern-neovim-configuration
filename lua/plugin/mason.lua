@@ -22,6 +22,7 @@
 -- ◍ css-variables-language-server
 -- ◍ pyright
 -- ◍ deno
+-- install plantuml-lsp manually
 
 -- daps installed:
 -- ◍ bash-debug-adapter
@@ -35,6 +36,7 @@
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ black
+-- install pumlformat manually
 
 return {
 	config = function()
