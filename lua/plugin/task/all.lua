@@ -65,6 +65,7 @@ require("task").register_task({
 				"stop",
 				"web-previewer",
 			},
+			nil,
 			vim.schedule_wrap(function()
 				vim.system({
 					"podman",
@@ -92,12 +93,16 @@ require("task").register_task({
 require("task").register_task({
 	name = "close web previewer",
 	run = function()
-		vim.system({
-			"podman",
-			"stop",
-			"web-previewer",
-		}, function()
-			vim.notify("web previewer is closed")
-		end)
+		vim.system(
+			{
+				"podman",
+				"stop",
+				"web-previewer",
+			},
+			nil,
+			function()
+				vim.notify("web previewer is closed")
+			end
+		)
 	end,
 })
