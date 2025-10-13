@@ -107,7 +107,6 @@
       "    BackgroundColor: #48D1CC;",
       "}",
       "</style>",
-      "${1}",
       "@enduml"
     ]
   },
