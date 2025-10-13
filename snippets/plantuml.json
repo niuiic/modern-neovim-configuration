@@ -3,165 +3,212 @@
     "prefix": "panic",
     "body": [":error;", "kill"]
   },
-  "flow": {
-    "prefix": "flow",
+  "styles": {
+    "prefix": "styles",
     "body": [
       "@startuml",
-      "title ${1}",
-      "",
-      "start",
-      "",
-      "${2}",
-      "",
-      "end",
-      "@enduml"
-    ]
-  },
-  "eventStorm": {
-    "prefix": "eventStorm",
-    "body": [
-      "@startuml",
-      "allowmixing",
-      "skinparam rectangle {",
-      "    BackgroundColor<<Event>> #FFD700",
-      "    BackgroundColor<<Command>> #87CEEB",
-      "    BackgroundColor<<Role>> #9370DB",
-      "    BackgroundColor<<BusinessRule>> #FF6347",
-      "    BackgroundColor<<Entity>> #20B2AA",
-      "    BackgroundColor<<ValueObject>> #F0E68C",
-      "    BackgroundColor<<Aggregate>> #98FB98",
-      "    BackgroundColor<<AggregateRoot>> #32CD32",
-      "    BackgroundColor<<BoundedContext>> #DDA0DD",
-      "    BackgroundColor<<Policy>> #FFB6C1",
-      "    BackgroundColor<<ReadModel>> #D2B48C",
-      "    BackgroundColor<<Repository>> #8FBC8F",
-      "    BackgroundColor<<Service>> #FF8C00",
-      "    BackgroundColor<<Table>> #D3D3D3",
-      "    BackgroundColor<<DataTransferObject>> #FFA07A",
+      "<style>",
+      ".event {",
+      "    BackgroundColor: #FFD700;",
       "}",
-      "${1}",
-      "@enduml"
-    ]
-  },
-  "taskStorm": {
-    "prefix": "taskStorm",
-    "body": [
-      "@startuml",
-      "allowmixing",
-      "skinparam rectangle {",
-      "    BackgroundColor<<Task>> #FFB347",
-      "    BackgroundColor<<Step>> #EEDDFF",
-      "    BackgroundColor<<Issue>> #FF4444",
-      "    BackgroundColor<<RootCause>> #8B0000",
-      "    BackgroundColor<<Solution>> #66BB6A",
-      "    BackgroundColor<<Checkpoint>> #5F9EA0",
-      "    BackgroundColor<<Dependency>> #7B68EE",
-      "    BackgroundColor<<Milestone>> #FFC300",
-      "    BackgroundColor<<Impact>> #FF85C0",
-      "    BackgroundColor<<Improvement>> #48D1CC",
+      "",
+      ".command {",
+      "    BackgroundColor: #87CEEB;",
       "}",
+      "",
+      ".role {",
+      "    BackgroundColor: #9370DB;",
+      "}",
+      "",
+      ".businessRule {",
+      "    BackgroundColor: #FF6347;",
+      "}",
+      "",
+      ".entity {",
+      "    BackgroundColor: #20B2AA;",
+      "}",
+      "",
+      ".valueObject {",
+      "    BackgroundColor: #F0E68C;",
+      "}",
+      "",
+      ".aggregate {",
+      "    BackgroundColor: #98FB98;",
+      "}",
+      "",
+      ".aggregateRoot {",
+      "    BackgroundColor: #32CD32;",
+      "}",
+      "",
+      ".boundedContext {",
+      "    BackgroundColor: #DDA0DD;",
+      "}",
+      "",
+      ".policy {",
+      "    BackgroundColor: #FFB6C1;",
+      "}",
+      "",
+      ".readModel {",
+      "    BackgroundColor: #D2B48C;",
+      "}",
+      "",
+      ".repository {",
+      "    BackgroundColor: #8FBC8F;",
+      "}",
+      "",
+      ".service {",
+      "    BackgroundColor: #FF8C00;",
+      "}",
+      "",
+      ".table {",
+      "    BackgroundColor: #D3D3D3;",
+      "}",
+      "",
+      ".dataTransferObject {",
+      "    BackgroundColor: #FFA07A;",
+      "}",
+      ".task {",
+      "    BackgroundColor: #FFB347;",
+      "}",
+      "",
+      ".step {",
+      "    BackgroundColor: #EEDDFF;",
+      "}",
+      "",
+      ".issue {",
+      "    BackgroundColor: #FF4444;",
+      "}",
+      "",
+      ".rootCause {",
+      "    BackgroundColor: #8B0000;",
+      "}",
+      "",
+      ".solution {",
+      "    BackgroundColor: #66BB6A;",
+      "}",
+      "",
+      ".checkpoint {",
+      "    BackgroundColor: #5F9EA0;",
+      "}",
+      "",
+      ".dependency {",
+      "    BackgroundColor: #7B68EE;",
+      "}",
+      "",
+      ".milestone {",
+      "    BackgroundColor: #FFC300;",
+      "}",
+      "",
+      ".impact {",
+      "    BackgroundColor: #FF85C0;",
+      "}",
+      "",
+      ".improvement {",
+      "    BackgroundColor: #48D1CC;",
+      "}",
+      "</style>",
       "${1}",
       "@enduml"
     ]
   },
   "task": {
-    "prefix": "TASK",
-    "body": "rectangle ${1} <<Task>>"
+    "prefix": "task",
+    "body": "rectangle ${1} <<task>>"
   },
   "step": {
-    "prefix": "STEP",
-    "body": "rectangle ${1} <<Step>>"
+    "prefix": "step",
+    "body": "rectangle ${1} <<step>>"
   },
   "issue": {
-    "prefix": "ISSUE",
-    "body": "rectangle ${1} <<Issue>>"
+    "prefix": "issue",
+    "body": "rectangle ${1} <<issue>>"
   },
   "rootCause": {
-    "prefix": "ROOTCAUSE",
-    "body": "rectangle ${1} <<RootCause>>"
+    "prefix": "rootCause",
+    "body": "rectangle ${1} <<rootCause>>"
   },
   "solution": {
-    "prefix": "SOLUTION",
-    "body": "rectangle ${1} <<Solution>>"
+    "prefix": "solution",
+    "body": "rectangle ${1} <<solution>>"
   },
   "checkpoint": {
-    "prefix": "CHECKPOINT",
-    "body": "rectangle ${1} <<Checkpoint>>"
+    "prefix": "checkpoint",
+    "body": "rectangle ${1} <<checkpoint>>"
   },
   "dependency": {
-    "prefix": "DEPENDENCY",
-    "body": "rectangle ${1} <<Dependency>>"
+    "prefix": "dependency",
+    "body": "rectangle ${1} <<dependency>>"
   },
   "milestone": {
-    "prefix": "MILESTONE",
-    "body": "rectangle ${1} <<Milestone>>"
+    "prefix": "milestone",
+    "body": "rectangle ${1} <<milestone>>"
   },
   "impact": {
-    "prefix": "IMPACT",
-    "body": "rectangle ${1} <<Impact>>"
+    "prefix": "impact",
+    "body": "rectangle ${1} <<impact>>"
   },
   "improvement": {
-    "prefix": "IMPROVEMENT",
-    "body": "rectangle ${1} <<Improvement>>"
+    "prefix": "improvement",
+    "body": "rectangle ${1} <<improvement>>"
   },
   "event": {
-    "prefix": "EVENT",
-    "body": "rectangle ${1} <<Event>>"
+    "prefix": "event",
+    "body": "rectangle ${1} <<event>>"
   },
   "command": {
-    "prefix": "COMMAND",
-    "body": "rectangle ${1} <<Command>>"
+    "prefix": "command",
+    "body": "rectangle ${1} <<command>>"
   },
   "role": {
-    "prefix": "ROLE",
-    "body": "rectangle ${1} <<Role>>"
+    "prefix": "role",
+    "body": "rectangle ${1} <<role>>"
   },
   "businessRule": {
-    "prefix": "BUSINESSRULE",
-    "body": "rectangle ${1} <<BusinessRule>>"
+    "prefix": "businessRule",
+    "body": "rectangle ${1} <<businessRule>>"
   },
   "entity": {
-    "prefix": "ENTITY",
-    "body": "rectangle ${1} <<Entity>>"
+    "prefix": "entity",
+    "body": "rectangle ${1} <<entity>>"
   },
   "valueObject": {
-    "prefix": "VALUEOBJECT",
-    "body": "rectangle ${1} <<ValueObject>>"
+    "prefix": "valueObject",
+    "body": "rectangle ${1} <<valueObject>>"
   },
   "aggregate": {
-    "prefix": "AGGREGATE",
-    "body": "rectangle ${1} <<Aggregate>>"
+    "prefix": "aggregate",
+    "body": "rectangle ${1} <<aggregate>>"
   },
   "aggregateRoot": {
-    "prefix": "AGGREGATEROOT",
-    "body": "rectangle ${1} <<AggregateRoot>>"
+    "prefix": "aggregateRoot",
+    "body": "rectangle ${1} <<aggregateRoot>>"
   },
   "boundedContext": {
-    "prefix": "BOUNDEDCONTEXT",
-    "body": "rectangle ${1} <<BoundedContext>>"
+    "prefix": "boundedContext",
+    "body": "rectangle ${1} <<boundedContext>>"
   },
   "policy": {
-    "prefix": "POLICY",
-    "body": "rectangle ${1} <<Policy>>"
+    "prefix": "policy",
+    "body": "rectangle ${1} <<policy>>"
   },
   "readModel": {
-    "prefix": "READMODEL",
-    "body": "rectangle ${1} <<ReadModel>>"
+    "prefix": "readModel",
+    "body": "rectangle ${1} <<readModel>>"
   },
   "repository": {
-    "prefix": "REPOSITORY",
-    "body": "rectangle ${1} <<Repository>>"
+    "prefix": "repository",
+    "body": "rectangle ${1} <<repository>>"
   },
   "service": {
-    "prefix": "SERVICE",
-    "body": "rectangle ${1} <<Service>>"
+    "prefix": "service",
+    "body": "rectangle ${1} <<service>>"
   },
   "table": {
-    "prefix": "TABLE",
-    "body": "rectangle ${1} <<Table>>"
+    "prefix": "table",
+    "body": "rectangle ${1} <<table>>"
   },
   "dataTransferObject": {
-    "prefix": "DATATRANSFEROBJECT",
-    "body": "rectangle ${1} <<DataTransferObject>>"
+    "prefix": "dataTransferObject",
+    "body": "rectangle ${1} <<dataTransferObject>>"
   }
 }
