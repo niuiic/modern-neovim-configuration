@@ -62,7 +62,7 @@ require("task").register_task({
 		vim.system(
 			{
 				"podman",
-				"stop",
+				"kill",
 				"web-previewer",
 			},
 			nil,
@@ -96,7 +96,7 @@ require("task").register_task({
 		vim.system(
 			{
 				"podman",
-				"stop",
+				"kill",
 				"web-previewer",
 			},
 			nil,
