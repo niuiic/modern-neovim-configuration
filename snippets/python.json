@@ -2,5 +2,9 @@
   "echo": {
     "prefix": "echo",
     "body": ["print(${1})"]
+  },
+  "cell": {
+    "prefix": "cell",
+    "body": ["# %%", "${1}"]
   }
 }
