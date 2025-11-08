@@ -339,9 +339,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [dmmulroy/ts-error-translator.nvim](https://github.com/dmmulroy/ts-error-translator.nvim)
 
 	![](https://img.shields.io/github/stars/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/last-commit/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/commit-activity/y/dmmulroy/ts-error-translator.nvim)
-- [echasnovski/mini.icons](https://github.com/echasnovski/mini.icons)
-
-	![](https://img.shields.io/github/stars/echasnovski/mini.icons) ![](https://img.shields.io/github/last-commit/echasnovski/mini.icons) ![](https://img.shields.io/github/commit-activity/y/echasnovski/mini.icons)
 - [ecthelionvi/NeoColumn.nvim](https://github.com/ecthelionvi/NeoColumn.nvim) - Neovim plugin that highlights individual characters with a toggleable ColorColumn.
 
 	![](https://img.shields.io/github/stars/ecthelionvi/NeoColumn.nvim) ![](https://img.shields.io/github/last-commit/ecthelionvi/NeoColumn.nvim) ![](https://img.shields.io/github/commit-activity/y/ecthelionvi/NeoColumn.nvim)
@@ -495,6 +492,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [nvim-mini/mini.cursorword](https://github.com/nvim-mini/mini.cursorword) - Neovim Lua plugin for autohighlighting word under cursor. Part of 'mini.nvim' library.
 
 	![](https://img.shields.io/github/stars/nvim-mini/mini.cursorword) ![](https://img.shields.io/github/last-commit/nvim-mini/mini.cursorword) ![](https://img.shields.io/github/commit-activity/y/nvim-mini/mini.cursorword)
+- [nvim-mini/mini.icons](https://github.com/nvim-mini/mini.icons) - Icon provider. Part of 'mini.nvim' library. 
+
+	![](https://img.shields.io/github/stars/nvim-mini/mini.icons) ![](https://img.shields.io/github/last-commit/nvim-mini/mini.icons) ![](https://img.shields.io/github/commit-activity/y/nvim-mini/mini.icons)
 - [nvim-mini/mini.indentscope](https://github.com/nvim-mini/mini.indentscope) - Neovim Lua plugin to visualize and operate on indent scope. Part of 'mini.nvim' library.
 
 	![](https://img.shields.io/github/stars/nvim-mini/mini.indentscope) ![](https://img.shields.io/github/last-commit/nvim-mini/mini.indentscope) ![](https://img.shields.io/github/commit-activity/y/nvim-mini/mini.indentscope)
