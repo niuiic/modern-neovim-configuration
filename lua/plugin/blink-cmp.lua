@@ -134,6 +134,6 @@ return {
 		"rafamadriz/friendly-snippets",
 		"niuiic/blink-cmp-rg.nvim",
 		"xzbdmw/colorful-menu.nvim",
-		"echasnovski/mini.icons",
+		"nvim-mini/mini.icons",
 	},
 }
