@@ -117,7 +117,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.api.nvim_set_hl(0, "SnippetTabstop", {})
 
 -- statusline
-vim.o.statusline = "%f"
 vim.schedule(function()
 	vim.api.nvim_set_hl(0, "StatusLineNC", { fg = "#666666", bold = true })
 	vim.api.nvim_set_hl(0, "StatusLine", { fg = "#00ffff", bold = true })
@@ -140,15 +139,14 @@ local disabled_filetypes = {
 	"buffers",
 	"",
 }
-vim.api.nvim_create_autocmd("BufEnter", {
-	callback = function()
-		if vim.bo.filetype == "" or vim.list_contains(disabled_filetypes, vim.bo.filetype) then
-			vim.wo.statusline = " "
-		else
-			vim.wo.statusline = "%f"
-		end
-	end,
-})
+_G.get_statusline = function()
+	if vim.bo.filetype == "" or vim.list_contains(disabled_filetypes, vim.bo.filetype) then
+		return ""
+	end
+
+	return vim.fn.expand("%:.")
+end
+vim.o.statusline = "%{v:lua.get_statusline()}"
 
 -- line number
 vim.wo.number = true
