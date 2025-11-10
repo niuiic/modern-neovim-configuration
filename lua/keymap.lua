@@ -70,15 +70,6 @@ vim.keymap.set({ "n", "v" }, "<C-f>", function()
 	require("tools.quick_print")()
 end)
 
--- insert flow node
-vim.keymap.set("i", "<C-d>", function()
-	require("tools.insert_flow_node")("last")
-end, { silent = true })
-
-vim.keymap.set("i", "<C-u>", function()
-	require("tools.insert_flow_node")("next")
-end, { silent = true })
-
 -- new comment line
 vim.keymap.set({ "n" }, "<C-y>", function()
 	local lnum = vim.api.nvim_win_get_cursor(0)[1]
@@ -115,3 +106,7 @@ end, { silent = true })
 vim.keymap.set({ "n", "x" }, "<C-a>", function()
 	vim.cmd("normal gcc")
 end, { silent = true })
+
+-- tab
+vim.keymap.set("i", "<C-d>", "\t", { silent = true })
+vim.keymap.set("i", "<C-u>", "<C-d>", { silent = true })
