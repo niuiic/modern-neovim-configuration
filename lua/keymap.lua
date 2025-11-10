@@ -106,7 +106,3 @@ end, { silent = true })
 vim.keymap.set({ "n", "x" }, "<C-a>", function()
 	vim.cmd("normal gcc")
 end, { silent = true })
-
--- tab
-vim.keymap.set("i", "<C-d>", "\t", { silent = true })
-vim.keymap.set("i", "<C-u>", "<C-d>", { silent = true })
