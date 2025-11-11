@@ -62,6 +62,21 @@ return {
 			end)
 		end
 
+		local function ruff(context, apply_change)
+			local args = {
+				"ruff",
+				"format",
+				"--stdin-filename",
+				vim.api.nvim_buf_get_name(context.bufnr),
+			}
+
+			vim.system(args, { stdin = context.text }, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
@@ -80,6 +95,7 @@ return {
 				vue = deno,
 				d2 = d2,
 				plantuml = plantuml,
+				python = ruff,
 			},
 		})
 	end,
