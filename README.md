@@ -369,7 +369,7 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [haydenmeade/neotest-jest](https://github.com/haydenmeade/neotest-jest)
 
 	![](https://img.shields.io/github/stars/haydenmeade/neotest-jest) ![](https://img.shields.io/github/last-commit/haydenmeade/neotest-jest) ![](https://img.shields.io/github/commit-activity/y/haydenmeade/neotest-jest)
-- [hedyhli/outline.nvim](https://github.com/hedyhli/outline.nvim) - Navigate code with an outline sidebar. Forked from symbols-outline.nvim. 
+- [hedyhli/outline.nvim](https://github.com/hedyhli/outline.nvim) - Fancy code outline sidebar to visualize and navigate code symbols in a tree hierarchy
 
 	![](https://img.shields.io/github/stars/hedyhli/outline.nvim) ![](https://img.shields.io/github/last-commit/hedyhli/outline.nvim) ![](https://img.shields.io/github/commit-activity/y/hedyhli/outline.nvim)
 - [jbyuki/one-small-step-for-vimkind](https://github.com/jbyuki/one-small-step-for-vimkind) - Debug adapter for Neovim plugins
