@@ -52,6 +52,9 @@ local M = {
 			table.insert(config.settings.vtsls.tsserver.globalPlugins, vue_plugin)
 		end
 	end,
+	root_dir = function(bufnr, on_dir)
+		on_dir(vim.fs.root(bufnr, ".git") or vim.fn.getcwd())
+	end,
 }
 
 return M
