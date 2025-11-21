@@ -21,6 +21,7 @@ local config = function()
 			"typescript",
 			"vue",
 			"json",
+			"json5",
 			"jsdoc",
 			"lua",
 			"luadoc",
