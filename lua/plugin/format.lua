@@ -92,6 +92,7 @@ return {
 				scss = deno,
 				json = deno,
 				jsonc = deno,
+				json5 = require("format.formatters.prettier"),
 				vue = deno,
 				d2 = d2,
 				plantuml = plantuml,
