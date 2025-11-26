@@ -196,3 +196,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		end
 	end,
 })
+
+-- tabline
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		vim.o.showtabline = 0
+	end,
+})
