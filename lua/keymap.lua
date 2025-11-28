@@ -106,3 +106,29 @@ end, { silent = true })
 vim.keymap.set({ "n", "x" }, "<C-a>", function()
 	vim.cmd("normal gcc")
 end, { silent = true })
+
+-- delete buffer
+vim.keymap.set("n", "<C-x>", function()
+	local cur_buf = vim.api.nvim_get_current_buf()
+
+	local is_saved = not vim.api.nvim_get_option_value("modified", { buf = cur_buf })
+	if not is_saved then
+		vim.notify("buffer not saved", vim.log.levels.WARN)
+		return
+	end
+
+	local bufs = vim.api.nvim_list_bufs()
+	local next_buf
+	for _, buf in ipairs(bufs) do
+		if buf ~= cur_buf and require("tools.buffer_valid")(buf) then
+			next_buf = buf
+			break
+		end
+	end
+
+	if next_buf then
+		vim.api.nvim_win_set_buf(0, next_buf)
+	end
+
+	vim.api.nvim_buf_delete(cur_buf, { force = false })
+end, { silent = true })
