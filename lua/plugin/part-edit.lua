@@ -1,16 +1,30 @@
 return {
 	config = function()
-		require("part-edit").setup({
-			swap_path = function()
-				local work_path = vim.fs.root(0, ".git") or vim.fn.getcwd()
-				return string.format("%s%s", string.gsub(work_path, "/", "_"), "_swap")
+		require("part-edit").add_strategy({
+			name = "json js",
+			from = function(lines)
+				return vim.iter(lines)
+					:map(function(line)
+						return line:match('%"(.*)%"')
+					end)
+					:totable()
 			end,
+			to = function(lines)
+				return vim.iter(lines)
+					:map(function(line)
+						return string.format('"%s",', line)
+					end)
+					:totable()
+			end,
+			file_suffix = "js",
 		})
 	end,
 	keys = {
 		{
 			"<space>p",
-			"<cmd>PartEdit<cr>",
+			function()
+				require("part-edit").start()
+			end,
 			desc = "edit selected code",
 			mode = "x",
 			silent = true,
