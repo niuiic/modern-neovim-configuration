@@ -31,7 +31,7 @@ return {
 			to = function(lines)
 				return vim.iter(lines)
 					:map(function(line)
-						return string.format('"%s",', line)
+						return string.format("'%s',", line)
 					end)
 					:totable()
 			end,
