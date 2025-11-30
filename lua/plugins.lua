@@ -158,4 +158,6 @@ require("lazy").setup({
 	"aklt/plantuml-syntax",
 	-- embed lsp
 	load_plugin_config("jmbuhr/otter.nvim", "plugin/otter"),
+	-- text case
+	"gregorias/coerce.nvim",
 })
