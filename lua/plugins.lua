@@ -159,5 +159,5 @@ require("lazy").setup({
 	-- embed lsp
 	load_plugin_config("jmbuhr/otter.nvim", "plugin/otter"),
 	-- text case
-	"gregorias/coerce.nvim",
+	{ "gregorias/coerce.nvim", config = true },
 })
