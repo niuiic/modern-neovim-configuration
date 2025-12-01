@@ -366,9 +366,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim) - 💥   Create key bindings that stick. WhichKey helps you remember your Neovim keymaps, by showing available keybindings in a popup as you type.
 
 	![](https://img.shields.io/github/stars/folke/which-key.nvim) ![](https://img.shields.io/github/last-commit/folke/which-key.nvim) ![](https://img.shields.io/github/commit-activity/y/folke/which-key.nvim)
-- [gregorias/coerce.nvim](https://github.com/gregorias/coerce.nvim) - A Neovim plugin for changing keyword case.
-
-	![](https://img.shields.io/github/stars/gregorias/coerce.nvim) ![](https://img.shields.io/github/last-commit/gregorias/coerce.nvim) ![](https://img.shields.io/github/commit-activity/y/gregorias/coerce.nvim)
 - [haydenmeade/neotest-jest](https://github.com/haydenmeade/neotest-jest)
 
 	![](https://img.shields.io/github/stars/haydenmeade/neotest-jest) ![](https://img.shields.io/github/last-commit/haydenmeade/neotest-jest) ![](https://img.shields.io/github/commit-activity/y/haydenmeade/neotest-jest)
