@@ -132,3 +132,49 @@ vim.keymap.set("n", "<C-x>", function()
 
 	vim.api.nvim_buf_delete(cur_buf, { force = false })
 end, { silent = true })
+
+-- toggle text case
+local function snake_to_camel(snake)
+	if not snake or snake == "" then
+		return ""
+	end
+	local camel = ""
+	local first = true
+	for word in snake:lower():gmatch("[^_]+") do
+		if first then
+			camel = word
+			first = false
+		else
+			camel = camel .. word:sub(1, 1):upper() .. word:sub(2)
+		end
+	end
+	return camel
+end
+
+local function camel_to_snake(camel)
+	if not camel or camel == "" then
+		return ""
+	end
+	local result = camel:sub(1, 1):lower() .. camel:sub(2):gsub("([A-Z])", "_%1"):lower()
+	return result
+end
+vim.keymap.set("n", "<A-m>", function()
+	local selection = require("omega").get_selection()
+	local cur_pos = vim.api.nvim_win_get_cursor(0)
+
+	require("omega").to_normal_mode()
+
+	if not selection or #selection > 1 then
+		vim.notify("invalid selection", vim.log.levels.WARN)
+		return
+	end
+
+	local result = ""
+	if string.find(selection[1], "_") then
+		result = snake_to_camel(selection[1])
+	else
+		result = camel_to_snake(selection[1])
+	end
+
+	vim.api.nvim_buf_set_text(0, cur_pos[1] - 1, cur_pos[2], cur_pos[1] - 1, cur_pos[2] + #selection[1], { result })
+end, { silent = true })
