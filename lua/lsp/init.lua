@@ -22,6 +22,7 @@ local lsp_list = {
 	"docker_compose_language_service",
 	"plantuml",
 	"ruff",
+	"sqruff",
 }
 
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()

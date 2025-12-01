@@ -22,6 +22,7 @@
 -- ◍ css-variables-language-server
 -- ◍ pyright
 -- ◍ deno
+-- ◍ sqruff
 -- install plantuml-lsp manually
 
 -- daps installed:
