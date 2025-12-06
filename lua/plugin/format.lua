@@ -49,10 +49,6 @@ return {
 				table.insert(args, "--unstable-component")
 			end
 
-			if ext == "sql" then
-				table.insert(args, "--unstable-sql")
-			end
-
 			table.insert(args, "-")
 
 			vim.system(args, { stdin = context.text }, function(result)
@@ -77,6 +73,14 @@ return {
 			end)
 		end
 
+		local function sqruff(context, apply_change)
+			vim.system({ "sqruff", "fix", "-" }, { stdin = context.text }, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
@@ -92,7 +96,7 @@ return {
 				scss = deno,
 				json = deno,
 				jsonc = deno,
-				sql = deno,
+				sql = sqruff,
 				json5 = require("format.formatters.prettier"),
 				vue = deno,
 				d2 = d2,
