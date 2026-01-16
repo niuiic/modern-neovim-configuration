@@ -61,7 +61,7 @@ require("task").register_task({
 	run = function()
 		vim.system(
 			{
-				"podman",
+				"docker",
 				"kill",
 				"web-previewer",
 			},
@@ -69,7 +69,7 @@ require("task").register_task({
 			vim.schedule_wrap(function()
 				vim.fn.timer_start(1000, function()
 					vim.system({
-						"podman",
+						"docker",
 						"run",
 						"--name",
 						"web-previewer",
@@ -97,7 +97,7 @@ require("task").register_task({
 	run = function()
 		vim.system(
 			{
-				"podman",
+				"docker",
 				"kill",
 				"web-previewer",
 			},
