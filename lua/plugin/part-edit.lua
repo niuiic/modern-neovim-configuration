@@ -5,14 +5,18 @@ return {
 			from = function(lines)
 				return vim.iter(lines)
 					:map(function(line)
-						return line:match("%'(.*)%'")
+						return line:match("^%s*%'(.*)%'") or line:match('^%s*%"(.*)%"')
 					end)
 					:totable()
 			end,
 			to = function(lines)
 				return vim.iter(lines)
 					:map(function(line)
-						return string.format("'%s',", line)
+						if line:find("'") then
+							return string.format('"%s",', line)
+						else
+							return string.format("'%s',", line)
+						end
 					end)
 					:totable()
 			end,
