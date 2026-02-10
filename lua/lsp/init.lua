@@ -5,7 +5,6 @@ local lsp_list = {
 	"vue_ls",
 	"lua_ls",
 	"bashls",
-	"eslint",
 	"html",
 	"jsonls",
 	"taplo",
@@ -29,6 +28,7 @@ if require("tools.is_deno_project")() then
 	table.insert(lsp_list, "denols")
 else
 	table.insert(lsp_list, "vtsls")
+	table.insert(lsp_list, "eslint")
 end
 if require("omega").exist_in_file("react", root_dir .. "/package.json") then
 	table.insert(lsp_list, "cssmodules_ls")
