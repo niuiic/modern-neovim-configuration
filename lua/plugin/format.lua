@@ -81,6 +81,23 @@ return {
 			end)
 		end
 
+		local function prettier(context, apply_change)
+			vim.system({
+				"prettier",
+				"--single-quote",
+				"--trailing-comma es5",
+				"--print-width 80",
+				"--stdin-filepath",
+				context.file_path,
+			}, {
+				stdin = context.text,
+			}, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
@@ -97,7 +114,7 @@ return {
 				json = deno,
 				jsonc = deno,
 				sql = sqruff,
-				json5 = require("format.formatters.prettier"),
+				json5 = prettier,
 				vue = deno,
 				d2 = d2,
 				plantuml = plantuml,
