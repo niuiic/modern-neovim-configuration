@@ -28,9 +28,9 @@ require("lsp-commands").register_command({
 		vim.lsp.buf.code_action({
 			apply = true,
 			filter = function(action)
-				return action.title == "Organize imports"
-					or action.title == "Add all missing imports"
+				return action.title == "Add all missing imports"
 					or action.title:find("Add import from", 1, true) ~= nil
+					or action.title == "Organize imports"
 			end,
 		})
 		vim.api.nvim_win_set_cursor(0, cur_pos)
