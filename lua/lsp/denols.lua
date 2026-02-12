@@ -30,6 +30,7 @@ require("lsp-commands").register_command({
 			filter = function(action)
 				return action.title == "Add all missing imports"
 					or action.title:find("Add import from", 1, true) ~= nil
+					or action.title:find("Update import from", 1, true) ~= nil
 					or action.title == "Organize imports"
 			end,
 		})
