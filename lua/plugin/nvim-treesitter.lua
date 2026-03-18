@@ -10,6 +10,13 @@ local config = function()
 			files = { "src/parser.c" },
 		},
 	}
+	require("nvim-treesitter.parsers").list.jsonl = {
+		install_info = {
+			url = "https://codeberg.org/kristoferssolo/tree-sitter-jsonl",
+			files = { "src/parser.c" },
+			branch = "main",
+		},
+	}
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
 			"bash",
