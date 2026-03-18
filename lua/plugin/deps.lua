@@ -49,6 +49,54 @@ return {
 		})
 
 		require("deps").add_dep({
+			name = "jsonl queries",
+			is_installed = function()
+				local data_dir = vim.fn.stdpath("data")
+				---@cast data_dir string
+				local target_dir = vim.fs.joinpath(data_dir, "lazy/nvim-treesitter/queries/jsonl")
+
+				return vim.uv.fs_stat(target_dir) ~= nil
+			end,
+			install = function(notify)
+				notify.start()
+				local data_dir = vim.fn.stdpath("data")
+				---@cast data_dir string
+				local target_dir = vim.fs.joinpath(data_dir, "lazy/nvim-treesitter/queries/jsonl")
+
+				local files = { "highlights.scm", "injections.scm" }
+				if vim.uv.fs_stat(target_dir) then
+					vim.fn.system({ "rm", "-rf", target_dir })
+				end
+				vim.fn.system({ "mkdir", "-p", target_dir })
+				require("omega").async(function()
+					for _, file in ipairs(files) do
+						require("omega").await(function(callback)
+							local url = string.format(
+								"https://codeberg.org/kristoferssolo/tree-sitter-jsonl/raw/branch/main/queries/%s",
+								file
+							)
+							vim.system({ "curl", "-L", "-o", vim.fs.joinpath(target_dir, file), url }, {}, function()
+								callback()
+							end)
+						end)
+					end
+					notify.finish()
+				end)()
+			end,
+			uninstall = function(notify)
+				notify.start()
+				local data_dir = vim.fn.stdpath("data")
+				---@cast data_dir string
+				local target_dir = vim.fs.joinpath(data_dir, "lazy/nvim-treesitter/queries/jsonl")
+
+				if vim.uv.fs_stat(target_dir) then
+					vim.fn.system({ "rm", "-rf", target_dir })
+				end
+				notify.finish()
+			end,
+		})
+
+		require("deps").add_dep({
 			name = "plantuml stdlib",
 			is_installed = function()
 				local data_dir = vim.fn.stdpath("data")
