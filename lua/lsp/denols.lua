@@ -32,6 +32,7 @@ require("lsp-commands").register_command({
 					or action.title:find("Add import from", 1, true) ~= nil
 					or action.title:find("Update import from", 1, true) ~= nil
 					or action.title == "Organize imports"
+					or action.title == "Delete all unused imports"
 			end,
 		})
 		vim.api.nvim_win_set_cursor(0, cur_pos)
