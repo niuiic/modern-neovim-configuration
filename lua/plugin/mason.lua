@@ -8,7 +8,7 @@
 -- ◍ json-lsp
 -- ◍ lua-language-server
 -- ◍ rust-analyzer
--- ◍ stylelint-lsp
+-- ◍ stylelint-language-server
 -- ◍ taplo
 -- ◍ vtsls
 -- ◍ wgsl-analyzer
