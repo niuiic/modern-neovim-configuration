@@ -45,7 +45,7 @@ require("lazy").setup({
 	-- file tree
 	load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
 	-- parsers
-	load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
+	load_plugin_config("neovim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
 	-- rainbow brackets
 	load_plugin_config("HiPhish/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
 	-- highlight args
@@ -124,8 +124,6 @@ require("lazy").setup({
 	load_plugin_config("monkoose/neocodeium", "plugin/neocodeium"),
 	-- ts error
 	load_plugin_config("dmmulroy/ts-error-translator.nvim", "plugin/ts-error-translator"),
-	-- jump outer
-	load_plugin_config("Mr-LLLLL/treesitter-outer", "plugin/treesitter-outer"),
 	-- track
 	load_plugin_config("niuiic/track.nvim", "plugin/track"),
 	-- outline
