@@ -34,14 +34,8 @@ if require("omega").exist_in_file("react", root_dir .. "/package.json") then
 	table.insert(lsp_list, "cssmodules_ls")
 end
 
--- load all lsp config
 local load_lsp = function(value)
 	local config = require("lsp/" .. value)
-
-	-- set capabilities
-	config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
-
-	-- set lsp config
 	vim.lsp.enable(value)
 	vim.lsp.config(value, config)
 end
