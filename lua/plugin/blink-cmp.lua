@@ -130,6 +130,7 @@ return {
 		})
 	end,
 	build = "cargo build --release",
+	branch = "v1",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
 		"niuiic/blink-cmp-rg.nvim",
