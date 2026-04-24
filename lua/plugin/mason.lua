@@ -36,6 +36,7 @@
 -- ◍ stylua
 -- ◍ xmlformatter
 -- ◍ ruff
+-- ◍ sqruff
 -- install pumlformat manually
 
 return {
