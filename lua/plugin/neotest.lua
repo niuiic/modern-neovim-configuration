@@ -21,7 +21,9 @@ local config = function()
 					return vim.fs.root(0, "package.json")
 				end or nil,
 			}),
-			require("tools.is_deno_project")() and require("neotest-deno") or nil,
+			require("tools.is_deno_project")() and require("neotest-deno")({
+				args = { "--trace-leaks" },
+			}) or nil,
 			require("neotest-rust")({
 				args = { "--no-capture" },
 				dap_adapter = "lldb",
