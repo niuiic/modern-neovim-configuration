@@ -26,6 +26,7 @@ local lsp_list = {
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
 if require("tools.is_deno_project")() then
 	table.insert(lsp_list, "denols")
+	table.insert(lsp_list, "oxlint")
 else
 	table.insert(lsp_list, "vtsls")
 	table.insert(lsp_list, "eslint")

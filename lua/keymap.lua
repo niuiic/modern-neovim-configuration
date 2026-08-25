@@ -43,7 +43,7 @@ vim.keymap.set("n", "e", "zz", { silent = true })
 require("which-key").add({
 	{ "<leader>n", group = "neovim" },
 	{ "<leader>np", "<cmd>Lazy<cr>", desc = "plugin management" },
-	{ "<leader>nl", "<cmd>LspInfo<cr>", desc = "lsp status" },
+	{ "<leader>nl", "<cmd>checkhealth lsp<cr>", desc = "lsp status" },
 	{ "<leader>nc", "<cmd>checkhealth<cr>", desc = "checkhealth" },
 	{ "<leader>nt", "<cmd>TSUpdate<cr>", desc = "update language parsers of nvim-treesitter" },
 	{ "<leader>nr", "<cmd>LspRestart<cr>", desc = "restart all lsp" },
