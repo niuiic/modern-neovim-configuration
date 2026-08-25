@@ -130,7 +130,10 @@ vim.keymap.set("n", "<C-x>", function()
 		vim.api.nvim_win_set_buf(0, next_buf)
 	end
 
-	vim.api.nvim_buf_delete(cur_buf, { force = false })
+	vim.api.nvim_buf_delete(
+		cur_buf,
+		{ force = vim.api.nvim_get_option_value("filetype", { buf = cur_buf }) == "terminal" }
+	)
 end, { silent = true })
 
 -- toggle text case
