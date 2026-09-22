@@ -299,6 +299,9 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) - UI Component Library for Neovim.
 
 	![](https://img.shields.io/github/stars/MunifTanjim/nui.nvim) ![](https://img.shields.io/github/last-commit/MunifTanjim/nui.nvim) ![](https://img.shields.io/github/commit-activity/y/MunifTanjim/nui.nvim)
+- [RubixDev/mason-update-all](https://github.com/RubixDev/mason-update-all) - Easily update all Mason packages with one command
+
+	![](https://img.shields.io/github/stars/RubixDev/mason-update-all) ![](https://img.shields.io/github/last-commit/RubixDev/mason-update-all) ![](https://img.shields.io/github/commit-activity/y/RubixDev/mason-update-all)
 - [Saghen/blink.cmp](https://github.com/Saghen/blink.cmp) - Performant, batteries-included completion plugin for Neovim 
 
 	![](https://img.shields.io/github/stars/Saghen/blink.cmp) ![](https://img.shields.io/github/last-commit/Saghen/blink.cmp) ![](https://img.shields.io/github/commit-activity/y/Saghen/blink.cmp)
@@ -419,10 +422,10 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [mxsdev/nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js) - nvim-dap adapter for vscode-js-debug
 
 	![](https://img.shields.io/github/stars/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/last-commit/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/commit-activity/y/mxsdev/nvim-dap-vscode-js)
-- [neovim-treesitter/nvim-treesitter](https://github.com/neovim-treesitter/nvim-treesitter)
+- [neovim-treesitter/nvim-treesitter](https://github.com/neovim-treesitter/nvim-treesitter) - [DEPRECATED] Distributed-maintenance fork — please use nvim-treesitter/nvim-treesitter (actively maintained)
 
 	![](https://img.shields.io/github/stars/neovim-treesitter/nvim-treesitter) ![](https://img.shields.io/github/last-commit/neovim-treesitter/nvim-treesitter) ![](https://img.shields.io/github/commit-activity/y/neovim-treesitter/nvim-treesitter)
-- [neovim-treesitter/treesitter-parser-registry](https://github.com/neovim-treesitter/treesitter-parser-registry)
+- [neovim-treesitter/treesitter-parser-registry](https://github.com/neovim-treesitter/treesitter-parser-registry) - [DEPRECATED] Parser/query registry for the deprecated fork — parsers and queries now live in nvim-treesitter/nvim-treesitter
 
 	![](https://img.shields.io/github/stars/neovim-treesitter/treesitter-parser-registry) ![](https://img.shields.io/github/last-commit/neovim-treesitter/treesitter-parser-registry) ![](https://img.shields.io/github/commit-activity/y/neovim-treesitter/treesitter-parser-registry)
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Nvim LSP
