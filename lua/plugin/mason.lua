@@ -41,7 +41,8 @@
 
 return {
 	config = function()
-		require("mason").setup()
+		require("mason").setup({})
+		require("mason-update-all").setup({})
 	end,
 	keys = {
 		{
@@ -51,4 +52,5 @@ return {
 		},
 	},
 	lazy = false,
+	dependencies = { "RubixDev/mason-update-all" },
 }
