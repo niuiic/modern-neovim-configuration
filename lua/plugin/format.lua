@@ -85,8 +85,10 @@ return {
 			vim.system({
 				"prettier",
 				"--single-quote",
-				"--trailing-comma es5",
-				"--print-width 80",
+				"--trailing-comma",
+				"es5",
+				"--print-width",
+				"80",
 				"--stdin-filepath",
 				context.file_path,
 			}, {
