@@ -5,6 +5,7 @@ local debugger_list = {
 	"sh",
 	"debugpy",
 	"lldb",
+	"dlv",
 }
 
 for _, value in pairs(debugger_list) do
