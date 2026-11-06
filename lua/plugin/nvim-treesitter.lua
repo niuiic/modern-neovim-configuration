@@ -63,6 +63,7 @@ local config = function()
 		"nu",
 		"http",
 		"d2",
+		"go",
 	}
 	require("nvim-treesitter").install(langs)
 	vim.api.nvim_create_autocmd("FileType", {

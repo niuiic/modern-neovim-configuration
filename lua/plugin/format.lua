@@ -100,6 +100,18 @@ return {
 			end)
 		end
 
+		local function gofmt(context, apply_change)
+			vim.system({
+				"gofmt",
+			}, {
+				stdin = context.text,
+			}, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
@@ -121,6 +133,7 @@ return {
 				d2 = d2,
 				plantuml = plantuml,
 				python = ruff,
+				go = gofmt,
 			},
 		})
 	end,
