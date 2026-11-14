@@ -78,7 +78,6 @@ local keys = {
 		"<space>of",
 		function()
 			require("telescope.builtin").find_files({
-				hidden = true,
 				cwd = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
 				find_command = { "rg", "--files", "--glob", "!**/.git/*" },
 			})
@@ -104,7 +103,6 @@ local keys = {
 		"<space>oW",
 		function()
 			require("telescope.builtin").live_grep({
-				hidden = true,
 				cwd = vim.fs.root(0, ".root") or vim.fs.root(0, ".git") or vim.fn.getcwd(),
 			})
 		end,
