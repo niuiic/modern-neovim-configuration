@@ -98,6 +98,10 @@ vim.filetype.add({
 	pattern = {
 		["TODO"] = "todo",
 	},
+	filename = {
+		["bun.lock"] = "json5",
+		["bun.lockb"] = "json5",
+	},
 })
 
 -- yank

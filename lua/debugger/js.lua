@@ -87,7 +87,7 @@ local function is_vue_project()
 	return require("omega").exist_in_file("vue", (vim.fs.root(0, ".git") or vim.fn.getcwd()) .. "/package.json")
 end
 
-dap_utils.setup({
+local configs = {
 	typescript = function(run)
 		if is_vue_project() then
 			run(vim.list_extend(get_browser(), get_node()))
@@ -111,4 +111,19 @@ dap_utils.setup({
 	vue = function(run)
 		run(get_browser())
 	end,
-})
+}
+
+dap_utils.setup(configs)
+
+return {
+	get_configs = function(ft)
+		local ok, list = pcall(function()
+			local out
+			configs[ft](function(c)
+				out = c
+			end)
+			return out
+		end)
+		return ok and list or {}
+	end,
+}
