@@ -46,5 +46,5 @@ local keys = {
 return {
 	config = config,
 	keys = keys,
-	dependencies = { "kyazdani42/nvim-web-devicons", "folke/lsp-colors.nvim" },
+	dependencies = { "nvim-tree/nvim-web-devicons", "folke/lsp-colors.nvim" },
 }

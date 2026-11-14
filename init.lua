@@ -1,5 +1,3 @@
-package.path = "./?/init.lua;" .. package.path
-
 require("basic")
 require("plugins")
 require("keymap")

@@ -2,23 +2,21 @@
 local config = function()
 	require("nvim-dap-repl-highlights").setup()
 
+	-- parsers missing from the upstream registry; queries are copied from each repo
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "TSUpdate",
 		callback = function()
-			require("nvim-treesitter.parsers").scss.install_info.url =
-				"https://github.com/savetheclocktower/tree-sitter-scss"
 			require("nvim-treesitter.parsers").d2 = {
 				install_info = {
 					url = "https://github.com/ravsii/tree-sitter-d2",
-					branch = "main",
-					files = { "src/parser.c" },
+					queries = "queries",
 				},
 			}
 			require("nvim-treesitter.parsers").jsonl = {
 				install_info = {
-					url = "https://codeberg.org/kristoferssolo/tree-sitter-jsonl",
-					files = { "src/parser.c" },
-					branch = "main",
+					-- codeberg tarballs extract to `tree-sitter-jsonl/`, but the installer expects `<repo>-<rev>`
+					url = "https://github.com/kristoferssolo/tree-sitter-jsonl",
+					queries = "queries",
 				},
 			}
 		end,
@@ -80,5 +78,4 @@ end
 return {
 	config = config,
 	build = ":TSUpdate",
-	dependencies = { "neovim-treesitter/treesitter-parser-registry" },
 }

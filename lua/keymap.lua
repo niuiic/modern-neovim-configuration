@@ -46,7 +46,7 @@ require("which-key").add({
 	{ "<leader>nl", "<cmd>checkhealth lsp<cr>", desc = "lsp status" },
 	{ "<leader>nc", "<cmd>checkhealth<cr>", desc = "checkhealth" },
 	{ "<leader>nt", "<cmd>TSUpdate<cr>", desc = "update language parsers of nvim-treesitter" },
-	{ "<leader>nr", "<cmd>LspRestart<cr>", desc = "restart all lsp" },
+	{ "<leader>nr", "<cmd>lsp restart<cr>", desc = "restart all lsp" },
 	{ "<leader>nm", "<cmd>messages<cr>", desc = "show messages" },
 	{ "<leader>nM", "<cmd>messages clear<cr>", desc = "clear messages" },
 	{

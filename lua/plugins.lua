@@ -43,9 +43,9 @@ require("lazy").setup({
 	-- quick motion
 	load_plugin_config("folke/flash.nvim", "plugin/flash"),
 	-- file tree
-	load_plugin_config("kyazdani42/nvim-tree.lua", "plugin/nvim-tree"),
+	load_plugin_config("nvim-tree/nvim-tree.lua", "plugin/nvim-tree"),
 	-- parsers
-	load_plugin_config("neovim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
+	load_plugin_config("nvim-treesitter/nvim-treesitter", "plugin/nvim-treesitter"),
 	-- rainbow brackets
 	load_plugin_config("HiPhish/rainbow-delimiters.nvim", "plugin/rainbow-delimiters"),
 	-- highlight args

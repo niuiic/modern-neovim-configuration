@@ -31,10 +31,13 @@ if require("omega").exist_in_file("react", root_dir .. "/package.json") then
 	table.insert(lsp_list, "cssmodules_ls")
 end
 
+-- only names with a config here; the rest come from nvim-lspconfig's `lsp/` dir on runtimepath
 local load_lsp = function(value)
-	local config = require("lsp/" .. value)
+	local ok, config = pcall(require, "lsp/" .. value)
+	if ok then
+		vim.lsp.config(value, config)
+	end
 	vim.lsp.enable(value)
-	vim.lsp.config(value, config)
 end
 for _, value in ipairs(lsp_list) do
 	load_lsp(value)

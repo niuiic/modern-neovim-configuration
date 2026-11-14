@@ -5,9 +5,6 @@ vim.o.fileencoding = "utf-8"
 -- no compatible to vi
 vim.g.nocompatible = true
 
--- avoid unnecessary redrawing
-vim.g.lazyredraw = true
-
 -- show sign column on the left
 vim.wo.signcolumn = "yes"
 
@@ -56,9 +53,6 @@ vim.o.timeoutlen = 300
 -- split window will appear at bottom and right
 vim.o.splitbelow = true
 vim.o.splitright = true
-
--- more powerful auto completion
-vim.o.wildmenu = true
 
 -- python
 vim.g.python3_host_prog = "/usr/bin/python"

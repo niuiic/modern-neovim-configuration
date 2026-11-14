@@ -387,12 +387,12 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [kevinhwang91/promise-async](https://github.com/kevinhwang91/promise-async) - Promise & Async in Lua
 
 	![](https://img.shields.io/github/stars/kevinhwang91/promise-async) ![](https://img.shields.io/github/last-commit/kevinhwang91/promise-async) ![](https://img.shields.io/github/commit-activity/y/kevinhwang91/promise-async)
-- [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
 
-	![](https://img.shields.io/github/stars/kyazdani42/nvim-tree.lua) ![](https://img.shields.io/github/last-commit/kyazdani42/nvim-tree.lua) ![](https://img.shields.io/github/commit-activity/y/kyazdani42/nvim-tree.lua)
-- [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
+	![](https://img.shields.io/github/stars/nvim-tree/nvim-tree.lua) ![](https://img.shields.io/github/last-commit/nvim-tree/nvim-tree.lua) ![](https://img.shields.io/github/commit-activity/y/nvim-tree/nvim-tree.lua)
+- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 
-	![](https://img.shields.io/github/stars/kyazdani42/nvim-web-devicons) ![](https://img.shields.io/github/last-commit/kyazdani42/nvim-web-devicons) ![](https://img.shields.io/github/commit-activity/y/kyazdani42/nvim-web-devicons)
+	![](https://img.shields.io/github/stars/nvim-tree/nvim-web-devicons) ![](https://img.shields.io/github/last-commit/nvim-tree/nvim-web-devicons) ![](https://img.shields.io/github/commit-activity/y/nvim-tree/nvim-web-devicons)
 - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround) - Add/change/delete surrounding delimiter pairs with ease. Written with :heart: in Lua.
 
 	![](https://img.shields.io/github/stars/kylechui/nvim-surround) ![](https://img.shields.io/github/last-commit/kylechui/nvim-surround) ![](https://img.shields.io/github/commit-activity/y/kylechui/nvim-surround)
@@ -420,12 +420,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [mxsdev/nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js) - nvim-dap adapter for vscode-js-debug
 
 	![](https://img.shields.io/github/stars/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/last-commit/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/commit-activity/y/mxsdev/nvim-dap-vscode-js)
-- [neovim-treesitter/nvim-treesitter](https://github.com/neovim-treesitter/nvim-treesitter) - [DEPRECATED] Distributed-maintenance fork — please use nvim-treesitter/nvim-treesitter (actively maintained)
-
-	![](https://img.shields.io/github/stars/neovim-treesitter/nvim-treesitter) ![](https://img.shields.io/github/last-commit/neovim-treesitter/nvim-treesitter) ![](https://img.shields.io/github/commit-activity/y/neovim-treesitter/nvim-treesitter)
-- [neovim-treesitter/treesitter-parser-registry](https://github.com/neovim-treesitter/treesitter-parser-registry) - [DEPRECATED] Parser/query registry for the deprecated fork — parsers and queries now live in nvim-treesitter/nvim-treesitter
-
-	![](https://img.shields.io/github/stars/neovim-treesitter/treesitter-parser-registry) ![](https://img.shields.io/github/last-commit/neovim-treesitter/treesitter-parser-registry) ![](https://img.shields.io/github/commit-activity/y/neovim-treesitter/treesitter-parser-registry)
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Nvim LSP
 
 	![](https://img.shields.io/github/stars/neovim/nvim-lspconfig) ![](https://img.shields.io/github/last-commit/neovim/nvim-lspconfig) ![](https://img.shields.io/github/commit-activity/y/neovim/nvim-lspconfig)
