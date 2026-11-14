@@ -118,8 +118,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/remote.nvim", "plugin/remote"),
 	-- terminal
 	load_plugin_config("niuiic/terminal.nvim", "plugin/terminal"),
-	-- ai
-	load_plugin_config("monkoose/neocodeium", "plugin/neocodeium"),
 	-- ts error
 	load_plugin_config("dmmulroy/ts-error-translator.nvim", "plugin/ts-error-translator"),
 	-- track

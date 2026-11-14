@@ -62,11 +62,9 @@ Neovim: V0.11+
 
 5. Check if something is missing with `:checkhealth`.
 
-6. Login to windsurf with `NeoCodeium auth`.
+6. Look for specific functions in `lua/plugins.lua`.
 
-7. Look for specific functions in `lua/plugins.lua`.
-
-8. `lazy-lock.json` is not tracked. Run `:Lazy restore` only if you intentionally
+7. `lazy-lock.json` is not tracked. Run `:Lazy restore` only if you intentionally
    want the plugin revisions that file lists.
 
 ### Keymap
@@ -417,9 +415,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [mollerhoj/telescope-recent-files.nvim](https://github.com/mollerhoj/telescope-recent-files.nvim)
 
 	![](https://img.shields.io/github/stars/mollerhoj/telescope-recent-files.nvim) ![](https://img.shields.io/github/last-commit/mollerhoj/telescope-recent-files.nvim) ![](https://img.shields.io/github/commit-activity/y/mollerhoj/telescope-recent-files.nvim)
-- [monkoose/neocodeium](https://github.com/monkoose/neocodeium) - free AI completion plugin for neovim
-
-	![](https://img.shields.io/github/stars/monkoose/neocodeium) ![](https://img.shields.io/github/last-commit/monkoose/neocodeium) ![](https://img.shields.io/github/commit-activity/y/monkoose/neocodeium)
 - [mxsdev/nvim-dap-vscode-js](https://github.com/mxsdev/nvim-dap-vscode-js) - nvim-dap adapter for vscode-js-debug
 
 	![](https://img.shields.io/github/stars/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/last-commit/mxsdev/nvim-dap-vscode-js) ![](https://img.shields.io/github/commit-activity/y/mxsdev/nvim-dap-vscode-js)
