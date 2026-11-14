@@ -32,7 +32,7 @@
 -- formatters installed:
 -- ◍ shfmt
 -- ◍ stylua
--- ◍ xmlformatter
+-- ◍ xmlformat
 -- ◍ ruff
 -- ◍ sqruff
 -- install pumlformat manually

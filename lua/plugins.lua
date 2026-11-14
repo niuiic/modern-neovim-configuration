@@ -118,8 +118,6 @@ require("lazy").setup({
 	load_plugin_config("niuiic/remote.nvim", "plugin/remote"),
 	-- terminal
 	load_plugin_config("niuiic/terminal.nvim", "plugin/terminal"),
-	-- columns limit
-	load_plugin_config("ecthelionvi/NeoColumn.nvim", "plugin/neo-column"),
 	-- ai
 	load_plugin_config("monkoose/neocodeium", "plugin/neocodeium"),
 	-- ts error
@@ -130,8 +128,6 @@ require("lazy").setup({
 	load_plugin_config("hedyhli/outline.nvim", "plugin/outline"),
 	-- task
 	load_plugin_config("niuiic/task.nvim", "plugin/task"),
-	-- vtsls
-	"yioneko/nvim-vtsls",
 	-- lua lsp
 	load_plugin_config("folke/lazydev.nvim", "plugin/lazydev"),
 	-- replace in buffer
@@ -154,4 +150,4 @@ require("lazy").setup({
 	"aklt/plantuml-syntax",
 	-- embed lsp
 	load_plugin_config("jmbuhr/otter.nvim", "plugin/otter"),
-})
+}, { rocks = { enabled = false } })

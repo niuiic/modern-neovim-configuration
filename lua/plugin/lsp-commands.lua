@@ -1,14 +1,5 @@
 local keys = {
 	{
-		"<space>lF",
-		function()
-			require("lsp-commands").run_command(function(name)
-				return string.find(name, "rename file") ~= nil
-			end)
-		end,
-		desc = "rename file",
-	},
-	{
 		"<space>lr",
 		function()
 			require("lsp-commands").run_command(function(name)
@@ -16,15 +7,6 @@ local keys = {
 			end)
 		end,
 		desc = "rename var",
-	},
-	{
-		"<space>lR",
-		function()
-			require("lsp-commands").run_command(function(name)
-				return string.find(name, "rename file") ~= nil
-			end)
-		end,
-		desc = "rename file",
 	},
 	{
 		"<space>li",

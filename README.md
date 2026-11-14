@@ -31,7 +31,7 @@ OS: Gentoo
 
 Terminal: WezTerm
 
-Neovim: V0.10+
+Neovim: V0.11+
 
 ## Dependencies
 
@@ -45,6 +45,7 @@ Neovim: V0.10+
 8. `win32yank` (required for wsl)
 9. `pumlformat` (required for plantuml)
 10. `bun` (required for formatting js/ts/jsx/tsx/css/scss/html/vue/json/jsonc/json5/yaml/markdown)
+11. `xmlformat` (required for formatting xml, install with `mason.nvim`)
 
 ## QuickStart
 
@@ -344,9 +345,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [dmmulroy/ts-error-translator.nvim](https://github.com/dmmulroy/ts-error-translator.nvim)
 
 	![](https://img.shields.io/github/stars/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/last-commit/dmmulroy/ts-error-translator.nvim) ![](https://img.shields.io/github/commit-activity/y/dmmulroy/ts-error-translator.nvim)
-- [ecthelionvi/NeoColumn.nvim](https://github.com/ecthelionvi/NeoColumn.nvim) - Neovim plugin that highlights individual characters with a toggleable ColorColumn.
-
-	![](https://img.shields.io/github/stars/ecthelionvi/NeoColumn.nvim) ![](https://img.shields.io/github/last-commit/ecthelionvi/NeoColumn.nvim) ![](https://img.shields.io/github/commit-activity/y/ecthelionvi/NeoColumn.nvim)
 - [folke/flash.nvim](https://github.com/folke/flash.nvim) - Navigate your code with search labels, enhanced character motions and Treesitter integration
 
 	![](https://img.shields.io/github/stars/folke/flash.nvim) ![](https://img.shields.io/github/last-commit/folke/flash.nvim) ![](https://img.shields.io/github/commit-activity/y/folke/flash.nvim)
@@ -563,6 +561,3 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [xzbdmw/colorful-menu.nvim](https://github.com/xzbdmw/colorful-menu.nvim) - Bring enjoyment to your auto completion.
 
 	![](https://img.shields.io/github/stars/xzbdmw/colorful-menu.nvim) ![](https://img.shields.io/github/last-commit/xzbdmw/colorful-menu.nvim) ![](https://img.shields.io/github/commit-activity/y/xzbdmw/colorful-menu.nvim)
-- [yioneko/nvim-vtsls](https://github.com/yioneko/nvim-vtsls)
-
-	![](https://img.shields.io/github/stars/yioneko/nvim-vtsls) ![](https://img.shields.io/github/last-commit/yioneko/nvim-vtsls) ![](https://img.shields.io/github/commit-activity/y/yioneko/nvim-vtsls)

@@ -54,6 +54,14 @@ return {
 			end)
 		end
 
+		local function xml(context, apply_change)
+			vim.system({ "xmlformat", "-" }, { stdin = context.text }, function(result)
+				if result.code == 0 then
+					apply_change(context.text, result.stdout, context.bufnr)
+				end
+			end)
+		end
+
 		-- mirrors the old `deno fmt --no-semicolons --single-quote` behaviour; the
 		-- remaining defaults match deno's (80 columns, 2-space tabs, trailing
 		-- commas, always-wrap prose). `--no-script` stops bun from running a
@@ -114,6 +122,7 @@ return {
 				json = bun,
 				jsonc = bun,
 				sql = sqruff,
+				xml = xml,
 				json5 = bun,
 				vue = bun,
 				d2 = d2,

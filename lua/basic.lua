@@ -93,6 +93,7 @@ vim.filetype.add({
 		http = "http",
 		d2 = "d2",
 		puml = "plantuml",
+		xml = "xml",
 	},
 	pattern = {
 		["TODO"] = "todo",

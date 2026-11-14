@@ -1,25 +1,11 @@
 local function fix_all()
-	local util = require("lspconfig.util")
-	local opts = { sync = true, bufnr = 0 }
-	local bufnr = util.validate_bufnr(opts.bufnr or 0)
-
-	local stylelint_lsp_client = util.get_active_client_by_name(bufnr, "stylelint_lsp")
-	if stylelint_lsp_client == nil then
+	local bufnr = vim.api.nvim_get_current_buf()
+	local client = vim.lsp.get_clients({ bufnr = bufnr, name = "stylelint_lsp" })[1]
+	if client == nil then
 		return
 	end
 
-	local request
-	if opts.sync then
-		request = function(buf, method, params)
-			stylelint_lsp_client:request_sync(method, params, nil, buf)
-		end
-	else
-		request = function(buf, method, params)
-			stylelint_lsp_client:request(method, params, nil, buf)
-		end
-	end
-
-	request(bufnr, "workspace/executeCommand", {
+	client:request_sync("workspace/executeCommand", {
 		command = "stylelint.applyAutoFixes",
 		arguments = {
 			{
@@ -27,7 +13,7 @@ local function fix_all()
 				version = vim.lsp.util.buf_versions[bufnr],
 			},
 		},
-	})
+	}, nil, bufnr)
 end
 
 local function is_enabled()
