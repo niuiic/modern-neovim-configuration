@@ -44,6 +44,7 @@ Neovim: V0.10+
 7. `nushell` (recommended)
 8. `win32yank` (required for wsl)
 9. `pumlformat` (required for plantuml)
+10. `bun` (required for formatting js/ts/jsx/tsx/css/scss/html/vue/json/jsonc/json5/yaml/markdown)
 
 ## QuickStart
 

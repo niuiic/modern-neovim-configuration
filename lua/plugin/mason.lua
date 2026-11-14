@@ -30,7 +30,6 @@
 -- install lldb manually
 
 -- formatters installed:
--- ◍ prettier
 -- ◍ shfmt
 -- ◍ stylua
 -- ◍ xmlformatter

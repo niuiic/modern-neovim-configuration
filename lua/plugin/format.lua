@@ -54,14 +54,27 @@ return {
 			end)
 		end
 
-		local function prettier(context, apply_change)
+		-- mirrors the old `deno fmt --no-semicolons --single-quote` behaviour; the
+		-- remaining defaults match deno's (80 columns, 2-space tabs, trailing
+		-- commas, always-wrap prose). `--no-script` stops bun from running a
+		-- project's `fmt` package.json script instead of formatting.
+		local function bun(context, apply_change)
 			vim.system({
-				"prettier",
+				"bun",
+				"fmt",
+				"--no-script",
+				"--no-config",
+				"--no-editorconfig",
+				"--no-semi",
 				"--single-quote",
-				"--trailing-comma",
-				"es5",
 				"--print-width",
 				"80",
+				"--tab-width",
+				"2",
+				"--trailing-comma",
+				"all",
+				"--prose-wrap",
+				"always",
 				"--stdin-filepath",
 				context.file_path,
 			}, {
@@ -88,21 +101,21 @@ return {
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
-				javascript = prettier,
-				typescript = prettier,
-				javascriptreact = prettier,
-				typescriptreact = prettier,
-				markdown = prettier,
-				html = prettier,
-				yaml = prettier,
-				yml = prettier,
-				css = prettier,
-				scss = prettier,
-				json = prettier,
-				jsonc = prettier,
+				javascript = bun,
+				typescript = bun,
+				javascriptreact = bun,
+				typescriptreact = bun,
+				markdown = bun,
+				html = bun,
+				yaml = bun,
+				yml = bun,
+				css = bun,
+				scss = bun,
+				json = bun,
+				jsonc = bun,
 				sql = sqruff,
-				json5 = prettier,
-				vue = prettier,
+				json5 = bun,
+				vue = bun,
 				d2 = d2,
 				plantuml = plantuml,
 				python = ruff,
