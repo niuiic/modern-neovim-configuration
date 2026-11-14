@@ -61,11 +61,6 @@ return {
 					group = "git",
 					mode = "x",
 				},
-				{
-					"<leader>f",
-					group = "fittencode",
-					mode = { "n", "x" },
-				},
 			},
 		})
 	end,

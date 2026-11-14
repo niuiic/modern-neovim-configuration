@@ -65,6 +65,9 @@ Neovim: V0.10+
 
 7. Look for specific functions in `lua/plugins.lua`.
 
+8. `lazy-lock.json` is not tracked. Run `:Lazy restore` only if you intentionally
+   want the plugin revisions that file lists.
+
 ### Keymap
 
 `which-key.nvim` will tell you. Check `lua/plugin/*` and `lua/keymap.lua` for
@@ -83,7 +86,8 @@ Update `lsp_list` in `lua/lsp/init.lua`.
 ### Formatter
 
 Use your favorite formatters with
-[stevearc/conform.nvim](https://github.com/stevearc/conform.nvim).
+[niuiic/format.nvim](https://github.com/niuiic/format.nvim). The active set lives
+in `lua/plugin/format.lua`.
 
 ### DAP
 
