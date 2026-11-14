@@ -294,9 +294,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [MagicDuck/grug-far.nvim](https://github.com/MagicDuck/grug-far.nvim) - Find And Replace plugin for neovim
 
 	![](https://img.shields.io/github/stars/MagicDuck/grug-far.nvim) ![](https://img.shields.io/github/last-commit/MagicDuck/grug-far.nvim) ![](https://img.shields.io/github/commit-activity/y/MagicDuck/grug-far.nvim)
-- [MatrosMartz/neotest-deno](https://github.com/MatrosMartz/neotest-deno) - Neotest adapter for Deno.
-
-	![](https://img.shields.io/github/stars/MatrosMartz/neotest-deno) ![](https://img.shields.io/github/last-commit/MatrosMartz/neotest-deno) ![](https://img.shields.io/github/commit-activity/y/MatrosMartz/neotest-deno)
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) - UI Component Library for Neovim.
 
 	![](https://img.shields.io/github/stars/MunifTanjim/nui.nvim) ![](https://img.shields.io/github/last-commit/MunifTanjim/nui.nvim) ![](https://img.shields.io/github/commit-activity/y/MunifTanjim/nui.nvim)

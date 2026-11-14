@@ -31,33 +31,6 @@ return {
 			end)
 		end
 
-		local function deno(context, apply_change)
-			local args = {
-				"deno",
-				"fmt",
-				"--no-semicolons",
-				"--single-quote",
-			}
-			local ext = vim.api.nvim_buf_get_name(context.bufnr):match("%.([^%.]+)$")
-
-			if ext then
-				table.insert(args, "--ext")
-				table.insert(args, ext)
-			end
-
-			if ext == "vue" then
-				table.insert(args, "--unstable-component")
-			end
-
-			table.insert(args, "-")
-
-			vim.system(args, { stdin = context.text }, function(result)
-				if result.code == 0 then
-					apply_change(context.text, result.stdout, context.bufnr)
-				end
-			end)
-		end
-
 		local function ruff(context, apply_change)
 			local args = {
 				"ruff",
@@ -115,21 +88,21 @@ return {
 		require("format").setup({
 			format_on_save = true,
 			filetypes = {
-				javascript = deno,
-				typescript = deno,
-				javascriptreact = deno,
-				typescriptreact = deno,
-				markdown = deno,
-				html = deno,
-				yaml = deno,
-				yml = deno,
-				css = deno,
-				scss = deno,
-				json = deno,
-				jsonc = deno,
+				javascript = prettier,
+				typescript = prettier,
+				javascriptreact = prettier,
+				typescriptreact = prettier,
+				markdown = prettier,
+				html = prettier,
+				yaml = prettier,
+				yml = prettier,
+				css = prettier,
+				scss = prettier,
+				json = prettier,
+				jsonc = prettier,
 				sql = sqruff,
 				json5 = prettier,
-				vue = deno,
+				vue = prettier,
 				d2 = d2,
 				plantuml = plantuml,
 				python = ruff,

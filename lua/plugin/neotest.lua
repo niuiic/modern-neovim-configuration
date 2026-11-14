@@ -16,19 +16,16 @@ local config = function()
 					return string.match(file, "^.+%.py$") ~= nil
 				end,
 			}),
-			require("tools.is_deno_project")() and nil or require("neotest-vitest")({
+			require("neotest-vitest")({
 				cwd = function()
 					return vim.fs.root(0, "package.json")
 				end or nil,
 			}),
-			require("tools.is_deno_project")() and require("neotest-deno")({
-				args = { "--trace-leaks" },
-			}) or nil,
 			require("neotest-rust")({
 				args = { "--no-capture" },
 				dap_adapter = "lldb",
 			}),
-			require("tools.is_deno_project")() and nil or require("neotest-jest")({
+			require("neotest-jest")({
 				jestCommand = "pnpm jest",
 				jestConfigFile = function(file)
 					if string.find(file, "/packages/") then
@@ -151,6 +148,5 @@ return {
 		"marilari88/neotest-vitest",
 		"nvim-neotest/neotest-python",
 		"rouge8/neotest-rust",
-		"MatrosMartz/neotest-deno",
 	},
 }

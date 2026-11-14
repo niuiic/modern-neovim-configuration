@@ -25,13 +25,8 @@ local lsp_list = {
 }
 
 local root_dir = vim.fs.root(0, ".git") or vim.fn.getcwd()
-if require("tools.is_deno_project")() then
-	table.insert(lsp_list, "denols")
-	table.insert(lsp_list, "oxlint")
-else
-	table.insert(lsp_list, "vtsls")
-	table.insert(lsp_list, "eslint")
-end
+table.insert(lsp_list, "vtsls")
+table.insert(lsp_list, "eslint")
 if require("omega").exist_in_file("react", root_dir .. "/package.json") then
 	table.insert(lsp_list, "cssmodules_ls")
 end

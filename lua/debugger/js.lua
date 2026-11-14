@@ -61,23 +61,6 @@ local get_node = function()
 	}
 end
 
-local get_deno = function()
-	local cwd = vim.fs.root(0, "package.json") or vim.fn.getcwd()
-
-	return {
-		name = "Deno",
-		type = "pwa-node",
-		request = "launch",
-		program = "${file}",
-		runtimeExecutable = "deno",
-		runtimeArgs = {
-			"--inspect-wait",
-		},
-		cwd = cwd,
-		attachSimplePort = 9229,
-	}
-end
-
 local get_browser = function()
 	local cwd = vim.fs.root(0, "package.json") or vim.fn.getcwd()
 
@@ -106,18 +89,14 @@ end
 
 dap_utils.setup({
 	typescript = function(run)
-		if require("tools.is_deno_project")() then
-			run(get_deno())
-		elseif is_vue_project() then
+		if is_vue_project() then
 			run(vim.list_extend(get_browser(), get_node()))
 		else
 			run(get_node())
 		end
 	end,
 	javascript = function(run)
-		if require("tools.is_deno_project")() then
-			run(get_deno())
-		elseif is_vue_project() then
+		if is_vue_project() then
 			run(vim.list_extend(get_browser(), get_node()))
 		else
 			run(get_node())
