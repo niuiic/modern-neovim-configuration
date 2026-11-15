@@ -388,12 +388,6 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [kevinhwang91/promise-async](https://github.com/kevinhwang91/promise-async) - Promise & Async in Lua
 
 	![](https://img.shields.io/github/stars/kevinhwang91/promise-async) ![](https://img.shields.io/github/last-commit/kevinhwang91/promise-async) ![](https://img.shields.io/github/commit-activity/y/kevinhwang91/promise-async)
-- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
-
-	![](https://img.shields.io/github/stars/nvim-tree/nvim-tree.lua) ![](https://img.shields.io/github/last-commit/nvim-tree/nvim-tree.lua) ![](https://img.shields.io/github/commit-activity/y/nvim-tree/nvim-tree.lua)
-- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
-
-	![](https://img.shields.io/github/stars/nvim-tree/nvim-web-devicons) ![](https://img.shields.io/github/last-commit/nvim-tree/nvim-web-devicons) ![](https://img.shields.io/github/commit-activity/y/nvim-tree/nvim-web-devicons)
 - [kylechui/nvim-surround](https://github.com/kylechui/nvim-surround) - Add/change/delete surrounding delimiter pairs with ease. Written with :heart: in Lua.
 
 	![](https://img.shields.io/github/stars/kylechui/nvim-surround) ![](https://img.shields.io/github/last-commit/kylechui/nvim-surround) ![](https://img.shields.io/github/commit-activity/y/kylechui/nvim-surround)
@@ -508,6 +502,12 @@ Search files, tags, buffers, history files, marks, projects, git status, etc.
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Find, Filter, Preview, Pick. All lua, all the time.
 
 	![](https://img.shields.io/github/stars/nvim-telescope/telescope.nvim) ![](https://img.shields.io/github/last-commit/nvim-telescope/telescope.nvim) ![](https://img.shields.io/github/commit-activity/y/nvim-telescope/telescope.nvim)
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua) - A file explorer tree for neovim written in lua
+
+	![](https://img.shields.io/github/stars/nvim-tree/nvim-tree.lua) ![](https://img.shields.io/github/last-commit/nvim-tree/nvim-tree.lua) ![](https://img.shields.io/github/commit-activity/y/nvim-tree/nvim-tree.lua)
+- [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - Provides Nerd Font icons (glyphs) for use by neovim plugins
+
+	![](https://img.shields.io/github/stars/nvim-tree/nvim-web-devicons) ![](https://img.shields.io/github/last-commit/nvim-tree/nvim-web-devicons) ![](https://img.shields.io/github/commit-activity/y/nvim-tree/nvim-web-devicons)
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Nvim Treesitter configurations and abstraction layer
 
 	![](https://img.shields.io/github/stars/nvim-treesitter/nvim-treesitter) ![](https://img.shields.io/github/last-commit/nvim-treesitter/nvim-treesitter) ![](https://img.shields.io/github/commit-activity/y/nvim-treesitter/nvim-treesitter)
